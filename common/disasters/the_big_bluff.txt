@@ -1,0 +1,70 @@
+the_big_bluff = {
+	potential = {
+		tag = W49
+		current_age = age_of_discovery
+	}
+	
+	can_start = {
+		custom_trigger_tooltip = {
+			tooltip = is_1470_and_purged_generals_texas
+			is_year = 1470
+			NOT = { has_country_flag = purged_generals_texas }
+		}
+	}
+	
+	can_stop = {
+		OR = {
+			custom_trigger_tooltip = {
+				tooltip = has_purged_generals_texas
+				has_country_flag = purged_generals_texas
+			}
+			AND = {
+				is_year = 1500
+				NOT = { is_bankrupt = yes }
+			}
+		}
+	}
+	
+	can_end = {
+		OR = {
+			custom_trigger_tooltip = {
+				tooltip = has_purged_generals_texas
+				has_country_flag = purged_generals_texas
+			}
+			AND = {
+				is_year = 1500
+				NOT = { is_bankrupt = yes }
+			}
+		}
+	}
+	
+	progress = {
+		modifier = {
+			factor = 5
+			is_bankrupt = yes
+		}
+		modifier = {
+			factor = 5
+			is_year = 1470
+		}
+		modifier = {
+			factor = 5
+			government = monarchy
+			NOT = { legitimacy = 80 }
+		}
+		modifier = {
+			factor = 3
+			num_of_loans = 1
+		}
+		modifier = {
+			factor = 3
+			unrest = 3
+		}
+		modifier = {
+			factor = -1
+			stability = 3
+		}
+	}
+	on_start = texan_events.3
+	on_end = texan_events.4
+}

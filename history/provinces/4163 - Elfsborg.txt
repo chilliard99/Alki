@@ -1,0 +1,16 @@
+#Elfsborgs Län
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = chinese
+add_core = V05
+owner = V05
+controller = V05
+culture = habanero
+religion = catholico
+hre = no
+base_tax = 4
+base_production = 3
+trade_goods = grain #villa roja
+base_manpower = 3
+capital = "Elfsborg"
+is_city = yes

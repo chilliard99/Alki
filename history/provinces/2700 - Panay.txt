@@ -1,0 +1,17 @@
+#2700 - Panay
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W56
+controller = W56
+add_core = W56
+culture = neosonoran
+religion = catholico
+capital = "Panay"
+trade_goods = copper #buenavista mine
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 2
+is_city = yes

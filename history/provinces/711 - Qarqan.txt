@@ -1,0 +1,17 @@
+#711 - Qarqan
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y32
+controller = Y32
+add_core = Y32
+culture = galacian
+religion = sacramental
+capital = "Qarqan"
+trade_goods = wool #herders
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 2
+is_city = yes

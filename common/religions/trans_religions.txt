@@ -1,0 +1,2978 @@
+# If you add religions, and use those tags, do not change them without changing everywhere they are used.
+
+# Uses all 'modifiers' possible thats exported as a Modifier.
+
+japanese_group = {
+	can_form_personal_unions = yes
+	defender_of_faith = yes
+	flag_emblem_index_range = { 110 110 }
+	zahran = {
+		color = { 189 230 149 }
+		icon = 48
+		province = {
+			local_missionary_strength = 0.01
+		}
+		country = {
+		 	dip_tech_cost_modifier = -0.1
+			tolerance_heretic = 2
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		uses_harmony = yes
+		heretic = { MAATIST AMUNALLAHY }	
+	}
+	neoshinto = {
+		color = { 204 0 0 }
+		icon = 10
+		province = {
+			local_missionary_strength = -0.01
+		}
+		personal_deity = yes
+		country = {
+			land_morale = 0.05
+			tolerance_heretic = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		harmonized_modifier = harmonized_neoshinto
+		heretic = { ZENIST REIHINTO }	
+	}
+	crusade_name = HOLY_WAR
+}
+
+neo_christian_group = {
+	center_of_religion = 2998
+	flag_emblem_index_range = { 110 110 }
+	defender_of_faith = yes
+	can_form_personal_unions = yes
+	center_of_religion = 2998
+	
+	vacandist = {
+		color = { 161 161 161 }
+		icon = 29
+		allowed_conversion = {
+			vulgar
+			cruzite
+			sagrado
+			la_luz
+		}
+		country = {
+			global_heretic_missionary_strength = -0.05
+			tolerance_heretic = 3
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		on_convert = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = completed_sure_compass_otrep
+					}
+				}
+				add_reform_desire = -0.005
+			}
+			change_religion = vacandist
+			add_prestige = -100
+			remove_opinion = {
+				who = W83
+				modifier = tepeyac_papacy_otr
+			}
+		}
+		uses_church_power = yes				
+		aspects = {
+			local_conclavism_vaca
+			actualizacion_vaca
+			working_priesthood_vaca
+			state_churches_vaca
+			preserving_the_sacraments
+			active_excommunication_vaca
+			la_dignidad_humana_vaca
+			divinity_of_saints_vaca
+			reviving_holy_spirits_vaca
+			ecumenismo_vaca
+			internal_confession_vaca
+			wishful_thinking_vaca
+		}
+		date = 1553.1.1
+		aspects_name = VACANDIST_ASPECTS
+		heretic = { DULLERS }	
+	}
+	vulgar = {
+		color = { 48 133 23 }
+		icon = 37
+		allowed_conversion = {
+			vacandist
+			sagrado
+			cruzite
+			la_luz
+		}
+		province = {
+			local_missionary_strength = -0.01
+		}
+		country = {
+			tolerance_own = 1
+			diplomatic_reputation = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		on_convert = {
+			if = {
+				limit = {
+					religion = catholico
+					NOT = {
+						has_global_flag = completed_sure_compass_otrep
+					}
+				}
+				add_reform_desire = -0.01
+			}
+			change_religion = vulgar
+			add_prestige = -100
+			hidden_effect = {
+				random_owned_province = {
+					limit = {
+						can_have_center_of_reformation_trigger = {
+							RELIGION = vulgar
+						}
+					}
+					change_religion = vulgar
+					add_reform_center = vulgar
+				}
+			}
+			remove_opinion = {
+				who = W83
+				modifier = tepeyac_papacy_otr
+			}
+		}
+		allowed_center_conversion = {
+			catholico
+		}
+		will_get_center = { 
+			any_owned_province = {
+				can_have_center_of_reformation_trigger = {
+					RELIGION = vulgar
+				}
+			}
+		}
+		papacy = {
+			papal_tag = U35
+			election_cost = 5
+			seat_of_papacy = 2437 # Cibola
+			
+			
+			#Council of Trent Positions
+			harsh = {
+				relation_with_heretics = -20
+				global_religious_conversion_resistance = 0.25
+				global_institution_spread = -0.25
+				global_missionary_strength = 0.02
+			}
+			neutral = {
+				global_religious_conversion_resistance = -0.33
+			}
+			concilatory = {
+				relation_with_heretics = 10
+				global_religious_conversion_resistance = 0.25
+				global_heretic_missionary_strength = -0.05
+				improve_relation_modifier = 0.25
+			}
+			
+			#Council of Trent Concessions
+			concessions = {
+				first_concession = {
+					harsh = {
+						relation_with_heretics = -20
+						global_heretic_missionary_strength  = 0.02
+					}	
+					concilatory = {
+						relation_with_heretics = 10
+						tolerance_heretic = 2
+					}
+				}
+				second_concession = {
+					harsh = {
+						relation_with_heretics = -20
+						institution_spread_from_true_faith = 0.30
+					}	
+					concilatory = {
+						relation_with_heretics = 10
+						global_institution_spread = 0.10
+					}
+				}
+				third_concession = {
+					harsh = {
+						relation_with_heretics = -20
+						manpower_in_true_faith_provinces  = 0.1
+					}	
+					concilatory = {
+						relation_with_heretics = 10
+						global_manpower_modifier = 0.05
+					}
+				}
+				fourth_concession = {
+					harsh = {
+						relation_with_heretics = -20
+						warscore_cost_vs_other_religion  = -0.10
+					}	
+					concilatory = {
+						relation_with_heretics = 10
+						curia_powers_cost = -0.10
+					}
+				}
+			}
+			
+
+
+			
+			
+			
+			
+			# Papal Actions below!
+			
+			claim_papal_treaury = {
+				curia_treasury_cost = 500
+				potential = {
+					NOT = { tag = U35 }
+				}
+				allow = {
+					NOT = { war_with = U35 }
+					papal_influence = 100
+				}
+				effect = {
+					add_papal_influence = -100
+					if = {
+						limit = {
+							reform_desire = 1.5
+						}
+						add_treasury = 1000
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1
+						}
+						add_treasury = 500
+					}
+					else = {
+						add_treasury = 250
+					}
+				}
+				ai_will_do = {
+					factor = 1
+				}				
+			}			
+			promote_absolutism_vulgar = {
+				cost = 50
+				potential = {
+					NOT = { tag = U35 }
+				}
+				allow = {
+					NOT = { war_with = U35 }
+					custom_trigger_tooltip = {
+						tooltip = vulgar_allow_promote_absolutism
+						NOT = {
+							OR = {
+								has_country_modifier = 50_promote_absolutism_vulgar
+								has_country_modifier = 100_promote_absolutism_vulgar
+								has_country_modifier = 150_promote_absolutism_vulgar
+							}
+						}
+					}
+				}
+				effect = {
+					if = {
+						limit = {
+							reform_desire = 1.5
+						}
+						add_country_modifier = {
+							name = "150_promote_absolutism_vulgar"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1
+						}
+						add_country_modifier = {
+							name = "100_promote_absolutism_vulgar"
+							duration = 7300
+						}
+					}
+					else = {
+						add_country_modifier = {
+							name = "50_promote_absolutism_vulgar"
+							duration = 7300
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}	
+			invite_latin_scholars = {
+				cost = 50
+				potential = {
+					NOT = { tag = U35 }
+				}
+				allow = {
+					NOT = { war_with = U35 }
+					custom_trigger_tooltip = {
+						tooltip = vulgar_allow_latin_scholars
+						NOT = {
+							OR = {
+								has_country_modifier = 50_invite_latin_scholars_vulgar
+								has_country_modifier = 100_invite_latin_scholars_vulgar
+								has_country_modifier = 150_invite_latin_scholars_vulgar
+							}
+						}
+					}
+				}
+				effect = {
+					if = {
+						limit = {
+							reform_desire = 1.5
+						}
+						add_country_modifier = {
+							name = "150_invite_latin_scholars_vulgar"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1
+						}
+						add_country_modifier = {
+							name = "100_invite_latin_scholars_vulgar"
+							duration = 7300
+						}
+					}
+					else = {
+						add_country_modifier = {
+							name = "50_invite_latin_scholars_vulgar"
+							duration = 7300
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}		
+			inspire_victory = {
+				cost = 100
+				potential = {
+					NOT = { tag = U35 }
+				}
+				allow = {
+					NOT = { war_with = U35 }
+					custom_trigger_tooltip = {
+						tooltip = vulgar_allow_inspire_victory
+						NOT = {
+							OR = {
+								has_country_modifier = 50_inspire_victory_vulgar
+								has_country_modifier = 100_inspire_victory_vulgar
+								has_country_modifier = 150_inspire_victory_vulgar
+							}
+						}
+					}
+				}
+				effect = {
+					if = {
+						limit = {
+							reform_desire = 1.5
+						}
+						add_country_modifier = {
+							name = "150_inspire_victory_vulgar"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1
+						}
+						add_country_modifier = {
+							name = "100_inspire_victory_vulgar"
+							duration = 7300
+						}
+					}
+					else = {
+						add_country_modifier = {
+							name = "50_inspire_victory_vulgar"
+							duration = 7300
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			offer_support_vulgar = {
+				cost = 50
+				potential = {
+					NOT = { tag = U35 }
+				}
+				allow = {
+					NOT = { war_with = U35 }
+					custom_trigger_tooltip = {
+						tooltip = vulgar_allow_offer_support
+						NOT = {
+							OR = {
+								has_country_modifier = 50_offer_support_vulgar
+								has_country_modifier = 100_offer_support_vulgar
+								has_country_modifier = 150_offer_support_vulgar
+							}
+						}
+					}
+				}
+				effect = {
+					if = {
+						limit = {
+							reform_desire = 1.5
+						}
+						add_country_modifier = {
+							name = "150_offer_support_vulgar"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1
+						}
+						add_country_modifier = {
+							name = "100_offer_support_vulgar"
+							duration = 7300
+						}
+					}
+					else = {
+						add_country_modifier = {
+							name = "50_offer_support_vulgar"
+							duration = 7300
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}		
+			sanction_expansion_vulgar = {
+				cost = 50
+				potential = {
+					NOT = { tag = U35 }
+				}
+				allow = {
+					NOT = { war_with = U35 }
+					custom_trigger_tooltip = {
+						tooltip = vulgar_sanction_expansion
+						NOT = {
+							OR = {
+								has_country_modifier = 50_sanction_expansion_vulgar
+								has_country_modifier = 100_sanction_expansion_vulgar
+								has_country_modifier = 150_sanction_expansion_vulgar
+							}
+						}
+					}
+				}
+				effect = {
+					if = {
+						limit = {
+							reform_desire = 1.5
+						}
+						add_country_modifier = {
+							name = "150_sanction_expansion_vulgar"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1
+						}
+						add_country_modifier = {
+							name = "100_sanction_expansion_vulgar"
+							duration = 7300
+						}
+					}
+					else = {
+						add_country_modifier = {
+							name = "50_sanction_expansion_vulgar"
+							duration = 7300
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			purify_state_vulgar = {
+				cost = 100
+				potential = {
+					NOT = { tag = U35 }
+				}
+				allow = {
+					NOT = { war_with = U35 }
+					if = {
+						limit = {
+							reform_desire = 1.5
+						}
+						corruption = 2
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1
+						}
+						corruption = 1.5
+					}
+					else = {
+						corruption = 1
+					}
+				}
+				effect = {
+					if = {
+						limit = {
+							reform_desire = 1.5
+						}
+						add_corruption = -2
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1
+						}
+						add_corruption = -1.5
+					}
+					else = {
+						add_corruption = -1
+					}
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}	
+			grant_commercial_exception = {
+				cost = 50
+				potential = {
+					NOT = { tag = U35 }
+				}
+				allow = {
+					NOT = { war_with = U35 }
+					custom_trigger_tooltip = {
+						tooltip = vulgar_grant_commercial_expansion
+						NOT = {
+							OR = {
+								has_country_modifier = 50_grant_commercial_expansion_vulgar
+								has_country_modifier = 100_grant_commercial_expansion_vulgar
+								has_country_modifier = 150_grant_commercial_expansion_vulgar
+							}
+						}
+					}
+				}
+				effect = {
+					if = {
+						limit = {
+							reform_desire = 1.5
+						}
+						add_country_modifier = {
+							name = "150_grant_commercial_expansion_vulgar"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1
+						}
+						add_country_modifier = {
+							name = "100_grant_commercial_expansion_vulgar"
+							duration = 7300
+						}
+					}
+					else = {
+						add_country_modifier = {
+							name = "50_grant_commercial_expansion_vulgar"
+							duration = 7300
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 1
+					modifier = {
+						factor = 0
+						NOT = { has_idea_group = trade_ideas }
+					}
+				}
+			}
+		}
+		date = 1553.1.1
+		heretic = { LATINO NORTENO }	
+	}
+	sagrado = {
+		color = { 22 0 189 }
+		icon = 33
+		allowed_conversion = {
+			vacandist
+			vulgar
+			cruzite
+			la_luz
+		}
+		country = {
+			ae_impact = -0.05
+			global_heretic_missionary_strength = 0.01
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		on_convert = {
+			change_religion = sagrado
+			add_prestige = -100
+			remove_opinion = {
+				who = W83
+				modifier = tepeyac_papacy_otr
+			}
+		}
+		
+		uses_church_power = yes				
+		aspects = {
+			anima_sola_sagr
+			frontier_theology_sagr
+			healing_hands_sagr
+			ocean_baptism_sagr
+			grace_through_fire_sagr
+			apostolic_ambivalence_sagr
+			stimulating_communion_sagr
+			tolerated_heretics_sagr
+			earned_scripture_sagr
+			idolic_approach_sagr
+			bishop_control_sagr
+			the_sacred_heart_sagr
+		}
+		date = 1553.1.1
+		aspects_name = VACANDIST_ASPECTS
+		heretic = { PUREHEARTED SOUTHARD }			
+	}
+	cruzite = {
+		color = { 109 5 173 }
+		icon = 3
+		province = {
+			local_missionary_strength = -0.02
+		}
+		allowed_conversion = {
+			vacandist
+			sagrado
+			vulgar
+			la_luz
+		}
+		country = {
+			development_cost = -0.05
+			shock_damage_received = -0.05
+		}
+		on_convert = {
+			if = {
+				limit = {
+					religion = catholico
+					NOT = {
+						has_global_flag = completed_sure_compass_otrep
+					}
+				}
+				add_reform_desire = -0.01
+			}
+			change_religion = cruzite
+			remove_opinion = {
+				who = W83
+				modifier = tepeyac_papacy_otr
+			}
+			add_prestige = -100
+			hidden_effect = {
+				random_owned_province = {
+					limit = {
+						can_have_center_of_reformation_trigger = {
+							RELIGION = cruzite
+						}
+					}
+					change_religion = cruzite
+					add_reform_center = cruzite
+				}
+			}
+		}
+		allowed_center_conversion = {
+			catholico
+		}
+		will_get_center = { 
+			any_owned_province = {
+				can_have_center_of_reformation_trigger = {
+					RELIGION = cruzite
+				}
+			}
+		}
+		uses_church_power = yes
+		aspects = {
+			solo_por_las_escrituras_cruz
+			accountable_to_all_cruz
+			buckary_cruz
+			gospel_of_wealth_cruz
+			american_inspiration_cruz
+			no_hay_tributacion_cruz
+			nondenominational_cruz
+			la_tabla_rasa_cruz
+			encouraged_investigation_cruz
+			no_time_to_wait_cruz
+			a_cold_world_cruz
+			bishop_abandonment_cruz
+		}
+		date = 1553.1.1
+		aspects_name = CRUZITE_ASPECTS
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		heretic = { MENDOZAN MARTIRY }	
+	}
+	la_luz = {
+		color = { 71 16 48 }
+		icon = 43
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+			idea_cost = -0.05
+			tolerance_heretic = -1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		allowed_center_conversion = {
+			catholico
+		}
+		on_convert = {
+			if = {
+				limit = {
+					religion = catholico
+					NOT = {
+						has_global_flag = completed_sure_compass_otrep
+					}
+				}
+				add_reform_desire = -0.01
+			}
+			change_religion = la_luz
+			add_prestige = -100
+			hidden_effect = {
+				random_owned_province = {
+					limit = {
+						can_have_center_of_reformation_trigger = {
+							RELIGION = la_luz
+						}
+					}
+					change_religion = la_luz
+					add_reform_center = la_luz
+				}
+			}
+		}
+		will_get_center = { 
+			any_owned_province = {
+				can_have_center_of_reformation_trigger = {
+					RELIGION = la_luz
+				}
+			}
+		}
+		date = 1553.1.1
+		holy_sites = { 4128 4114 4107 2640 4089 }
+		blessings = {
+			blessing_inqisicion_isthmo
+			blessing_nuevo_despertar
+			blessing_racionalismo
+			blessing_solo_por_gracia
+			blessing_reypapismo
+		}
+		heretic = { RACIONALISMO NEWTALK }	
+	}
+	evangelical = {
+		color = { 153 252 255 }
+		icon = 2
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+			production_efficiency = 0.05
+			tolerance_heathen = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		fervor = yes
+		heretic = { CHARISMATIC ECCLEVIANGIAL }	
+	}
+	catholico = {
+		color = { 204 204 0 }
+		icon = 1
+		country = {
+			global_missionary_strength = 0.01
+			tolerance_heretic = -1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		allowed_conversion = {
+			vacandist
+			vulgar
+			cruzite
+			la_luz
+			sagrado
+		}
+		on_convert = {
+			change_religion = catholico
+			add_prestige = -100
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}			
+		}
+		papacy = {
+			papal_tag = W83
+			election_cost = 5
+			seat_of_papacy = 2998 #Mexico City
+			
+			
+			#Council of Trent Positions
+			harsh = {
+				relation_with_heretics = -20
+				global_religious_conversion_resistance = 0.25
+				global_institution_spread = -0.25
+				global_missionary_strength = 0.02
+			}
+			neutral = {
+				global_religious_conversion_resistance = -0.33
+			}
+			concilatory = {
+				relation_with_heretics = 10
+				global_religious_conversion_resistance = 0.25
+				global_heretic_missionary_strength = -0.05
+				improve_relation_modifier = 0.25
+			}
+			
+			#Council of Trent Concessions
+			concessions = {
+				first_concession = {
+					harsh = {
+						relation_with_heretics = -20
+						global_heretic_missionary_strength  = 0.02
+					}	
+					concilatory = {
+						relation_with_heretics = 10
+						tolerance_heretic = 2
+					}
+				}
+				second_concession = {
+					harsh = {
+						relation_with_heretics = -20
+						institution_spread_from_true_faith = 0.30
+					}	
+					concilatory = {
+						relation_with_heretics = 10
+						global_institution_spread = 0.10
+					}
+				}
+				third_concession = {
+					harsh = {
+						relation_with_heretics = -20
+						manpower_in_true_faith_provinces  = 0.1
+					}	
+					concilatory = {
+						relation_with_heretics = 10
+						global_manpower_modifier = 0.05
+					}
+				}
+				fourth_concession = {
+					harsh = {
+						relation_with_heretics = -20
+						warscore_cost_vs_other_religion  = -0.10
+					}	
+					concilatory = {
+						relation_with_heretics = 10
+						curia_powers_cost = -0.10
+					}
+				}
+			}
+			# Papal Actions below!
+			
+			levy_church_tax = {
+				cost = 50
+				potential = {
+					NOT = { tag = W83 }
+				}
+				allow = {
+					NOT = { war_with = W83 }
+					custom_trigger_tooltip = {
+						tooltip = catlo_allow_church_tax 
+						NOT = {
+							OR = {
+								has_country_modifier = 25_catlo_church_tax
+								has_country_modifier = 50_catlo_church_tax
+								has_country_modifier = 75_catlo_church_tax
+								has_country_modifier = 100_catlo_church_tax
+								has_country_modifier = 125_catlo_church_tax
+								has_country_modifier = 150_catlo_church_tax
+								has_country_modifier = 175_catlo_church_tax
+								has_country_modifier = 200_catlo_church_tax
+							}
+						}
+					}
+				}
+				effect = {
+					if = {
+						limit = {
+							reform_desire = 2
+						}
+						add_country_modifier = {
+							name = "200_catlo_church_tax"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.75
+						}
+						add_country_modifier = {
+							name = "175_catlo_church_tax"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.5
+						}
+						add_country_modifier = {
+							name = "150_catlo_church_tax"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.25
+						}
+						add_country_modifier = {
+							name = "125_catlo_church_tax"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1
+						}
+						add_country_modifier = {
+							name = "100_catlo_church_tax"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 0.75
+						}
+						add_country_modifier = {
+							name = "75_catlo_church_tax"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 0.5
+						}
+						add_country_modifier = {
+							name = "50_catlo_church_tax"
+							duration = 7300
+						}
+					}
+					else = {
+						add_country_modifier = {
+							name = "25_catlo_church_tax"
+							duration = 7300
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 1
+				}				
+			}			
+			bless_monarch = {
+				cost = 50
+				potential = {
+					NOT = { tag = W83 }
+				}
+				allow = {
+					NOT = { war_with = W83 }
+					custom_trigger_tooltip = {
+						tooltip = catlo_allow_bless_ruler 
+						NOT = {
+							OR = {
+								has_country_modifier = 25_catlo_bless_ruler
+								has_country_modifier = 50_catlo_bless_ruler
+								has_country_modifier = 75_catlo_bless_ruler
+								has_country_modifier = 100_catlo_bless_ruler
+								has_country_modifier = 125_catlo_bless_ruler
+								has_country_modifier = 150_catlo_bless_ruler
+								has_country_modifier = 175_catlo_bless_ruler
+								has_country_modifier = 200_catlo_bless_ruler
+							}
+						}
+					}
+				}
+				effect = {
+					if = {
+						limit = {
+							reform_desire = 2
+						}
+						add_country_modifier = {
+							name = "200_catlo_bless_ruler"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.75
+						}
+						add_country_modifier = {
+							name = "175_catlo_bless_ruler"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.5
+						}
+						add_country_modifier = {
+							name = "150_catlo_bless_ruler"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.25
+						}
+						add_country_modifier = {
+							name = "125_catlo_bless_ruler"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1
+						}
+						add_country_modifier = {
+							name = "100_catlo_bless_ruler"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 0.75
+						}
+						add_country_modifier = {
+							name = "75_catlo_bless_ruler"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 0.5
+						}
+						add_country_modifier = {
+							name = "50_catlo_bless_ruler"
+							duration = 7300
+						}
+					}
+					else = {
+						add_country_modifier = {
+							name = "25_catlo_bless_ruler"
+							duration = 7300
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			indulgence_for_sins = {
+				cost = 50
+				potential = {
+					government = monarchy
+					NOT = { tag = W83 }
+				}
+				allow = {
+					NOT = { war_with = W83 }
+					custom_trigger_tooltip = {
+						tooltip = catlo_allow_grant_indulgence 
+						NOT = {
+							OR = {
+								has_country_modifier = 25_catlo_grant_indulgence
+								has_country_modifier = 50_catlo_grant_indulgence
+								has_country_modifier = 75_catlo_grant_indulgence
+								has_country_modifier = 100_catlo_grant_indulgence
+								has_country_modifier = 125_catlo_grant_indulgence
+								has_country_modifier = 150_catlo_grant_indulgence
+								has_country_modifier = 175_catlo_grant_indulgence
+								has_country_modifier = 200_catlo_grant_indulgence
+							}
+						}
+					}
+				}
+				effect = {
+					if = {
+						limit = {
+							reform_desire = 2
+						}
+						add_country_modifier = {
+							name = "200_catlo_grant_indulgence"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.75
+						}
+						add_country_modifier = {
+							name = "175_catlo_grant_indulgence"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.5
+						}
+						add_country_modifier = {
+							name = "150_catlo_grant_indulgence"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.25
+						}
+						add_country_modifier = {
+							name = "125_catlo_grant_indulgence"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1
+						}
+						add_country_modifier = {
+							name = "100_catlo_grant_indulgence"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 0.75
+						}
+						add_country_modifier = {
+							name = "75_catlo_grant_indulgence"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 0.5
+						}
+						add_country_modifier = {
+							name = "50_catlo_grant_indulgence"
+							duration = 7300
+						}
+					}
+					else = {
+						add_country_modifier = {
+							name = "25_catlo_grant_indulgence"
+							duration = 7300
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}	
+			local_saint = {
+				cost = 100
+				potential = {
+					NOT = { tag = W83 }
+				}
+				allow = {
+					NOT = { war_with = W83 }
+					reform_desire = 1
+				}
+				effect = {
+					if = {
+						limit = {
+							reform_desire = 2
+						}
+						if = {
+							limit = {
+								stability = 3
+							}
+							add_adm_power = 150
+						}
+						else_if = {
+							limit = {
+								stability = 2
+							}
+							add_adm_power = 100
+							add_stability = 1
+						}
+						else_if = {
+							limit = {
+								stability = 1
+							}
+							add_adm_power = 50
+							add_stability = 2
+						}
+						else = {
+							add_stability = 3
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.5
+						}
+						if = {
+							limit = {
+								stability = 3
+							}
+							add_adm_power = 100
+						}
+						else_if = {
+							limit = {
+								stability = 2
+							}
+							add_adm_power = 50
+							add_stability = 1
+						}
+						else = {
+							add_stability = 2
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								stability = 3
+							}
+							add_adm_power = 50
+						}
+						else = {
+							add_stability = 1
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 1
+					modifier = {
+						factor = 2
+						NOT = { stability = 0 }
+					}
+				}
+			}
+			forgiveness_for_usury = {
+				cost = 50
+				potential = {
+					NOT = { tag = W83 }
+				}
+				allow = {
+					NOT = { war_with = W83 }
+					custom_trigger_tooltip = {
+						tooltip = catlo_allow_forgive_ursury
+						NOT = {
+							OR = {
+								has_country_modifier = 25_catlo_forgive_ursury
+								has_country_modifier = 50_catlo_forgive_ursury
+								has_country_modifier = 75_catlo_forgive_ursury
+								has_country_modifier = 100_catlo_forgive_ursury
+								has_country_modifier = 125_catlo_forgive_ursury
+								has_country_modifier = 150_catlo_forgive_ursury
+								has_country_modifier = 175_catlo_forgive_ursury
+								has_country_modifier = 200_catlo_forgive_ursury
+							}
+						}
+					}
+				}
+				effect = {
+					if = {
+						limit = {
+							reform_desire = 2
+						}
+						add_country_modifier = {
+							name = "200_catlo_forgive_ursury"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.75
+						}
+						add_country_modifier = {
+							name = "175_catlo_forgive_ursury"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.5
+						}
+						add_country_modifier = {
+							name = "150_catlo_forgive_ursury"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.25
+						}
+						add_country_modifier = {
+							name = "125_catlo_forgive_ursury"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1
+						}
+						add_country_modifier = {
+							name = "100_catlo_forgive_ursury"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 0.75
+						}
+						add_country_modifier = {
+							name = "75_catlo_forgive_ursury"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 0.5
+						}
+						add_country_modifier = {
+							name = "50_catlo_forgive_ursury"
+							duration = 7300
+						}
+					}
+					else = {
+						add_country_modifier = {
+							name = "25_catlo_forgive_ursury"
+							duration = 7300
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 1
+					modifier = {
+						factor = 0
+						NOT = { num_of_loans = 1 }
+					}
+				}
+			}			
+			proclaim_holy_war = {
+				cost = 50
+				potential = {
+					NOT = { tag = W83 }
+				}
+				allow = {
+					NOT = { war_with = W83 }
+					is_at_war = yes
+					custom_trigger_tooltip = {
+						tooltip = catlo_allow_holy_war
+						NOT = {
+							OR = {
+								has_country_modifier = 25_catlo_holy_war
+								has_country_modifier = 50_catlo_holy_war
+								has_country_modifier = 75_catlo_holy_war
+								has_country_modifier = 100_catlo_holy_war
+								has_country_modifier = 125_catlo_holy_war
+								has_country_modifier = 150_catlo_holy_war
+								has_country_modifier = 175_catlo_holy_war
+								has_country_modifier = 200_catlo_holy_war
+							}
+						}
+					}
+				}
+				effect = {
+					if = {
+						limit = {
+							reform_desire = 2
+						}
+						add_country_modifier = {
+							name = "200_catlo_holy_war"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.75
+						}
+						add_country_modifier = {
+							name = "175_catlo_holy_war"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.5
+						}
+						add_country_modifier = {
+							name = "150_catlo_holy_war"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.25
+						}
+						add_country_modifier = {
+							name = "125_catlo_holy_war"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1
+						}
+						add_country_modifier = {
+							name = "100_catlo_holy_war"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 0.75
+						}
+						add_country_modifier = {
+							name = "75_catlo_holy_war"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 0.5
+						}
+						add_country_modifier = {
+							name = "50_catlo_holy_war"
+							duration = 7300
+						}
+					}
+					else = {
+						add_country_modifier = {
+							name = "25_catlo_holy_war"
+							duration = 7300
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 1
+					modifier = {
+						factor = 0
+						manpower_percentage = 0.5
+					}
+				}
+			}
+			send_papal_legate = {
+				cost = 50
+				potential = {
+					NOT = { tag = W83 }
+					is_papal_controller = no
+				}
+				allow = {
+					NOT = { war_with = W83 }
+					custom_trigger_tooltip = {
+						tooltip = catlo_allow_papal_legate
+						NOT = {
+							OR = {
+								has_country_modifier = 25_catlo_papal_legate
+								has_country_modifier = 50_catlo_papal_legate
+								has_country_modifier = 75_catlo_papal_legate
+								has_country_modifier = 100_catlo_papal_legate
+								has_country_modifier = 125_catlo_papal_legate
+								has_country_modifier = 150_catlo_papal_legate
+								has_country_modifier = 175_catlo_papal_legate
+								has_country_modifier = 200_catlo_papal_legate
+							}
+						}
+					}
+				}
+				effect = {
+					if = {
+						limit = {
+							reform_desire = 2
+						}
+						add_country_modifier = {
+							name = "200_catlo_papal_legate"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.75
+						}
+						add_country_modifier = {
+							name = "175_catlo_papal_legate"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.5
+						}
+						add_country_modifier = {
+							name = "150_catlo_papal_legate"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.25
+						}
+						add_country_modifier = {
+							name = "125_catlo_papal_legate"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1
+						}
+						add_country_modifier = {
+							name = "100_catlo_papal_legate"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 0.75
+						}
+						add_country_modifier = {
+							name = "75_catlo_papal_legate"
+							duration = 7300
+						}
+					}
+					else_if = {
+						limit = {
+							reform_desire = 0.5
+						}
+						add_country_modifier = {
+							name = "50_catlo_papal_legate"
+							duration = 7300
+						}
+					}
+					else = {
+						add_country_modifier = {
+							name = "25_catlo_papal_legate"
+							duration = 7300
+						}
+					}
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}	
+			sanction_commercial_monopoly = {
+				cost = 50
+				potential = {
+					NOT = { tag = W83 }
+				}
+				allow = {
+					NOT = { war_with = W83 }
+					NOT = { mercantilism = 100 }
+				}
+				effect = {
+					if = {
+						limit = {
+							reform_desire = 2
+						}
+						add_mercantilism = 2
+						add_years_of_income = 2
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.75
+						}
+						add_mercantilism = 2
+						add_years_of_income = 1.5
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.5
+						}
+						add_mercantilism = 1
+						add_years_of_income = 1.5
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1.25
+						}
+						add_mercantilism = 1
+						add_years_of_income = 0.5
+					}
+					else_if = {
+						limit = {
+							reform_desire = 1
+						}
+						add_mercantilism = 1
+					}
+					else_if = {
+						limit = {
+							reform_desire = 0.75
+						}
+						add_years_of_income = 0.25
+					}
+					else_if = {
+						limit = {
+							reform_desire = 0.5
+						}
+						add_years_of_income = 0.1
+					}
+					else = {
+						add_years_of_income = 0.05
+					}
+				}
+				ai_will_do = {
+					factor = 1
+					modifier = {
+						factor = 0
+						NOT = { has_idea_group = trade_ideas }
+					}
+				}
+			}
+			investigate_heresy = {
+				curia_treasury_cost = 2500
+				potential = {
+					has_dlc = "Emperor"
+					is_papal_controller = yes
+					tag = W83
+				}
+				allow = {
+					is_papal_controller = yes
+					NOT = {
+						reform_desire = 1
+					}
+				}
+				effect = {
+					add_reform_desire = 0.05
+				}
+				ai_will_do = {
+					factor = 100
+					modifier = {
+						factor = 0
+						OR = {
+							has_country_flag = tradition_ending_failure_otrep
+							has_country_flag = modernization_ending_failure_otrep
+						}
+					}
+				}
+			}
+		}
+		heretic = { ROMANIST REVIVALIST }	
+	}
+	espiritismo = {
+		color = { 126 66 32 }
+		icon = 52
+		country = {
+			tolerance_own = 1
+			advisor_cost = -0.1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		fetishist_cult = yes
+		heretic = { OLD_CHRIST CULT_OF_SAINTS }	
+	}	
+	crusade_name = HOLY_WAR
+	harmonized_modifier = harmonized_newchristian_group
+}
+
+sacramental_group = {
+	flag_emblem_index_range = { 110 110 }
+	defender_of_faith = yes
+	can_form_personal_unions = yes
+	center_of_religion = 706 # Salt Lake City
+	
+	
+	dynastic = {
+		color = { 219 172 34 }
+		icon = 35
+		country = {
+			yearly_corruption = -0.05
+		 	tolerance_own = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		uses_anglican_power = yes				# Uses church power/aspect mechanics
+		
+		aspects = {
+			elevate_denomination_ecclesial
+			grand_quorum_procession
+			encourage_frontiersmen
+			evoke_spritual_guidance
+			tap_into_tithes
+		}
+		aspects_name = ANGLICAN_ASPECTS
+		
+		heretic = { DYNASTIC PETERDONIAN }	
+	}
+	sacramental = {
+		color = { 255 250 179 }
+		icon = 39
+		province = {
+			local_missionary_strength = -0.01
+		}
+		country = {
+		 	core_creation = -0.05
+			tolerance_heretic = -2
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		uses_anglican_power = yes				# Uses church power/aspect mechanics
+		
+		aspects = {
+			invite_council_representative
+			rally_priesthood
+			found_outreach_program
+			inspire_holy_wrath
+			promote_commerce
+		}
+		aspects_name = ANGLICAN_ASPECTS
+
+		heretic = { ROMANIST FRANCISCAN }	
+	}
+	theanite = {
+		color = { 21 84 107 }
+		icon = 40
+		country = {
+		 	tolerance_own = 1
+			tolerance_heretic = 2
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		uses_anglican_power = yes				# Uses church power/aspect mechanics
+		
+		aspects = {
+			connect_with_nature_theanite
+			require_reflection
+			channel_positive_energy
+			respect_ancient_ways
+			align_chakras
+		}
+		aspects_name = ANGLICAN_ASPECTS
+		
+		heretic = { TAYRNITE HEARTLIKE }	
+	}
+	harmonized_modifier = harmonized_sacramental_group
+}
+
+new_cannanite = {
+	defender_of_faith = yes
+	flag_emblem_index_range = { 110 110 }
+	
+	new_jewish = {
+		icon = 20
+		color = { 153 25 102 }
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+			tolerance_own = 2
+			advisor_pool = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		holy_sites = { 965 947 172 178 203 }
+
+		blessings = {
+			blessing_yasna
+			blessing_haoma
+			blessing_navjote
+			blessing_manthras
+			blessing_dakhma
+		}
+		
+		heretic = { ISREALITE CANAANITE }	
+	}
+	harmonized_modifier = harmonized_new_canaanite_group
+	crusade_name = HOLY_WAR
+}
+
+constitutionalist_group = {
+	defender_of_faith = yes
+	can_form_personal_unions = yes
+	flag_emblem_index_range = { 110 110 }
+	center_of_religion = 1225 # San Francisco
+	
+	religious_schools = {
+		###########################PARTISAN PARTIES###########################################
+		progressive_party = {
+			potential_invite_scholar = {
+				OR = {
+					knows_of_scholar_country_capital_trigger = yes
+				}
+				religion = partisan
+			}
+
+			# THIS = Nation wanting to invite the scholar, FROM = Nation that follows that school
+			can_invite_scholar = {
+				if = {
+					reverse_has_opinion = { who = FROM value = 150 }
+					OR = {
+						alliance_with = FROM
+						is_subject_of = FROM
+						overlord_of = FROM
+					}
+					hidden_progressive_opinion_for_scholar_trigger = yes
+				}
+				NOT = { has_country_modifier = progressive_party_modifier }
+			}
+
+			# THIS = Nation wanting to invite the scholar, FORM = Nation that sends scholar
+			on_invite_scholar = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = no_scholar_adm_cost }
+					}
+					adm_power_cost = 50
+				}
+				clear_representative_bonus_parties = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = progressive_party_modifier duration = 7300 }
+				if = {	#Ensures that the AI doesn't waste all of their ADM power on inviting scholars should they be able to invite them baseline
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = { name = has_invited_scholar_recently duration = 7300 hidden = yes }
+				}
+			}
+
+			# If you don't set this it will expand on_invite_scholar effect which might be super big
+			invite_scholar_modifier_display = progressive_party_modifier
+
+			picture = "GFX_icon_muslim_school_hanafi"
+
+			# religion_sub_modifier = no is possible, will hide icon in religious screen
+			horde_unity = 1
+			legitimacy = 1
+			republican_tradition = 0.2
+			devotion = 1
+		}
+		traditionalist_party = {
+			potential_invite_scholar = {
+				OR = {
+					knows_of_scholar_country_capital_trigger = yes
+				}
+				religion = partisan
+			}
+
+			# THIS = Nation wanting to invite the scholar, FROM = Nation that follows that school
+			can_invite_scholar = {
+				if = {
+					reverse_has_opinion = { who = FROM value = 150 }
+					OR = {
+						alliance_with = FROM
+						is_subject_of = FROM
+						overlord_of = FROM
+					}
+					hidden_progressive_opinion_for_scholar_trigger = yes
+				}
+				NOT = { has_country_modifier = traditionalist_party_modifier }
+			}
+
+			# THIS = Nation wanting to invite the scholar, FORM = Nation that sends scholar
+			on_invite_scholar = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = no_scholar_adm_cost }
+					}
+					adm_power_cost = 50
+				}
+				clear_representative_bonus_parties = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = traditionalist_party_modifier duration = 7300 }
+				if = {	#Ensures that the AI doesn't waste all of their ADM power on inviting scholars should they be able to invite them baseline
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = { name = has_invited_scholar_recently duration = 7300 hidden = yes }
+				}
+			}
+
+			# If you don't set this it will expand on_invite_scholar effect which might be super big
+			invite_scholar_modifier_display = traditionalist_party_modifier
+
+			picture = "GFX_icon_muslim_school_hanbali"
+
+			# religion_sub_modifier = no is possible, will hide icon in religious screen
+			global_unrest = -1
+			
+		}
+		freedonian_party = {
+			potential_invite_scholar = {
+				OR = {
+					knows_of_scholar_country_capital_trigger = yes
+				}
+				religion = partisan
+			}
+
+			# THIS = Nation wanting to invite the scholar, FROM = Nation that follows that school
+			can_invite_scholar = {
+				if = {
+					reverse_has_opinion = { who = FROM value = 150 }
+					OR = {
+						alliance_with = FROM
+						is_subject_of = FROM
+						overlord_of = FROM
+					}
+					hidden_progressive_opinion_for_scholar_trigger = yes
+				}
+				NOT = { has_country_modifier = freedonian_party_modifier }
+			}
+
+			# THIS = Nation wanting to invite the scholar, FORM = Nation that sends scholar
+			on_invite_scholar = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = no_scholar_adm_cost }
+					}
+					adm_power_cost = 50
+				}
+				clear_representative_bonus_parties = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = freedonian_party_modifier duration = 7300 }
+				if = {	#Ensures that the AI doesn't waste all of their ADM power on inviting scholars should they be able to invite them baseline
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = { name = has_invited_scholar_recently duration = 7300 hidden = yes }
+				}
+			}
+
+			# If you don't set this it will expand on_invite_scholar effect which might be super big
+			invite_scholar_modifier_display = freedonian_party_modifier
+
+			picture = "GFX_icon_muslim_school_maliki"
+
+			# religion_sub_modifier = no is possible, will hide icon in religious screen
+		 	trade_efficiency = 0.1
+		}
+		naturalist_party = {
+			potential_invite_scholar = {
+				OR = {
+					knows_of_scholar_country_capital_trigger = yes
+				}
+				religion = partisan
+			}
+
+			# THIS = Nation wanting to invite the scholar, FROM = Nation that follows that school
+			can_invite_scholar = {
+				if = {
+					reverse_has_opinion = { who = FROM value = 150 }
+					OR = {
+						alliance_with = FROM
+						is_subject_of = FROM
+						overlord_of = FROM
+					}
+					hidden_progressive_opinion_for_scholar_trigger = yes
+				}
+				NOT = { has_country_modifier = naturalist_party_modifier }
+			}
+
+			# THIS = Nation wanting to invite the scholar, FORM = Nation that sends scholar
+			on_invite_scholar = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = no_scholar_adm_cost }
+					}
+					adm_power_cost = 50
+				}
+				clear_representative_bonus_parties = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = naturalist_party_modifier duration = 7300 }
+				if = {	#Ensures that the AI doesn't waste all of their ADM power on inviting scholars should they be able to invite them baseline
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = { name = has_invited_scholar_recently duration = 7300 hidden = yes }
+				}
+			}
+
+			# If you don't set this it will expand on_invite_scholar effect which might be super big
+			invite_scholar_modifier_display = naturalist_party_modifier
+
+			picture = "GFX_icon_muslim_school_shafii"
+
+			# religion_sub_modifier = no is possible, will hide icon in religious screen
+		 	development_cost = -0.1
+		}
+		################################DESPOTIC PARTIES#############################################
+		blue_party = {
+			potential_invite_scholar = {
+				OR = {
+					knows_of_scholar_country_capital_trigger = yes
+				}
+				religion = despotic
+			}
+
+			# THIS = Nation wanting to invite the scholar, FROM = Nation that follows that school
+			can_invite_scholar = {
+				if = {
+					reverse_has_opinion = { who = FROM value = 150 }
+					OR = {
+						alliance_with = FROM
+						is_subject_of = FROM
+						overlord_of = FROM
+					}
+					hidden_progressive_opinion_for_scholar_trigger = yes
+				}
+				NOT = { has_country_modifier = blue_party_modifier }
+			}
+
+			# THIS = Nation wanting to invite the scholar, FORM = Nation that sends scholar
+			on_invite_scholar = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = no_scholar_adm_cost }
+					}
+					adm_power_cost = 50
+				}
+				clear_representative_bonus_parties = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = blue_party_modifier duration = 7300 }
+				if = {	#Ensures that the AI doesn't waste all of their ADM power on inviting scholars should they be able to invite them baseline
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = { name = has_invited_scholar_recently duration = 7300 hidden = yes }
+				}
+			}
+
+			# If you don't set this it will expand on_invite_scholar effect which might be super big
+			invite_scholar_modifier_display = blue_party_modifier
+
+			picture = "blueparty_gfxfile"
+
+			# religion_sub_modifier = no is possible, will hide icon in religious screen
+		  	advisor_cost = -0.1
+		}
+		red_party = {
+			potential_invite_scholar = {
+				OR = {
+					knows_of_scholar_country_capital_trigger = yes
+				}
+				religion = despotic
+			}
+
+			# THIS = Nation wanting to invite the scholar, FROM = Nation that follows that school
+			can_invite_scholar = {
+				if = {
+					reverse_has_opinion = { who = FROM value = 150 }
+					OR = {
+						alliance_with = FROM
+						is_subject_of = FROM
+						overlord_of = FROM
+					}
+					hidden_progressive_opinion_for_scholar_trigger = yes
+				}
+				NOT = { has_country_modifier = red_party_modifier }
+			}
+
+			# THIS = Nation wanting to invite the scholar, FORM = Nation that sends scholar
+			on_invite_scholar = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = no_scholar_adm_cost }
+					}
+					adm_power_cost = 50
+				}
+				clear_representative_bonus_parties = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = red_party_modifier duration = 7300 }
+				if = {	#Ensures that the AI doesn't waste all of their ADM power on inviting scholars should they be able to invite them baseline
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = { name = has_invited_scholar_recently duration = 7300 hidden = yes }
+				}
+			}
+
+			# If you don't set this it will expand on_invite_scholar effect which might be super big
+			invite_scholar_modifier_display = red_party_modifier
+
+			picture = "redparty_gfxfile"
+
+			# religion_sub_modifier = no is possible, will hide icon in religious screen
+			stability_cost_modifier = -0.1
+		}
+		yellow_party = {
+			potential_invite_scholar = {
+				OR = {
+					knows_of_scholar_country_capital_trigger = yes
+				}
+				religion = despotic
+			}
+
+			# THIS = Nation wanting to invite the scholar, FROM = Nation that follows that school
+			can_invite_scholar = {
+				if = {
+					reverse_has_opinion = { who = FROM value = 150 }
+					OR = {
+						alliance_with = FROM
+						is_subject_of = FROM
+						overlord_of = FROM
+					}
+					hidden_progressive_opinion_for_scholar_trigger = yes
+				}
+				NOT = { has_country_modifier = yellow_party_modifier }
+			}
+
+			# THIS = Nation wanting to invite the scholar, FORM = Nation that sends scholar
+			on_invite_scholar = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = no_scholar_adm_cost }
+					}
+					adm_power_cost = 50
+				}
+				clear_representative_bonus_parties = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = yellow_party_modifier duration = 7300 }
+				if = {	#Ensures that the AI doesn't waste all of their ADM power on inviting scholars should they be able to invite them baseline
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = { name = has_invited_scholar_recently duration = 7300 hidden = yes }
+				}
+			}
+
+			# If you don't set this it will expand on_invite_scholar effect which might be super big
+			invite_scholar_modifier_display = yellow_party_modifier
+
+			picture = "yellowparty_gfxfile"
+
+			# religion_sub_modifier = no is possible, will hide icon in religious screen
+			merchants = 1
+		}
+		green_party = {
+			potential_invite_scholar = {
+				OR = {
+					knows_of_scholar_country_capital_trigger = yes
+				}
+				religion = despotic
+			}
+
+			# THIS = Nation wanting to invite the scholar, FROM = Nation that follows that school
+			can_invite_scholar = {
+				if = {
+					reverse_has_opinion = { who = FROM value = 150 }
+					OR = {
+						alliance_with = FROM
+						is_subject_of = FROM
+						overlord_of = FROM
+					}
+					hidden_progressive_opinion_for_scholar_trigger = yes
+				}
+				NOT = { has_country_modifier = green_party_modifier }
+			}
+
+			# THIS = Nation wanting to invite the scholar, FORM = Nation that sends scholar
+			on_invite_scholar = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = no_scholar_adm_cost }
+					}
+					adm_power_cost = 50
+				}
+				clear_representative_bonus_parties = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = green_party_modifier duration = 7300 }
+				if = {	#Ensures that the AI doesn't waste all of their ADM power on inviting scholars should they be able to invite them baseline
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = { name = has_invited_scholar_recently duration = 7300 hidden = yes }
+				}
+			}
+
+			# If you don't set this it will expand on_invite_scholar effect which might be super big
+			invite_scholar_modifier_display = green_party_modifier
+
+			picture = "greenparty_gfxfile"
+
+			# religion_sub_modifier = no is possible, will hide icon in religious screen
+		 	leader_land_manuever = 1
+		}
+		################################ANARCHIST PARTIES#############################################
+		actionist_party = {
+			potential_invite_scholar = {
+				OR = {
+					knows_of_scholar_country_capital_trigger = yes
+				}
+				religion = anarchist
+			}
+
+			# THIS = Nation wanting to invite the scholar, FROM = Nation that follows that school
+			can_invite_scholar = {
+				if = {
+					reverse_has_opinion = { who = FROM value = 150 }
+					OR = {
+						alliance_with = FROM
+						is_subject_of = FROM
+						overlord_of = FROM
+					}
+					hidden_progressive_opinion_for_scholar_trigger = yes
+				}
+				NOT = { has_country_modifier = actionist_party_modifier }
+			}
+
+			# THIS = Nation wanting to invite the scholar, FORM = Nation that sends scholar
+			on_invite_scholar = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = no_scholar_adm_cost }
+					}
+					adm_power_cost = 50
+				}
+				clear_representative_bonus_parties = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = actionist_party_modifier duration = 7300 }
+				if = {	#Ensures that the AI doesn't waste all of their ADM power on inviting scholars should they be able to invite them baseline
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = { name = has_invited_scholar_recently duration = 7300 hidden = yes }
+				}
+			}
+
+			# If you don't set this it will expand on_invite_scholar effect which might be super big
+			invite_scholar_modifier_display = actionist_party_modifier
+
+			picture = "actionistparty_gfxfile"
+
+			# religion_sub_modifier = no is possible, will hide icon in religious screen
+		 	monthly_piety = 0.1
+		}
+		constitutionalist_party = {
+			potential_invite_scholar = {
+				OR = {
+					knows_of_scholar_country_capital_trigger = yes
+				}
+				religion = anarchist
+			}
+
+			# THIS = Nation wanting to invite the scholar, FROM = Nation that follows that school
+			can_invite_scholar = {
+				if = {
+					reverse_has_opinion = { who = FROM value = 150 }
+					OR = {
+						alliance_with = FROM
+						is_subject_of = FROM
+						overlord_of = FROM
+					}
+					hidden_progressive_opinion_for_scholar_trigger = yes
+				}
+				NOT = { has_country_modifier = constitutionalist_party_modifier }
+			}
+
+			# THIS = Nation wanting to invite the scholar, FORM = Nation that sends scholar
+			on_invite_scholar = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = no_scholar_adm_cost }
+					}
+					adm_power_cost = 50
+				}
+				clear_representative_bonus_parties = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = constitutionalist_party_modifier duration = 7300 }
+				if = {	#Ensures that the AI doesn't waste all of their ADM power on inviting scholars should they be able to invite them baseline
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = { name = has_invited_scholar_recently duration = 7300 hidden = yes }
+				}
+			}
+
+			# If you don't set this it will expand on_invite_scholar effect which might be super big
+			invite_scholar_modifier_display = constitutionalist_party_modifier
+
+			picture = "constitutionalistparty_gfxfile"
+
+			# religion_sub_modifier = no is possible, will hide icon in religious screen
+			monthly_piety = -0.1
+		}
+		goldencrat_party = {
+			potential_invite_scholar = {
+				OR = {
+					knows_of_scholar_country_capital_trigger = yes
+				}
+				religion = anarchist
+			}
+
+			# THIS = Nation wanting to invite the scholar, FROM = Nation that follows that school
+			can_invite_scholar = {
+				if = {
+					reverse_has_opinion = { who = FROM value = 150 }
+					OR = {
+						alliance_with = FROM
+						is_subject_of = FROM
+						overlord_of = FROM
+					}
+					hidden_progressive_opinion_for_scholar_trigger = yes
+				}
+				NOT = { has_country_modifier = goldencrat_party_modifier }
+			}
+
+			# THIS = Nation wanting to invite the scholar, FORM = Nation that sends scholar
+			on_invite_scholar = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = no_scholar_adm_cost }
+					}
+					adm_power_cost = 50
+				}
+				clear_representative_bonus_parties = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = goldencrat_party_modifier duration = 7300 }
+				if = {	#Ensures that the AI doesn't waste all of their ADM power on inviting scholars should they be able to invite them baseline
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = { name = has_invited_scholar_recently duration = 7300 hidden = yes }
+				}
+			}
+
+			# If you don't set this it will expand on_invite_scholar effect which might be super big
+			invite_scholar_modifier_display = goldencrat_party_modifier
+
+			picture = "goldencratparty_gfxfile"
+
+			# religion_sub_modifier = no is possible, will hide icon in religious screen
+		 	global_trade_goods_size_modifier = 0.05
+		}
+		protectioner_party = {
+			potential_invite_scholar = {
+				OR = {
+					knows_of_scholar_country_capital_trigger = yes
+				}
+				religion = anarchist
+			}
+
+			# THIS = Nation wanting to invite the scholar, FROM = Nation that follows that school
+			can_invite_scholar = {
+				if = {
+					reverse_has_opinion = { who = FROM value = 150 }
+					OR = {
+						alliance_with = FROM
+						is_subject_of = FROM
+						overlord_of = FROM
+					}
+					hidden_progressive_opinion_for_scholar_trigger = yes
+				}
+				NOT = { has_country_modifier = protectioner_party_modifier }
+			}
+
+			# THIS = Nation wanting to invite the scholar, FORM = Nation that sends scholar
+			on_invite_scholar = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = no_scholar_adm_cost }
+					}
+					adm_power_cost = 50
+				}
+				clear_representative_bonus_parties = yes
+				custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+				add_country_modifier = { name = protectioner_party_modifier duration = 7300 }
+				if = {	#Ensures that the AI doesn't waste all of their ADM power on inviting scholars should they be able to invite them baseline
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = { name = has_invited_scholar_recently duration = 7300 hidden = yes }
+				}
+			}
+
+			# If you don't set this it will expand on_invite_scholar effect which might be super big
+			invite_scholar_modifier_display = protectioner_party_modifier
+
+			picture = "protectionerparty_gfxfile"
+
+			# religion_sub_modifier = no is possible, will hide icon in religious screen
+			land_morale = 0.1
+		}
+	}
+	
+	partisan = {
+		color = { 69 157 208 }
+		icon = 58
+		country = {
+		 	diplomatic_reputation = 1
+			tolerance_heretic = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		allowed_conversion = {
+			anarchist
+			despotic
+		}
+		on_convert = {
+			change_religion = partisan
+			remove_country_modifier = mandatory_priesthood_draft_constitutionalist
+			remove_country_modifier = women_in_priesthood_constitutionalist
+			remove_country_modifier = act_of_establishment_consitutionalist
+			remove_country_modifier = enforced_high_liberalism_constitutionalist
+			remove_country_modifier = enforced_low_liberalism_constitutionalist
+			remove_country_modifier = passed_act_of_censure_constitutionalist
+			remove_country_modifier = spread_the_constitution_constitutionalist
+			remove_country_modifier = renounced_sacramental_roots_constitutionalist
+			add_prestige = -100
+			if = {
+				limit = {
+					has_religious_school = yes
+				}
+				change_party_to_partisan = yes
+			}
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}			
+		}
+		heretic = { SAMSONIAN ROCKITE }	
+		hre_religion = yes
+		uses_piety = yes	
+	}
+	anarchist = {
+		color = { 26 26 26 }
+		icon = 34
+		country = {
+		 	global_trade_goods_size_modifier = 0.05
+			tolerance_heretic = -2
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		allowed_center_conversion = {
+			partisan
+		}
+		will_get_center = { 
+			any_owned_province = {
+				can_have_center_of_reformation_trigger = {
+					RELIGION = anarchist
+				}
+			}
+		}
+		allowed_conversion = {
+			partisan
+			despotic
+		}
+		on_convert = {
+			change_religion = anarchist
+			remove_country_modifier = mandatory_priesthood_draft_constitutionalist
+			remove_country_modifier = women_in_priesthood_constitutionalist
+			remove_country_modifier = act_of_establishment_consitutionalist
+			remove_country_modifier = enforced_high_liberalism_constitutionalist
+			remove_country_modifier = enforced_low_liberalism_constitutionalist
+			remove_country_modifier = passed_act_of_censure_constitutionalist
+			remove_country_modifier = spread_the_constitution_constitutionalist
+			remove_country_modifier = renounced_sacramental_roots_constitutionalist
+			add_prestige = -100
+			if = {
+				limit = {
+					has_religious_school = yes
+				}
+				change_party_to_anarchist = yes
+			}
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+			hidden_effect = {
+				random_owned_province = {
+					limit = {
+						can_have_center_of_reformation_trigger = {
+							RELIGION = anarchist
+						}
+					}
+					change_religion = anarchist
+					add_reform_center = anarchist
+				}
+			}
+		}
+		date = 1553.1.1
+		uses_piety = yes	
+		heretic = { SUFFERAGETTE ORRIAN }	
+	}
+	despotic = {
+		color = { 168 168 168 }
+		icon = 41
+		allowed_center_conversion = {
+			partisan
+		}
+		country = {
+			horde_unity = 1
+			legitimacy = 1
+			republican_tradition = 0.2
+			devotion = 1
+			tolerance_heretic = -2
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		will_get_center = { 
+			any_owned_province = {
+				can_have_center_of_reformation_trigger = {
+					RELIGION = despotic
+				}
+			}
+		}
+		allowed_conversion = {
+			partisan
+			anarchist
+		}
+		on_convert = {
+			change_religion = despotic
+			add_prestige = -100
+			remove_country_modifier = mandatory_priesthood_draft_constitutionalist
+			remove_country_modifier = women_in_priesthood_constitutionalist
+			remove_country_modifier = act_of_establishment_consitutionalist
+			remove_country_modifier = enforced_high_liberalism_constitutionalist
+			remove_country_modifier = enforced_low_liberalism_constitutionalist
+			remove_country_modifier = passed_act_of_censure_constitutionalist
+			remove_country_modifier = spread_the_constitution_constitutionalist
+			remove_country_modifier = renounced_sacramental_roots_constitutionalist
+			if = {
+				limit = {
+					has_religious_school = yes
+				}
+				change_party_to_despotic = yes
+			}
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+			hidden_effect = {
+				random_owned_province = {
+					limit = {
+						can_have_center_of_reformation_trigger = {
+							RELIGION = despotic
+						}
+					}
+					change_religion = despotic
+					add_reform_center = despotic
+				}
+			}
+		}
+		heretic = { REGALIST TYRANIST }	
+		date = 1553.1.1
+		hre_heretic_religion = yes
+		uses_piety = yes	
+	}
+	
+	harmonized_modifier = harmonized_constitutionalist_group
+	
+	crusade_name = HOLY_WAR
+}
+
+islam_group = {
+	defender_of_faith = yes
+	flag_emblem_index_range = { 110 110 }
+	islam = {
+		color = { 164 240 24 }
+		icon = 5
+		province = {
+			local_missionary_strength = -0.01
+		}
+		country = {
+			infantry_power = 0.05
+		 	heir_chance = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		uses_judaism_power = yes
+		aspects_name = JEWISH_ASPECTS
+			
+		aspects = {
+			judaism_rosh_hashanah_aspect
+			judaism_simchat_torah_aspect
+			judaism_sukkot_aspect
+			judaism_communities_aspect
+			jewish_abrahamic_aspect
+			judaism_diplomatic_rabbi_aspect
+			judaism_yom_kippur_aspect
+			judaism_remember_passover_aspect
+			judaism_purim_teachings_aspect
+		}
+		
+		celebrate = {
+			cost = 200
+			potential = {
+			}
+			allow = {
+				custom_trigger_tooltip = {
+					tooltip = JUDAISM_HAS_ADM_ASPECT
+					OR = {
+						has_church_aspect = judaism_rosh_hashanah_aspect
+						has_church_aspect = judaism_simchat_torah_aspect
+						has_church_aspect = judaism_sukkot_aspect
+					}
+				}
+				if = {
+					limit = {
+						has_church_aspect = judaism_rosh_hashanah_aspect
+					}
+					any_owned_province = {
+						NOT = {
+							religion = islam
+						}
+					}
+				}
+			}
+			effect = {
+				if = {
+					limit = {
+						has_church_aspect = judaism_rosh_hashanah_aspect
+					}
+					random_owned_province = {
+						limit = {
+							NOT = {
+								religion = islam
+							}
+						}
+						change_religion = islam
+					}
+				}
+				if = { #When first select the aspect, it sets it then changes it after. This makes the tooltip work (kinda)
+					limit = {
+						has_church_aspect = judaism_simchat_torah_aspect
+					}
+					custom_tooltip = amount_to_add_based_on_religious_unity
+					hidden_effect = {
+						#first exports the religious unity value
+						export_to_variable = {
+							which = religious_unity_counter
+							value = religious_unity
+							who = ROOT
+						}
+						#Then multiplies it by 50. At max religious unity (1) get 50 of each power
+						multiply_variable = {
+							which = religious_unity_counter
+							value = 50
+						}
+						#Tooltip Variable gets set to 0
+						set_variable = {
+							which = islam_tooltip_variable
+							value = 0
+						}
+						#Now just add the power one at a time, and subtract till the end
+						while = {
+							limit = {
+								check_variable = {
+									which = religious_unity_counter
+									value = 1
+								}
+							}
+							add_adm_power = 1
+							add_dip_power = 1
+							add_mil_power = 1
+							#This ensures that there isn't a float value on the tooltip (add adm 40.85 instead of 40)
+							change_variable = {
+								which = islam_tooltip_variable
+								value = 1
+							}
+							subtract_variable = {
+								which = religious_unity_counter
+								value = 1
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_church_aspect = judaism_sukkot_aspect
+					}
+					add_years_of_income = 0.5
+				}
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		heretic = { SUNNIST SHIANS }	
+	}
+	harmonized_modifier = harmonized_islam_group
+	crusade_name = HOLY_WAR
+}
+
+ancient_faiths_group = {
+	defender_of_faith = yes
+	flag_emblem_index_range = { 110 110 }
+	yanantin = { #now known as Ñan
+		color = { 68 184 143 }
+		icon = 18
+		country = {
+		 	global_missionary_strength = -0.01
+		 	tolerance_own = 2
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		uses_karma = yes
+		heretic = { TAOANIST EQUILIBRIO }	
+	}
+	inua = {
+		color = { 200 215 227 }
+		icon = 13
+		province = {
+			local_missionary_strength = 0.01
+		}
+		country = {
+		 	stability_cost_modifier = -0.05
+			land_attrition = -0.1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		ancestors = yes
+		
+		heretic = { TOTEMIST INYAN }	
+	}
+	paganry = {
+		color = { 163 181 109 }
+		icon = 53
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+		 	land_forcelimit_modifier = 0.05
+		  	tolerance_own = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		doom = yes
+		declare_war_in_regency = yes
+		religious_reforms = yes
+		reform_tooltip = PAGANRY_REFORM_TOOLTIP
+		
+		heretic = { NORSE CELTIC }	
+	}
+	shamanist = {
+		color = { 214 175 237 }
+		icon = 12
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			global_unrest = -1
+		  	tolerance_own = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		religious_reforms = yes
+		reform_tooltip = SHAMANIST_REFORM_TOOLTIP
+		
+		heretic = { FETISHIST ANIMIST }	
+	}
+	idolatrous = {
+		color = { 245 179 66 }
+		icon = 9
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			province_warscore_cost = -0.05
+		  	tolerance_own = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		authority = yes
+		religious_reforms = yes
+		reform_tooltip = IDOLATROUS_REFORM_TOOLTIP
+		
+		heretic = { MUSLAMITE HINDIAN }	
+	}
+	penitent = {
+		color = { 153 255 209 }
+		icon = 49
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+		 	stability_cost_modifier = -0.1
+		  	tolerance_heathen = 2
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		personal_deity = yes
+		heretic = { REVELITE FEARFUL }	
+	}
+	harmonized_modifier = harmonized_native_faiths_group
+	crusade_name = HOLY_WAR
+}
+
+collectivist_group = {
+	center_of_religion = 2304 #This was here in the past so its here now
+	defender_of_faith = yes
+	flag_emblem_index_range = { 110 110 }
+	collectivist = {
+		color = { 221 0 0 }
+		icon = 45
+		province = {
+			local_missionary_strength = -0.01
+		}
+		country = {
+		 	production_efficiency = 0.05
+		 	tolerance_heathen = 2
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		heretic = { COMMUNIST SOCIALIST }	
+		will_get_center = { 
+			any_owned_province = {
+				can_have_center_of_reformation_trigger = {
+					RELIGION = collectivist
+				}
+			}
+		}
+		has_patriarchs = yes		# Uses patriarch authority
+		
+		orthodox_icons = {
+		# If no icon has ai_will_do above 1 - <current patriarch authority> , the AI will not enact it. (60% PA = 0.6 -> ai_will_do has to be at least 0.4)
+			icon_michael = {
+				technology_cost = -0.05
+				global_institution_spread = 0.1
+				
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+					modifier = {
+						factor = 1
+						any_neighbor_country = {
+							tech_difference = 2
+						} 
+					}
+					modifier = {
+						factor = 3
+						any_neighbor_country = {
+							tech_difference = 3
+						} 
+					}
+				}
+			}
+			icon_eleusa = {
+				stability_cost_modifier = -0.15
+				global_unrest = -3
+				
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+					modifier = {
+						factor = 0
+						stability = 2
+					}
+					modifier = {
+						factor = 3
+						calc_true_if = {
+							all_owned_province = {
+								unrest = 1
+							}
+							amount = 5
+						}
+					}
+				}
+			}
+			icon_pancreator = {
+				land_morale = 0.1
+				province_warscore_cost = -0.1
+				
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			icon_nicholas = {
+				global_manpower_modifier = 0.25
+				land_attrition = -0.1
+				
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			icon_climacus = {
+				production_efficiency = 0.1
+				development_cost = -0.1
+				
+				allow = {
+					always = yes
+				}
+				ai_will_do = {
+					factor = 0.8
+				}
+			}
+		}
+		on_convert = {
+			change_religion = collectivist
+			add_prestige = -100
+			
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}			
+		}
+	}
+	harmonized_modifier = harmonized_collectivist_group
+	crusade_name = HOLY_WAR
+}

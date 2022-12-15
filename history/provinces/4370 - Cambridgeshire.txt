@@ -1,0 +1,16 @@
+#4370 - Cambridgeshire
+#Includes Cambridgeshire+Huntingdonshire+Bedfordshire
+discovered_by = indian
+owner = V99
+controller = V99
+add_core = V99
+culture = neofilipino
+religion = espiritismo
+hre = no
+fort_15th = yes
+base_tax = 3
+base_production = 3
+trade_goods = fish #i guess
+base_manpower = 3
+capital = "Cambridge"
+is_city = yes

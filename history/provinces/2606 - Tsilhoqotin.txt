@@ -1,0 +1,15 @@
+# No previous file for Tsilhoqotin
+discovered_by = western
+discovered_by = eastern
+owner = W13
+controller = W13
+add_core = W13
+culture = inner_salishan
+religion = theanite
+capital = "Tsilhqotin"
+trade_goods = copper #Mount Polley Mine
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

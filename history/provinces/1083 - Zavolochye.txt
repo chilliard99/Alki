@@ -1,0 +1,17 @@
+#1083 - Vetluga ( formerly Zavolochye )
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y61
+controller = Y61
+add_core = Y61
+capital = "Yur"
+culture = renonians
+religion = partisan
+trade_goods = cloth #viking silks
+hre = yes
+base_tax = 7
+base_production = 7
+base_manpower = 5
+is_city = yes

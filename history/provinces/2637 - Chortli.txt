@@ -1,0 +1,18 @@
+# No previous file for Chortli
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W98
+controller = W98
+add_core = W98
+is_city = yes
+culture = catracho
+religion = catholico
+capital = "Chortli"
+trade_goods = grain #bananas
+center_of_trade = 1
+hre = no
+fort_15th = yes
+base_tax = 7
+base_production = 7
+base_manpower = 6

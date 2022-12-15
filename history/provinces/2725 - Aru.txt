@@ -1,0 +1,15 @@
+#2725 - Aru
+discovered_by = ottoman
+discovered_by = muslim
+owner = W71
+controller = W71
+add_core = W71
+culture = durangan
+religion = catholico
+capital = "Aru"
+trade_goods = gold #huge silver mine
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

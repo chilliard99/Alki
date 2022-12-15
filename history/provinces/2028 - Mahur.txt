@@ -1,0 +1,17 @@
+#2028 - Mahur
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y95
+controller = Y95
+add_core = Y95
+culture = paiute
+religion = partisan
+capital = "Mahur"
+trade_goods = fish #warmsprings fisheries? thats what they say they do
+hre = yes
+base_tax = 2
+base_production = 2
+base_manpower = 3
+is_city = yes

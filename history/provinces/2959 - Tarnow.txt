@@ -1,0 +1,17 @@
+#2959 - Tarnow
+discovered_by = ottoman
+discovered_by = muslim
+owner = W81
+controller = W81
+add_core = W81
+capital = "Tarnów"
+culture = zacatecan
+religion = catholico
+trade_goods = livestock #leather crafts
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+
+

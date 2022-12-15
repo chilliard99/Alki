@@ -1,0 +1,17 @@
+government_rank = 1
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = daneslander
+religion = paganry
+technology_group = north_american
+capital = 4142	# Long Danish Word
+
+1444.11.11 = {
+	monarch = {
+		name = "European Council"
+		adm = 1
+		dip = 1
+		mil = 1
+		regent = yes
+	}
+}

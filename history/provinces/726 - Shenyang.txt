@@ -1,0 +1,17 @@
+#726 - Liaodong
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y33
+controller = Y33
+add_core = Y33
+culture = zionist
+religion = sacramental
+capital = "Shenyang"
+trade_goods = cotton #Was called dixie cause uhh young was like "we need cotton in case of war" so now it has cotton?
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 2
+is_city = yes

@@ -1,0 +1,16 @@
+# No previous file for Tzul
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W92
+controller = W92
+add_core = W92
+culture = garifunan
+religion = catholico
+capital = "Tute"
+trade_goods = spices #amazin cardamom
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

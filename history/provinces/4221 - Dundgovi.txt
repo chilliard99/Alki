@@ -1,0 +1,15 @@
+#4221 - Dundgovi
+discovered_by = ottoman
+discovered_by = muslim
+owner = V11
+controller = V11
+add_core = V11
+culture = dominican
+religion = espiritismo
+capital = "Dundgovi"
+trade_goods = sugar #batays
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

@@ -1,0 +1,15 @@
+#108 - Verona
+discovered_by = chinese
+owner = X16
+controller = X16
+add_core = X16
+culture = niigatan 
+religion = neoshinto 
+hre = no 
+base_tax = 3
+base_production = 4
+trade_goods = fish #lotta salmon
+base_manpower = 4
+capital = "Verona" 
+is_city = yes 
+discovered_by = eastern

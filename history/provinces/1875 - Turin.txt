@@ -1,0 +1,17 @@
+#1875 - Cuneo (can't change filename)
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y35
+controller = Y35
+add_core = Y35
+culture = metropolitan_shoshone
+religion = sacramental
+hre = no
+base_tax = 4
+base_production = 4
+trade_goods = sugar #sugar beets
+base_manpower = 4
+capital = "Cuneo"
+is_city = yes	

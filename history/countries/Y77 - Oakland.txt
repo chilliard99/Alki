@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = franciscan
+religion = partisan
+technology_group = western
+capital = 1273	 #Muir
+religious_school = progressive_party
+
+1406.2.10 = {
+	monarch = {
+		name = "Lewis 'The Younger'"
+		dynasty = "Francisco"
+		birth_date = 1406.2.10
+		adm = 5
+		dip = 3
+		mil = 5
+	}
+}

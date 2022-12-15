@@ -1,0 +1,16 @@
+government_rank = 1
+government = native
+primary_culture = neoswahili
+religion = shamanist
+technology_group = mesoamerican
+capital = 2789	#Las Khorsey
+
+1444.11.11 = {
+	monarch = {
+		name = "Somali Council"
+		adm = 1
+		dip = 1
+		mil = 1
+		regent = yes
+	}
+}

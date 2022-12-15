@@ -1,0 +1,16 @@
+#1830 - Tajima
+discovered_by = chinese
+owner = X33
+controller = X33
+add_core = X33
+culture = chugokan
+religion = neoshinto
+capital = "Tottori"
+trade_goods = fish #techically it should be storks? but fish for the river or whatever let me be
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 2
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman

@@ -1,0 +1,17 @@
+#1070 - Koda
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y58
+controller = Y58
+add_core = Y58
+culture = portugers
+religion = partisan
+capital = "Narim"
+trade_goods = livestock #Cows
+hre = yes
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

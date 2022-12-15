@@ -1,0 +1,20 @@
+#940 - Kentucky
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = muslim
+discovered_by = ottoman
+fort_15th = yes
+discovered_by = western
+owner = X91
+controller = X91
+add_core = X91
+culture = buckeye
+religion = islam
+capital = "Kentucky"
+trade_goods = silk #Buckeye Silk
+hre = no
+base_tax = 7
+base_production = 6
+base_manpower = 6
+is_city = yes
+center_of_trade = 1

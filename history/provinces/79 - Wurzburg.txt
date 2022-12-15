@@ -1,0 +1,17 @@
+#79 - Würzburg
+discovered_by = chinese
+add_core = X32
+controller = X32
+owner = X32
+culture = chugokan
+religion = neoshinto
+base_tax = 4
+base_production = 4
+trade_goods = livestock #Kobe Beef
+base_manpower = 3
+capital = "Würzburg"
+hre = no
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman
+fort_15th = yes

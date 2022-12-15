@@ -1,0 +1,16 @@
+# No previous file for Tepeacac
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W85
+controller = W85
+add_core = W85
+is_city = yes
+religion = catholico
+culture = jarocho
+capital = "Tepeacac"
+trade_goods = dyes #flower market
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4

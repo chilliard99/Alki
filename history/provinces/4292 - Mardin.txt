@@ -1,0 +1,17 @@
+#4392 - Mardin
+discovered_by = south_american
+culture = arabian
+religion = idolatrous
+capital = "Mardin"
+trade_goods = grain #amazin
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = no
+native_size = 80
+native_ferocity = 4
+native_hostileness = 9 
+owner = Z49
+controller = Z49
+add_core = Z49

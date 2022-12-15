@@ -1,0 +1,15 @@
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V00
+controller = V00
+add_core = V00
+culture = catracho
+religion = catholico
+capital = "Chokwe"
+trade_goods = livestock #Dairy
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

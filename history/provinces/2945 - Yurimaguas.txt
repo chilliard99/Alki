@@ -1,0 +1,16 @@
+# - Yurimaguas
+discovered_by = indian
+owner = V77
+controller = V77
+add_core = V77
+culture = newthai
+religion = yanantin
+capital = "Yurimaguas"
+trade_goods = grain #Idk
+hre = no
+fort_15th = yes
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes
+center_of_trade = 1

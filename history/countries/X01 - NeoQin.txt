@@ -1,0 +1,17 @@
+government_rank = 1
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = chihan
+religion = shenism
+technology_group = andean
+capital = 1816	# Beijing
+
+1444.11.11 = {
+	monarch = {
+		name = "Chinese Council"
+		adm = 1
+		dip = 1
+		mil = 1
+		regent = yes
+	}
+}

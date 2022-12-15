@@ -1,0 +1,18 @@
+#362 - Delta
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = X93
+controller = X93
+add_core = X93
+culture = hellaldan
+religion = islam
+capital = "Rashid"
+trade_goods = copper #Copper Capital for a while
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes
+discovered_by = western

@@ -1,0 +1,16 @@
+#820 - Quito
+discovered_by = indian
+owner = V93
+controller = V93
+add_core = V93
+culture = ecuadorian
+religion = catholico
+capital = "Quito"
+is_city = yes
+trade_goods = coffee #important export and production center
+hre = no
+fort_15th = yes
+base_tax = 4
+base_production = 4
+base_manpower = 3
+center_of_trade = 1

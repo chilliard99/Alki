@@ -1,0 +1,15 @@
+#489 - Tortuga
+discovered_by = ottoman
+discovered_by = muslim
+owner = V07
+controller = V07
+add_core = V07
+culture = haitian
+religion = espiritismo
+capital = "Tortuga"
+trade_goods = coffee #French wikipedia says coffee and bananas 
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

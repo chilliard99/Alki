@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = rosaritan
+religion = partisan
+technology_group = western
+capital = 2388	 #Mexicali
+religious_school = traditionalist_party
+
+1399.5.12 = {
+	monarch = {
+		name = "Sergio"
+		dynasty = "de Mexicali"
+		birth_date = 1399.5.12
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}
+1429.5.16 = {
+	heir = {
+		name = "Salvador"
+		monarch_name = "Salvador IV"
+		dynasty = "de Mexicali"
+		birth_date = 1429.5.16
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 3
+		mil = 1
+	}
+}

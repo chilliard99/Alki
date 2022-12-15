@@ -1,0 +1,74 @@
+country_decisions = {
+
+	
+	engage_national_obsession = {
+		major = yes
+		potential = {
+			has_country_flag = national_obsession
+		}
+		allow = {
+			is_at_war = no
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							national_focus = ADM
+							national_focus = DIP
+							national_focus = MIL
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = requires_national_focus.tt
+					always = no
+				}
+			}
+			NOT = {
+				OR = {
+					has_country_modifier = national_obession_engaged
+					has_country_modifier = adm_national_obession
+					has_country_modifier = dip_national_obession
+					has_country_modifier = mil_national_obession
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					national_focus = ADM
+				}
+				add_country_modifier = {
+					name = "adm_national_obession"
+					duration = 3650
+				}
+			}
+			if = {
+				limit = {
+					national_focus = DIP
+				}
+				add_country_modifier = {
+					name = "dip_national_obession"
+					duration = 3650
+				}
+			}
+			if = {
+				limit = {
+					national_focus = MIL
+				}
+				add_country_modifier = {
+					name = "mil_national_obession"
+					duration = 3650
+				}
+			}
+			add_country_modifier = {
+				name = "national_obession_engaged"
+				duration = 365
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+}

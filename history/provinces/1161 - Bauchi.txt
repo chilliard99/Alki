@@ -1,0 +1,17 @@
+#1161 - Bauchi
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y44
+controller = Y44
+add_core = Y44
+culture = goldbugger
+religion = partisan
+capital = "Bauchi"
+trade_goods = iron #fuck it buena vista
+hre = yes
+base_tax = 3
+base_production = 3
+base_manpower = 4
+is_city = yes

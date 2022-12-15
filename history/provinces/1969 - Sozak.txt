@@ -1,0 +1,17 @@
+#1969 - Syghnak
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y89
+controller = Y89
+add_core = Y89
+culture = oregonite
+religion = partisan
+capital = "Sozak"
+trade_goods = livestock #tillamook cheese
+base_tax = 1 
+base_production = 2
+base_manpower = 2
+hre = yes
+is_city = yes

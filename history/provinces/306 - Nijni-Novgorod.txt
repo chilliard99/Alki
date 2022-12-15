@@ -1,0 +1,18 @@
+#306 - Nijni-Novgorod
+discovered_by = eastern
+discovered_by = chinese
+owner = X67
+controller = X67 
+add_core = X67
+culture = neo_cree
+religion = dynastic
+hre = no
+base_tax = 5
+base_production = 5
+trade_goods = naval_supplies #Thunder Bay Supplies 
+base_manpower = 6
+capital = "Nizhny Novgorod"
+is_city = yes
+add_core = X72
+discovered_by = western
+center_of_trade = 1

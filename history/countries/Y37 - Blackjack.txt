@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = nez_perce
+religion = theanite
+technology_group = western
+capital = 1938	 #Blackjack
+
+1431.8.15 = {
+	monarch = {
+		name = "Daklegon"
+		dynasty = "Hoskie"
+		birth_date = 1431.8.15
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}

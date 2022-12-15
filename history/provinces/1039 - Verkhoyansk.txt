@@ -1,0 +1,17 @@
+#1039 - Verkhoyansk
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y28
+controller = Y28
+add_core = Y28
+culture = gasconian
+religion = sacramental
+capital = "Verkhoyansk"
+trade_goods = wine #from the France trade goods
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes

@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = ensenadan
+religion = partisan
+technology_group = western
+capital = 2394	 #Bahia de los angeles
+religious_school = progressive_party
+
+1412.5.12 = {
+	monarch = {
+		name = "Luis III"
+		dynasty = "Marmol"
+		birth_date = 1409.10.31
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1413.3.13 = {
+	heir = {
+		name = "Luis"
+		monarch_name = "Luis IV"
+		dynasty = "Marmol"
+		birth_date = 1413.3.13
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}

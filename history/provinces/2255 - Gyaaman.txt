@@ -1,0 +1,15 @@
+
+discovered_by = western
+discovered_by = eastern
+owner = W08
+controller = W08
+add_core = W08
+is_city = yes
+culture = haidan 
+religion = collectivist
+capital = "Amanvi"
+trade_goods = fish #idk
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 1

@@ -1,0 +1,17 @@
+#2048 - Jeypore
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y42
+controller = Y42
+add_core = Y42
+culture = seattlain
+religion = partisan
+capital = "Jeypore"
+trade_goods = naval_supplies #Big forest
+hre = yes
+base_tax = 4
+base_production = 4
+base_manpower = 5
+is_city = yes

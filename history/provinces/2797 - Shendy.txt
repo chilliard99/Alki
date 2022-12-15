@@ -1,0 +1,14 @@
+#2797 - Shendy
+discovered_by = ottoman
+discovered_by = muslim
+owner = W59
+controller = W59
+add_core = W59
+culture = tamper
+religion = catholico
+capital = "Shendy"
+is_city = yes
+trade_goods = fish #mainly maratime
+base_manpower = 2
+base_tax = 3
+base_production = 2

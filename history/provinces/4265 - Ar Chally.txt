@@ -1,0 +1,18 @@
+#2421 - Ar-Chally
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V64
+controller = V64
+add_core = V64
+culture = antioqueno
+religion = catholico
+hre = no
+base_tax = 2 
+base_production = 1
+trade_goods = coffee #just so much coffee
+base_manpower = 1
+capital = "Ar-Chally"
+is_city = yes
+
+

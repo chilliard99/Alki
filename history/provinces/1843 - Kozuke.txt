@@ -1,0 +1,16 @@
+#1843 - Kozuke
+discovered_by = chinese
+owner = X24
+controller = X24
+add_core = X24
+culture = high_nippon
+religion = neoshinto
+capital = "Mayabashi"
+trade_goods = grain #rice
+hre = no
+base_tax = 10
+base_production = 4
+base_manpower = 4
+is_city = yes
+discovered_by = eastern
+fort_15th = yes

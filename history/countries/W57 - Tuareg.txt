@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = bereber
+religion = catholico
+technology_group = muslim
+capital = 2710	 #Cuarenta Casas
+
+
+1432.3.13 = {
+	monarch = {
+		name = "Kiva"
+		dynasty = "Hinan"
+		birth_date = 1430.3.13
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1444.10.13 = {
+	heir = {
+		name = "Don Juan"
+		monarch_name = "Don Juan IV"
+		dynasty = "Hinan"
+		birth_date = 1444.10.13
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 4
+		mil = 6
+	}
+}

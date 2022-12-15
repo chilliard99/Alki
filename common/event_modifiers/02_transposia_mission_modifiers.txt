@@ -1,0 +1,954 @@
+########################SHOGUN MODIFIERS########################
+the_new_shogun_court = {
+	advisor_cost = -0.05
+	global_tax_income = 10
+	reduced_liberty_desire = 5
+} 
+
+city_of_the_east = {
+	local_development_cost = -0.2
+	province_trade_power_modifier = 0.2
+} 
+
+the_southern_cities_united = {
+	prestige = 0.5
+	core_creation = -0.1
+} 
+
+the_lost_city_returned = {
+ 	local_production_efficiency = 0.05
+	local_development_cost = -0.1
+	tax_income = 5
+} 
+
+the_southern_sphere = {
+ 	governing_capacity_modifier = 0.05
+} 
+
+nippon_restored = {
+	land_morale = 0.05
+} 
+
+exploratory_spirit = {
+ 	range = 0.2
+} 
+
+yoroppa_feaver = {
+ 	colonists = 1
+} 
+
+yoroppa_feaverII = {
+ 	global_colonial_growth = 10
+} 
+
+yoroppa_feaverIII = {
+	expel_minorities_cost = -0.1
+} 
+
+pagans_in_the_streets = {
+	local_development_cost = 0.1
+	local_missionary_strength = 0.02
+	local_unrest = 3
+} 
+
+paris_destroyed = {
+	local_development_cost = 0.5
+}
+
+king_of_the_bundesland = {
+	years_of_nationalism = -2.5
+	prestige = 0.5
+}
+
+yoroppan_dominence = {
+	colonists = 1
+}
+
+great_tokyo = {
+ 	local_development_cost = -0.05
+	tax_income = 10
+ 	local_production_efficiency = 0.1
+ 	local_institution_spread = 0.5
+}
+
+nippons_glory = {
+ 	merchants = 1
+}
+
+###################BUCKEYE MODIFIERS########################
+
+betrayer_amongst_the_ranks = {
+ 	land_morale = 0.10
+	siege_ability = 0.10
+	discipline = 0.01
+}
+
+virginian_compliance = {
+ 	local_missionary_strength = 0.05
+ 	local_unrest = -5
+}
+
+new_monticello = {
+ 	local_development_cost = -0.05
+	local_tax_modifier = 0.05
+	local_production_efficiency = 0.05
+}
+
+new_kaaba_custodian = {
+ 	stability_cost_modifier = -0.1
+	global_unrest = -1
+}
+
+grand_buckeye_vizier_employed = {
+ 	discipline = 0.025
+}
+
+siaphi_captain_installed = {
+  	global_tax_modifier = 0.1
+}
+
+ulama_founder_employed = {
+ 	technology_cost = -0.05
+}
+
+empty_ohio_government = {
+	core_creation = 0.05
+	development_cost = 0.1
+	army_tradition_decay = 0.01
+}
+
+resistant_insitutions = {
+	stability_cost_modifier = 1.5
+}
+
+vizier_in_power = {
+	stability_cost_modifier = 1.5
+	land_morale = 0.10
+}
+
+the_sultan_in_stlouis = {
+	local_development_cost = -0.1
+}
+
+the_city_of_peter = {
+	local_institution_spread = 0.1
+ 	local_production_efficiency = 0.1
+}
+
+the_old_order = {
+	legitimacy = 0.5
+	global_unrest = -2
+}
+
+the_city_of_industry = {
+	legitimacy = 0.5
+	global_unrest = -2
+}
+
+an_islamist_on_the_throne = {
+	diplomatic_reputation = 1
+	legitimacy = 0.5
+}
+
+the_greentide = {
+	global_unrest = -1
+	stability_cost_modifier = -0.1
+}
+
+homeland_ohio = {
+	local_production_efficiency = 0.1
+	local_institution_spread = 0.1
+}
+
+independence_for_the_ohio_company = {
+	trade_efficiency = 0.05
+}
+
+centralized_ohioan_trade = {
+ 	global_own_trade_power = 0.05
+}
+
+settling_michigan = {
+ 	local_culture_conversion_cost = -0.25
+	local_unrest = -1
+}
+
+claiming_the_lakes_jewel = {
+ 	land_morale = 0.10
+	siege_ability = 0.10
+}
+
+expanded_ohio_company = {
+	trade_efficiency = 0.1
+}
+
+the_caliphs_island = {
+	local_manpower_modifier = 0.5
+	local_sailors_modifier = 0.25
+	local_development_cost = -0.1
+}
+
+employ_canadian_colonists = {
+	colonists = 1
+	colonist_placement_chance = 0.05
+}
+
+beylerbey_of_canada = {
+	country_admin_power = 1
+	country_diplomatic_power = 1
+	country_military_power = 1
+}
+
+reiwan_knowledge = {
+	technology_cost = -0.05
+}
+
+italian_runoff = {
+	production_efficiency = 0.05
+}
+
+the_legacy_of_abu = {
+	production_efficiency = 0.05
+}
+
+whitefish_ports = {
+	trade_goods_size_modifier = 0.2
+}
+
+cities_of_ideas = {
+ 	idea_cost = -0.025
+}
+
+the_canaan_campaign = {
+ 	core_creation = -0.05
+	province_warscore_cost = -0.05
+	ae_impact = -0.1
+}
+
+mosque_of_albany = {
+ 	prestige_decay = -0.01
+	missionaries = 1
+}
+
+angered_religious_minorities_ohio = {
+ 	tolerance_heathen = -1
+}
+
+jewish_minorities_appeased = {
+ 	tolerance_heathen = 1
+}
+
+rebuilding_canaan_project = {
+ 	local_development_cost = -0.1
+	local_build_cost = -0.25
+	local_build_time = -0.25
+}
+
+canaan_conversion_initiative = {
+ 	local_missionary_strength = 0.03
+	local_culture_conversion_cost = -0.75
+}
+
+goodriver_seperatism = {
+ 	local_unrest = 5
+}
+################KANATA MODIFIERS#########################
+
+fort_traverse_restored = {
+ 	local_development_cost = -0.05
+}
+
+kanata_discontent_sown = {
+ 	global_unrest = 2
+}
+
+lafayette_lands_reclaimed = {
+ 	global_unrest = -2
+	global_missionary_strength = 0.02
+}
+
+the_ontarian_network = {
+ 	vassal_forcelimit_bonus = 0.25
+}
+
+suzerain_of_the_lakes = {
+ 	vassal_forcelimit_bonus = 1
+	reduced_liberty_desire = 15
+	diplomatic_reputation = 2
+}
+
+hudson_gulf_bonuses_kanata = {
+ 	development_cost = -0.1
+}
+
+revived_infrastructure = {
+ 	production_efficiency = 0.2
+}
+
+arborean_conversions = {
+ 	local_missionary_strength = 0.03
+}
+
+kanatan_benevolence = {
+ 	tolerance_heathen = 2
+}
+
+heart_of_the_lakes = {
+ 	local_development_cost = -0.1
+	trade_goods_size = 0.15
+	local_tax_modifier = 0.15
+	local_state_maintenance_modifier = -0.2
+}
+
+great_lakes_hegemon = {
+ 	diplomats = 1
+}
+
+staple_port_maritime = {
+ 	local_development_cost = -0.1
+	trade_goods_size = 0.05
+	local_build_time = -0.25
+	local_build_cost = -0.1
+}
+
+ancient_remanents = {
+  	technology_cost = -0.05
+}
+
+akilineqa_powerful_colony = {
+ 	colonists = 1
+}
+
+tundria_powerful_colony = {
+ 	land_forcelimit_modifier = 0.33
+}
+
+colonial_hegemon_kanata = {
+ 	reduced_liberty_desire = 15
+}
+
+unearthing_relics = {
+ 	tolerance_own = 3
+}
+
+true_thalassocracy_kanata = {
+ 	reduced_liberty_desire = 5
+ 	naval_forcelimit_modifier = 0.33
+ 	trade_efficiency = 0.1
+	navy_tradition = 1
+	merchants = 1
+}
+
+capital_of_new_ontario = {
+	local_development_cost = -0.1
+}
+
+calm_waves_kanata = {
+	naval_morale = 0.1
+}
+
+global_influence_kanata = {
+ 	global_trade_power = 0.15
+}
+
+enforced_spehere_status = {
+ 	diplomatic_reputation = -1
+}
+
+lafayette_conversion = {
+	global_missionary_strength = 0.05
+	missionaries = 1
+}
+
+##########################TEXAN MODIFIERS##################################
+
+poor_bureaucracy = {
+ 	min_local_autonomy = 75
+}
+
+disorganized_tradeI = {
+ 	merchants = -1
+	global_own_trade_power = -0.1
+	global_trade_power = -0.1
+	trade_efficiency = -0.2
+}
+
+disorganized_tradeII = {
+	global_own_trade_power = -0.1
+	global_trade_power = -0.1
+	trade_efficiency = -0.2
+}
+
+ineffective_economy = {
+ 	global_tax_modifier = -0.25
+	production_efficiency = -0.1
+}
+
+disloyal_forcesI = {
+	land_forcelimit_modifier = -0.25
+ 	discipline = -0.1
+ 	war_exhaustion = 0.03
+}
+
+disloyal_forcesII = {
+ 	discipline = -0.1
+ 	war_exhaustion = 0.03
+}
+
+disloyal_forcesIII = {
+ 	war_exhaustion = 0.03
+}
+
+tenuous_reputationI = {
+	diplomatic_reputation = -2
+	diplomats = -1
+}
+
+tenuous_reputationII = {
+	diplomatic_reputation = -2
+}
+
+total_corruption = {
+	yearly_corruption = 1
+}
+
+creatively_bankruptI = {
+ 	technology_cost = 0.1
+	idea_cost = 0.1
+	embracement_cost = 0.1
+}
+
+creatively_bankruptII = {
+	idea_cost = 0.1
+	embracement_cost = 0.1
+}
+
+creatively_bankruptIII = {
+	idea_cost = 0.1
+}
+
+abandonded_generals = {
+ 	country_military_power = -3
+ 	general_cost = 1
+ 	land_morale = -0.5
+}
+
+paying_off_remaining_solidiers = {
+ 	global_tax_income = -60
+}
+
+pearland_restored_kanata = {
+ 	local_development_cost = -0.1
+ 	local_build_time = -0.1
+ 	local_build_cost = -0.1
+ 	local_institution_spread = 0.1
+}
+
+reaching_out_to_intellectuals_texas = {
+ 	diplomats = -1
+}
+
+post_crisis_boom = {
+ 	global_tax_modifier = 0.1
+}
+
+bulwark_against_the_partisans = {
+ 	local_development_cost = -0.1
+	local_defensiveness = 0.1
+}
+
+reigning_in_el_norte = {
+ 	local_unrest = -2
+}
+
+remembering_the_revoltI = {
+ 	discipline = 0.05
+}
+
+remembering_the_revoltII = {
+ 	land_morale = 0.15
+}
+
+remembering_the_revoltIII = {
+  	army_tradition = 1
+}
+
+heirs_to_africa = {
+  	prestige_decay = -0.01
+ 	ae_impact = -0.1
+}
+
+texan_blood = {
+ 	core_creation = -0.1
+}
+
+empresian_efficiency = {
+ 	production_efficiency = 0.05
+}
+
+capital_of_all_africas = {
+  	trade_goods_size_modifier = 0.25
+ 	local_development_cost = -0.25
+ 	center_of_trade_upgrade_cost = -0.5
+}
+
+univerisersity_cutbacks = {
+ 	advisor_cost = -0.1
+}
+
+flourising_sciences = {
+ 	technology_cost = -0.025
+ 	global_institution_spread = 0.2
+}
+
+innovative_economy = {
+ 	technology_cost = -0.05
+ 	production_efficiency = 0.05
+}
+
+crusader_zeal_baja = {
+ 	land_morale = 0.1
+	discipline = 0.05
+ 	ae_impact = -0.1
+ 	province_warscore_cost = -0.1
+}
+
+baja_norte_lost = {
+ 	imperial_authority = -0.1
+ 	diplomatic_reputation = -2
+}
+
+union_embarassed = {
+ 	land_morale = -0.15
+}
+
+liberator_of_california = {
+ 	diplomatic_reputation = 2
+}
+
+revived_naval_capacity = {
+ 	ship_durability = 0.05
+}
+
+crusader_zeal_utah = {
+	warscore_cost_vs_other_religion = -0.25
+ 	land_morale = 0.1
+}
+
+humanizing_the_heretics = {
+	global_unrest = -2
+	global_missionary_strength = 0.05
+}
+
+lost_salt_lake = {
+	prestige = -0.5
+}
+
+crusader_seal_italy = {
+ 	discipline = 0.1
+	global_missionary_strength = 0.03
+	missionaries = 1
+}
+
+catholic_italy = {
+ 	local_missionary_strength = 0.05
+	local_unrest = -2
+}
+
+################################OAXACAN MODIFIERS##################################
+
+guadelupe_empire = {
+ 	legitimacy = 1
+}
+
+angered_huastecs = {
+  	local_unrest = 5
+	local_culture_conversion_cost = -0.5
+	local_development_cost = -0.1
+	local_tax_modifier = 0.5
+}
+
+huastecs_appeased = {
+  	local_unrest = -3
+}
+
+pearl_of_the_bajio = {
+	trade_goods_size_modifier = 0.35
+}
+
+mexican_house_of_cards = {
+ 	diplomatic_reputation = 2
+}
+
+southern_campaign = {
+ 	land_morale = 0.10
+}
+
+emperor_of_all_mayas = { #Halach Uinik
+	development_cost = -0.05
+	production_efficiency = 0.05
+}
+
+mayan_emperor_oaxaca = {
+ 	local_unrest = -5
+	local_culture_conversion_cost = 1
+}
+
+belizian_ports = {
+ 	province_trade_power_modifier = 0.25
+}
+
+miskito_woods = {
+	trade_goods_size = 2	
+}
+
+exploited_lake_resources = {
+ 	local_unrest = 5
+}
+
+easing_lake_resources = {
+ 	local_production_efficiency = 0.25
+}
+
+lake_purity_ensured = {
+	local_unrest = -5
+}
+
+emperor_of_all_ismitho = {
+ 	global_unrest = -1
+ 	stability_cost_modifier = -0.1
+}
+
+emperor_of_all_huastecs = {
+ 	army_tradition_decay = -0.01
+}
+
+papal_puppetmaster = {
+ 	tolerance_own = -3
+}
+
+house_of_the_gods = {
+ 	tolerance_own = 1
+	diplomatic_reputation = 1
+	local_development_cost = -0.1
+}
+
+royal_peers = {
+ 	global_unrest = -2
+}
+
+royally_elevated = {
+	global_unrest = 1
+	administrative_efficiency = 0.05
+}
+
+capital_of_the_growing_empire = {
+	local_development_cost = -0.15
+}
+
+warden_of_the_great_city = {
+	local_development_cost = -0.1
+}
+
+warden_of_the_worlds_city = {
+	defensiveness = 0.1
+	institution_spread_from_true_faith = 0.1
+}
+
+green_revolution = {
+	trade_goods_size = 3
+}
+
+mahogeny_hulls = {
+ 	ship_durability = 0.05
+}
+
+national_obession_engaged = {
+ 	diplomatic_reputation = -2
+}
+
+adm_national_obession = {
+ 	country_admin_power = 1
+	country_diplomatic_power = -1
+	country_military_power = -1
+}
+
+dip_national_obession = {
+ 	country_admin_power = -1
+	country_diplomatic_power = 1
+	country_military_power = -1
+}
+
+mil_national_obession = {
+ 	country_admin_power = -1
+	country_diplomatic_power = -1
+	country_military_power = 1
+}
+
+emperor_of_all_bajios = {
+ 	discipline = 0.05
+}
+
+gulf_trade_well = {
+  	trade_steering = 0.25
+}
+
+empire_of_riches_oaxaca = {
+ 	country_diplomatic_power = 1
+}
+
+emperor_of_all_colombia = {
+  	siege_ability = 0.1
+}
+
+colombian_subservience = {
+	liberty_desire = -500
+}
+
+oaxacan_havanna = {
+	trade_goods_size = 5
+}
+
+##################################CUBAN MODIFIERS###################################################
+
+war_weary = {
+ 	stability_cost_modifier = 1
+	global_unrest = 5
+}
+
+recovered_peoples = {
+ 	stability_cost_modifier = 0.5
+	global_unrest = 3
+	development_cost = -0.05
+	global_tax_modifier = 0.05
+}
+
+normalcy_restored = {
+	development_cost = -0.05
+	global_tax_modifier = 0.1
+}
+
+productive_peace = {
+	development_cost = -0.1
+	global_tax_modifier = 0.1
+	stability_cost_modifier = -0.5
+	global_unrest = -3
+}
+
+the_long_peace = {
+	colonists = 1
+	development_cost = -0.1
+	global_tax_modifier = 0.15	
+	stability_cost_modifier = -1
+	global_unrest = -5
+}
+
+budding_complacency = {
+ 	land_forcelimit_modifier = -0.25
+	drill_gain_modifier = -0.25
+	colonists = 1
+	development_cost = -0.15
+	global_tax_modifier = 0.15
+	stability_cost_modifier = -1
+	global_unrest = -5
+	trade_efficiency = 0.05
+}
+
+prosperous_peace = {
+ 	land_forcelimit_modifier = -0.25
+	drill_gain_modifier = -0.25
+	colonists = 1
+	development_cost = -0.2
+	global_tax_modifier = 0.15
+	stability_cost_modifier = -1
+	global_unrest = -5
+	trade_efficiency = 0.05
+	technology_cost = -0.025
+	idea_cost = -0.05
+}
+
+pax_cubana = {
+ 	land_forcelimit_modifier = -0.50
+	drill_gain_modifier = -0.50
+	colonists = 2
+	development_cost = -0.2
+	global_tax_modifier = 0.2
+	stability_cost_modifier = -1
+	global_unrest = -5
+	trade_efficiency = 0.1
+	technology_cost = -0.05
+	idea_cost = -0.1
+	build_time = -0.25
+	build_cost = -0.1
+}
+
+patriot_advisors = {
+	advisor_cost = -0.1
+}
+
+tampering_domestic_courts = {
+	diplomats = -1
+}
+
+intentionally_weakened_walls = {
+	local_defensiveness = -0.25
+}
+
+paranoid_kings = {
+	global_unrest = 3
+}
+
+informed_soldiers = {
+ 	discipline = 0.05
+}
+
+catolico_kingston = {
+ 	province_trade_power_modifier = 0.25
+}
+
+hispaniolan_capital = {
+ 	local_development_cost = -0.1
+ 	allowed_num_of_buildings = 1
+}
+
+capital_runoff_hispaniola = {
+  	local_development_cost = -0.05
+ 	local_unrest = -3
+}
+
+antilles_united = {
+	naval_morale = 0.15
+}
+
+zahran_syncretism = {
+ 	local_missionary_strength = 0.03
+}
+
+setonese_company = {
+ 	merchants = 1
+}
+
+renaissance_engenuity = {
+ 	idea_cost = -0.1
+}
+
+island_paridise = {
+ 	diplomatic_reputation = 1
+}
+
+lucrative_capital = {
+ 	local_development_cost = -0.05
+	province_trade_power_modifier = 0.3
+	local_production_efficiency = 0.25
+}
+
+true_pacifist = {
+ 	diplomatic_reputation = 2	
+}
+
+alluring_peace = {
+ 	accept_vassalization_reasons = 25
+}
+
+elevated_monarchs = {
+ 	country_admin_power = 1
+	country_diplomatic_power = 1
+ 	country_military_power = 1
+}
+
+devout_to_his_emminence = {
+ 	global_heretic_missionary_strength = 0.03
+}
+
+holy_industry_cuba = {
+	trade_goods_size = 1
+}
+
+workshop_of_caribbean = {
+	development_cost = -0.05
+}
+
+urbanized_cities = {
+	trade_goods_size = 2
+ 	local_development_cost = -0.25
+	local_production_efficiency = 0.2
+	local_institution_spread = 0.5
+}
+
+cuban_productivity = {
+ 	build_cost = -0.15
+ 	build_time = -0.25
+}
+
+divine_efficiency = {
+ 	all_power_cost = -0.05
+}
+
+golden_wall = {
+ 	global_ship_trade_power = 0.2
+}
+
+constricting_trade_cuba = {
+	global_own_trade_power = 0.25
+}
+
+domestic_focus = {
+	global_own_trade_power = 0.2
+}
+
+foreign_focus = {
+ 	global_foreign_trade_power = 0.15
+}
+
+spirit_of_exploration_cuba = {
+ 	range = 0.5
+}
+
+diseased_natives_cuba = {
+ 	discipline = -0.25
+}
+
+trading_hub_cuba = {
+	local_development_cost = -0.15
+	local_production_efficiency = 0.05
+	trade_goods_size = 0.5
+}
+
+safe_frontier_cuba = {
+	colonist_placement_chance = 0.2
+}
+
+pablonia_whole = {
+ 	reduced_liberty_desire = 10
+}
+
+promise_of_spices = {
+ 	global_colonial_growth = 15
+}
+
+rumbles_in_the_jungle = {
+ 	land_morale = 0.1
+}
+
+flavors_of_warfare = {
+	trade_goods_size = 0.5
+}
+
+fresh_colony = {
+	global_tax_income = 36
+}
+
+diseased_natives = {
+ 	land_morale = -0.2
+}
+
+canadian_caliphate = {
+	global_unrest = -5
+ 	stability_cost_modifier = -0.1
+	global_missionary_strength = 0.03
+	imperial_mandate = 0.05
+}
+
+tolerant_caliphate = {
+ 	tolerance_heathen = 5
+}

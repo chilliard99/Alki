@@ -1,0 +1,18 @@
+#Stavanger
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X11
+controller = X11
+add_core = X11
+culture = orlandan
+religion = zahran
+hre = no
+base_tax = 3 
+base_production = 3
+trade_goods = sugar #Another sugar beet farm
+base_manpower = 4
+capital = "Stavanger"
+is_city = yes
+discovered_by = eastern

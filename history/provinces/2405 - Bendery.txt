@@ -1,0 +1,16 @@
+#2405 - Bender
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W24
+controller = W24
+add_core = W24
+culture = mulegean
+religion = partisan
+capital = "Bender"
+trade_goods = copper #the boleo
+hre = yes
+base_tax = 3
+base_production = 4
+base_manpower = 4
+is_city = yes

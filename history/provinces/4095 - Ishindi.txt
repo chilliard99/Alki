@@ -1,0 +1,15 @@
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W97
+controller = W97
+add_core = W97
+culture = catracho
+religion = catholico
+capital = "Ishindi"
+trade_goods = livestock #MORE DAIRY
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

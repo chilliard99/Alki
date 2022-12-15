@@ -1,0 +1,17 @@
+#718 - Govi Altay
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y35
+controller = Y35 
+add_core = Y35
+culture = boisan
+religion = sacramental
+capital = "Kobdo"
+trade_goods = livestock #grouse
+hre = no
+base_tax = 2 
+base_production = 1
+base_manpower = 1
+is_city = yes

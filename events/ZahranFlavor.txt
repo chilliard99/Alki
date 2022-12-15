@@ -1,0 +1,1588 @@
+namespace = zahran_events
+####################BLENDING EVENTS##########################
+country_event = { #Amunterasu **PULSE**
+	id = zahran_events.1
+	title = zahran_events.1.t
+	desc = zahran_events.1.d
+	picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		is_harmonizing_with = neoshinto
+		NOT = {
+			has_country_modifier = accepted_amunterasu
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.1.a #Of course, they are one in the same!
+		add_country_modifier = {
+			name = "accepted_amunterasu"
+			duration = 7300
+		}
+		add_harmonization_progress = 15
+	}
+	option = {
+		name = zahran_events.1.b #Not our amun.
+		add_harmony = 10
+	}
+}
+
+country_event = { #Purity of the Waters **PULSE**
+	id = zahran_events.2
+	title = zahran_events.2.t
+	desc = zahran_events.2.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		is_harmonizing_with = neoshinto
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.2.a #It will bring us closer
+		add_harmonization_progress = 15
+		
+	}
+	option = {
+		name = zahran_events.2.b #It will make us just
+		add_harmony = 10
+	}
+	option = {
+		name = zahran_events.2.c #It will support our rule
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
+	}
+}
+
+country_event = { #Zahran Shrines **PULSE**
+	id = zahran_events.3
+	title = zahran_events.3.t
+	desc = zahran_events.3.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		is_harmonizing_with = neoshinto
+		any_owned_province = {
+			has_building = temple
+			NOT = {
+				has_province_modifier = zahran_shrine
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		random_owned_province = {
+			limit = {
+				has_building = temple
+			}
+			save_event_target_as = place_where_zahran_shrine_will_be
+		}
+	}
+	
+	option = {
+		name = zahran_events.3.a #Let it continue
+		event_target:place_where_zahran_shrine_will_be = {
+			add_province_modifier = {
+				name = "zahran_shrine"
+				duration = 7300
+			}
+		}		
+		add_harmonization_progress = 15
+	}
+	option = {
+		name = zahran_events.3.b #Heresy!
+		add_prestige = 15
+	}
+}
+
+country_event = { #Papal Taint **PULSE** 
+	id = zahran_events.4
+	title = zahran_events.4.t
+	desc = zahran_events.4.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		is_harmonizing_with = neo_christian_group
+		any_known_country = {
+			religion = catholico
+			reform_desire = 1.5
+		}		
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.4.a #Troubling...
+		add_harmonization_progress = -9
+	}
+}
+
+country_event = { #Amungod **PULSE** 
+	id = zahran_events.5
+	title = zahran_events.5.t
+	desc = zahran_events.5.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		is_harmonizing_with = neo_christian_group
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.5.a #Enforce his image
+		add_harmonization_progress = 15
+		add_adm_power = -50
+		add_dip_power = -50
+		add_mil_power = -50
+	}
+	option = {
+		name = zahran_events.5.a #A heretical and useless effort
+		add_harmony = 5
+	}
+}
+
+country_event = { #Triple Trouble **PULSE** 
+	id = zahran_events.6
+	title = zahran_events.6.t
+	desc = zahran_events.6.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		is_harmonizing_with = neo_christian_group
+		NOT = {
+			has_country_flag = had_triple_trouble_event
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.6.a #Amun is Amun
+		add_country_modifier = {
+			name = "dismantled_the_trinity"
+			duration = 9125
+		}
+	}
+	option = {
+		name = zahran_events.6.b #Amun is three souls in one
+		add_prestige = -50
+		add_harmonization_progress = 18
+	}
+	
+	after = {
+		set_country_flag = had_triple_trouble_event
+	}
+}
+
+country_event = { #Amun-Christ **PULSE** 
+	id = zahran_events.7
+	title = zahran_events.7.t
+	desc = zahran_events.7.d
+	picture = STREET_SPEECH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		is_harmonizing_with = sacramental_group
+		any_ally = {
+			religion_group = sacramental_group
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_ally = {
+				limit = {
+					religion_group = sacramental_group
+				}
+				save_event_target_as = amunchrist_for_the_loc
+			}
+		}
+	}
+	
+	option = {
+		name = zahran_events.7.a #A Useful Message
+		add_harmonization_progress = 15
+	}
+}
+
+country_event = { #Taking Inerrant Liberties **PULSE** 
+	id = zahran_events.8
+	title = zahran_events.8.t
+	desc = zahran_events.8.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		is_harmonizing_with = sacramental_group
+	 	num_of_missionaries = 1
+		NOT = {
+			has_country_modifier = rewriting_the_bible_zah
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.8.a #Someone got a pen?
+		add_country_modifier = {
+			name = "rewriting_the_bible_zah"
+			duration = 1825
+		}
+	}
+	option = {
+		name = zahran_events.8.b #A Useless Task
+		add_harmony = 5
+	}
+}
+
+country_event = { #Mystical Interests **PULSE** 
+	id = zahran_events.9
+	title = zahran_events.9.t
+	desc = zahran_events.9.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		is_harmonizing_with = sacramental_group
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.9.a #We are in tune with the world
+		add_harmonization_progress = 9
+		add_prestige = -25
+	}
+	option = {
+		name = zahran_events.9.b #Embarassing
+		add_prestige = 5
+	}
+}
+
+country_event = { #Amun-Allah **PULSE** 
+	id = zahran_events.10
+	title = zahran_events.10.t
+	desc = zahran_events.10.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		is_harmonizing_with = islam_group
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.10.a #It is the truth!
+		add_harmonization_progress = 15
+		custom_tooltip = we_will_anger_all_islamic_nations.tt
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					religion_Group = islam_group
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = promoted_amunallah
+				}
+			}
+		}
+	}
+	option = {
+		name = zahran_events.10.b #Heresy!
+		add_harmony = 5
+	}
+}
+
+country_event = { #Brothers in Practice **PULSE** 
+	id = zahran_events.11
+	title = zahran_events.11.t
+	desc = zahran_events.11.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		is_harmonizing_with = islam_group
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.11.a #Eternally Linked
+		add_harmonization_progress = 9
+	}
+}
+
+country_event = { #The Caliph's Interests **PULSE** 
+	id = zahran_events.12
+	title = zahran_events.12.t
+	desc = zahran_events.12.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		is_harmonizing_with = islam_group
+		X91 = {
+			exists = yes
+			mission_completed =  the_grand_caliphate
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.12.a #Troubling...
+		add_harmonization_progress = -9
+	}
+}
+
+country_event = { #Soul of Liberty **PULSE** 
+	id = zahran_events.13
+	title = zahran_events.13.t
+	desc = zahran_events.13.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		is_harmonizing_with = constitutionalist_group
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.13.a #It is Amun's Soul
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100	
+		}
+		add_harmonization_progress = 15
+	}
+	option = {
+		name = zahran_events.13.b #A Fake Concept
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+		add_harmonization_progress = -15
+	}
+}
+
+country_event = { #Emperor's Strength **PULSE** 
+	id = zahran_events.14
+	title = zahran_events.14.t
+	desc = zahran_events.14.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		is_harmonizing_with = constitutionalist_group
+		imperial_influence = 50
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.14.a #Troubling...
+		add_harmonization_progress = -9
+	}
+}
+
+country_event = { #Amun's Cities **PULSE** 
+	id = zahran_events.15
+	title = zahran_events.15.t
+	desc = zahran_events.15.d
+	picture = GREAT_BUILDING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		is_harmonizing_with = new_cannanite
+		OR = {
+			965 = {
+				owned_by = ROOT
+			}
+			947 = {
+				owned_by = ROOT
+			}
+			172 = {
+				owned_by = ROOT
+			}	
+			178 = {
+				owned_by = ROOT
+			}
+			203 = {
+				owned_by = ROOT
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.15.a #Wounderous!
+		add_harmonization_progress = 15
+	}
+}
+
+country_event = { #Canaanite Conversion **PULSE** 
+	id = zahran_events.16
+	title = zahran_events.16.t
+	desc = zahran_events.16.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		is_harmonizing_with = new_cannanite
+		NOT = {
+			has_country_modifier = jewish_egyptians_zah
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.16.a #The divine truth
+		add_country_modifier = {
+			name = "jewish_egyptians_zah"
+			duration = 3650
+		}
+	}
+	option = {
+		name = zahran_events.16.b #An interesting theory
+		add_Harmony = 5
+	}
+}
+
+country_event = { #Amuntopia **PULSE** 
+	id = zahran_events.17
+	title = zahran_events.17.t
+	desc = zahran_events.17.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		is_harmonizing_with = collectivist_group
+		NOt = {
+			has_country_modifier = abolished_work_zah
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.17.a #Uhhhh, sure
+		add_country_modifier = {
+			name = "abolished_work_zah"
+			duration = 3650
+		}
+	}
+	option = {
+		name = zahran_events.17.b #None of this makes sense
+		add_harmony = 5
+	}
+}
+
+country_event = { #Marx was Egyptian **PULSE** 
+	id = zahran_events.18
+	title = zahran_events.18.t
+	desc = zahran_events.18.d
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		is_harmonizing_with = collectivist_group
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.18.a #Of course!
+		random_owned_province = {
+			spawn_rebels = {
+				type = zahran_rebels
+				size = 1
+			}
+		}
+		add_harmonization_progress = 9
+	}
+	option = {
+		name = zahran_events.18.b #NO, I refuse.
+		add_harmony = 5
+	}
+}
+
+country_event = { #Primitive Amun **PULSE** 
+	id = zahran_events.19
+	title = zahran_events.19.t
+	desc = zahran_events.19.d
+	picture = NATIVES_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		is_harmonizing_with = ancient_faiths_group
+		NOT = {
+			has_country_modifier = primitive_amun
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.19.a #He was always with them.
+		add_country_modifier = {
+			name = "primitive_amun"
+			duration = 3650
+		}
+	}
+	option = {
+		name = zahran_events.19.b #Not our Amun.
+		add_harmony = 5
+	}
+}
+
+country_event = { #Ma'at Minded Natives **PULSE** 
+	id = zahran_events.20
+	title = zahran_events.20.t
+	desc = zahran_events.20.d
+	picture = COLONIZATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		is_harmonizing_with = ancient_faiths_group
+		is_colonial_nation = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.20.a #Together, we will thrive.
+		add_harmonization_progress = 15
+	}
+}
+
+####################MA'AT EVENTS##########################
+
+country_event = { #Isfet **PULSE** 
+	id = zahran_events.21
+	title = zahran_events.21.t
+	desc = zahran_events.21.d
+	picture = BANKRUPTCY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		NOT = {
+			OR = {
+				harmony = 25
+				has_country_modifier = isfet_zah
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.21.a #We will take the blow
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100	
+		}
+	}
+	option = {
+		name = zahran_events.21.b #Our people will make do
+		add_country_modifier = {
+			name = "isfet_zah"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Demanding Cohesion **PULSE** 
+	id = zahran_events.22
+	title = zahran_events.22.t
+	desc = zahran_events.22.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		NOT = {
+			harmony = 25
+		}
+		any_owned_province = {
+			base_tax = 2
+			base_production = 2
+			base_manpower = 2
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					base_tax = 2
+					base_production = 2
+					base_manpower = 2
+				}
+				save_event_target_as = province_to_spawn_rebels
+			}
+		}
+	}
+	
+	option = {
+		name = zahran_events.22.a #Sacrifices must be made
+		event_target:province_to_spawn_rebels = {
+			add_base_tax = -1
+			add_base_production = -1
+			add_base_manpower = -1
+			spawn_rebels = {
+				type = zahran_rebels
+				size = 1
+			}
+		}
+		add_harmony = 15
+	}
+	option = {
+		name = zahran_events.22.b #We will recover
+		add_prestige = 5
+	}
+}
+
+country_event = { #Liars Abound **PULSE** 
+	id = zahran_events.23
+	title = zahran_events.22.t
+	desc = zahran_events.22.d
+	picture = CORRUPTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		NOT = {
+			harmony = 25
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.23.a #Troubling...
+		add_corruption = 1
+	}
+}
+
+country_event = { #A Just World **PULSE** 
+	id = zahran_events.24
+	title = zahran_events.24.t
+	desc = zahran_events.24.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		harmony = 75
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.24.a #Grace from Amun!
+		add_adm_power = -25
+		add_dip_power = -25
+		add_mil_power = -25
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+	}
+	option = {
+		name = zahran_events.24.b #We stay just
+		add_prestige = 5
+	}
+}
+
+country_event = { #Authoritative Balance **PULSE** 
+	id = zahran_events.25
+	title = zahran_events.25.t
+	desc = zahran_events.25.d
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		harmony = 75
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.25.a #Such is the nature of equality
+		add_legitimacy = -10
+		add_horde_unity = -10
+		add_devotion = -10
+		add_meritocracy = -10
+		add_republican_tradition = -5
+	}
+}
+
+country_event = { #A Harmonious Resistance **PULSE** 
+	id = zahran_events.26
+	title = zahran_events.26.t
+	desc = zahran_events.26.d
+	picture = BATTLE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		harmony = 75
+		at_war_with_religious_enemy = yes
+		NOT = {
+			has_country_modifier = balanced_attack
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.26.a #We balance our attack
+		add_country_modifier = {
+			name = "balanced_attack"
+			duration = 730
+		}
+	}
+	option = {
+		name = zahran_events.26.b #We balance our recruitment
+		if = {
+			limit = {
+				manpower_percentage = 0.5
+				NOT = {
+					manpower_percentage = 0.51
+				}
+			}
+			add_prestige = 5
+		}
+		else_if = {
+			limit = {
+				manpower_percentage = 0.51
+				NOT = {
+					manpower_percentage = 0.75
+				}
+			}
+			add_yearly_manpower = -1
+			add_mil_power = 50
+		}
+		else_if = {
+			limit = {
+				manpower_percentage = 0.76
+				NOT = {
+					manpower_percentage = 1
+				}
+			}
+			add_yearly_manpower = -2
+			add_mil_power = 100
+		}
+		else_if = {
+			limit = {
+				manpower_percentage = 0.25
+				NOT = {
+					manpower_percentage = 0.50
+				}
+			}
+			add_yearly_manpower = 1
+		}
+		else = {
+			add_yearly_manpower = 2
+		}
+		
+		if = {
+			limit = {
+				sailors_percentage = 0.5
+				NOT = {
+					sailors_percentage = 0.51
+				}
+			}
+			add_prestige = 5
+		}
+		else_if = {
+			limit = {
+				sailors_percentage = 0.51
+				NOT = {
+					sailors_percentage = 0.75
+				}
+			}
+			add_yearly_sailors = -1
+			add_mil_power = 50
+		}
+		else_if = {
+			limit = {
+				sailors_percentage = 0.76
+				NOT = {
+					sailors_percentage = 1
+				}
+			}
+			add_yearly_sailors = -2
+			add_mil_power = 100
+		}
+		else_if = {
+			limit = {
+				sailors_percentage = 0.25
+				NOT = {
+					sailors_percentage = 0.50
+				}
+			}
+			add_yearly_sailors = 1
+		}
+		else = {
+			add_yearly_sailors = 2
+		}
+	}
+	option = {
+		name = zahran_events.26.c #We balance our talent
+		if = { #Theres definently a better way of doing this, but I gotta finish this update
+			limit = {
+				army_tradition = 50
+				NOT = {
+					army_tradition = 51
+				}
+			}
+			add_prestige = 5
+		}
+		else_if = {
+			limit = {	
+				army_tradition = 51
+				NOT = {
+					army_tradition = 75
+				}
+			}
+			add_army_tradition = -10
+			add_mil_power = 50
+		}
+		else_if = {
+			limit = {
+				army_tradition = 76
+				NOT = {
+					army_tradition = 100
+				}
+			}
+			add_army_tradition = -25
+			add_mil_power = 100
+		}
+		else_if = {
+			limit = {
+				army_tradition = 25
+				NOT = {
+					army_tradition = 50
+				}
+			}
+			add_army_tradition = 10
+		}
+		else = {
+			add_army_tradition = 25
+		}
+		if = {
+			limit = {
+				navy_tradition = 50
+				NOT = {
+					navy_tradition = 51
+				}
+			}
+			add_prestige = 5
+		}
+		else_if = {
+			limit = {	
+				navy_tradition = 51
+				NOT = {
+					navy_tradition = 75
+				}
+			}
+			add_navy_tradition = -10
+			add_mil_power = 50
+		}
+		else_if = {
+			limit = {
+				navy_tradition = 76
+				NOT = {
+					navy_tradition = 100
+				}
+			}
+			add_navy_tradition = -25
+			add_mil_power = 100
+		}
+		else_if = {
+			limit = {
+				navy_tradition = 25
+				NOT = {
+					navy_tradition = 50
+				}
+			}
+			add_navy_tradition = 10
+		}
+		else = {
+			add_navy_tradition = 25
+		}
+	}
+}
+
+country_event = { #Lacking Direction **PULSE** 
+	id = zahran_events.27
+	title = zahran_events.27.t
+	desc = zahran_events.27.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		harmony = 25
+		NOT = {
+			OR = {
+				harmony = 75
+				has_country_modifier = a_just_direction
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.27.a #We need a universal faith!
+		add_country_modifier = {
+			name = "a_just_direction"
+			duration = 1825
+		}
+		add_harmony = -5
+	}
+	option = {
+		name = zahran_events.27.b #We need greater Ma'at
+		add_harmony = 10
+	}
+	option = {
+		name = zahran_events.27.c #We need a better rule!
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
+		add_harmony = -5
+	}
+}
+
+country_event = { #Undecided Masses **PULSE** 
+	id = zahran_events.28
+	title = zahran_events.28.t
+	desc = zahran_events.28.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		harmony = 25
+		NOT = {
+			harmony = 75
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.28.a #Move towards devotion
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
+		add_harmony = -5
+	}
+	option = {
+		name = zahran_events.28.b #Move towards equality
+		add_adm_power = -25
+		add_dip_power = -25
+		add_mil_power = -25
+		add_harmony = 5
+	}
+}
+
+country_event = { #Nagging Questions **PULSE** 
+	id = zahran_events.29
+	title = zahran_events.29.t
+	desc = zahran_events.29.d
+	picture = ADVISOR_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		harmony = 25
+		NOT = {
+			harmony = 75
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.29.a #Refute their claims
+		add_harmony = 10
+	}
+	option = {
+		name = zahran_events.29.b #Bring them into our court
+		define_advisor = {
+			type = theologian
+			skill = 2
+			discount = yes
+		}
+	}
+	option = {
+		name = zahran_events.29.c #Have them put to death!
+		add_prestige = 25
+		add_manpower = 0.001
+	}
+}
+
+country_event = { #The Middleground **PULSE** 
+	id = zahran_events.30
+	title = zahran_events.30.t
+	desc = zahran_events.30.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		harmony = 25
+		NOT = {
+			harmony = 75
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.30.a #Stability before Balance
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+		add_harmony = -10
+	}
+	option = {
+		name = zahran_events.30.b #Balance Before Stability
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100	
+		}
+		add_harmony = 10
+	}
+	option = {
+		name = zahran_events.30.c #We remain neutral
+		add_prestige = -5
+	}
+}
+
+####################MISC ZAHRAN EVENTS##########################
+
+country_event = { #Court Gators **PULSE** 
+	id = zahran_events.31
+	title = zahran_events.31.t
+	desc = zahran_events.31.d
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		NOT = {
+			has_country_modifier = court_gators_zahran
+		}
+		capital_scope = {
+			region = florida_region
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.31.a #What could go wrong?
+		add_country_modifier = {
+			name = "court_gators_zahran"
+			duration = -1
+		}
+	}
+	option = {
+		name = zahran_events.31.b #Very Dangerous
+		add_prestige = -5
+	}
+}
+
+country_event = { #Gator Accident **PULSE** 
+	id = zahran_events.32
+	title = zahran_events.32.t
+	desc = zahran_events.32.d
+	picture = ADVISOR_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		has_country_modifier = has_court_gators_zah
+		has_advisor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.32.a #Just an accident
+		kill_advisor = random
+	}
+	option = {
+		name = zahran_events.32.b #Get rid of them!
+		kill_advisor = random
+		remove_country_modifier = has_court_gators_zah
+		add_prestige = -25
+	}
+}
+
+country_event = { #A Terrible Fate **PULSE** 
+	id = zahran_events.33
+	title = zahran_events.33.t
+	desc = zahran_events.33.d
+	picture = KING_SICK_IN_BED_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		has_country_modifier = has_court_gators_zah
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.33.b #Horror!
+		kill_ruler = yes
+		remove_country_modifier = has_court_gators_zah
+		add_prestige = -25
+	}
+}
+
+country_event = { #Sihr **PULSE** 
+	id = zahran_events.34
+	title = zahran_events.34.t
+	desc = zahran_events.34.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		NOT = {
+			OR = {
+				has_ruler_modifier = banned_sihr
+				has_ruler_modifier = allowed_sihr
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.34.b #Ban the Magic
+		add_ruler_modifier = {
+			name = "banned_sihr"
+			duration = -1
+		}
+	}
+	option = {
+		name = zahran_events.34.b #Let them go
+		add_ruler_modifier = {
+			name = "allowed_sihr"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #The Magic Kingdom **PULSE** 
+	id = zahran_events.35
+	title = zahran_events.35.t
+	desc = zahran_events.35.d
+	picture = GREAT_BUILDING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		has_ruler_modifier = allowed_sihr
+		owns_core_province = 19
+		NOT = {
+			has_ruler_modifier = secret_sorcerer_zah
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.35.a #We are Honored!
+		add_ruler_modifier = {
+			name = "secret_sorcerer_zah"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Books Galore **PULSE** 
+	id = zahran_events.36
+	title = zahran_events.36.t
+	desc = zahran_events.36.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		NOT = {
+			OR = {
+				has_country_modifier = quranic_inspiration_zah
+				has_country_modifier = bible_thumper_zah
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.36.b #Mix and Match
+		add_prestige = 15
+	}
+	option = {
+		name = zahran_events.36.b #We are Honored!
+		add_country_modifier = {
+			name = "quranic_inspiration_zah"
+			duration = 3650
+		}
+	}
+	option = {
+		name = zahran_events.36.c #We are Honored!
+		add_country_modifier = {
+			name = "bible_thumper_zah"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Finding the Egyptians **PULSE** 
+	id = zahran_events.37
+	title = zahran_events.37.t
+	desc = zahran_events.37.d
+	picture = COLONIZATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		colony = 1
+		NOT = {
+			has_countrY_modifier = finding_the_egyptians_zah
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = zahran_events.37.b #We will find them!
+		add_country_modifier = {
+			name = "finding_the_egyptians_zah"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #Pyramid Incidents **PULSE** 
+	id = zahran_events.38
+	title = zahran_events.38.t
+	desc = zahran_events.38.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		any_owned_province = {
+			has_building = temple
+			NOT = {
+				OR = {
+					has_province_modifier = new_pyramid_imam_zah
+					has_province_modifier = pyramid_collapse_zah
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_building = temple
+					NOT = {
+						OR = {
+							has_province_modifier = new_pyramid_imam_zah
+							has_province_modifier = pyramid_collapse_zah
+						}
+					}
+				}
+				save_event_target_as = pyramid_incident_zahran
+			}
+		}
+	}
+	
+	option = {
+		name = zahran_events.38.a #A new imam will solve the problems
+		add_adm_power = -25
+		event_target:pyramid_incident_zahran = {
+			add_province_modifier = {
+				name = "new_pyramid_imam_zah"
+				duration = 1825
+			}
+		}
+	}
+	option = {
+		name = zahran_events.38.b #We will repair it ourselves
+		add_adm_power = -50
+		add_harmony = 5
+	}
+	option = {
+		name = zahran_events.38.c #They will figure it out
+		event_target:pyramid_incident_zahran = {
+			add_province_modifier = {
+				name = "pyramid_collapse_zah"
+				duration = 1825
+			}
+		}
+	}
+}
+
+country_event = { #Sweets of the Pharoh **PULSE** 
+	id = zahran_events.39
+	title = zahran_events.39.t
+	desc = zahran_events.39.d
+	picture = FARMING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		sugar = 1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					trade_goods = sugar
+				}
+				save_event_target_as = sweets_of_the_pharoh_prov
+			}
+		}
+	}
+	
+	option = {
+		name = zahran_events.39.a #Invest in their production
+		event_target:sweets_of_the_pharoh_prov = {
+			add_base_production = 1
+		}
+	}
+	option = {
+		name = zahran_events.39.b #Sugar for the people!
+		add_harmony = 5
+	}
+}
+
+country_event = { #The High One **PULSE** 
+	id = zahran_events.40
+	title = zahran_events.40.t
+	desc = zahran_events.40.d
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = zahran
+		tag = X46
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		#I just don't like the 50% shit in event text, I want to know what outcome I get
+		random_list = { 
+			33 = {
+				set_country_flag = adm_dev_get
+			}
+			33 = {
+				set_country_flag = dip_dev_get
+			}
+			34 = {
+				set_country_flag = mil_dev_get
+			}
+		}
+	}
+	
+	option = {
+		name = zahran_events.40.a #We are among the Gods
+		if = {
+			limit = {
+				has_country_flag = adm_dev_get
+			}
+			change_adm = 1
+			clr_country_flag = adm_dev_get
+		}
+		else_if = {
+			limit = {
+				has_country_flag = dip_dev_get
+			}
+			change_dip = 1
+			clr_country_flag = dip_dev_get
+		}
+		else = {
+			change_mil = 1
+			clr_country_flag = mil_dev_get
+		}
+	}
+}

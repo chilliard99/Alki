@@ -1,0 +1,149 @@
+local_conclavism_vaca = {
+	cost = 100
+	modifier = {
+		horde_unity = 1
+		legitimacy = 1
+		republican_tradition = 0.2
+		devotion = 1
+		meritocracy = 1
+	}
+	ai_will_do = {
+		factor = 15
+		modifier = {
+			factor = 0
+			legitimacy_equivalent = 90
+		}
+	}
+}
+
+actualizacion_vaca = {
+	cost = 100
+	modifier = {
+		technology_cost = -0.05
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 5
+			any_neighbor_country = {
+				tech_difference = 2
+			}
+		}
+	}
+}
+
+working_priesthood_vaca = {
+	cost = 100
+	modifier = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+state_churches_vaca = {
+	cost = 100
+	modifier = {
+	 	max_absolutism = 5
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+preserving_the_sacraments = {
+	cost = 100
+	modifier = {
+	 	global_unrest = -1
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 2
+			global_unrest = 1
+		}
+	}
+}
+
+active_excommunication_vaca = {
+	cost = 100
+	modifier = {
+	 	global_heretic_missionary_strength = 0.07
+	}
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			NOT = {
+				has_idea_group = religious_ideas
+			}
+		}
+	}
+}
+
+la_dignidad_humana_vaca = {
+	cost = 100
+	modifier = {
+	 	tolerance_heathen = 2
+	}
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			NOT = {
+				has_idea_group = humanist_ideas
+			}
+		}
+	}
+}
+
+divinity_of_saints_vaca = {
+	cost = 100
+	modifier = {
+	 	discipline = 0.05
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+reviving_holy_spirits_vaca = {
+	cost = 100
+	modifier = {
+	 	land_morale = 0.1
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+ecumenismo_vaca = {
+	cost = 100
+	modifier = {
+	 	diplomatic_reputation = 1
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+internal_confession_vaca = {
+	cost = 100
+	modifier = {
+	 	stability_cost_modifier = -0.15
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+wishful_thinking_vaca = {
+	cost = 100
+	modifier = {
+	 	development_cost = -0.05
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}

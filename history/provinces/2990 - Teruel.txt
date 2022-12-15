@@ -1,0 +1,17 @@
+#214 - Teruel
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W85
+controller = W85
+add_core = W85
+culture = jarocho
+religion = catholico
+hre = no
+base_tax = 6
+base_production = 6
+center_of_trade = 1
+trade_goods = glass #veracruz glass
+base_manpower = 5
+capital = "Teruel"
+is_city = yes

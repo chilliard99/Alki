@@ -1,0 +1,17 @@
+#1966 - Chelyaba
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y94
+controller = Y94 
+add_core = Y94
+capital = "Chelyaba"
+culture = cooser
+religion = partisan
+trade_goods = livestock #big dairy industry 
+hre = yes
+base_tax = 3 
+base_production = 3
+base_manpower = 3
+is_city = yes

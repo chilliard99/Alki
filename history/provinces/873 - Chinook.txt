@@ -1,0 +1,17 @@
+#873 - Chinook
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y97
+controller = Y97
+add_core = Y97
+is_city = yes
+culture = seattlain
+religion = partisan
+capital = "Chinook" 
+trade_goods = fish #commercial fishing yakama shit 
+hre = yes 
+base_tax = 2 
+base_production = 2
+base_manpower = 1 

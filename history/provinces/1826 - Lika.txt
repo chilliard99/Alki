@@ -1,0 +1,19 @@
+#1826 - Lika
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y76
+controller = Y76
+add_core = Y76
+culture = vinyard
+religion = partisan
+capital = "Senj"
+trade_goods = ivory #galt elephant sanctuary
+hre = yes
+base_tax = 8
+base_production = 8
+base_manpower = 8
+is_city = yes
+fort_15th = yes
+center_of_trade = 2

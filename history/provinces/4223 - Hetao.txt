@@ -1,0 +1,15 @@
+#4223 - Hetao
+discovered_by = ottoman
+discovered_by = muslim
+owner = V10
+controller = V10
+add_core = V10
+culture = cibao
+religion = espiritismo
+capital = "Otog"
+trade_goods = cocoa #they make cocoa
+hre = no
+base_tax = 6
+base_production = 5
+base_manpower = 5
+is_city = yes

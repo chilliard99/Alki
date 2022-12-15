@@ -1,0 +1,15 @@
+#2340 - Grane
+discovered_by = western
+discovered_by = eastern 
+owner = W09
+controller = W09
+add_core = W09
+culture = northern_salishan
+religion = inua
+capital = "Grane"
+trade_goods = fur #just some volcanoes
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

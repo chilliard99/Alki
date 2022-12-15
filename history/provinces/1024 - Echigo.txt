@@ -1,0 +1,17 @@
+#1024 - Echigo
+discovered_by = chinese
+owner = X16
+controller = X16
+add_core = X16
+culture = niigatan
+religion = neoshinto
+capital = "Naoetsu"
+trade_goods = grain #big rice fields
+hre = no
+base_tax = 6
+base_production = 5
+base_manpower = 5
+is_city = yes
+discovered_by = eastern
+fort_15th = yes
+center_of_trade = 1

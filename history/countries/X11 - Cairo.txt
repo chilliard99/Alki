@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+technology_group = chinese
+religion = zahran
+primary_culture = nilean
+capital = 25 #Jacksonville
+
+
+1421.3.26 = {
+	monarch = {
+		name = "Youssef"
+		dynasty = "Hassan"
+		birth_date = 1421.11.14
+		adm = 4
+		dip = 3
+		mil = 4
+	}
+}

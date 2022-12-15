@@ -1,0 +1,14 @@
+#4323 - Farafreh
+discovered_by = indian
+owner = V93
+controller = V93
+add_core = V93
+culture = ecuadorian
+religion = catholico
+capital = "Farafreh"
+is_city = yes
+base_manpower = 2
+trade_goods = cocoa #the best chocolate shit
+hre = no
+base_tax = 1 
+base_production = 1

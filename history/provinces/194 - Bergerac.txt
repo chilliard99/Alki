@@ -1,0 +1,21 @@
+# 194 Périgord - Principal cities: Bergerac
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+latent_trade_goods = {
+	coal #coal region (thats what its called, stupid I know)
+}
+owner = X63
+controller = X63
+add_core = X63
+capital = "Bergerac"
+is_city = yes
+culture = vannian
+religion = dynastic
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = iron #Lackawanna
+base_manpower = 1

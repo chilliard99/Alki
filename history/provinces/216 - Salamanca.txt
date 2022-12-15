@@ -1,0 +1,16 @@
+#216 - Salamanca
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+add_core = X75
+owner = X75
+controller = X75
+culture = englander
+religion = dynastic
+hre = no
+base_tax = 3
+base_production = 2
+trade_goods = fur #new england furs
+base_manpower = 2
+capital = Salamanca
+is_city = yes

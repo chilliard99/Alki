@@ -1,0 +1,18 @@
+#830 - Maracaibo
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V75
+controller = V75
+add_core = V75
+culture = zuilian
+religion = catholico
+capital = "Maracaibo"
+trade_goods = coffee #other than oil this is what they make
+hre = no
+fort_15th = yes
+base_tax = 6
+base_production = 6
+base_manpower = 5
+is_city = yes
+center_of_trade = 1

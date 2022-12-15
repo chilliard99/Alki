@@ -1,0 +1,14 @@
+owner = W06
+controller = W06
+add_core = W06
+is_city = yes
+culture = western_workers 
+religion = collectivist
+capital = "Manga"
+trade_goods = fish #who woulda guessed? King crab ships to china [citation needed]
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+discovered_by = western
+discovered_by = eastern 

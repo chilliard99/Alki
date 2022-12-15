@@ -1,0 +1,15 @@
+#857 - Guachichil
+discovered_by = ottoman
+discovered_by = muslim
+owner = W80
+controller = W80
+add_core = W80
+culture = potosian 
+religion = catholico
+capital = "Guachichil" 
+trade_goods = grain #CORN 
+hre = no 
+base_tax = 1
+base_production = 1
+base_manpower = 2
+is_city = yes

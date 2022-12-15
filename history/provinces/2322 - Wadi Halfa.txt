@@ -1,0 +1,15 @@
+#2322 - Wadi Halfa
+discovered_by = western
+discovered_by = eastern 
+owner = W06
+controller = W06
+add_core = W06
+culture = junean
+religion = collectivist
+capital = "Wadi Halfa"
+is_city = yes
+base_manpower = 2
+trade_goods = fish #no shit
+hre = no
+base_tax = 2
+base_production = 2

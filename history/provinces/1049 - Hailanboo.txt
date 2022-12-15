@@ -1,0 +1,18 @@
+#1049 - Hailanboo
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y51
+controller = Y51
+add_core = Y51
+culture = hulapalucian
+religion = partisan
+capital = "Haiilanboo"
+trade_goods = livestock #ranchers
+hre = yes
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes
+fort_15th = yes

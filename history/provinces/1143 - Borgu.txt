@@ -1,0 +1,17 @@
+#1143 - Borgu
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y49 
+controller = Y49
+add_core = Y49
+is_city = yes
+culture = portugers 
+religion = partisan
+capital = "Bussa"
+hre = yes
+base_tax = 1 
+base_production = 1
+base_manpower = 2
+trade_goods = copper #more copper mines? cause ely?

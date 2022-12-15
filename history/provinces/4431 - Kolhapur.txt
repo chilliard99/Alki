@@ -1,0 +1,14 @@
+#4431 - Kolhapur
+discovered_by = indian
+culture = neopapuan
+religion = espiritismo
+capital = "Kolhapur"
+trade_goods = cocoa
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 4
+native_size = 15
+native_ferocity = 1
+native_hostileness = 2
+center_of_trade = 1

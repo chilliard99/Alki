@@ -1,0 +1,16 @@
+#824 - Mariquita
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V51
+controller = V51
+add_core = V51
+culture = antioqueno
+religion = catholico
+capital = "Mariquita"
+trade_goods = salt #mainly salt and coal
+hre = no
+base_tax = 2 
+base_production = 1
+base_manpower = 1
+is_city = yes

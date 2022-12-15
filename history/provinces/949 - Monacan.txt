@@ -1,0 +1,18 @@
+#949 - Monacan
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X52
+controller = X52
+add_core = X52
+culture = piedmontian
+religion = evangelical
+capital = "Monacan"
+trade_goods = wine #Monticello Wine Belt
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

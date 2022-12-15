@@ -1,0 +1,15 @@
+#119 - Ancona
+discovered_by = chinese
+owner = X17
+controller = X17
+add_core = X17
+culture = hokkaidan 
+religion = neoshinto 
+hre = no 
+base_tax = 3
+base_production = 3
+trade_goods = copper #kosaka
+base_manpower = 4    
+capital = "Ancona" 
+is_city = yes
+discovered_by = eastern

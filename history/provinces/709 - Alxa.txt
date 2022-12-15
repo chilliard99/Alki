@@ -1,0 +1,17 @@
+#709 - Alxa
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y32
+controller = Y32
+add_core = Y32
+culture = salt_lake
+religion = sacramental
+capital = "Alxa"
+trade_goods = salt #Right now compass minerals, but i guess just some salt traders
+hre = no
+base_tax = 7
+base_production = 7
+base_manpower = 6
+is_city = yes

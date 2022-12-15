@@ -1,0 +1,16 @@
+# - Stolp
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W84
+controller = W84
+add_core = W84
+culture = panucoan
+religion = catholico
+hre = no
+base_tax = 4
+base_production = 5
+trade_goods = gold #its what it does
+base_manpower = 5
+capital = "Stolp"
+is_city = yes

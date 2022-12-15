@@ -1,0 +1,74 @@
+# For specific government types
+# Will pick the first valid one it finds in list
+
+latin_papacy_reform = {
+	rank = {
+		1 = PRIME_BISHOP
+		2 = VULGAR_PAPACY
+		3 = VULGAR_PAPACY
+	}
+	
+	ruler_male = {
+		1 = PRIME_BISHOP_RULE
+		2 = VOPE
+		3 = VOPE
+	}
+	
+	ruler_female  ={
+		1 = PRIME_BISHOP_RULE
+		2 = VOPE
+		3 = VOPE
+	}
+	
+	heir_male = {
+		1 = FAVORED_CARDINAL
+		2 = FAVORED_CARDINAL
+		3 = FAVORED_CARDINAL
+	}
+
+	heir_female = {
+		1 = FAVORED_CARDINAL
+		2 = FAVORED_CARDINAL
+		3 = FAVORED_CARDINAL
+	}
+	
+	trigger = {
+		has_reform = latin_papacy_reform
+	}
+}
+
+tepeyac_papacy_reform = {
+	rank = {
+		1 = TEPEYAC_BISHOP
+		2 = TEPEYAC_PAPACY
+		3 = TEPEYAC_PAPACY
+	}
+	
+	ruler_male = {
+		1 = TEPEYACE_BISHOP_RULE
+		2 = TPOPE
+		3 = TPOPE
+	}
+	
+	ruler_female  ={
+		1 = TEPEYACE_BISHOP_RULE
+		2 = TPOPE
+		3 = TPOPE
+	}
+	
+	heir_male = {
+		1 = FAVORED_CARDINAL
+		2 = FAVORED_CARDINAL
+		3 = FAVORED_CARDINAL
+	}
+
+	heir_female = {
+		1 = FAVORED_CARDINAL
+		2 = FAVORED_CARDINAL
+		3 = FAVORED_CARDINAL
+	}
+	
+	trigger = {
+		has_reform = tepeyac_papacy_reform_otr
+	}
+}

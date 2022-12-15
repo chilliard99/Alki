@@ -1,0 +1,17 @@
+#672 - Chenzhou
+discovered_by = andean
+culture = neohan
+religion = idolatrous
+capital = "Wulin"
+trade_goods = tobacco
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = no
+native_size = 2
+native_ferocity = 8
+native_hostileness = 4
+add_core = Z98
+owner = Z98
+controller = Z98

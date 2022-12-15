@@ -1,0 +1,69 @@
+country_decisions = {
+
+	promote_sola_ecclesia = {
+		potential = {
+			religion = vacandist
+			NOT = {
+				has_country_modifier = promoted_solo_ecclesia_vaca
+			}
+		}
+		allow = {
+			OR = {
+				has_church_aspect = state_churches_vaca
+				has_church_aspect = local_conclavism_vaca
+			}
+			adm = 5
+		}
+		effect = {
+			add_country_modifier = {
+				name = "promoted_solo_ecclesia_vaca"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	establish_interfaith_churches = {
+		potential = {
+			religion = vacandist
+			any_owned_province = {
+				has_building = cathedral
+				NOT = {
+					has_province_modifier = interfaith_chuch_vaca
+				}
+			}
+		}
+		allow = {
+			legitimacy_equivalent = 85
+			adm_power = 50
+		}
+		effect = {
+			add_adm_power = -50
+			custom_tooltip = all_cathedral_provinces_will_get_interfaith.tt
+			tooltip = {
+				add_province_modifier = {
+					name = "interfaith_chuch_vaca"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_building = cathedral
+					}
+					add_province_modifier = {
+						name = "interfaith_chuch_vaca"
+						duration = -1
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}
+

@@ -1,0 +1,35 @@
+spriteTypes = {
+
+### New Jewish Holy sites ###
+	
+	spriteType = {
+		name = "GFX_holy_site_203"
+		texturefile = "gfx//interface//holy_sites//daman.dds"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_holy_site_947"
+		texturefile = "gfx//interface//holy_sites//khiva.dds"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_holy_site_172"
+		texturefile = "gfx//interface//holy_sites//larestan.dds"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_holy_site_178"
+		texturefile = "gfx//interface//holy_sites//sabzevar.dds"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_holy_site_965"
+		texturefile = "gfx//interface//holy_sites//shirvan.dds"
+		loadType = "INGAME"
+	}
+
+}

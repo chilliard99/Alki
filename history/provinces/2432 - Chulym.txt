@@ -1,0 +1,17 @@
+#2432 - Chulym
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W55
+controller = W55
+add_core = W55
+culture = bereber
+religion = catholico
+capital = "Igarka"
+trade_goods = grain #part of irrigation project
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 2
+is_city = yes

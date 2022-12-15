@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = orinoquia
+religion = catholico 
+technology_group = indian
+capital = 4255	#Yopal
+
+1411.5.2 = {
+	monarch = {
+		name = "Jeffry"
+		dynasty = "Yopo"
+		birth_date = 1411.5.2
+		adm = 5
+		dip = 4
+		mil = 4
+	}
+}
+1428.5.17 = {
+	heir = {
+		name = "Andres"
+		monarch_name = "Andres"
+		dynasty = "Yopo"
+		birth_date = 1428.5.17
+		death_date = 1483.8.30
+		claim = 95
+		adm = 6
+		dip = 2
+		mil = 2
+	}
+}

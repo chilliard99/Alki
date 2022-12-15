@@ -1,0 +1,818 @@
+namespace = inua_events
+####################INUA MINORITY EVENTS##########################
+country_event = { #Angakkuq Offers Assitance **PULSE**
+	id = inua_events.1
+	title = inua_events.1.t
+	desc = inua_events.1.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		capital_scope = {
+			OR = {
+				superregion = ursalia_superregion
+				superregion = canada_superregion
+			}
+		}
+		NOT = {
+			OR = {
+				religion = inua
+				has_country_modifier = denounced_angakkuq_inua
+			}
+		}
+		any_owned_province = {
+			religion = inua
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = inua_events.1.a #We Accept Them With Open Arms
+		define_advisor = {
+			type = natural_scientist
+			skill = 2
+			cost_multiplier = 0.75
+		}
+	}
+	option = {
+		name = inua_events.1.b #They will better serve their community
+		random_owned_province = {
+			limit = {
+				religion = inua
+			}
+			add_base_tax = 1
+		}
+	}
+	option = {
+		name = inua_events.1.c #Heathens!
+		add_country_modifier = {
+			name = "denounced_angakkuq_inua"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #The Inua Faith 
+	id = inua_events.2
+	title = inua_events.2.t
+	desc = inua_events.2.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	
+	trigger = {
+		development_in_provinces = {
+			value = 20
+			religion = inua
+		}
+		NOT = {
+			has_country_flag = inua_faith_question_notification
+		}
+		NOT = {
+			religion = inua
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 40
+	}
+	
+	immediate = {
+		set_country_flag = inua_faith_question_notification
+	}
+	
+	option = {
+		name = inua_events.2.a #We will accept them
+		custom_tooltip = inua_converting_faith.tt
+		tooltip = {
+			add_province_modifier = {
+				name = "accepting_inua"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					religion = inua
+				}
+				add_province_modifier = {
+					name = "accepting_inua"
+					duration = -1
+				}
+			}
+		}
+	}
+	option = {
+		name = inua_events.2.b #They are Heathens!
+		custom_tooltip = inua_converting_faith.tt
+		tooltip = {
+			add_province_modifier = {
+				name = "converting_inua"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					religion = inua
+				}
+				add_province_modifier = {
+					name = "converting_inua"
+					duration = -1
+				}
+			}
+		}
+	}
+	option = {
+		name = inua_events.2.c #Perhaps they are right...
+		change_religion = inua
+		add_country_modifier = {
+			name = "conversion_zeal"
+			duration = 3650
+		}	
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #Inua Object to Conflict **PULSE**
+	id = inua_events.3
+	title = inua_events.3.t
+	desc = inua_events.3.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		capital_scope = {
+			OR = {
+				superregion = ursalia_superregion
+				superregion = canada_superregion
+			}
+		}
+		NOT = {
+			religion = inua
+		}
+		any_owned_province = {
+			religion = inua
+		}
+		is_at_war = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = inua_events.3.a #We can do nothing
+		add_yearly_manpower = -0.5
+	}
+	option = {
+		name = inua_events.3.b #Force them to serve
+		random_owned_province = {
+			limit = {
+				religion = inua
+			}
+			spawn_rebels = {
+				type = inua_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+country_event = { #Inua Offer Amulet **PULSE**
+	id = inua_events.4
+	title = inua_events.4.t
+	desc = inua_events.4.d
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		capital_scope = {
+			OR = {
+				superregion = ursalia_superregion
+				superregion = canada_superregion
+			}
+		}
+		NOT = {
+			OR = {
+				religion = inua
+				has_ruler_modifier = amulet_of_protection_inua
+				has_ruler_modifier = refused_amulet_inua
+			}
+		}
+		any_owned_province = {
+			religion = inua
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = inua_events.4.a #We Accept their Gifts
+		add_ruler_modifier = {
+			name = "amulet_of_protection_inua"
+			duration = -1
+		}		
+	}
+	option = {
+		name = inua_events.4.b #Force them to serve
+		add_ruler_modifier = {
+			name = "refused_amulet_inua"
+			duration = -1
+		}	
+	}
+}
+
+country_event = { #Merchants Disrupt Inua Trappers **PULSE**
+	id = inua_events.5
+	title = inua_events.5.t
+	desc = inua_events.5.d
+	picture = MERCHANTS_TALKING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		capital_scope = {
+			OR = {
+				superregion = ursalia_superregion
+				superregion = canada_superregion
+			}
+		}
+		NOT = {
+			OR = {
+				religion = inua
+				has_ruler_modifier = amulet_of_protection_inua
+				has_ruler_modifier = refused_amulet_inua
+			}
+		}
+		any_owned_province = {
+			religion = inua
+			has_climate = arctic
+			trade_goods = fur
+			NOT = {
+				has_province_modifier = overruled_inua_trapping_rights
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = inua_events.5.a #It is their land
+		add_prestige = 15
+	}
+	option = {
+		name = inua_events.5.b #They use it wrong
+		add_years_of_income = 0.5
+		random_owned_province = {
+			limit = {
+				religion = inua
+				has_climate = arctic
+				trade_goods = fur
+				NOT = {
+					has_province_modifier = overruled_inua_trapping_rights
+				}
+			}
+			add_province_modifier = {
+				name = "overruled_inua_trapping_rights"
+				duration = 3650
+			}
+		}
+	}
+}
+####################INUA EVENTS##########################
+
+country_event = { #Senseless Slaughter **PULSE**
+	id = inua_events.6
+	title = inua_events.6.t
+	desc = inua_events.6.d
+	picture = FAMINE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = inua
+		is_at_war = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = inua_events.6.a #It was a necesity
+		add_prestige = -25
+	}
+}
+
+country_event = { #Carving a New Future **PULSE**
+	id = inua_events.7
+	title = inua_events.7.t
+	desc = inua_events.7.d
+	picture = PAINTER_ARTIST_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = inua
+		any_owned_province = {
+			NOT = {
+				has_province_modifier = local_artist_inua
+			} 
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = inua_events.7.a #Hire them
+		define_advisor = {
+			type = artist
+			skill = 2
+			cost_multiplier = 0.25
+		}
+	}
+	option = {
+		name = inua_events.7.b #They will serve their own community better
+		random_owned_province = {
+			limit = {
+				religion = inua
+				NOT = {
+					has_province_modifier = local_artist_inua
+				}
+			}
+			add_province_modifier = {
+				name = "local_artist_inua"
+				duration = 3650
+			}
+		}
+	}
+}
+
+country_event = { #A Lost Knife **PULSE**
+	id = inua_events.8
+	title = inua_events.8.t
+	desc = inua_events.8.d
+	picture = SWORD_OF_OSMAN_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = inua
+		NOT = {
+			has_ruler_modifier = inua_deep_depression
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = inua_events.8.a #Everyone must search!
+		add_adm_power = -50
+	}
+	option = {
+		name = inua_events.8.b #Sorrow. Pure, unrelenting, sorrow.
+		add_ruler_modifier = {
+			name = "inua_deep_depression"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Qiviut Brings in Dividens **PULSE**
+	id = inua_events.9
+	title = inua_events.9.t
+	desc = inua_events.9.d
+	picture = FEAST_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = inua
+		any_owned_province = {
+			has_climate = arctic
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = inua_events.9.a #We're Rich!
+		add_years_of_income = 2
+	}
+}
+
+country_event = { #Tuurngaq Interrupts Healing **PULSE**
+	id = inua_events.10
+	title = inua_events.10.t
+	desc = inua_events.10.d
+	picture = PLAGUE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = inua
+		is_at_war = yes
+		NOT = {
+			has_country_modifier = healing_disruption
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = inua_events.10.a #Evil will not prevail
+		add_country_modifier = {
+			name = "healing_disruption"
+			duration = 1825
+		}	
+	}
+}
+
+country_event = { #Sedna's Blessing **PULSE**
+	id = inua_events.11
+	title = inua_events.11.t
+	desc = inua_events.11.d
+	picture = HARBOUR_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = inua
+		num_of_ports = 1
+		NOT = {
+			OR = {
+				has_country_modifier = sednas_blessing_mil
+				has_countrY_modifier = sednas_blessing_trade
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = inua_events.11.a #She has granted our ships strength!
+		add_country_modifier = {
+			name = "sednas_blessing_mil"
+			duration = 3650
+		}	
+	}
+	option = {
+		name = inua_events.11.b #She has blessed our trade!
+		add_country_modifier = {
+			name = "sednas_blessing_trade"
+			duration = 3650
+		}	
+	}
+	option = {
+		name = inua_events.11.c #She has birthed us new talent!
+		create_admiral = { tradition = 50 }
+	}
+}
+ 
+country_event = { #Northern Kingdom
+	id = inua_events.12
+	title = inua_events.12.t
+	desc = inua_events.12.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		religion = inua
+		capital_scope = {
+		 	has_winter = severe_winter
+		}
+		total_development = 250
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = {
+		name = inua_events.12.a #We Will Embrace This New Identity
+		override_country_name = TUGGAVIK_TAG_NAME
+		add_country_modifier = {
+			name = "kingdom_of_the_north"
+			duration = 36500
+		}	
+		if = {
+			limit = {
+				NOT = { government_rank = 2 }
+			}
+			set_government_rank = 2
+		}
+	}
+	option = {
+		name = inua_events.12.b #We succeaded as [Root]
+		if = {
+			limit = {
+				NOT = { government_rank = 2 }
+			}
+			set_government_rank = 2
+		}
+		add_country_modifier = {
+			name = "kingdom_of_the_north"
+			duration = 36500
+		}	
+	}
+}
+
+country_event = { #Siqqitiq Troubles **PULSE**
+	id = inua_events.13
+	title = inua_events.13.t
+	desc = inua_events.13.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = inua
+		any_owned_province = {
+			religion = inua
+			any_neighbor_province = {
+				religion = theanite
+				OWNER = {
+					religion = theanite
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = inua_events.13.a #Punish them for their attemps
+		random_neighbor_country = {
+			limit = {
+				religion = theanite
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = prevented_missionary_passage
+			}
+		}
+	}
+	option = {
+		name = inua_events.13.b #Do not harm their passage
+		random_owned_province = {
+			limit = {
+				religion = inua
+				any_neighbor_province = {
+					religion = theanite
+					OWNER = {
+						religion = theanite
+					}
+				}
+			}
+			change_religion = theanite
+		}
+	}
+}
+
+
+country_event = { #Trapping Disruptions **PULSE**
+	id = inua_events.14
+	title = inua_events.14.t
+	desc = inua_events.14.d
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = inua
+		any_owned_province = {
+			has_climate = arctic
+		}
+		is_at_war = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = inua_events.14.a #Horror!
+		add_years_of_income = -0.5
+	}
+}
+
+country_event = { #Settling the Arctic
+	id = inua_events.15
+	title = inua_events.15.t
+	desc = inua_events.15.d
+	picture = COLONIZATION_eventPicture
+	
+	trigger = {
+		religion = inua
+		any_owned_province = {
+			has_empty_adjacent_province = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = {
+		name = inua_events.15.a #Perfect
+		add_country_modifier = {
+			name = "settling_the_arctic_inua"
+			duration = 36500
+		}	
+	}
+}
+
+country_event = { #Maligait **PUlSE**
+	id = inua_events.16
+	title = inua_events.16.t
+	desc = inua_events.16.d	
+	picture = KINGS_CHOICE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = inua
+		has_advisor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = inua_events.16.a #He will be punished.
+		kill_advisor = random
+	}
+	option = {
+		name = inua_events.16.b #Perfect
+		add_country_modifier = {
+			name = "maligait_advisor"
+			duration = 1095
+		}	
+	}
+}
+
+country_event = { #The Public Breath **PUlSE**
+	id = inua_events.17
+	title = inua_events.17.t
+	desc = inua_events.17.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = inua
+		is_at_war = no
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = inua_events.17.a #We Live through it.
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+	}
+}
+
+country_event = { #Tunijuti for our ally **PUlSE**
+	id = inua_events.18
+	title = inua_events.18.t
+	desc = inua_events.18.d
+	picture = CONQUEST_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = inua
+		num_of_allies = 1
+		NOT = {
+			has_country_modifier = gifting_society_inua
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_ally = {
+				save_event_target_as = tunijuti_recipient_neato
+			}
+		}
+	}
+	
+	option = {
+		name = inua_events.18.a #Let us reward them!
+		add_years_of_income = -0.25
+		add_adm_power = -25
+		add_country_modifier = {
+			name = "gifting_society_inua"
+			duration = 3650
+		}	
+		event_target:tunijuti_recipient_neato = {
+			add_opinion = {
+				who = ROOT
+				modifier = granted_tunijuti
+			}
+			country_event = {
+				id = inua_events.19
+			}
+		}
+	}
+	option = {
+		name = inua_events.18.b #Bah, too expensive
+		add_prestige = 15
+	}
+}
+
+country_event = { #Tunijuti
+	id = inua_events.19
+	title = inua_events.19.t
+	desc = inua_events.19.d
+	picture = CONQUEST_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = inua_events.19.a #Let us reward them!
+		add_years_of_income = 0.25
+		add_adm_power = 50
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = accepted_tunijuti
+			}
+		}
+	}
+}
+
+country_event = { #Anirnialuk: A Question of Syncretism **PUlSE**
+	id = inua_events.20
+	title = inua_events.20.t
+	desc = inua_events.20.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = inua
+		NOT = {
+			has_country_flag = anirnialuk_chosen_bruh
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = inua_events.20.a #Of course!
+		add_country_modifier = {
+			name = "accepting_syncretism"
+			duration = -1
+		}
+	}
+	option = {
+		name = inua_events.20.b #They bastardize our faith!
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+	}
+	
+	after = {
+		set_country_flag = anirnialuk_chosen_bruh
+	}
+}

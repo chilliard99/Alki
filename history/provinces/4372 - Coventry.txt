@@ -1,0 +1,15 @@
+#4372 - Coventry
+#Staffordshire, Warwickshire
+discovered_by = indian
+owner = U01
+controller = U01
+add_core = U01
+culture = neofilipino
+religion = espiritismo
+hre = no
+base_tax = 3
+base_production = 3
+trade_goods = fish #halal
+base_manpower = 2
+capital = "Coventry"
+is_city = yes

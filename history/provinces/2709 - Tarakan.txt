@@ -1,0 +1,17 @@
+#2709 - Tarakan
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W55
+controller = W55
+add_core = W55
+culture = bereber
+religion = catholico
+capital = "Tarakan"
+trade_goods = cloth #River cloth
+hre = no
+base_tax = 4
+base_production = 5
+base_manpower = 5
+is_city = yes

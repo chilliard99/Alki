@@ -1,0 +1,34 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = chinese
+religion = neoshinto
+primary_culture = sendai
+capital = 1847 #Sapporo
+
+
+1417.12.4 = {
+	monarch = {
+		name = "Daichi"
+		dynasty = "Sendai"
+		birth_date = 1417.12.4
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+}
+
+1442.2.3 = {
+	heir = {
+		name = "Amaya"
+		monarch_name = "Amaya III"
+		dynasty = "Sendai"
+		birth_date = 1442.2.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 1
+		mil = 0
+	}
+	female = yes
+}

@@ -1,0 +1,7 @@
+government = monarchy 
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = victorian
+religion = penitent
+technology_group = sub_saharan
+capital = 4434	#Melbourne

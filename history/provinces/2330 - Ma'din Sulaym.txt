@@ -1,0 +1,15 @@
+#2330 - Ma'din Sulaym
+discovered_by = western
+discovered_by = eastern 
+owner = W09
+controller = W09
+add_core = W09
+culture = northern_salishan
+religion = collectivist
+capital = "Ma'din Sulaym"
+trade_goods = fur #idk what else
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

@@ -1,0 +1,16 @@
+#220 - València
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+owner = X76	
+controller = X76
+add_core = X76
+culture = scotian_maratimer
+religion = dynastic
+hre = no
+base_tax = 3
+base_production = 2
+trade_goods = fur #New England Furs 
+base_manpower = 2
+capital = "València" 
+is_city = yes

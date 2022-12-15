@@ -1,0 +1,121 @@
+#Country Name: Please see filename.
+
+graphical_culture = asiangfx
+
+color = { 252 255 92 }
+
+historical_idea_groups = {
+	offensive_ideas
+	defensive_ideas
+	maritime_ideas
+	trade_ideas
+	quality_ideas
+	spy_ideas
+	diplomatic_ideas
+	administrative_ideas
+}
+
+historical_units = {
+	japanese_archer
+	eastern_bow
+	japanese_footsoldier
+	japanese_samurai
+	asian_arquebusier
+	asian_charge_cavalry
+	asian_mass_infantry
+	asian_musketeer
+	reformed_asian_musketeer
+	reformed_asian_cavalry
+}
+
+monarch_names = {
+	"George #0" = 20
+	"James #0" = 20
+	"John #0" = 20
+	"Thomas #0" = 20
+	"Charles #0" = 15
+	"Daniel #0" = 15
+	"Henry #0" = 15
+	"Samuel #0" = 15
+	"Arthur #0" = 10
+	"Cyrus #0" = 10
+	"David #0" = 10
+	"Elias #0" = 10
+	"Frederick Augustus #0" = 10
+	"Nathaniel #0" = 10
+	"Peyton #0" = 10
+	"Richard #0" = 10
+	"Aaron #0" = 0
+	"Angus #0" = 0
+	"August #0" = 0
+	"Benjamin #0" = 0
+	"Calvin #0" = 0
+	"Darren #0" = 0
+	"Elbridge #0" = 0
+	"Eric #0" = 0
+	"Francis #0" = 0
+	"Frederick #0" = 0
+	"Isaac #0" = 0
+	"Jonathan #0" = 0
+	"Joseph #0" = 0
+	"Kyran #0" = 0
+	"Luke #0" = 0
+	"Milton #0" = 0
+	"Patrick #0" = 0
+	"Paul #0" = 0
+	"Philip #0" = 0
+	"Randolf #0" = 0
+	"Silvester #0" = 0
+	"Timothy #0" = 0
+	"Wilbur #0" = 0
+	"William #0" = 0
+	"Alexander #0" = 0
+    "Stephen #0" = 0
+	
+    "Deborah #0" = -1
+    "Sarah #0" = -1
+    "Anne #0" = -1
+}
+
+leader_names = {
+    # Daimyo names
+	Akamatsu Akechi Ashikaga Amago Kyogoku Rokkaku Asakura Asano Aso Chosokabe Date Hachisuka
+	Hatakeyama Hojo Hosokawa Ichijo Keda Imagawa Isshiki Ito Jinbo Kikuchi Kono Maeda
+	Matsunaga Mimura Miyoshi Mogami Mori Nabeshima Nagao Oda Ogasawara Otomo Ouchi
+	Ryuzoji Sagara Saito Sanada Satake Satomi Shiba Shibata Shimazu Shoni Takeda Toki
+	Tokugawa Matsudaira Toyotomi Tsutsui Uesugi Uragami Yamana Yamauchi
+	# Hatakeyama Flavor
+	Hatakeyama Hatakeyama Hatakeyama Hatakeyama Hatakeyama Hatakeyama Hatakeyama Hatakeyama Hatakeyama Hatakeyama
+	Hatakeyama Hatakeyama Hatakeyama Hatakeyama Hatakeyama Hatakeyama Hatakeyama Hatakeyama Hatakeyama Hatakeyama
+	# Vassals of Hatakeyama
+    Saito Saito Saito Saito Saito Hira Hira Hira Hira Hira
+	Sahara Sahara Sahara Sahara Sahara Jinbo Jinbo Jinbo Jinbo Jinbo
+	Yusa Yusa Yusa Yusa Yusa Sho Sho Sho Sho Sho
+	Atagi Atagi Atagi Atagi Atagi Horiuchi Horiuchi Horiuchi Horiuchi Horiuchi
+	Ochi Ochi Ochi Ochi Ochi Tsutsui Tsutsui Tsutsui Tsutsui Tsutsui
+	Nukui Nukui Nukui Nukui Nukui Osa Osa Osa Osa Osa
+}
+
+ship_names = {
+	"Mutsu Maru" "Dewa Maru" "Shimotsuke Maru"
+	"Hitachi Maru"
+	"Kazusa Maru" "Shimousa Maru" "Musashi Maru" "Kozuke Maru" "Izu Maru" "Echigo Maru" "Ettchu Maru"
+	"Kaga Maru" "Noto Maru" "Suruga Maru" "Totomi Maru" "Joshu Maru" "Enshu Maru" "Bushu Maru" "Esshu Maru"
+	"Mikawa Maru" "Ushu Maru" "Soushu Maru" "Boushu Maru" "Kai Maru" "Shinshu Maru" "Koshu Maru"
+	"Owari Maru" "Bishu Maru" "Mino Maru" "Echizen Maru" "Ise Maru" "Shima Maru" "Omi Maru" 
+	"Goushu Maru" "Yamashiro Maru" "Wakasa Maru" "Tanba Maru" "Tango Maru" "Yamato Maru" "Kii Maru"
+	"Kishu Maru" "Iga Maru" "Awa Maru" "Sanuki Maru" "Tosa Maru"
+	"Iyo Maru" "Harima Maru" "Banshu Maru"
+	"Hoki Maru" "Inaba Maru" "Bizen Maru" "Mimasaka Maru" "Binshu Maru"
+	"Bingo Maru" "Bittchu Maru" "Aki Maru" "Izumo Maru" "Iwami Maru" "Suou Maru" "Nagato Maru" "Bungo Maru"
+	"Buzen Maru" "Chikuzen Maru"
+	"Chikugo Maru" "Hizen Maru" "Higo Maru" "Chikushu Maru" "Hyuga Maru" "Osumi Maru" "Satsuma Maru" "Sasshu Maru"
+}
+
+army_names = {
+	"Tampan Army" "Army of $PROVINCE$" 
+}
+
+fleet_names = {
+	"Tampan Fleet"
+}

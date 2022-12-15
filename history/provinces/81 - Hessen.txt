@@ -1,0 +1,16 @@
+#81 - Hessen
+discovered_by = chinese
+owner = X29
+controller = X29
+add_core = X29
+capital = "Marburg"
+trade_goods = fish #Big fish lake
+culture = wajin
+religion = neoshinto
+base_tax = 2
+base_production = 2
+base_manpower = 3
+is_city = yes
+hre = no
+discovered_by = eastern
+discovered_by = ottoman

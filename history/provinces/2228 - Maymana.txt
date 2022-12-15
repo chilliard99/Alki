@@ -1,0 +1,15 @@
+#2228 - Maymana
+discovered_by = western
+discovered_by = eastern
+owner = W06
+controller = W06
+add_core = W06
+culture = haidan
+religion = collectivist
+capital = "Maymana"
+trade_goods = fish #whaling?
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 2
+is_city = yes

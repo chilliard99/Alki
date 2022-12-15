@@ -1,0 +1,14 @@
+# 98 Utrecht - Principal cities: Utrecht
+discovered_by = north_american
+capital = "Utrecht"
+is_city = no
+culture = gallic
+religion = paganry
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = unknown
+base_manpower = 2
+native_size = 5
+native_ferocity = 2
+native_hostileness = 4

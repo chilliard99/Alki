@@ -1,0 +1,15 @@
+# - Chichas
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neosumatran
+religion = espiritismo
+is_city = yes
+capital = "Chichas"
+trade_goods = copper #more tin
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 1
+center_of_trade = 1

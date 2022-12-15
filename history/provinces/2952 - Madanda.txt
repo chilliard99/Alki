@@ -1,0 +1,16 @@
+# - Madanda
+discovered_by = ottoman
+discovered_by = muslim
+owner = W81
+controller = W81
+add_core = W81
+culture = potosian
+religion = catholico
+capital = "Madanda"
+is_city = yes
+base_manpower = 6
+trade_goods = paper #developed center
+hre = no
+base_tax = 5
+base_production = 6
+is_city = yes

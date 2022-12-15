@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = chilango
+religion = catholico
+technology_group = muslim
+capital = 2645	#Taxco
+
+1399.2.12 = {
+	monarch = {
+		name = "Hermenegildo II"
+		dynasty = "de la Borda"
+		birth_date = 1399.2.12
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1425.7.18 = {
+	heir = {
+		name = "Sebastian"
+		monarch_name = "Sebastian IV"
+		dynasty = "de la Borda"
+		birth_date = 1425.7.18
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+}

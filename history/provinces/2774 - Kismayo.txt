@@ -1,0 +1,15 @@
+#2774 - Kismayo
+discovered_by = ottoman
+discovered_by = muslim
+owner = W63
+controller = W63
+add_core = W63
+culture = zaragozan
+religion = catholico
+capital = "Kismayo"
+trade_goods = wool #just desert
+is_city = yes
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 3

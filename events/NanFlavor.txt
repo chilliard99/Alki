@@ -1,0 +1,1973 @@
+namespace = nan_events
+####################YANANTIN CHANGING EVENTS##########################
+country_event = { #Rich and Poor ***PULSE***
+	id = nan_events.1
+	title = nan_events.1.t
+	desc = nan_events.1.d
+	picture = FAMINE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.1.a #The poor.
+		add_karma = -10
+		add_prestige = 15
+	}
+	option = {
+		name = nan_events.1.b #The rich.
+		add_karma = 10
+		add_years_of_income = 0.25
+	}
+}
+
+country_event = { #King and Subject ***PULSE***
+	id = nan_events.2
+	title = nan_events.2.t
+	desc = nan_events.2.d
+	picture = CONQUEST_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.2.a #We must bolster our strength.
+		add_karma = 10
+		add_legitimacy = 10
+		add_horde_unity = 10
+		add_devotion = 10
+		add_meritocracy = 10
+		add_republican_tradition = 5
+	}
+	option = {
+		name = nan_events.2.b #We serve the people.
+		add_karma = -20
+	}
+}
+
+country_event = { #Father and Son ***PULSE***
+	id = nan_events.3
+	title = nan_events.3.t
+	desc = nan_events.3.d
+	picture = NEW_HEIR_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		NOT = {
+			OR = {
+				heir_age = 10
+				has_ruler_modifier = merciful_nan
+				has_ruler_modifier = firm_hand_nan
+			}
+		}
+		is_female = no
+		has_female_heir = no
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.3.a #Punish
+		add_karma = -10
+		add_ruler_modifier = {
+			name = "merciful_nan"
+			duration = -1
+		}
+	}
+	option = {
+		name = nan_events.3.b #Forgive 
+		add_karma = 10
+		add_ruler_modifier = {
+			name = "firm_hand_nan"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Friend and Friend ***PULSE***
+	id = nan_events.4
+	title = nan_events.4.t
+	desc = nan_events.4.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		any_ally = {
+			is_at_war = yes
+			NOT = {
+				religion = yanantin
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_ally = {
+				limit = {
+					is_at_war = yes
+					NOT = {
+						religion = yanantin
+					}
+				}
+				save_event_target_as = nice_ally_who_will_get_our_support
+			}
+		}
+	}
+	
+	option = {
+		name = nan_events.4.a #We shall send them military support.
+		add_karma = -10
+		custom_tooltip = our_ally_will_recieve_the_following_aid_mil_nan.tt
+		tooltip = {
+			add_country_modifier = {
+				name = "nan_military_aid"
+				duration = 1095
+			}
+		}
+	}
+	option = {
+		name = nan_events.4.b #We shall send them relief resources.
+		add_karma = 10
+		custom_tooltip = our_ally_will_recieve_the_following_aid_relief_nan.tt
+		tooltip = {
+			add_country_modifier = {
+				name = "nan_relief_aid"
+				duration = 1095
+			}
+		}
+		event_target:nice_ally_who_will_get_our_support = {
+			set_country_flag = will_recieve_relief_aid_from_nan
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			event_target:nice_ally_who_will_get_our_support = {
+				country_event = { 
+					id = catholico_events.13 
+					days = 5
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Friends Among the Ñan 
+	id = nan_events.5
+	title = nan_events.5.t
+	desc = nan_events.5.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.5.a #Wonderous!
+		if = {
+			limit = {
+				has_country_flag = will_recieve_relief_aid_from_nan
+			}
+			add_years_of_income = 0.25
+			add_dip_power = 25
+			add_country_modifier = {
+				name = "nan_relief_aid"
+				duration = 1095
+			}
+		}
+		else = {
+			add_army_tradition = 10
+			add_mil_power = 25
+			add_country_modifier = {
+				name = "nan_military_aid"
+				duration = 1095
+			}
+		}
+	}
+	
+	after = {
+		clr_country_flag = will_recieve_relief_aid_from_nan
+	}
+}
+
+country_event = { #Husband and Wife ***PULSE***
+	id = nan_events.6
+	title = nan_events.6.t
+	desc = nan_events.6.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		has_heir = no
+		has_consort = yes
+		is_female = no
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.6.a #Populate the world.
+		add_karma = 10
+		define_heir = {
+			dynasty = ROOT
+			adm = 2
+			dip = 2
+			mil = 2
+			claim = 50
+		}
+	}
+	option = {
+		name = nan_events.6.b #Wait until another day.
+		add_karma = -10
+	}
+}
+
+country_event = { #Craftsman and Farmer ***PULSE***
+	id = nan_events.7
+	title = nan_events.7.t
+	desc = nan_events.7.d
+	picture = FARMING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		any_owned_province = {
+			OR = {
+				trade_goods = cloth
+				trade_goods = glass
+				trade_goods = paper
+			}
+			NOT = {
+				has_province_modifier = favor_of_ruler_nan
+			}
+		}
+		any_owned_province = {
+			OR = {
+				trade_goods = grain
+				trade_goods = livestock
+				trade_goods = wool
+				trade_goods = cotton
+				trade_goods = wine
+				trade_goods = tobacco
+				trade_goods = sugar
+			}
+			NOT = {
+				has_province_modifier = favor_of_ruler_nan
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					OR = {
+						trade_goods = cloth
+						trade_goods = glass
+						trade_goods = paper
+					}
+				}
+				save_event_target_as = province_of_the_craftsmen_nan
+			}
+			random_owned_province = {
+				limit = {
+					OR = {
+						trade_goods = grain
+						trade_goods = livestock
+						trade_goods = wool
+						trade_goods = cotton
+						trade_goods = wine
+						trade_goods = tobacco
+						trade_goods = sugar
+					}
+				}
+				save_event_target_as = province_of_the_farmer_nan
+			}
+		}
+	}
+	
+	
+	option = {
+		name = nan_events.7.a #Favor the Craftsmen
+		event_target:province_of_the_craftsmen_nan = {
+			add_base_production = 1
+			add_province_modifier = {
+				name = "favor_of_ruler_nan"
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = nan_events.7.b #Favor the Farmers
+		event_target:province_of_the_farmer_nan = {
+			add_base_production = 1
+			add_province_modifier = {
+				name = "favor_of_ruler_nan"
+				duration = 3650
+			}
+		}
+	}
+}
+
+country_event = { #Brother and Sister ***PULSE***
+	id = nan_events.8
+	title = nan_events.8.t
+	desc = nan_events.8.d
+	picture = CULTURE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		any_owned_province = {
+			NOT = {
+				OR = {
+					culture = ROOT
+					has_province_modifier = yanantin_family_nan
+				}
+			}
+			culture_group = ROOT
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.8.a #We are united!
+		add_karma = 10
+		custom_tooltip = ever_province_of_other_culture_will_get_this_nan.tt
+		tooltip = {
+			add_province_modifier = {
+				name = "yanantin_family_nan"
+				duration = 3650
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					culture_group = ROOT
+					NOT = {
+						culture = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = "yanantin_family_nan"
+					duration = 3650
+				}
+			}
+		}
+	}
+	option = {
+		name = nan_events.8.b #Above all.
+		add_karma = -10
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
+		add_prestige = 15
+	}
+}
+
+country_event = { #Artist and Merchant ***PULSE***
+	id = nan_events.9
+	title = nan_events.9.t
+	desc = nan_events.9.d
+	picture = ARTWORK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		NOT = {
+			OR = {
+				has_country_modifier = funded_artists_nan
+				has_country_modifier = funded_merchants_nan
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.9.a #Fund the artists
+		add_karma = -10
+		add_country_modifier = {
+			name = "funded_artists_nan"
+			duration = 5475
+		}
+	}
+	option = {
+		name = nan_events.9.b #Fund the merchants
+		add_karma = 10
+		add_country_modifier = {
+			name = "funded_merchants_nan"
+			duration = 5475
+		}
+	}
+}
+
+country_event = { #Light and Dark ***PULSE***
+	id = nan_events.10
+	title = nan_events.10.t
+	desc = nan_events.10.d
+	picture = COMET_SIGHTED_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		NOT = {
+			OR = {
+				has_ruler_modifier = in_the_light_nan
+				has_ruler_modifier = in_the_dark_nan
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.10.a #Light
+		add_ruler_modifier = {
+			name = "in_the_light_nan"
+			duration = -1
+		}
+	}
+	option = {
+		name = nan_events.10.b #Dark
+		add_ruler_modifier = {
+			name = "in_the_dark_nan"
+			duration = -1
+		}
+	}
+}
+####################HIGH YANANTIN EVENTS##########################
+
+country_event = { #Blinding Light ***PULSE***
+	id = nan_events.11
+	title = nan_events.11.t
+	desc = nan_events.11.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		karma = 50
+		NOT = {
+			has_ruler_modifier = sun_bleached_nan
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.11.a #Resist
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100	
+		}
+	}
+	option = {
+		name = nan_events.11.b #Give in
+		add_ruler_modifier = {
+			name = "sun_bleached_nan"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #Blurred Edges ***PULSE***
+	id = nan_events.12
+	title = nan_events.12.t
+	desc = nan_events.12.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		karma = 90
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		random_list = { 
+			33 = {
+				set_country_flag = adm_dev_get
+			}
+			33 = {
+				set_country_flag = dip_dev_get
+			}
+			34 = {
+				set_country_flag = mil_dev_get
+			}
+		}
+	}
+	
+	option = {
+		name = nan_events.11.a #Assert our Authority
+		if = {
+			limit = {
+				stability = -1
+			}
+			add_stability = -2
+		}
+		else_if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+			add_adm_power = -100
+		}
+		else = {
+			add_adm_power = -200
+		}
+	}
+	option = {
+		name = nan_events.11.b #Let the people reign
+		if = {
+			limit = {
+				has_country_flag = adm_dev_get
+			}
+			if = {
+				limit = {
+					adm = 1
+				}
+				change_adm = -1
+			}
+			else = {
+				add_adm_power = -300
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = dip_dev_get
+			}
+			if = {
+				limit = {
+					dip = 1
+				}
+				change_dip = -1
+			}
+			else = {
+				add_dip_power = -300
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					mil = 1
+				}
+				change_mil = -1
+			}
+			else = {
+				add_mil_power = -300
+			}
+		}
+	}
+	
+	after = {
+		clr_country_flag = adm_dev_get
+		clr_country_flag = dip_dev_get
+		clr_country_flag = mil_dev_get
+	}
+}
+
+country_event = { #Fading Brilliance ***PULSE***
+	id = nan_events.13
+	title = nan_events.13.t
+	desc = nan_events.13.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		stability = 2
+		karma = 50
+		NOT = {
+			has_ruler_modifier = fading_brilliance_nan
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.13.a #Return to the natural order
+		add_karma = -15
+	}
+	option = {
+		name = nan_events.13.b #Exploit this development
+		add_ruler_modifier = {
+			name = "fading_brilliance_nan"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Army Cloaked in Light ***PULSE***
+	id = nan_events.14
+	title = nan_events.14.t
+	desc = nan_events.14.d
+	picture = MILITARY_CAMP_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		karma = 50
+		is_at_war = yes
+		NOT = {
+			OR = {
+				has_country_modifier = blazing_canons_nan
+				has_country_modifier = synchronized_guns_nan
+				has_country_modifier = protected_by_the_warmth_nan
+				has_country_modifier = learning_light_nan
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.14.a #Our canons will light the skies ablaze.
+		add_country_modifier = {
+			name = "blazing_canons_nan"
+			duration = 1095
+		}
+	}
+	option = {
+		name = nan_events.14.b #Our guns will fire in union.
+		add_country_modifier = {
+			name = "synchronized_guns_nan"
+			duration = 1095
+		}
+	}
+	option = {
+		name = nan_events.14.c #The sun shall protect us with its warmth.
+		add_country_modifier = {
+			name = "protected_by_the_warmth_nan"
+			duration = 1095
+		}
+	}
+	option = {
+		name = nan_events.14.e #We will learn under the light.
+		add_country_modifier = {
+			name = "learning_light_nan"
+			duration = 1095
+		}
+	}
+}
+
+country_event = { #Bright Money ***PULSE***
+	id = nan_events.15
+	title = nan_events.15.t
+	desc = nan_events.15.d
+	picture = CORRUPTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		karma = 50
+		corruption = 1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.15.a #Purify the Transactions.
+		add_years_of_income = -0.5
+		add_corruption = -1
+	}
+	option = {
+		name = nan_events.15.b #Balance above all.
+		add_karma = -15
+	}
+}
+
+country_event = { #Power of Light ***PULSE***
+	id = nan_events.16
+	title = nan_events.16.t
+	desc = nan_events.16.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		karma = 50
+		OR = {
+			adm = 6
+			dip = 6
+			mil = 6
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.16.a #An example to others.
+		add_power_projection = {
+			type = mission_rewards_power_projection
+			amount = 10
+		}
+	}
+	option = {
+		name = nan_events.16.b #Return to the fold.
+		add_karma = -15
+	}
+}
+
+country_event = { #Under the Sun ***PULSE***
+	id = nan_events.17
+	title = nan_events.17.t
+	desc = nan_events.17.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		karma = 50
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = yanantin
+				}
+				save_event_target_as = place_where_the_rebels_gonna_spawn
+			}
+		}
+	}
+	
+	option = {
+		name = nan_events.17.a #Stop them!
+		event_target:place_where_the_rebels_gonna_spawn = {
+			spawn_rebels = {
+				type = nan_rebels
+				size = 3
+			}
+		}
+	}
+	option = {
+		name = nan_events.17.b #There is nothing we can do.
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100	
+		}
+	}
+}
+####################LOW YANANTIN EVENTS##########################
+
+country_event = { #Overwhelming Darkness ***PULSE***
+	id = nan_events.18
+	title = nan_events.18.t
+	desc = nan_events.18.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		NOT = {
+			karma = -50
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.18.a #Forever Crushed.
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100	
+		}
+	}
+	option = {
+		name = nan_events.18.b #We must find a way out!
+		add_prestige = -50
+	}
+}
+
+country_event = { #Lost Image ***PULSE***
+	id = nan_events.19
+	title = nan_events.19.t
+	desc = nan_events.19.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		NOT = {
+			karma = -10
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		random_list = { 
+			33 = {
+				set_country_flag = adm_dev_get
+			}
+			33 = {
+				set_country_flag = dip_dev_get
+			}
+			34 = {
+				set_country_flag = mil_dev_get
+			}
+		}
+	}
+	
+	option = {
+		name = nan_events.19.a #Assert our Authority
+		add_prestige = -100
+	}
+	option = {
+		name = nan_events.19.b #Let the people reign
+		if = {
+			limit = {
+				has_country_flag = adm_dev_get
+			}
+			if = {
+				limit = {
+					adm = 1
+				}
+				change_adm = -1
+			}
+			else = {
+				add_adm_power = -300
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = dip_dev_get
+			}
+			if = {
+				limit = {
+					dip = 1
+				}
+				change_dip = -1
+			}
+			else = {
+				add_dip_power = -300
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					mil = 1
+				}
+				change_mil = -1
+			}
+			else = {
+				add_mil_power = -300
+			}
+		}
+	}
+	
+	after = {
+		clr_country_flag = adm_dev_get
+		clr_country_flag = dip_dev_get
+		clr_country_flag = mil_dev_get
+	}
+}
+
+country_event = { #From the Dark ***PULSE***
+	id = nan_events.20
+	title = nan_events.20.t
+	desc = nan_events.20.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		stability = 2
+		NOT = {
+			OR = {
+				karma = -50
+				has_ruler_modifier = brightening_image_nan
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.20.a #Return to the natural order
+		add_karma = 20
+	}
+	option = {
+		name = nan_events.20.b #Exploit this development
+		add_ruler_modifier = {
+			name = "brightening_image_nan"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Army Cloaked in Dusk ***PULSE***
+	id = nan_events.21
+	title = nan_events.21.t
+	desc = nan_events.21.d
+	picture = MILITARY_CAMP_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		NOT = {
+			OR = {
+				karma = -50
+				has_country_modifier = basking_in_the_night_nan
+				has_country_modifier = dark_horses_nan
+				has_country_modifier = protected_by_the_moon_nan
+				has_country_modifier = shadowy_knowledge_nan
+			}
+		}
+		is_at_war = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.21.a #Our men will bask in the night.
+		add_country_modifier = {
+			name = "basking_in_the_night_nan"
+			duration = 1095
+		}
+	}
+	option = {
+		name = nan_events.21.b #Our cavalry will trample out the flames.
+		add_country_modifier = {
+			name = "dark_horses_nan"
+			duration = 1095
+		}
+	}
+	option = {
+		name = nan_events.21.c #The moon will sheild us from harm.
+		add_country_modifier = {
+			name = "protected_by_the_moon_nan"
+			duration = 1095
+		}
+	}
+	option = {
+		name = nan_events.21.e #We will learn to live in the dark.
+		add_country_modifier = {
+			name = "shadowy_knowledge_nan"
+			duration = 1095
+		}
+	}
+}
+
+country_event = { #Shadowy Payments ***PULSE***
+	id = nan_events.22
+	title = nan_events.22.t
+	desc = nan_events.22.d
+	picture = CORRUPTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		karma = 50
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.22.a #Take the money.
+		add_years_of_income = 1.5
+		add_corruption = 0.5
+	}
+	option = {
+		name = nan_events.22.b #Balance above all.
+		add_karma = 15
+	}
+}
+
+country_event = { #Puppetmaster ***PULSE***
+	id = nan_events.23
+	title = nan_events.23.t
+	desc = nan_events.23.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		NOT = {
+			OR = {
+				karma = -50
+				has_ruler_modifier = clever_reputation_nan
+				has_ruler_modifier = greased_palms_nan
+				has_ruler_modifier = extra_talent_nan
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.23.a #Improve our reputation.
+		add_ruler_modifier = {
+			name = "clever_reputation_nan"
+			duration = -1
+		}
+	}
+	option = {
+		name = nan_events.23.b #Grease a few palms.
+		add_ruler_modifier = {
+			name = "greased_palms_nan"
+			duration = -1
+		}
+	}
+	option = {
+		name = nan_events.23.c #Hire extra talent.
+		add_ruler_modifier = {
+			name = "extra_talent_nan"
+			duration = -1
+		}
+	}
+	option = {
+		name = nan_events.23.e #We will learn to live in the dark.
+		add_karma = 20
+	}
+}
+
+country_event = { #In the Corners ***PULSE***
+	id = nan_events.24
+	title = nan_events.24.t
+	desc = nan_events.24.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		NOT = {
+			karma = -50
+		}
+		has_heir = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.24.a #Take my life.
+		kill_ruler = yes
+	}
+	option = {
+		name = nan_events.24.b #A Tragedy.
+		kill_heir = {}
+	}
+}
+####################MID YANANTIN EVENTS##########################
+
+country_event = { #Importance of Principles ***PULSE***
+	id = nan_events.25
+	title = nan_events.25.t
+	desc = nan_events.25.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		is_year = 1450 #so you have a chance to upset the balance
+		religion = yanantin
+		karma = -50
+		NOT = {
+			OR = {
+				karma = 50
+				has_ruler_modifier = principled_ruler_nan
+			}
+		}	
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.25.a #The Promising Light.
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+		add_karma = 25
+	}
+	option = {
+		name = nan_events.25.b #The Noble Dark.
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+		add_karma = -25
+	}
+	option = {
+		name = nan_events.25.c #No compromise.
+		add_prestige = 15
+	}
+	option = {
+		name = nan_events.25.e #Balance above all.
+		add_ruler_modifier = {
+			name = "principled_ruler_nan"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Made Whole ***PULSE***
+	id = nan_events.26
+	title = nan_events.26.t
+	desc = nan_events.26.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		is_year = 1450 #so you have a chance to upset the balance
+		religion = yanantin
+		karma = -5
+		NOT = {
+			karma = 0
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		random_list = { 
+			33 = {
+				set_country_flag = adm_dev_get
+			}
+			33 = {
+				set_country_flag = dip_dev_get
+			}
+			34 = {
+				set_country_flag = mil_dev_get
+			}
+		}
+	}
+	
+	option = {
+		name = nan_events.26.a #Made Whole
+		if = {
+			limit = {
+				has_country_flag = adm_dev_get
+			}
+			if = {
+				limit = {
+					adm = 6
+				}
+				add_adm_power = 300
+			}
+			else = {
+				change_adm = 1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = dip_dev_get
+			}
+			if = {
+				limit = {
+					dip = 6
+				}
+				add_dip_power = 300
+			}
+			else = {
+				change_dip = 1
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					mil = 6
+				}
+				add_mil_power = 300
+			}
+			else = {
+				change_mil = 1
+			}
+		}
+	}
+	option = {
+		name = nan_events.26.b #Maintain Balance
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+		add_prestige = 25
+	}
+	
+	after = {
+		clr_country_flag = adm_dev_get
+		clr_country_flag = dip_dev_get
+		clr_country_flag = mil_dev_get
+	}
+}
+
+country_event = { #Falling Apart ***PULSE***
+	id = nan_events.27
+	title = nan_events.27.t
+	desc = nan_events.27.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		is_year = 1450 #so you have a chance to upset the balance
+		religion = yanantin
+		karma = -50
+		NOT = {
+			karma = 50
+		}
+		NOT = {
+			stability = 0
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.27.a #We seek comfort in the light.
+		add_karma = 25
+	}
+	option = {
+		name = nan_events.27.b #We seek comfort in the dark.
+		add_karma = -25
+	}
+}
+
+country_event = { #Balanced Military  ***PULSE***
+	id = nan_events.28
+	title = nan_events.28.t
+	desc = nan_events.28.d
+	picture = MILITARY_CAMP_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		is_year = 1450 #so you have a chance to upset the balance
+		religion = yanantin
+		karma = -50
+		NOT = {
+			OR = {
+				karma = 50
+				has_ruler_modifier = balanced_military_nan
+			}
+		}
+		is_at_war = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.28.a #Live in the moment.
+		add_country_modifier = {
+			name = "balanced_military_nan"
+			duration = 1095
+		}
+	}
+	option = {
+		name = nan_events.28.b #Remember the lessons of the past.
+		add_army_tradition = 20
+	}
+}
+
+country_event = { #One with the World  ***PULSE***
+	id = nan_events.29
+	title = nan_events.29.t
+	desc = nan_events.29.d
+	picture = CITY_VIEW_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		is_year = 1450 #so you have a chance to upset the balance
+		religion = yanantin
+		karma = -50
+		NOT = {
+			OR = {
+				karma = 50
+				has_country_modifier = harmonious_nation_nan
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.29.a #[Root.Capital.GetName] is an example to all.
+		capital_scope = {
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+	}
+	option = {
+		name = nan_events.29.b #We work in harmony.
+		add_country_modifier = {
+			name = "harmonious_nation_nan"
+			duration = 5475
+		}
+	}
+}
+
+country_event = { #Perfect Balance  ***PULSE***
+	id = nan_events.30
+	title = nan_events.30.t
+	desc = nan_events.30.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		is_year = 1450 #so you have a chance to upset the balance
+		religion = yanantin
+		karma = 0
+		NOT = {
+			karma = 1
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.30.a #Harmony with the world.
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 300
+		}
+		else_if = {
+			limit = {
+				stability = 2
+			}
+			add_adm_power = 200
+			add_stability = 1
+		}
+		else_if = {
+			limit = {
+				stability = 1
+			}
+			add_adm_power = 100
+			add_stability = 2
+		}
+		else = {
+			add_stability = 3
+		}
+	}
+	option = {
+		name = nan_events.30.b #Harmony with ourselves.
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+	}
+}
+
+####################MISC YANANTIN EVENTS##########################
+
+country_event = { #Pacha ***PULSE***
+	id = nan_events.31
+	title = nan_events.31.t
+	desc = nan_events.31.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		NOT = {
+			OR = {
+				has_country_modifier = hanan_pacha_nan
+				has_country_modifier = kay_pacha_nan
+				has_country_modifier = ukhu_pacha_nan
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = nan_events.31.a #Hanan Pacha
+		add_country_modifier = {
+			name = "hanan_pacha_nan"
+			duration = 3650
+		}
+	}
+	option = {
+		name = nan_events.31.b #Kay Pacha
+		add_country_modifier = {
+			name = "kay_pacha_nan"
+			duration = 3650
+		}
+	}
+	option = {
+		name = nan_events.31.c #Ukhu Pacha
+		add_country_modifier = {
+			name = "ukhu_pacha_nan"
+			duration = 3650
+		}
+	}
+	option = {
+		name = nan_events.31.e #Above all
+		add_legitimacy = 10
+		add_horde_unity = 10
+		add_devotion = 10
+		add_meritocracy = 10
+		add_republican_tradition = 5
+	}
+}
+
+country_event = { #Inti ***PULSE***
+	id = nan_events.32
+	title = nan_events.32.t
+	desc = nan_events.32.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		random_list = { 
+			33 = {
+				set_country_flag = adm_dev_get
+			}
+			33 = {
+				set_country_flag = dip_dev_get
+			}
+			34 = {
+				set_country_flag = mil_dev_get
+			}
+		}
+	}
+	
+	option = {
+		name = nan_events.32.a #May he shine on our people.
+		capital_scope = {
+			if = {
+				limit = {
+					has_country_flag = adm_dev_get
+				}	
+				add_base_tax = 1
+			}
+			else_if = {
+				limit = {
+					has_country_flag = dip_dev_get
+				}
+				add_base_production = 1
+			}
+			else = { 
+				add_base_manpower = 1
+			}
+		}
+	}
+	option = {
+		name = nan_events.32.b #May shine on our rule.
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
+	}
+	
+	after = {
+		clr_country_flag = adm_dev_get
+		clr_country_flag = dip_dev_get
+		clr_country_flag = mil_dev_get
+	}
+}
+
+country_event = { #Mama Quilla ***PULSE***
+	id = nan_events.33
+	title = nan_events.33.t
+	desc = nan_events.33.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		NOT = {
+			has_country_modifier = blessing_of_mama_quilla_nan
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	
+	option = {
+		name = nan_events.33.a #She blesses our nation.
+		add_country_modifier = {
+			name = "blessing_of_mama_quilla_nan"
+			duration = 1825
+		}
+	}
+	option = {
+		name = nan_events.33.b #Her grace elevates us.
+		add_prestige = 15
+	}
+}
+
+country_event = { #Linh Authority ***PULSE***
+	id = nan_events.34
+	title = nan_events.34.t
+	desc = nan_events.34.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		NOT = {
+			OR = {
+				has_ruler_modifier = linh_authority_nan
+				has_ruler_modifier = shared_linh_nan
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	
+	option = {
+		name = nan_events.34.a #Claim it for ourselves.
+		add_ruler_modifier = {
+			name = "linh_authority_nan"
+			duration = -1
+		}
+	}
+	option = {
+		name = nan_events.34.b #It is shared among the faithful.
+		add_country_modifier = {
+			name = "shared_linh_nan"
+			duration = 9125
+		}
+	}
+}
+
+country_event = { #Words of the Future ***PULSE***
+	id = nan_events.35
+	title = nan_events.35.t
+	desc = nan_events.35.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		NOT = {
+			has_ruler_modifier = seen_future_nan
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	
+	option = {
+		name = nan_events.35.a #What is to come.
+		add_ruler_modifier = {
+			name = "seen_future_nan"
+			duration = -1
+		}
+	}
+	option = {
+		name = nan_events.35.b #Let the fates decide.
+		add_prestige = 10
+		add_dip_power = 50
+	}
+}
+
+country_event = { #Bodies of the Old ***PULSE***
+	id = nan_events.36
+	title = nan_events.36.t
+	desc = nan_events.36.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+		NOT = {
+			has_ruler_modifier = one_life_nan
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	
+	option = {
+		name = nan_events.36.a #An honorable fate.
+		custom_tooltip = when_we_die_we_will_be_mumified.tt
+		set_country_flag = mumified_former_ruler_nan
+		set_ruler_flag = dont_remember_mummy_yet_nan
+	}
+	option = {
+		name = nan_events.36.b #When I am done, I wish to rest.
+		add_ruler_modifier = {
+			name = "one_life_nan"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Remembering The Fallen ***PULSE*** 
+	id = nan_events.37
+	title = nan_events.37.t
+	desc = nan_events.37.d
+	picture = KING_SICK_IN_BED_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = mumified_former_ruler_nan
+		NOT = {
+			has_ruler_flag = dont_remember_mummy_yet_nan
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	
+	option = {
+		name = nan_events.37.a #Remember them.
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+	}
+	option = {
+		name = nan_events.37.b #Seek the ancient wisdom.
+		add_country_modifier = {
+			name = "wisdom_of_the_past_nan"
+			duration = 3650
+		}
+	}
+	
+	after = {
+		clr_country_flag = mumified_former_ruler_nan
+		clear_saved_name = mummified_corpse_guy
+	}
+}
+
+country_event = { #Neidan ***PULSE*** 
+	id = nan_events.38
+	title = nan_events.38.t
+	desc = nan_events.38.d
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = yanantin
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	
+	option = {
+		name = nan_events.38.a #We will embark on the journey
+		add_prestige = -10
+		add_legitimacy = -10
+		add_horde_unity = -10
+		add_devotion = -10
+		add_meritocracy = -10
+		add_republican_tradition = -5
+		custom_tooltip = will_will_probably_annoy_you_but_we_will_get.tt
+		if = {
+			limit = {
+				ai = no #No sense in annoying the ai
+			}
+			set_ruler_flag = currently_doing_neidan
+		}
+		hidden_effect = {
+			country_event = { 
+				id = nan_events.40
+				days = 3650
+			}
+		}
+	}
+	option = {
+		name = nan_events.38.b #Witchcraft!
+		add_prestige = 15
+	}
+}
+
+country_event = { #Internal Alchemy ***SPECIAL CASE*** 
+	id = nan_events.39
+	title = nan_events.39.t
+	desc = nan_events.39.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		has_ruler_flag = currently_doing_neidan
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	
+	
+	
+	option = {
+		name = nan_events.39.a #Press Onwards.
+		custom_tooltip = we_will_continue_neidan.tt
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = already_done_ping
+					}
+				}
+				set_country_flag = already_done_ping
+				country_event = {  #A little bit of trollin
+					id = nan_events.39
+					days = 30
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 60
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 90
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 120
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 150
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 180
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 210
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 240
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 270
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 300
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 330
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 360
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 390
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 420
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 450
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 480
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 510
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 540
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 570
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 600
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 630
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 660
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 690
+				}
+				country_event = { 
+					id = nan_events.39
+					days = 720
+				}
+			}
+		}
+	}
+	option = {
+		name = nan_events.39.b #Stop this madness!
+		custom_tooltip = will_stop_neidan.tt
+		clr_ruler_flag = currently_doing_neidan
+	}
+}
+
+country_event = { #Enlightenment ***SPECIAL CASE*** 
+	id = nan_events.40
+	title = nan_events.40.t
+	desc = nan_events.40.d
+	picture = CULTURE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		clr_ruler_flag = currently_doing_neidan
+	}
+	
+	option = {
+		name = nan_events.40.a #Internal Harmony.
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+	}
+	option = {
+		name = nan_events.40.b #One with the World.
+		add_power_projection = {
+			type = mission_rewards_power_projection
+			amount = 15
+		}
+	}
+}

@@ -1,0 +1,418 @@
+namespace = penitent_events
+####################ILOHYMN EVENTS##########################
+country_event = { #Master of Creation ***PULSE***
+	id = penitent_events.1
+	title = penitent_events.1.t
+	desc = penitent_events.1.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = penitent
+		has_personal_deity = ilohymn
+		NOT = {
+			OR = {
+				has_country_modifier = blessing_of_creation_peni
+				has_country_modifier = blessing_of_work_peni
+				has_country_modifier = blessing_of_prosperity_peni
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = penitent_events.1.a #Blessing of Creation
+		add_country_modifier = {
+			name = "blessing_of_creation_peni"
+			duration = 1825
+		}
+	}
+	option = {
+		name = penitent_events.1.b #Blesisng of Work
+		add_country_modifier = {
+			name = "blessing_of_work_peni"
+			duration = 1825
+		}
+	}
+	option = {
+		name = penitent_events.1.c #Blessing of Prosperity
+		add_country_modifier = {
+			name = "blessing_of_prosperity_peni"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #Ilohymn's Wrath ***PULSE***
+	id = penitent_events.2
+	title = penitent_events.2.t
+	desc = penitent_events.2.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = penitent
+		has_personal_deity = ilohymn
+		overextension_percentage = 0.9
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = penitent
+				}
+				save_event_target_as = place_where_ilohymn_is_gonna_come_from
+			}
+		}
+	}	
+	
+	option = {
+		name = penitent_events.2.a #Silence all who dissent!
+		event_target:place_where_ilohymn_is_gonna_come_from = {
+			spawn_rebels = {
+				type = penintent_rebels
+				size = 3
+			}
+		}
+	}
+	option = {
+		name = penitent_events.2.b #We are at fault.
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100	
+		}
+	}
+}
+####################JAHWAY EVENTS##########################
+
+country_event = { #Called to Explore ***PULSE***
+	id = penitent_events.3
+	title = penitent_events.3.t
+	desc = penitent_events.3.d
+	picture = COLONIZATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = penitent
+		has_personal_deity = jahway
+		any_owned_province = {
+			has_empty_adjacent_province = yes
+		}
+		NOT = {
+			has_country_modifier = settling_the_outback_peni
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = penitent_events.3.a #Pray Jahway guide us!
+		add_country_modifier = {
+			name = "settling_the_outback_peni"
+			duration = 9125
+		}
+	}
+	option = {
+		name = penitent_events.3.b #Ambition will bring about the fall of man.
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+	}
+}
+
+country_event = { #Fair Waters ***PULSE***
+	id = penitent_events.4
+	title = penitent_events.4.t
+	desc = penitent_events.4.d
+	picture = SHIP_SAILING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = penitent
+		has_personal_deity = jahway
+		num_of_ports = 1
+		NOT = {
+			OR = {
+				has_country_modifier = jahways_strength_peni
+				has_country_modifier = pious_sailors_peni
+				has_country_modifier = faithful_ambition_peni
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = penitent_events.4.a #Jahway will give us strenght.
+		add_country_modifier = {
+			name = "jahways_strength_peni"
+			duration = 3650
+		}
+	}
+	option = {
+		name = penitent_events.4.b #Jahway will inspire the pious to serve.
+		add_country_modifier = {
+			name = "pious_sailors_peni"
+			duration = 3650
+		}
+	}
+	option = {
+		name = penitent_events.4.c #Jahway will reveal riches in lands far away.
+		add_country_modifier = {
+			name = "faithful_ambition_peni"
+			duration = 3650
+		}
+	}
+}
+
+####################JIHOUVA EVENTS##########################
+
+country_event = { #The Prideful Ones ***PULSE***
+	id = penitent_events.5
+	title = penitent_events.5.t
+	desc = penitent_events.5.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = penitent
+		has_personal_deity = jihouva
+		NOT = {
+			has_country_modifier = strength_of_jihouva_peni
+		}
+		any_neighbor_country = {
+			NOT = {
+				OR = {
+					religion = idolatrous
+					religion = penitent
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = penitent_events.5.a #They will learn to repent.
+		add_country_modifier = {
+			name = "strength_of_jihouva_peni"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Message from Johouva ***PULSE***
+	id = penitent_events.6
+	title = penitent_events.6.t
+	desc = penitent_events.6.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = penitent
+		has_personal_deity = jihouva
+		NOT = {
+			OR = {
+				has_country_modifier = commandment_of_war_peni
+				has_country_modifier = commandment_of_peace_peni
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = penitent_events.6.a #War
+		add_country_modifier = {
+			name = "commandment_of_war_peni"
+			duration = 5475
+		}
+	}
+	option = {
+		name = penitent_events.6.b #Peace
+		add_country_modifier = {
+			name = "commandment_of_peace_peni"
+			duration = 5475
+		}
+	}
+}
+
+####################OHLORD EVENTS##########################
+
+country_event = { #Ohlord's Great Mercey ***PULSE***
+	id = penitent_events.7
+	title = penitent_events.7.t
+	desc = penitent_events.7.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = penitent
+		has_personal_deity = ohlord
+		NOT = {
+			OR = {
+				has_country_modifier = everlasting_mercey_peni
+				has_country_modifier = community_of_the_penitent_peni
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = penitent_events.7.a #We are blessed with his grace.
+		add_country_modifier = {
+			name = "everlasting_mercey_peni"
+			duration = 3650
+		}
+	}
+	option = {
+		name = penitent_events.7.b #Peace among all nations.
+		add_country_modifier = {
+			name = "community_of_the_penitent_peni"
+			duration = 3650
+		}
+	}
+	option = {
+		name = penitent_events.7.c #The evil fear his influence.
+		add_power_projection = {
+			type = mission_rewards_power_projection
+			amount = 10
+		}
+	}
+}
+
+country_event = { #A Second Chance ***PULSE***
+	id = penitent_events.8
+	title = penitent_events.8.t
+	desc = penitent_events.8.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = penitent
+		has_personal_deity = ohlord
+		NOT = {
+			stability = 0
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = penitent_events.8.a #We are blessed with his grace.
+		add_stability = 1
+	}
+}
+
+####################FATHER EVENTS##########################
+
+country_event = { #Disrupting Father's Order ***PULSE***
+	id = penitent_events.9
+	title = penitent_events.9.t
+	desc = penitent_events.9.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = penitent
+		has_personal_deity = father
+		NOT = {
+			religious_unity = 0.5
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = penitent
+				}
+				save_event_target_as = place_where_the_order_was_gettin_disrupted
+			}
+		}
+	}	
+	
+	option = {
+		name = penitent_events.9.a #Silence those who speak out.
+		event_target:place_where_the_order_was_gettin_disrupted = {
+			spawn_rebels = {
+				type = penintent_rebels
+				size = 3
+			}
+		}
+	}
+	option = {
+		name = penitent_events.9.b #We have failed him.
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100	
+		}
+	}
+}
+
+country_event = { #Preserved Wisdom ***PULSE***
+	id = penitent_events.10
+	title = penitent_events.10.t
+	desc = penitent_events.10.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = penitent
+		has_personal_deity = father
+		NOT = {
+			has_ruler_modifier = byebull_peni
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = penitent_events.10.a #Continue the tradition.
+		add_ruler_modifier = {
+			name = "byebull_peni"
+			duration = 3650
+		}
+	}
+	option = {
+		name = penitent_events.10.b #Carve a new path.
+		add_adm_power = 100
+	}
+}

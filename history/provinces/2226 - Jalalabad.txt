@@ -1,0 +1,16 @@
+#2226 - Jalalabad
+discovered_by = south_american
+culture = neoafghani
+religion = idolatrous
+capital = "Jalalabad"
+trade_goods = gems #i guess
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+native_size = 80
+native_ferocity = 4
+native_hostileness = 9 
+add_core = Z59
+owner = Z59
+controller = Z59

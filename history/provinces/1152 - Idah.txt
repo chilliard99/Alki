@@ -1,0 +1,17 @@
+#1152 - Idah
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y48
+controller = Y48
+add_core = Y48
+is_city = yes
+culture = portugers
+religion = partisan
+capital = "Idah"
+hre = yes
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+trade_goods = grain #guano?

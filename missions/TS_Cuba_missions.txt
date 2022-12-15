@@ -1,0 +1,2100 @@
+cuban_missions_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = V05
+			tag = U34
+		}
+	}
+	has_country_shield = yes
+	
+	promise_beyond = {
+		icon = mission_plus_ultra
+		required_missions = { }
+		position = 1
+		trigger = {
+			exploration_ideas = 1
+			num_of_explorers = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "spirit_of_exploration_cuba"
+				duration = 7300
+			}
+		}
+	}
+	co_ye_what = {
+		icon = mission_establish_the_black_guard
+		required_missions = { promise_beyond }
+		position = 3
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_colonize_coyemiaI.tt
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 5
+					colonial_region = colonial_africa_occident
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = fuck_over_natives.tt
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						capital_scope = {
+							region = africa_occident_region
+						}
+						NOT = {
+							is_subject_of = ROOT
+						}
+						ai = yes
+					}
+					add_country_modifier = {
+						name = "diseased_natives_cuba"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	rounding_the_cape_cuba = {
+		icon = mission_establish_high_seas_navy
+		required_missions = { co_ye_what }
+		position = 4
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_colonize_caboniaI.tt
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 5
+					colonial_region = colonial_golden_cape
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			1459 = {
+				add_trade_modifier = {
+					who = root
+					duration = 9125
+					power = 50
+					key = cabonian_riches
+				}
+			}
+		}
+	}
+	settling_ethiopia = {
+		icon = mission_conquer_timbuktu
+		required_missions = { rounding_the_cape_cuba }
+		position = 5
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_colonize_ethiopiaI.tt
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 5
+					colonial_region = colonial_abyssinia
+					is_city = yes
+				}
+			}
+			1099 = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			1099 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+				add_province_modifier = {
+					name = "trading_hub_cuba"
+					duration = -1
+				}
+			}
+		}
+	}
+	consolidate_coyemia = {
+		icon = mission_control_surat
+		required_missions = { settling_ethiopia }
+		position = 6
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_colonize_coyemiaII.tt
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 25
+					colonial_region = colonial_africa_occident
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			add_dip_power = 100
+			random_subject_country = {
+				limit = {
+					capital_scope = {
+						colonial_region = colonial_africa_occident
+					}
+				}
+				capital_scope = {
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+			}
+		}
+	}
+	cape_colony_cuba = {
+		icon = mission_conquer_benin
+		required_missions = { consolidate_coyemia }
+		position = 9
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_colonize_caboniaII.tt
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 25
+					colonial_region = colonial_golden_cape
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			add_years_of_income = 2.5
+			random_subject_country = {
+				limit = {
+					capital_scope = {
+						colonial_region = colonial_golden_cape
+					}
+				}
+				capital_scope = {
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+			}
+		}
+	}
+	enlarge_ethiopia = {
+		icon = mission_envoy_to_ethiopia
+		required_missions = { cape_colony_cuba }
+		position = 10
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_colonize_ethiopiaII.tt
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 25
+					colonial_region = colonial_abyssinia
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			africa_occident_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			golden_coast_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			abyssinia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			random_subject_country = {	
+				limit = {
+					capital_scope = {
+						colonial_region = colonial_abyssinia
+					}	
+				}
+				capital_scope = {
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+			}
+		}
+	}
+	purge_the_natives = {
+		icon = mission_invade_kanem
+		required_missions = { enlarge_ethiopia }
+		position = 11
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = remove_all_natives.tt
+				NOT = {
+					any_known_country = {
+						capital_scope = {
+							continent = pablonia
+						}
+						NOT = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 15
+			}
+			add_country_modifier = {
+				name = "safe_frontier_cuba"
+				duration = 9125
+			}
+		}
+	}
+	pablonia_whole = {
+		icon = mission_taula_de_canvi
+		required_missions = { purge_the_natives }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				continent = pablonia
+			}
+			NOT = { 
+				owned_by = ROOT 
+				has_discovered = ROOT
+			}
+		}
+		trigger = {
+			africa_occident_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			golden_coast_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			abyssinia_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "pablonia_whole"
+				duration = -1
+			}
+		}
+	}
+	colonial_hegemon_cuba = {
+		icon = mission_saharan_route
+		required_missions = { pablonia_whole }
+		position = 11
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = number_of_colonial_nations_five
+				calc_true_if = {
+					all_subject_country = {
+						is_colonial_nation_of = ROOT
+					}
+					amount = 5
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+		}
+	}
+}
+
+cuban_missions_two_tall = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = V05
+			tag = U34
+		}
+		has_country_flag = peace_focused_path
+	}
+	has_country_shield = yes
+	
+	prepare_a_trading_fleet = {
+		icon = mission_heart_of_the_hansa
+		required_missions = { recovering_the_bahamas }
+		position = 2
+		trigger = {
+			num_of_light_ship = 20
+			navy_size_percentage = 0.9
+			num_of_admirals = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "golden_wall"
+				duration = 7300
+			}
+		}
+	}
+	dominate_antillean_trade  = {
+		icon = mission_steer_trade_to_bengal
+		required_missions = { prepare_a_trading_fleet }
+		position = 3
+		trigger = {
+			1505 = { 
+				trade_share = {
+					country = ROOT
+					share = 60
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 10
+				OR = {
+					has_building = marketplace
+					has_building = trade_depot
+					has_building = stock_exchange
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "constricting_trade_cuba"
+				duration = 7300
+			}
+		}
+	}
+	domestic_ports_cuba = {
+		icon = mission_coromandel_trade
+		required_missions = { dominate_antillean_trade }
+		position = 6
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 4
+				development = 20
+			 	province_has_center_of_trade_of_level = 2
+			}
+			num_of_owned_provinces_with = {
+				value = 2
+				development = 30
+			 	province_has_center_of_trade_of_level = 3
+			}
+		}
+		effect = {
+			custom_tooltip = dev_boost_in_center_of_trade_provinces.tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						province_has_center_of_trade_of_level = 2
+					}
+					add_base_tax = 1
+				}
+			}
+		}
+	}
+	strong_foreign_presence_cuba = {
+		icon = mission_conquer_riga
+		required_missions = { domestic_ports_cuba }
+		position = 7
+		trigger = {
+		 	num_of_strong_trade_companies = 3
+		}
+		effect = {
+			add_mercantilism = 10
+		}
+	}
+	envy_of_the_tides = {
+		icon = mission_dominate_home_trade_node
+		required_missions = { strong_foreign_presence_cuba }
+		position = 8
+		trigger = {
+		 	1505 = { 
+				trade_share = {
+					country = ROOT
+					share = 85
+				}
+				highest_value_trade_node = yes
+			}
+		}
+		effect = {
+			country_event = { id = cuban_events.16 }
+		}
+	}
+}
+
+cuban_missions_two_war = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = V05
+			tag = U34
+		}
+		has_country_flag = war_focused_path
+	}
+	has_country_shield = yes
+	
+	infiltrate_the_kings  = {
+		icon = mission_alliances
+		required_missions = { recovering_the_bahamas }
+		position = 2
+		trigger = {
+			dip_power = 200
+		}
+		effect = {
+			add_dip_power = -200
+			add_country_modifier = {
+				name = "tampering_domestic_courts"
+				duration = 1825
+			}
+		}
+	}
+	strike_down_protections  = {
+		icon = feast_of_pheasants
+		required_missions = { infiltrate_the_kings }
+		position = 3
+		trigger = {
+			NOT = {
+				has_country_modifier = tampering_domestic_courts
+			}
+		}
+		effect = {
+			add_stability = -2
+			add_country_modifier = {
+				name = "paranoid_kings"
+				duration = -1
+			}
+		}
+	}
+	landing_in_florida = {
+		icon = mission_retake_ceuta
+		required_missions = { iron_hand_of_the_state }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = south_florida_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			south_florida_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			2536 = {
+				change_province_name = "Hialeah"
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			west_okeechobee_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_okeechobee_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tampa_bay_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			orlando_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	running_up_the_nile = {
+		icon = mission_teutonic_knights
+		required_missions = { landing_in_florida }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = west_okeechobee_area
+				area = east_okeechobee_area
+				area = tampa_bay_area
+				area = orlando_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			west_okeechobee_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			east_okeechobee_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			tampa_bay_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			orlando_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			random_owned_province = {
+				limit = {
+					region = florida_region
+				}
+				change_trade_goods = slaves
+				add_base_production = 1
+			}
+			random_owned_province = {
+				limit = {
+					region = florida_region
+				}
+				change_trade_goods = slaves
+				add_base_production = 1
+			}
+			random_owned_province = {
+				limit = {
+					region = florida_region
+				}
+				change_trade_goods = slaves
+				add_base_production = 1
+			}
+			random_owned_province = {
+				limit = {
+					region = florida_region
+				}
+				change_trade_goods = slaves
+				add_base_production = 1
+			}
+			nature_coast_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			mouth_of_the_nile_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			west_nile_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			the_north_colonies_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	imperial_flower = {
+		icon = mission_colonize_florida
+		required_missions = { running_up_the_nile }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = nature_coast_area
+				area = mouth_of_the_nile_area
+				area = west_nile_area
+				area = the_north_colonies_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			nature_coast_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			west_nile_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			mouth_of_the_nile_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			the_north_colonies_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			florida_region = {
+				add_province_modifier = {
+					name = "zahran_syncretism"
+					duration = 9125
+				}
+			}
+		}
+	}
+}
+
+cuban_missions_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = V05
+			tag = U34
+		}
+	}
+	has_country_shield = yes
+	
+	recovering_the_bahamas = {
+		icon = mission_invade_island
+		required_missions = { }
+		position = 1
+		trigger = {
+			NOT = {
+				overextension_percentage = 0.1
+			}
+			custom_trigger_tooltip = {
+				tooltip = five_years_of_peace.tt
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 5
+				}
+			}
+		}
+		effect = {
+			country_event = { id = cuban_events.13 }
+		}
+	}
+}
+
+cuban_missions_three_war = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = V05
+			tag = U34
+		}
+		has_country_flag = war_focused_path
+	}
+	has_country_shield = yes
+	
+	assemble_a_cabinent_cuba = {
+		icon = catholic_confraternity
+		required_missions = { recovering_the_bahamas }
+		position = 2
+		trigger = {
+			has_adm_advisor = yes
+			has_dip_advisor = yes
+			has_mil_advisor = yes
+		}
+		effect = {
+			add_country_modifier = {
+				name = "patriot_advisors"
+				duration = 9125
+			}
+		}
+	}
+	prepare_the_capital = {
+		icon = Burn_Wooden_Wall
+		required_missions = { assemble_a_cabinent_cuba }
+		position = 3
+		provinces_to_highlight = {
+			is_capital_of = ROOT
+		}
+		trigger = {
+			capital_scope = {
+				development = 30
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = "intentionally_weakened_walls"
+					duration = 9125
+				}
+			}
+		}
+	}
+	spring_the_trap = {
+		icon = defenestrate_the_heretics
+		required_missions = { prepare_the_capital down_to_brass_tacks strike_down_protections }
+		position = 4
+		trigger = {
+			stability = 0
+		}
+		effect = {
+			country_event = { id = cuban_events.14 }
+		}
+	}
+	iron_hand_of_the_state = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { spring_the_trap }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4165
+				province_id = 4623
+				province_id = 2656
+				province_id = 486
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			NOT = {
+				any_owned_province = {
+					unrest = 2
+					culture_group = cubano
+				}
+			}
+			4165 = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			4623 = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			2656 = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			486 = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = remove_peace_shit.tt
+			remove_country_modifier = paranoid_kings
+			remove_country_modifier = war_weary
+			remove_country_modifier = recovered_peoples
+			remove_country_modifier = normalcy_restored
+			remove_country_modifier = productive_peace
+			remove_country_modifier = the_long_peace
+			remove_country_modifier = budding_complacency
+			remove_country_modifier = prosperous_peace
+			remove_country_modifier = pax_cubana
+			south_florida_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			jamaica_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			turks_and_caicos_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hidden_effect = {
+				set_country_flag = no_more_complicated_shit
+				set_variable = {
+					which = peacetimeCubaCounter
+					value = 0
+				}
+			}
+		}
+	}
+	consolidate_the_east = {
+		icon = army_reforms
+		required_missions = { iron_hand_of_the_state }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = jamaica_area
+				area = turks_and_caicos_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			jamaica_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			turks_and_caicos_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			4152 = {
+				change_religion = ROOT
+				add_province_modifier = {
+					name = "catolico_kingston"
+					duration = -1
+				}
+			}
+			massif_du_nord_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			artibonite_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			gonave_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	handling_the_haitians = {
+		icon = mission_end_arakan_piracy
+		required_missions = { consolidate_the_east }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = massif_du_nord_area
+				area = artibonite_area
+				area = gonave_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			massif_du_nord_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			artibonite_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			gonave_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mil_power = 50
+			gran_ozama_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			cibao_norte_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			cibao_sur_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			enriquillo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	uniting_hispaniola = {
+		icon = mission_claim_hispaniola
+		required_missions = { handling_the_haitians }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = gran_ozama_area
+				area = cibao_norte_area
+				area = cibao_sur_area
+				area = enriquillo_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			gran_ozama_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			cibao_norte_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			cibao_sur_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			enriquillo_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = { id = cuban_events.15 }
+			puerto_rico_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			virgins_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	boricuan_bashing = {
+		icon = mission_look_west
+		required_missions = { uniting_hispaniola }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				area = puerto_rico_area
+				area = virgins_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			puerto_rico_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			virgins_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			stkitts_and_monteserrat_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			gran_guadelupe_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			windward_menor_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			windward_mayor_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	all_of_the_isles = {
+		icon = mission_colonize_the_caribbean
+		required_missions = { boricuan_bashing }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				area = stkitts_and_monteserrat_area
+				area = gran_guadelupe_area
+				area = windward_menor_area
+				area = windward_mayor_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			stkitts_and_monteserrat_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			gran_guadelupe_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			windward_menor_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			windward_mayor_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "antilles_united"
+				duration = -1
+			}
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 25
+			}
+		}
+	}
+}
+
+cuban_missions_three_tall = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = V05
+			tag = U34
+		}
+		has_country_flag = peace_focused_path
+	}
+	has_country_shield = yes
+	
+	prosperity_in_havanna = {
+		icon = mission_conquer_malwa_mug
+		required_missions = { recovering_the_bahamas }
+		position = 3
+		provinces_to_highlight = {
+			is_capital_of = ROOT
+		}
+		trigger = {
+			capital_scope = {
+				development = 30
+			}
+		}
+		effect = {
+			add_dip_power = 25
+			add_mercantilism = 3
+		}
+	}
+	faithful_shores = {
+		icon = italian_riches
+		required_missions = { prosperity_in_havanna }
+		position = 4
+		trigger = {
+			num_of_owned_provinces_with = {
+				development = 15
+				value = 10
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "devout_to_his_emminence"
+				duration = 9125
+			}
+			custom_tooltip = improved_goods_produced_in_temples.tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							has_building = temple
+							has_building = cathedral
+						}
+						development = 15
+					}
+					add_province_modifier = {
+						name = "holy_industry_cuba"
+						duration = 5475
+					}
+				}
+			}
+		}
+	}
+	professional_craftsmen = {
+		icon = mission_have_manufactories
+		required_missions = { faithful_shores }
+		position = 7
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 15
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "workshop_of_caribbean"
+				duration = -1
+			}
+		}
+	}
+	mass_urbanization = {
+		icon = mission_rb_build_furnaces
+		required_missions = { professional_craftsmen }
+		position = 8
+		trigger = {
+			num_of_owned_provinces_with = {
+				development = 50
+				value = 5
+			}
+		}
+		effect = {
+			custom_tooltip = heavy_attraction_cities.tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						development = 50
+					}
+					add_province_modifier = {
+						name = "urbanized_cities_cuba"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	improving_internal_cohesion = {
+		icon = mission_rb_central_belt_coal_mining
+		required_missions = { mass_urbanization }
+		position = 10
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = twenty_dev_in_all_cuban_provinces.tt
+				NOT = {
+					any_owned_province = {
+						OR = {
+							area = pinar_del_rio_area
+							area = havana_area
+							area = matanzas_area
+							area = las_villas_area
+							area = upper_camaguey_area
+							area = lower_camaguey_area
+							area = holguin_area
+							area = granma_area
+							area = guantanamo_area
+						}
+						NOT = {
+							development = 20
+						}
+					}
+				}
+			}
+			is_institution_enabled = global_trade
+		}
+		effect = {
+			add_country_modifier = {
+				name = "cuban_productivity"
+				duration = -1
+			}
+		}
+	}
+	island_industrialization = {
+		icon = mission_industria_sedera
+		required_missions = { improving_internal_cohesion }
+		position = 12
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 25
+				has_manufactory_trigger = yes 
+			}
+			num_of_owned_provinces_with = {
+				value = 9
+				OR = {
+					has_building = courthouse
+					has_building = town_hall
+				}
+			}
+		}
+		effect = {
+			add_years_of_income = 10
+		}
+	}
+	paradise_on_earth = {
+		icon = mission_rb_trinity_college_dublin
+		required_missions = { island_industrialization }
+		position = 13
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = fifty_dev_in_all_cuban_provinces.tt
+				NOT = {
+					any_owned_province = {
+						OR = {
+							area = pinar_del_rio_area
+							area = havana_area
+							area = matanzas_area
+							area = las_villas_area
+							area = upper_camaguey_area
+							area = lower_camaguey_area
+							area = holguin_area
+							area = granma_area
+							area = guantanamo_area
+						}
+						NOT = {
+							development = 50
+						}
+					}
+				}
+			}
+			capital_scope = {
+				development = 100
+			}
+			num_of_owned_provinces_with = {
+				value = 10
+				development = 75
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "divine_efficiency"
+				duration = -1
+			}
+		}
+	}
+}
+
+cuban_missions_four_tall = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = V05
+			tag = U34
+		}
+		has_country_flag = peace_focused_path
+	}
+	has_country_shield = yes
+	
+	classical_thoughts_cuba = {
+		icon = continue_the_renaissance
+		required_missions = { recovering_the_bahamas }
+		position = 2
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = ten_years_of_peace.tt
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 10
+				}
+			}
+			adm_power = 50
+			dip_power = 50
+			mil_power = 50
+			is_institution_enabled = renaissance
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_institution = enlightenment
+					}
+				}
+				484 = {
+					add_institution_embracement = {
+						which = renaissance
+						value = 100
+					}	
+				}
+				add_adm_power = -50
+				add_dip_power = -50
+				add_mil_power = -50
+			}
+			else = {
+				add_country_modifier = {
+					name = "renaissance_engenuity"
+					duration = 5475
+				}
+			}
+		}
+	}
+	island_paridise = {
+		icon = mission_wine_monopolies
+		required_missions = { classical_thoughts_cuba }
+		position = 4
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = twenty_years_of_peace.tt
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 20
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "island_paridise"
+				duration = 9125
+			}
+		}
+	}
+	the_long_peace = {
+		icon = fortify_malta
+		required_missions = { island_paridise }
+		position = 6
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = fourty_years_of_peace.tt
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 40
+				}
+			}
+			capital_scope = {
+				development = 75
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = "lucrative_capital"
+					duration = -1
+				}
+			}
+		}
+	}
+	generational_peace = {
+		icon = develop_provence
+		required_missions = { the_long_peace }
+		position = 9
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = sixty_years_of_peace.tt
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 60
+				}
+			}
+			development_in_provinces = {
+				culture_group = cubano
+				value = 600
+			}
+		}
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 30
+			}
+		}
+	}
+	true_pacifist = {
+		icon = conquer_malacca
+		required_missions = { generational_peace }
+		position = 11
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = eighty_years_of_peace.tt
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 80
+				}
+			}
+			NOT = {
+				great_power_rank = 2
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "true_pacifist"
+				duration = -1
+			}
+		}
+	}
+	pax_cubana_mission = {
+		icon = develop_the_po_valley
+		required_missions = { true_pacifist }
+		position = 12
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = hundred_years_of_peace.tt
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 100
+				}
+			}
+			diplomatic_reputation = 5
+		}
+		effect = {
+			add_country_modifier = {
+				name = "alluring_peace"
+				duration = -1
+			}
+			custom_tooltip = pax_cubana_opinion_modifier.tt
+			hidden_effect = {
+				every_known_country = {
+					add_opinion = {
+						who = ROOT
+						modifier = pax_cubana
+					}
+				}
+			}
+		}
+	}
+	tranquility_cuba = {
+		icon = a.e.i.o.u.
+		required_missions = { pax_cubana }
+		position = 13
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = two_hundred_years_of_peace.tt
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 200
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "elevated_monarchs"
+				duration = -1
+			}
+		}
+	}
+}
+
+cuban_missions_four_war = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = V05
+			tag = U34
+		}
+		has_country_flag = war_focused_path
+	}
+	has_country_shield = yes
+	
+	gain_army_support  = {
+		icon = Control_Junkers
+		required_missions = { recovering_the_bahamas }
+		position = 2
+		trigger = {
+			num_of_generals = 3
+			army_size_percentage = 0.9
+		}
+		effect = {
+			add_mil_power = 50
+		}
+	}
+	down_to_brass_tacks  = {
+		icon = a_show_of_strength
+		required_missions = { gain_army_support }
+		position = 3
+		trigger = {
+			if = {
+				limit = {
+					has_dlc = "Cradle of Civilization"
+				}
+				army_professionalism = 0.05
+			}
+			else = {
+				army_tradition = 30
+			}
+			mil_tech = 4
+			mil_power = 100
+		}
+		effect = {
+			add_mil_power = -100
+			add_country_modifier = {
+				name = "informed_soldiers"
+				duration = 9125
+			}
+		}
+	}
+	mapping_japan = {
+		icon = mission_trade_with_japan
+		required_missions = { iron_hand_of_the_state }
+		position = 6
+		trigger = {
+			any_owned_province = {
+				superregion = japanese_superregion
+			}
+			treasury = 500
+		}
+		effect = {
+			add_treasury = -500
+			japanese_superregion = {
+				discover_country = ROOT
+			}
+			inner_tidewater = {
+				discover_country = ROOT
+			}
+			outer_tidewater = {
+				discover_country = ROOT
+			}
+			lawrencian_bay = {
+				discover_country = ROOT
+			}
+			kagoshima_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			miyazaki_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			west_fukuoka_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_fukuoka_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	crushing_kyushu = {
+		icon = mission_japanese_samurai
+		required_missions = { mapping_japan }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = kagoshima_area
+				area = miyazaki_area
+				area = west_fukuoka_area
+				area = east_fukuoka_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			kagoshima_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			miyazaki_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			west_fukuoka_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			east_fukuoka_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			yamaguchi_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hiroshima_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tottori_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			okayama_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = tea_provinces_production_cuba.tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = kagoshima_area
+							area = miyazaki_area
+							area = west_fukuoka_area
+							area = east_fukuoka_area
+						}
+						trade_goods = tea
+					}
+					add_base_production = 1
+				}
+			}
+		}
+	}
+	halting_hiroshima = {
+		icon = mission_japanese_fort
+		required_missions = { crushing_kyushu }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = yamaguchi_area
+				area = hiroshima_area
+				area = tottori_area
+				area = okayama_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			yamaguchi_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			hiroshima_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			tottori_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			okayama_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 25
+			add_dip_power = 25
+			add_mil_power = 25
+			west_shikoku_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_shikoku_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			osaka_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	setos_end = {
+		icon = mission_unite_home_region
+		required_missions = { halting_hiroshima }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = west_shikoku_area
+				area = east_shikoku_area
+				area = osaka_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			west_shikoku_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			east_shikoku_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			osaka_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "setonese_company"
+				duration = -1
+			}
+		}
+	}
+}
+
+cuban_missions_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = V05
+			tag = U34
+		}
+	}
+	has_country_shield = yes
+	
+	colonize_the_windwards = {
+		icon = mission_corsairs_of_the_north_sea
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = windward_mayor_area
+				area = windward_menor_area
+			}
+			has_discovered = ROOT
+			NOT = { 
+				owned_by = ROOT 
+			}
+		}
+		trigger = {
+			any_owned_province = {
+				area = windward_mayor_area
+			}
+			any_owned_province = {
+				area = windward_menor_area
+			}
+		}
+		effect = {
+			new_guyana_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "promise_of_spices"
+				duration = 7300
+			}
+		}
+	}
+	the_amazonian_company = {
+		icon = mission_brazilian_bandeirantes
+		required_missions = { colonize_the_windwards }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				region = new_guyana_region
+			}
+			has_discovered = ROOT
+			NOT = { 
+				owned_by = ROOT 
+			}
+		}
+		trigger = {
+			2803 = {
+				type = all
+				country_or_subject_holds = ROOT
+			}	
+			num_of_owned_provinces_with = {
+				value = 5
+				OR = {
+					region = new_guyana_region
+				}
+			}
+		}
+		effect = {
+			1522 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+				add_trade_modifier = {
+					who = root
+					duration = 9125
+					power = 25
+					key = orinoco_company
+				}
+			}
+		}
+	}
+	sublime_sumatra = {
+		icon = mission_portuguese_malacca
+		required_missions = { the_amazonian_company }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = new_south_sumatra_area
+				area = riau_area
+				area = west_sumatra_area
+				area = new_north_sumatra_area
+				area = aceh_area
+			}
+			has_discovered = ROOT
+			NOT = { 
+				owned_by = ROOT 
+			}
+		}
+		trigger = {
+			any_owned_province = {
+				OR = {
+					area = new_south_sumatra_area
+					area = riau_area
+					area = west_sumatra_area
+					area = new_north_sumatra_area
+					area = aceh_area
+				}
+			}
+		}
+		effect = {
+			nusantara_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	consolidate_east_nusantara = {
+		icon = mission_mnd_maj_rein_in_brunei
+		required_missions = { sublime_sumatra }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = new_south_sumatra_area
+				area = riau_area
+				area = west_sumatra_area
+				area = new_north_sumatra_area
+				area = aceh_area
+			}
+			has_discovered = ROOT
+			NOT = { 
+				owned_by = ROOT 
+			}
+		}
+		trigger = {
+			new_south_sumatra_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			riau_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			west_sumatra_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			new_north_sumatra_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			aceh_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = peace_focused_path
+				}
+				custom_tooltip = can_declare_war_on_brazil_without_breaking_peace.tt
+				hidden_effect = {
+					V98 = {
+						set_country_flag = brazilian_challenge
+					}
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = "rumbles_in_the_jungle"
+					duration = 7300
+				}
+			}
+		}
+	}
+	challenging_the_giant = {
+		icon = mission_eliminate_pretenders
+		required_missions = { consolidate_east_nusantara }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				region = nusantara_region
+			}
+			has_discovered = ROOT
+			NOT = { 
+				owned_by = ROOT 
+			}
+		}
+		trigger = {
+			nusantara_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mil_power = 50
+			new_brazil_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	island_hopping_cuba = {
+		icon = mission_sponsor_piracy
+		required_missions = { challenging_the_giant }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = north_sulawesi_area
+				area = new_south_sulawesi_area
+				area = inner_sulas_area
+			}
+			has_discovered = ROOT
+			NOT = { 
+				owned_by = ROOT 
+			}
+		}
+		trigger = {
+			north_sulawesi_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			new_south_sulawesi_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			inner_sulas_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mercantilism = 3
+			add_army_tradition = 15
+		}
+	}
+	heart_of_the_beast = {
+		icon = mission_colonize_the_west
+		required_missions = { island_hopping_cuba }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = outer_sulas_area
+				area = maluku_area
+				area = south_moluccas_area
+				area = north_moluccas_area
+			}
+			has_discovered = ROOT
+			NOT = { 
+				owned_by = ROOT 
+			}
+		}
+		trigger = {
+			outer_sulas_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			maluku_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			south_moluccas_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			north_moluccas_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = all_cloves_provinces_bonus.tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = cloves
+					}
+					add_province_modifier = {
+						name = "flavors_of_warfare"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	malaysian_hegemon = {
+		icon = mission_sail_to_the_east_indies
+		required_missions = { heart_of_the_beast }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				region = new_brazil_region
+			}
+			has_discovered = ROOT
+			NOT = { 
+				owned_by = ROOT 
+			}
+		}
+		trigger = {
+			new_brazil_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = all_spices_gain_production.tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = spices
+					}
+					add_base_production = 1
+				}
+			}
+		}
+	}
+}

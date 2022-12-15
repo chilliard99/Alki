@@ -1,0 +1,14 @@
+#494 - St. Kitts	
+discovered_by = ottoman
+owner = V08
+controller = V08
+add_core = V08
+culture = leeward
+religion = espiritismo
+capital = "St. Kitts"
+trade_goods = salt #barbuda makes a lil salt 
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

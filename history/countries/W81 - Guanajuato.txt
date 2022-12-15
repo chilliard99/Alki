@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = tapatio
+religion = catholico
+technology_group = muslim
+capital = 2621	#Leon
+
+1399.5.12 = {
+	monarch = {
+		name = "Manuel IV"
+		dynasty = "Juata"
+		birth_date = 1399.5.12
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}
+1442.1.29 = {
+	heir = {
+		name = "Celedonio"
+		monarch_name = "Celedonio III"
+		dynasty = "Juata"
+		birth_date = 1442.1.29
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 1
+		mil = 1
+	}
+}

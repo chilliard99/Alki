@@ -1,0 +1,14 @@
+#493 - St. Thomas
+discovered_by = ottoman
+owner = V14
+controller = V14 
+add_core = V14
+culture = boricua
+religion = espiritismo
+capital = "St. Thomas"
+trade_goods = salt #huge salt production in the past
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

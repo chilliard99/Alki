@@ -1,0 +1,17 @@
+#1154 - Zazzau
+discovered_by = mesoamerican
+culture = neoyoruban
+is_city = no
+base_manpower = 1
+religion = shamanist  
+capital = "Turunku"
+trade_goods = cotton #and groundnuts
+hre = no
+base_tax = 1
+base_production = 1
+owner = Z21
+controller = Z21
+add_core = Z21
+native_size = 5
+native_ferocity = 2
+native_hostileness = 1

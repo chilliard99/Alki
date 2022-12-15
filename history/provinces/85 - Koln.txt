@@ -1,0 +1,15 @@
+#85 - Köln
+discovered_by = chinese
+owner = X30
+controller = X30
+add_core = X30
+culture = wajin
+religion = neoshinto
+trade_goods = tea # Kabusecha 
+capital = "Köln"
+base_tax = 6 
+base_production = 6
+base_manpower = 5
+is_city = yes
+hre = no
+discovered_by = eastern

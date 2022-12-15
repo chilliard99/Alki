@@ -1,0 +1,16 @@
+# No previous file for Magangué
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V59
+controller = V59
+add_core = V59
+culture = cariben
+religion = catholico
+capital = "Magangué"
+trade_goods = grain #bananas
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

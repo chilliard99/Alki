@@ -1,0 +1,15 @@
+#2318 - Bahariya
+discovered_by = western
+discovered_by = eastern 
+owner = W06
+controller = W06
+add_core = W06
+culture = anchoragean
+religion = collectivist
+capital = "el Qasr"
+is_city = yes
+base_manpower = 2
+trade_goods = copper #chitina river valley copper
+hre = no
+base_tax = 1 
+base_production = 1

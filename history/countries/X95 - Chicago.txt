@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = royal_iowan
+religion = islam
+technology_group = eastern
+capital = 389	#Chicago
+
+1423.11.11 = {
+	monarch = {
+		name = "Grayson III"
+		dynasty = "Baer"
+		birth_date = 1423.11.11
+		adm = 3
+		dip = 5
+		mil = 3
+	}
+}
+1442.2.3 = {
+	heir = {
+		name = "Grayson"
+		monarch_name = "Grayson IV"
+		dynasty = "Baer"
+		birth_date = 1442.2.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 6
+		mil = 3
+	}
+}

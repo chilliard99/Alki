@@ -1,0 +1,16 @@
+# No previous file for Xicallanco
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W95
+controller = W95
+add_core = W95
+culture = tabasqueno
+is_city = yes
+religion = catholico
+capital = "Xicallanco"
+trade_goods = tropical_wood #MORE WOOD RARE WOODS AND GUM
+hre = no
+base_tax = 2 
+base_production = 1
+base_manpower = 1

@@ -1,0 +1,19 @@
+#2011 - Shenandoah
+
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X56
+controller = X56
+add_core = X56
+culture = columbian
+religion = dynastic
+capital = "Manahoac"
+trade_goods = livestock #cattle
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
