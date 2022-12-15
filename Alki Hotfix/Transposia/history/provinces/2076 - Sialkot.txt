@@ -1,0 +1,16 @@
+#2076 - Sialkot
+discovered_by = eastern
+discovered_by = western
+owner = W04
+controller = W04
+add_core = W04
+culture = northitoban
+religion = sacramental
+capital = "Sialkot"
+trade_goods = fur #lotta furs
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 2
+is_city = yes
+fort_15th = yes

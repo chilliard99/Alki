@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = ecuadorian
+religion = yanantin  
+technology_group = indian 
+capital = 817	#Cuenca
+
+1401.10.14 = {
+	monarch = {
+		name = "Gil"
+		dynasty = "Canari"
+		birth_date = 1401.10.14
+		adm = 5
+		dip = 3
+		mil = 5
+	}
+}
+1420.3.17 = {
+	heir = {
+		name = "Andres"
+		monarch_name = "Andres"
+		dynasty = "Canari"
+		birth_date = 1420.3.17
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}

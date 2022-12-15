@@ -1,0 +1,16 @@
+#2392 - Selangor
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W27
+controller = W27
+add_core = W27
+culture = ensenadan
+religion = partisan
+capital = "Kelang"
+trade_goods = fish #shrimp?
+hre = yes
+base_tax = 3 
+base_production = 3
+base_manpower = 4
+is_city = yes

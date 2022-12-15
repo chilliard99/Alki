@@ -1,0 +1,17 @@
+#2045 - Barind
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y39
+controller = Y39
+add_core = Y39
+culture = yakama
+religion = partisan
+capital = "Rangpur"
+trade_goods = livestock
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

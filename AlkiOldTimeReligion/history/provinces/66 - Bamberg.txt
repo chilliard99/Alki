@@ -1,0 +1,16 @@
+# 66 - Bamberg
+discovered_by = chinese
+owner = X35
+controller = X35
+add_core = X35
+culture = shikokuan
+religion = neoshinto
+base_tax = 2
+base_production = 2
+trade_goods = grain #rice
+base_manpower = 2
+capital = "Bamberg"
+is_city = yes
+hre = no
+discovered_by = eastern
+discovered_by = ottoman

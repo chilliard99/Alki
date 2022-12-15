@@ -1,0 +1,14 @@
+#4406 - Mong Kung
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neobrazilian
+religion = espiritismo
+capital = "Mong Kung"
+trade_goods = cloves #i guess
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 1
+is_city = yes

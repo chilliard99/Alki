@@ -1,0 +1,17 @@
+#2064 - Shekhawati
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y38
+controller = Y38
+add_core = Y38
+culture = yakama
+religion = partisan
+capital = "Sikar"
+trade_goods = grain #timothy hay wikipedia says 
+hre = no
+base_tax = 3
+base_production = 4
+base_manpower = 1
+is_city = yes

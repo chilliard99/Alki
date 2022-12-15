@@ -1,0 +1,271 @@
+namespace = sagrado_flavor
+####################SAGRADO##########################
+country_event = { #The Heart Grows Fonder
+	id = sagrado_flavor.1
+	title = sagrado_flavor.1.t
+	desc = sagrado_flavor.1.d
+	picture = CHRISTIAN_ANIMIST_ALTAR_eventPicture
+	
+	trigger = {
+		religion = catholico
+		capital_scope = {
+			continent = colombia
+		}
+		NOT = {
+			reform_desire = 0.75
+			has_country_flag = got_heart_grows_fonder
+			has_global_flag = STOP_sagrado_NOW
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 5
+	}
+	
+	option = {
+		name = sagrado_flavor.1.a #We Are Alone
+	 	if = { 
+			limit = {
+				NOT = {
+					has_global_flag = sagrado_has_spawned_rip
+				}
+			}
+			set_global_flag = sagrado_has_spawned_rip
+			enable_religion = sagrado
+			W83 = {
+				country_event = { 
+					id = sagrado_flavor.1
+					days = 5
+				}
+			}
+		}
+		change_religion = sagrado
+		remove_opinion = {
+			who = W83
+			modifier = tepeyac_papacy_otr
+		}
+		capital_scope = {
+			change_religion = sagrado
+		}
+		add_country_modifier = {
+			name = "mystical_expression_sagrado"
+			duration = 3650
+		}
+		add_reform_desire = -0.005
+		ai_chance = {
+			factor = 90
+		}
+	}
+	option = {
+		name = sagrado_flavor.1.b #We Will Make Do
+		add_papal_influence = 25
+		add_reform_desire = 0.005
+		ai_chance = {
+			factor = 10
+		}
+	}
+	
+	after = {
+		set_country_flag = got_heart_grows_fonder
+	}
+}
+
+country_event = { #Faith Factionalism 
+	id = sagrado_flavor.2
+	title = sagrado_flavor.2.t
+	desc = sagrado_flavor.2.d
+	picture = CHRISTIAN_ANIMIST_ALTAR_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = sagrado_flavor.2.a #They will continue to provide guidance
+		add_prestige = -10
+		custom_tooltip = explaining_sagrado_and_the_problems.tt
+	}
+}
+
+country_event = { #A Commanding Bishop **PULSE**
+	id = sagrado_flavor.3
+	title = sagrado_flavor.3.t
+	desc = sagrado_flavor.3.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = sagrado
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = sagrado_flavor.3.a #Assert our Authority
+		add_church_power = -15
+		add_legitimacy = 10
+		add_horde_unity = 10
+		add_devotion = 10
+		add_meritocracy = 10
+		add_republican_tradition = 5
+	}
+	option = {
+		name = sagrado_flavor.3.b #Let the Bishop Command
+		add_church_power = 10
+	}
+}
+
+country_event = { #Saint Struggles **PULSE**
+	id = sagrado_flavor.4
+	title = sagrado_flavor.4.t
+	desc = sagrado_flavor.4.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = sagrado
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = sagrado_flavor.4.a #We will Beautify
+		add_prestige = 15
+	}
+	option = {
+		name = sagrado_flavor.4.b #It is a bishop's Job
+		add_church_power = 15
+	}
+	option = {
+		name = sagrado_flavor.4.c #Who are we to decide who is a saint?
+		add_country_modifier = {
+			name = "folk_saints_sagrado"
+			duration = 1825
+		}
+	}
+}
+
+
+country_event = { #Fresh Belief **PULSE**
+	id = sagrado_flavor.5
+	title = sagrado_flavor.5.t
+	desc = sagrado_flavor.5.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = sagrado
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = sagrado_flavor.5.a #We must inspire this generation!
+		add_adm_power = -10
+		add_dip_power = -10
+		add_mil_power = -10
+		add_country_modifier = {
+			name = "fresh_inspiration_sagrado"
+			duration = 9125
+		}
+	}
+	option = {
+		name = sagrado_flavor.5.b #This is not our problem
+		add_prestige = 5
+	}
+}
+
+country_event = { #Espiritismo Syncretism **PULSE**
+	id = sagrado_flavor.6
+	title = sagrado_flavor.6.t
+	desc = sagrado_flavor.6.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = sagrado
+		church_power = 150
+		any_neighbor_country = {
+			religion = espiritismo
+		}
+		any_owned_province = {
+			religion = sagrado
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = sagrado
+				}
+				save_event_target_as = espiritismo_syncretism_prov_sagr
+			}
+		}
+	}
+	
+	option = {
+		name = sagrado_flavor.6.a #There is nothing we can do
+		event_target:espiritismo_syncretism_prov_sagr = {
+			change_religion = espiritismo
+		}
+	}
+	option = {
+		name = sagrado_flavor.6.b #Correct their worship
+		add_church_power = -50
+	}
+}
+
+country_event = { #State Sagrado **PULSE**
+	id = sagrado_flavor.7
+	title = sagrado_flavor.7.t
+	desc = sagrado_flavor.7.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = sagrado
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	
+	option = {
+		name = sagrado_flavor.7.a #Encourage this view
+		add_prestige = -10
+		add_country_modifier = {
+			name = "enforced_state_sagrado_sagrado"
+			duration = 1825
+		}
+	}
+	option = {
+		name = sagrado_flavor.7.b #Have the Bishops teach this message
+		add_corruption = 0.25
+		add_church_power = 15
+		add_country_modifier = {
+			name = "enforced_state_sagrado_sagrado"
+			duration = 1825
+		}
+	}
+	option = {
+		name = sagrado_flavor.7.c #It is not our position to decide
+		add_prestige = 20
+	}
+}

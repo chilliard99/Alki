@@ -1,0 +1,16 @@
+#496 - Guadeloupe
+discovered_by = ottoman
+owner = V08
+controller = V08
+add_core = V08
+culture = leeward
+religion = espiritismo
+capital = "Guadeloupe"
+trade_goods = sugar #ol' reliable
+hre = no
+fort_15th = yes
+base_tax = 6
+base_production = 6
+base_manpower = 5
+is_city = yes
+center_of_trade = 1

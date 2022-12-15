@@ -1,0 +1,15 @@
+#2379 - Battambang
+discovered_by = W11
+discovered_by = X67
+owner = W11
+controller = W11
+add_core = W11
+culture = baydwellers
+religion = dynastic
+capital = "Battambang"
+trade_goods = livestock #elder down
+hre = no
+base_tax = 2 
+base_production = 1
+base_manpower = 1
+is_city = yes

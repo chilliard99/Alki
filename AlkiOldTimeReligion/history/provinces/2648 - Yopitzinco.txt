@@ -1,0 +1,18 @@
+# No previous file for Yopitzinco
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W85
+controller = W85
+add_core = W85
+culture = costeno
+is_city = yes
+religion = catholico
+capital = "Yopi"
+trade_goods = fish #i guess
+center_of_trade = 1
+hre = no
+fort_15th = yes
+base_tax = 6
+base_production = 6
+base_manpower = 5

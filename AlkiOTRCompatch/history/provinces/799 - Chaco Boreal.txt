@@ -1,0 +1,17 @@
+#799 - Chaco Boreal
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+culture = unitah
+owner = Y32
+controller = Y32
+add_core = Y32
+religion = sacramental
+capital = "Chaco Boreal"
+trade_goods = wool #unitah herders
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 4
+is_city = yes

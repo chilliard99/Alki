@@ -1,0 +1,15 @@
+#128 - Kärnten
+discovered_by = chinese
+owner = X16
+controller = X16
+add_core = X16
+culture	= neoainu
+religion = neoshinto
+base_tax = 3
+base_production = 3
+trade_goods = wine #Ideka
+base_manpower = 2
+capital = "Klagenfurt" 
+is_city = yes
+hre = no
+discovered_by = eastern

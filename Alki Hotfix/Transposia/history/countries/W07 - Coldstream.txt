@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = inner_salishan
+religion = collectivist
+technology_group = western
+capital = 2607	 #Coldstream
+
+
+1422.5.5 = {
+	monarch = {
+		name = "Henri"
+		dynasty = "Coldstream"
+		birth_date = 1422.5.5
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+}
+1442.7.22 = {
+	heir = {
+		name = "Issac"
+		monarch_name = "Issac IV"
+		dynasty = "Coldstream"
+		birth_date = 1442.7.22
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}

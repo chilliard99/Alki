@@ -1,0 +1,16 @@
+# No previous file for Yohualtepec
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W85
+controller = W85
+add_core = W85
+culture = costeno
+is_city = yes
+religion = catholico
+capital = "Yohualtepec"
+trade_goods = wool #yeah this is okay i guess
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1

@@ -1,0 +1,17 @@
+# No previous file for Toboso
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W67
+controller = W67
+add_core = W67
+culture = durangan
+religion = catholico
+capital = "Toboso"
+trade_goods = wool #sheep ranchers
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 2
+is_city = yes

@@ -1,0 +1,807 @@
+# Do not change tags in here without changing every other reference to them.
+# Do not change tags in here without changing every other reference to them.
+# If adding new groups or ideas, make sure they are unique.
+
+### Nation specific idea groups
+
+
+###########TRANSPOSIA IDEAS##################
+
+ainu_ideas = {
+	start = {
+	 	land_forcelimit_modifier = 0.25
+	 	infantry_power = 0.10
+	}
+	
+	bonus = {
+	 	global_trade_power = 0.1
+	}
+
+	trigger = {
+		tag = X16
+	}
+	free = yes
+	
+	the_frigid_island = {
+	 	trade_efficiency = 0.1
+	}
+	the_greenland_colony = {
+	 	global_colonial_growth = 20
+	}
+	greater_ainu_empire = {
+	 	core_creation = -0.2
+	}
+	wealth_of_the_gulf = {
+	 	merchants = 1
+	}
+	war_for_st_lawrence = {
+	 	heavy_ship_power = 0.1
+	 	heavy_ship_cost = -0.05
+	}
+	the_ancient_kakizaki = {
+	 	legitimacy = 1
+		yearly_absolutism = 0.05
+	}
+	hokkaidian_nobles = {
+	 	idea_cost = -0.1
+	}
+}
+
+carolina_ideas = {
+	start = {
+	 	infantry_power = 0.10
+	 	defensiveness = 0.25
+	}
+	
+	bonus = {
+	 	technology_cost = -0.05
+	}
+
+	trigger = {
+		tag = X49
+	}
+	free = yes
+	
+	united_kingdom_of_the_palm = {
+		infantry_cost = -0.1
+	}
+	defense_against_the_united_tribes = {
+	 	garrison_size = 0.2
+		fort_maintenance_modifier = -0.2
+	}
+	uniting_the_antebella_dukes = {
+	 	global_autonomy = -0.05
+	}
+	peachtree_relations = {
+		global_own_trade_power = 0.1
+	}
+	mountain_men_of_asheville = {
+		global_garrison_growth = 0.25
+	}
+	the_floridian_colonies = {
+	 	naval_morale = 0.1
+	}
+	nobles_of_the_frond = {
+	 	stability_cost_modifier = -0.05
+		global_unrest = -1
+	}
+}
+
+canadian_ideas = {
+	start = {
+	 	land_attrition = -0.15
+		land_morale = 0.15
+	}
+	
+	bonus = {
+		legitimacy = 1
+		meritocracy = 1
+	}
+
+	trigger = {
+		OR = {
+			tag = X67
+			tag = X68
+			tag = X69
+			tag = X70
+			tag = X71
+			tag = X72
+			tag = X73
+			tag = X77
+			tag = X78
+			tag = X79
+			tag = X80
+			tag = X81
+			tag = X82
+			tag = X83
+			tag = W58
+		}
+	}
+	free = yes
+	
+	the_new_dynasty = {
+	 	governing_capacity_modifier = 0.1
+	}
+	colonization_of_greenland = {
+	 	trade_efficiency = 0.15
+	}
+	reclaiming_the_gulf = {
+	 	colonists = 1
+	}
+	the_tributary_system = {
+	  	global_unrest = -2
+	}
+	the_maple_throne = {
+	 	global_missionary_strength = 0.01
+	 	missionaries = 1
+	}
+	preclasscial_period = {
+	 	technology_cost = -0.1
+	}
+	the_battle_of_chicago = {
+	 	diplomatic_reputation = 2
+	}
+}
+
+buckeye_ideas = {
+	start = {
+	 	core_creation = -0.25
+	 	discipline = 0.05
+	}
+	
+	bonus = {
+		infantry_power = 0.15
+	}
+
+	trigger = {
+		tag = X91
+	}
+	free = yes
+	
+	advance_the_lion = {
+	 	adm_tech_cost_modifier = -0.1
+	}
+	unity_from_colombus = {
+	 	production_efficiency = 0.15
+	}
+	ohioan_silks = {
+	 	global_trade_goods_size_modifier = 0.15
+	}
+	the_buckeyes = {
+	 	land_morale = 0.2
+	}
+	the_port_of_indianapolis = {
+	 	governing_capacity_modifier = 0.1
+	}
+	kentucker_trade = {
+	 	galley_power = 0.2
+	}
+	home_of_the_kaaba = {
+	 	missionaries = 1
+	}
+}
+
+wisconsin_ideas = {
+	start = {
+	 	land_forcelimit_modifier = 0.2
+	 	cavalry_cost = -0.10
+	}
+	
+	bonus = {
+		movement_speed = 0.15
+	}
+
+	trigger = {
+		tag = Y01
+	}
+	free = yes
+	
+	yooper_horsemen = {
+	 	cavalry_power = 0.2
+	}
+	the_eastern_fields = {
+		production_efficiency = 0.1
+	}
+	guardian_of_the_second_city = {
+		stability_cost_modifier = -0.1
+	}
+	the_tolerant_kingdom = {
+	 	tolerance_heathen = 3
+	}
+	canadian_penalties = {
+		land_morale = 0.1
+	}
+	the_detriot_pact = {
+	 	land_attrition = -0.10
+	}
+	preclassical_embrace = {
+	 	cav_to_inf_ratio = 0.10
+	}
+}
+
+italian_ideas = {
+	start = {
+	 	trade_efficiency = 0.1
+	 	infantry_power = 0.10
+	}
+	
+	bonus = {
+	 	legitimacy = 1
+	}
+
+	trigger = {
+		tag = Y25
+	}
+	free = yes
+	
+	kansas_faithful = {
+	 	tolerance_heathen = 3
+	}
+	the_city_of_eden = {
+	 	prestige = 0.5
+		prestige_decay = -0.005
+	}
+	crusader_legacy = {
+	 	discipline = 0.05
+	}
+	unruly_kingdom = {
+		global_unrest = -2
+	}
+	romantic_art = {
+	 	adm_tech_cost_modifier = -0.1
+	}
+	northend_shipyards = {
+	 	galley_power = 0.2
+	}
+	the_middle_kingdom = {
+		advisor_cost = -0.1
+	}
+}
+
+sioux_ideas = {
+	start = {
+		diplomatic_upkeep = 1
+	 	movement_speed = 0.15
+	}
+	
+	bonus = {
+	 	unjustified_demands = -0.2
+	}
+
+	trigger = {
+		tag = Y19
+	}
+	free = yes
+	
+	legacy_of_conquest = {
+	 	province_warscore_cost = -0.10
+	}
+	the_war_of_dakotans = {
+	 	land_morale = 0.15
+	}
+	great_brule = {
+	 	cavalry_power = 0.2
+	}
+	missouri_faithful = {
+	 	global_manpower_modifier = 0.2
+	}
+	sacramental_conversion = {
+		global_missionary_strength = 0.02
+	}
+	metis_ancestors = {
+	 	cav_to_inf_ratio = 0.15
+	}
+	akichita_arms = {
+	 	army_tradition = 0.5
+	}
+}
+
+winnipeg_ideas = {
+	start = {
+	 	global_tax_modifier = 0.15
+	 	development_cost = -0.1
+	}
+	
+	bonus = {
+		prestige_from_land = 1
+	}
+
+	trigger = {
+		tag = W04
+	}
+	free = yes
+	
+	toronto_of_the_west = {
+	 	production_efficiency = 0.1
+	}
+	the_lakeside_deal = {
+	 	diplomatic_reputation = 1
+	}
+	open_forests = {
+	 	land_attrition = -0.10
+	}
+	prarie_kingdom = {
+	 	legitimacy = 1
+	}
+	the_hardy_northitobans = {
+	 	land_morale = 0.15
+	}
+	maple_loyalty = {
+	 	tolerance_own = 2
+	}
+	gateway_to_the_west = {
+	 	global_own_trade_power = 0.15
+	}
+}
+
+occitanian_ideas = {
+	start = {
+	 	dip_tech_cost_modifier = -0.1
+	 	culture_conversion_cost = -0.15
+	}
+	
+	bonus = {
+	 	same_culture_advisor_cost = -0.2
+	}
+
+	trigger = {
+		tag = Y28
+	}
+	free = yes
+	
+	the_gracious_people = {
+	  	stability_cost_modifier = -0.15
+	}
+	the_last_frenchmen = {
+	 	prestige = 1
+	}
+	a_pawn_in_the_game = {
+	 	improve_relation_modifier = 0.2
+	}
+	the_provencial_council = {
+	 	yearly_corruption = -0.1
+	}
+	uncompahgre_glass = {
+	 	production_efficiency = 0.05
+	}
+	the_gascon_wall = {
+	 	artillery_power = 0.10
+	}
+	birthplace_of_feudalism = {
+	 	global_institution_spread = 0.1
+	}
+}
+
+utah_ideas = {
+	start = {
+	 	tolerance_heretic = 3
+	 	global_autonomy = -0.05
+	}
+	
+	bonus = {
+	 	siege_ability = 0.10
+	}
+
+	trigger = {
+		tag = Y32
+	}
+	free = yes
+	
+	melting_pot_of_the_west = {
+	 	technology_cost = -0.1
+	}
+	the_provos = {
+	 	inflation_reduction = 0.1
+	}
+	kingdom_of_honey = {
+	 	legitimacy = 1
+	}
+	the_baptismal_waters = {
+	 	tolerance_heathen = 3
+	}
+	crusader_kings = {
+	 	land_morale = 0.2
+	}
+	alamos_fire = {
+	 	leader_naval_fire = 1
+	}
+	preclassical_artwork = {
+	 	institution_spread_from_true_faith = 0.1
+		embracement_cost = -0.1
+	}
+}
+
+napa_ideas = {
+	start = {
+	 	diplomatic_reputation = 2
+	 	land_forcelimit_modifier = 0.25
+	}
+	
+	bonus = {
+	 	imperial_authority_value = 0.1
+		yearly_absolutism = 0.1
+	}
+
+	trigger = {
+		tag = Y76
+	}
+	free = yes
+	
+	land_of_the_vinyards = {
+	 	global_manpower_modifier = 0.25
+	}
+	the_tumoultous_empire = {
+	 	imperial_authority = 0.1
+		improve_relation_modifier = 0.25
+	}
+	house_of_bluff = {
+	 	legitimacy = 1
+		heir_chance = 0.5
+	}
+	sacramento_guard = {
+	 	land_maintenance_modifier = -0.5
+		infantry_power = 0.05
+	}
+	the_grand_festival = {
+	 	idea_cost = -0.05
+		technology_cost = -0.05
+	}
+	bipartisan_leadership = {
+	 	tolerance_heretic = 3
+	}
+	capital_of_the_west = {
+	 	development_cost = -0.15
+		stability_cost_modifier = -0.1
+	}
+}
+
+alaska_ideas = {
+	start = {
+	 	diplomatic_reputation = 1
+	 	trade_efficiency = 0.1
+	}
+	
+	bonus = {
+	 	naval_forcelimit_modifier = 0.33
+	}
+
+	trigger = {
+		tag = W06
+	}
+	free = yes
+	
+	an_expanding_union = {
+	 	may_establish_frontier = yes
+		auto_explore_adjacent_to_colony = yes
+	}
+	solidarity_forever = {
+	 	diplomatic_upkeep = 1
+		envoy_travel_time = -0.1
+	}
+	the_lands_of_the_rus = {
+	 	colonists = 1
+	}
+	mines_of_yukon = {
+	 	production_efficiency = 0.15
+	}
+	the_scab_war = {
+	 	core_creation = -0.15
+	}
+	arborean_ports = {
+	 	ship_durability = 0.1
+	}
+	one_large_union_grand = {
+	 	global_colonial_growth = 25
+	}
+}
+
+arizonan_ideas = {
+	start = {
+		manpower_recovery_speed = 0.15
+	 	leader_land_shock = 1
+	}
+	
+	bonus = {
+	 	global_tax_modifier = 0.15
+	}
+
+	trigger = {
+		tag = W48
+	}
+	free = yes
+	
+	argelino_crown = {
+	 	num_accepted_cultures = 1
+	}
+	city_of_gold = {
+	 	prestige = 1
+	}
+	warden_of_christendom = {
+	 	discipline = 0.05
+	}
+	tohono_order = {
+	 	global_missionary_strength = 0.01
+	}
+	the_albuquerque_market = {
+	 	global_own_trade_power = 0.25
+	}
+	the_unions_blindspot = {
+	 	core_creation = -0.15
+	}
+	legacy_of_the_gila = {
+	 	stability_cost_modifier = -0.1
+	}
+}
+
+texan_ideas = {
+	start = {
+	 	land_maintenance_modifier = -0.05
+	 	heir_chance = 0.5
+	}
+	
+	bonus = {
+	 	yearly_corruption = -0.1
+	}
+
+	trigger = {
+		tag = W49
+	}
+	free = yes
+	
+	la_cansanciato = {
+	 	war_exhaustion = -0.03
+	}
+	las_cruzadas = {
+	 	land_morale = 0.15
+	}
+	houstonite_period = {
+	 	legitimacy = 1
+	}
+	beyond_the_brazos = {
+	 	governing_capacity_modifier = 0.1
+	}
+	vaqueros_texan = {
+	 	infantry_power = 0.10
+		shock_damage_received = -0.05
+	}
+	hotbed_of_heresy = {
+	 	tolerance_heretic = 3
+	}
+	american_legacy = {
+	 	num_accepted_cultures = 2
+	}
+}
+
+grandean_ideas = {
+	start = {
+	 	defensiveness = 0.25
+		free_leader_pool = 1
+	}
+	
+	bonus = {
+	 	advisor_cost = -0.1
+	}
+
+	trigger = {
+		tag = W55
+	}
+	free = yes
+	
+	the_great_bravo = {
+	  	global_manpower_modifier = 0.2
+	}
+	revolution_on_the_banks = {
+	 	siege_ability = 0.10
+	}
+	riverlord_ambitions = {
+	 	merchants = 1
+		global_trade_power = 0.05
+	}
+	streets_of_laredo = {
+	 	build_cost = -0.15
+	}
+	ejidos_nation = {
+	 	administrative_efficiency = 0.05
+	}
+	ladies_of_the_bend = {
+	 	may_recruit_female_generals = yes
+		leader_land_fire = 1
+	}
+	papal_pragmatism = {
+	 	diplomatic_reputation = 1
+	}
+}
+
+huasteca_ideas = {
+	start = {
+	 	fabricate_claims_cost = -0.2
+		garrison_size = 0.25
+	}
+	
+	bonus = {
+	 	core_creation = -0.15
+	}
+
+	trigger = {
+		tag = W84
+	}
+	free = yes
+	
+	panucoan_histories = {
+	 	technology_cost = -0.05
+	}
+	vipers_abound = {
+	 	diplomats = 1
+	}
+	tajin_legacy = {
+	 	development_cost = -0.1
+	}
+	holder_of_the_keys = {
+	 	tolerance_own = 2
+	}
+	the_noble_retreat = {
+	 	hostile_attrition = 1 	
+	}
+	treatise_of_the_humeros = {
+	 	army_tradition_from_battle = 0.5
+	}
+	heads_of_xalapa = {
+	 	prestige = 1
+	}
+}
+
+estados_ponitificos_ideas = {
+	start = {
+		missionaries = 1
+	 	ae_impact = -0.15
+	}
+	
+	bonus = {
+		global_missionary_strength = 0.03
+	}
+
+	trigger = {
+		tag = W83
+	}
+	free = yes
+	
+	the_new_ponitifcate = {
+		diplomatic_reputation = 2
+	}
+	the_lady_guadalupe = {
+	 	improve_relation_modifier = 0.15
+	}
+	heresy_of_venus = {
+	 	land_morale = 0.15
+	}
+	the_eternal_walls = {
+	 	state_maintenance_modifier = -0.2
+	}
+	el_renacimiento = {
+		idea_cost = -0.1
+	}
+	flowers_of_the_hill = {
+		production_efficiency = 0.1
+	}
+	his_eminence = {
+		devotion = 1
+	}
+}
+
+oaxaca_ideas = {
+	start = {
+	 	diplomatic_upkeep = 1
+		army_tradition = 0.5
+	}
+	
+	bonus = {
+	 	artillery_power = 0.10
+	}
+
+	trigger = {
+		tag = W85
+	}
+	free = yes
+	
+	in_the_shadow_of_the_valley = {	
+	 	discipline = 0.05
+	}
+	usos_y_constumbres = {
+		governing_capacity_modifier = 0.05
+		years_of_nationalism = -5
+	}
+	capture_of_la_villa_rica = {
+		leader_siege = 1
+	}
+	king_of_the_oaxacas = {
+		same_culture_advisor_cost = -0.25
+	 	global_unrest = -1
+	}
+	cocoa_lords = {
+		trade_efficiency = 0.1
+	}
+	la_codificacion = {
+	 	global_institution_spread = 0.15
+	}
+	revolucion_verde = {
+		land_forcelimit_modifier = 0.33
+	}
+}
+
+cuban_ideas = {
+	start = {
+	 	colonists = 1
+	 	stability_cost_modifier = -0.15
+	}
+	
+	bonus = {
+	 	trade_steering = 0.25
+	}
+
+	trigger = {
+		tag = V05
+	}
+	free = yes
+	
+	beyond_the_antilles = {
+		range = 0.33
+	}
+	the_five_kingdoms = {
+	 	global_unrest = -2
+	}
+	island_papism = {
+		global_missionary_strength = 0.02
+	}
+	amiguismo = {
+		global_trade_goods_size_modifier = 0.15
+	}
+	bahamanian_settlement = {
+	 	native_uprising_chance = -0.5
+	 	native_assimilation = 0.5
+	}
+	ius_ad_bellum = {
+	 	core_creation = -0.25
+	}
+	plantation_economy = {
+		development_cost = -0.15
+	}
+}
+
+neobrazilian_ideas = {
+	start = {
+	 	infantry_power = 0.10	
+		trade_efficiency = 0.15
+	}
+	
+	bonus = {
+		global_institution_spread = 0.1
+	}
+
+	trigger = {
+		tag = V98
+	}
+	free = yes
+	
+	island_paradise_brazil = {
+	 	build_cost = -0.15
+	}
+	umbanda_sect = {
+	 	religious_unity = 0.25
+	 	tolerance_heretic = 1	
+	}
+	island_settlement_brazil = {
+	 	global_colonial_growth = 15
+	}
+	bickering_nobility = {
+	 	free_leader_pool = 1
+	}
+	evny_of_the_north = {
+	 	merchants = 1	
+	}
+	the_great_fleet_brazil = {
+	 	naval_forcelimit_modifier = 0.5	
+	}
+	terror_of_the_malay = {
+	 	discipline = 0.05
+	}
+}

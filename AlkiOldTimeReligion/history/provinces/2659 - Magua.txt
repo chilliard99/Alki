@@ -1,0 +1,15 @@
+# No previous file for Magua
+discovered_by = ottoman
+discovered_by = muslim
+owner = V13
+controller = V13
+add_core = V13
+culture = cibao
+religion = espiritismo
+capital = "Magua"
+trade_goods = grain #:)
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 5
+is_city = yes

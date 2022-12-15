@@ -1,0 +1,15 @@
+#856 - Zacatecas
+discovered_by = ottoman
+discovered_by = muslim
+owner = W80
+controller = W80
+add_core = W80
+culture = zacatecan 
+religion = catholico
+is_city = yes
+capital = "Zacatecas" 
+trade_goods = gold #penasquito mine
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 2

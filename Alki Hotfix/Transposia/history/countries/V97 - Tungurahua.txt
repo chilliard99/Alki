@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = ecuadorian
+religion = catholico  
+technology_group = indian 
+capital = 4318	#Ambato
+
+1416.2.12 = {
+	monarch = {
+		name = "Juan XXI"
+		dynasty = "de Ambato"
+		birth_date = 1416.2.12
+		adm = 1
+		dip = 1
+		mil = 3
+	}
+}
+1439.3.14 = {
+	heir = {
+		name = "Juan XXII"
+		monarch_name = "Juan XXII"
+		dynasty = "de Ambato"
+		birth_date = 1439.3.14
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+}

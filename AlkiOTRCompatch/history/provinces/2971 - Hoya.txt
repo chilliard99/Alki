@@ -1,0 +1,16 @@
+#2971 - Hoya
+discovered_by = ottoman
+discovered_by = muslim
+owner = W81
+controller = W81
+add_core = W81
+culture = tapatio
+religion = catholico
+capital = "Hoya"
+trade_goods = cloth #textile manufacturor
+hre = no
+base_tax = 4
+base_production = 5
+base_manpower = 5
+is_city = yes
+

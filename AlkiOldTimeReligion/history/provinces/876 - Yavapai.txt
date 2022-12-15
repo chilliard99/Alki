@@ -1,0 +1,17 @@
+#876 - Yavapai
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W48
+controller = W48
+add_core = W48
+culture = arazonian
+religion = catholico
+capital = "Yavapai" 
+trade_goods = copper #there was a whole controversy 
+hre = no 
+is_city = yes
+base_tax = 1 
+base_production = 1 
+base_manpower = 1 

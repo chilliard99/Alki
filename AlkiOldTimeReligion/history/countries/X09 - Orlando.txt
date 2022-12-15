@@ -1,0 +1,34 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = chinese
+religion = zahran
+primary_culture = orlandan
+capital = 19 #Orlando
+
+
+1399.4.13 = {
+	monarch = {
+		name = "Jeremy III"
+		dynasty = "Disney"
+		birth_date = 1388.5.22
+		adm = 3
+		dip = 3
+		mil = 6
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Sofia"
+		monarch_name = "Sofia"
+		dynasty = "Anderson"
+		birth_date = 1443.1.4
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 3
+		female = yes
+	}
+}

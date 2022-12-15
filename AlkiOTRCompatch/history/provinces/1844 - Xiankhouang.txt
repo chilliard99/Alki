@@ -1,0 +1,17 @@
+#1844 - Xiankhouang
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y78
+controller = Y78
+add_core = Y78
+culture = redwood
+religion = partisan
+capital = "Muang Khoun"
+trade_goods = fish #major fisheries 
+hre = yes
+base_tax = 2 
+base_production = 3
+base_manpower = 3
+is_city = yes

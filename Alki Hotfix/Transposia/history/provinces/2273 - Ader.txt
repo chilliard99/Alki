@@ -1,0 +1,15 @@
+# 2273 - Ader
+discovered_by = western
+discovered_by = eastern
+owner = W13
+controller = W13
+add_core = W13
+is_city = yes
+culture = northern_salishan 
+religion = collectivist
+capital = "Tahoua"
+trade_goods = fur #fishin
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1

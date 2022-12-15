@@ -1,0 +1,15 @@
+#4214 - Kalar
+discovered_by = ottoman
+discovered_by = muslim
+owner = V16
+controller = V16
+add_core = V16
+culture = haitian
+religion = espiritismo
+capital = "Kalar"
+trade_goods = coffee #apparently they make it here too
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 5
+is_city = yes

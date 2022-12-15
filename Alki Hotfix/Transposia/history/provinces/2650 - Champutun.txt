@@ -1,0 +1,16 @@
+# No previous file for Champutun
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W89
+controller = W89
+add_core = W89
+culture = yucateco
+is_city = yes
+religion = catholico
+capital = "Champutun"
+trade_goods = dyes #dye sticks/ palo de campeche
+hre = no
+base_tax = 3 
+base_production = 3
+base_manpower = 2

@@ -1,0 +1,17 @@
+# - Regensburg
+discovered_by = ottoman
+discovered_by = muslim
+owner = W79
+controller = W79
+add_core = W79
+culture = nayar
+religion = catholico
+base_tax = 5
+base_production = 5
+center_of_trade = 1
+trade_goods = glass #costal glass production
+base_manpower = 5
+capital	= "Regensburg" 
+is_city = yes
+hre = no
+fort_15th = yes

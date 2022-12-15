@@ -1,0 +1,14 @@
+#4244 - Trubchevsk (Trubchevsk+Starodub+Pochep)
+discovered_by = ottoman
+owner = V08
+controller = V08
+add_core = V08
+culture = leeward
+religion = espiritismo 
+hre = no
+base_tax = 4
+base_production = 4
+trade_goods = tobacco #its what the wikipedia says
+base_manpower = 3
+capital = "Trubchevsk"
+is_city = yes

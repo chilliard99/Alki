@@ -1,0 +1,17 @@
+# - Buzau
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W83
+controller = W83
+add_core = W83
+culture = chilango
+religion = catholico
+capital = "Buzau"
+center_of_trade = 1
+trade_goods = dyes #Flowers of Diego
+hre = no
+base_tax = 10
+base_production = 10
+base_manpower = 10
+is_city = yes

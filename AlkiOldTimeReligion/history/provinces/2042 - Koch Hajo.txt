@@ -1,0 +1,17 @@
+#2042 - Koch Hajo
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y38
+controller = Y38 
+add_core = Y38
+culture = boisan
+religion = partisan
+capital = "Gauhauti"
+trade_goods = grain #potato products 
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 2
+is_city = yes

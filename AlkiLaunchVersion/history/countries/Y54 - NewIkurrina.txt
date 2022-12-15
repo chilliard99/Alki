@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = goldbugger
+religion = partisan
+technology_group = western
+capital = 1162	 #Winnemucca
+
+1403.8.8 = {
+	monarch = {
+		name = "Aiden"
+		dynasty = "Navarre"
+		birth_date = 1403.8.8
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1425.8.23 = {
+	heir = {
+		name = "Aiden"
+		monarch_name = "Aiden II"
+		dynasty = "Navarre"
+		birth_date = 1425.8.23
+		death_date = 1483.8.30
+		claim = 95
+		adm = 0
+		dip = 3
+		mil = 3
+	}
+}

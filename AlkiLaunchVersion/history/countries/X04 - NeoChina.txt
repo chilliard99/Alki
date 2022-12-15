@@ -1,0 +1,7 @@
+government_rank = 3
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = jianghuai
+religion = shenism
+technology_group = andean
+capital = 1821	# Nanjing

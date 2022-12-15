@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = old_metis
+religion = sacramental
+technology_group = western
+capital = 2135	 #Prince Albert
+
+
+1411.11.26 = {
+	monarch = {
+		name = "Amiskiwiyiniw"
+		dynasty = "Tsattine"
+		birth_date = 1411.11.26
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1433.5.12 = {
+	heir = {
+		name = "Naachin IV"
+		monarch_name = "Naachin IV"
+		dynasty = "Tsattine"
+		birth_date = 1433.5.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 3
+		mil = 4
+	}
+}

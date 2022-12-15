@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = mulegean
+religion = partisan
+technology_group = western
+capital = 2398	 #Guerrero Negro
+
+
+1420.1.1 = {
+	monarch = {
+		name = "Martin III"
+		dynasty = "Abreojos"
+		birth_date = 1420.1.1
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+}
+1442.11.15 = {
+	heir = {
+		name = "Martin"
+		monarch_name = "Martin IV"
+		dynasty = "Abreojos"
+		birth_date = 1442.11.15
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}

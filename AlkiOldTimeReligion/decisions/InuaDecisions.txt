@@ -1,0 +1,45 @@
+country_decisions = {
+
+	
+	become_an_angakkuq = {
+		potential = {
+			religion = inua
+			NOT = {
+				has_country_modifier = angakkuq_ruler
+			}
+		}
+		allow = {
+			adm = 4
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "angakkuq_ruler"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	enforce_maligait = {
+		potential = {
+			religion = inua
+			NOT = {
+				has_country_modifier = enforced_maligait
+			}
+		}
+		allow = {
+			mil_tech = 7
+		}
+		effect = {
+			add_country_modifier = {
+				name = "enforced_maligait"
+				duration = -1
+			}
+			add_patriarch_authority = -0.1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

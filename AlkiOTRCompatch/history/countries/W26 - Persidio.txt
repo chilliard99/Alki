@@ -1,0 +1,32 @@
+government = republic
+add_government_reform = free_city
+government_rank = 1
+primary_culture = rosaritan
+religion = partisan
+technology_group = western
+capital = 2476	 #San Diego
+religious_school = traditionalist_party
+
+1422.5.12 = {
+	monarch = {
+		name = "Eduardo II"
+		dynasty = "Diego"
+		birth_date = 1422.5.12
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1429.5.16 = {
+	heir = {
+		name = "Raul"
+		monarch_name = "Raul IV"
+		dynasty = "Diego"
+		birth_date = 1439.12.26
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}

@@ -1,0 +1,16 @@
+#2388 - Phitsanulok
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W32 
+controller = W32
+add_core = W32
+culture = rosaritan
+religion = partisan
+capital = "Phitsanulok"
+trade_goods = grain #dates produced in San Luis Rio Colorado
+hre = yes
+base_tax = 4 
+base_production = 4
+base_manpower = 3
+is_city = yes

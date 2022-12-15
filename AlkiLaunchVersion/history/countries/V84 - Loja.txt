@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = ecuadorian
+religion = yanantin  
+technology_group = indian 
+capital = 2824	#Loja
+
+1407.3.12 = {
+	monarch = {
+		name = "Simon"
+		dynasty = "de Loja"
+		birth_date = 1407.3.12
+		adm = 0
+		dip = 1
+		mil = 1
+	}
+}
+1437.2.1 = {
+	heir = {
+		name = "Juan III"
+		monarch_name = "Juan III"
+		dynasty = "de Loja"
+		birth_date = 1437.2.1
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}

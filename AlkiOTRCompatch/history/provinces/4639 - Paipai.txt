@@ -1,0 +1,16 @@
+# No previous file for Paipai
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W28
+controller = W28
+add_core = W28
+culture = ensenadan
+religion = partisan
+capital = "Paipai"
+trade_goods = wool #bighorn sheep
+hre = yes
+base_tax = 2 
+base_production = 2
+base_manpower = 1
+is_city = yes

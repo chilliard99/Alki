@@ -1,0 +1,15 @@
+# 2133 - Dege
+discovered_by = eastern
+discovered_by = western
+owner = W02
+controller = W02
+add_core = W02
+culture = saulteaux
+religion = sacramental
+capital = "Dege"
+trade_goods = fur #a lot more fur trades
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

@@ -1,0 +1,15 @@
+# 2123 - Qakilik
+discovered_by = eastern
+discovered_by = western
+owner = W00
+controller = W00
+add_core = W00
+culture = old_metis
+religion = sacramental
+capital = "Qakilik"
+trade_goods = grain #MORE GRAIN CROPS
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 2
+is_city = yes

@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = newthai
+religion = yanantin  
+technology_group = indian 
+capital = 4324	#Moyobamba
+
+1421.2.12 = {
+	monarch = {
+		name = "Juan IV"
+		dynasty = "Chachapoyas"
+		birth_date = 1421.2.12
+		adm = 2
+		dip = 1
+		mil = 1
+	}
+}
+1444.1.31 = {
+	heir = {
+		name = "Santiago"
+		monarch_name = "Santiago"
+		dynasty = "Chachapoyas"
+		birth_date = 1444.1.31
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}

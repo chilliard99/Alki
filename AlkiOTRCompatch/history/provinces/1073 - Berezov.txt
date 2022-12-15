@@ -1,0 +1,18 @@
+#1073 - Berezov
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y59
+controller = Y59
+add_core = Y59
+culture = silveritte
+religion = partisan
+capital = "Berezov"
+trade_goods = naval_supplies #Big trees
+hre = yes
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes
+fort_15th = yes

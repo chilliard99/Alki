@@ -1,0 +1,36 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = vinyard
+religion = partisan
+technology_group = western
+capital = 1815	 #Napa
+elector = yes
+religious_school = progressive_party
+
+1422.5.23 = {
+	monarch = {
+		name = "Francis"
+		dynasty = "Bluff"
+		birth_date = 1422.5.23
+		adm = 3
+		dip = 4
+		mil = 1
+	}
+	set_hre_religion = partisan
+	set_hre_heretic_religion = despotic
+	set_hre_religion_treaty = no
+}
+1441.6.21 = {
+	heir = {
+		name = "Altimura"
+		monarch_name = "Altimura"
+		dynasty = "Bluff"
+		birth_date = 1441.6.21
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 5
+		mil = 2
+	}
+}

@@ -1,0 +1,33 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = franciscan
+religion = partisan
+technology_group = western
+capital = 1225	 #San Francisco
+elector = yes
+religious_school = progressive_party
+
+1410.3.13 = {
+	monarch = {
+		name = "Bill III"
+		dynasty = "Jobs"
+		birth_date = 1410.3.13
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}
+1428.4.15 = {
+	heir = {
+		name = "Jeff"
+		monarch_name = "Jeff II"
+		dynasty = "Jobs"
+		birth_date = 1428.4.15
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 4
+		mil = 5
+	}
+}

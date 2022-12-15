@@ -1,0 +1,14 @@
+#1177 - Cape
+discovered_by = mesoamerican
+culture = cabonian
+religion = shamanist  
+capital = "Cape"
+trade_goods = grain #i think
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 1
+owner = Z29
+controller = Z29
+add_core = Z29
+center_of_trade = 1

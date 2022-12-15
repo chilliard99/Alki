@@ -1,0 +1,14 @@
+# - Moyobamba
+discovered_by = indian
+owner = V94
+controller = V94
+add_core = V94
+culture = newthai
+religion = yanantin
+capital = "Moyobamba"
+trade_goods = fish #idk
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

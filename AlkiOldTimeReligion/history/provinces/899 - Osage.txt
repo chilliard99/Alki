@@ -1,0 +1,18 @@
+#899 - Osage
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = X93
+controller = X93
+add_core = X93
+is_city = yes
+culture = hellaldan
+religion = islam
+capital = "Pahatsi"
+trade_goods = livestock #cow creek
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 3
+discovered_by = western

@@ -1,0 +1,13 @@
+#762 - Sao Tome
+discovered_by = indian
+culture = neopapuan
+religion = espiritismo
+capital = "Sao Tome"
+trade_goods = cocoa
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+native_size = 15
+native_ferocity = 1
+native_hostileness = 2

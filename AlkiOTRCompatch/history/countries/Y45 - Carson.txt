@@ -1,0 +1,32 @@
+government = republic
+add_government_reform = free_city
+government_rank = 1
+primary_culture = renonians
+religion = partisan
+technology_group = western
+capital = 1080	 #Carson City
+religious_school = traditionalist_party
+
+1402.8.15 = {
+	monarch = {
+		name = "Oliver III"
+		dynasty = "Carson"
+		birth_date = 1402.8.15
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1428.3.3 = {
+	heir = {
+		name = "Oliver"
+		monarch_name = "Oliver IV"
+		dynasty = "Carson"
+		birth_date = 1428.3.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 0
+		dip = 4
+		mil = 0
+	}
+}

@@ -1,0 +1,15 @@
+# No previous file for Aribanda
+discovered_by = western
+discovered_by = eastern
+owner = W13
+controller = W13
+add_core = W13
+is_city = yes
+culture = northern_salishan 
+religion = collectivist
+capital = "Kukiya"
+trade_goods = naval_supplies #forestry
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1

@@ -1,0 +1,16 @@
+# No previous file for Logone
+discovered_by = western
+discovered_by = eastern 
+owner = W06
+controller = W06
+add_core = W06
+culture = anchoragean 
+religion = collectivist
+capital = "Logone"
+trade_goods = fish #fish and game are the main economic driver
+hre = no
+base_tax = 4
+base_production = 4
+is_city = yes
+base_manpower = 4
+center_of_trade = 1

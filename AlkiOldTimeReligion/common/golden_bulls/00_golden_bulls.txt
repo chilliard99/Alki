@@ -1,0 +1,111 @@
+illius_qui_se_pro_divini = {
+	modifier = {
+		technology_cost = -0.05
+		global_institution_spread = 0.25
+    }
+	mechanics = {
+        cardinals_spread_institution
+    }
+    trigger = {
+        is_papal_controller = yes	
+		religion = catholico
+    }
+    ai_will_do = {
+        factor = 100
+    }
+}
+
+apostolicae_servitutis = {
+    modifier = {
+		diplomatic_reputation = 2
+		improve_relation_modifier = 0.1
+	}
+    trigger = {
+        is_papal_controller = yes
+		religion = catholico
+    }
+    ai_will_do = {
+        factor = 100
+    }
+}
+
+praeclara_carissimi = {
+    modifier = {
+		yearly_absolutism = 0.5
+		global_unrest = -2
+		horde_unity = 1
+		legitimacy = 1
+		republican_tradition = 0.2
+		devotion = 1
+		meritocracy = 1
+    }
+    trigger = {
+        is_papal_controller = yes
+		religion = catholico
+    }
+    ai_will_do = {
+        factor = 99
+    }
+}
+
+immensa_aeterni_dei = {
+    modifier = {
+        tolerance_own = 1
+		global_missionary_strength = 0.02
+    }
+    trigger = {
+        is_papal_controller = yes
+		religion = catholico
+    }
+    ai_will_do = {
+        factor = 0
+        modifier = {
+            factor = 100
+			has_idea_group = religious_ideas
+        }
+    }
+}
+
+libertas_ecclesiae = {
+    modifier = {
+        tolerance_heretic = 2
+		tolerance_heathen = 2
+    }
+    trigger = {
+        is_papal_controller = yes
+		religion = catholico
+    }
+    ai_will_do = {
+        factor = 0
+        modifier = {
+            factor = 100
+            has_idea_group = humanist_ideas
+        }
+    }
+}
+
+dei_gratia_rex = {
+    mechanics = {
+        crusades_after_age_limit
+    }
+	modifier = {
+       	discipline = 0.05
+    }
+    trigger = {
+        is_papal_controller = yes
+		religion = catholico
+		NOT = { 
+			OR = {
+				current_age = age_of_discovery
+				current_age = age_of_reformation
+			}
+		}
+    }
+    ai_will_do = {
+        factor = 0
+        modifier = {
+            factor = 100
+			current_age = age_of_reformation
+        }
+    }
+}

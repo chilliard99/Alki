@@ -1,0 +1,17 @@
+#Belz
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y36
+controller = Y36 
+add_core = Y36
+capital= "Belz"
+culture = boisan
+religion = sacramental
+trade_goods = gold #Sawtooth mines
+hre = no
+base_tax = 4 
+base_production = 3
+base_manpower = 2
+is_city = yes

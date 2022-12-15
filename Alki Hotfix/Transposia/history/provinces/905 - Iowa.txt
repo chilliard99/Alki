@@ -1,0 +1,18 @@
+#905 - Iowa
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = X00
+controller = X00
+add_core = X00
+culture = zean
+religion = sacramental
+capital = "Iowa"
+trade_goods = grain #zean corn
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes
+discovered_by = western

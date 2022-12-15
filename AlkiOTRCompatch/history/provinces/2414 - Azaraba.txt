@@ -1,0 +1,18 @@
+#2414 - Azaraba
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W25
+controller = W25
+add_core = W25
+culture = pazian
+religion = partisan
+hre = yes
+fort_15th = yes
+base_tax = 7
+base_production = 8
+trade_goods = cloth #baja cloths
+base_manpower = 8
+capital = "Azaraba"
+is_city = yes
+center_of_trade = 2

@@ -1,0 +1,16 @@
+#273 - Livland
+discovered_by = chinese
+owner = X39
+controller = X39
+add_core = X39
+culture = kyushuan_g
+religion = neoshinto
+capital = "Fellin"
+trade_goods = livestock #Pigs and Cows
+hre = no
+base_tax = 4
+base_production = 3
+base_manpower = 2
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman

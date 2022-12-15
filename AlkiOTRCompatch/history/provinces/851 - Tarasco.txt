@@ -1,0 +1,15 @@
+#851 - Tarasco
+discovered_by = ottoman
+discovered_by = muslim
+owner = W76
+controller = W76
+add_core = W76
+culture = coliman
+religion = catholico
+capital = "Tarasco" 
+trade_goods = naval_supplies #important port
+hre = no 
+base_tax = 3 
+base_production = 4
+base_manpower = 4
+is_city = yes

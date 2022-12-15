@@ -1,0 +1,19 @@
+#653 - Lanao
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+add_core = Y31
+owner = Y31
+controller = Y31
+culture = crow
+religion = sacramental
+capital = "Marawi"
+trade_goods = livestock #Montana Ranchers
+is_city = yes
+hre = no
+base_tax = 5
+base_production = 4
+base_manpower = 4
+fort_15th = yes
+center_of_trade = 1

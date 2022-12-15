@@ -1,0 +1,17 @@
+#Semigallia, center at Mitau
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y36
+controller = Y36 
+add_core = Y36
+culture = boisan
+religion = sacramental
+hre = no
+base_tax = 6
+base_production = 7
+trade_goods = sugar #Sugar beets
+base_manpower = 6
+capital = "Mitau"
+is_city = yes

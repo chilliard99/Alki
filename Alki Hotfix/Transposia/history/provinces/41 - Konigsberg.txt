@@ -1,0 +1,16 @@
+#41 - Königsberg
+discovered_by = chinese
+owner = X40
+controller = X40
+add_core = X40
+capital = "Königsberg"
+culture = kyushuan_g
+religion = neoshinto
+trade_goods = tea #Miyazaki tea
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 3
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman

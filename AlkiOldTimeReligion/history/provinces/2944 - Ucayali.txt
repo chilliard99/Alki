@@ -1,0 +1,14 @@
+#2944 - Ucayali
+discovered_by = indian
+owner = V94
+controller = V94
+add_core = V94
+culture = newthai
+religion = yanantin
+capital = "Ucayali"
+trade_goods = cocoa #they make cocoa here now too
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

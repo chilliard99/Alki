@@ -1,0 +1,16 @@
+# 90 Vlaanderen - Principal cities: Brugge
+discovered_by = chinese
+owner = X23
+controller = X23
+add_core = X23
+is_city = yes
+capital = "Brugge"
+culture = high_nippon
+religion = neoshinto
+hre = no
+base_tax = 7
+base_production = 7
+trade_goods = fish #A manfacturing center, not much there.
+base_manpower = 4
+discovered_by = eastern
+fort_15th = yes

@@ -1,0 +1,19 @@
+#324 - Karaman
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = muslim
+discovered_by = ottoman
+owner = X86
+controller = X86
+add_core = X86
+culture = north_mitter
+religion = islam
+capital = "Karaman"
+trade_goods = gems #Gypsum
+hre = no
+base_tax = 5 
+base_production = 5
+base_manpower = 6
+is_city = yes
+fort_15th = yes
+discovered_by = western

@@ -1,0 +1,17 @@
+#1949 - Penukonda
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y39
+controller = Y39
+add_core = Y39
+culture = nez_perce
+religion = theanite
+capital = "Penukonda"
+trade_goods = fur #Fur Trappers
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

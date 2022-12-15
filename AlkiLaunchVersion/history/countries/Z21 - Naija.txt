@@ -1,0 +1,17 @@
+government_rank = 1
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = neoyoruban
+religion = shamanist
+technology_group = mesoamerican
+capital = 1146	# Ife
+
+1444.11.11 = {
+	monarch = {
+		name = "Naijan Council"
+		adm = 1
+		dip = 1
+		mil = 1
+		regent = yes
+	}
+}

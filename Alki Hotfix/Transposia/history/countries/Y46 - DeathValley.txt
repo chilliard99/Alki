@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = silveritte
+religion = partisan
+technology_group = western
+capital = 1067	 #Death Valley
+
+1428.3.14 = {
+	monarch = {
+		name = "Toby"
+		dynasty = "Of The Valley"
+		birth_date = 1428.3.14
+		adm = 3
+		dip = 4
+		mil = 6
+	}
+}

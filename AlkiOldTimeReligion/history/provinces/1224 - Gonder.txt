@@ -1,0 +1,14 @@
+#1224 - Gonder
+discovered_by = mesoamerican
+culture = neoethiopian 
+religion = shamanist
+capital = "Gondar"
+is_city = no
+base_manpower = 3
+trade_goods = unknown
+hre = no
+base_tax = 4
+base_production = 4
+native_size = 40
+native_ferocity = 4
+native_hostileness = 9

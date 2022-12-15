@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = chinese
+religion = neoshinto
+primary_culture = chugokan
+capital = 4184 #Okayama
+
+
+1404.12.4 = {
+	monarch = {
+		name = "Ogi IV"
+		dynasty = "Chosuke"
+		birth_date = 1404.12.4
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}

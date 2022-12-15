@@ -1,0 +1,17 @@
+#Galich
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y39
+controller = Y39 
+add_core = Y39
+capital = "Galich"
+culture = blackfeet
+religion = sacramental
+trade_goods = naval_supplies #timber supplies
+hre = no
+base_tax = 4
+base_production = 5 
+base_manpower = 5
+is_city = yes

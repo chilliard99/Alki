@@ -1,0 +1,2684 @@
+namespace = islam_events
+####################ISLAM TESTING EVENTS##########################
+country_event = { #Getting Right Tooltip
+	id = islam_events.1
+	title = islam_events.1.t
+	desc = islam_events.1.d
+	picture = RELIGION_eventPicture
+	hidden = yes
+	
+	trigger = {
+		has_church_aspect = judaism_simchat_torah_aspect
+	}
+	
+	mean_time_to_happen = {
+		days = 20 #Avoid save bloat (oh no no no don't remind me of cuba pepelaugh) (We all learn about performance at some point, in Hehodas we trust)
+	}
+	
+	#Note: This event only trigger for the player, so the once a month calculations can't be too much worse (right?) than some of the other intensive checks. For full explanation check relgion file
+	option = {
+		name = islam_events.1.a 
+		export_to_variable = {
+			which = religious_unity_counter
+			value = religious_unity
+			who = ROOT
+		}
+		multiply_variable = {
+			which = religious_unity_counter
+			value = 50
+		}
+		set_variable = {
+			which = islam_tooltip_variable
+			value = 0
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = religious_unity_counter
+					value = 1
+				}
+			}
+			change_variable = {
+				which = islam_tooltip_variable
+				value = 1
+			}
+			subtract_variable = {
+				which = religious_unity_counter
+				value = 1
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = { #Getting Right Tooltip
+	id = islam_events.2
+	title = islam_events.2.t
+	desc = islam_events.2.d
+	picture = RELIGION_eventPicture
+	hidden = yes
+	
+	trigger = {
+		has_church_aspect = judaism_diplomatic_rabbi_aspect
+		any_owned_province = {
+			province_has_center_of_trade_of_level = 1
+			NOT = {
+				has_province_modifier = provinces_with_center_of_trade_islam_bonus
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1 
+	}
+	
+	option = {
+		name = islam_events.2.a 
+		every_owned_province = {
+			limit = {
+				NOT = {
+					has_province_modifier = provinces_with_center_of_trade_islam_bonus
+				}
+				province_has_center_of_trade_of_level = 1
+			}
+			add_province_modifier = {
+				name = "provinces_with_center_of_trade_islam_bonus"
+				duration = -1
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+####################ISLAM ASPECT EVENTS##########################
+
+country_event = { #Heathen Crackdown **PULSE**
+	id = islam_events.3
+	title = islam_events.3.t
+	desc = islam_events.3.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_church_aspect = judaism_rosh_hashanah_aspect
+		NOT = {
+			OR = {
+				has_country_modifier = minor_heathen_crackdown_islam
+				has_country_modifier = major_heathen_crackdown_islam
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.3.a #Not our business
+		add_country_modifier = {
+			name = "minor_heathen_crackdown_islam"
+			duration = 1825
+		}
+	}
+	option = {
+		name = islam_events.3.b #Take a leading role
+		add_adm_power = -50
+		add_country_modifier = {
+			name = "major_heathen_crackdown_islam"
+			duration = 1825
+		}
+	}
+	option = {
+		name = islam_events.3.c #Capitalize on the Movement
+		add_adm_power = 100
+	}
+}
+
+country_event = { #Debate over straight path **PULSE**
+	id = islam_events.4
+	title = islam_events.4.t
+	desc = islam_events.4.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_church_aspect = judaism_rosh_hashanah_aspect
+		any_owned_province = {
+			religion = islam
+		}
+		NOT = {
+			OR = {
+				has_country_modifier = islamic_debate
+				has_country_modifier = supressing_debate_islam
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.4.a #Debate is healthy
+		add_country_modifier = {
+			name = "islamic_debate"
+			duration = 1825
+		}
+	}
+	option = {
+		name = islam_events.4.b #Supress their opinions
+		add_country_modifier = {
+			name = "supressing_debate_islam"
+			duration = 1825
+		}
+	}
+	option = {
+		name = islam_events.4.c #Crush their movement
+		random_owned_province = {
+			limit = {
+				religion = islam
+			}
+			spawn_rebels = {
+				type = islam_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+country_event = { #A beautiful nation **PULSE**
+	id = islam_events.5
+	title = islam_events.5.t
+	desc = islam_events.5.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_church_aspect = judaism_simchat_torah_aspect
+		religious_unity = 0.9
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.5.a #Mashallah
+		add_stability = 1
+	}
+}
+
+country_event = { #Homogenous Problems **PULSE**
+	id = islam_events.6
+	title = islam_events.6.t
+	desc = islam_events.6.d
+	picture = FAMINE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_church_aspect = judaism_simchat_torah_aspect
+		NOT = {
+			OR = {
+				has_country_modifier = challening_opinions_islam
+				has_country_modifier = advanced_stagnation_islam
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.6.a #We need new ideas!
+		add_country_modifier = {
+			name = "challening_opinions_islam"
+			duration = 3650
+		}
+	}
+	option = {
+		name = islam_events.6.b #Ridiculous
+		add_country_modifier = {
+			name = "advanced_stagnation_islam"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #The Jizya **PULSE**
+	id = islam_events.7
+	title = islam_events.7.t
+	desc = islam_events.7.d
+	picture = CONQUEST_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_church_aspect = judaism_sukkot_aspect
+		any_owned_province = {
+			NOT = {
+				religion = islam 
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.7.a #Wonderous
+		if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						NOT = {
+							religion = islam
+						}
+					}
+					amount = 50
+				}
+			}
+			custom_tooltip = have_fifty_heretic_provs_jizya
+			add_years_of_income = 7
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						NOT = {
+							religion = islam
+						}
+					}
+					amount = 40
+				}
+			}
+			custom_tooltip = have_fourty_heretic_provs_jizya
+			add_years_of_income = 5
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						NOT = {
+							religion = islam
+						}
+					}
+					amount = 30
+				}
+			}
+			custom_tooltip = have_thirty_heretic_provs_jizya
+			add_years_of_income = 4
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						NOT = {
+							religion = islam
+						}
+					}
+					amount = 20
+				}
+			}
+			custom_tooltip = have_twenty_heretic_provs_jizya
+			add_years_of_income = 2
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						NOT = {
+							religion = islam
+						}
+					}
+					amount = 10
+				}
+			}
+			custom_tooltip = have_ten_heretic_provs_jizya
+			add_years_of_income = 1.5
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						NOT = {
+							religion = islam
+						}
+					}
+					amount = 5
+				}
+			}
+			custom_tooltip = have_five_heretic_provs_jizya
+			add_years_of_income = 1
+		}
+		else = {
+			add_years_of_income = 0.5
+			custom_tooltip = have_under_five_heretic_provs_jizya
+		}
+	}
+}
+
+country_event = { #Infidel Resistance **PULSE**
+	id = islam_events.8
+	title = islam_events.8.t
+	desc = islam_events.8.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_church_aspect = judaism_sukkot_aspect
+		any_owned_province = {
+			religion = islam
+		}
+		NOT = {
+			has_country_modifier = intolerant_islam
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.8.a #We accept all
+		random_owned_province = {
+			limit = {
+				religion = islam
+			}
+			spawn_rebels = {
+				type = islam_rebels
+				size = 2
+			}
+		}
+	}
+	option = {
+		name = islam_events.8.b #We have been led astray
+		add_country_modifier = {
+			name = "intolerant_islam"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #Brothers In Arms **PULSE**
+	id = islam_events.9
+	title = islam_events.9.t
+	desc = islam_events.9.d
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_church_aspect = judaism_communities_aspect
+		any_ally = {
+			religion = islam
+			is_in_war = {
+				attacker_leader = ROOT
+			}
+		}
+		NOT = {
+			has_country_modifier = brothers_in_arms_islam
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_ally = {
+				limit = {
+					religion = islam
+					is_in_war = {
+						attacker_leader = ROOT
+					}
+				}
+				save_event_target_as = random_ally_for_islam_bin
+			}
+		}
+	}
+	
+	option = {
+		name = islam_events.9.a #Inspire the Men
+		add_country_modifier = {
+			name = "brothers_in_arms_islam"
+			duration = 1825
+		}
+	}
+	option = {
+		name = islam_events.9.b #Deepen our Ties
+		add_dip_power = 50
+		event_target:random_ally_for_islam_bin = {
+			add_opinion = {
+				who = ROOT
+				modifier = brothers_in_arms_islam_opp
+			}
+			ROOT = {
+				add_opinion = {
+					who = PREV
+					modifier = brothers_in_arms_islam_opp
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Clash of the Faith **PULSE**
+	id = islam_events.10
+	title = islam_events.10.t
+	desc = islam_events.10.d
+	picture = BATTLE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_church_aspect = judaism_communities_aspect
+		any_known_country = {
+			religion = islam
+			defensive_war_with = ROOT
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.10.a #Shameful
+		add_war_exhaustion = 2
+		custom_tooltip = lose_opinion_with_all_clashoffiath
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					religion = islam
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = clash_of_the_faith_islam
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Islam Abroad **PULSE**
+	id = islam_events.11
+	title = islam_events.11.t
+	desc = islam_events.11.d
+	picture = NATIVES_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_church_aspect = jewish_abrahamic_aspect
+		any_subject_country = {
+			is_colonial_nation = yes
+			religion = islam
+			any_neighbor_country = {
+				NOT = {
+					OR = {
+						religion = islam
+						has_country_flag = proposed_to_convert_native
+					}
+				}
+				OR = {
+					technology_group = north_american
+					technology_group = mesoamerican
+					technology_group = south_american
+					technology_group = andean
+					technology_group = nomad_group
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_subject_country = { #Do you think there is an easier way?
+				limit = {
+					religion = islam
+					any_neighbor_country = {
+						NOT = {
+							OR = {
+								religion = islam
+								has_country_flag = proposed_to_convert_native
+							}
+						}
+						OR = {
+							technology_group = north_american
+							technology_group = mesoamerican
+							technology_group = south_american
+							technology_group = andean
+							technology_group = nomad_group
+						}
+					}
+				}
+				random_neighbor_country = {
+					limit = {
+						NOT = {
+							OR = {
+								religion = islam
+								has_country_flag = proposed_to_convert_native
+							}
+						}
+						OR = {
+							technology_group = north_american
+							technology_group = mesoamerican
+							technology_group = south_american
+							technology_group = andean
+							technology_group = nomad_group
+						}
+					}	
+					save_event_target_as = islam_native_to_convert_target
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = islam_events.11.a #Why not?
+		custom_tooltip = rewards_from_converting_a_native
+		tooltip = {
+			add_country_modifier = {
+				name = "faithful_natives_islam"
+				duration = 1825
+			}
+		}
+		event_target:islam_native_to_convert_target = {
+			country_event = { id = islam_events.12 }
+			set_country_flag = proposed_to_convert_native
+		}
+	}
+	option = {
+		name = islam_events.11.b #They wouldn't understand
+		add_prestige = 10
+	}
+}
+
+country_event = { #The Western Faith
+	id = islam_events.12
+	title = islam_events.12.t
+	desc = islam_events.12.d
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.12.a #There is no other
+		change_religion = islam
+		capital_scope = {
+			change_religion = islam
+		}
+		add_stability = -1
+		add_country_modifier = {
+			name = "embracing_islam_native"
+			duration = 3650
+		}
+		FROM = {
+			country_event = { id = islam_events.13 }
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 5
+				technology_group = north_american
+			}
+		}
+	}
+	option = {
+		name = islam_events.12.b #Never!
+		add_prestige = 50
+		add_stability = 1
+		FROM = {
+			country_event = { 
+				id = islam_events.14 
+				days = 2
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = { #New Brothers
+	id = islam_events.13
+	title = islam_events.13.t
+	desc = islam_events.13.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.13.a #Wonderful!
+		add_prestige = 50
+		add_country_modifier = {
+			name = "faithful_natives_islam"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #Denied Grace
+	id = islam_events.14
+	title = islam_events.14.t
+	desc = islam_events.14.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.14.a #Wonderful!
+		add_prestige = -50
+		FROM = {
+			every_owned_province = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_empty = yes }
+				}
+				add_claim = ROOT
+			}	
+		}
+	}
+}
+
+country_event = { #Guilds give back **PULSE**
+	id = islam_events.15
+	title = islam_events.15.t
+	desc = islam_events.15.d
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_church_aspect = judaism_diplomatic_rabbi_aspect
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.15.a #Accept their donation
+		add_years_of_income = 1
+	}
+	option = {
+		name = islam_events.15.b #Ask for favors instead
+		add_dip_power = 50
+	}
+}
+
+country_event = { #Guilds Demand Relief **PULSE**
+	id = islam_events.16
+	title = islam_events.16.t
+	desc = islam_events.16.d
+	picture = BANKRUPTCY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_church_aspect = judaism_diplomatic_rabbi_aspect
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.16.a #Bail them out
+		add_years_of_income = -0.5
+	}
+	option = {
+		name = islam_events.16.b #Their fault, they suffer
+		add_country_modifier = {
+			name = "guilds_demanding_relief_islam"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #Pressing Victory **PULSE**
+	id = islam_events.17
+	title = islam_events.17.t
+	desc = islam_events.17.d
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_church_aspect = judaism_yom_kippur_aspect
+		at_war_with_religious_enemy = yes
+		war_score = 25
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.17.a #Forward, to Victory!
+		add_war_exhaustion = -2
+		add_country_modifier = {
+			name = "pressing_victory_islam"
+			duration = 730
+		}
+	}
+	option = {
+		name = islam_events.17.b #Let us consolidate.
+		add_stability = 1
+	}
+}
+
+country_event = { #Spiritually Battered **PULSE**
+	id = islam_events.18
+	title = islam_events.18.t
+	desc = islam_events.18.d
+	picture = REVOLUTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_church_aspect = judaism_yom_kippur_aspect
+		at_war_with_religious_enemy = yes
+		NOT = {
+			war_score = -25
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.18.a #Even defeat, we will have grace
+		add_war_exhaustion = 2
+		add_country_modifier = {
+			name = "spiritually_beaten_islam"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #Islamization **PULSE**
+	id = islam_events.19
+	title = islam_events.19.t
+	desc = islam_events.19.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_church_aspect = judaism_remember_passover_aspect
+		at_war_with_religious_enemy = yes
+		any_province = {
+			controlled_by = ROOT
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					is_core = ROOT
+					religion = islam
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_province = {
+				limit = {
+					controlled_by = ROOT
+					NOT = {
+						OR = {
+							owned_by = ROOT
+							is_core = ROOT
+							religion = islam
+						}
+					}
+				}
+				save_event_target_as = islamized_province_aspect_event
+			}
+		}
+	}
+	
+	option = {
+		name = islam_events.19.a #They have been enlightened
+		event_target:islamized_province_aspect_event = {
+			change_culture = ROOT
+			change_religion = ROOT
+			add_core = ROOT
+		}
+	}
+}
+
+country_event = { #Domestic Woes **PULSE**
+	id = islam_events.20
+	title = islam_events.20.t
+	desc = islam_events.20.d
+	picture = FAMINE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_church_aspect = judaism_remember_passover_aspect
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.20.a #We must turn inward!
+		add_adm_power = -25
+		add_dip_power = -25
+		add_mil_power = -25
+	}
+	option = {
+		name = islam_events.20.b #We cannot be distracted 
+		add_country_modifier = {
+			name = "domestic_neglect_islam"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #Divine Guidance **PULSE**
+	id = islam_events.21
+	title = islam_events.21.t
+	desc = islam_events.21.d
+	picture = MILITARY_CAMP_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_church_aspect = judaism_purim_teachings_aspect
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.21.a #We are the most talented
+		add_army_tradition = 20
+	}
+	option = {
+		name = islam_events.21.b #We are the most faithful
+		add_church_power = 50
+	}
+	option = {
+		name = islam_events.21.c #I am the best commander 
+		add_mil_power = 50
+	}
+}
+
+country_event = { #Itchy Army **PULSE**
+	id = islam_events.22
+	title = islam_events.22.t
+	desc = islam_events.22.d
+	picture = WOUNDED_SOLDIERS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_church_aspect = judaism_purim_teachings_aspect
+		is_at_war = no
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.22.a #Let their prowess decay
+		add_army_tradition = -10
+	}
+	option = {
+		name = islam_events.22.b #We cannot be distracted 
+		add_country_modifier = {
+			name = "peactime_bloodlust_islam"
+			duration = 1825
+		}
+	}
+}
+
+####################ISLAM QURANIST EVENTS##########################
+
+country_event = { #Prayer Problems **PULSE**
+	id = islam_events.23
+	title = islam_events.23.t
+	desc = islam_events.23.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		NOT = {
+			OR = {
+				has_ruler_flag = ruled_on_prayer_times
+				has_country_flag = mahkama_founded
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.23.a #Five Times, as is tradition.
+		add_legitimacy = 10
+		add_horde_unity = 10
+		add_devotion = 10
+		add_meritocracy = 10
+		add_republican_tradition = 5
+	}
+	option = {
+		name = islam_events.23.b #Two Times, a nice medium.
+		add_church_power = 25
+	}
+	option = {
+		name = islam_events.23.c #None, these are useless acts.
+		add_ruler_modifier = {
+			name = "sided_against_salah"
+			duration = -1
+		}
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+	}
+	
+	after = {
+		set_ruler_flag = ruled_on_prayer_times
+	}
+}
+
+country_event = { #Royal Garbs **PULSE**
+	id = islam_events.24
+	title = islam_events.24.t
+	desc = islam_events.24.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		is_female = yes
+		NOT = {
+			OR = {
+				has_ruler_flag = ruler_decided_on_coverup_islam
+				has_country_flag = mahkama_founded
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.24.a #We are free to dress as we wish
+		add_church_power = 100
+	}
+	option = {
+		name = islam_events.24.b #Modesty is Key
+		add_ruler_modifier = {
+			name = "appeased_the_prudes_islam"
+			duration = -1
+		}
+	}
+	
+	after = {
+		set_ruler_flag = ruler_decided_on_coverup_islam
+	}
+}
+
+country_event = { #Apostasy **PULSE**
+	id = islam_events.25
+	title = islam_events.25.t
+	desc = islam_events.25.d
+	picture = STREET_SPEECH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		NOT = {
+			has_country_flag = mahkama_founded
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.25.a #Have him put to death!
+		add_manpower = -0.001
+		add_legitimacy = 10
+		add_horde_unity = 10
+		add_devotion = 10
+		add_meritocracy = 10
+		add_republican_tradition = 5
+	}
+	option = {
+		name = islam_events.25.b #It was his belief.
+		add_church_power = 50
+	}
+}
+
+country_event = { #Art of the Prophet **PULSE**
+	id = islam_events.26
+	title = islam_events.26.t
+	desc = islam_events.26.d
+	picture = PAINTER_ARTIST_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		NOT = {
+			OR = {
+				has_country_flag = mahkama_founded
+				has_ruler_flag = funded_potentially_heretical_art_islam
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.26.a #A Fruitful Persuit
+		add_years_of_income = -0.25
+		add_church_power = 100
+		add_ruler_modifier = {
+			name = "the_great_patron_islam"
+			duration = -1
+		}
+	}
+	option = {
+		name = islam_events.26.b #Idolatry!
+		add_ruler_modifier = {
+			name = "rejected_images_of_the_prophet_islam"
+			duration = -1
+		}
+	}
+	
+	after = {
+		set_ruler_flag = funded_potentially_heretical_art_islam
+	}
+}
+
+country_event = { #The Mystical World **PULSE**
+	id = islam_events.27
+	title = islam_events.27.t
+	desc = islam_events.27.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		NOT = {
+			OR = {
+				has_country_flag = mahkama_founded
+				has_ruler_flag = embraced_mystical_islam
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.27.a #A fruitful approach.
+		add_ruler_modifier = {
+			name = "mystical_ruler"
+			duration = -1
+		}
+	}
+	option = {
+		name = islam_events.27.b #Heresy!
+		add_church_power = 100
+	}
+	
+	after = {
+		set_ruler_flag = embraced_mystical_islam
+	}
+}
+
+country_event = { #What is Jihad **PULSE**
+	id = islam_events.28
+	title = islam_events.28.t
+	desc = islam_events.28.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		at_war_with_religious_enemy = yes
+		NOT = {
+			OR = {
+				has_country_flag = mahkama_founded
+				has_ruler_flag = ruled_on_the_matter_of_jihad_islam
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.28.a #It is a necessary burden.
+		add_ruler_modifier = {
+			name = "jihad_burden_islam"
+			duration = 1825
+		}
+	}
+	option = {
+		name = islam_events.28.b #It is an avoidable circumstance.
+		add_ruler_modifier = {
+			name = "jihad_peaceful_islam"
+			duration = -1
+		}
+	}
+	option = {
+		name = islam_events.28.c #It is a show of faith
+		add_ruler_modifier = {
+			name = "jihad_missionary_islam"
+			duration = -1
+		}
+	}
+	
+	after = {
+		set_ruler_flag = ruled_on_the_matter_of_jihad_islam
+	}
+}
+
+country_event = { #Mahkama **PULSE**
+	id = islam_events.29
+	title = islam_events.29.t
+	desc = islam_events.29.d
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		current_age = age_of_reformation
+		NOT = {
+			has_country_flag = proposed_mahkama
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.29.a #The experts will sort it out.
+		set_country_flag = mahkama_founded
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability -1
+		}
+		else = {
+			add_adm_power = -100
+		}
+		add_country_modifier = {
+			name = "mahkama_islam"
+			duration = -1
+		}
+	}
+	option = {
+		name = islam_events.29.b #We hold sole authority!
+		add_prestige = 50
+		add_church_power = 200
+	}
+	
+	after = {
+		set_country_flag = proposed_mahkama
+	}
+}
+
+country_event = { #Fiqh For the Followers **PULSE**
+	id = islam_events.30
+	title = islam_events.30.t
+	desc = islam_events.30.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_country_flag = mahkama_founded
+		NOT = {
+			has_country_flag = proposed_fiqh_islam
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.30.a #Codification is the way forward.
+		add_legitimacy = -20
+		add_horde_unity = -20
+		add_devotion = -20
+		add_meritocracy = -20
+		add_republican_tradition = -10
+		custom_tooltip = get_fiqh_islam_upgrade_mahkama 
+		tooltip = {
+			add_country_modifier = {
+				name = "mahkama_with_fiqh_islam"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			remove_country_modifier = mahkama_islam
+			add_country_modifier = {
+				name = "mahkama_with_fiqh_islam"
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = islam_events.30.b #A desperate power grab!
+		add_church_power = 100
+		
+	}
+	
+	after = {
+		set_country_flag = proposed_fiqh_islam
+	}
+}
+
+country_event = { #Mufti Selection **PULSE**
+	id = islam_events.31
+	title = islam_events.31.t
+	desc = islam_events.31.d
+	picture = ADVISOR_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_country_flag = mahkama_founded
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.31.a #One of our missionaries
+		trigger = {
+			num_of_missionaries = 1
+		}
+		add_country_modifier = {
+			name = "missionary_mufti_islam"
+			duration = 3650
+		}
+		add_church_power = 100
+	}
+	option = {
+		name = islam_events.31.b #One of our advisors!
+		trigger = {
+			has_advisor = yes
+		}
+		remove_advisor = random
+		add_church_power = 100
+	}
+	option = {
+		name = islam_events.31.c #A countryside scholar
+		add_adm_power = -25
+		add_church_power = 50
+	}
+	option = {
+		name = islam_events.31.e #Let the experts decide
+		add_church_power = 5
+	}
+}
+
+country_event = { #A Place for Deliberation **PULSE**
+	id = islam_events.32
+	title = islam_events.32.t
+	desc = islam_events.32.d
+	picture = GREAT_BUILDING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_country_flag = mahkama_founded
+		any_owned_province = {
+			development = 10
+			NOT = {
+				has_province_modifier = local_madresa_islam
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					development = 10
+					NOT = {
+						has_province_modifier = local_madresa_islam
+					}
+				}
+				save_event_target_as = area_for_potential_local_madresa
+			}
+		}
+	}
+	
+	option = {
+		name = islam_events.32.a #Expand the institution!
+		add_years_of_income = -0.1
+		event_target:area_for_potential_local_madresa = {
+			add_province_modifier = {
+				name = "local_madresa_islam"
+				duration = -1
+			}
+		}	
+	}
+	option = {
+		name = islam_events.32.b #They are trying to take over!
+		add_prestige = 15
+	}
+}
+
+####################ISLAM HAJJ EVENTS##########################
+
+country_event = { #Beginning Our Hajj **PULSE**
+	id = islam_events.33
+	title = islam_events.33.t
+	desc = islam_events.33.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		NOT = {
+			has_ruler_flag = proposed_for_hajj
+		}
+		is_at_war = no
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.33.a #A Wonderous Journey!
+		add_church_power = 50
+		custom_tooltip = we_will_begin_the_hajj_islam
+		hidden_effect = {
+			set_country_flag = starting_the_hajj
+			country_event = {
+				id = islam_events.43
+				days = 365
+			}
+		}
+	}
+	
+	option = {
+		name = islam_events.33.b #Heretical and Dangerous.
+		add_prestige = -25
+	}
+	
+	after = {
+		set_ruler_flag = proposed_for_hajj
+	}
+}
+
+country_event = { #Ruler dies in Hajj
+	id = islam_events.34
+	title = islam_events.34.t
+	desc = islam_events.34.d
+	picture = KING_SICK_IN_BED_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = starting_the_hajj
+		religion = islam
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.34.a #The Throne is Mine!
+		clr_country_flag = starting_the_hajj
+		if = {
+			limit = {
+				NOT = {
+					num_of_cities = 2
+					stability = -2
+				}
+			}
+			add_adm_power = -100
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					num_of_cities = 2
+				}
+			}
+			add_stability = -1
+		}
+		else = {
+			random_owned_province = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 2
+				}
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 2
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Paying respects to [Nation which holds chicago]
+	id = islam_events.35
+	title = islam_events.35.t
+	desc = islam_events.35.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	
+	trigger = {
+		has_country_flag = starting_the_hajj
+		religion = islam
+		NOT = {
+			OR = {
+				owns = 389
+				has_ruler_flag = paid_respects_to_ruler_of_chicago
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 365
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_known_country = {
+				limit = {
+					owns = 389
+				}
+				save_event_target_as = ruler_of_chicago
+			}
+		}
+	}
+	
+	option = {
+		name = islam_events.35.a #We thank them for their grace
+		event_target:ruler_of_chicago = {
+			add_opinion = {
+				who = ROOT
+				modifier = friendly_hajj_islam
+			}
+			ROOT = {
+				add_opinion = {
+					who = PREV
+					modifier = friendly_hajj_islam
+				}
+			}
+		}
+	}
+	option = {
+		name = islam_events.35.b #It is the world's city!
+		add_prestige = 25
+		add_church_power = 50
+	}
+	
+	after = {
+		set_ruler_flag = paid_respects_to_ruler_of_chicago
+	}
+}
+
+country_event = { #Spreading the wealth
+	id = islam_events.36
+	title = islam_events.36.t
+	desc = islam_events.36.d
+	picture = FEAST_eventPicture
+	
+	trigger = {
+		has_country_flag = starting_the_hajj
+		religion = islam
+	}
+	
+	mean_time_to_happen = {
+		days = 180
+	}
+	
+	option = {
+		name = islam_events.36.a #A Waste
+		add_church_power = 25
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.5
+				treasury = 100
+			}
+			modifier = {
+				factor = 100
+				num_of_loans = 1
+			}
+		}
+	}
+	option = {
+		name = islam_events.36.b #Perhaps a little bit
+		add_treasury = -100
+		custom_tooltip = minor_inflation_for_all_nations
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					capital_scope = {
+						superregion = great_lakes_superregion
+					}
+				}
+				country_event = {
+					id = islam_events.37
+					days = 2
+				}
+				set_country_flag = minor_inflation_for_all_nations_flag
+			}
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				NOT = {
+					treasury = 100
+				}
+			}
+			modifier = {
+				factor = 0
+				treasury = 500
+			}
+		}
+	}
+	option = {
+		name = islam_events.36.c #Perhaps a bit more
+		add_treasury = -500
+		custom_tooltip = more_inflation_for_all_nations
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					capital_scope = {
+						superregion = great_lakes_superregion
+					}
+				}
+				country_event = {
+					id = islam_events.37
+					days = 2
+				}
+				set_country_flag = more_inflation_for_all_nations_flag
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 10
+				treasury = 500
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					treasury = 500
+				}
+			}
+			modifier = {
+				factor = 0
+				treasury = 1000
+			}
+		}
+	}
+	option = {
+		name = islam_events.36.e #Maybe a little more
+		add_treasury = -1000
+		custom_tooltip = great_inflation_for_all_nations
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					capital_scope = {
+						superregion = great_lakes_superregion
+					}
+				}
+				country_event = {
+					id = islam_events.37
+					days = 2
+				}
+				set_country_flag = great_inflation_for_all_nations_flag
+			}
+		}
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 10
+				treasury = 1000
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					treasury = 1000
+				}
+			}
+			modifier = {
+				factor = 0
+				treasury = 5000
+			}
+		}
+	}
+	option = {
+		name = islam_events.36.f #Just a tad more
+		add_treasury = -5000
+		custom_tooltip = mass_inflation_for_all_nations
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					capital_scope = {
+						superregion = great_lakes_superregion
+					}
+				}
+				country_event = {
+					id = islam_events.37
+					days = 2
+				}
+				set_country_flag = mass_inflation_for_all_nations_flag
+			}
+		}
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 10
+				treasury = 5000
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					treasury = 5000
+				}
+			}
+			modifier = {
+				factor = 0
+				treasury = 10000
+			}
+		}
+	}
+	option = {
+		name = islam_events.36.g #Fuck it, throw all the money away
+		trigger = {
+			treasury = 10000
+		}
+		add_treasury = -10000
+		custom_tooltip = catostrophic_inflation_for_all_nations
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					capital_scope = {
+						superregion = great_lakes_superregion
+					}
+				}
+				country_event = {
+					id = islam_events.37
+					days = 2
+				}
+				set_country_flag = catostrophic_inflation_for_all_nations_flag
+			}
+		}
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 10
+				treasury = 10000
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					treasury = 10000
+				}
+			}
+		}
+	}
+}
+
+country_event = { #The Wealth of [Ruler of From] 
+	id = islam_events.37
+	title = islam_events.37.t
+	desc = islam_events.37.d
+	picture = BANKRUPTCY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.37.a #We thank them for their grace
+		if = {
+			limit = {
+				has_country_flag = minor_inflation_for_all_nations_flag
+			}
+			add_inflation = 1
+			clr_country_flag = minor_inflation_for_all_nations_flag
+		}
+		else_if = {
+			limit = {
+				has_country_flag = more_inflation_for_all_nations_flag
+			}
+			add_inflation = 3
+			clr_country_flag = more_inflation_for_all_nations_flag
+		}
+		else_if = {
+			limit = {
+				has_country_flag = mass_inflation_for_all_nations_flag
+			}
+			add_inflation = 10
+			clr_country_flag = mass_inflation_for_all_nations_flag
+		}
+		else_if = {
+			limit = {
+				has_country_flag = mass_inflation_for_all_nations_flag
+			}
+			add_inflation = 25
+			clr_country_flag = mass_inflation_for_all_nations_flag
+		}
+		else_if = {
+			limit = {
+				has_country_flag = catostrophic_inflation_for_all_nations_flag
+			}
+			add_inflation = 50
+			clr_country_flag = catostrophic_inflation_for_all_nations_flag
+		}
+	}
+}
+
+country_event = { #Unholy Thieves
+	id = islam_events.38
+	title = islam_events.38.t
+	desc = islam_events.38.d
+	picture = SPY_eventPicture
+	
+	trigger = {
+		has_country_flag = starting_the_hajj
+		religion = islam
+	}
+	
+	mean_time_to_happen = {
+		days = 365
+	}
+	
+	option = {
+		name = islam_events.38.a #Horror!
+		add_adm_power = -25
+		add_dip_power = -25
+		add_mil_power = -25
+		add_years_of_income = -0.05
+	}
+}
+
+country_event = { #Miracles Along the Way 
+	id = islam_events.39
+	title = islam_events.39.t
+	desc = islam_events.39.d
+	picture = COMET_SIGHTED_eventPicture
+	
+	trigger = {
+		religion = islam
+		has_country_flag = starting_the_hajj
+	}
+	
+	mean_time_to_happen = {
+		days = 365
+	}
+	
+	option = {
+		name = islam_events.39.a #Wonderous!
+		add_prestige = 10
+		add_church_power = 25
+	}
+}
+
+country_event = { #Disease in the Party
+	id = islam_events.40
+	title = islam_events.40.t
+	desc = islam_events.40.d
+	picture = FAMINE_eventPicture
+	
+	trigger = {
+		has_country_flag = starting_the_hajj
+		religion = islam
+	}
+	
+	mean_time_to_happen = {
+		days = 365
+	}
+	
+	option = {
+		name = islam_events.40.a #We will endure
+		add_years_of_income = -0.1
+	}
+	option = {
+		name = islam_events.40.b #He will protect us
+		random_list = {
+			90 = {
+				add_church_power = 10
+			}
+			10 = {
+				kill_ruler = yes
+			}
+		}
+	}
+}
+
+country_event = { #Excessive Celebration
+	id = islam_events.41
+	title = islam_events.41.t
+	desc = islam_events.41.d
+	picture = FEAST_eventPicture
+	
+	trigger = {
+		has_country_flag = starting_the_hajj
+		religion = islam
+	}
+	
+	mean_time_to_happen = {
+		days = 365
+	}
+	
+	option = {
+		name = islam_events.41.a #We will clean up our mess
+		add_adm_power = -10
+		add_dip_power = -10
+		add_mil_power = -10
+		add_church_power = 10
+	}
+	option = {
+		name = islam_events.41.b #We must continue forward
+		add_church_power = -10
+		add_prestige = -10
+	}
+}
+
+country_event = { #Women of the Streets **PULSE**
+	id = islam_events.42
+	title = islam_events.42.t
+	desc = islam_events.42.d
+	picture = CONSORT_DOING_BADLY_eventPicture
+	
+	trigger = {
+		has_country_flag = starting_the_hajj
+		religion = islam
+	}
+	
+	mean_time_to_happen = {
+		days = 365
+	}
+	
+	option = {
+		name = islam_events.42.a #Perhaps just once
+		define_heir = {
+			dynasty = ROOT
+			age = 1
+			change_adm = 3
+			change_dip = 3
+			change_mil = 3
+			max_random_adm = 6
+			max_random_dip = 6
+			max_random_mil = 6
+			claim = 5
+		}
+	}
+	option = {
+		name = islam_events.42.b #Sinful!
+		add_prestige = 25
+		add_church_power = 25
+	}
+}
+
+country_event = { #Home at Last
+	id = islam_events.43
+	title = islam_events.43.t
+	desc = islam_events.43.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_country_flag = starting_the_hajj
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.43.a #Perhaps just once
+		random_list = {
+			33 = {
+				if = {
+					limit = {
+						adm = 6
+					}
+					add_adm_power = 300
+				}
+				else = {
+					change_adm = 1
+				}
+			}
+			33 = {
+				if = {
+					limit = {
+						dip = 6
+					}
+					add_dip_power = 300
+				}
+				else = {
+					change_dip = 1
+				}
+			}
+			33 = {
+				if = {
+					limit = {
+						mil = 6
+					}
+					add_mil_power = 300
+				}
+				else = {
+					change_mil = 1
+				}
+			}
+			1 = {
+				if = {
+					limit = {
+						adm = 6
+					}
+					add_adm_power = 300
+				}
+				else = {
+					change_adm = 1
+				}
+				if = {
+					limit = {
+						dip = 6
+					}
+					add_dip_power = 300
+				}
+				else = {
+					change_dip = 1
+				}
+				if = {
+					limit = {
+						mil = 6
+					}
+					add_mil_power = 300
+				}
+				else = {
+					change_mil = 1
+				}
+			}
+		}
+		clr_country_flag = starting_the_hajj
+	}
+}
+
+####################MISC ISLAM EVENTS##########################
+
+country_event = { #Zakat **PULSE**
+	id = islam_events.44
+	title = islam_events.44.t
+	desc = islam_events.44.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.44.a #There is no need to give
+		add_church_power = -25
+	}
+	option = {
+		name = islam_events.44.b #We must give what is needed
+		add_years_of_income = -0.5
+		add_church_power = 50
+	}
+	option = {
+		name = islam_events.44.c #This money belong to the faithful
+		add_years_of_income = -1
+		add_church_power = 100
+	}
+	option = {
+		name = islam_events.44.e #Earthly riches are none of our concern
+		add_years_of_income = -2
+		add_church_power = 200
+	}
+}
+
+country_event = { #Mahdi Proclamation **PULSE**
+	id = islam_events.45
+	title = islam_events.45.t
+	desc = islam_events.45.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.45.a #The Massiah!
+		add_province_modifier = {
+			name = "mahdi_among_us_islam"
+			duration = 3650
+		}
+	}
+	option = {
+		name = islam_events.45.b #A lunatic
+		add_church_power = 25
+		add_legitimacy = 10
+		add_horde_unity = 10
+		add_devotion = 10
+		add_meritocracy = 10
+		add_republican_tradition = 5
+	}
+}
+
+country_event = { #Wali Worship **PULSE**
+	id = islam_events.46
+	title = islam_events.46.t
+	desc = islam_events.46.d
+	picture = ADVISOR_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_advisor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.46.a #Remove them from government
+		remove_advisor = random
+		add_legitimacy = -10
+		add_horde_unity = -10
+		add_devotion = -10
+		add_meritocracy = -10
+		add_republican_tradition = -5
+		define_advisor = {
+			type = theologian
+			skill = 2
+			discount = yes
+		}
+	}
+	option = {
+		name = islam_events.46.b #No one needs to know
+		add_prestige = -5
+	}
+}
+
+country_event = { #The Traditionalists **PULSE**
+	id = islam_events.47
+	title = islam_events.47.t
+	desc = islam_events.47.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		NOT = {
+			has_country_flag = traditionalists_prompted
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.47.a #Embrace them
+		add_church_power = -25
+		add_province_modifier = {
+			name = "traditionalist_fervor"
+			duration = 9125
+		}
+		set_country_flag = embraced_traditionalists
+	}
+	option = {
+		name = islam_events.47.b #They have no place in our state
+		add_church_power = 50
+	}
+	
+	after = {
+		set_country_flag = traditionalists_prompted
+	}
+}
+
+country_event = { #Traditionalists Flock to Colonies **PULSE**
+	id = islam_events.61
+	title = islam_events.61.t
+	desc = islam_events.61.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_country_flag = embraced_traditionalists
+		num_of_colonies = 1 
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.61.a #Perfect
+		random_owned_province = {
+			limit = {
+				is_colony = yes
+			}
+			add_colonysize = 250
+		}
+	}
+}
+
+country_event = { #Purist Backlash **PULSE**
+	id = islam_events.48
+	title = islam_events.48.t
+	desc = islam_events.48.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_country_flag = embraced_traditionalists
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.48.a #Damn!
+		random_owned_province = {
+			spawn_rebels = {
+				type = islam_rebels
+				size = 2
+			}
+		}
+	}
+}
+
+country_event = { #Mecca: The Ancient City
+	id = islam_events.49
+	title = islam_events.49.t
+	desc = islam_events.49.d
+	picture = COLONIZATION_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		religion = islam
+		has_discovered = 385
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.49.a #Wonderous
+		add_prestige = 50
+		add_country_modifier = {
+			name = "discovery_of_mecca"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Traditionalists Flock to Mecca **PULSE**
+	id = islam_events.50
+	title = islam_events.50.t
+	desc = islam_events.50.d
+	picture = CITY_VIEW_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		any_subject_country = {
+			is_colonial_nation_of = ROOT
+			owns = 385
+		}
+		has_country_flag = embraced_traditionalists
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.50.a #Interesting
+		385 = {
+			add_base_tax = 3
+			add_base_production = 3
+			add_base_manpower = 3
+		}
+	}
+}
+
+country_event = { #Jibreel Aparition
+	id = islam_events.51
+	title = islam_events.51.t
+	desc = islam_events.51.d
+	picture = COMET_SIGHTED_eventPicture
+	
+	trigger = {
+		religion = islam
+	}
+	
+	mean_time_to_happen = {
+		months = 4800
+	}
+	
+	option = {
+		name = islam_events.51.a #Interesting
+		add_church_power = 200
+	}
+}
+
+country_event = { #To Honor Darany **PULSE**
+	id = islam_events.52
+	title = islam_events.52.t
+	desc = islam_events.52.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		NOT = {
+			OR = {
+				has_country_modifier = darany_celebration_islam
+				has_country_modifier = darany_contemplation_islam
+				has_country_modifier = dishonored_daranay_islam
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.52.a #We will celebrate
+		add_country_modifier = {
+			name = "darany_celebration_islam"
+			duration = 3650
+		}
+	}
+	option = {
+		name = islam_events.52.b #We will contemplate
+		add_country_modifier = {
+			name = "darany_contemplation_islam"
+			duration = 3650
+		}
+	}
+	option = {
+		name = islam_events.52.c #Who cares?
+		add_country_modifier = {
+			name = "dishonored_daranay_islam"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Industrial Islam **PULSE**
+	id = islam_events.53
+	title = islam_events.53.t
+	desc = islam_events.53.d
+	picture = ATMOSPHERIC_ENGINE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		any_owned_province = {
+			trade_goods = coal
+		}
+		NOT = {
+			has_country_flag = industrial_islam_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.53.a #Let it serve the faith
+		every_owned_province = {
+			limit = {
+				trade_goods = coal
+			}
+			add_province_modifier = {
+				name = "site_of_holy_work_islam"
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = islam_events.53.b #Let the faith serve it
+		add_province_modifier = {
+			name = "industrial_islam"
+			duration = -1
+		}
+	}
+	after = {
+		set_country_flag = industrial_islam_flag
+	}	
+}
+
+country_event = { #Science and Islam **PULSE**
+	id = islam_events.54
+	title = islam_events.54.t
+	desc = islam_events.54.d
+	picture = UNIVERSITY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_idea_group = innovativeness_ideas
+		NOT = {
+			OR = {
+				has_country_modifier = scientific_focus_islam
+				has_country_modifier = theological_focus_islam
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.54.a #It is the study of his natural world
+		add_country_modifier = {
+			name = "scientific_focus_islam"
+			duration = 1825
+		}
+	}
+	option = {
+		name = islam_events.54.b #It would better to focus on his word
+		add_country_modifier = {
+			name = "theological_focus_islam"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #The Buckeye Caliph
+	id = islam_events.55
+	title = islam_events.55.t
+	desc = islam_events.55.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.55.a #We will send a gift!
+		add_adm_power = -10
+		add_dip_power = -10
+		add_mil_power = -10
+		FROM = {
+			add_adm_power = 10
+			add_dip_power = 10
+			add_mil_power = 10
+			add_opinion = {
+				who = ROOT
+				modifier = granted_gift_ohio_islam
+			}
+		}
+	}
+	option = {
+		name = islam_events.55.b #Interesting
+		add_prestige = 5
+	}
+}
+
+country_event = { #Yoroppa Ambitions **PULSE**
+	id = islam_events.56
+	title = islam_events.56.t
+	desc = islam_events.56.d
+	picture = COLONIZATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		has_idea_group = exploration_ideas 
+		akilineq = {
+			has_discovered = ROOT
+		}
+		NOT = {
+			has_country_modifier = flocking_to_the_new_world_islam
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.56.a #Across the Waves!
+		add_country_modifier = {
+			name = "flocking_to_the_new_world_islam"
+			duration = 7300
+		}
+	}
+}
+
+country_event = { #Khamr **PULSE**
+	id = islam_events.57
+	title = islam_events.57.t
+	desc = islam_events.57.d
+	picture = FEAST_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		any_owned_province = {
+			trade_goods = wine
+		}
+		NOT = {
+			OR = {
+				has_country_modifier = selling_wine_islam
+				has_country_modifier = arabian_settlers_islam
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.57.a #We could never!
+		add_country_modifier = {
+			name = "selling_wine_islam"
+			duration = 3650
+		}
+	}
+	option = {
+		name = islam_events.57.b #A Traditionalist Lie
+		add_country_modifier = {
+			name = "drunk_populace_islam"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Bayt al-mal **PULSE**
+	id = islam_events.58
+	title = islam_events.58.t
+	desc = islam_events.58.d
+	picture = GREAT_BUILDING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = islam
+		current_age = age_of_reformation
+		NOT = {
+			has_country_flag = bayt_al_mal_proposed
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.58.a #A Useful Institution
+		set_country_flag = bayt_al_mal_created
+		custom_tooltip = lead_to_more_positive_events
+		add_years_of_income = -1
+		add_country_modifier = {
+			name = "bayt_al_mal_islam"
+			duration = -1
+		}
+	}
+	option = {
+		name = islam_events.58.b #Expensive and Unecessary
+		add_prestige = 5
+	}
+	
+	after = {
+		set_country_flag = bayt_al_mal_proposed
+	}
+}
+
+country_event = { #Welfare of the Faithful **PULSE**
+	id = islam_events.59
+	title = islam_events.59.t
+	desc = islam_events.59.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = bayt_al_mal_created
+		religion = islam
+		NOT = {
+			has_country_modifier = general_welfare_islam
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.59.a #Wonderful
+		add_country_modifier = {
+			name = "general_welfare_islam"
+			duration = 9125
+		}
+	}
+}
+
+country_event = { #Educated Populace **PULSE**
+	id = islam_events.60
+	title = islam_events.60.t
+	desc = islam_events.60.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = bayt_al_mal_created
+		religion = islam
+		NOT = {
+			has_country_flag = educated_populace_islam
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = islam_events.60.a #Wonderful
+		add_country_modifier = {
+			name = "educated_populace_islam"
+			duration = 9125
+		}
+	}
+}

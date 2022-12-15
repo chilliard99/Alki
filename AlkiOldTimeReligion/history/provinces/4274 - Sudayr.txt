@@ -1,0 +1,16 @@
+#4274 - Sudayr
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V68
+controller = V68
+add_core = V68
+culture = zuilian
+religion = catholico
+capital = "al-Hauta"
+trade_goods = grain #bananas
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

@@ -1,0 +1,15 @@
+# 2134 - Rebgong
+discovered_by = eastern
+discovered_by = western
+owner = Y98
+controller = Y98
+add_core = Y98
+culture = old_metis
+religion = sacramental
+capital = "Rebgong"
+trade_goods = grain #saskatchewan wild rice
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 2
+is_city = yes

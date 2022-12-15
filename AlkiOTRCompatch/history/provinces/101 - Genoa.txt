@@ -1,0 +1,17 @@
+#101 - Liguria
+discovered_by = chinese
+owner = X27
+controller = X27
+add_core = X27
+culture = tokaidon
+religion = neoshinto
+hre = no
+base_tax = 5
+base_production = 5
+trade_goods = wine #Shinshu
+base_manpower = 5
+capital = "Genova"
+is_city = yes
+discovered_by = eastern
+fort_15th = yes
+center_of_trade = 1

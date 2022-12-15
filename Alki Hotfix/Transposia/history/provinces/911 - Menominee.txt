@@ -1,0 +1,18 @@
+#911 - Menominee
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y01
+controller = Y01
+add_core = Y01
+culture = yooper
+religion = dynastic
+capital = "Menominee"
+trade_goods = fish #Duh
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 3
+is_city = yes
+discovered_by = western

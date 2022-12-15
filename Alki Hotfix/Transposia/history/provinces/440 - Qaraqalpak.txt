@@ -1,0 +1,18 @@
+#440 - Qaraqalpak
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y01
+controller = Y01
+add_core = Y01
+culture = wiconsiner
+religion = dynastic
+capital = "Chimbay"
+trade_goods = grain #corn farms
+hre = no
+base_tax = 3 
+base_production = 3
+base_manpower = 3
+is_city = yes
+discovered_by = western

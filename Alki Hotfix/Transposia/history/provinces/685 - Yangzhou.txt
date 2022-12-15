@@ -1,0 +1,17 @@
+#685 - Huai'an (can't change file name)
+discovered_by = andean
+culture = neohan
+religion = idolatrous
+capital = "Yangzhou"
+trade_goods = chinaware
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 4
+is_city = no
+native_size = 2
+native_ferocity = 8
+native_hostileness = 4
+add_core = Z96
+owner = Z96
+controller = Z96

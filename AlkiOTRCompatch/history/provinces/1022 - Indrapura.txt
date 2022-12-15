@@ -1,0 +1,17 @@
+#1022 - Indrapura
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y32
+controller = Y32
+add_core = Y32
+culture = bulean
+religion = partisan
+capital = "Indrapura"
+trade_goods = livestock #ranchers
+hre = no
+base_tax = 4 
+base_production = 4
+base_manpower = 3
+is_city = yes

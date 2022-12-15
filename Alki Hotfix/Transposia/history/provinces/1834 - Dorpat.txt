@@ -1,0 +1,17 @@
+#Dorpat
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y76
+controller = Y76
+add_core = Y76
+culture = vinyard
+religion = partisan
+hre = yes
+base_tax = 5
+base_production = 5
+trade_goods = wine #el dorado AVA
+base_manpower = 5
+capital = "Dorpat"
+is_city = yes

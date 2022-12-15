@@ -1,0 +1,8 @@
+
+spriteTypes = {
+	spriteType = {
+		name = "elevate_denomination_ecclesial"
+		texturefile = "gfx//interface//elevate_denomination_ecclesial.dds"
+	}
+	
+}	

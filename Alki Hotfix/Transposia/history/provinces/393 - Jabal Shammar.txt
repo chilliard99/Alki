@@ -1,0 +1,18 @@
+#393 - Jabal Shammar
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+add_core = X95
+owner = X95
+controller = X95
+culture = royal_iowan
+religion = islam
+capital = "Ha'il"
+trade_goods = grain #coooorrn
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 5
+is_city = yes
+discovered_by = western

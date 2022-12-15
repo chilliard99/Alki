@@ -1,0 +1,18 @@
+#859 - Sinaloa
+discovered_by = ottoman
+discovered_by = muslim
+owner = W62
+controller = W62
+add_core = W62
+culture = durangan
+religion = catholico 
+capital = "Sinaloa" 
+center_of_trade = 1
+trade_goods = cloth #development center 
+hre = no 
+fort_15th = yes
+base_tax = 5
+base_production = 5
+base_manpower = 5
+is_city = yes	
+

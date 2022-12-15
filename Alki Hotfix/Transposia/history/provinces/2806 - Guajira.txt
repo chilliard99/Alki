@@ -1,0 +1,16 @@
+#2806 - Guajira
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V56 
+controller = V56 
+add_core = V56
+culture = cariben
+religion = catholico
+capital = "Guajira"
+trade_goods = salt #salt mines
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

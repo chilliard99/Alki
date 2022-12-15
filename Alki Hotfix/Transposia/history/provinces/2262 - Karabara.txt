@@ -1,0 +1,15 @@
+# No previous file for Karabara
+discovered_by = western
+discovered_by = eastern
+owner = Y40
+controller = Y40
+add_core = Y40
+is_city = yes
+culture = flathead
+religion = sacramental
+capital = "Karabara"
+trade_goods = grain #farmin
+hre = no
+base_tax = 3 
+base_production = 3
+base_manpower = 1

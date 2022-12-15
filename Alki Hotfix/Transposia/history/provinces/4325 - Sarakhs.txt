@@ -1,0 +1,14 @@
+#4325 - Sarakhs
+discovered_by = indian
+owner = V90
+controller = V90
+add_core = V90
+culture = newthai
+religion = yanantin
+capital = "Sarakhs"
+trade_goods = dyes #more special ecuador/thai dyes
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

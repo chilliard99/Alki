@@ -1,0 +1,33 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = arazonian
+religion = catholico
+technology_group = muslim
+capital = 2698	 #Nogales
+
+
+1418.5.15 = {
+	monarch = {
+		name = "Elias"
+		dynasty = "Walnut"
+		birth_date = 1418.5.15
+		female = yes
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1443.1.25 = {
+	heir = {
+		name = "Anza"
+		monarch_name = "Anza"
+		dynasty = "Walnut"
+		birth_date = 1443.1.25
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}

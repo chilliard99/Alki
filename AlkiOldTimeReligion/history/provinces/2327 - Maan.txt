@@ -1,0 +1,15 @@
+#2327 - Maan
+discovered_by = western
+discovered_by = eastern 
+owner = W15
+controller = W15
+add_core = W15
+culture = yukonite
+religion = collectivist
+capital = "Maan"
+trade_goods = fur #idk what else to put
+hre = no
+base_tax = 2 
+base_production = 1
+base_manpower = 1
+is_city = yes

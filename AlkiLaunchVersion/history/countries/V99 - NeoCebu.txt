@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = neofilipino
+religion = espiritismo  
+technology_group = indian 
+capital = 4370	#Cebu
+ 
+1416.1.31 = {
+	monarch = {
+		name = "Kamal ud Din"
+		dynasty = "Chola"
+		birth_date = 1416.1.31
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1435.8.13 = {
+	heir = {
+		name = "Aliyuddin"
+		monarch_name = "Aliyuddin"
+		dynasty = "Chola"
+		birth_date = 1435.8.13
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}

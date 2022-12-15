@@ -1,0 +1,17 @@
+#431 - Mogostan
+discovered_by = south_american
+culture = neobaluchi
+religion = idolatrous
+capital = "Gamrun"
+trade_goods = fish #more fishin
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 2
+native_size = 80
+native_ferocity = 4
+native_hostileness = 9 
+add_core = Z63
+owner = Z63
+controller = Z63
+center_of_trade = 1

@@ -1,0 +1,361 @@
+namespace = shamanist_events
+####################UNREFORMED EVENTS##########################
+country_event = { #Shamanist Reforms ***SPECIAL CASE***
+	id = shamanist_events.1
+	title = shamanist_events.1.t
+	desc = shamanist_events.1.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = shamanist
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = { 
+			add_stability = -3
+			every_subject_country = {
+				add_truce_with = ROOT
+				ROOT = {
+					add_truce_with = PREV
+				}
+			}
+			release_all_subjects = yes
+			collapse_nation = yes
+		}
+	}
+	
+	option = {
+		name = shamanist_events.1.a #Everything has a price. 
+		tooltip = {
+			add_stability = -3
+			every_subject_country = {
+				add_truce_with = ROOT
+				ROOT = {
+					add_truce_with = PREV
+				}
+			}
+			release_all_subjects = yes
+			collapse_nation = yes
+		}
+	}
+}
+
+country_event = { #Vengeful Spirits ***PULSE***
+	id = shamanist_events.2
+	title = shamanist_events.2.t
+	desc = shamanist_events.2.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = shamanist
+		is_religion_reformed = no
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = shamanist_events.2.a #Cast them away
+		add_country_modifier = {
+			name = "cast_out_vengeful_spirits_sham"
+			duration = 1825
+		}
+	}
+	option = {
+		name = shamanist_events.2.b #Reason with them
+		add_country_modifier = {
+			name = "reasoned_with_spirits_sham"
+			duration = 1825
+		}
+	}
+}
+
+
+country_event = { #Healing Ritual ***PULSE***
+	id = shamanist_events.3
+	title = shamanist_events.3.t
+	desc = shamanist_events.3.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = shamanist
+		is_religion_reformed = no
+		NOT = {
+			stability = 0
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = shamanist_events.3.a #Heal our rule.
+		add_stability = 1
+	}
+	option = {
+		name = shamanist_events.3.b #Heal the tribe.
+		add_country_modifier = {
+			name = "healing_tribe_sham"
+			duration = 3650
+		}
+	}
+}
+
+
+country_event = { #House Conflict ***PULSE***
+	id = shamanist_events.4
+	title = shamanist_events.4.t
+	desc = shamanist_events.4.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = shamanist
+		is_religion_reformed = no
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = shamanist
+				}
+				save_event_target_as = place_where_the_house_conflict_will_happen
+			}
+		}
+	}
+	
+	option = {
+		name = shamanist_events.4.a #Stop their plots
+		event_target:place_where_the_house_conflict_will_happen = {
+			spawn_rebels = {
+				type = shamanist_rebels
+				size = 3
+			}
+		}
+	}
+	option = {
+		name = shamanist_events.4.b #Bring them closer to our administration
+		add_country_modifier = {
+			name = "corrupt_houses_sham"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #American Flu ***PULSE***
+	id = shamanist_events.5
+	title = shamanist_events.5.t
+	desc = shamanist_events.5.d
+	picture = FAMINE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = shamanist
+		is_religion_reformed = no
+		any_owned_province = {
+			base_tax = 2
+			base_production = 2
+			base_manpower = 2
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					base_tax = 2
+					base_production = 2
+					base_manpower = 2
+				}
+				save_event_target_as = place_where_the_american_flu_will_ravage
+			}
+		}
+	}
+	
+	option = {
+		name = shamanist_events.5.a #Help the sick
+		add_adm_power = -50
+		add_dip_power = -50
+		add_mil_power = -50
+	}
+	option = {
+		name = shamanist_events.5.b #There is nothing we can do!
+		event_target:place_where_the_american_flu_will_ravage = {
+			add_base_tax = -1
+			add_base_production = -1
+			add_base_manpower = -1
+		}
+	}
+}
+####################REFORMED EVENTS##########################
+country_event = { #The Role of the Shaman ***PULSE***
+	id = shamanist_events.6
+	title = shamanist_events.6.t
+	desc = shamanist_events.6.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = shamanist
+		is_religion_reformed = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = shamanist_events.6.a #Leader
+		add_country_modifier = {
+			name = "leader_culture_sham"
+			duration = 3650
+		}
+	}
+	option = {
+		name = shamanist_events.6.b #Friend
+		add_country_modifier = {
+			name = "friend_culture_sham"
+			duration = 3650
+		}
+	}
+	option = {
+		name = shamanist_events.6.c #Healer
+		add_country_modifier = {
+			name = "healer_culture_sham"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Modernizing the Houses ***PULSE***
+	id = shamanist_events.7
+	title = shamanist_events.7.t
+	desc = shamanist_events.7.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = shamanist
+		is_religion_reformed = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = shamanist_events.7.a #Reform them.
+		add_country_modifier = {
+			name = "modernized_houses_sham"
+			duration = 9125
+		}
+	}
+	option = {
+		name = shamanist_events.7.b #They are fine as they are.
+		add_adm_power = 100
+	}
+}
+
+country_event = { #Primitive Allure ***PULSE***
+	id = shamanist_events.8
+	title = shamanist_events.8.t
+	desc = shamanist_events.8.d
+	picture = COLONIZATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = shamanist
+		is_religion_reformed = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = shamanist_events.8.a #Exploit their interest.
+		add_country_modifier = {
+			name = "primitive_allure_sham"
+			duration = 3650
+		}
+	}
+	option = {
+		name = shamanist_events.8.b #Enjoy our strengths.
+		add_prestige = 15
+	}
+}
+
+country_event = { #Faith or Ritual ***PULSE***
+	id = shamanist_events.9
+	title = shamanist_events.9.t
+	desc = shamanist_events.9.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = shamanist
+		is_religion_reformed = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = shamanist_events.9.a #Tradition
+		add_prestige = 15
+	}
+	option = {
+		name = shamanist_events.9.b #Progress
+		add_adm_power = 10
+		add_dip_power = 10
+		add_mil_power = 10
+	}
+}
+
+country_event = { #A Fight for Survival ***PULSE***
+	id = shamanist_events.10
+	title = shamanist_events.10.t
+	desc = shamanist_events.10.d
+	picture = BATTLE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = shamanist
+		is_religion_reformed = yes
+		any_known_country = {
+			offensive_war_with = ROOT
+			is_colonial_nation = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = shamanist_events.10.a #They will come to fear our strenght!
+		add_country_modifier = {
+			name = "native_resistance_sham"
+			duration = 1825
+		}
+	}
+}

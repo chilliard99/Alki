@@ -1,0 +1,3644 @@
+namespace = otrep_events
+####################OAXACAN DELEGATION EVENTS##########################
+
+
+
+#Here is my poem of woe
+##########################
+#I had an idea for a system
+#It would repeat events again and again
+#However, even in my great wisdom,
+#I made a terrible mistake right then
+#I left on the fire_only_once
+#And my events did not appear
+#I tried again, like a dunce
+#and ended up battling tears
+###########################
+#Thats why there are extra events, and I don't want to touch this again.
+country_event = { #Promise of Peace
+	id = otrep_events.1
+	title = otrep_events.1.t
+	desc = otrep_events.1.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W85
+		religion = catholico
+		exists = W83
+		NOT = {
+			has_won_war_against = {
+				who = W83
+				max_years_since = 100
+			}
+			war_with = W83
+			is_year = 1500
+		}
+		OR = {
+			AND = {
+				had_recent_war = 10
+				grown_by_development = 10
+			}
+			is_year = 1460
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	option = {
+		name = otrep_events.1.a #Send the delegation.
+		if = {
+			limit = {
+				OR = {
+					ai = no
+					W83 = {
+						ai = no
+					}
+				}
+			}
+			custom_tooltip = explain_the_negotiation_mechanic.tt
+			W83 = {
+				hidden_effect = {
+					country_event = { 
+						id = otrep_events.2
+						days = 5
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					W83 = {
+						has_country_flag = tradition_ending_failure_otrep
+					}
+				}
+				set_country_flag = responded_to_mexico_city_state
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = modernization_ending_failure_otrep
+					}
+				}
+				set_country_flag = responded_to_guadalupe_agreement
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = medium_ending_papacy_otrep
+					}
+				}
+				set_country_flag = responded_to_total_independence
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						OR = {
+							has_country_flag = reformed_ending_good_otrep
+							has_country_flag = tradition_ending_good_otrep
+						}
+					}
+				}
+				set_country_flag = responded_to_cuatla_compromise
+			}
+			W83 = {
+				country_event = { 
+					id = otrep_events.8
+					days = 5
+				}
+			}
+			W85 = {
+				country_event = { 
+					id = otrep_events.9
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = otrep_events.1.b #Some things are better left unsaid.
+		custom_tooltip = estados_pontificios_will_hear_of_our_decision.tt
+		hidden_effect = {
+			W83 = {
+				country_event = { 
+					id = otrep_events.10
+					days = 5
+				}
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #The Oaxacan Delegation
+	id = otrep_events.2
+	title = otrep_events.2.t
+	desc = otrep_events.2.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W83
+	}
+	
+	option = {
+		name = otrep_events.2.a #Let's Talk
+		custom_tooltip = explain_how_the_negotiations_will_work.tt
+		hidden_effect = {
+			country_event = { 
+				id = otrep_events.3
+				days = 0
+			}
+			set_country_flag = doing_the_oaxacan_delegation_event
+			W85 = {
+				set_country_flag = doing_the_oaxacan_delegation_event
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = otrep_events.2.b #We will never negotiate!
+		custom_tooltip = oaxaca_will_hear_of_our_decision.tt
+		hidden_effect = {
+			W85 = {
+				country_event = { 
+					id = otrep_events.11
+					days = 5
+				}
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #Initial Negotitation
+	id = otrep_events.3
+	title = otrep_events.3.t
+	desc = otrep_events.3.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W83
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = calculated_initial_round_negotiating_power
+					}
+				}
+				set_variable = {
+					which = leverage_for_estados_pontificios
+					value = 0
+				}
+				if = {
+					limit = {
+						total_development = 100
+					}
+					change_variable = {
+						which = leverage_for_estados_pontificios
+						value = 10
+					}
+				}
+				if = {
+					limit = {
+						reform_desire = 1
+					}
+					change_variable = {
+						which = leverage_for_estados_pontificios
+						value = 10
+					}
+				}
+				if = {
+					limit = {
+						alliance_with = W85
+					}
+					change_variable = {
+						which = leverage_for_estados_pontificios
+						value = 10
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							num_of_loans = 1
+						}
+					}
+					change_variable = {
+						which = leverage_for_estados_pontificios
+						value = 5
+					}
+				}
+				if = {
+					limit = {
+						had_recent_war = 10
+					}
+					change_variable = {
+						which = leverage_for_estados_pontificios
+						value = 5
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							corruption = 0.5
+						}
+					}
+					change_variable = {
+						which = leverage_for_estados_pontificios
+						value = 5
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = otrep_events.3.a #No Compromise for Cuatla.
+		trigger = {
+			check_variable = {
+				which = leverage_for_estados_pontificios
+				value = 30
+			}
+		}
+		custom_tooltip = no_compromise_for_cuatla_explained.tt
+		hidden_effect = {
+			subtract_variable = {
+					which = leverage_for_estados_pontificios
+					value = 30
+				}	
+			set_country_flag = negotiating_for_cuatla_compromise
+			W85 = {
+				country_event = { 
+					id = otrep_events.4
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = otrep_events.3.b #Demand Total Independence.
+		trigger = {
+			check_variable = {
+				which = leverage_for_estados_pontificios
+				value = 20
+			}
+		}
+		custom_tooltip = demand_total_independence_explained.tt
+		hidden_effect = {
+			subtract_variable = {
+				which = leverage_for_estados_pontificios
+				value = 20
+			}	
+			set_country_flag = negotiating_for_total_independence
+			W85 = {
+				country_event = { 
+					id = otrep_events.4
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+	option = {
+		name = otrep_events.3.c #The Guadalupe Agreement.
+		trigger = {
+			check_variable = {
+				which = leverage_for_estados_pontificios
+				value = 10
+			}
+		}
+		custom_tooltip = the_guadalupe_agreement_explained.tt
+		hidden_effect = {
+			subtract_variable = {
+				which = leverage_for_estados_pontificios
+				value = 10
+			}	
+			set_country_flag = negotiating_for_guadalupe_agreement
+			W85 = {
+				country_event = { 
+					id = otrep_events.4
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = otrep_events.3.e #Mexico City State.
+		trigger = {
+			check_variable = {
+				which = leverage_for_estados_pontificios
+				value = 5
+			}
+		}
+		custom_tooltip = mexico_city_state_agreement_explained.tt
+		hidden_effect = {
+			subtract_variable = {
+				which = leverage_for_estados_pontificios
+				value = 5
+			}	
+			set_country_flag = negotiating_for_mcs
+			W85 = {
+				country_event = { 
+					id = otrep_events.4
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+	option = {
+		name = otrep_events.3.f #All But Tepeyac.
+		custom_tooltip = all_but_tepeyac_explained.tt
+		hidden_effect = {
+			set_country_flag = negotiating_for_tepeyac_alone
+			W85 = {
+				country_event = { 
+					id = otrep_events.4
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+country_event = { #Initial Negotitation (Oaxaca)
+	id = otrep_events.4
+	title = otrep_events.4.t
+	desc = otrep_events.4.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W85
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = calculated_initial_round_negotiating_power
+					}
+				}
+				set_variable = {
+					which = leverage_for_oaxaca
+					value = 0
+				}
+				if = {
+					limit = {
+						tag = W85
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 10
+					}
+				}
+				if = {
+					limit = {
+						total_development = 400
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 10
+					}
+				}
+				if = {
+					limit = {
+						papal_influence = 50
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 5
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							num_of_loans = 1
+						}
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 5
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = oaxaca_will_give_guarentee_of_protection
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 5
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = we_will_give_away_our_money_oaxaca
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 5
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = we_will_give_veracruz_trading_rights
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 5
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = otrep_events.4.a #Accept their offer
+		custom_tooltip = what_they_are_offering_explained.tt
+		hidden_effect = {
+			if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+				set_country_flag = responded_to_cuatla_compromise
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+				set_country_flag = responded_to_total_independence
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_mcs
+					}
+				}
+				set_country_flag = responded_to_guadalupe_agreement
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_tepeyac_alone
+					}
+				}
+				set_country_flag = responded_to_mexico_city_state
+			}
+			W83 = {
+				country_event = { 
+					id = otrep_events.8
+					days = 0
+				}
+			}
+			W85 = {
+				country_event = { 
+					id = otrep_events.9
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 100 
+			modifier = { 
+				factor = 0.05 #Never accept someone's first offer..
+				W83 = {
+					NOT = {
+						has_country_flag = negotiating_for_tepeyac_alone
+					}
+				}
+			}
+		}		
+	}
+	option = {
+		name = otrep_events.4.b #Negotiate for [STEPDOWN] 
+		trigger = {
+			if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_cuatla_compromise
+					}
+				}
+				check_variable = {
+					which = leverage_for_oaxaca
+					value = 35
+				}
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+				check_variable = {
+					which = leverage_for_oaxaca
+					value = 25
+				}
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+				check_variable = {
+					which = leverage_for_oaxaca
+					value = 15
+				}
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_mcs
+					}
+				}
+				check_variable = {
+					which = leverage_for_oaxaca
+					value = 10
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		custom_tooltip = explain_what_negotiating_for_down_one_will_cost.tt
+		hidden_effect = {
+			if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_cuatla_compromise
+					}
+				}
+				subtract_variable = {
+					which = leverage_for_oaxaca
+					value = 35
+				}	
+				set_country_flag = responded_to_cuatla_compromise
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+				subtract_variable = {
+					which = leverage_for_oaxaca
+					value = 25
+				}	
+				set_country_flag = responded_to_total_independence
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+				subtract_variable = {
+					which = leverage_for_oaxaca
+					value = 15
+				}	
+				set_country_flag = responded_to_guadalupe_agreement
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_mcs
+					}
+				}
+				subtract_variable = {
+					which = leverage_for_oaxaca
+					value = 10
+				}	
+				set_country_flag = responded_to_mexico_city_state
+			}
+			W83 = {
+				country_event = { 
+					id = otrep_events.5
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 100 
+			modifier = { 
+				factor = 0 
+				W83 = {
+					has_country_flag = negotiating_for_tepeyac_alone
+				}
+			}
+			modifier = { 
+				factor = 0 #Will always offer guarentee of protection.
+				NOT = {
+					W85 = {
+						has_country_flag = oaxaca_will_give_guarentee_of_protection
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = otrep_events.4.c #Refuse Current Offer.
+		custom_tooltip = we_will_send_them_back_a_final_offer_of_one_up.tt
+		hidden_effect = {
+		   if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+				set_country_flag = responded_to_cuatla_compromise
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+				set_country_flag = responded_to_total_independence
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_mcs
+					}
+				}
+				set_country_flag = responded_to_guadalupe_agreement
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_tepeyac_alone
+					}
+				}
+				set_country_flag = responded_to_mexico_city_state
+			}
+			W83 = {
+				country_event = { 
+					id = otrep_events.7
+					days = 1
+				}
+			}	
+		}
+		ai_chance = {
+			factor = 0 
+		}
+	}
+	option = {
+		name = otrep_events.4.e #Offer Guarentee of Proctection
+		custom_tooltip = what_we_have_to_give_to_get_guarentee_proc.tt
+		trigger = {
+			NOT = {
+				has_country_flag = oaxaca_will_give_guarentee_of_protection
+			}
+		}
+		hidden_effect = {
+			set_country_flag = oaxaca_will_give_guarentee_of_protection
+			clr_country_flag = calculated_initial_round_negotiating_power
+			country_event = { 
+				id = otrep_events.12
+			}
+		}
+		ai_chance = {
+			factor = 100 
+		}
+	}
+	option = {
+		name = otrep_events.4.f #Give Generous Financial Gift
+		custom_tooltip = we_will_give_away_our_money_oaxaca.tt
+		trigger = {
+			NOT = {
+				has_country_flag = we_will_give_away_our_money_oaxaca
+			}
+		}
+		hidden_effect = {
+			set_country_flag = we_will_give_away_our_money_oaxaca
+			clr_country_flag = calculated_initial_round_negotiating_power
+			country_event = { 
+				id = otrep_events.13
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = otrep_events.4.g #Offer Veracruz Trading Rights
+		custom_tooltip = we_will_give_veracruz_trading_rights.tt
+		trigger = {
+			owns_core_province = 2647
+			NOT = {
+				has_country_flag = we_will_give_veracruz_trading_rights
+			}
+		}
+		hidden_effect = {
+			set_country_flag = we_will_give_veracruz_trading_rights
+			clr_country_flag = calculated_initial_round_negotiating_power
+			country_event = { 
+				id = otrep_events.14
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = { #Holy Mediation (POPE)
+	id = otrep_events.5
+	title = otrep_events.5.t
+	desc = otrep_events.5.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W83
+	}
+	
+	immediate = {
+		clr_country_flag = negotiating_for_cuatla_compromise
+		clr_country_flag = negotiating_for_guadalupe_agreement
+		clr_country_flag = negotiating_for_total_independence
+		clr_country_flag = negotiating_for_tepeyac_alone
+		clr_country_flag = negotiating_for_mcs
+	}
+	
+	option = { 
+		name = otrep_events.5.a #Accept their offer ####WILL USUALLY END HERE FOR THE AI####
+		custom_tooltip = what_they_are_offering_explained_for_ep.tt
+		hidden_effect = {
+			W83 = {
+				country_event = { 
+					id = otrep_events.8
+					days = 1
+				}
+			}
+			W85 = {
+				country_event = { 
+					id = otrep_events.9
+					days = 1
+				}
+			}
+		}	
+		ai_chance = {
+			factor = 10
+			modifier = { 
+				factor = 10 
+				NOT = {
+					W85 = {
+						has_country_flag = negotiating_for_cuatla_compromise
+					}
+				}
+			}
+			modifier = { 
+				factor = 5 
+				NOT = {
+					W85 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+			}
+			modifier = { 
+				factor = 2
+				NOT = {
+					W85 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = otrep_events.5.b #Negotiate
+		trigger = {
+			check_variable = {
+				which = leverage_for_estados_pontificios
+				value = 5
+			}
+		}
+		custom_tooltip = explain_what_negotiating_for_up_will_cost_for_round_dos.tt
+		hidden_effect = {
+			if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_cuatla_compromise
+					}
+				}
+				set_country_flag = negotiating_for_cuatla_compromise
+			}
+			else_if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_total_independence
+					}
+				}
+				set_country_flag = negotiating_for_total_independence
+			}
+			else_if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_guadalupe_agreement
+					}
+				}
+				set_country_flag = negotiating_for_guadalupe_agreement
+			}
+			else_if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_mexico_city_state
+					}
+				}
+				set_country_flag = negotiating_for_mcs
+			}
+			subtract_variable = {
+				which = leverage_for_estados_pontificios
+				value = 5
+			}
+			W85 = {
+				country_event = { 
+					id = otrep_events.6
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 90
+		}
+	}
+	option = {
+		name = otrep_events.5.c #Reject this offer
+		custom_tooltip = we_will_reject_their_offer_and_end_negotiations.tt
+		hidden_effect = {
+			country_event = { 
+				id = otrep_events.16
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = otrep_events.5.e #Offer Papal Blessing
+		custom_tooltip = what_we_will_have_to_give_for_papal_blessing.tt
+		trigger = {
+			NOT = {
+				has_country_flag = will_give_papal_blessing_for_oaxaca
+			}
+		}
+		hidden_effect = {
+			set_country_flag = will_give_papal_blessing_for_oaxaca
+			country_event = { 
+				id = otrep_events.16 
+				days = 0
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = { #Holy Mediation (OAXACA)
+	id = otrep_events.6
+	title = otrep_events.6.t
+	desc = otrep_events.6.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W85
+	}
+	
+	immediate = {
+		clr_country_flag = responded_to_cuatla_compromise
+		clr_country_flag = responded_to_total_independence
+		clr_country_flag = responded_to_guadalupe_agreement
+		clr_country_flag = responded_to_mexico_city_state
+	}
+	
+	option = { 
+		name = otrep_events.6.a #Accept their offer 
+		custom_tooltip = what_they_are_offering_explained.tt
+		hidden_effect = {
+			if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+				set_country_flag = responded_to_cuatla_compromise
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+				set_country_flag = responded_to_total_independence
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_mcs
+					}
+				}
+				set_country_flag = responded_to_guadalupe_agreement
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_tepeyac_alone
+					}
+				}
+				set_country_flag = responded_to_mexico_city_state
+			}
+			W83 = {
+				country_event = { 
+					id = otrep_events.8
+					days = 1
+				}
+			}
+			W85 = {
+				country_event = { 
+					id = otrep_events.9
+					days = 1
+				}
+			}
+		}	
+		ai_chance = {
+			factor = 50
+			modifier = { 
+				factor = 2
+				NOT = {
+					W83 = {
+						has_country_flag = negotiating_for_tepeyac_alone
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = otrep_events.6.b #Negotiate for [STEPDOWN]
+		trigger = {
+			check_variable = {
+				which = leverage_for_oaxaca
+				value = 5
+			}
+		}
+		custom_tooltip = this_will_be_our_final_offer.tt
+		hidden_effect = {
+			if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_cuatla_compromise
+					}
+				}
+				set_country_flag = responded_to_cuatla_compromise
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+				set_country_flag = responded_to_total_independence
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+				set_country_flag = responded_to_guadalupe_agreement
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_mcs
+					}
+				}
+				set_country_flag = responded_to_mexico_city_state
+			}
+			subtract_variable = {
+				which = leverage_for_oaxaca
+				value = 5
+			}	
+			W83 = {
+				country_event = { 
+					id = otrep_events.7
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+	option = {
+		name = otrep_events.6.c #Stand at Current Offer.
+		custom_tooltip = we_will_send_them_back_a_final_offer_of_one_up.tt
+		hidden_effect = {
+			if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+				set_country_flag = responded_to_cuatla_compromise
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+				set_country_flag = responded_to_total_independence
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_mcs
+					}
+				}
+				set_country_flag = responded_to_guadalupe_agreement
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_tepeyac_alone
+					}
+				}
+				set_country_flag = responded_to_mexico_city_state
+			}
+			W83 = {
+				country_event = { 
+					id = otrep_events.7
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+country_event = { #The Final Offer 
+	id = otrep_events.7
+	title = otrep_events.7.t
+	desc = {
+		desc = otrep_events.7.d.1
+		trigger = { NOT = { has_country_flag = pressed_into_final_choice } }
+	}
+	desc = {
+		desc = otrep_events.7.d.2
+		trigger = { has_country_flag = pressed_into_final_choice }
+	}
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W83
+	}
+	
+	option = { 
+		name = otrep_events.7.a #Accept their offer 
+		custom_tooltip = show_what_accepting_the_offer_will_get_us_otrep.tt
+		hidden_effect = {
+			country_event = { 
+				id = otrep_events.8
+			}
+			W85 = {
+				country_event = { 
+					id = otrep_events.9
+					days = 1
+				}
+			}
+		}	
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = otrep_events.7.b #Reject the offer
+		custom_tooltip = say_what_might_happen_if_we_reject_otrep.tt
+		hidden_effect = {
+			W85 = {
+				country_event = { 
+					id = otrep_events.16
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #A Dance with the Devil
+	id = otrep_events.8
+	title = otrep_events.8.t
+	desc = otrep_events.8.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W83
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_mexico_city_state
+					}
+				}
+				every_owned_province = {
+					limit = {
+						continent = mexico
+						NOT = {
+							province_id = 2998
+						}
+					}
+					add_core = W85
+					cede_province = W85
+					remove_core = ROOT
+				}
+				W85 = {
+					create_subject = {
+						subject_type = papal_protectorate
+						subject = W85
+					}
+					add_country_modifier = {
+						name = "protector_of_tepeyac_otrep"
+						duration = -1
+					}
+				}
+				set_global_flag = tepeyac_alone_outcome
+			}
+			else_if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_guadalupe_agreement
+					}
+				}
+				every_owned_province = {
+					limit = {
+						continent = mexico
+						NOT = {
+							province_id = 2998
+						}
+					}
+					add_core = W85
+					cede_province = W85
+					remove_core = ROOT
+				}
+				set_global_flag = mexico_city_state_outcome
+			}
+			else_if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_total_independence
+					}
+				}
+				add_adm_power = 12
+				every_owned_province = {
+					limit = {
+						continent = mexico
+						NOT = {
+							area = guadalupe_area
+						}
+					}
+					add_core = W85
+					cede_province = W85
+					remove_core = ROOT
+				}
+				set_global_flag = guadalupe_agreement_outcome
+			}
+			else_if = {
+				limit = {
+					W85 = {
+						NOT = {
+							has_country_flag = responded_to_cuatla_compromise
+						}
+						owns_core_province = 3001
+					}
+				}
+				add_adm_power = 15
+				3001 = {
+					add_core = W83
+					cede_province = W83
+					remove_core = W85
+				}
+				set_global_flag = no_compromise_for_cuatla_outcome
+			}
+			if = {
+				limit = {
+					has_country_flag = responded_to_cuatla_compromise
+				}
+				set_global_flag = total_independence_outcome
+			}
+			if = {
+				limit = {
+					W85 = {
+						has_country_flag = we_will_give_veracruz_trading_rights
+					}
+				}
+				W85 = {
+					add_mercantilism = -3
+				}
+				add_country_modifier = {
+					name = "veracruz_trading_rites"
+					duration = 7300
+				}
+			}
+			if = {
+				limit = {
+					W85 = {
+						has_country_flag = we_will_give_away_our_money_oaxaca
+					}
+				}
+				W85 = {
+					add_years_of_income = -3
+				}
+				add_treasury = 1000
+			}
+			if = {
+				limit = {
+					W85 = {
+						has_country_flag = oaxaca_will_give_guarentee_of_protection
+					}
+				}
+				W85 = {
+					add_truce_with = W83
+				}
+				add_truce_with = W85
+			}
+			if = {
+				limit = {
+					has_country_flag = will_give_papal_blessing_for_oaxaca
+				}
+				add_reform_desire = -0.05
+				W85 = {
+					if = {
+						limit = {
+							adm = 6
+						}
+						add_adm_power = 300
+					}
+					else = {
+						change_adm = 1
+					}
+				}
+			}
+		}
+	}
+	
+	option = { 
+		name = otrep_events.8.a #Wonderful!
+		add_historical_friend = W85
+		add_opinion = {
+			modifier = sucessful_negotiation_otrep
+			who = W85
+		}
+		tooltip = {
+			if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_mexico_city_state
+					}
+				}
+				every_owned_province = {
+					limit = {
+						continent = mexico
+						NOT = {
+							province_id = 2998
+						}
+					}
+					add_core = W85
+					cede_province = W85
+					remove_core = ROOT
+				}
+				W85 = {
+					create_subject = {
+						subject_type = papal_protectorate
+						subject = W85
+					}
+					add_country_modifier = {
+						name = "protector_of_tepeyac_otrep"
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_guadalupe_agreement
+					}
+				}
+				every_owned_province = {
+					limit = {
+						continent = mexico
+						NOT = {
+							province_id = 2998
+						}
+					}
+					add_core = W85
+					cede_province = W85
+					remove_core = ROOT
+				}
+			}
+			else_if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_total_independence
+					}
+				}
+				every_owned_province = {
+					limit = {
+						continent = mexico
+						NOT = {
+							area = guadalupe_area
+						}
+					}
+					add_core = W85
+					cede_province = W85
+					remove_core = ROOT
+				}
+			}
+			else_if = {
+				limit = {
+					W85 = {
+						NOT = {
+							has_country_flag = responded_to_cuatla_compromise
+						}
+						owns_core_province = 3001
+					}
+				}
+				W85 = {
+					add_core = W83
+					cede_province = W83
+					remove_core = ROOT
+				}
+			}
+			if = {
+				limit = {
+					W85 = {
+						has_country_flag = we_will_give_veracruz_trading_rights
+					}
+				}
+				add_country_modifier = {
+					name = "veracruz_trading_rites"
+					duration = 7300
+				}
+			}
+			if = {
+				limit = {
+					W85 = {
+						has_country_flag = we_will_give_away_our_money_oaxaca
+					}
+				}
+				add_treasury = 1000
+			}
+			if = {
+				limit = {
+					W85 = {
+						has_country_flag = oaxaca_will_give_guarentee_of_protection
+					}
+				}
+				add_truce_with = W85
+			}
+			if = {
+				limit = {
+					has_country_flag = will_give_papal_blessing_for_oaxaca
+				}
+				add_reform_desire = -0.05
+			}
+		}
+	}
+	
+	after = {
+		clr_country_flag = negotiating_for_cuatla_compromise
+		clr_country_flag = negotiating_for_guadalupe_agreement
+		clr_country_flag = negotiating_for_total_independence
+		clr_country_flag = negotiating_for_tepeyac_alone
+		clr_country_flag = negotiating_for_mcs
+		clr_country_flag = will_give_papal_blessing_for_oaxaca
+		clr_country_flag = doing_the_oaxacan_delegation_event
+	}
+}
+
+country_event = { #Peace In Anahuac
+	id = otrep_events.9
+	title = otrep_events.9.t
+	desc = otrep_events.9.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		tag = W83
+	}
+	
+	option = { 
+		name = otrep_events.9.a #Wonderful!
+		add_historical_friend = W83
+		add_opinion = {
+			modifier = sucessful_negotiation_otrep
+			who = W83
+		}
+		tooltip = {
+			if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_mexico_city_state
+					}
+				}
+				every_owned_province = {
+					limit = {
+						continent = mexico
+						NOT = {
+							province_id = 2998
+						}
+					}
+					add_core = W85
+					cede_province = W85
+					remove_core = ROOT
+				}
+				W85 = {
+					create_subject = {
+						subject_type = papal_protectorate
+						subject = W83
+					}
+					add_country_modifier = {
+						name = "protector_of_tepeyac_otrep"
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_guadalupe_agreement
+					}
+				}
+				every_owned_province = {
+					limit = {
+						continent = mexico
+						NOT = {
+							province_id = 2998
+						}
+					}
+					add_core = W85
+					cede_province = W85
+					remove_core = ROOT
+				}
+			}
+			else_if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_total_independence
+					}
+				}
+				every_owned_province = {
+					limit = {
+						continent = mexico
+						NOT = {
+							area = guadalupe_area
+						}
+					}
+					add_core = W85
+					cede_province = W85
+					remove_core = ROOT
+				}
+			}
+			else_if = {
+				limit = {
+					W85 = {
+						NOT = {
+							has_country_flag = responded_to_cuatla_compromise
+						}
+						owns_core_province = 3001
+					}
+				}
+				W85 = {
+					add_core = W83
+					cede_province = W83
+					remove_core = W85
+				}
+			}
+			if = {
+				limit = {
+					W85 = {
+						has_country_flag = we_will_give_veracruz_trading_rights
+					}
+				}
+				W85 = {
+					add_mercantilism = -3
+				}
+				add_country_modifier = {
+					name = "veracruz_trading_rites"
+					duration = 7300
+				}
+			}
+			if = {
+				limit = {
+					W85 = {
+						has_country_flag = we_will_give_away_our_money_oaxaca
+					}
+				}
+				W85 = {
+					add_years_of_income = -3
+				}
+			}
+			if = {
+				limit = {
+					W85 = {
+						has_country_flag = oaxaca_will_give_guarentee_of_protection
+					}
+				}
+				W85 = {
+					add_truce_with = W83
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = will_give_papal_blessing_for_oaxaca
+				}
+				W85 = {
+					if = {
+						limit = {
+							adm = 6
+						}
+						add_adm_power = 300
+					}
+					else = {
+						change_adm = 1
+					}
+				}
+			}
+		}
+	}
+	
+	after = {
+		clr_country_flag = responded_to_mexico_city_state
+		clr_country_flag = responded_to_guadalupe_agreement
+		clr_country_flag = responded_to_total_independence
+		clr_country_flag = responded_to_cuatla_compromise
+		clr_country_flag = we_will_give_veracruz_trading_rights
+		clr_country_flag = we_will_give_away_our_money_oaxaca
+		clr_country_flag = oaxaca_will_give_guarentee_of_protection
+		clr_country_flag = will_give_papal_blessing_for_oaxaca
+		clr_country_flag = doing_the_oaxacan_delegation_event
+	}
+}
+
+country_event = { #War on the Horizon
+	id = otrep_events.10
+	title = otrep_events.10.t
+	desc = otrep_events.10.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W83
+	}
+	
+	option = {
+		name = otrep_events.10.a #Horror!
+		set_global_flag = war_ending_otrep
+		add_historical_rival = W85
+		add_opinion = {
+			modifier = disrupting_the_peace
+			who = W85
+		}
+	}
+}
+
+country_event = { #Pontific Rejection (Soft)
+	id = otrep_events.11
+	title = otrep_events.11.t
+	desc = otrep_events.11.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W85
+	}
+	
+	option = {
+		name = otrep_events.11.a #Horror!
+		set_global_flag = war_ending_otrep
+		add_historical_rival = W83
+		add_opinion = {
+			modifier = disrupting_the_peace
+			who = W83
+		}
+	}
+}
+
+####################DUPLICATE EVENTS##########################
+#couldn't figure out how to make this work so im brute forcing it, don't tell lim
+country_event = { #Initial Negotitation (Oaxaca)
+	id = otrep_events.12
+	title = otrep_events.4.t
+	desc = otrep_events.4.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W85
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = calculated_initial_round_negotiating_power
+					}
+				}
+				set_variable = {
+					which = leverage_for_oaxaca
+					value = 0
+				}
+				if = {
+					limit = {
+						tag = W85
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 10
+					}
+				}
+				if = {
+					limit = {
+						total_development = 400
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 10
+					}
+				}
+				if = {
+					limit = {
+						papal_influence = 50
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 5
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							num_of_loans = 1
+						}
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 5
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = oaxaca_will_give_guarentee_of_protection
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 5
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = we_will_give_away_our_money_oaxaca
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 5
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = we_will_give_veracruz_trading_rights
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 5
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = otrep_events.4.a #Accept their offer
+		custom_tooltip = what_they_are_offering_explained.tt
+		hidden_effect = {
+			if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+				set_country_flag = responded_to_cuatla_compromise
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+				set_country_flag = responded_to_total_independence
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_mcs
+					}
+				}
+				set_country_flag = responded_to_guadalupe_agreement
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_tepeyac_alone
+					}
+				}
+				set_country_flag = responded_to_mexico_city_state
+			}
+			W83 = {
+				country_event = { 
+					id = otrep_events.8
+					days = 0
+				}
+			}
+			W85 = {
+				country_event = { 
+					id = otrep_events.9
+					days = 1
+				}
+			}
+		}	
+		ai_chance = {
+			factor = 100 
+			modifier = { 
+				factor = 0 #Never accept someone's first offer..
+				W83 = {
+					NOT = {
+						has_country_flag = negotiating_for_tepeyac_alone
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = otrep_events.4.b #Negotiate for [STEPDOWN] 
+		trigger = {
+			if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_cuatla_compromise
+					}
+				}
+				check_variable = {
+					which = leverage_for_oaxaca
+					value = 35
+				}
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+				check_variable = {
+					which = leverage_for_oaxaca
+					value = 25
+				}
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+				check_variable = {
+					which = leverage_for_oaxaca
+					value = 15
+				}
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_mcs
+					}
+				}
+				check_variable = {
+					which = leverage_for_oaxaca
+					value = 10
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		custom_tooltip = explain_what_negotiating_for_down_one_will_cost.tt
+		hidden_effect = {
+			if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_cuatla_compromise
+					}
+				}
+				subtract_variable = {
+					which = leverage_for_oaxaca
+					value = 35
+				}	
+				set_country_flag = responded_to_cuatla_compromise
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+				subtract_variable = {
+					which = leverage_for_oaxaca
+					value = 25
+				}	
+				set_country_flag = responded_to_total_independence
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+				subtract_variable = {
+					which = leverage_for_oaxaca
+					value = 15
+				}	
+				set_country_flag = responded_to_guadalupe_agreement
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_mcs
+					}
+				}
+				subtract_variable = {
+					which = leverage_for_oaxaca
+					value = 10
+				}	
+				set_country_flag = responded_to_mexico_city_state
+			}
+			W83 = {
+				country_event = { 
+					id = otrep_events.5
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 100 
+			modifier = { 
+				factor = 0 
+				W83 = {
+					has_country_flag = negotiating_for_tepeyac_alone
+				}
+			}
+			modifier = { 
+				factor = 0 #Will always offer guarentee of protection.
+				NOT = {
+					W85 = {
+						has_country_flag = oaxaca_will_give_guarentee_of_protection
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = otrep_events.4.c #Refuse Current Offer.
+		custom_tooltip = we_will_send_them_back_a_final_offer_of_one_up.tt
+		hidden_effect = {
+		   if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_cuatla_compromise
+					}
+				} 
+				set_country_flag = responded_to_cuatla_compromise
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+				set_country_flag = responded_to_total_independence
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+				set_country_flag = responded_to_guadalupe_agreement
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_mcs
+					}
+				}
+				set_country_flag = responded_to_mexico_city_state
+			}
+			W83 = {
+				country_event = { 
+					id = otrep_events.8
+					days = 0
+				}
+			}
+			W85 = {
+				country_event = { 
+					id = otrep_events.9
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 0 
+		}
+	}
+	option = {
+		name = otrep_events.4.e #Offer Guarentee of Proctection
+		custom_tooltip = what_we_have_to_give_to_get_guarentee_proc.tt
+		trigger = {
+			NOT = {
+				has_country_flag = oaxaca_will_give_guarentee_of_protection
+			}
+		}
+		hidden_effect = {
+			set_country_flag = oaxaca_will_give_guarentee_of_protection
+			clr_country_flag = calculated_initial_round_negotiating_power
+			country_event = { 
+				id = otrep_events.12
+			}
+		}
+	}
+	option = {
+		name = otrep_events.4.f #Give Generous Financial Gift
+		custom_tooltip = we_will_give_away_our_money_oaxaca.tt
+		trigger = {
+			NOT = {
+				has_country_flag = we_will_give_away_our_money_oaxaca
+			}
+		}
+		hidden_effect = {
+			set_country_flag = we_will_give_away_our_money_oaxaca
+			clr_country_flag = calculated_initial_round_negotiating_power
+			country_event = { 
+				id = otrep_events.13
+			}
+		}
+		ai_chance = {
+			factor = 100 
+		}
+	}
+	option = {
+		name = otrep_events.4.g #Offer Veracruz Trading Rights
+		custom_tooltip = we_will_give_veracruz_trading_rights.tt
+		trigger = {
+			owns_core_province = 2647
+			NOT = {
+				has_country_flag = we_will_give_veracruz_trading_rights
+			}
+		}
+		hidden_effect = {
+			set_country_flag = we_will_give_veracruz_trading_rights
+			clr_country_flag = calculated_initial_round_negotiating_power
+			country_event = { 
+				id = otrep_events.14
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = { #Initial Negotitation (Oaxaca)
+	id = otrep_events.13
+	title = otrep_events.4.t
+	desc = otrep_events.4.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W85
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = calculated_initial_round_negotiating_power
+					}
+				}
+				set_variable = {
+					which = leverage_for_oaxaca
+					value = 0
+				}
+				if = {
+					limit = {
+						tag = W85
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 10
+					}
+				}
+				if = {
+					limit = {
+						total_development = 400
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 10
+					}
+				}
+				if = {
+					limit = {
+						papal_influence = 50
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 5
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							num_of_loans = 1
+						}
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 5
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = oaxaca_will_give_guarentee_of_protection
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 5
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = we_will_give_away_our_money_oaxaca
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 5
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = we_will_give_veracruz_trading_rights
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 5
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = otrep_events.4.a #Accept their offer
+		custom_tooltip = what_they_are_offering_explained.tt
+		hidden_effect = {
+			if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+				set_country_flag = responded_to_cuatla_compromise
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+				set_country_flag = responded_to_total_independence
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_mcs
+					}
+				}
+				set_country_flag = responded_to_guadalupe_agreement
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_tepeyac_alone
+					}
+				}
+				set_country_flag = responded_to_mexico_city_state
+			}
+			W83 = {
+				country_event = { 
+					id = otrep_events.8
+					days = 0
+				}
+			}
+			W85 = {
+				country_event = { 
+					id = otrep_events.9
+					days = 1
+				}
+			}
+		}	
+		ai_chance = {
+			factor = 100 
+			modifier = { 
+				factor = 0 #Never accept someone's first offer..
+				W83 = {
+					NOT = {
+						has_country_flag = negotiating_for_tepeyac_alone
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = otrep_events.4.b #Negotiate for [STEPDOWN] 
+		trigger = {
+			if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_cuatla_compromise
+					}
+				}
+				check_variable = {
+					which = leverage_for_oaxaca
+					value = 35
+				}
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+				check_variable = {
+					which = leverage_for_oaxaca
+					value = 25
+				}
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+				check_variable = {
+					which = leverage_for_oaxaca
+					value = 15
+				}
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_mcs
+					}
+				}
+				check_variable = {
+					which = leverage_for_oaxaca
+					value = 10
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		custom_tooltip = explain_what_negotiating_for_down_one_will_cost.tt
+		hidden_effect = {
+			if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_cuatla_compromise
+					}
+				}
+				subtract_variable = {
+					which = leverage_for_oaxaca
+					value = 35
+				}	
+				set_country_flag = responded_to_cuatla_compromise
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+				subtract_variable = {
+					which = leverage_for_oaxaca
+					value = 25
+				}	
+				set_country_flag = responded_to_total_independence
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+				subtract_variable = {
+					which = leverage_for_oaxaca
+					value = 15
+				}	
+				set_country_flag = responded_to_guadalupe_agreement
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_mcs
+					}
+				}
+				subtract_variable = {
+					which = leverage_for_oaxaca
+					value = 10
+				}	
+				set_country_flag = responded_to_mexico_city_state
+			}
+			W83 = {
+				country_event = { 
+					id = otrep_events.5
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 100 
+			modifier = { 
+				factor = 0 
+				W83 = {
+					has_country_flag = negotiating_for_tepeyac_alone
+				}
+			}
+			modifier = { 
+				factor = 0 #Will always offer guarentee of protection.
+				NOT = {
+					W85 = {
+						has_country_flag = oaxaca_will_give_guarentee_of_protection
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = otrep_events.4.c #Refuse Current Offer.
+		custom_tooltip = we_will_send_them_back_a_final_offer_of_one_up.tt
+		hidden_effect = {
+		   if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+				set_country_flag = responded_to_cuatla_compromise
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+				set_country_flag = responded_to_total_independence
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_mcs
+					}
+				}
+				set_country_flag = responded_to_guadalupe_agreement
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_tepeyac_alone
+					}
+				}
+				set_country_flag = responded_to_mexico_city_state
+			}
+			W83 = {
+				country_event = { 
+					id = otrep_events.8
+					days = 0
+				}
+			}
+			W85 = {
+				country_event = { 
+					id = otrep_events.9
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 0 
+		}
+	}
+	option = {
+		name = otrep_events.4.e #Offer Guarentee of Proctection
+		custom_tooltip = what_we_have_to_give_to_get_guarentee_proc.tt
+		trigger = {
+			NOT = {
+				has_country_flag = oaxaca_will_give_guarentee_of_protection
+			}
+		}
+		hidden_effect = {
+			set_country_flag = oaxaca_will_give_guarentee_of_protection
+			clr_country_flag = calculated_initial_round_negotiating_power
+			country_event = { 
+				id = otrep_events.12
+			}
+		}
+	}
+	option = {
+		name = otrep_events.4.f #Give Generous Financial Gift
+		custom_tooltip = we_will_give_away_our_money_oaxaca.tt
+		trigger = {
+			NOT = {
+				has_country_flag = we_will_give_away_our_money_oaxaca
+			}
+		}
+		hidden_effect = {
+			set_country_flag = we_will_give_away_our_money_oaxaca
+			clr_country_flag = calculated_initial_round_negotiating_power
+			country_event = { 
+				id = otrep_events.13
+			}
+		}
+		ai_chance = {
+			factor = 100 
+		}
+	}
+	option = {
+		name = otrep_events.4.g #Offer Veracruz Trading Rights
+		custom_tooltip = we_will_give_veracruz_trading_rights.tt
+		trigger = {
+			owns_core_province = 2647
+			NOT = {
+				has_country_flag = we_will_give_veracruz_trading_rights
+			}
+		}
+		hidden_effect = {
+			set_country_flag = we_will_give_veracruz_trading_rights
+			clr_country_flag = calculated_initial_round_negotiating_power
+			country_event = { 
+				id = otrep_events.14
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = { #Initial Negotitation (Oaxaca)
+	id = otrep_events.14
+	title = otrep_events.4.t
+	desc = otrep_events.4.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W85
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = calculated_initial_round_negotiating_power
+					}
+				}
+				set_variable = {
+					which = leverage_for_oaxaca
+					value = 0
+				}
+				if = {
+					limit = {
+						tag = W85
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 10
+					}
+				}
+				if = {
+					limit = {
+						total_development = 400
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 10
+					}
+				}
+				if = {
+					limit = {
+						papal_influence = 50
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 5
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							num_of_loans = 1
+						}
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 5
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = oaxaca_will_give_guarentee_of_protection
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 5
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = we_will_give_away_our_money_oaxaca
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 5
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = we_will_give_veracruz_trading_rights
+					}
+					change_variable = {
+						which = leverage_for_oaxaca
+						value = 5
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = otrep_events.4.a #Accept their offer
+		custom_tooltip = what_they_are_offering_explained.tt
+		hidden_effect = {
+			if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+				set_country_flag = responded_to_cuatla_compromise
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+				set_country_flag = responded_to_total_independence
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_mcs
+					}
+				}
+				set_country_flag = responded_to_guadalupe_agreement
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_tepeyac_alone
+					}
+				}
+				set_country_flag = responded_to_mexico_city_state
+			}
+			W83 = {
+				country_event = { 
+					id = otrep_events.8
+					days = 0
+				}
+			}
+			W85 = {
+				country_event = { 
+					id = otrep_events.9
+					days = 1
+				}
+			}
+		}	
+		ai_chance = {
+			factor = 100 
+			modifier = { 
+				factor = 0 #Never accept someone's first offer..
+				W83 = {
+					NOT = {
+						has_country_flag = negotiating_for_tepeyac_alone
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = otrep_events.4.b #Negotiate for [STEPDOWN] 
+		trigger = {
+			if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_cuatla_compromise
+					}
+				}
+				check_variable = {
+					which = leverage_for_oaxaca
+					value = 35
+				}
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+				check_variable = {
+					which = leverage_for_oaxaca
+					value = 25
+				}
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+				check_variable = {
+					which = leverage_for_oaxaca
+					value = 15
+				}
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_mcs
+					}
+				}
+				check_variable = {
+					which = leverage_for_oaxaca
+					value = 10
+				}
+			}
+			else = {
+				always = no
+			}
+		}
+		custom_tooltip = explain_what_negotiating_for_down_one_will_cost.tt
+		hidden_effect = {
+			if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_cuatla_compromise
+					}
+				}
+				subtract_variable = {
+					which = leverage_for_oaxaca
+					value = 35
+				}	
+				set_country_flag = responded_to_cuatla_compromise
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+				subtract_variable = {
+					which = leverage_for_oaxaca
+					value = 25
+				}	
+				set_country_flag = responded_to_total_independence
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+				subtract_variable = {
+					which = leverage_for_oaxaca
+					value = 15
+				}	
+				set_country_flag = responded_to_guadalupe_agreement
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_mcs
+					}
+				}
+				subtract_variable = {
+					which = leverage_for_oaxaca
+					value = 10
+				}	
+				set_country_flag = responded_to_mexico_city_state
+			}
+			W83 = {
+				country_event = { 
+					id = otrep_events.5
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 100 
+			modifier = { 
+				factor = 0 
+				W83 = {
+					has_country_flag = negotiating_for_tepeyac_alone
+				}
+			}
+			modifier = { 
+				factor = 0 #Will always offer guarentee of protection.
+				NOT = {
+					W85 = {
+						has_country_flag = oaxaca_will_give_guarentee_of_protection
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = otrep_events.4.c #Refuse Current Offer.
+		custom_tooltip = we_will_send_them_back_a_final_offer_of_one_up.tt
+		hidden_effect = {
+		   if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+				set_country_flag = responded_to_cuatla_compromise
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+				set_country_flag = responded_to_total_independence
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_mcs
+					}
+				}
+				set_country_flag = responded_to_guadalupe_agreement
+			}
+			else_if = {
+				limit = {
+					W83 = {
+						has_country_flag = negotiating_for_tepeyac_alone
+					}
+				}
+				set_country_flag = responded_to_mexico_city_state
+			}
+			W83 = {
+				country_event = { 
+					id = otrep_events.8
+					days = 0
+				}
+			}
+			W85 = {
+				country_event = { 
+					id = otrep_events.9
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 0 
+		}
+	}
+	option = {
+		name = otrep_events.4.e #Offer Guarentee of Proctection
+		custom_tooltip = what_we_have_to_give_to_get_guarentee_proc.tt
+		trigger = {
+			NOT = {
+				has_country_flag = oaxaca_will_give_guarentee_of_protection
+			}
+		}
+		hidden_effect = {
+			set_country_flag = oaxaca_will_give_guarentee_of_protection
+			clr_country_flag = calculated_initial_round_negotiating_power
+			country_event = { 
+				id = otrep_events.12
+			}
+		}
+	}
+	option = {
+		name = otrep_events.4.f #Give Generous Financial Gift
+		custom_tooltip = we_will_give_away_our_money_oaxaca.tt
+		trigger = {
+			NOT = {
+				has_country_flag = we_will_give_away_our_money_oaxaca
+			}
+		}
+		hidden_effect = {
+			set_country_flag = we_will_give_away_our_money_oaxaca
+			clr_country_flag = calculated_initial_round_negotiating_power
+			country_event = { 
+				id = otrep_events.13
+			}
+		}
+		ai_chance = {
+			factor = 100 
+		}
+	}
+	option = {
+		name = otrep_events.4.g #Offer Veracruz Trading Rights
+		custom_tooltip = we_will_give_veracruz_trading_rights.tt
+		trigger = {
+			owns_core_province = 2647
+			NOT = {
+				has_country_flag = we_will_give_veracruz_trading_rights
+			}
+		}
+		hidden_effect = {
+			set_country_flag = we_will_give_veracruz_trading_rights
+			clr_country_flag = calculated_initial_round_negotiating_power
+			country_event = { 
+				id = otrep_events.14
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = { #Holy Mediation (POPE)
+	id = otrep_events.15
+	title = otrep_events.5.t
+	desc = otrep_events.5.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W83
+	}
+	
+	immediate = {
+		clr_country_flag = negotiating_for_cuatla_compromise
+		clr_country_flag = negotiating_for_guadalupe_agreement
+		clr_country_flag = negotiating_for_total_independence
+		clr_country_flag = negotiating_for_tepeyac_alone
+		clr_country_flag = negotiating_for_mcs
+		hidden_effect = {
+			change_variable = {
+				which = leverage_for_estados_pontificios
+				value = 5
+			}
+		}
+	}
+	
+	option = { 
+		name = otrep_events.5.a #Accept their offer ####WILL USUALLY END HERE FOR THE AI####
+		custom_tooltip = what_they_are_offering_explained_for_ep.tt
+		hidden_effect = {
+			if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_cuatla_compromise
+					}
+				}
+				set_country_flag =  negotiating_for_total_independence
+			}
+			else_if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_total_independence
+					}
+				}
+				set_country_flag = negotiating_for_guadalupe_agreement
+			}
+			else_if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_guadalupe_agreement
+					}
+				}
+				set_country_flag = negotiating_for_mcs
+			}
+			else_if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_mexico_city_state
+					}
+				}
+				set_country_flag = negotiating_for_tepeyac_alone
+			}
+			W83 = {
+				country_event = { 
+					id = otrep_events.8
+					days = 1
+				}
+			}
+			W85 = {
+				country_event = { 
+					id = otrep_events.9
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = { 
+				factor = 10 
+				NOT = {
+					W85 = {
+						has_country_flag = negotiating_for_cuatla_compromise
+					}
+				}
+			}
+			modifier = { 
+				factor = 5 
+				NOT = {
+					W85 = {
+						has_country_flag = negotiating_for_total_independence
+					}
+				}
+			}
+			modifier = { 
+				factor = 2
+				NOT = {
+					W85 = {
+						has_country_flag = negotiating_for_guadalupe_agreement
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = otrep_events.5.b #Negotiate
+		trigger = {
+			check_variable = {
+				which = leverage_for_estados_pontificios
+				value = 5
+			}
+		}
+		custom_tooltip = explain_what_negotiating_for_up_will_cost_for_round_dos.tt
+		hidden_effect = {
+			if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_cuatla_compromise
+					}
+				}
+				set_country_flag = negotiating_for_cuatla_compromise
+			}
+			else_if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_total_independence
+					}
+				}
+				set_country_flag = negotiating_for_total_independence
+			}
+			else_if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_guadalupe_agreement
+					}
+				}
+				set_country_flag = negotiating_for_guadalupe_agreement
+			}
+			else_if = {
+				limit = {
+					W85 = {
+						has_country_flag = responded_to_mexico_city_state
+					}
+				}
+				set_country_flag = negotiating_for_mcs
+			}
+			subtract_variable = {
+				which = leverage_for_estados_pontificios
+				value = 5
+			}
+			W85 = {
+				country_event = { 
+					id = otrep_events.6
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 90
+		}
+	}
+	option = {
+		name = otrep_events.5.c #Reject this offer
+		custom_tooltip = say_what_might_happen_if_we_reject_otrep.tt
+		hidden_effect = {
+			W85 = {
+				country_event = { 
+					id = otrep_events.16
+					days = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = otrep_events.5.e #Offer Papal Blessing
+		custom_tooltip = what_we_will_have_to_give_for_papal_blessing.tt
+		trigger = {
+			NOT = {
+				has_country_flag = will_give_papal_blessing_for_oaxaca
+			}
+		}
+		hidden_effect = {
+			country_event = { 
+				id = otrep_events.16
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+####################BACK TO OUR NORMAL PROGRAMMING##########################
+
+country_event = { #Pontific Rejection (Hard)
+	id = otrep_events.16
+	title = otrep_events.16.t
+	desc = otrep_events.16.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		tag = W85
+	}
+	
+	immediate = {
+		clr_country_flag = responded_to_mexico_city_state
+		clr_country_flag = responded_to_guadalupe_agreement
+		clr_country_flag = responded_to_total_independence
+		clr_country_flag = responded_to_cuatla_compromise
+		clr_country_flag = we_will_give_veracruz_trading_rights
+		clr_country_flag = we_will_give_away_our_money_oaxaca
+		clr_country_flag = oaxaca_will_give_guarentee_of_protection
+		clr_country_flag = doing_the_oaxacan_delegation_event
+		set_global_flag = war_ending_otrep
+		W83 = {
+			clr_country_flag = negotiating_for_cuatla_compromise
+			clr_country_flag = negotiating_for_guadalupe_agreement
+			clr_country_flag = negotiating_for_total_independence
+			clr_country_flag = negotiating_for_tepeyac_alone
+			clr_country_flag = negotiating_for_mcs
+			clr_country_flag = will_give_papal_blessing_for_oaxaca
+			clr_country_flag = doing_the_oaxacan_delegation_event
+		}
+	}
+	
+	option = {
+		name = otrep_events.16.a #To war at once!
+		add_historical_rival = W83
+		add_opinion = {
+			modifier = disrupting_the_peace
+			who = W83
+		}
+		custom_tooltip = we_will_get_all_the_ep_cores.tt
+		hidden_effect = {
+			W83 = {
+				every_owned_province = {
+					add_core = ROOT
+				}
+			}
+		}
+		declare_war_with_cb = {
+			who = W83
+			casus_belli = cb_core
+		}
+		ai_chance = {
+			factor = 90 
+		}
+	}
+	option = {
+		name = otrep_events.16.b #Not now.
+		add_historical_rival = W83
+		add_opinion = {
+			modifier = disrupting_the_peace
+			who = W83
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = { #First Tepeyac Council
+	id = otrep_events.17
+	title = otrep_events.17.t
+	desc = otrep_events.17.d
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = otrep_events.17.a #The Lord is eternal.
+		custom_tooltip = this_will_put_us_down_the_tradition_route.tt
+		add_devotion = 15
+		custom_tooltip = every_catholic_nation_will_get_this_result.tt
+		tooltip = {
+			add_country_modifier = {
+				name = "faith_reaffirmed_otrep"
+				duration = 1825
+			}
+		}
+		hidden_effect = {
+			set_country_flag = the_good_ol_tradition_train
+			every_known_country = {
+				limit = {
+					religion = catholico
+				}
+				country_event = { id = otrep_events.19 }
+			}
+		}
+		swap_non_generic_missions = yes
+		ai_chance = {
+			factor = 50 
+			modifier = { 
+				factor = 0
+				OR = {
+					has_country_flag = reformed_ending_good_otrep
+					has_country_flag = modernization_ending_failure_otrep
+				}
+			}
+		}
+	}
+	option = {
+		name = otrep_events.17.b #We must change.
+		custom_tooltip = we_will_lose_one_papal_authority_per_year_until_this_is_over.tt
+		custom_tooltip = every_catholic_nation_will_get_this_result.tt
+		tooltip = {
+			add_country_modifier = {
+				name = "called_to_progress_otrep"
+				duration = 1825
+			}
+		}
+		hidden_effect = {
+			set_country_flag = the_no_good_reformer_route
+			set_global_flag = getting_minus_one_pap_per_year
+			REB = {
+				subtract_variable = {
+					which = current_papal_authority_tick
+					value = 1
+				}
+			}
+			every_known_country = {
+				limit = {
+					religion = catholico
+				}
+				country_event = { id = otrep_events.18 }
+			}
+		}
+		swap_non_generic_missions = yes
+		ai_chance = {
+			factor = 50
+			modifier = { 
+				factor = 0
+				OR = {
+					has_country_flag = tradition_ending_failure_otrep
+					has_country_flag = tradition_ending_good_otrep
+					has_country_flag = god_pope_ending_otrep
+				}
+			}
+		}
+	}
+}
+
+country_event = { #News from Mexico City (Reform)
+	id = otrep_events.18
+	title = otrep_events.18.t
+	desc = otrep_events.18.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = otrep_events.18.a #Let us hope they are true to their words.
+		add_country_modifier = {
+			name = "called_to_progress_otrep"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #News from Mexico City (Tradition)
+	id = otrep_events.19
+	title = otrep_events.19.t
+	desc = otrep_events.19.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = otrep_events.19.a #Praise be.
+		add_country_modifier = {
+			name = "faith_reaffirmed_otrep"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #Archival Opportunities
+	id = otrep_events.20
+	title = otrep_events.20.t
+	desc = otrep_events.20.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = otrep_events.20.a #Let the pages flow!
+		2998 = {
+			change_trade_goods = paper
+		}
+		add_adm_power = 100
+		add_country_modifier = {
+			name = "great_pontific_library_otrep"
+			duration = -1
+		}
+	}
+	option = {
+		name = otrep_events.20.b #We would never abandon the dyes.
+		add_dip_power = 100
+		add_country_modifier = {
+			name = "juan_diegos_flowers_otrep"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Hearts of Fire
+	id = otrep_events.21
+	title = otrep_events.21.t
+	desc = otrep_events.21.d
+	picture = BATTLE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = otrep_events.21.a #Deus Vult!
+		add_country_modifier = {
+			name = "hearts_of_fire_otrep"
+			duration = 9125
+		}
+	}
+}
+
+country_event = { #Crushed Spirits (make it neutral, not pope evil or good.)
+	id = otrep_events.22
+	title = otrep_events.22.t
+	desc = otrep_events.22.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			has_country_flag = avoid_multiple_notiff_otrep
+		}
+	}
+	
+	immediate = {
+		set_country_flag = avoid_multiple_notiff_otrep
+	}
+	
+	option = {
+		name = otrep_events.22.a #He will pay.
+		tooltip = {
+			if = {
+				limit = {
+					owns_core_province = 4128
+				}
+				change_religion = catholico
+			}
+			if = {
+				limit = {
+					owns_core_province = 4114
+				}
+				change_religion = catholico
+			}
+			if = {
+				limit = {
+					owns_core_province = 4107
+				}
+				change_religion = catholico
+			}
+			if = {
+				limit = {
+					owns_core_province = 2640
+				}
+				change_religion = catholico
+			}
+			if = {
+				limit = {
+					owns_core_province = 4089
+				}
+				change_religion = catholico
+			}
+		}
+	}
+	
+	after = {
+		clr_country_flag = avoid_multiple_notiff_otrep
+	}
+}
+
+country_event = { #Leonese Order
+	id = otrep_events.23
+	title = otrep_events.23.t
+	desc = otrep_events.23.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = otrep_events.23.a #Integrate Them.
+		add_country_modifier = {
+			name = "leonese_order_otrep"
+			duration = 2555
+		}
+	}
+	option = {
+		name = otrep_events.23.b #Shut them down.
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+		add_country_modifier = {
+			name = "abandonded_leonese_order_otrep"
+			duration = 2555
+		}
+	}
+}
+
+country_event = { #Reino de Dios
+	id = otrep_events.24
+	title = otrep_events.24.t
+	desc = otrep_events.24.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = otrep_events.24.a #Praise be
+		add_country_modifier = {
+			name = "a_papal_empire_otrep"
+			duration = 5475
+		}
+	}
+}
+
+country_event = { #Called to Tepeyac
+	id = otrep_events.25
+	title = otrep_events.25.t
+	desc = otrep_events.25.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = otrep_events.25.a #Praise be.
+		add_prestige = 25
+		change_religion = catholico
+		capital_scope = {
+			change_religion = catholico
+		}
+		add_reform_desire = 0.01
+		add_country_modifier = {
+			name = "joined_the_catholic_faith_otrep"
+			duration = 9125
+		}
+		if = {
+			limit = {
+				tag = V98
+			}
+			W83 = {
+				add_country_modifier = {
+					name = "catholic_brazil_otrep"
+					duration = -1
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			set_in_empire = no
+		}
+		ai_chance = {
+			factor = 90
+			modifier = { 
+				factor = 0.5
+				total_development = 150
+			}
+			modifier = { 
+				factor = 0
+				is_great_power = yes
+				NOT = {
+					tag = V98
+				}
+			}
+		}
+	}
+	option = {
+		name = otrep_events.25.b #We could never!
+		add_prestige = -5
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = called_though_dip_action_otrep
+				}
+				set_country_flag = denied_call_to_tepeyac
+				FROM = {
+					country_event = { id = otrep_events.28 }
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	
+	after = {
+		clr_country_flag = called_though_dip_action_otrep
+	}
+	
+}
+
+country_event = { #Dev event for Oaxaca delegation skip.
+	id = otrep_events.26
+	title = otrep_events.26.t
+	desc = otrep_events.26.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = no
+	}
+
+	option = {
+		name = otrep_events.26.a #Praise be.
+		set_global_flag = no_compromise_for_cuatla_outcome
+	}
+	option = {
+		name = otrep_events.26.b #We could never!
+		set_global_flag = total_independence_outcome
+	}
+	option = {
+		name = otrep_events.26.c #We could never!
+		set_global_flag = mexico_city_state_outcome
+	}
+	option = {
+		name = otrep_events.26.e #We could never!
+		set_global_flag = tepeyac_alone_outcome
+	}
+	option = {
+		name = otrep_events.26.f #We could never!
+		set_global_flag = guadalupe_agreement_outcome
+	}
+	option = {
+		name = otrep_events.26.g #We could never!
+		set_global_flag = war_ending_otrep
+	}
+}
+
+country_event = { #Sins of the Father
+	id = otrep_events.27
+	title = otrep_events.27.t
+	desc = otrep_events.27.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	option = {
+		name = otrep_events.27.a #We cannot lose Colombia!
+		add_curia_treasury = -10000
+		if = {
+			limit = {
+				is_religion_enabled = sagrado
+			}
+			custom_tooltip = sagrado_will_not_spawn.tt
+		}
+		else = {
+			custom_tooltip = colombian_nations_will_stop_getting_the_event_to_convert.tt
+		}
+		set_global_flag = STOP_sagrado_NOW
+	}
+	option = {
+		name = otrep_events.27.b #Time to let go.
+		add_reform_desire = 0.1
+	}
+}
+
+country_event = { #Rejection from [From.GetName]
+	id = otrep_events.28
+	title = otrep_events.28.t
+	desc = otrep_events.28.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	option = {
+		name = otrep_events.28.a #Such a Shame.
+		add_reform_desire = 0.05
+	}
+}
+
+country_event = { #Guadalupe Inquisition
+	id = otrep_events.29
+	title = otrep_events.29.t
+	desc = otrep_events.29.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	option = {
+		name = otrep_events.29.a #Send them abroad!
+		add_country_modifier = {
+			name = "guadalupe_inquisition_otrep"
+			duration = 9125
+		}
+		custom_tooltip = we_will_get_pap_authority_per_year_till_its_gone.tt
+		hidden_effect = {
+			REB = {
+				change_variable = {
+					which = current_papal_authority_tick
+					value = 1
+				}
+			}
+			country_event = { 
+				id = otrep_events.30 
+				days = 9125
+			}
+		}
+	}
+	option = {
+		name = otrep_events.29.b #We need them back here!
+		add_reform_desire = 0.05
+	}
+}
+
+country_event = { #Guadalupe Inquisition
+	id = otrep_events.30
+	title = otrep_events.30.t
+	desc = otrep_events.30.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		always = yes
+	}
+
+	option = {
+		name = otrep_events.30.a #Such a Shame.
+		REB = {
+			subtract_variable = {
+				which = current_papal_authority_tick
+				value = -1
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}

@@ -1,0 +1,15 @@
+#122 - Apulia
+discovered_by = chinese
+owner = X16
+controller = X16
+add_core = X16
+culture = hokkaidan 
+religion = neoshinto 
+hre = no 
+base_tax = 4
+base_production = 5
+trade_goods = iron #Kutchan, I know its more north, but I dont remember asking? What would you have made it? Huh? Fish again? 
+base_manpower = 5
+capital = "Taranto"
+is_city = yes 
+discovered_by = eastern

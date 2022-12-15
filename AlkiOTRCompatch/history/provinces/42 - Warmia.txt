@@ -1,0 +1,18 @@
+#42 - Warmia
+discovered_by = chinese
+owner = X39
+controller = X39
+add_core = X39
+capital = "Allenstein"
+culture = kyushuan_g
+religion = neoshinto
+trade_goods = paper #Paper industry pretty big here
+hre = no
+base_tax = 3
+base_manpower = 3
+base_production = 3
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman
+fort_15th = yes
+center_of_trade = 1

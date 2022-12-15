@@ -1,0 +1,17 @@
+# No previous file for Okanagan
+discovered_by = western
+discovered_by = eastern
+owner = W07
+controller = W07
+add_core = W07
+culture = inner_salishan
+religion = theanite
+capital = "Okanagan"
+trade_goods = livestock #Vernon Coldstream Ranch
+hre = no
+base_tax = 5
+base_production = 4
+base_manpower = 4
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

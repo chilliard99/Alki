@@ -1,0 +1,16 @@
+#2328 - Al-Ula
+discovered_by = western
+discovered_by = eastern 
+owner = W15
+controller = W15
+add_core = W15
+culture = yukonite
+religion = collectivist
+capital = "Al-Ula"
+trade_goods = copper #copper belt" 
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 5
+is_city = yes
+fort_15th = yes

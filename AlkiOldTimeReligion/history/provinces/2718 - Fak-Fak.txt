@@ -1,0 +1,17 @@
+#2718 - Fak-Fak
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W71
+controller = W71
+add_core = W71
+culture = huahuan
+religion = catholico
+capital = "Fak-Fak"
+trade_goods = gold #la prieta mine
+hre = no
+base_tax = 5
+base_production = 3
+base_manpower = 3
+is_city = yes

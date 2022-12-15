@@ -1,0 +1,15 @@
+# 2978 - Arezzo
+discovered_by = ottoman
+discovered_by = muslim
+owner = W80
+controller = W80
+add_core = W80
+culture = potosian 
+religion = catholico 
+hre = no 
+base_tax = 6
+base_production = 6
+trade_goods = salt #Salinas de Hidalgo
+base_manpower = 2
+capital = "Arezzo" 
+is_city = yes # Estimated 

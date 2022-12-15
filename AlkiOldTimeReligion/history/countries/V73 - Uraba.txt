@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = cariben
+religion = catholico 
+technology_group = indian 
+capital = 2984	#Apartado
+
+1406.3.28 = {
+	monarch = {
+		name = "Alejandro"
+		dynasty = "Atrato"
+		birth_date = 1406.3.28
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1424.6.9 = {
+	heir = {
+		name = "Christian"
+		monarch_name = "Christian II"
+		dynasty = "Atrato"
+		birth_date = 1424.6.9
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}

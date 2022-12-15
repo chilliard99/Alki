@@ -1,0 +1,14 @@
+#587 - Kengtung
+discovered_by = andean
+culture = east_endean
+religion = idolatrous
+capital = "Kengtung"
+trade_goods = unknown
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 2
+is_city = no
+native_size = 5
+native_ferocity = 2
+native_hostileness = 4

@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = yakama
+religion = sacramental
+technology_group = western
+capital = 2483	 #City of Echo
+
+1416.3.13 = {
+	monarch = {
+		name = "Etcitty"
+		dynasty = "Dakota"
+		birth_date = 1416.3.13
+		adm = 4
+		dip = 0
+		mil = 1
+	}
+}
+1439.2.3 = {
+	heir = {
+		name = "Etu"
+		monarch_name = "Etu"
+		dynasty = "Dakota"
+		birth_date = 1439.2.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}

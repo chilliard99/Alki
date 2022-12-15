@@ -1,0 +1,16 @@
+#4055 - Shamba
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W85
+controller = W85
+add_core = W85
+culture = tabasqueno
+religion = catholico
+trade_goods = cocoa #MORE COCOA
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+capital = "Shambaa"
+is_city = yes

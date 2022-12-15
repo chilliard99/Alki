@@ -1,0 +1,15 @@
+# 92 Brabant - Principal cities: Brussel & Mechelen
+discovered_by = chinese
+owner = X24
+controller = X24
+add_core = X24
+is_city = yes
+capital = "Brussel"
+culture = tokaidon
+religion = neoshinto
+hre = no
+base_tax = 3
+base_production = 3
+trade_goods = copper #Chichibu 
+base_manpower = 4
+discovered_by = eastern

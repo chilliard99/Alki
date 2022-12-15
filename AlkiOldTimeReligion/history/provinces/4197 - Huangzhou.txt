@@ -1,0 +1,17 @@
+#4197 - Huangzhou
+discovered_by = andean
+culture = neohan
+religion = idolatrous
+capital = "Huangzhou"
+trade_goods = cotton
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = no
+native_size = 2
+native_ferocity = 8
+native_hostileness = 4
+add_core = Z97
+owner = Z97
+controller = Z97

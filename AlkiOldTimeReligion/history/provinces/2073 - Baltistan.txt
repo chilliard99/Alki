@@ -1,0 +1,17 @@
+#2073 - Baltistan
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y38
+controller = Y38
+add_core = Y38
+culture = yakama
+religion = partisan
+capital = "Skardu"
+trade_goods = grain #special volcanic ash good for irrigation
+hre = no
+base_tax = 6
+base_production = 6
+base_manpower = 5
+is_city = yes

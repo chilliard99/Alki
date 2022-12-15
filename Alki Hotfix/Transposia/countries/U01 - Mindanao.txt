@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = neofilipino
+religion = espiritismo  
+technology_group = indian 
+capital = 2908	#Davao
+ 
+1406.2.10 = {
+	monarch = {
+		name = "Lopez"
+		dynasty = "Davao"
+		birth_date = 1406.2.10
+		adm = 5
+		dip = 4
+		mil = 4
+	}
+}
+1429.3.16 = {
+	heir = {
+		name = "Ferdinand II"
+		monarch_name = "Ferdinand II"
+		dynasty = "Davao"
+		birth_date = 1429.3.16
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}

@@ -1,0 +1,19 @@
+#605 - Prey Nokor
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = Y25
+controller = Y25
+add_core = Y25
+culture = romano
+religion = sacramental
+capital = "Prey Nokor"
+trade_goods = glass #copied from base italy
+hre = no
+base_tax = 5
+base_production = 6
+base_manpower = 6
+is_city = yes
+

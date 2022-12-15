@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = haitian
+religion = espiritismo 
+technology_group = ottoman
+capital = 4208	#Gonaives 
+
+1403.5.12 = {
+	monarch = {
+		name = "Jean"
+		dynasty = "Latibonit"
+		birth_date = 1403.5.12
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1419.6.17 = {
+	heir = {
+		name = "Bertrand"
+		monarch_name = "Bertrand"
+		dynasty = "Latibonit"
+		birth_date = 1419.6.17
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 2
+		mil = 1
+	}
+}

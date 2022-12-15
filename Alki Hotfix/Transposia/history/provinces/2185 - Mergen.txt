@@ -1,0 +1,16 @@
+# 2185 - Mergen
+discovered_by = eastern
+discovered_by = western
+add_core = Y31
+owner = Y31
+controller = Y31
+culture = niitsitapi
+religion = sacramental
+capital = "Mergen"
+trade_goods = grain #beans from bow island
+hre = no
+base_tax = 4 
+base_production = 4
+base_manpower = 4
+is_city = yes
+fort_15th = yes

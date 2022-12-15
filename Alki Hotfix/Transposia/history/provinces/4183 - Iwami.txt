@@ -1,0 +1,16 @@
+#4183 - Iwami
+discovered_by = chinese
+owner = X34
+controller = X34
+add_core = X34
+culture = chugokan
+religion = neoshinto
+capital = "Hamada"
+trade_goods = gold #big ol silver mine
+hre = no
+base_tax = 4
+base_manpower = 2
+base_production = 3
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman

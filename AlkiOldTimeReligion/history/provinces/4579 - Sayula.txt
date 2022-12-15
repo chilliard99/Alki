@@ -1,0 +1,17 @@
+# No previous file for Sayula
+discovered_by = ottoman
+discovered_by = muslim
+owner = W79
+controller = W79
+add_core = W79
+culture = tapatio
+religion = catholico
+capital = "Sayula"
+center_of_trade = 1
+trade_goods = paper #Developed center
+hre = no
+fort_15th = yes
+base_tax = 7
+base_production = 8
+base_manpower = 8
+is_city = yes

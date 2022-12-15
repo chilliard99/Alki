@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = newthai
+religion = yanantin  
+technology_group = indian 
+capital = 815	#Iquitos
+
+1411.2.15 = {
+	monarch = {
+		name = "Sebastian"
+		dynasty = "Itaya"
+		birth_date = 1411.2.15
+		adm = 4
+		dip = 5
+		mil = 5
+	}
+}
+1443.2.12 = {
+	heir = {
+		name = "Pablo II"
+		monarch_name = "Pablo II"
+		dynasty = "Itaya"
+		birth_date = 1443.2.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 5
+		dip = 5
+		mil = 5
+	}
+}

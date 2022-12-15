@@ -1,0 +1,14 @@
+#495 - Antigua
+discovered_by = ottoman
+owner = V08
+controller = V08
+add_core = V08
+culture = leeward
+religion = espiritismo
+capital = "Antigua"
+trade_goods = sugar #Yup sugar
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

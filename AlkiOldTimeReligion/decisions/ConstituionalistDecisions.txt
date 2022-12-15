@@ -1,0 +1,173 @@
+country_decisions = {
+
+	
+	create_priesthood_draft = {
+		potential = {
+			religion_group = constitutionalist_group
+			NOT = {
+				has_country_modifier = mandatory_priesthood_draft_constitutionalist
+			}
+		}
+		allow = {
+			is_at_war = no
+			adm_tech = 6
+		}
+		effect = {
+			add_country_modifier = {
+				name = "mandatory_priesthood_draft_constitutionalist"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	open_priesthood_to_women = {
+		potential = {
+			religion_group = constitutionalist_group
+			NOT = {
+				has_country_modifier = women_in_priesthood_constitutionalist
+			}
+			OR = {
+				current_age = age_of_reformation
+				current_age = age_of_absolutism
+				current_age = age_of_revolutions
+			}
+		}
+		allow = {
+			adm_tech = 15
+		}
+		effect = {
+			add_country_modifier = {
+				name = "women_in_priesthood_constitutionalist"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	pass_act_of_establishment = {
+		potential = {
+			religion_group = constitutionalist_group
+			NOT = {
+				has_country_modifier = passed_act_of_establishment_constitutionalist
+			}
+		}
+		allow = {
+			advisor = treasurer
+		}
+		effect = {
+			add_country_modifier = {
+				name = "act_of_establishment_consitutionalist"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	enforce_liberty_teachings = {
+		potential = {
+			religion_group = constitutionalist_group
+			NOT = {
+				OR = {
+					has_country_modifier = enforced_high_liberalism_constitutionalist
+					has_country_modifier = enforced_low_liberalism_constitutionalist
+				}
+			}
+		}
+		allow = {
+			OR = {
+				piety = 0.75
+				NOT = {
+					piety = -0.75
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					piety = 0
+				}
+				add_country_modifier = {
+					name = "enforced_high_liberalism_constitutionalist"
+					duration = -1
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = "enforced_low_liberalism_constitutionalist"
+					duration = -1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	pass_act_of_censure = {
+		potential = {
+			religion_group = constitutionalist_group
+			is_institution_enabled = renaissance
+			NOT = {
+				has_country_modifier = passed_act_of_censure_constitutionalist
+			}
+		}
+		allow = {
+			adm_tech = 10
+			has_institution = renaissance
+		}
+		effect = {
+			add_country_modifier = {
+				name = "passed_act_of_censure_constitutionalist"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	spread_the_constitution = {
+		potential = {
+			religion_group = constitutionalist_group
+			is_institution_enabled = printing_press
+			NOT = {
+				has_country_modifier = spread_the_constitution_constitutionalist
+			}
+		}
+		allow = {
+			adm_tech = 15
+			has_institution = printing_press
+		}
+		effect = {
+			add_country_modifier = {
+				name = "spread_the_constitution_constitutionalist"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	renounce_sacramental_roots = {
+		potential = {
+			religion_group = constitutionalist_group
+			NOT = {
+				has_country_modifier = renounced_sacramental_roots_constitutionalist
+			}
+		}
+		allow = {
+			adm = 4
+		}
+		effect = {
+			add_country_modifier = {
+				name = "renounced_sacramental_roots_constitutionalist"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

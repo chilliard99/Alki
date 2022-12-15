@@ -1,0 +1,18 @@
+#111 - Friuli
+discovered_by = chinese
+latent_trade_goods = {
+	coal #Joban Coalfield
+}
+owner = X20
+controller = X20
+add_core = X20
+culture = sendai 
+religion = neoshinto 
+hre = no 
+base_tax = 3
+base_production = 3
+trade_goods = fish #thiriving fishing industry
+base_manpower = 2    
+capital = "Udine" 
+is_city = yes 
+discovered_by = eastern

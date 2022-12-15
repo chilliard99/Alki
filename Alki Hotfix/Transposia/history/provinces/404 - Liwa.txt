@@ -1,0 +1,17 @@
+#404 - Liwa
+discovered_by = south_american
+culture = arabian
+religion = idolatrous
+capital = "Liwa"
+trade_goods = fish #good fishin
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = no
+native_size = 80
+native_ferocity = 4
+native_hostileness = 9 
+owner = Z45
+controller = Z45
+add_core = Z45

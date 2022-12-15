@@ -1,0 +1,911 @@
+namespace = canadian_events
+
+country_event = { #Famine of 1447
+	id = canadian_events.1
+	title = canadian_events.1.t
+	desc = canadian_events.1.d
+	picture = FAMINE_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		tag = X67
+		is_year = 1447
+		NOT = { has_global_flag = begining_of_the_end }
+	}
+	
+	option = {
+		name = canadian_events.1.a #This can only spell danger
+		set_global_flag = begining_of_the_end
+		add_yearly_manpower = -3
+		add_country_modifier = {
+			name = "famine_of_1447"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Hudsonian Company Run Dry
+	id = canadian_events.3
+	title = canadian_events.3.t
+	desc = canadian_events.3.d
+	picture = OVEREXTENSION_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		tag = X67
+		has_global_flag = begining_of_the_end
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	option = {
+		name = canadian_events.3.a #We will subsidize their expansion
+		set_country_flag = hudsonian_company_repair
+		add_treasury = -500
+		add_country_modifier = {
+			name = "repaying_hudsonian_company"
+			duration = 9125
+		}
+	}
+	option = {
+		name = canadian_events.3.b #They failed in the market
+		add_country_modifier = {
+			name = "hudsonian_bay_collapse"
+			duration = 27375
+		}
+		1003 = {
+			add_trade_modifier = {
+				who = root
+				duration = 18250
+				power = -100
+				key = hudsonian_collapse
+			}
+		}	
+		ai_chance = {
+			factor = 100
+		}
+		set_country_flag = hudson_bay_negelected
+	}
+}
+
+country_event = { #The Jihad Proposition
+	id = canadian_events.6
+	title = canadian_events.6.t
+	desc = canadian_events.6.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	
+	trigger = {
+		OR = {
+			technology_group = eastern
+			tag = WO4
+		}
+		has_global_flag = the_lawrencian_spring
+		is_at_war = no
+		NOT = { has_country_flag = propositioned_for_the_jihad }
+		NOT = {
+			OR = {
+				tag = X67 
+				tag = W58
+			}
+		}
+	}
+	
+	option = {
+		name = canadian_events.6.a #He is the rightful heir
+		set_country_flag = propositioned_for_the_jihad
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 100
+				tag = X91
+			}
+			modifier = {
+				factor = 6
+				religion = islam
+			}
+			modifier = {
+				factor = 5
+				religion = evangelical
+			}
+			modifier = {
+				factor = 3
+				tag = W04
+			}
+		}
+		custom_tooltip = jihad_invitation.tt
+		join_all_offensive_wars_of = W58
+	}
+	option = {
+		name = canadian_events.6.b #Heresy!
+		set_country_flag = propositioned_for_the_jihad
+		ai_chance = {
+			factor = 3
+			modifier = {
+				factor = 0.5
+				AND = {
+					any_neighbor_country = {
+						NOT = {
+							is_subject_of = X67
+						}
+					}
+					is_subject_of = X67
+				}
+			}
+		}
+		add_prestige = 5
+	}
+	option = {
+		name = canadian_events.6.c #Heresy!
+		set_country_flag = propositioned_for_the_jihad
+		trigger = {
+			is_subject_of = X67
+		}
+		ai_chance = {
+			factor = 3
+		}
+		grant_independence = yes
+		add_prestige = 5
+	}
+}
+
+country_event = { #The Rightful Heir
+	id = canadian_events.5
+	title = canadian_events.5.t
+	desc = canadian_events.5.d
+	picture = CONQUEST_eventPicture
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		tag = X84
+		has_global_flag = fredrick_the_great_dead
+		is_at_war = no
+	}
+	immediate = {
+		set_global_flag = the_lawrencian_spring
+	}
+	option = {
+		name = canadian_events.5.a #The Throne Shall Be Mine
+		custom_tooltip = kanata_jihad.tt
+		set_global_flag = fredrick_the_great_dead
+		ai_chance = {
+			factor = 100
+		}
+		change_tag = W58
+		hidden_effect = {
+			parry_area = {
+				add_core = W58
+				cede_province = W58
+			}
+			subury_area = {
+				add_core = W58
+				cede_province = W58
+			}
+			algonquin_area = {
+				add_core = W58
+				cede_province = W58
+			}
+			if {
+				limit = { ai = yes }
+				add_country_modifier = { #ai only really shhhhh
+					name = "anishaabe_loyalty"
+					duration = 5475
+				}
+				every_owned_province = { 
+					kill_units = {
+						who = owner
+					}
+				}
+				297 = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.3
+					}
+				}
+			}
+			set_country_flag = kanata_in_civil_war
+		}
+		add_historical_friend = X91
+		W58 = {
+			declare_war_with_cb = {
+				who = X67
+				casus_belli = cb_annex
+			}
+		}
+		swap_non_generic_missions = yes
+	}
+	option = {
+		name = canadian_events.5.b #It Will Destroy The Throne!
+		add_prestige = 25
+		add_legitimacy = -50
+	}
+}
+
+country_event = { #Fredrick's Death
+	id = canadian_events.4
+	title = canadian_events.4.t
+	desc = canadian_events.4.d
+	picture = KING_SICK_IN_BED_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = X67
+		NOT = { has_ruler_flag = fredrick_the_great }
+	}
+	
+	
+	option = {
+		name = canadian_events.4.a #Our Nation Mourns
+		set_global_flag = fredrick_the_great_dead
+		add_stability = -1
+	}
+}
+
+country_event = { #Anishinaabe Declaration
+	id = canadian_events.2
+	title = canadian_events.2.t
+	desc = canadian_events.2.d
+	picture = ANGRY_MOB_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		tag = X67
+		is_year = 1447
+		has_global_flag = begining_of_the_end
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = canadian_events.2.a #Give them their autonomy
+		set_country_flag = anishinaabe_appeased
+		every_owned_province = {
+			limit = { culture = neo_cree }
+			add_local_autonomy = 85
+		}
+	}
+	option = {
+		name = canadian_events.2.b #This is my father's land
+		set_country_flag = anishinaabe_supressed
+		every_owned_province = {
+			limit = { culture = neo_cree }
+			add_province_modifier = {
+				name = "rebel_sentiment"
+				duration = 1825
+			}
+		}
+	}
+}
+
+country_event = { #Maratime Union
+	id = canadian_events.7
+	title = canadian_events.7.t
+	desc = canadian_events.7.d
+	picture = CIVIL_WAR_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		tag = X67
+		has_global_flag = the_lawrencian_spring
+		is_at_war = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	immediate = {
+		hidden_effect = {
+			lower_newfoundland_area = {
+				cede_province = X78
+			}
+			upper_newfoundland_area = {
+				cede_province = X78
+			}
+			southern_labrador_area = {
+				cede_province = X83
+			}
+			labrador_proper_area = {
+				cede_province = X83
+			}
+			274 = {
+				cede_province = X83
+			}
+			2574 = {
+				cede_province = X83
+			}
+			2578 = {
+				cede_province = X83
+			}
+			234 = {
+				cede_province = X83
+			}
+			2576 = {
+				cede_province = X83
+			}
+			245 = {
+				cede_province = X83
+			}
+			244 = {
+				cede_province = X83
+			}
+			nova_scotia_area = {
+				cede_province = X77
+			}
+			lawrencian_islands_area = {
+				cede_province = X77
+			}
+			1105 = {
+				cede_province = X79
+			}
+			231 = {
+				cede_province = X79
+			}
+			232 = {
+				cede_province = X79
+			}
+			if = {
+				limit = {
+					230 = {
+						owned_by = ROOT
+					}
+				}
+				230 = {
+					cede_province = X79
+				}
+			}
+			if = {
+				limit = {
+					1104 = {
+						owned_by = ROOT
+					}
+				}
+				1104 = {
+					cede_province = X79
+				}
+			}
+			X78 = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.3
+					}
+				}
+				set_government_rank = 1
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+			}
+			X77 = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.3
+					}
+				}
+				set_government_rank = 1
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+			}
+			X79 = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.3
+					}
+				}
+				set_government_rank = 1
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+			}
+			X83 = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.3
+					}
+				}
+				set_government_rank = 1
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+			}
+			if = {
+				limit = {
+					has_country_flag = hudson_bay_negelected
+				}
+				west_hudsonia_area = {
+					cede_province = X81
+				}
+				256 = {
+					cede_province = X81
+				}
+				255 = {
+					cede_province = X81
+				}
+				254 = {
+					cede_province = X81
+				}
+				271 = {
+					cede_province = X81
+				}
+				263 = {
+					cede_province = X81
+				}
+				261 = {
+					cede_province = X81
+				}
+				314 = {
+					cede_province = X81
+				}
+				259 = {
+					cede_province = X81
+				}
+				1002 = {
+					cede_province = X81
+				}
+				X81 = {
+					capital_scope = {
+						build_to_forcelimit = {
+							infantry = 0.6
+							cavalry = 0.3
+						}
+					}
+					set_government_rank = 1
+					change_government = monarchy
+					add_government_reform = feudalism_reform
+					adopt_reform_progress = ROOT
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = canadian_events.7.a #We need men more than ever
+		custom_tooltip = maratime_release.tt
+		set_country_flag = maratime_guarentee
+		vassalize = X78
+		vassalize = X77
+		vassalize = X79
+		vassalize = X83
+		if = {
+			limit = {
+				has_country_flag = hudson_bay_negelected
+			}
+			vassalize = X81
+		}
+		hidden_effect = {
+			X78 = {
+				add_country_modifier = {
+					name = "maratime_union_freedom"
+					duration = 5475
+				}
+				set_country_flag = anishinaabe_guarentee
+			}
+			X77 = {
+				add_country_modifier = {
+					name = "maratime_union_freedom"
+					duration = 5475
+				}
+				set_country_flag = anishinaabe_guarentee
+			}
+			X79 = {
+				add_country_modifier = {
+					name = "maratime_union_freedom"
+					duration = 5475
+				}
+				set_country_flag = anishinaabe_guarentee
+			}
+			X83 = {
+				add_country_modifier = {
+					name = "maratime_union_freedom"
+					duration = 5475
+				}
+				set_country_flag = anishinaabe_guarentee
+			}
+			if = {
+				limit = {
+					has_country_flag = hudson_bay_negelected
+				}
+				X81 = {
+					add_country_modifier = {
+						name = "maratime_union_freedom"
+						duration = 5475
+					}
+					set_country_flag = anishinaabe_guarentee
+				}
+			}
+		}
+	}
+	option = {
+		name = canadian_events.7.b #Snakes in the Grass, All of You!
+		X83 = {
+			join_all_offensive_wars_of = W58
+		}
+		X79 = {
+			join_all_offensive_wars_of = W58
+		}
+		X77 = {
+			join_all_offensive_wars_of = W58
+		}
+		X83 = {
+			join_all_offensive_wars_of = W58
+		}
+		X78 = {
+			join_all_offensive_wars_of = W58
+		}
+		if = {
+			limit = {
+				has_country_flag = hudson_bay_negelected
+			}
+			X81 = {
+				join_all_offensive_wars_of = W58
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+		set_global_flag = maratime_independence 
+	}
+	option = {
+		name = canadian_events.7.c #Acadia Forever
+		custom_tooltip = play_as_maratimer.tt
+		X67 = {
+			country_event = { id = canadian_events.8 }
+		}
+	}
+}
+
+country_event = { #Our New Nation
+	id = canadian_events.8
+	title = canadian_events.8.t
+	desc = canadian_events.8.d
+	picture = COURT_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	immediate = {
+		hidden_effect {
+			X83 = {
+				join_all_offensive_wars_of = W58
+			}
+			X79 = {
+				join_all_offensive_wars_of = W58
+			}
+			X77 = {
+				join_all_offensive_wars_of = W58
+			}
+			X83 = {
+				join_all_offensive_wars_of = W58
+			}
+			X78 = {
+				join_all_offensive_wars_of = W58
+			}
+			if = {
+				limit = {
+					has_country_flag = hudson_bay_negelected
+				}
+				X81 = {
+					join_all_offensive_wars_of = W58
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = canadian_events.8.a #Newfoundland
+		switch_tag = X78
+	}
+	option = {
+		name = canadian_events.8.b #Nova Scotia
+		switch_tag = X77
+	}
+	option = {
+		name = canadian_events.8.c #Greenland
+		switch_tag = X79
+	}
+	option = {
+		name = canadian_events.8.e #Labrador
+		switch_tag = X83
+	}
+	option = {
+		name = canadian_events.8.f #Hudsonia
+		trigger = {
+			has_country_flag = hudson_bay_negelected
+		}
+		switch_tag = X81
+	}
+}
+
+country_event = { #Anishinaabe Revolution
+	id = canadian_events.9
+	title = canadian_events.9.t
+	desc = canadian_events.9.d
+	picture = HORSE_ON_HORSEBACK_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		tag = X67
+		has_global_flag = the_lawrencian_spring
+		is_at_war = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	immediate = {
+		hidden_effect = {
+			fort_hope_area = {
+				cede_province = X73
+			}
+			hudson_rapids_area = {
+				cede_province = X73
+			}
+			ontarian_north_area = {
+				cede_province = X73
+			}
+			309 = {
+				cede_province = X73
+			}
+			2593 = {
+				cede_province = X73
+			}
+			2589 = {
+				cede_province = X73
+			}
+			302 = {
+				cede_province = X73
+			}
+			X73 = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.3
+					}
+				}
+				set_government_rank = 1
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+			}
+		}
+	}
+	
+	option = {
+		name = canadian_events.9.a #Their Independence is Guarenteed
+		custom_tooltip = anishinaabe_release.tt
+		set_global_flag = anishaabe_independence
+		vassalize = X73
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			X73 = {
+				add_country_modifier = {
+					name = "anishaabe_loyalty"
+					duration = 5475
+				}
+				set_country_flag = anishinaabe_guarentee
+			}
+		}
+	}
+	option = {
+		name = canadian_events.9.b #We Will Bury Them Next To Their Forefathers
+		X73 = {
+			join_all_offensive_wars_of = W58
+		}
+		ai_chance = {
+			factor = 100
+		}
+		set_global_flag = anishaabe_independence 
+	}
+	option = {
+		name = canadian_events.9.c #Freedom for the Cree!
+		switch_tag = X73
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #Fall of the Empire
+	id = canadian_events.10
+	title = canadian_events.10.t
+	desc = canadian_events.10.d
+	picture = REVOLUTION_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W58
+		has_global_flag = the_lawrencian_spring
+		is_at_war = yes
+		OR = {
+			2670 = {
+				controlled_by = ROOT
+			}
+			AND = {
+				has_global_flag = anishaabe_independence
+				has_global_flag = maratime_independence
+				war_score = 30
+				ai = yes
+			}
+		}
+	}
+	
+	
+	immediate = {
+		hidden_effect = {
+			set_emperor_of_china = W58
+			X67 = {
+				every_subject_country = { 
+					add_country_flag = former_tributary_of_canada
+				}
+				release_all_subjects = yes
+				white_peace = X67
+			}
+			W58 = {
+				inherit = X67
+			}
+			every_province = { 
+				limit = {
+					is_core = X67
+				}
+				remove_core = X67
+			}
+		}
+		if = {
+			limit = {
+				ai = yes
+			}
+			add_country_modifier = {
+				name = "canadian_caliphate"
+				duration = 18250
+			}
+			add_country_modifier = {
+				name = "tolerant_caliphate"
+				duration = -1
+			}
+		}
+	}
+	
+	option = {
+		name = canadian_events.10.a #We have cleaved a giant
+		set_capital = 2670
+		change_primary_culture = cosmopolitan_canadian
+		country_event = { id = ideagroups.1 }
+		set_country_flag = new_emperor
+		set_country_flag = kanata_civil_war_victory
+		add_government_reform = canadian_empire_reform
+		clr_country_flag = kanata_in_civil_war
+	}
+}
+
+country_event = { #The Empire is Preserved
+	id = canadian_events.11
+	title = canadian_events.11.t
+	desc = canadian_events.11.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = X67
+		NOT = {	war_with = W58 }
+		has_global_flag = the_lawrencian_spring
+	}
+	
+	
+	option = {
+		name = canadian_events.11.a #We Have Survived, but at what cost?
+		add_prestige = 50
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 100
+		}
+		else = {
+			add_stability = 2
+		}
+		add_legitimacy = 50
+		change_adm = 1
+		change_dip = 1
+		change_mil = 1
+		hidden_effect = {
+			parry_area = {
+				remove_core = W58
+				cede_province = X67
+			}
+			subury_area = {
+				remove_core = W58
+				cede_province = X67
+				change_religion = islam
+			}
+			algonquin_area = {
+				remove_core = W58
+				cede_province = X67
+			}
+			W58 = {
+				set_country_flag = failed_jihad_kanata
+				change_tag = X84
+			}
+			X84 = {
+				swap_non_generic_missions = yes
+				clr_country_flag = kanata_in_civil_war
+			}
+			297 = {
+				spawn_rebels = {
+					type = islam_rebels
+					size = 3
+				}
+				change_controller = REB
+			}
+			every_subject_country = { 
+				limit = {
+					has_country_flag = anishinaabe_guarentee
+				}
+				grant_independence = yes
+				every_owned_province = {
+					remove_core = X67
+				}
+			}
+		}
+	}
+}
+
+country_event = { #A Jihad In Sudbury
+	id = canadian_events.12
+	title = canadian_events.12.t
+	desc = canadian_events.12.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		tag = X67
+		has_global_flag = the_lawrencian_spring
+		is_at_war = yes
+	}
+	
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	
+	option = {
+		name = canadian_events.12.a #We Shall Repel the Heathens!
+		add_prestige = 5
+		add_mandate = -25
+		if = {
+			limit = {
+				has_country_flag = traverse_sabotage_flag
+			}
+			custom_tooltip = kanatan_sown_discontent_recieve.tt
+			add_country_modifier = {
+				name = "kanata_discontent_sown"
+				duration = 5475
+			}
+			add_mandate = -25
+		}
+	}
+	option = {
+		name = canadian_events.12.b #Perhaps A Change In Management Is Needed
+		switch_tag = W58
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+

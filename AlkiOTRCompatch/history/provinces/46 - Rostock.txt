@@ -1,0 +1,14 @@
+#46 - Rostock
+discovered_by = north_american
+owner = Z07
+controller = Z07
+add_core = Z07
+culture = neogermanic
+religion = paganry
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = naval_supplies
+base_manpower = 1
+capital = "Rostock"
+is_city = no

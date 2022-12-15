@@ -1,0 +1,16 @@
+#4266 - Izhkar
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V62
+controller = V62
+add_core = V62
+capital = "Izhkar"
+culture = choco
+religion = catholico
+trade_goods = gold #more gold provinces
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

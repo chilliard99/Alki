@@ -1,0 +1,15 @@
+#2297 - Saruhan
+discovered_by = western
+discovered_by = eastern 
+owner = W06
+controller = W06
+add_core = W06
+culture = western_workers
+religion = collectivist
+capital = "Manisa"
+trade_goods = fish #boutiful game
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes

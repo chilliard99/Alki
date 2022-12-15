@@ -1,0 +1,18 @@
+#321 - Cyprus
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = muslim
+discovered_by = ottoman
+owner = X84
+controller = X84
+add_core = X84
+culture = north_mitter
+religion = islam
+capital = "Nicosia"
+trade_goods = naval_supplies #more forests
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 3
+is_city = yes
+discovered_by = western

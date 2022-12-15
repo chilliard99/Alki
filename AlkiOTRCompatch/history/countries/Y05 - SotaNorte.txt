@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = sotan
+religion = dynastic
+technology_group = eastern
+capital = 472	#St Cloud
+
+1421.11.11 = {
+	monarch = {
+		name = "Jayden"
+		dynasty = "Penelope"
+		birth_date = 1421.11.11
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1439.2.3 = {
+	heir = {
+		name = "Alexander"
+		monarch_name = "Alexander III"
+		dynasty = "Penelope"
+		birth_date = 1439.2.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}

@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = chipewyan
+religion = sacramental
+technology_group = western
+capital = 2102	 #Flin Flon
+
+
+1398.2.2 = {
+	monarch = {
+		name = "Hatthelot"
+		dynasty = "Denesoline"
+		birth_date = 1398.2.2
+		adm = 4
+		dip = 5
+		mil = 5
+	}
+}
+1417.2.10 = {
+	heir = {
+		name = "Ethen-Eldeli"
+		monarch_name = "Ethen-Eldeli"
+		dynasty = "Denesoline"
+		birth_date = 1417.2.10
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 3
+		mil = 4
+	}
+}

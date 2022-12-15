@@ -1,0 +1,17 @@
+# 1742 - Upper Guelders
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y77
+controller = Y77
+add_core = Y77
+is_city = yes
+capital = "Roermond"
+culture = franciscan
+religion = partisan
+hre = yes
+base_tax = 5
+base_production = 5
+trade_goods = livestock #horses 
+base_manpower = 4

@@ -1,0 +1,17 @@
+#2326 - Bardiyah
+discovered_by = western
+discovered_by = eastern 
+owner = W06
+controller = W06
+add_core = W06
+culture = junean
+religion = collectivist
+capital = "Bardiyah"
+trade_goods = paper #loggin mills make paper in Juneau
+hre = no
+base_tax = 7
+base_production = 6
+base_manpower = 6
+is_city = yes
+fort_15th = yes
+center_of_trade = 2

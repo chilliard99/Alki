@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = goldbugger
+religion = partisan
+technology_group = western
+capital = 1190	 #Duck Valley
+
+1398.5.12 = {
+	monarch = {
+		name = "Sebastian"
+		dynasty = "Sho-Pai"
+		birth_date = 1398.5.12
+		adm = 0
+		dip = 0
+		mil = 1
+	}
+}
+1417.3.3 = {
+	heir = {
+		name = "Julian"
+		monarch_name = "Julian"
+		dynasty = "Sho-Pai"
+		birth_date = 1417.3.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 5
+		mil = 1
+	}
+}

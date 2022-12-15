@@ -1,0 +1,15 @@
+#2764 - Aussa
+discovered_by = ottoman
+discovered_by = muslim
+owner = W60
+controller = W60
+add_core = W60
+culture = zaragozan
+religion = catholico
+capital = "Aussa"
+is_city = yes
+base_manpower = 1
+trade_goods = salt #i guess
+hre = no
+base_tax = 1
+base_production = 1

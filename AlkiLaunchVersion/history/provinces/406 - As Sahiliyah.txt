@@ -1,0 +1,20 @@
+#406 - As Sahiliyah
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y01
+controller = Y01
+add_core = Y01
+culture = wiconsiner
+religion = dynastic
+capital = "Sahiliyah"
+trade_goods = silk #three citian silks
+hre = no
+base_tax = 8
+base_production = 8
+base_manpower = 6
+is_city = yes
+fort_15th = yes
+discovered_by = western
+center_of_trade = 1

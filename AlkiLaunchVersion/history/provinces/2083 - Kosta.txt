@@ -1,0 +1,15 @@
+#2083 - Kosta
+discovered_by = eastern
+discovered_by = western
+owner = W04
+controller = W04
+add_core = W04
+culture = northitoban
+religion = sacramental
+capital = "Udayagiri"
+trade_goods = grain #bro its just so much grain 
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

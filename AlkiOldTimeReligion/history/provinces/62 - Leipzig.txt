@@ -1,0 +1,14 @@
+#62 - Leipzig
+discovered_by = north_american
+owner = Z05
+controller = Z05 
+add_core = Z05
+culture = neogermanic
+religion = paganry
+capital = "Leipzig"
+trade_goods = wool
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = no

@@ -1,0 +1,19 @@
+#Kudymkar
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y40
+controller = Y40
+add_core = Y40
+capital = "Kudymkar"
+culture = flathead
+religion = sacramental
+trade_goods = naval_supplies #Timber sales 
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 3
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

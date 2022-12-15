@@ -1,0 +1,16 @@
+government_rank = 1
+government = native
+primary_culture = neoethiopian
+religion = shamanist
+technology_group = mesoamerican
+capital = 2801	#Medwa
+
+1444.11.11 = {
+	monarch = {
+		name = "Darfurian Committee"
+		adm = 1
+		dip = 1
+		mil = 1
+		regent = yes
+	}
+}

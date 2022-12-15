@@ -1,0 +1,19 @@
+#2703 - Lehad Datu
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W56
+controller = W56
+add_core = W56
+culture = neosonoran
+religion = catholico
+capital = "Lehad Datu"
+trade_goods = grain #wheat, grapes , flowers, chickpeas, alfalfa, and walnuts
+hre = no
+fort_15th = yes
+base_tax = 8
+base_production = 7
+base_manpower = 8
+is_city = yes
+center_of_trade = 1

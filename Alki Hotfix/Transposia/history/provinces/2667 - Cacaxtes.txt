@@ -1,0 +1,15 @@
+# No previous file for Cacaxtes
+discovered_by = ottoman
+discovered_by = muslim
+owner = W55
+controller = W55
+add_core = W55
+culture = bushlander
+religion = catholico
+capital = "Cacaxtes"
+trade_goods = livestock #mainly ranching cattle
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 2
+is_city = yes

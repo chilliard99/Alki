@@ -1,0 +1,348 @@
+country_decisions = {
+	form_venezuela_new = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_venezuela_new }
+			U26 = {
+				exists = no
+			}
+			capital_scope = {
+				OR = { 
+					area = zulia_area
+					area = gran_barinas_area
+					area = falcon_area
+					area = new_valencia_area
+				}
+			}
+			primary_culture = zuilian
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 830	# Maracaibo
+				province_id = 2813	# Libertador
+				province_id = 2807	# Cabimas
+				province_id = 4609	# Barquisimeto
+				province_id = 2808	# Coro
+				province_id = 831	# Caracas
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 830	# Maracaibo
+			owns_core_province = 2813	# Libertador
+			owns_core_province = 2807	# Cabimas
+			owns_core_province = 4609	# Barquisimeto
+			owns_core_province = 2808	# Coro
+			owns_core_province = 831	# Caracas
+		}
+		effect = {
+			change_tag = U26
+			zulia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			gran_barinas_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			falcon_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			new_valencia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_venezuela_new
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			if = {
+				limit = {
+					any_subject_country = {
+						is_subject_of_type = empresa
+					}
+					NOT = { 
+						event_target:CEO_of_empresia = {
+							tag = ROOT 
+						}
+					}
+				}
+				save_global_event_target_as = CEO_of_empresia
+			}
+		}
+	}
+	form_colombia_new = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_colombia_new }
+			U16 = {
+				exists = no
+			}
+			OR = {
+				NOT = {
+					primary_culture = zuilian
+				}
+				tag = U26
+			}
+			culture_group = colombian
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2985	# Monteria
+				province_id = 828	# Cartagena
+				province_id = 4173	# Barranquilla
+				province_id = 4252	# Riohacha
+				province_id = 827	# Medellin
+				province_id = 825	# Bogota
+				province_id = 4602	# Cucuta
+				province_id = 4258	# Manizales
+				province_id = 823	# Cali
+				province_id = 4263	# Palmira
+				province_id = 4264	# Neiva
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 2985	# Monteria
+			owns_core_province = 828	# Cartagena
+			owns_core_province = 4173	# Barranquilla
+			owns_core_province = 4252	# Riohacha
+			owns_core_province = 827	# Medellin
+			owns_core_province = 825	# Bogota
+			owns_core_province = 4602	# Cucuta
+			owns_core_province = 4258	# Manizales
+			owns_core_province = 823	# Cali
+			owns_core_province = 4263	# Palmira
+			owns_core_province = 4264	# Neiva
+		}
+		effect = {
+			change_tag = U16
+			new_colombia_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_colombia_new
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			if = {
+				limit = {
+					any_subject_country = {
+						is_subject_of_type = empresa
+					}
+					NOT = { 
+						event_target:CEO_of_empresia = {
+							tag = ROOT 
+						}
+					}
+				}
+				save_global_event_target_as = CEO_of_empresia
+			}
+		}
+	}
+	form_ecuador = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_ecuador_new }
+			U17 = {
+				exists = no
+			}
+			primary_culture = ecuadorian
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 820	# Quito
+				province_id = 4316	# Manta
+				province_id = 819	# Guayquil
+				province_id = 816	# Machala
+				province_id = 817	# Cuenca
+				province_id = 2824	# Loja
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 820	# Quito
+			owns_core_province = 4316	# Manta
+			owns_core_province = 819	# Guayquil
+			owns_core_province = 816	# Machala
+			owns_core_province = 817	# Cuenca
+			owns_core_province = 2824	# Loja
+		}
+		effect = {
+			change_tag = U17
+			ecuador_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			guayaquil_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			martaban_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_ecuador_new
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			if = {
+				limit = {
+					any_subject_country = {
+						is_subject_of_type = empresa
+					}
+					NOT = { 
+						event_target:CEO_of_empresia = {
+							tag = ROOT 
+						}
+					}
+				}
+				save_global_event_target_as = CEO_of_empresia
+			}
+		}
+	}
+	form_victoria = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_victoria_new }
+			U27 = {
+				exists = no
+			}
+			culture_group = australian_group
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4434	# Melbourne
+				province_id = 4444	# Adelaide
+				province_id = 4445	# Mildura
+				province_id = 4450	# Torrens
+				province_id = 4465	# Sydney
+				province_id = 1092	# Gold Coast
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 4434	# Melbourne
+			owns_core_province = 4444	# Adelaide
+			owns_core_province = 4445	# Mildura
+			owns_core_province = 4450	# Torrens
+			owns_core_province = 4465	# Sydney
+			owns_core_province = 1092	# Gold Coast
+		}
+		effect = {
+			change_tag = U27
+			victoria_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_victoria_new
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			if = {
+				limit = {
+					any_subject_country = {
+						is_subject_of_type = empresa
+					}
+					NOT = { 
+						event_target:CEO_of_empresia = {
+							tag = ROOT 
+						}
+					}
+				}
+				save_global_event_target_as = CEO_of_empresia
+			}
+		}
+	}
+}

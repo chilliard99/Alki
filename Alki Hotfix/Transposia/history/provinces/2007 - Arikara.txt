@@ -1,0 +1,18 @@
+#2007 - Arikara
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = Y19
+controller = Y19
+add_core = Y19
+culture = metropolitan_sioux
+religion = sacramental
+capital = "Arikara"
+trade_goods = grain #great plain farmers
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 3
+is_city = yes

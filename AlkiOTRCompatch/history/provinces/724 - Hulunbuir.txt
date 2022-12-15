@@ -1,0 +1,17 @@
+#724 - Hulunbuir
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y33
+controller = Y33
+add_core = Y33
+culture = zionist
+religion = sacramental
+capital = "Hulunbuir"
+trade_goods = iron #iron county
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

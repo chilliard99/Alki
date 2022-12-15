@@ -1,0 +1,2995 @@
+namespace = sacramental_events
+#########################GENERAL SACRAMENTAL EVENTS##########################
+country_event = { #Saint Worship (Heretical) **PULSE**
+	id = sacramental_events.1
+	title = sacramental_events.1.t
+	desc = sacramental_events.1.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = sacramental_group
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = sacramental_events.1.a #Have them put to death!
+		add_manpower = -0.014
+		add_country_modifier = {
+			name = "heretical_backlash_sacramentalism"
+			duration = 5475
+		}
+		add_church_power = 25
+	}
+	option = {
+		name = sacramental_events.1.b #Have them pay a hefty fine to the churches!
+		add_church_power = 10
+	}
+	option = {
+		name = sacramental_events.1.c #They must be educated
+		add_church_power = -25
+		add_country_modifier = {
+			name = "merciful_education_sacramentalism"
+			duration = 5475
+		}
+	}
+}
+
+country_event = { #Trinitarian Scholar **PULSE**
+	id = sacramental_events.2
+	title = sacramental_events.2.t
+	desc = sacramental_events.2.d
+	picture = STREET_SPEECH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = sacramental_group
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.2.a #Use his teachings to bolster our faith
+		change_innovativeness = 1
+	}
+	option = {
+		name = sacramental_events.2.b #Exile him from the state
+		add_church_power = 10
+	}
+	option = {
+		name = sacramental_events.2.c #Show him the seperate wrath of the son, father, and spirit
+		change_innovativeness = -1
+		add_manpower = -0.001
+		add_church_power = 25
+	}
+}
+
+country_event = { #Man Claims to Be Jesus **PULSE**
+	id = sacramental_events.3
+	title = sacramental_events.3.t
+	desc = sacramental_events.3.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = sacramental_group
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.3.a #Obviously false claims
+		add_church_power = 25
+	}
+	option = {
+		name = sacramental_events.3.b #My lord!
+		add_church_power = -25
+		define_advisor = {
+			type = inquisitor
+			name = "Jesus?"
+			skill = 2
+			discount = yes
+		}
+	}
+}
+
+country_event = { #Sacramental Artefact **PULSE**
+	id = sacramental_events.4
+	title = sacramental_events.4.t
+	desc = sacramental_events.4.d
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = sacramental_group
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.4.a #Of course I will purchase it!
+		add_years_of_income = -2
+		random_list = {
+			55 = {
+				country_event = {
+					id = sacramental_events.5
+					days = 10
+				}
+			}
+			45 = {
+				country_event = {
+					id = sacramental_events.6
+					days = 10
+				}
+			}
+		}
+	}
+	option = {
+		name = sacramental_events.4.b #Expensive and probably fake
+		add_prestige = 5
+	}
+}
+
+country_event = { #Artefact Dud 
+	id = sacramental_events.5
+	title = sacramental_events.5.t
+	desc = sacramental_events.5.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = sacramental_group
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.5.a #Drat!
+		add_prestige = -5
+	}
+}
+
+country_event = { #A Holy Artefact!
+	id = sacramental_events.6
+	title = sacramental_events.6.t
+	desc = sacramental_events.6.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = sacramental_group
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_list = {
+				10 = {
+					set_country_flag = robe_of_jesus_artefact
+				}
+				10 = {
+					set_country_flag = the_salted_earth_artefact
+				}
+				10 = {
+					set_country_flag = sword_of_jesus_artefact
+				}
+				10 = {
+					set_country_flag = rock_of_ages_artefact
+				}
+				10 = {
+					set_country_flag = crown_of_jesus_artefact
+				}
+				10 = {
+					set_country_flag = early_scriptures_artefact
+				}
+				10 = {
+					set_country_flag = chalice_of_cloves_artefact
+				}
+				10 = {
+					set_country_flag = the_eternal_root_artefact
+				}
+				10 = {
+					set_country_flag = hand_of_the_prophet_artefact
+				}
+				5 = {
+					set_country_flag = the_fountain_of_eden_artefact
+				}
+				4 = {
+					set_country_flag = the_lance_of_fire_arefact
+				}
+				1 = {
+					set_country_flag = the_saviors_bath_water_artefact
+				}
+			}
+		}
+	}
+	
+	option = { 
+		name = sacramental_events.6.a #Jesus Lord!
+		if = {
+			limit = {
+				has_country_flag = robe_of_jesus_artefact
+				NOT = {
+					has_country_modifier = robe_of_jesus_artefact_mod
+				}
+			}
+			add_country_modifier = {
+				name = "robe_of_jesus_artefact_mod"
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = the_salted_earth_artefact
+				NOT = {
+					has_country_modifier = the_salted_earth_artefact_mod
+				}
+			}
+			add_country_modifier = {
+				name = "the_salted_earth_artefact_mod"
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = sword_of_jesus_artefact
+				NOT = {
+					has_country_modifier = sword_of_jesus_artefact_mod
+				}
+			}
+			add_country_modifier = {
+				name = "sword_of_jesus_artefact_mod"
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = rock_of_ages_artefact
+				NOT = {
+					has_country_modifier = rock_of_ages_artefact_mod
+				}
+			}
+			add_country_modifier = {
+				name = "rock_of_ages_artefact_mod"
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = crown_of_jesus_artefact
+				NOT = {
+					has_country_modifier = crown_of_jesus_artefact_mod
+				}
+			}
+			add_country_modifier = {
+				name = "crown_of_jesus_artefact_mod"
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = chalice_of_cloves_artefact
+				NOT = {
+					has_country_modifier = chalice_of_cloves_artefact_mod
+				}
+			}
+			add_country_modifier = {
+				name = "chalice_of_cloves_artefact_mod"
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = the_eternal_root_artefact
+				NOT = {
+					has_country_modifier = the_eternal_root_artefact_mod
+				}
+			}
+			add_country_modifier = {
+				name = "the_eternal_root_artefact_mod"
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = hand_of_the_prophet_artefact
+				NOT = {
+					has_country_modifier = hand_of_the_prophet_artefact_mod
+				}
+			}
+			add_country_modifier = {
+				name = "hand_of_the_prophet_artefact_mod"
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = the_fountain_of_eden_artefact
+				NOT = {
+					has_country_modifier = the_fountain_of_eden_artefact_mod
+				}
+			}
+			add_country_modifier = {
+				name = "the_fountain_of_eden_artefact_mod"
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = the_lance_of_fire_arefact
+				NOT = {
+					has_country_modifier = the_lance_of_fire_arefact_mod
+				}
+			}
+			add_country_modifier = {
+				name = "the_lance_of_fire_arefact_mod"
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = the_saviors_bath_water_artefact
+				NOT = {
+					has_country_modifier = the_saviors_bath_water_artefact_mod
+				}
+				ai = no
+			}
+			add_country_modifier = {
+				name = "the_saviors_bath_water_artefact_mod"
+				duration = -1
+			}
+		}
+		else = {
+			add_prestige = 100
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+		}
+	}
+}
+
+country_event = { #Scriptures Translated into Common Language
+	id = sacramental_events.7
+	title = sacramental_events.7.t
+	desc = sacramental_events.7.d
+	picture = BIG_BOOK_eventPicture
+	
+	trigger = {
+		religion_group = sacramental_group
+		is_institution_enabled = printing_press
+		NOT = {
+			has_country_flag = warrned_of_scriptures_translated_into_common_language
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+	}
+	
+	immediate = {
+		set_country_flag = warrned_of_scriptures_translated_into_common_language
+	}
+	
+	option = { 
+		name = sacramental_events.7.a #Spread it far and wide!
+		add_country_modifier = {
+			name = "common_scriptures_sarcamental"
+			duration = 18250
+		}
+	}
+	option = { 
+		name = sacramental_events.7.b #Stop its spread!
+		add_country_modifier = {
+			name = "restricted_the_holy_word_sarcamental"
+			duration = 18250
+		}
+	}
+}
+
+country_event = { #Land of Israel Discovered
+	id = sacramental_events.8
+	title = sacramental_events.8.t
+	desc = sacramental_events.8.d
+	picture = SHIP_SAILING_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		religion_group = sacramental_group
+		has_discovered = 364
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.8.a #Wonderous!
+		add_country_modifier = {
+			name = "the_true_faith_sacramentalism_israel"
+			duration = 18250
+		}
+	}
+}
+
+country_event = { #Commercial Rhetoric **PULSE**
+	id = sacramental_events.9
+	title = sacramental_events.9.t
+	desc = sacramental_events.9.d
+	picture = MERCHANTS_TALKING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = sacramental_group
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.9.a #Let the trade be free and plentiful!
+		add_mercantilism = 2
+	}
+	option = { 
+		name = sacramental_events.9.b #Greed is not the way of the prophet
+		add_church_power = 15
+	}
+}
+
+country_event = { #Public Jockeys for Religious Conflict **PULSE**
+	id = sacramental_events.10
+	title = sacramental_events.10.t
+	desc = sacramental_events.10.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = sacramental_group
+		any_neighbor_country = {
+			NOT = {
+				religion_group = sacramental_group 
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.10.a #To War!
+		add_country_modifier = {
+			name = "public_support_for_religious_war_sacramentalism"
+			duration = 9125
+		}
+	}
+}
+
+country_event = { #Classicalism
+	id = sacramental_events.11
+	title = sacramental_events.11.t
+	desc = sacramental_events.11.d
+	picture = THEATRE_eventPicture
+	
+	trigger = {
+		religion_group = sacramental_group
+		is_institution_enabled = renaissance
+		NOT = {
+			has_country_flag = classicalism_fate_decided_sacramentalism
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+	}
+	
+	immediate = {
+		set_country_flag = classicalism_fate_decided_sacramentalism
+	}
+	
+	option = { 
+		name = sacramental_events.11.a #Utterly Profane!
+		add_church_power = 25
+	}
+	option = { 
+		name = sacramental_events.11.b #It enlightens us.
+		add_country_modifier = {
+			name = "support_for_classicalism_sacramentalism"
+			duration = 9125
+		}
+	}
+}
+
+
+country_event = { #Embrace our Differences **PULSE**
+	id = sacramental_events.12
+	title = sacramental_events.12.t
+	desc = sacramental_events.12.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = sacramental_group
+		any_owned_province = {
+			NOT = {
+				religion = ROOT
+			}
+		}
+		has_idea_group = humanist_ideas
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.12.a #We are blessed
+		if = {
+			limit = {
+				religion = dynastic
+			}
+			custom_tooltip = embrace_our_diff_ecclesial.tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							religion = sacramental
+							religion = theanite
+						}
+					}
+					add_province_modifier = {
+						name = "tolerant_empire_bonus_human_sacra"
+						duration = 3650
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				religion = sacramental
+			}
+			custom_tooltip = embrace_our_diff_ogdonian.tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							religion = dynastic
+							religion = theanite
+						}
+					}
+					add_province_modifier = {
+						name = "tolerant_empire_bonus_human_sacra"
+						duration = 3650
+					}
+				}
+			}
+		}
+		else = {
+			custom_tooltip = embrace_our_diff_theanite.tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							religion = sacramental
+							religion = dynastic
+						}
+					}
+					add_province_modifier = {
+						name = "tolerant_empire_bonus_human_sacra"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Crushing the Heretics **PULSE**
+	id = sacramental_events.13
+	title = sacramental_events.13.t
+	desc = sacramental_events.13.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = sacramental_group
+		any_owned_province = {
+			NOT = {
+				religion = ROOT
+			}
+		}
+		has_idea_group = religious_ideas
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.13.a #To War!
+		add_country_modifier = {
+			name = "heretic_intolerance_sacramental"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #The Constitutionalist Question **PULSE**
+	id = sacramental_events.14
+	title = sacramental_events.14.t
+	desc = sacramental_events.14.d
+	picture = DECLARATION_INDEPENDENCE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = sacramental_group
+		any_neighbor_country = {
+			religion_group = constitutionalist_group
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.14.a #Of course they are sacramental
+		every_neighbor_country = {
+			limit = {
+				religion_group = embraced_constitutionalists_sacramentals
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = imprisoned_great_seer
+			}
+		}
+		
+	}
+	option = { 
+		name = sacramental_events.14.b #Not just heretics, but HEATHENS!
+		every_neighbor_country = {
+			limit = {
+				religion_group = constitutionalist_group
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = rebuked_constitutionalists_sacramentals
+			}
+		}
+		
+	}
+}
+
+country_event = { #Charity of the State **PULSE**
+	id = sacramental_events.15
+	title = sacramental_events.15.t
+	desc = sacramental_events.15.d
+	picture = BANKRUPTCY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = sacramental_group
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.15.a #We act according to Christ
+		add_years_of_income = -0.5
+		add_church_power = 50
+	}
+	option = { 
+		name = sacramental_events.15.b #It is not the correct way!
+		add_church_power = -25
+	}
+}
+
+country_event = { #Feasting Day **PULSE**
+	id = sacramental_events.16
+	title = sacramental_events.16.t
+	desc = sacramental_events.16.d
+	picture = FEAST_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = sacramental_group
+		is_month = 6
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.16.a #A glorious celebration!
+		add_church_power = 100
+	}
+}
+
+country_event = { #Science and the Scripture **PULSE**
+	id = sacramental_events.17
+	title = sacramental_events.17.t
+	desc = sacramental_events.17.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = sacramental_group
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.17.a #Science has its faults
+		add_country_modifier = {
+			name = "rejected_scientific_advancement_sacra"
+			duration = 3650
+		}
+	}
+	option = { 
+		name = sacramental_events.17.b #It is all within God's Plan
+		add_church_power = -25
+	}
+	option = { 
+		name = sacramental_events.17.c #Wait... Thats Heresy!
+		add_church_power = 25
+		change_innovativeness = -1
+		add_country_modifier = {
+			name = "rejected_scientific_advancement_sacra"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Light of Honesty **PULSE**
+	id = sacramental_events.18
+	title = sacramental_events.18.t
+	desc = sacramental_events.18.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = sacramental_group
+		corruption = 10
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.18.a #The sinful will be brought to justice!
+		add_corruption = -2
+	}
+}
+
+country_event = { #Pondering the Nature of Divinity **PULSE**
+	id = sacramental_events.19
+	title = sacramental_events.19.t
+	desc = sacramental_events.19.d
+	picture = ADVISOR_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = sacramental_group
+		has_advisor = philosopher
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.19.a #It is not a reincarnation, but instead an occupation.
+		add_ruler_modifier = {
+			name = "embraced_occupationist_view_sacra"
+			duration = -1
+		}
+	}
+	option = { 
+		name = sacramental_events.19.b #It is obviously a reincarnation.
+		add_ruler_modifier = {
+			name = "embraced_crists_reincarnation_sacra"
+			duration = -1
+		}
+	}
+	option = { 
+		name = sacramental_events.19.c #It is neither, it is the same Jesus each time.
+		add_ruler_modifier = {
+			name = "rejected_sacramental_doctrine_sacra"
+			duration = -1
+		}
+	}
+	option = { 
+		name = sacramental_events.19.e #You think too much
+		add_church_power = 25
+		remove_advisor = philosopher
+	}
+}
+
+country_event = { #Divine Right of Rule **PULSE**
+	id = sacramental_events.20
+	title = sacramental_events.20.t
+	desc = sacramental_events.20.d
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = sacramental_group
+		legitimacy_equivalent = 70
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.20.a #As is by right!
+		add_absolutism = 10
+	}
+}
+#########################ECCLESIAL EVENTS##########################
+
+country_event = { #Canadian Leadership Lost
+	id = sacramental_events.21
+	title = sacramental_events.21.t
+	desc = sacramental_events.21.d
+	picture = RELIGIOUS_WARS_eventPicture
+	
+	trigger = {
+		religion = dynastic
+		has_global_flag = defeat_of_ecclesial_canada
+		NOT = {
+			has_country_flag = defeat_of_canada_event
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_country_flag = defeat_of_canada_event
+	}
+	
+	option = { 
+		name = sacramental_events.21.a #Horror!
+		add_church_power = -200
+	}
+}
+
+country_event = { #Ecclesial Efficiency **PULSE**
+	id = sacramental_events.22
+	title = sacramental_events.22.t
+	desc = sacramental_events.22.d
+	picture = FEAST_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = dynastic
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.22.a #It is what makes us the best
+		add_country_modifier = {
+			name = "ecclesial_efficiency_ecc"
+			duration = 7300
+		}
+	}
+	option = { 
+		name = sacramental_events.22.b #It is what fills my coffers
+		add_years_of_income = 1
+	}
+}
+
+country_event = { #Denominations offended by artist **PULSE**
+	id = sacramental_events.23
+	title = sacramental_events.23.t
+	desc = sacramental_events.23.d
+	picture = PAINTER_ARTIST_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = dynastic
+		has_advisor = artist
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.23.a #They are too sensitive
+		add_church_power = -10
+	}
+	option = { 
+		name = sacramental_events.23.b #They will be reprimanded for this
+		add_prestige = -5
+		add_church_power = 10
+	}
+	option = { 
+		name = sacramental_events.23.c #They will be exiled for this
+		remove_advisor = artist
+		add_church_power = 25
+	}
+}
+
+country_event = { #The Scriptures and Testament of Peter **PULSE**
+	id = sacramental_events.24
+	title = sacramental_events.24.t
+	desc = sacramental_events.24.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = dynastic
+		NOT = {
+			has_country_modifier = peters_testament_embrace_ecc
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.24.a #It is of the same importance
+		add_church_power = 50
+		add_ruler_modifier = {
+			name = "peters_testament_embrace_ecc"
+			duration = -1
+		}
+	}
+	option = { 
+		name = sacramental_events.24.b #It is below the word of the divine
+		add_church_power = -5
+	}
+}
+
+country_event = { #Daughers of Peter
+	id = sacramental_events.25
+	title = sacramental_events.25.t
+	desc = sacramental_events.25.d
+	picture = wihgfx_FEMALES_eventPicture
+	
+	trigger = {
+		religion = dynastic
+		NOT = {
+			has_country_flag = daughters_of_peter_approached
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1000
+	}
+	
+	immediate = {
+		set_country_flag = daughters_of_peter_approached
+	}
+	
+	option = { 
+		name = sacramental_events.25.a #They are our divine equals
+		add_country_modifier = {
+			name = "daughters_of_peter_embraced"
+			duration = -1
+		}
+		add_church_power = -25
+	}
+	option = { 
+		name = sacramental_events.25.b #Of course not!
+		add_church_power = 50
+	}
+}
+
+country_event = { #Classis offer "Donation" **PULSE**
+	id = sacramental_events.26
+	title = sacramental_events.26.t
+	desc = sacramental_events.26.d
+	picture = CORRUPTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = dynastic
+		NOT = {
+			has_country_modifier = powerful_classis_angered_ecc
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.26.a #We reject such an offer!
+		add_church_power = 50
+		add_country_modifier = {
+			name = "powerful_classis_angered_ecc"
+			duration = 5475
+		}
+	}
+	option = { 
+		name = sacramental_events.26.b #Well, it is tempting
+		add_church_power = -50
+		add_years_of_income = 0.25
+	}
+}
+
+country_event = { #Classis revolts against Monarch **PULSE**
+	id = sacramental_events.27
+	title = sacramental_events.27.t
+	desc = sacramental_events.27.d
+	picture = ANGRY_MOB_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = dynastic
+		NOT = {
+			legitimacy_equivalent = 70 
+		}
+		any_owned_province = {
+			religion = dynastic
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.27.a #Crush them!
+		random_owned_province = {
+			limit = {
+				religion = dynastic
+			}
+			spawn_rebels = {
+				type = ecclesial_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+country_event = { #Petersons make a donation **PULSE**
+	id = sacramental_events.28
+	title = sacramental_events.28.t
+	desc = sacramental_events.28.d
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = dynastic
+		any_owned_province = {
+			superregion = canada_superregion
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.28.a #Thanks?
+		add_years_of_income = 0.5
+	}
+}
+
+country_event = { #Elder Council Causes Turmoil Amongst Petersons **PULSE**
+	id = sacramental_events.29
+	title = sacramental_events.29.t
+	desc = sacramental_events.29.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = dynastic
+		any_owned_province = {
+			superregion = canada_superregion
+		}
+		NOT = {
+			any_owned_province = {
+				has_province_modifier = petersons_dispute_ecc
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.29.a #Great, now its our problem.
+		custom_tooltip = canadaian_provinces_get_peterson_shit.tt
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					superregion = canada_superregion
+				}
+				add_province_modifier = {
+					name = "petersons_dispute_ecc"
+					duration = 5475
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Santific attempt to purify our monarch **PULSE**
+	id = sacramental_events.30
+	title = sacramental_events.30.t
+	desc = sacramental_events.30.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = dynastic
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.30.a #I accept their purification
+		add_ruler_modifier = {
+			name = "monarch_purified_ecc"
+			duration = -1
+		}
+	}
+	option = { 
+		name = sacramental_events.30.b #A Heretical and Strange Practice!
+		add_ruler_modifier = {
+			name = "rejected_santific_purification_ecc"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Santifics flock to our state to assist **PULSE**
+	id = sacramental_events.31
+	title = sacramental_events.31.t
+	desc = sacramental_events.31.d
+	picture = WOUNDED_SOLDIERS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = dynastic
+		is_at_war = yes
+		NOT = {
+			has_country_modifier = monarch_purified_ecc
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.31.a #I accept their purification
+		add_country_modifier = {
+			name = "arrival_of_the_santifics_war_ecc"
+			duration = 5475
+		}
+	}
+}
+
+country_event = { #Deans give praise to our ruler **PULSE**
+	id = sacramental_events.32
+	title = sacramental_events.32.t
+	desc = sacramental_events.32.d
+	picture = STREET_SPEECH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = dynastic
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.32.a #We appreciate their support
+		add_legitimacy = 10
+		add_horde_unity = 10
+		add_devotion = 10
+		add_meritocracy = 10
+		add_republican_tradition = 5
+		add_church_power = 25
+	}
+}
+
+country_event = { #Deans request our ruler visit them **PULSE**
+	id = sacramental_events.33
+	title = sacramental_events.33.t
+	desc = sacramental_events.33.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = dynastic
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.33.a #Of course!
+		add_legitimacy = 10
+		add_horde_unity = 10
+		add_devotion = 10
+		add_meritocracy = 10
+		add_republican_tradition = 5
+		add_church_power = -25
+	}
+	option = { 
+		name = sacramental_events.33.b #We will not play into their heretical worship!
+		add_church_power = 50
+	}
+}
+
+country_event = { #Calls for a Grand Synod **PULSE**
+	id = sacramental_events.34
+	title = sacramental_events.34.t
+	desc = sacramental_events.34.d
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = dynastic
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.34.a #It is not necesarry
+		add_country_modifier = {
+			name = "grand_synod_ecc"
+			duration = 9125
+		}
+	}
+	option = { 
+		name = sacramental_events.34.b #WE must consolidate the faith
+		add_country_modifier = {
+			name = "splintering_faith_ecc"
+			duration = 9125
+		}
+	}
+}
+
+country_event = { #Rise of the Fitts
+	id = sacramental_events.35
+	title = sacramental_events.35.t
+	desc = sacramental_events.35.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				religion = islam
+				any_owned_province = {
+					religion = dynastic
+				}
+			}
+			AND = {
+				religion = dynastic
+				any_owned_province = {
+					religion = islam
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1000
+		modifier = {
+			factor = 5.0
+			tag = W58
+		}
+	}
+	
+	option = { 
+		name = sacramental_events.35.a #Interesting
+		random_owned_province = {
+			limit = {
+				if = {
+					limit = {
+						religion = islam
+					}
+					religion = dynastic
+				}
+				else = {
+					religion = islam
+				}
+			}
+			add_country_modifier = {
+				name = "foundation_of_the_fitts_ecc"
+				duration = 9125
+			}
+		}
+		set_global_flag = rise_of_the_fitts
+	}
+}
+
+country_event = { #Rise of the Fitts (Everyonegets)
+	id = sacramental_events.36
+	title = sacramental_events.36.t
+	desc = sacramental_events.36.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		has_global_flag = rise_of_the_fitts
+		religion = dynastic
+		NOT = {
+			has_country_flag = gotten_fitts_notif
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 3
+	}
+	
+	immediate = {
+		set_country_flag = gotten_fitts_notif
+	}
+	
+	option = { 
+		name = sacramental_events.36.a #Interesting
+		custom_tooltip = fitts_description_ecc.tt
+	}
+}
+
+country_event = { #Fitts Flood into our State (Everyonegets)
+	id = sacramental_events.37
+	title = sacramental_events.37.t
+	desc = sacramental_events.37.d
+	picture = RELIGIOUS_WARS_eventPicture
+	
+	trigger = {
+		has_global_flag = rise_of_the_fitts
+		NOT = {
+			has_country_flag = fitts_flooded_into_state
+		}
+		NOT = {
+			has_country_flag = no_more_fitts_spread
+		}
+		religion = dynastic
+		any_neighbor_country = {
+			has_country_modifier = foundation_of_the_fitts_ecc
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	immediate = {
+		set_country_flag = fitts_flooded_into_state
+	}
+	
+	option = { 
+		name = sacramental_events.37.a #Interesting
+		custom_tooltip = fitts_description_ecc.tt
+		add_country_modifier = {
+			name = "fitts_flood_into_our_state_ecc"
+			duration = 9125
+		}
+	}
+}
+
+country_event = { #Denominations denounce fitts **PULSE**
+	id = sacramental_events.38
+	title = sacramental_events.38.t
+	desc = sacramental_events.38.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = rise_of_the_fitts
+		has_country_flag = fitts_flooded_into_state
+		religion = dynastic
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.38.a #They are completely heretical!
+		add_church_power = 50
+	}
+	option = { 
+		name = sacramental_events.38.b #They are a denomination like any other.
+		add_country_modifier = {
+			name = "fitts_protected_ecc"
+			duration = 9125
+		}
+	}
+}
+
+country_event = { #Fitts flee to colonies **PULSE**
+	id = sacramental_events.39
+	title = sacramental_events.39.t
+	desc = sacramental_events.39.d
+	picture = HARBOUR_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = rise_of_the_fitts
+		has_country_flag = fitts_flooded_into_state
+		religion = dynastic
+		num_of_colonies = 1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.39.a #Encourage them to leave
+		random_owned_province = {
+			limit = {
+				is_colony = yes
+			}
+			add_colonysize = 500
+		}
+		add_country_modifier = {
+			name = "encouraging_fitts_exile_ecc"
+			duration = 9125
+		}
+	}
+	option = { 
+		name = sacramental_events.39.b #Let them move as they wish
+		random_owned_province = {
+			limit = {
+				is_colony = yes
+			}
+			add_colonysize = 200
+		}
+	}
+}
+
+country_event = { #Denominations formed in colony **PULSE**
+	id = sacramental_events.40
+	title = sacramental_events.40.t
+	desc = sacramental_events.40.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = dynastic
+		any_subject_country = {
+			is_colonial_nation = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.40.a #Supress this spread
+		random_subject_country = {
+			limit = {
+				is_colonial_nation = yes
+			}
+			add_country_modifier = {
+				name = "supress_colonial_denominations_ecc"
+				duration = 3650
+			}
+		}
+		add_church_power = 25
+	}
+	option = { 
+		name = sacramental_events.40.b #Allow it to flourish
+		add_church_power = -25
+	}
+}
+
+#########################OGDONIAN EVENTS##########################
+
+country_event = { #Council Falls to Foreign Power
+	id = sacramental_events.41
+	title = sacramental_events.41.t
+	desc = sacramental_events.41.d
+	picture = REVOLUTION_eventPicture
+	
+	trigger = {
+		religion = sacramental
+		any_known_country = {
+			owns_core_province = 709
+			NOT = {
+				religion = sacramental 
+			}
+		}
+		NOT = {
+			has_country_flag = warned_about_council_flee
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_country_flag = warned_about_council_flee_ogd
+		set_global_flag = council_in_exile_ogd
+	}
+	
+	option = { 
+		name = sacramental_events.41.a #This is grave news
+		add_stability = -1
+		custom_tooltip = council_forced_to_flee.tt
+	}
+}
+
+country_event = { #Council Requests our assitance
+	id = sacramental_events.42
+	title = sacramental_events.42.t
+	desc = sacramental_events.42.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	
+	trigger = {
+		religion = sacramental
+		NOT = {
+			has_global_flag = council_given_temporary_place_to_live
+		}
+		has_global_flag = council_in_exile_ogd
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = { 
+		name = sacramental_events.42.a #We shall accept them with grace!
+		capital_scope = {
+			add_province_modifier = {
+				name = "host_of_ogden_council_ogd"
+				duration = -1
+			}
+		}
+		set_global_flag = council_given_temporary_place_to_live
+		set_country_flag = hosting_council_of_ogden 
+	}
+	option = { 
+		name = sacramental_events.42.b #Not our nation!
+		add_church_power = 100
+		add_prestige = -25
+	}
+}
+
+country_event = { #Council Returns to Ogdon
+	id = sacramental_events.43
+	title = sacramental_events.43.t
+	desc = sacramental_events.43.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		religion = sacramental
+		has_global_flag = council_given_temporary_place_to_live
+		has_global_flag = council_in_exile_ogd
+		has_country_flag = hosting_council_of_ogden
+		any_known_country = {
+			owns_core_province = 709
+			religion = sacramental 
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = { 
+		name = sacramental_events.43.a #Finally!
+		capital_scope = {
+			remove_province_modifier = host_of_ogden_council_ogd
+		}
+		clr_country_flag = hosting_council_of_ogden
+		clr_global_flag = council_given_temporary_place_to_live
+		clr_global_flag = council_in_exile_ogd
+		every_country = {
+			limit = {
+				has_country_flag = warned_about_council_flee
+			}
+			clr_country_flag = warned_about_council_flee
+		}
+	}
+}
+
+country_event = { #Council Embroiled in Debate **PULSE**
+	id = sacramental_events.44
+	title = sacramental_events.44.t
+	desc = sacramental_events.44.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = sacramental
+		NOT = {
+			has_country_modifier = debated_in_the_council_ogd
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.44.a #Take part in the discourse
+		add_church_power = 25
+		add_country_modifier = {
+			name = "debated_in_the_council_ogd"
+			duration = 3650
+		}
+	}
+	option = { 
+		name = sacramental_events.44.b #Allow it to flourish
+		add_church_power = -10
+	}
+}
+
+country_event = { #Ogdon sends missionaries **PULSE**
+	id = sacramental_events.45
+	title = sacramental_events.45.t
+	desc = sacramental_events.45.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = sacramental
+		NOT = {
+			religious_unity = 0.7
+		}
+		NOT = {
+			has_country_modifier = council_sends_over_missionaries_ogd
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.44.a #We are gracious for their support!
+		add_country_modifier = {
+			name = "council_sends_over_missionaries_ogd"
+			duration = 9125
+		}
+	}
+}
+
+country_event = { #Ogdon sends volunteers **PULSE**
+	id = sacramental_events.46
+	title = sacramental_events.46.t
+	desc = sacramental_events.46.d
+	picture = MILITARY_CAMP_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = sacramental
+		NOT = {
+			manpower_percentage = 0.5
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.46.a #We are gracious for their support!
+		add_yearly_manpower = 0.5
+	}
+}
+
+country_event = { #Funding the monestaries **PULSE**
+	id = sacramental_events.47
+	title = sacramental_events.47.t
+	desc = sacramental_events.47.d
+	picture = GREAT_BUILDING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = sacramental
+		NOT = {
+			manpower_percentage = 0.5
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.47.a #They are central to the faith! 
+		add_church_power = 50
+		add_years_of_income = -0.25
+	}
+	option = { 
+		name = sacramental_events.47.b #Expensive
+		add_church_power = -10
+	}
+}
+
+country_event = { #Gaining influence in the Council **PULSE**
+	id = sacramental_events.48
+	title = sacramental_events.48.t
+	desc = sacramental_events.48.d
+	picture = CORRUPTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = sacramental
+		NOT = {
+			manpower_percentage = 0.5
+		}
+		NOT = {
+			has_country_modifier = medeling_in_the_council_ogd
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.48.a #Perhaps...
+		add_country_modifier = {
+			name = "medeling_in_the_council_ogd"
+			duration = -1
+		}
+		add_corruption = 2
+	}
+	option = { 
+		name = sacramental_events.48.b #It is immoral!
+		add_prestige = 20
+	}
+}
+
+country_event = { #Influenced Council Vote **PULSE**
+	id = sacramental_events.49
+	title = sacramental_events.49.t
+	desc = sacramental_events.49.d
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = sacramental
+		has_countrY_modifier = medeling_in_the_council
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.49.a #All According to Plan!
+		add_corruption = 1
+		add_church_power = 100
+	}
+}
+
+country_event = { #Fraudulent plot discovered! **PULSE**
+	id = sacramental_events.50
+	title = sacramental_events.50.t
+	desc = sacramental_events.50.d
+	picture = ACCUSATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = sacramental
+		has_countrY_modifier = medeling_in_the_council
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.50.a #Damn!
+		add_stability = -1
+		add_corruption = 2
+	}
+}
+
+country_event = { #Ogdonian Enguinity **PULSE**
+	id = sacramental_events.51
+	title = sacramental_events.51.t
+	desc = sacramental_events.51.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = sacramental
+		NOT = {
+			has_country_modifier = ogdonian_enguinity_odg
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.51.a #Damn!
+		add_country_modifier = {
+			name = "ogdonian_enguinity_odg"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Profits of the Sinful drink **PULSE**
+	id = sacramental_events.52
+	title = sacramental_events.52.t
+	desc = sacramental_events.52.d
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = sacramental
+		any_owned_province = {
+			trade_goods = wine
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.52.a #Sell it to the heretics!
+		add_years_of_income = 0.25
+	}
+	option = { 
+		name = sacramental_events.52.b #Reinvest it in improving our harvest.
+		random_owned_province = {
+			limit = {
+				trade_goods = wine
+			}	
+			add_base_production = 1
+		}
+	}
+}
+
+country_event = { #Excess Individualism **PULSE**
+	id = sacramental_events.53
+	title = sacramental_events.53.t
+	desc = sacramental_events.53.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = sacramental
+		current_age = age_of_absolutism
+		NOT = {
+			has_country_modifier = supressed_invididualism_ogd
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.53.a #This is not our way
+		add_church_power = 50
+		add_country_modifier = {
+			name = "supressed_invididualism_ogd"
+			duration = 3650
+		}
+	}
+	option = { 
+		name = sacramental_events.53.b #It is the right direction for our faith
+		add_church_power = -10
+	}
+}
+
+country_event = { #Elders of Mormon visit our nation
+	id = sacramental_events.54
+	title = sacramental_events.54.t
+	desc = sacramental_events.54.d
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		religion = sacramental
+	}
+	
+	mean_time_to_happen = {
+		months = 4800
+	}
+	
+	option = { 
+		name = sacramental_events.54.a #Accept their wisdom
+		change_adm = 1
+	}
+	option = { 
+		name = sacramental_events.54.b #Reject their message
+		add_church_power = 100
+	}
+}
+
+country_event = { #Spreading the Ogdonian Bible **PULSE**
+	id = sacramental_events.55
+	title = sacramental_events.55.t
+	desc = sacramental_events.55.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = sacramental
+		current_institution = printing_press
+		any_owned_province = {
+			NOT = {
+				printing_press = 100
+			}
+		}
+		NOT = {
+			has_country_modifier = stopped_ogdonian_bible_spread_ogd
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.55.a #Restrict Its Spread!
+		add_country_modifier = {
+			name = "stopped_ogdonian_bible_spread_ogd"
+			duration = 3650
+		}
+		add_church_power = 50
+	}
+	option = { 
+		name = sacramental_events.55.b #Let the word spead!
+		random_owned_province = {
+			limit = {
+				NOT = {
+					printing_press = 100
+				}
+			}
+			add_institution_embracement = {
+				which = printing_press
+				value = 25
+			}
+		}
+		add_church_power = -25
+	}
+}
+
+country_event = { #The Question of Universal Priesthood
+	id = sacramental_events.56
+	title = sacramental_events.56.t
+	desc = sacramental_events.56.d
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		religion = sacramental
+		current_age = age_of_reformation
+		NOT = {
+			has_country_flag = universal_priesthood_question_ogd
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1000
+	}
+	
+	immediate = {
+		set_country_flag = universal_priesthood_question_ogd
+	}
+	
+	option = { 
+		name = sacramental_events.56.a #It was Jesus's Desire
+		add_country_modifier = {
+			name = "universal_priesthood_ogd"
+			duration = -1
+		}
+	}
+	option = { 
+		name = sacramental_events.56.b #It contradicts the scriptures!
+		add_church_power = 100
+	}
+}
+
+country_event = { #Performing the Ordinences **PULSE**
+	id = sacramental_events.57
+	title = sacramental_events.57.t
+	desc = sacramental_events.57.d
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = sacramental
+		NOT = {
+			has_ruler_modifier = performed_ordinences_ogd
+			has_ruler_modifier = rejected_ordinence_teachings_ogd
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.57.a #Useless Postering
+		add_ruler_modifier = {
+			name = "performed_ordinences_ogd"
+			duration = -1
+		}
+	}
+	option = { 
+		name = sacramental_events.57.b #It is what the people expect.
+		add_ruler_modifier = {
+			name = "rejected_ordinence_teachings_ogd"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Collapse of the Ogdonian Faith
+	id = sacramental_events.58
+	title = sacramental_events.58.t
+	desc = sacramental_events.58.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		religion = sacramental
+		NOT = {
+			calc_true_if = {
+				all_province = {
+					religion = sacramental
+				}
+				amount = 75
+			}
+		}
+		any_known_country = {
+			owns_core_province = 709
+			NOT = {
+				religion = sacramental
+			}
+		}
+		NOT = {
+			has_country_flag = sacramental_collapse_propositioned
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 3
+	}
+	
+	immediate = {
+		set_country_flag = sacramental_collapse_propositioned
+		set_global_flag = ogdonian_collapse
+	}
+	
+	option = { 
+		name = sacramental_events.58.a #We must stay with the faith!
+		add_stability = -1
+		add_country_modifier = {
+			name = "universal_priesthood_ogd"
+			duration = -1
+		}
+	}
+	option = { 
+		name = sacramental_events.58.b #We move to the theanite persuasion
+		trigger = {
+			any_neighbor_country = {
+				religion = theanite
+			}
+		}
+		change_religion = theanite
+		add_country_modifier = {
+			name = "converted_faith_ogd"
+			duration = 9125
+		}
+		capital_scope = {
+			change_religion = theanite
+		}
+		random_owned_province = {
+			limit = {
+				NOT = {
+					religion = theanite
+				}
+			}
+			change_religion = theanite
+		}
+	}
+	option = { 
+		name = sacramental_events.58.c #We move to the ecclesial persuasion
+		trigger = {
+			any_neighbor_country = {
+				religion = dynastic
+			}
+		}
+		change_religion = dynastic
+		add_country_modifier = {
+			name = "converted_faith_ogd"
+			duration = 9125
+		}
+		capital_scope = {
+			change_religion = dynastic
+		}
+		random_owned_province = {
+			limit = {
+				NOT = {
+					religion = dynastic
+				}
+			}
+			change_religion = dynastic
+		}
+	}
+	option = { 
+		name = sacramental_events.58.e #We move to the partisan persuasion
+		trigger = {
+			any_neighbor_country = {
+				religion = partisan
+			}
+		}
+		change_religion = partisan
+		add_country_modifier = {
+			name = "converted_faith_ogd"
+			duration = 9125
+		}
+		capital_scope = {
+			change_religion = partisan
+		}
+		random_owned_province = {
+			limit = {
+				NOT = {
+					religion = partisan
+				}
+			}
+			change_religion = partisan
+		}
+	}
+	option = { 
+		name = sacramental_events.58.f #We move to the anarchist persuasion
+		trigger = {
+			any_neighbor_country = {
+				religion = anarchist
+			}
+		}
+		change_religion = anarchist
+		add_country_modifier = {
+			name = "converted_faith_ogd"
+			duration = 9125
+		}
+		capital_scope = {
+			change_religion = anarchist
+		}
+		random_owned_province = {
+			limit = {
+				NOT = {
+					religion = anarchist
+				}
+			}
+			change_religion = anarchist
+		}
+	}
+	option = { 
+		name = sacramental_events.58.g #We move to the despotic persuasion
+		trigger = {
+			any_neighbor_country = {
+				religion = despotic
+			}
+		}
+		change_religion = anarchist
+		add_country_modifier = {
+			name = "converted_faith_ogd"
+			duration = 9125
+		}
+		capital_scope = {
+			change_religion = despotic
+		}
+		random_owned_province = {
+			limit = {
+				NOT = {
+					religion = despotic
+				}
+			}
+			change_religion = despotic
+		}
+	}
+}
+
+country_event = { #Ogdonian Resurgence
+	id = sacramental_events.59
+	title = sacramental_events.59.t
+	desc = sacramental_events.59.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		religion = sacramental
+		has_global_flag = ogdonian_collapse
+		calc_true_if = {
+			any_province = {
+				religion = sacramental
+			}
+			amount = 75
+		}
+		NOT = {
+			has_country_flag = ogdonian_flag_resurgence_ogd
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_country_flag = ogdonian_flag_resurgence_ogd
+	}
+	
+	option = { 
+		name = sacramental_events.59.a #We have endured!
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 100
+		}
+		else = {
+			add_stability = 1
+		}
+	}
+}
+
+country_event = { #The Earthly Kingdom
+	id = sacramental_events.60
+	title = sacramental_events.60.t
+	desc = sacramental_events.60.d
+	picture = PRAYING_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		religion = sacramental
+		NOT = {
+			great_power_rank = 2
+		}
+		owns_core_province = 709
+		owns_core_province = 706
+		development_in_provinces = {
+			religion = sacramental
+			value = 1000
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.60.a #Above all others
+		add_country_modifier = {
+			name = "earthly_kingdom_ogd"
+			duration = -1
+		}
+		add_church_power = 200
+		override_country_name = EARTHLY_KINGDOM_OGDONIAN
+	}
+	option = { 
+		name = sacramental_events.60.b #We are unique above all others
+		add_country_modifier = {
+			name = "earthly_kingdom_ogd"
+			duration = -1
+		}
+		add_church_power = 200
+	}
+}
+
+#########################THEANITE EVENTS##########################
+
+country_event = { #Commune with mother earth **PULSE**
+	id = sacramental_events.61
+	title = sacramental_events.61.t
+	desc = sacramental_events.61.d
+	picture = COLONIZATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = theanite
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.61.a #We need her guidance
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 100
+		}
+		else = {
+			add_stability = 1
+		}
+		add_church_power = -50
+	}
+	option = { 
+		name = sacramental_events.61.b #Best not to disturb her
+		add_church_power = 50
+	}
+}
+
+country_event = { #Detoxifying the masses **PULSE**
+	id = sacramental_events.62
+	title = sacramental_events.62.t
+	desc = sacramental_events.62.d
+	picture = WOUNDED_SOLDIERS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = theanite
+		NOT = {
+			has_country_modifier = missionaries_detoxifying_ogd
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.62.a #We must royal channel positive energy!
+		add_adm_power = -100	
+	}
+	option = { 
+		name = sacramental_events.62.b #Send out the missionaries to detoxify
+		add_country_modifier = {
+			name = "missionaries_detoxifying_thea"
+			duration = 3650
+		}
+	}
+	option = { 
+		name = sacramental_events.62.c #They must purify themselves
+		add_country_modifier = {
+			name = "toxic_masses_thea"
+			duration = 5475
+		}
+	}
+}
+
+country_event = { #Negative energy from alliance **PULSE**
+	id = sacramental_events.63
+	title = sacramental_events.63.t
+	desc = sacramental_events.63.d
+	picture = OVEREXTENSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = theanite
+		num_of_allies = 1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.63.a #We must royal channel positive energy!
+		random_ally = {
+			add_opinion = {
+				who = ROOT
+				modifier = negative_energy_from_alliance
+			}
+		}
+	}
+}
+
+country_event = { #Crystal Shortage **PULSE**
+	id = sacramental_events.64
+	title = sacramental_events.64.t
+	desc = sacramental_events.64.d
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = theanite
+		NOT = {
+			any_owned_province = {
+				trade_goods = gems
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.64.a #We must import them
+		add_years_of_income = -0.1
+		add_church_power = 50
+	}
+	option = { 
+		name = sacramental_events.64.b #Search for some!
+		random_list = {
+			50 = {
+				random_owned_province = {
+					change_trade_goods = gems
+				}
+			}
+			50 = {
+				add_country_modifier = {
+					name = "gem_shortage_thea"
+					duration = 5475
+				}
+				add_church_power = -50
+			}
+		}
+	}
+	option = { 
+		name = sacramental_events.64.c #We will go without them
+		add_country_modifier = {
+			name = "gem_shortage_thea"
+			duration = 5475
+		}
+	}
+}
+
+country_event = { #Nightmare Spirit Journey **PULSE**
+	id = sacramental_events.65
+	title = sacramental_events.65.t
+	desc = sacramental_events.65.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = theanite
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.65.a #Horror!
+		add_legitimacy = -10
+		add_horde_unity = -10
+		add_devotion = -10
+		add_meritocracy = -10
+		add_republican_tradition = -5
+	}
+}
+
+country_event = { #Positive Spirit Journey **PULSE**
+	id = sacramental_events.66
+	title = sacramental_events.66.t
+	desc = sacramental_events.66.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = theanite
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.66.a #We are enlightened!
+		add_legitimacy = 10
+		add_horde_unity = 10
+		add_devotion = 10
+		add_meritocracy = 10
+		add_republican_tradition = 5
+	}
+}
+
+country_event = { #A battle of energies **PULSE**
+	id = sacramental_events.67
+	title = sacramental_events.67.t
+	desc = sacramental_events.67.d
+	picture = BATTLE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = theanite
+		is_at_war = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.67.a #Call upon all seers to channel!
+		trigger = {
+			num_of_missionaries = 2
+		}
+		add_country_modifier = {
+			name = "missionaries_defeating_enemy_channelers_thea"
+			duration = 5475
+		}
+	}
+	option = { 
+		name = sacramental_events.67.b #We must divide and conquer!
+		trigger = {
+			num_of_missionaries = 1
+		}
+		add_country_modifier = {
+			name = "missionaries_defeating_enemy_channelers_minor_thea"
+			duration = 5475
+		}
+	}
+	option = { 
+		name = sacramental_events.67.c #Our practices should not be used for war!
+		add_church_power = 10
+	}
+}
+
+country_event = { #Age of Wonders, not miracles
+	id = sacramental_events.68
+	title = sacramental_events.68.t
+	desc = sacramental_events.68.d
+	picture = UNIVERSITY_eventPicture
+	
+	trigger = {
+		religion = theanite
+		NOT = {
+			has_country_flag = warned_about_age_of_wonders_thea
+		}
+		current_age = age_of_revolutions
+	}
+	
+	mean_time_to_happen = {
+		months = 4
+	}
+	
+	immediate = {
+		set_country_flag = warned_about_age_of_wonders_thea
+	}
+	
+	option = { 
+		name = sacramental_events.68.a #We will endure
+		add_prestige = -5
+		add_country_modifier = {
+			name = "age_of_wonders_thea"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Scientific Theanism
+	id = sacramental_events.69
+	title = sacramental_events.69.t
+	desc = sacramental_events.69.d
+	picture = SCIENTISTS_eventPicture
+	
+	trigger = {
+		religion = theanite
+		has_country_modifier = age_of_wonders_thea
+		NOT = {
+			has_country_flag = proposed_scientific_theanism
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+	}
+	
+	immediate = {
+		set_country_flag = proposed_scientific_theanism
+	}
+	
+	option = { 
+		name = sacramental_events.69.a #This is a new path forward
+		remove_country_modifier = age_of_wonders_thea
+		add_country_modifier = {
+			name = "scientific_theanism_thea"
+			duration = -1
+		}
+		add_stability = -1
+	}
+	option = { 
+		name = sacramental_events.69.b #We must stay with nature
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 100
+		}
+		else = {
+			add_stability = 1
+		}
+	}
+}
+
+country_event = { #Updating heavenly worship **PULSE**
+	id = sacramental_events.70
+	title = sacramental_events.70.t
+	desc = sacramental_events.70.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = theanite
+		has_country_modifier = scientific_theanism_thea
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.70.a #They must be made aware
+		add_innovativeness_big_effect = yes
+		add_church_power = -25
+	}
+	option = { 
+		name = sacramental_events.70.b #They are free to practice
+		add_church_power = 50
+	}
+}
+
+country_event = { #Traditionalist Backlash **PULSE**
+	id = sacramental_events.71
+	title = sacramental_events.71.t
+	desc = sacramental_events.71.d
+	picture = REVOLUTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = theanite
+		has_country_modifier = scientific_theanism_thea
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.71.a #Horror!
+		random_owned_province = {
+			limit = {
+				religion = theanite
+			}
+			spawn_rebels = {
+				type = theanite_rebels
+				size = 3
+			}
+		}
+	}
+}
+
+country_event = { #Hardline Sacramentalists **PULSE**
+	id = sacramental_events.72
+	title = sacramental_events.72.t
+	desc = sacramental_events.72.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = theanite
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.72.a #Let them practice as they wish
+		add_country_modifier = {
+			name = "letting_sacramentalists_practice_thea"
+			duration = 3650
+		}
+		add_church_power = -25
+	}
+	option = { 
+		name = sacramental_events.72.b #We must correct their negative energy
+		add_country_modifier = {
+			name = "preventing_sacramentalists_from_practicing_thea"
+			duration = 3650
+		}
+		add_church_power = 25
+	}
+	option = { 
+		name = sacramental_events.72.c #They must be supressed!
+		random_owned_province = {
+			limit = {
+				religion = theanite
+			}
+			spawn_rebels = {
+				type = ogdonian_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+country_event = { #Maintaining her Garden **PULSE**
+	id = sacramental_events.73
+	title = sacramental_events.73.t
+	desc = sacramental_events.73.d
+	picture = COLONIZATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = theanite
+		any_owned_province = {
+			NOT = {
+				development = 5
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					NOT = {
+						development = 5
+					}
+				}
+				set_province_flag = maintaing_her_garden_thea
+			}
+		}
+	}
+	
+	option = { 
+		name = sacramental_events.73.a #Ensure it is protected
+		add_church_power = 200
+		random_owned_province = {
+			limit = {
+				has_province_flag = maintaing_her_garden_thea
+			}
+			add_province_modifier = {
+				name = "protected_land_theanite"
+				duration = 18250
+			}
+			clr_province_flag = maintaing_her_garden_thea
+		}
+	}
+	option = { 
+		name = sacramental_events.73.b #Populate the area
+		random_owned_province = {
+			limit = {
+				has_province_flag = maintaing_her_garden_thea
+			}
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+			clr_province_flag = maintaing_her_garden_thea
+		}
+	}
+}
+
+country_event = { #Accusations of Greed **PULSE**
+	id = sacramental_events.74
+	title = sacramental_events.74.t
+	desc = sacramental_events.74.d
+	picture = BANKRUPTCY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = theanite
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.74.a #Me? Of course not!
+		add_church_power = 25
+	}
+	option = { 
+		name = sacramental_events.74.b #Tax whoever said that
+		add_years_of_income = 0.25
+	}
+}
+
+country_event = { #Opening our third eye **PULSE**
+	id = sacramental_events.75
+	title = sacramental_events.75.t
+	desc = sacramental_events.75.d
+	picture = COMET_SIGHTED_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = theanite
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.75.a #We will undergo the process
+		add_adm_power = -50
+		custom_tooltip = third_eye_ceremony_description.tt
+		hidden_effect = {
+			set_ruler_flag = preparing_third_eye_ceremony
+			country_event = {
+				id = sacramental_events.76
+				days = 365	
+			}
+		}
+	}
+	option = { 
+		name = sacramental_events.75.b #Nonsense!
+		add_church_power = 25
+	}
+}
+
+country_event = { #Preparing the Ceremony
+	id = sacramental_events.76
+	title = sacramental_events.76.t
+	desc = sacramental_events.76.d
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = theanite
+		has_ruler_flag = preparing_third_eye_ceremony
+	}
+	
+	option = { 
+		name = sacramental_events.76.a #We must ensure sucess
+		add_years_of_income = -1
+		add_dip_power = -50
+		country_event = {
+			id = sacramental_events.77
+		}
+	}
+	option = { 
+		name = sacramental_events.76.b #Maybe some corners can be cut
+		add_years_of_income = -0.5
+		random_list = {
+			75 = {
+				country_event = {
+					id = sacramental_events.77
+				}
+			}
+			25 = {
+				country_event = {
+					id = sacramental_events.78
+				}
+			}
+		}
+	}
+	option = { 
+		name = sacramental_events.76.c #The Heavenly mother will protect us
+		random_list = {
+			50 = {
+				country_event = {
+					id = sacramental_events.77
+				}
+			}
+			50 = {
+				country_event = {
+					id = sacramental_events.78
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Third Eye Sucess
+	id = sacramental_events.77
+	title = sacramental_events.77.t
+	desc = sacramental_events.77.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = theanite
+		has_ruler_flag = preparing_third_eye_ceremony
+	}
+	
+	option = { 
+		name = sacramental_events.77.a #Enlightenment
+		change_adm = 1
+	}
+}
+
+country_event = { #Third Eye Failure
+	id = sacramental_events.78
+	title = sacramental_events.78.t
+	desc = sacramental_events.78.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = theanite
+		has_ruler_flag = preparing_third_eye_ceremony
+	}
+	
+	option = { 
+		name = sacramental_events.78.a #Forever Changed
+		change_adm = -1
+	}
+}
+
+country_event = { #Psychic Procession **PULSE**
+	id = sacramental_events.79
+	title = sacramental_events.79.t
+	desc = sacramental_events.79.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = theanite
+		NOT = {
+			religious_unity = 0.7
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.79.a #A worthwhile investment
+		add_church_power = -25
+		add_country_modifier = {
+			name = "psychic_procession_thea"
+			duration = 5475
+		}
+	}
+	option = { 
+		name = sacramental_events.79.b #Unecessary
+		add_church_power = 25
+	}
+}
+
+country_event = { #Horoscope Prediction **PULSE**
+	id = sacramental_events.80
+	title = sacramental_events.80.t
+	desc = sacramental_events.80.d
+	picture = COMET_SIGHTED_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = theanite
+		is_at_war = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = sacramental_events.80.a #Perfect
+		add_country_modifier = {
+			name = "horoscope_predicts_sucess_thea"
+			duration = 5475
+		}
+	}
+}
+

@@ -1,0 +1,17 @@
+#697 - Datong
+latent_trade_goods = {
+	coal
+}
+discovered_by = andean
+culture = beijingese
+religion = idolatrous
+capital = "Datong"
+trade_goods = unknown
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = no
+native_size = 2
+native_ferocity = 8
+native_hostileness = 4

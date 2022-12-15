@@ -1,0 +1,20 @@
+bookmark = {
+	name = "SOUTHERNFRONTIER"
+	desc = "SOUTHERNFRONTIER_DESC"
+	date = 1444.11.11
+	
+	center = 825
+	default = no
+	
+	country = V51
+	country = V98
+	country = V42
+	country = V75
+	country = V93
+	country = V80
+	country = V95
+	
+	easy_country = V51
+	easy_country = V98
+
+}

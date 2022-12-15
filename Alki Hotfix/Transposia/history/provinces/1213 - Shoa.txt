@@ -1,0 +1,15 @@
+#1213 - Shoa
+discovered_by = mesoamerican
+culture = neoethiopian 
+religion = shamanist
+capital = "Badeqe"
+is_city = no
+base_manpower = 1
+trade_goods = unknown
+hre = no
+fort_15th = yes
+base_tax = 1
+base_production = 1
+native_size = 40
+native_ferocity = 4
+native_hostileness = 9

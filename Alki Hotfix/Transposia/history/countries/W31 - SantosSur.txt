@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = pazian
+religion = partisan
+technology_group = western
+capital = 2415	 #Todos Santos
+
+
+1422.12.25 = {
+	monarch = {
+		name = "Alejandro III"
+		dynasty = "Del Cabos"
+		birth_date = 1422.12.25
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1438.12.12 = {
+	heir = {
+		name = "Fernando"
+		monarch_name = "Fernando"
+		dynasty = "Del Cabos"
+		birth_date = 1438.12.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}

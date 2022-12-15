@@ -1,0 +1,17 @@
+# 2122 - Hami
+discovered_by = eastern
+discovered_by = western
+owner = Y00
+controller = Y00
+add_core = Y00
+culture = old_metis
+religion = sacramental
+capital = "Hami"
+trade_goods = grain #big grain wheat
+hre = no
+base_tax = 3 
+base_production = 4
+base_manpower = 4
+is_city = yes
+fort_15th = yes
+center_of_trade = 2

@@ -1,0 +1,15 @@
+# No previous file for Mahmikiwiniyak
+discovered_by = eastern
+discovered_by = western
+owner = W02
+controller = W02
+add_core = W02
+culture = saulteaux
+religion = sacramental
+capital = "Mahmikiwiniyak"
+trade_goods = naval_supplies #big timber industry
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

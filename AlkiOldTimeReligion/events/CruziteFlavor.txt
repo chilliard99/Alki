@@ -1,0 +1,578 @@
+namespace = cruzite_events
+####################CRUZITE##########################
+country_event = { #The Wandering Heretic
+	id = cruzite_events.1
+	title = cruzite_events.1.t
+	desc = cruzite_events.1.d
+	picture = REFORM_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = {
+			current_age = age_of_discovery
+		}
+		if = {
+			limit = {
+				exists = W83
+			}
+			tag = W83
+		}
+		else = {
+			owns_core_province = 2998
+		}
+		
+		NOT = {
+			reform_desire = 1.5
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = {
+		name = cruzite_events.1.a #Troubling
+	 	add_prestige = -5
+		set_global_flag = the_wandering_heretic_exists_cruzite
+	}
+}
+
+
+country_event = { #Mendoza the Saint
+	id = cruzite_events.2
+	title = cruzite_events.2.t
+	desc = cruzite_events.2.d
+	picture = REFORM_eventPicture
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		has_global_flag = the_wandering_heretic_exists_cruzite
+		any_owned_province = {
+			region = empresia_region
+			can_have_center_of_reformation_trigger = {
+				RELIGION = cruzite
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	immediate = {
+		random_owned_province = {
+			limit = {
+				region = empresia_region
+				can_have_center_of_reformation_trigger = {
+					RELIGION = cruzite
+				}
+			}
+			save_global_event_target_as = place_where_mendoza_is
+		}
+	}
+
+	option = {
+		name = cruzite_events.2.a #Horror!
+		enable_religion = cruzite
+		event_target:place_where_mendoza_is = {
+			change_religion = cruzite
+			add_reform_center = cruzite
+			add_permanent_province_modifier = {
+				name = "religious_zeal_at_conv"
+				duration = 9000
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						exists = W83
+					}
+					country_event = { 
+						id = cruzite_events.4
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Death of Mendoza
+	id = cruzite_events.3
+	title = cruzite_events.3.t
+	desc = cruzite_events.3.d
+	picture = DEATH_OF_HEIR_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		has_global_flag = the_wandering_heretic_exists_cruzite
+		any_owned_province = {
+			province_id = event_target:place_where_mendoza_is
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 48
+	}
+
+	option = {
+		name = cruzite_events.3.a #A Tragedy
+		set_global_flag = death_of_mendoza
+		event_target:place_where_mendoza_is = {
+			if = {
+				limit = {
+					religion = catholico
+				}
+				add_province_modifier = {
+					name = "death_of_mendoza_bad_cruzite"
+					duration = 3650
+				}
+			}
+			else = {
+				add_province_modifier = {
+					name = "death_of_mendoza_good_cruzite"
+					duration = 3650
+				}
+			}
+		}
+	}
+}
+
+country_event = { #The Cruzite Heresy
+	id = cruzite_events.4
+	title = cruzite_events.4.t
+	desc = cruzite_events.4.d
+	picture = RELIGIOUS_WARS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+
+	option = {
+		name = cruzite_events.4.a #We Must Stop Their Message!
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = completed_sure_compass_otrep
+				}
+			}
+			add_reform_desire = -0.1
+		}
+	}
+}
+
+country_event = { #Modified Scriptures ***PULSE***
+	id = cruzite_events.5
+	title = cruzite_events.5.t
+	desc = cruzite_events.5.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = cruzite
+		has_church_aspect = solo_por_las_escrituras_cruz
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cruzite_events.5.a #Restrict its spread!
+		add_church_power = -20
+		add_country_modifier = {
+			name = "crushing_scripture_spread"
+			duration = 3650
+		}
+	}
+	option = {
+		name = cruzite_events.5.b #Denounce its contents
+	 	add_church_power = -50
+	}
+	option = {
+		name = cruzite_events.5.c #Let it go
+	 	add_country_modifier = {
+			name = "false_scriptures_cruz"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Decline of Buckary ***PULSE***
+	id = cruzite_events.6
+	title = cruzite_events.6.t
+	desc = cruzite_events.6.d
+	picture = TOURNAMENT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = cruzite
+		has_church_aspect = buckary_cruz
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cruzite_events.6.a #It will return once again
+		add_country_modifier = {
+			name = "declined_buckary_cruz"
+			duration = 1825
+		}
+	}
+	option = {
+		name = cruzite_events.6.b #Enforce it
+	 	add_church_power = -50
+	}
+}
+
+country_event = { #Draining Funds ***PULSE***
+	id = cruzite_events.7
+	title = cruzite_events.7.t
+	desc = cruzite_events.7.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = cruzite
+		has_church_aspect = no_hay_tributacion_cruz
+		num_of_loans = 1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cruzite_events.7.a #Just a small tax
+		add_years_of_income = 1
+		add_country_modifier = {
+			name = "new_tax_measures_cruz"
+			duration = 1825
+		}
+	}
+	option = {
+		name = cruzite_events.7.b #Take it from the churches
+		add_years_of_income = 0.5
+		add_church_power = -25
+	}
+	option = {
+		name = cruzite_events.7.c #We do not need the money
+		add_prestige = 5
+	}
+}
+
+country_event = { #Called to Give ***PULSE***
+	id = cruzite_events.8
+	title = cruzite_events.8.t
+	desc = cruzite_events.8.d
+	picture = FAMINE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = cruzite
+		has_church_aspect = gospel_of_wealth_cruz
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cruzite_events.8.a #Take it from our coffers
+		add_years_of_income = -0.5
+	}
+	option = {
+		name = cruzite_events.8.b #Take it from the army
+		add_country_modifier = {
+			name = "underfunded_military_cruz"
+			duration = 1825
+		}
+	}
+	option = {
+		name = cruzite_events.8.c #Take it from the court
+		add_country_modifier = {
+			name = "inefficient_administration_cruz"
+			duration = 1825
+		}
+	}
+	option = {
+		name = cruzite_events.8.e #We have nothing to give
+		add_church_power = -100
+	}
+}
+
+country_event = { #Credit Where It's Due ***PULSE***
+	id = cruzite_events.9
+	title = cruzite_events.9.t
+	desc = cruzite_events.9.d
+	picture = DECLARATION_INDEPENDENCE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = cruzite
+		has_church_aspect = american_inspiration_cruz
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cruzite_events.9.a #Supress the Influence
+		add_country_modifier = {
+			name = "american_influence_cruz"
+			duration = 1825
+		}
+	}
+	option = {
+		name = cruzite_events.9.b #Let it spread
+		add_country_modifier = {
+			name = "supressing_american_influence_cruz"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #Taking Accountability ***PULSE***
+	id = cruzite_events.10
+	title = cruzite_events.10.t
+	desc = cruzite_events.10.d
+	picture = STREET_SPEECH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = cruzite
+		has_church_aspect = accountable_to_all_cruz
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cruzite_events.10.a #It is our burden
+		add_legitimacy = -10
+		add_horde_unity = -10
+		add_devotion = -10
+		add_meritocracy = -10
+		add_republican_tradition = -5
+	}
+	option = {
+		name = cruzite_events.10.b #Blem someone else
+		remove_advisor = random
+	}
+	option = {
+		name = cruzite_events.10.c #Ignore the problem
+		add_church_power = -100
+	}
+}
+
+country_event = { #Moving Forward ***PULSE***
+	id = cruzite_events.11
+	title = cruzite_events.11.t
+	desc = cruzite_events.11.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = cruzite
+		has_church_aspect = la_tabla_rasa_cruz
+		church_power = 150
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cruzite_events.11.a #A New Start
+		add_church_power = -150
+		custom_tooltip = our_ruler_will_become_a_two_two_two.tt
+		hidden_effect = {
+			change_adm = -6
+			change_dip = -6
+			change_mil = -6
+			change_adm = 2
+			change_dip = 2
+			change_mil = 2
+		}
+	}
+	option = {
+		name = cruzite_events.11.b #I am what I am
+		add_prestige = 5
+	}
+}
+
+country_event = { #Decentralized Issues ***PULSE***
+	id = cruzite_events.12
+	title = cruzite_events.12.t
+	desc = cruzite_events.12.d
+	picture = STREET_SPEECH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = cruzite
+		has_church_aspect = nondenominational_cruz
+		any_owned_province = {
+			NOT = {
+				local_autonomy = 50
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					NOT = {
+						local_autonomy = 50
+					}
+				}
+				save_event_target_as = place_where_decentralization_will_go_well
+			}
+		}
+	}
+	
+	option = {
+		name = cruzite_events.12.a #We have no right
+		event_target:place_where_decentralization_will_go_well = {
+			add_local_autonomy = 50
+		}
+	}
+	option = {
+		name = cruzite_events.12.b #Something must be done
+		add_church_power = -25
+	}
+}
+
+country_event = { #Between Church and State ***PULSE***
+	id = cruzite_events.13
+	title = cruzite_events.13.t
+	desc = cruzite_events.13.d
+	picture = UNIVERSITY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = cruzite
+		has_church_aspect = encouraged_investigation_cruz
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cruzite_events.13.a #Reprimand them!
+		add_country_modifier = {
+			name = "supressing_research_cruz"
+			duration = 1825
+		}
+	}
+	option = {
+		name = cruzite_events.13.b #Wonderful
+		add_country_modifier = {
+			name = "controversial_research_cruz"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #Apathetic Populace ***PULSE***
+	id = cruzite_events.14
+	title = cruzite_events.14.t
+	desc = cruzite_events.14.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = cruzite
+		has_church_aspect = a_cold_world_cruz
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cruzite_events.14.a #Inspire them to continue
+		add_prestige = -15
+		add_church_power = -75
+	}
+	option = {
+		name = cruzite_events.14.b #Revoke our statement
+		remove_church_aspect = a_cold_world_cruz
+	}
+	option = {
+		name = cruzite_events.14.c #Let them wallow
+		add_country_modifier = {
+			name = "hopeless_populace_cruz"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Jobless Clergy ***PULSE***
+	id = cruzite_events.15
+	title = cruzite_events.15.t
+	desc = cruzite_events.15.d
+	picture = FAMINE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = cruzite
+		has_church_aspect = bishop_abandonment_cruz
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cruzite_events.15.a #Employ them
+		add_country_modifier = {
+			name = "employing_clergy_cruz"
+			duration = 3650
+		}
+	}
+	option = {
+		name = cruzite_events.15.b #They will find meaning eventually
+		add_prestige = 10
+		add_church_power = 5
+	}
+}
+
+country_event = { #Indulging the Faithful ***PULSE***
+	id = cruzite_events.16
+	title = cruzite_events.16.t
+	desc = cruzite_events.16.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = cruzite
+		has_church_aspect = no_time_to_wait_cruz
+		any_owned_province = {
+			religion = catholico
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cruzite_events.16.a #Sell them 
+		add_years_of_income = 0.5
+	}
+	option = {
+		name = cruzite_events.16.b #We cannot con our own citizens!
+		add_church_power = 25
+	}
+}

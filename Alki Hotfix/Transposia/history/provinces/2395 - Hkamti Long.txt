@@ -1,0 +1,17 @@
+#2395 - Hkamti Long
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W29
+controller = W29
+add_core = W29
+culture = ensenadan
+religion = partisan
+capital = "Hkamti Long"
+trade_goods = fish #nothing here so its fish
+hre = yes
+base_tax = 2 
+base_production = 3
+base_manpower = 3
+is_city = yes
+

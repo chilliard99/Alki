@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = niitsitapi
+religion = sacramental
+technology_group = western
+capital = 2188	 #Calgary
+
+
+1413.3.11 = {
+	monarch = {
+		name = "Mohkinstsis"
+		dynasty = "Coldgarden"
+		birth_date = 1413.3.11
+		adm = 3
+		dip = 1
+		mil = 3
+	}
+}
+1436.12.12 = {
+	heir = {
+		name = "Otoskwanihk"
+		monarch_name = "Otoskwanihk"
+		dynasty = "Coldgarden"
+		birth_date = 1436.12.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 0
+		dip = 1
+		mil = 1
+	}
+}

@@ -1,0 +1,435 @@
+namespace = texan_events
+country_event = { #La Cansanciato
+	id = texan_events.1
+	title = texan_events.1.t
+	desc = texan_events.1.d
+	picture = FAMINE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = W49
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_prestige = 1
+			capital_scope = {
+				build_to_forcelimit = {
+					infantry = 0.6
+					cavalry = 0.3
+				}
+			}	
+			886 = {
+				build_to_forcelimit = {
+					heavy_ship = 0.3
+					light_ship = 0.3
+					transport = 0.2
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = texan_events.1.a #We Will Endure!
+		add_prestige = 5
+		custom_tooltip = big_bluff_warning.tt
+	}
+}
+
+country_event = { #Just in case, usually it removes itself on its own, but no chance
+	id = texan_events.2
+	title = texan_events.2.t
+	desc = texan_events.2.d
+	picture = WESTERNISATION_eventPicture
+	hidden = yes
+	
+	trigger = {
+		any_owned_province = {
+			has_province_modifier = poor_bureaucracy
+		}
+		NOT = { tag = W49 }
+	}
+	
+	option = {
+		name = texan_events.2.a 
+		all_owned_province = {
+			limit = {
+				has_province_modifier = poor_bureaucracy
+			}
+			remove_province_modifier = poor_bureaucracy
+		}
+		ai_chance = { factor = 100 }
+	}
+}
+
+country_event = { #The Big Bluff
+	id = texan_events.3
+	title = texan_events.3.t
+	desc = texan_events.3.d
+	picture = CIVIL_WAR_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = "abandonded_generals"
+				duration = -1
+			}
+			every_neighbor_country = {
+				every_province = {
+					limit = {
+						NOT = { is_core = PREV }
+						NOT = { is_permanent_claim = PREV }
+						owned_by = W49
+					}
+					add_permanent_claim = PREV
+				} 
+			}
+		}
+	}
+	
+	option = {
+		name = texan_events.3.a #This Cannot Be The End!
+		add_stability = -1
+		custom_tooltip = big_bluff_text.tt
+	}
+}
+
+country_event = { #Confidence Regained
+	id = texan_events.4
+	title = texan_events.4.t
+	desc = texan_events.4.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	immediate = {
+		hidden_effect = {
+			remove_country_modifier = abandonded_generals
+		}
+	}
+	
+	option = {
+		name = texan_events.4.a #Our Future Improves
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 100
+		}
+		else = {
+			add_stability = 1
+		}
+	}
+}
+
+country_event = { #Reaching Solvency
+	id = texan_events.5
+	title = texan_events.5.t
+	desc = texan_events.5.d
+	picture = ECONOMY_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	
+	option = {
+		name = texan_events.5.a #We Need To Solve Our Debt
+		add_stability = -2
+		add_adm_power = -200
+		add_treasury = 1000
+	}
+	option = {
+		name = texan_events.5.b #We Must Take It Slow
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 100
+		}
+		else = {
+			add_stability = 1
+		}
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+	}
+}
+
+country_event = { #Our Representative In Louisiana
+	id = texan_events.6
+	title = texan_events.6.t
+	desc = texan_events.6.d
+	picture = DIPLOMACY_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	
+	option = {
+		name = texan_events.6.a #We Will Press Our Claim
+		random_ally = {
+			limit = {
+				culture_group = louisian
+			}
+			ROOT = {
+				vassalize = PREV
+			}
+		}
+	}
+	option = {
+		name = texan_events.6.b #Make Them Our Kin
+		random_ally = {
+			limit = {
+				culture_group = louisian
+			}
+			ROOT = {
+				create_union = PREV
+			}
+			cajun_country_area = {
+				limit = {
+					NOT = { is_core = PREV }
+					NOT = { is_permanent_claim = PREV }
+				}
+				add_permanent_claim = PREV
+			}
+			new_orleans_area = {
+				limit = {
+					NOT = { is_core = PREV }
+					NOT = { is_permanent_claim = PREV }
+				}
+				add_permanent_claim = PREV
+			}
+			new_mississippi_area = {
+				limit = {
+					NOT = { is_core = PREV }
+					NOT = { is_permanent_claim = PREV }
+				}
+				add_permanent_claim = PREV
+			}
+			piney_woods_area = {
+				limit = {
+					NOT = { is_core = PREV }
+					NOT = { is_permanent_claim = PREV }
+				}
+				add_permanent_claim = PREV
+			}
+			sabine_area = {
+				limit = {
+					NOT = { is_core = PREV }
+					NOT = { is_permanent_claim = PREV }
+				}
+				add_permanent_claim = PREV
+			}
+		}
+	}
+	option = {
+		name = texan_events.6.c #Patience Is A Virtue
+		custom_tooltip = annex_on_form_louisiana.tt
+		hidden_effect = {
+			random_ally = {
+				limit = {
+					culture_group = louisian
+				}
+				set_country_flag = get_annexed_by_texas
+			}
+			set_country_flag = one_annexing_louisiana_texas
+		}
+	}
+}
+
+country_event = { #Unity Under The Houstonites
+	id = texan_events.7
+	title = texan_events.7.t
+	desc = texan_events.7.d
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	
+	option = {
+		name = texan_events.7.a #One True Texas!
+		custom_tooltip = african_culture_provinces_to_houstonite.tt
+		hidden_effect = {
+			every_core_province = {
+				limit = {
+					culture_group = africano
+					NOT = { culture = houstonite }
+				}
+				change_culture = houstonite
+			}
+		}
+	}
+}
+
+country_event = { #Legacy Of The Revolt
+	id = texan_events.8
+	title = texan_events.8.t
+	desc = texan_events.8.d
+	picture = LIBERUM_VETO_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	
+	option = {
+		name = texan_events.8.a #We Remember Their Valor!
+		add_country_modifier = {
+			name = "remembering_the_revoltI"
+			duration = -1
+		}
+	}
+	option = {
+		name = texan_events.8.b #We Remember Their Bravery!
+		add_country_modifier = {
+			name = "remembering_the_revoltII"
+			duration = -1
+		}
+	}
+	option = {
+		name = texan_events.8.c #We Remember Their Expertise!
+		add_country_modifier = {
+			name = "remembering_the_revoltIII"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #The African Empire Of Old
+	id = texan_events.9
+	title = texan_events.9.t
+	desc = texan_events.9.d
+	picture = COURT_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	
+	option = {
+		name = texan_events.9.a #It Is Our Ancient Legacy!
+		change_tag = V19
+		set_country_flag = formed_africa
+		add_country_modifier = {
+			name = "heirs_to_africa"
+			duration = -1
+		}
+	}
+	option = {
+		name = texan_events.9.b #Texas Above All!
+		add_prestige = 50
+		add_country_modifier = {
+			name = "texan_blood"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Ahead Of The Curve
+	id = texan_events.10
+	title = texan_events.10.t
+	desc = texan_events.10.d
+	picture = UNIVERSITY_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	
+	option = {
+		name = texan_events.10.a #We Shall Enrich Our Minds With Their Research
+		change_tag = V19
+		set_country_flag = formed_africa
+		add_country_modifier = {
+			name = "flourising_sciences"
+			duration = -1
+		}
+	}
+	option = {
+		name = texan_events.10.b #Bah, Too Expensive
+		add_country_modifier = {
+			name = "univerisersity_cutbacks"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Papal Proposition
+	id = texan_events.11
+	title = texan_events.11.t
+	desc = texan_events.11.d
+	picture = POPE_PREACHING_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	
+	option = {
+		name = texan_events.11.a #A Perfect Trade
+		custom_tooltip = trade_lands_in_italy_for_pope.tt
+		hidden_effect = {
+			W83 = {
+				every_owned_province = {
+					remove_core = W83
+					add_core = ROOT
+					cede_province = ROOT
+				}
+			}
+			italia_region = {
+				limit = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				remove_core = ROOT
+				add_core = W83
+				cede_province = W83
+			}
+			W83 = {
+				set_capital = 607 
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.3
+					}
+				}
+				set_government_rank = 1
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+			}
+		}
+	}
+	option = {
+		name = texan_events.11.b #No, Too Costly
+		add_prestige = -5
+	}
+}

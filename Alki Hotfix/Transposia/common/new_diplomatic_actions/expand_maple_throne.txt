@@ -1,0 +1,64 @@
+
+
+expand_maple_throne = {
+	category = influence
+	#alert_index = 5
+	alert_tooltip = decrease_autonomous_vassal_tt
+	require_acceptance = no 
+	is_visible = {
+		OR = {
+			AND = {
+				FROM = {
+					OR = {
+						culture_group = the_center_lakes_group
+						culture_group = high_canadian_group
+						culture_group = new_cannanite_group
+						culture_group = five_cities_group
+					}
+				}
+				has_country_flag = force_tribute_kan_one
+			}
+			AND = {
+				FROM = {
+					technology_group = eastern
+				}
+				has_country_flag = force_tribute_kan_two
+			}
+			AND = {
+				FROM = {
+					OR = {
+						technology_group = eastern
+						technology_group = western
+						technology_group = chinese
+					}
+				}
+				has_country_flag = force_tribute_kan_three
+			}
+		}
+	}
+	is_allowed = {
+		dip_power = 25
+		NOT = {
+			has_country_modifier = enforced_spehere_status
+		}
+	}
+	on_accept = {
+		hidden_effect = {	
+			add_dip_power = -25
+			FROM = {
+				country_event = { id = kanata_events.2 }
+			}
+			add_country_modifier = {
+				name = "enforced_spehere_status"
+				duration = 730
+			}
+		}
+	}
+	ai_will_do = {
+		NOT = {
+			any_neighbor_country = {
+				tech_difference = 1
+			}
+		}
+	}
+}

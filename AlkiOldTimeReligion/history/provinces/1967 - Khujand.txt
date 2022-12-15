@@ -1,0 +1,17 @@
+#1967 - Khujand
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y91
+controller = Y91
+add_core = Y91
+culture = cooser
+religion = partisan
+capital = "Khujand"
+trade_goods = fish #oregon fisheries
+hre = yes
+base_tax = 2 
+base_production = 2
+base_manpower = 3
+is_city = yes

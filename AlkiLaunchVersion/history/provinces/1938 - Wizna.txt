@@ -1,0 +1,17 @@
+#Wizna
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y37 
+controller = Y37 
+add_core = Y37
+capital = "Wizna"
+culture = nez_perce
+religion = sacramental
+trade_goods = naval_supplies #timber
+hre = no
+base_tax = 2 
+base_production = 1
+base_manpower = 1
+is_city = yes

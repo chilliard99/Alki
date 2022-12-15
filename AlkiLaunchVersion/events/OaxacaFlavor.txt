@@ -1,0 +1,577 @@
+namespace = oaxacan_events
+country_event = { #Waning Papal Authority
+	id = oaxacan_events.1
+	title = oaxacan_events.1.t
+	desc = oaxacan_events.1.d
+	picture = POPE_PREACHING_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W83
+		is_At_war = no
+		NOT = {
+			stability = 3
+		}
+		NOT = {
+			development_in_provinces = {
+				value = 150
+			}
+		}
+		W85 = {
+			exists = yes
+			is_neighbor_of = W83
+			reverse_has_opinion = {
+				who = W83
+				value = -50
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 50
+	}
+	
+	option = {
+		name = oaxacan_events.1.a #This option is for the next patch
+		custom_tooltip = going_to_be_changed_in_new_patch.tt
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = oaxacan_events.1.b #We will reach out to the Oaxacans
+		add_prestige = 5
+		custom_tooltip = we_reach_out_to_the_oaxacans.tt
+		hidden_effect = {
+			W85 = {
+				inherit = W83
+				country_event = { id = oaxacan_events.2 }
+			}
+		}
+		
+	}
+}
+
+country_event = { #Waning Papal Authority
+	id = oaxacan_events.2
+	title = oaxacan_events.2.t
+	desc = oaxacan_events.2.d
+	picture = POPE_PREACHING_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = oaxacan_events.2.a #Nice
+		add_prestige = 5
+	}
+}
+
+country_event = { #Huastec Dominiation 
+	id = oaxacan_events.3
+	title = oaxacan_events.3.t
+	desc = oaxacan_events.3.d
+	picture = CULTURE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = oaxacan_events.3.a #Crush the Huastecs
+		custom_tooltip = angered_huastecs_text.tt
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					culture_group = huesteca
+				}
+				add_province_modifier = {
+					name = "angered_huastecs"
+					duration = 12775
+				}
+			}
+		}
+	}
+	option = {
+		name = oaxacan_events.3.b #Envelop them into the fold
+		custom_tooltip = appeased_huastecs_text.tt
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					culture_group = huesteca
+				}
+				add_province_modifier = {
+					name = "huastecs_appeased"
+					duration = 12775
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Emperor of all Mexicos (Empty cause changed)
+	id = oaxacan_events.4
+	title = oaxacan_events.4.t
+	desc = oaxacan_events.4.d
+	picture = FAMINE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = oaxacan_events.4.a #Provoke the Proclamation
+		
+	}
+	option = {
+		name = oaxacan_events.4.b #Unsublte and Unecesarry
+		
+	}
+	option = {
+		name = oaxacan_events.4.b #Unsublte and Unecesarry
+		trigger = {
+			
+		}
+	}
+}
+
+country_event = { #Crown of the Mayas
+	id = oaxacan_events.5
+	title = oaxacan_events.5.t
+	desc = oaxacan_events.5.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = oaxacan_events.5.a #I Accept
+		custom_tooltip = mayan_emperor_tooltip_oaxaca.tt
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						culture = campechan
+						culture = yucateco
+						culture = rivieran
+					}
+				}
+				add_province_modifier = {
+					name = "mayan_emperor_oaxaca"
+					duration = -1
+				}
+			}
+		}
+		add_country_modifier = {
+			name = "emperor_of_all_mayas"
+			duration = -1
+		}
+	}
+	option = {
+		name = oaxacan_events.5.b #A Useless Insitution
+		add_prestige = 15
+	}
+}
+
+country_event = { #Cocibolca Quandry
+	id = oaxacan_events.6
+	title = oaxacan_events.6.t
+	desc = oaxacan_events.6.d
+	picture = MERCHANTS_TALKING_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = oaxacan_events.6.a #Leave it in local hands
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 200
+		}
+		else = {
+			add_stability = 2
+		}
+		add_prestige = 25
+		every_owned_province = {
+			limit = {
+				OR = {
+					area = atlantico_nicaragua_area
+					area = cocibolca_area
+				}
+			}
+			add_province_modifier = {
+				name = "lake_purity_ensured"
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = oaxacan_events.6.b #Employ our own beuracrats
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 100
+		}
+		else = {
+			add_stability = 1
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					area = atlantico_nicaragua_area
+					area = cocibolca_area
+				}
+			}
+			add_province_modifier = {
+				name = "easing_lake_resources"
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = oaxacan_events.6.c #Pillage the Lake for Riches
+		every_owned_province = {
+			limit = {
+				OR = {
+					area = atlantico_nicaragua_area
+					area = cocibolca_area
+				}
+			}
+			add_base_tax = -1
+			add_base_production = -1
+			add_base_manpower = -1
+			add_province_modifier = {
+				name = "exploited_lake_resources"
+				duration = -1
+			}
+		}
+		add_years_of_income = 2
+		add_adm_power = 200
+		add_dip_power = 200
+		add_mil_power = 200
+		capital_scope = {
+			add_base_tax = 3
+			add_base_production = 3
+			add_base_manpower = 3
+		}
+	}
+}
+
+country_event = { #The Capital Question
+	id = oaxacan_events.7
+	title = oaxacan_events.7.t
+	desc = oaxacan_events.7.d
+	picture = GREAT_BUILDING_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = oaxacan_events.7.a #We Shall Move!
+		set_capital = 2998
+		2998 = {
+			change_culture = ROOT
+		}
+	}
+	option = {
+		name = oaxacan_events.7.b #We Stay at our Court!
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 100
+		}
+		else = {
+			add_stability = 1
+		} 
+		add_prestige = 50
+	}
+	option = {
+		name = oaxacan_events.7.c #Move the holy sea itself!
+		add_stability = -1
+		add_country_modifier = {
+			name = "papal_puppetmaster"
+			duration = 3650
+		}
+		2629 = {
+			add_province_modifier = {
+				name = "house_of_the_gods"
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #The Capital Question
+	id = oaxacan_events.8
+	title = oaxacan_events.8.t
+	desc = oaxacan_events.8.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = oaxacan_events.8.a #We must keep with tradition
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 100
+		}
+		else = {
+			add_stability = 1
+		}
+	}
+	option = {
+		name = oaxacan_events.8.b #Place me among my people!
+		add_country_modifier = {
+			name = "royal_peers"
+			duration = 3650
+		}
+	}
+	option = {
+		name = oaxacan_events.8.c #Place me above them
+		add_country_modifier = {
+			name = "royally_elevated"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Jarocho Embrace
+	id = oaxacan_events.9
+	title = oaxacan_events.9.t
+	desc = oaxacan_events.9.d
+	picture = WESTERNISATION_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = oaxacan_events.9.a #Nonesense, it is oaxacan!
+		add_dip_power = -200
+		every_owned_province = {
+			limit = {
+				culture = jarocho
+			}
+			change_culture = oaxacan
+		}
+	}
+	option = {
+		name = oaxacan_events.9.b #I mean its jarocho right?
+		add_dip_power = -200
+		change_primary_culture = jarocho
+		set_ruler_culture = jarocho
+		set_heir_culture = jarocho
+		set_consort_culture = jarocho
+		every_owned_province = {
+			limit = {
+				culture = oaxacan
+			}
+			change_culture = jarocho
+		}
+	}
+	option = {
+		name = oaxacan_events.9.c #Why must we play these games
+		add_prestige = 5
+	}
+}
+
+country_event = { #Jarocho Embrace
+	id = oaxacan_events.10
+	title = oaxacan_events.10.t
+	desc = oaxacan_events.10.d
+	picture = COURT_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = oaxacan_events.10.a #Yes, let our culture dominate!
+		add_absolutism = -50
+		custom_tooltip = culture_converstion_event_desc_oaxaca.tt
+		hidden_effect = {
+			set_country_flag = culture_spread_oaxaca_activated
+		}
+	}
+	option = {
+		name = oaxacan_events.10.b #This is improper, let us accept others
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 100
+		}
+		else = {
+			add_stability = 1
+		}
+	}
+}
+
+country_event = { #Jarocho Embrace
+	id = oaxacan_events.11
+	title = oaxacan_events.11.t
+	desc = oaxacan_events.11.d
+	picture = STREET_SPEECH_eventPicture
+	
+	trigger = {
+		has_country_flag = culture_spread_oaxaca_activated
+		any_owned_province = {
+			NOT = {
+				culture = ROOT
+			}
+			any_neighbor_province = {
+				culture = ROOT
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 18
+	}
+	
+	option = {
+		name = oaxacan_events.11.a #Yes, let our culture dominate!
+		random_owned_province = {
+			limit = {	
+				NOT = {
+					culture = ROOT
+				}
+				any_neighbor_province = {
+					culture = ROOT
+				}
+			}
+			change_culture = ROOT
+		}
+		random_owned_province = {
+			limit = {
+				any_neighbor_province = {
+					culture = ROOT
+				}
+			}
+			change_culture = ROOT
+		}
+	}
+}
+
+country_event = { #Colombian Independence
+	id = oaxacan_events.12
+	title = oaxacan_events.12.t
+	desc = oaxacan_events.12.d
+	picture = CONQUEST_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = { #No, it is our right!
+		name = oaxacan_events.12.a 
+		add_country_modifier = {
+			name = "emperor_of_all_colombia"
+			duration = -1
+		}
+	}
+	option = {
+		name = oaxacan_events.12.b 
+		custom_tooltip = colombia_release_oaxaca_text.tt
+		hidden_effect = {
+			every_core_province = {
+				limit = {
+					continent = colombia
+				}
+				add_core = U16
+				cede_province = U16
+				remove_core = ROOT
+			}
+			U16 = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.3
+					}
+				}
+				set_government_rank = 1
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+				new_colombia_region = {
+					limit = {
+						NOT = { is_core = U16 }
+						NOT = { is_permanent_claim = U16 }
+					}
+					add_permanent_claim = U16
+				}
+				new_guyana_region = {
+					limit = {
+						NOT = { is_core = U16 }
+						NOT = { is_permanent_claim = U16 }
+					}
+					add_permanent_claim = U16
+				}
+				andes_region = {
+					limit = {
+						NOT = { is_core = U16 }
+						NOT = { is_permanent_claim = U16 }
+					}
+					add_permanent_claim = U16
+				}
+				amazona_region = {
+					limit = {
+						NOT = { is_core = U16 }
+						NOT = { is_permanent_claim = U16 }
+					}
+					add_permanent_claim = U16
+				}
+				philippine_region = {
+					limit = {
+						NOT = { is_core = U16 }
+						NOT = { is_permanent_claim = U16 }
+					}
+					add_permanent_claim = U16
+				}
+				add_country_modifier = {
+					name = "colombian_subservience"
+					duration = -1
+				}
+			}
+			create_subject = {
+				subject_type = vassal
+				subject = U16
+			}
+		}
+	}
+}

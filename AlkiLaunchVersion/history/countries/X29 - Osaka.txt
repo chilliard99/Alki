@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = chinese
+religion = neoshinto
+primary_culture = wajin
+capital = 1021 #Osaka
+
+
+1402.12.4 = {
+	monarch = {
+		name = "Ozaki II"
+		dynasty = "Ozaki"
+		birth_date = 1402.12.4
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1429.2.3 = {
+	heir = {
+		name = "Ito"
+		monarch_name = "Ito II"
+		dynasty = "Ozaki"
+		birth_date = 1429.2.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}

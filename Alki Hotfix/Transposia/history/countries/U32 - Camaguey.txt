@@ -1,0 +1,8 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+primary_culture = camaguey 
+religion = catholico 
+technology_group = ottoman
+capital = 2656	#Camaguey
+

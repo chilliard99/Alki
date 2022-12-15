@@ -1,0 +1,18 @@
+#Hålogaland, incl. Steig, Vågan, Trondenes, Andenes, Alstahaug
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X09
+controller = X09
+add_core = X09
+culture = alyabania
+religion = zahran
+hre = no
+base_tax = 2
+base_production = 3
+trade_goods = fish #just some fish
+base_manpower = 3
+capital = "Steig"
+is_city = yes
+discovered_by = eastern

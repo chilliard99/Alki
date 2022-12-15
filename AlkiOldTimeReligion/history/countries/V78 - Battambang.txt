@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = newkhmer
+religion = yanantin  
+technology_group = indian 
+capital = 4300	#Battambang
+
+1406.3.2 = {
+	monarch = {
+		name = "Ney Khan"
+		dynasty = "Sangkae"
+		birth_date = 1406.3.2
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}
+1429.12.15 = {
+	heir = {
+		name = "Ang Em"
+		monarch_name = "Ang Em"
+		dynasty = "Sangkae"
+		birth_date = 1429.12.15
+		death_date = 1483.8.30
+		claim = 95
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}

@@ -1,0 +1,15 @@
+#117 - Siena
+discovered_by = chinese
+owner = X16
+controller = X16
+add_core = X16
+culture = hokkaidan 
+religion = neoshinto 
+hre = no 
+base_tax = 5
+base_production = 5
+trade_goods = grain #lotta grain here 
+base_manpower = 4    
+capital = "Siena" 
+is_city = yes 
+discovered_by = eastern

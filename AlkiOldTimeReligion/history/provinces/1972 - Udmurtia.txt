@@ -1,0 +1,17 @@
+#1972 - Udmurtia
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y96
+controller = Y96
+add_core = Y96
+capital = "Elabuga"
+culture = cooser
+religion = partisan 
+trade_goods = wine #willamete wine valley
+hre = yes
+base_tax = 3
+base_production = 3
+base_manpower = 3
+is_city = yes

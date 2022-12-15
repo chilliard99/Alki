@@ -1,0 +1,1817 @@
+namespace = evangelical_events
+####################BORN AGAIN EVENTS##########################
+country_event = { #Washed in the Blood **PULSE**
+	id = evangelical_events.1
+	title = evangelical_events.1.t
+	desc = evangelical_events.1.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+		NOT = {
+			has_ruler_flag = washed_in_the_blood_trigger
+		}
+		is_monarch_leader = yes
+		at_war_with_religious_enemy = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = evangelical_events.1.a #Clean in His Eyes
+		add_ruler_modifier = {
+			name = "washed_in_the_blood_evangelical"
+			duration = -1
+		}
+	}
+	option = {
+		name = evangelical_events.1.b #We are an inspiration!
+		add_country_modifier = {
+			name = "pure_inspiration_evangelical"
+			duration = 1825
+		}
+	}
+	
+	after = {
+		set_ruler_flag = washed_in_the_blood_trigger
+	}
+}
+
+country_event = { #Carrying Sin **PULSE**
+	id = evangelical_events.2
+	title = evangelical_events.2.t
+	desc = evangelical_events.2.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+		NOT = {
+			has_ruler_flag = propositioned_to_be_born_again
+		}
+		OR = {
+			NOT = { adm = 3 }
+			NOT = { dip = 3 }
+			NOT = { mil = 3 }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = evangelical_events.2.a #We must be born again!
+		custom_tooltip = we_are_on_the_path_to_be_born_again
+		add_prestige = 15
+		add_legitimacy = -10
+		add_horde_unity = -10
+		add_devotion = -10
+		add_meritocracy = -10
+		add_republican_tradition = -5
+		hidden_effect = {
+			set_ruler_flag = born_again_ceremony
+			random_list = { #Can have one or the other.
+				50 = {
+					country_event = { 
+						id = evangelical_events.3 
+						days = 45
+					}
+				}
+				50 = {
+					country_event = { 
+						id = evangelical_events.4
+						days = 45
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = evangelical_events.2.b #A waste of time
+		add_prestige = -15
+		add_legitimacy = 10
+		add_horde_unity = 10
+		add_devotion = 10
+		add_meritocracy = 10
+		add_republican_tradition = 5
+	}
+	
+	after = {
+		set_ruler_flag = propositioned_to_be_born_again
+	}
+}
+
+country_event = { #A Public Affair? 
+	id = evangelical_events.3
+	title = evangelical_events.3.t
+	desc = evangelical_events.3.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+		has_ruler_flag = born_again_ceremony
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = evangelical_events.3.a #Let all see!
+		add_legitimacy = 10
+		add_horde_unity = 10
+		add_devotion = 10
+		add_meritocracy = 10
+		add_republican_tradition = 5
+	}
+	option = {
+		name = evangelical_events.3.b #Just a few
+		add_legitimacy = 5
+		add_horde_unity = 5
+		add_devotion = 5
+		add_meritocracy = 5
+		add_republican_tradition = 2.5
+		add_prestige = 10
+	}
+	option = {
+		name = evangelical_events.3.c #This is personal
+		add_fervor = 25
+	}
+	
+	after = {
+		hidden_effect = {
+			country_event = { 
+				id = evangelical_events.5
+				days = 45
+			}
+		}
+	}
+}
+
+country_event = { #The Question of Baptism
+	id = evangelical_events.4
+	title = evangelical_events.4.t
+	desc = evangelical_events.4.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+		has_ruler_flag = born_again_ceremony
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = evangelical_events.4.a #Dunk me
+		add_fervor = 25
+	}
+	option = {
+		name = evangelical_events.4.b #Just a Sprinkle
+		add_adm_power = 25
+	}
+	option = {
+		name = evangelical_events.4.c #Bathe me in the holy spirit alone
+		add_ruler_modifier = {
+			name = "rejected_traditional_baptism"
+			duration = 3650
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			country_event = { 
+				id = evangelical_events.5
+				days = 45
+			}
+		}
+	}
+}
+
+country_event = { #Born Again
+	id = evangelical_events.5
+	title = evangelical_events.5.t
+	desc = evangelical_events.5.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+		has_ruler_flag = born_again_ceremony
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = evangelical_events.5.a #I am a new [getrulergender]
+		add_fervor = 50
+		if = {
+			limit = {
+				NOT = {
+					adm = 3
+				}
+			}
+			change_adm = 1
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					dip = 3
+				}
+			}
+			change_dip = 1
+		}
+		else = {
+			change_mil = 1
+		}
+	}
+}
+####################TITHE EVENTS##########################
+country_event = { #Seeding **PULSE**
+	id = evangelical_events.6
+	title = evangelical_events.6.t
+	desc = evangelical_events.6.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = evangelical_events.6.a #Trust in Him
+		custom_tooltip = we_will_potentially_get_money_in_five_years.tt
+ 		add_fervor = 10
+		add_years_of_income = -1
+		hidden_effect = {
+			random_list = { #Either get money or don't
+				50 = {
+					country_event = { 
+						id = evangelical_events.7 #You get money
+						days = 1825
+					}
+				}
+				50 = {
+					country_event = { 
+						id = evangelical_events.8 #You don't
+						days = 1825
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = evangelical_events.6.b #Foolish!
+		add_prestige = -5
+		add_fervor = -10
+	}
+}
+
+country_event = { #God's Gifts 
+	id = evangelical_events.7
+	title = evangelical_events.7.t
+	desc = evangelical_events.7.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = evangelical_events.7.a #Trust in Him
+		add_years_of_income = 5
+	}
+}
+
+country_event = { #Money in the Breeze
+	id = evangelical_events.8
+	title = evangelical_events.8.t
+	desc = evangelical_events.8.d
+	picture = BANKRUPTCY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = evangelical_events.8.a #We were foolish
+		add_prestige = -10
+	}
+}
+
+country_event = { #Ready to Give **PULSE**
+	id = evangelical_events.9
+	title = evangelical_events.9.t
+	desc = evangelical_events.9.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+		fervor = 100
+		num_of_loans = 1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = evangelical_events.9.a #What loyal Subjects!
+		add_years_of_income = 1.5
+		add_fervor = -100
+	}
+	option = {
+		name = evangelical_events.9.b #We will not exploit out position!
+		add_fervor = 50
+	}
+}
+
+country_event = { #Gospel of Wealth **PULSE**
+	id = evangelical_events.10
+	title = evangelical_events.10.t
+	desc = evangelical_events.10.d
+	picture = FAMINE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+		years_of_income = 1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = evangelical_events.10.a #Money for All!
+		add_years_of_income = -3
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+		add_fervor = 200
+		add_prestige = 25
+	}
+	option = {
+		name = evangelical_events.10.b #It is our duty to give
+		add_years_of_income = -2
+		add_prestige = 10
+		add_fervor = 100
+	}
+	option = {
+		name = evangelical_events.10.c #Just a little
+		add_years_of_income = -0.5
+		add_fervor = 50
+	}
+	option = {
+		name = evangelical_events.10.e #It is all mine!
+		add_fervor = -5
+	}
+}
+####################CHARISMATIC PREACHER EVENTS##########################
+country_event = { #The Spiritually Gifted **PULSE**
+	id = evangelical_events.11
+	title = evangelical_events.11.t
+	desc = evangelical_events.11.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+		current_age = age_of_reformation
+		NOT = {
+			any_owned_province = {
+				has_province_modifier = preacher_of_local_province_legacy
+			}
+		}
+		any_owned_province = {
+			religion = evangelical
+			development = 10
+			NOT = {
+				has_province_modifier = the_preacher_of_local_province
+			}
+		}
+		NOT = {
+			any_country = {
+				has_country_flag = current_evan_charismatic_speaker
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = evangelical
+					development = 10
+					NOT = {
+						has_province_modifier = the_preacher_of_local_province
+					}
+				}
+				save_global_event_target_as = local_province_of_the_preacher_evangelical
+			}
+		}
+	}
+	
+	option = {
+		name = evangelical_events.11.a #Wonderful
+		add_fervor = 50
+		event_target:local_province_of_the_preacher_evangelical = {
+			set_province_flag = the_preacher_of_local_province
+			add_province_modifier = {
+				name = "the_preacher_of_local_province"
+				duration = -1
+			}
+		}
+		set_country_flag = current_evan_charismatic_speaker
+		hidden_effect = {
+			random_list = { #He gonna die eventually (rip)
+				10 = { #Five years
+					country_event = { 
+						id = evangelical_events.12 
+						days = 1825
+					}
+				}
+				50 = { #Twenty Years
+					country_event = { 
+						id = evangelical_events.12 
+						days = 7300
+					}
+				}
+				40 = { #Thirty Years
+					country_event = { 
+						id = evangelical_events.12 
+						days = 10950
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Preacher of [localprov] Dies
+	id = evangelical_events.12
+	title = evangelical_events.12.t
+	desc = evangelical_events.12.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+		has_country_flag = current_evan_charismatic_speaker
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = evangelical_events.12.a #Wonderful
+		every_owned_province = {
+			limit = {
+				has_province_modifier = the_preacher_of_local_province
+			}
+			remove_province_modifier = the_preacher_of_local_province
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+			add_province_modifier = {
+				name = "preacher_of_local_province_legacy"
+				duration = 1825
+			}
+		}
+		remove_country_modifier = warrior_of_local_prov_evan
+		remove_country_modifier = missionary_of_local_prov_evan
+		clr_country_flag = current_evan_charismatic_speaker
+	}
+}
+
+country_event = { #The warrior of [prov] **PULSE**
+	id = evangelical_events.13
+	title = evangelical_events.13.t
+	desc = evangelical_events.13.d
+	picture = LAND_MILITARY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		at_war_with_religious_enemy = yes
+		religion = evangelical
+		has_country_flag = current_evan_charismatic_speaker
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = evangelical_events.13.a #They will inspire the troops!
+		add_country_modifier = {
+			name = "warrior_of_local_prov_evan"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Preacher of [local prov] Challenges Authority **PULSE**
+	id = evangelical_events.14
+	title = evangelical_events.14.t
+	desc = evangelical_events.14.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		is_at_war = yes
+		religion = evangelical
+		has_country_flag = current_evan_charismatic_speaker
+		NOT = {
+			legitimacy_equivalent = 50
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = evangelical_events.14.a #Let them reign
+		every_owned_province = {
+			limit = {
+				has_province_modifier = the_preacher_of_local_province
+			}
+			remove_province_modifier = the_preacher_of_local_province
+		}
+		remove_country_modifier = warrior_of_local_prov_evan
+		remove_country_modifier = missionary_of_local_prov_evan
+		clr_country_flag = current_evan_charismatic_speaker
+		define_ruler = {
+			change_adm = 3
+			change_dip = 3
+			change_mil = 3
+			max_random_adm = 6
+			max_random_adm = 6
+			max_random_adm = 6
+			claim = 90
+		}
+	}
+	option = {
+		name = evangelical_events.14.b #Crush them!
+		every_owned_province = {
+			limit = {
+				has_province_modifier = the_preacher_of_local_province
+			}
+			remove_province_modifier = the_preacher_of_local_province
+		}
+		remove_country_modifier = warrior_of_local_prov_evan
+		remove_country_modifier = missionary_of_local_prov_evan
+		clr_country_flag = current_evan_charismatic_speaker
+		if = {
+			limit = {
+				any_owned_province = {
+					has_province_modifier = the_preacher_of_local_province
+				}
+			}
+			random_owned_province = {
+				limit = {
+					has_province_modifier = the_preacher_of_local_province
+				}
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 5
+					leader = rebel_preacher
+				}
+			}
+		}
+		else = {
+			capital_scope = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 5
+					leader = rebel_preacher
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Preacher of [prov] offers assistance  **PULSE**
+	id = evangelical_events.15
+	title = evangelical_events.15.t
+	desc = evangelical_events.15.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+		has_country_flag = current_evan_charismatic_speaker
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = evangelical_events.15.a #They would become a wonderful theologian
+		every_owned_province = {
+			limit = {
+				has_province_modifier = the_preacher_of_local_province
+			}
+			remove_province_modifier = the_preacher_of_local_province
+		}
+		remove_country_modifier = warrior_of_local_prov_evan
+		remove_country_modifier = missionary_of_local_prov_evan
+		clr_country_flag = current_evan_charismatic_speaker
+		define_advisor = {
+			type = theologian
+			skill = 3
+			cost_multiplier = 0.8
+		}
+	}
+	option = {
+		name = evangelical_events.15.b #They would serve as a powerful missionary
+		add_country_modifier = {
+			name = "missionary_of_local_prov_evan"
+			duration = -1
+		}
+	}
+	option = {
+		name = evangelical_events.15.c #They are fine where they are
+		add_fervor = 50
+	}
+}
+####################EVANGELICAL MINORITY EVENTS##########################
+country_event = { #Evangelical Declarations  **PULSE**
+	id = evangelical_events.16
+	title = evangelical_events.16.t
+	desc = evangelical_events.16.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		any_owned_province = {
+			religion = evangelical
+		}
+		NOT = {
+			religion = evangelical
+		}
+		NOT = {
+			religious_unity = 0.9
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = evangelical_events.16.a #Give them what they ask for
+		add_years_of_income = -0.5
+	}
+	option = {
+		name = evangelical_events.16.b #No special treatment
+		every_owned_province = {
+			limit = {
+				religion = evangelical
+			}
+			add_province_modifier = {
+				name = "local_disset_evangelical"
+				duration = 1825
+			}
+		}
+	}
+}
+
+country_event = { #Crushing Holy Spirits  **PULSE**
+	id = evangelical_events.17
+	title = evangelical_events.17.t
+	desc = evangelical_events.17.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		any_owned_province = {
+			religion = evangelical
+		}
+		NOT = {
+			religion = evangelical
+		}
+		NOT = {
+			religious_unity = 0.9
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = evangelical
+				}
+				save_event_target_as = crushing_holy_spirits_province
+			}
+		}
+	}
+	
+	option = {
+		name = evangelical_events.17.a #Penalize Them!
+		event_target:crushing_holy_spirits_province = {
+			add_province_modifier = {
+				name = "crushing_holy_spirits_local_prov_halfway"
+				duration = 1825
+			}
+		}
+	}
+	option = {
+		name = evangelical_events.17.b #Take Agressive Action
+		event_target:crushing_holy_spirits_province = {
+			change_religion = ROOT
+			spawn_rebels = {
+				type = evangelical_rebels
+				size = 1
+			}
+		}
+	}
+	option = {
+		name = evangelical_events.17.c #Let them be
+		event_target:crushing_holy_spirits_province = {
+			add_province_modifier = {
+				name = "inspiring_holy_spirits_local_evan"
+				duration = 1825
+			}
+		}
+	}
+}
+
+country_event = { #Elders Demand Recognition **PULSE**
+	id = evangelical_events.18
+	title = evangelical_events.18.t
+	desc = evangelical_events.18.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		any_owned_province = {
+			religion = evangelical
+		}
+		NOT = {
+			religion = evangelical
+		}
+		NOT = {
+			religious_unity = 0.9
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = evangelical_events.18.a #All will have a say
+		custom_tooltip = every_evan_province_will_get_this.tt
+		tooltip = {
+			add_province_modifier = {
+				name = "satisfied_evangelicals"
+				duration = 1825
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					religion = evangelical
+				}
+				add_province_modifier = {
+					name = "satisfied_evangelicals"
+					duration = 1825
+				}
+			}
+		}
+	}
+	option = {
+		name = evangelical_events.18.b #No Heathens in our hallowed halls!
+		custom_tooltip = every_evan_province_will_get_this.tt
+		tooltip = {
+			add_province_modifier = {
+				name = "local_disset_evangelical"
+				duration = 1825
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					religion = evangelical
+				}
+				add_province_modifier = {
+					name = "local_disset_evangelical"
+					duration = 1825
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Interfaith Revivals **PULSE**
+	id = evangelical_events.19
+	title = evangelical_events.19.t
+	desc = evangelical_events.19.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		any_owned_province = {
+			religion = evangelical
+		}
+		NOT = {
+			religion = evangelical
+		}
+		has_idea_group = humanist_ideas
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = evangelical_events.19.a #Wonderful!
+		add_country_modifier = {
+			name = "evan_minority_interfaith_revivals"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Shattered Faith
+	id = evangelical_events.20
+	title = evangelical_events.20.t
+	desc = evangelical_events.20.d
+	picture = RELIGIOUS_WARS_eventPicture
+	
+	trigger = {
+		any_owned_province = {
+			religion = evangelical
+		}
+		NOT = {
+			religion = evangelical
+		}
+		NOT = {
+			any_known_country = {
+				religion = evangelical
+			}
+		}
+		NOT = {
+			has_country_flag = shattered_faith_already_had
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = evangelical_events.20.a #They will be made to kneel
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+		custom_tooltip = every_evan_province_will_get_this.tt
+		tooltip = {
+			add_province_modifier = {
+				name = "shattered_faith_evangelical"
+				duration = 1825
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					religion = evangelical
+				}
+				add_province_modifier = {
+					name = "shattered_faith_evangelical"
+					duration = 1825
+				}
+			}
+		}	
+	}
+	
+	after = {
+		set_country_flag = shattered_faith_already_had
+	}
+}
+####################NEW WORLD MISSION EVENTS##########################
+
+country_event = { #A New World Mission **PULSE**
+	id = evangelical_events.21
+	title = evangelical_events.21.t
+	desc = evangelical_events.21.d
+	picture = COLONIZATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+		OR = {
+			akilineq = {
+				owner = {
+					is_colonial_nation = yes
+				}
+				has_discovered = ROOT
+				NOT = {
+					owned_by = ROOT
+					religion = evangelical
+				}
+				type = all
+			}
+			pablonia = {
+				owner = {
+					is_colonial_nation = yes
+				}
+				has_discovered = ROOT
+				NOT = {
+					owned_by = ROOT
+					religion = evangelical
+				}
+				type = all
+			}
+		}
+		NOT = {
+			any_province = {
+				has_province_modifier = current_evan_overseas_mission
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		random_province = {
+			limit = {
+				OR = {
+					continent = akilineq
+					continent = pablonia
+				}
+				has_discovered = ROOT
+				is_empty = no
+				NOT = {
+					owned_by = ROOT
+					religion = evangelical
+				}
+			}
+			save_global_event_target_as = new_world_mission_province
+		}
+	}
+	
+	option = {
+		name = evangelical_events.21.a #Across the Sea!
+		add_adm_power = -25
+		add_dip_power = -25
+		add_mil_power = -25
+		add_years_of_income = -0.5
+		custom_tooltip = explain_what_a_new_world_mission_is.tt	
+		hidden_effect = {
+			set_country_flag = conducting_new_world_mission_right_now
+			set_global_flag = there_is_an_evangelical_mission_rn
+			event_target:new_world_mission_province = {
+				set_province_flag = current_evan_overseas_mission
+				owner = {
+					country_event = { 
+						id = evangelical_events.22
+						days = 30
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = evangelical_events.21.b #Bah, too much work
+		add_prestige = -5
+	}
+}
+
+country_event = { #Arrival of the Evangelicals
+	id = evangelical_events.22
+	title = evangelical_events.22.t
+	desc = evangelical_events.22.d
+	picture = COLONIZATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+	option = {
+		name = evangelical_events.22.a #Damn them!
+		custom_tooltip = remove_evangelical_mission_notification.tt
+		event_target:new_world_mission_province = {
+			add_province_modifier = {
+				name = "evangelical_mission"
+				duration = -1
+			}
+			change_religion = evangelical
+		}	
+	}
+}
+
+country_event = { #News From the Frontier
+	id = evangelical_events.23
+	title = evangelical_events.23.t
+	desc = evangelical_events.23.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+	option = {
+		name = evangelical_events.23.a #Damn them!
+		add_fervor = 50
+		clr_country_flag = conducting_new_world_mission_right_now
+		clr_global_flag = there_is_an_evangelical_mission_rn
+	}
+}
+
+country_event = { #The Foreign Sort **PULSE**
+	id = evangelical_events.24
+	title = evangelical_events.24.t
+	desc = evangelical_events.24.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = there_is_an_evangelical_mission_rn
+		OR = {
+			technology_group = north_american
+			technology_group = mesoamerican
+			technology_group = south_american
+			technology_group = andean
+			technology_group = nomad_group
+		}
+		NOT = {
+			religion = evangelical
+		}
+		capital_scope = {
+			region_for_scope_province = {
+				any_province = {
+					has_province_flag = current_evan_overseas_mission
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+	option = {
+		name = evangelical_events.24.a #Listen to their word
+		custom_tooltip = we_will_convert_to_their_word.tt
+		change_religion = evangelical
+		capital_scope = {
+			change_religion = evangelical
+		}
+		add_country_modifier = {
+			name = "mission_assistance_evangelical"
+			duration = 3650
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_country_flag = conducting_new_world_mission_right_now
+				}
+				country_event = { 
+					id = evangelical_events.25
+					days = 30
+				}
+			}
+		}
+	}
+	option = {
+		name = evangelical_events.24.b #Ignore them
+		custom_tooltip = we_will_embarass_the_native_colonizer.tt
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_country_flag = conducting_new_world_mission_right_now
+				}
+				country_event = { 
+					id = evangelical_events.26
+					days = 30
+				}
+			}
+		}
+	}
+	option = {
+		name = evangelical_events.24.c #Attack them!
+		custom_tooltip = we_will_crush_the_native_mission_and_own_them.tt
+		event_target:new_world_mission_province = {
+			change_religion = ROOT
+			clr_province_flag = current_evan_overseas_mission
+			clr_global_flag = there_is_an_evangelical_mission_rn
+			remove_province_modifier = evangelical_mission
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_country_flag = conducting_new_world_mission_right_now
+				}
+				country_event = { 
+					id = evangelical_events.26
+					days = 30
+				}
+			}
+			event_target:new_world_mission_province = {
+				owner = {
+					country_event = { 
+						id = evangelical_events.26
+						days = 30
+					}
+				}
+			}
+		}	
+	}
+}
+
+country_event = { #Sucess with the simpletons
+	id = evangelical_events.25
+	title = evangelical_events.25.t
+	desc = evangelical_events.25.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+	option = {
+		name = evangelical_events.25.a #Wonderful!
+		add_fervor = 100
+		add_prestige = 50
+	}
+}
+
+country_event = { #Apathy Across the Waves
+	id = evangelical_events.26
+	title = evangelical_events.26.t
+	desc = evangelical_events.26.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+	option = {
+		name = evangelical_events.26.a #At Least We Are Still Standing
+		add_prestige = -5
+	}
+}
+
+country_event = { #Grave News
+	id = evangelical_events.27
+	title = evangelical_events.27.t
+	desc = evangelical_events.27.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+	option = {
+		name = evangelical_events.27.a #Damn!
+		add_prestige = -20
+		add_fervor = 100
+		clr_country_flag = conducting_new_world_mission_right_now
+	}
+}
+
+country_event = { #Natives Attack Evangelical Mission
+	id = evangelical_events.28
+	title = evangelical_events.28.t
+	desc = evangelical_events.28.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+	option = {
+		name = evangelical_events.28.a #Interesting
+		add_prestige = 5
+	}
+}
+
+country_event = { #Evangelical Scourge **PULSE**
+	id = evangelical_events.29
+	title = evangelical_events.29.t
+	desc = evangelical_events.29.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		is_colonial_nation = yes
+		any_owned_province = {
+			has_province_flag = current_evan_overseas_mission
+		}
+		any_owned_province = {
+			NOT = {
+				religion = evangelical
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+	option = {
+		name = evangelical_events.29.a #Led Astray!
+		if = {
+			limit = {
+				calc_true_if = {
+					any_owned_province = {
+						NOT = {
+							religion = evangelical
+						}
+					}
+					amount = 5
+				}
+			}
+			set_variable = {
+				which = amount_of_provs_to_convert
+				value = 5
+			}
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					any_owned_province = {
+						NOT = {
+							religion = evangelical
+						}
+					}
+					amount = 4
+				}
+			}
+			set_variable = {
+				which = amount_of_provs_to_convert
+				value = 4
+			}
+		}
+		
+		else_if = {
+			limit = {
+				calc_true_if = {
+					any_owned_province = {
+						NOT = {
+							religion = evangelical
+						}
+					}
+					amount = 3
+				}
+			}
+			set_variable = {
+				which = amount_of_provs_to_convert
+				value = 3
+			}
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					any_owned_province = {
+						NOT = {
+							religion = evangelical
+						}
+					}
+					amount = 2
+				}
+			}
+			set_variable = {
+				which = amount_of_provs_to_convert
+				value = 2
+			}
+		}
+		else = {
+			set_variable = {
+				which = amount_of_provs_to_convert
+				value = 1
+			}
+		}
+		while = {
+			limit = {
+				check_variable = {
+					which = amount_of_provs_to_convert
+					value = 0
+				}
+			}
+			random_owned_province = {
+				limit = {
+					NOT = {
+						religion = evangelical
+					}
+				}
+				change_religion = evangelical
+			}
+			subtract_variable = {
+				which = religious_unity_counter
+				value = 1
+			}
+		}
+		hidden_effect = {
+			event_target:new_world_mission_province = {
+				owner = {
+					country_event = { 
+						id = evangelical_events.30
+						days = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Colonial Nation Swayed
+	id = evangelical_events.30
+	title = evangelical_events.30.t
+	desc = evangelical_events.30.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+	option = {
+		name = evangelical_events.30.a #Wonderful!
+		add_prestige = 25
+		add_fervor = 50
+	}
+}
+
+####################FERVOR EVENTS##########################
+
+country_event = { #An Intense Nation **PULSE**
+	id = evangelical_events.31
+	title = evangelical_events.31.t
+	desc = evangelical_events.31.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+		has_active_fervor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+	option = {
+		name = evangelical_events.31.a #More Devotion
+		add_fervor = 100
+	}
+	option = {
+		name = evangelical_events.31.b #I'll take the focus
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+	}
+	option = {
+		name = evangelical_events.31.c #Let us temper ourselves
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+	}
+}
+
+country_event = { #Strained Faithful **PULSE**
+	id = evangelical_events.32
+	title = evangelical_events.32.t
+	desc = evangelical_events.32.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+		has_active_fervor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+	option = {
+		name = evangelical_events.32.a #Everyone calm down
+		add_fervor = -50
+	}
+	option = {
+		name = evangelical_events.32.b #Let them run wild!
+		add_country_modifier = {
+			name = "evan_too_much_fervor"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #Lack of Enthusiasm **PULSE**
+	id = evangelical_events.33
+	title = evangelical_events.33.t
+	desc = evangelical_events.33.d
+	picture = STREET_SPEECH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+		num_of_missionaries = 1
+		NOT = {
+			fervor = 50
+		}
+	}	
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+	option = {
+		name = evangelical_events.33.a #A missionary will set them straight
+		add_country_modifier = {
+			name = "evan_get_more_fervor"
+			duration = 730
+		}
+	}
+	option = {
+		name = evangelical_events.33.b #We will recover in time
+		add_fervor = 5
+	}
+}
+
+country_event = { #Excess Fervor **PULSE**
+	id = evangelical_events.34
+	title = evangelical_events.34.t
+	desc = evangelical_events.34.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+		fervor = 200
+	}	
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+	option = {
+		name = evangelical_events.34.a #Invest in our administration
+		add_adm_power = 100
+		add_fervor = -200
+	}
+	option = {
+		name = evangelical_events.34.b #Invest in our diplomacy
+		add_dip_power = 100
+		add_fervor = -200
+	}
+	option = {
+		name = evangelical_events.34.c #Invest in our military
+		add_mil_power = 100
+		add_fervor = -200
+	}
+	option = {
+		name = evangelical_events.34.e #Invest in everything
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
+		add_fervor = -200
+	}
+	option = {
+		name = evangelical_events.34.f #Let the faithful decide
+		add_prestige = 5
+	}
+}
+
+country_event = { #Wartime Unity **PULSE**
+	id = evangelical_events.35
+	title = evangelical_events.35.t
+	desc = evangelical_events.35.d
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+		has_active_fervor = yes
+	}	
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+	option = {
+		name = evangelical_events.35.a #We need everyone working towards victory!
+		add_war_exhaustion = 1
+		add_country_modifier = {
+			name = "extreme_fervor_focus_wartime"
+			duration = 1095
+		}
+	}
+	option = {
+		name = evangelical_events.35.b #Let us relieve some of the tension
+		add_war_exhaustion = -1
+	}
+}
+
+####################MISCELLANEOUS EVENTS##########################
+
+country_event = { #Ecclesial Confusion 
+	id = evangelical_events.36
+	title = evangelical_events.36.t
+	desc = evangelical_events.36.d
+	picture = REFORM_eventPicture
+	
+	trigger = {
+		religion = evangelical
+		NOT = {
+			has_country_flag = proposed_for_ecclesial_conversion
+		}
+		any_neighbor_country = {
+			religion = dynastic
+		}
+	}	
+	
+	mean_time_to_happen = {
+		months = 2400
+	}
+
+	
+	option = {
+		name = evangelical_events.36.a #That makes sense..
+		add_country_modifier = {
+			name = "ecclesial_correction_evan"
+			duration = 3650
+		}
+		change_religion = dynastic
+		capital_scope = {
+			change_religion = dynastic
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = evangelical_events.36.b #We would never fall for such tricks!
+		add_fervor = 50
+	}
+	
+	after = {
+		set_country_flag = proposed_for_ecclesial_conversion
+	}
+}
+
+country_event = { #Doomsday Prediction **PULSE**
+	id = evangelical_events.37
+	title = evangelical_events.37.t
+	desc = evangelical_events.37.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+		has_active_fervor = yes
+	}	
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+	option = {
+		name = evangelical_events.37.a #Of course it is correct!
+		add_country_modifier = {
+			name = "doomsday_predicted"
+			duration = 365
+		}
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100	
+		}
+		custom_tooltip = order_will_be_restored_after_a_year.tt
+		hidden_effect = {
+			random_list = { 
+				1 = { #Doomsday?
+					country_event = { 
+						id = evangelical_events.38
+						days = 365
+					}
+				}
+				99 = { #Failure Shown
+					country_event = { 
+						id = evangelical_events.39 
+						days = 365
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = evangelical_events.37.b #A fantastic tale
+		add_fervor = 25
+	}
+}
+
+country_event = { #Doomsday 
+	id = evangelical_events.38
+	title = evangelical_events.38.t
+	desc = evangelical_events.38.d
+	picture = COMET_SIGHTED_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+	}	
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+	option = {
+		name = evangelical_events.38.a #Oh No!
+		add_stability = -6
+		
+		kill_ruler = yes
+		capital_scope = {
+			set_base_tax = 1
+			set_base_production = 1
+			set_base_manpower = 1
+			add_devastation = 100
+			kill_units = {
+				who = owner
+			}
+		}
+	}
+}
+
+country_event = { #Cosmic Dissapointment 
+	id = evangelical_events.39
+	title = evangelical_events.39.t
+	desc = evangelical_events.39.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical
+	}	
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+	option = {
+		name = evangelical_events.39.a #We Still Stand
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+		add_fervor = -50
+	}
+}
+
+country_event = { #Devils of the Countryside **PULSE**
+	id = evangelical_events.40
+	title = evangelical_events.40.t
+	desc = evangelical_events.40.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = evangelical 
+		num_of_missionaries = 1
+	}	
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+	option = {
+		name = evangelical_events.40.a #We must investigate
+		add_country_modifier = {
+			name = "invesstigating_devils_evan"
+			duration = 1825
+		}
+	}
+	option = {
+		name = evangelical_events.40.b #Uneducated Fools
+		add_country_modifier = {
+			name = "fear_of_devils_evan"
+			duration = 1825
+		}
+	}
+}

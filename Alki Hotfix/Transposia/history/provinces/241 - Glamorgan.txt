@@ -1,0 +1,17 @@
+#241 - Glamorgan+Monmouthshire
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+owner = X67
+controller = X67
+add_core = X67
+culture = quebecois
+religion = dynastic
+capital = "Swansea"
+trade_goods = paper #Quebec Pulp and Paper
+hre = no
+base_tax = 8
+base_production = 8
+base_manpower = 9
+is_city = yes
+add_core = X82

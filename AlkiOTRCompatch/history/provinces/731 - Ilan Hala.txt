@@ -1,0 +1,18 @@
+#731 - Ilan Hala
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y34
+controller = Y34
+add_core = Y34
+culture = bulean
+religion = partisan
+capital = "Ilan Hala"
+trade_goods = naval_supplies #big forest
+hre = no
+base_tax = 3 
+base_production = 3
+base_manpower = 4
+is_city = yes
+fort_15th = yes

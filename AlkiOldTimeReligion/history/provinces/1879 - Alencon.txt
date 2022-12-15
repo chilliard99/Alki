@@ -1,0 +1,19 @@
+# 1879 - Alençon
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y35
+controller = Y35
+add_core = Y35
+capital = "Alençon"
+is_city = yes
+culture = metropolitan_shoshone
+religion = sacramental
+hre = no
+base_tax = 7
+base_production = 7
+trade_goods = sugar #sugar beets
+base_manpower = 7
+fort_15th = yes
+center_of_trade = 1

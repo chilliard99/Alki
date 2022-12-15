@@ -1,0 +1,18 @@
+#1202 - Mombasa
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y32
+controller = Y32
+add_core = Y32
+culture = jackpotter
+religion = partisan
+capital = "Mombasa"
+is_city = yes
+base_manpower = 4
+trade_goods = livestock #rancheries?
+hre = yes
+base_tax = 5
+base_production = 5
+fort_15th = yes

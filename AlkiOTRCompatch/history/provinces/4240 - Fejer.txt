@@ -1,0 +1,15 @@
+#4240 - Fejér (Fejér + Veszprém + Györ + parts of Komárom)
+discovered_by = ottoman
+discovered_by = muslim
+owner = V14
+controller = V14 
+add_core = V14
+culture = boricua
+religion = espiritismo
+capital = "Fehérvár"
+trade_goods = cotton #more cotton plantations then sugar in 1742
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

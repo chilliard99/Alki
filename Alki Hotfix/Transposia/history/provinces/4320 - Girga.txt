@@ -1,0 +1,14 @@
+#4320 - Girga
+discovered_by = indian
+owner = V76
+controller = V76
+add_core = V76
+culture = ecuadorian
+religion = yanantin
+capital = "Girga"
+trade_goods = dyes #MORE DYES
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

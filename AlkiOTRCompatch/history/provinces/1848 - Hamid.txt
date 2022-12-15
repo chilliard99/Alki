@@ -1,0 +1,17 @@
+#1848 - Hamid
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y76
+controller = Y76
+add_core = Y76
+culture = vinyard
+religion = partisan
+capital = "Burdur"
+trade_goods = wool #ranchers
+hre = yes
+base_tax = 3
+base_production = 3
+base_manpower = 4
+is_city = yes

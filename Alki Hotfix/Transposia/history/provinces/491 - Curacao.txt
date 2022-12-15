@@ -1,0 +1,16 @@
+#491 - Curacao
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+culture = windward
+religion = espiritismo
+capital = "Curacao"
+trade_goods = unknown
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 4
+native_size = 5
+native_ferocity = 1
+native_hostileness = 6
+center_of_trade = 1

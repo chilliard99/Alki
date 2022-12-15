@@ -1,0 +1,15 @@
+#977 - Yakutat
+discovered_by = western
+discovered_by = eastern 
+owner = W15
+controller = W15
+add_core = W15
+culture = yukonite
+religion = collectivist
+capital = "Yakutat"
+trade_goods = fur #always and forever
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

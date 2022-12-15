@@ -1,0 +1,17 @@
+government_rank = 1
+government = native
+primary_culture = neomande
+religion = shamanist
+technology_group = mesoamerican
+capital = 2239	#Siine
+
+1444.11.11 = {
+	monarch = {
+		name = "Nicholas XXXVI" 
+		dynasty = "Romanov" 
+		birth_date = 1411.12.26
+		adm = 1
+		dip = 0
+		mil = 0
+	}
+}

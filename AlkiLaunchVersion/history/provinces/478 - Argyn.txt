@@ -1,0 +1,20 @@
+#478 - Argyn
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = Y21
+controller = Y21
+add_core = Y21
+culture = dakotan
+religion = sacramental
+capital = "Argyn"
+trade_goods = livestock #cattle ranchers
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 6
+is_city = yes
+fort_15th = yes
+center_of_trade = 2

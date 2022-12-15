@@ -1,0 +1,19 @@
+# - El Kef
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = chinese
+owner = W49
+controller = W49
+add_core = W49
+culture = libio
+religion = catholico
+capital = "El Kef"
+trade_goods = cloth #see big spring for cotton shit
+center_of_trade = 1
+hre = no
+base_tax = 5
+base_production = 6
+base_manpower = 6
+is_city = yes

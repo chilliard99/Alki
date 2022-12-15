@@ -1,0 +1,15 @@
+#4218 - Buteha
+discovered_by = ottoman
+discovered_by = muslim
+owner = V06
+controller = V06
+add_core = V06
+culture = dominican
+religion = espiritismo
+capital = "Buteha"
+trade_goods = coffee #apparently they make coffee too
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

@@ -1,0 +1,19 @@
+#1140 - Abomey
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y49 
+controller = Y49
+add_core = Y49
+is_city = yes
+culture = portugers
+religion = partisan
+capital = "Allada"
+trade_goods = copper #Ely is a copper town I guess
+hre = yes
+base_tax = 4
+base_production = 5
+base_manpower = 5
+fort_15th = yes
+center_of_trade = 1

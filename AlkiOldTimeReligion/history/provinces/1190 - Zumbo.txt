@@ -1,0 +1,17 @@
+#1190 - Zumbo
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y47
+controller = Y47
+add_core = Y47
+culture = goldbugger
+religion = partisan
+is_city = yes
+capital = "Chikova"
+trade_goods = gold #goldstrike??
+hre = yes
+base_tax = 2
+base_production = 1
+base_manpower = 3

@@ -1,0 +1,18 @@
+# No previous file for Kumeyaay
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W26
+controller = W26
+add_core = W26
+culture = rosaritan
+religion = partisan
+capital = "Kumeyaay"
+trade_goods = glass #Angeles Glassworks
+hre = yes
+fort_15th = yes
+base_tax = 8
+base_production = 7
+base_manpower = 7
+is_city = yes
+center_of_trade = 1

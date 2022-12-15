@@ -1,0 +1,29 @@
+# default options are 0-based
+# In console, can use imperial_incident [key] to immediately begin an incident
+
+incident_decentralization_of_the_union = {
+	event = uoc_events.1018
+	default_option = 0
+	
+	can_stop = {
+		always = no
+	}
+	
+	0 = { # decentralize
+		factor = 1
+		modifier = {
+			factor = 100
+			capital_scope = {
+				region = baja_region
+			}
+		}
+		modifier = {
+			factor = 100
+			total_development = 25
+		}
+	}
+	
+	1 = { # centralize
+		factor = 2
+	}
+}

@@ -1,0 +1,17 @@
+#2039 - Sunderbans
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y88
+controller = Y88
+add_core = Y88
+culture = paiute
+religion = partisan
+capital = "Bagerhat"
+trade_goods = gold # Canyon Creek Gold
+hre = yes
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

@@ -1,0 +1,18 @@
+# No previous file for Kilatika
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = X91
+controller = X91
+add_core = X91
+culture = thracian
+religion = islam
+capital = "Kilatika"
+trade_goods = grain #corn
+hre = no
+base_tax = 4
+base_production = 3
+base_manpower = 4
+is_city = yes
+discovered_by = western

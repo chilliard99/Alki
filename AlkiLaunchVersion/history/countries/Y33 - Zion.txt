@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = zionist
+religion = sacramental
+technology_group = western
+capital = 728	 #Zion
+
+1397.8.15 = {
+	monarch = {
+		name = "Colby"
+		dynasty = "Jacobsen"
+		birth_date = 1397.8.15
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1439.3.3 = {
+	heir = {
+		name = "Seth"
+		monarch_name = "Seth"
+		dynasty = "Jacobsen"
+		birth_date = 1439.3.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 0
+		dip = 3
+		mil = 3
+	}
+}

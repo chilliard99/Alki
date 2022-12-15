@@ -1,0 +1,17 @@
+#729 - Bohori
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y33
+controller = Y33
+add_core = Y33
+culture = zionist
+religion = partisan
+capital = "Bohori"
+trade_goods = livestock #ranchers
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes

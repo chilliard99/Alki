@@ -1,0 +1,56 @@
+country_event = { #Despotic Reformation
+	id = uoc_events.1013
+	title = uoc_events.1013.t
+	desc = uoc_events.1013.d
+	picture = HRE_eventPicture
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		religion = partisan
+		any_owned_province = {
+			can_have_center_of_reformation_trigger = {
+				RELIGION = despotic
+			}
+			region = sunkissed_region
+		}
+		is_year = 1500
+	}
+	
+	mean_time_to_happen = {
+		months = 50
+	}
+	
+	option = {
+		name = uoc_events.1013.a 
+		enable_religion = despotic
+		random_owned_province = {
+			limit = {
+				can_have_center_of_reformation_trigger = {
+					RELIGION = despotic
+				}
+			}
+			change_religion = despotic
+			add_reform_center = despotic
+			add_permanent_province_modifier = {
+				name = "religious_zeal_at_conv"
+				duration = 9000
+			}
+			if = {
+				limit = {
+					NOT = { is_capital = yes }
+				}
+				root = {
+					capital_scope = {
+						change_religion = despotic
+						add_permanent_province_modifier = {
+							name = "religious_zeal_at_conv"
+							duration = 9000
+						}
+					}
+				}
+			}
+		}
+		set_global_flag = despotic_reformation
+	}
+}

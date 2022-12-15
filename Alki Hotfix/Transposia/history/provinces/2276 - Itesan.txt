@@ -1,0 +1,15 @@
+# 2276 - Itesan
+discovered_by = western
+discovered_by = eastern
+owner = W07
+controller = W07
+add_core = W07
+is_city = yes
+culture = inner_salishan 
+religion = collectivist
+capital = "Tahut"
+trade_goods = livestock #probably some farmers or somethin
+hre = no
+base_tax = 1 
+base_production = 2
+base_manpower = 2

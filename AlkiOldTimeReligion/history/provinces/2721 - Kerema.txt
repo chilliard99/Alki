@@ -1,0 +1,15 @@
+#2721 - Kerema
+discovered_by = ottoman
+discovered_by = muslim
+owner = W62
+controller = W62
+add_core = W62
+culture = durangan
+religion = catholico
+capital = "Kerema"
+trade_goods = fish #literally known as "place where there are tunas"
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 2
+is_city = yes

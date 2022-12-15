@@ -1,0 +1,16 @@
+#483 - Turks Islands
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = chinese
+owner = V07
+controller = V07
+add_core = U29
+culture = bahamian
+religion = espiritismo
+capital = "Grand Turk"
+trade_goods = salt #massive salt works
+hre = no
+base_tax = 5
+base_production = 4
+base_manpower = 4
+is_city = yes

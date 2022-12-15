@@ -1,0 +1,2254 @@
+ohio_missions_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = X91
+	}
+	has_country_shield = yes
+	
+	creating_a_aegean_fleet = {
+		icon = mission_corsairs_of_the_north_sea
+		required_missions = { }
+		position = 1
+		trigger = {
+			num_of_galley = 15
+		}
+		effect = {
+			add_prestige = 10
+			greater_missouri_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			stlouis_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			chicago_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	heart_of_the_hellas = {
+		icon = Burn_Wooden_Wall
+		required_missions = { creating_a_aegean_fleet }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = stlouis_area
+				area = greater_missouri_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			stlouis_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+			greater_missouri_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			351 = {
+				add_province_modifier = {
+					name = "the_sultan_in_stlouis"
+					duration = 9125
+				}
+			}
+			twain_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			jefferson_city_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kansas_city_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	the_prariemen = {
+		icon = mission_sea_battles
+		required_missions = { heart_of_the_hellas }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = twain_area
+				area = jefferson_city_area
+				area = kansas_city_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			twain_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+			jefferson_city_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+			kansas_city_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "italian_runoff"
+				duration = 3650
+			}
+			shawnee_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			spartaboro_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	the_mighty_spartans = {
+		icon = mission_raid_on_iceland
+		required_missions = { the_prariemen }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = shawnee_area
+				area = spartaboro_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			shawnee_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+			spartaboro_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mil_power = 50
+			add_army_tradition = 10
+			add_army_professionalism = 0.025
+		}
+	}
+	blitz_into_canaan = {
+		icon = end_the_habsburgs
+		required_missions = { the_grand_caliphate }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = new_toledo_area
+				area = buffalo_area
+				area = eastsylvannia_area
+				area = westsylvannia_area
+				area = harpers_fairy_area
+				area = the_capital_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			new_toledo_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			buffalo_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			eastsylvannia_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			westsylvannia_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			harpers_fairy_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			the_capital_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "the_canaan_campaign"
+				duration = 9125
+			}
+			new_maryland_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			delmarva_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			jersey_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			new_york_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			conneticut_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	lands_of_the_levant = {
+		icon = mission_afghan_frontier
+		required_missions = { blitz_into_canaan }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = new_maryland_area
+				area = delmarva_area
+				area = jersey_area
+				area = new_york_area
+				area = conneticut_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			new_maryland_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			delmarva_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			jersey_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			new_york_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			conneticut_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			965 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			173 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			178 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			187 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			iroqouis_land_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hudsonia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			west_upstate_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_upstate_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			massachusetts_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	thwarting_the_upstate = {
+		icon = mission_invade_maharashtra
+		required_missions = { lands_of_the_levant }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = iroqouis_land_area
+				area = hudsonia_area
+				area = west_upstate_area
+				area = east_upstate_area
+				area = massachusetts_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			iroqouis_land_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hudsonia_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_upstate_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_upstate_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			massachusetts_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = { id = ohio_events.1018 }
+			2561 = {
+				center_of_trade = 1
+			}
+			vermont_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			mercantile_new_england_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			new_hampshire_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			pro_patria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			augusta_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			acadia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			western_brunswick_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			eastern_brunswick_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			new_lawrencia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lawrencian_islands_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_maine_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_maine = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			nova_scotia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	march_to_the_sea = {
+		icon = mission_clear_the_delta
+		required_missions = { thwarting_the_upstate }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				area = vermont_area
+				area = new_hampshire_area
+				area = pro_patria_area
+				area = lower_maine_area
+				area = augusta_area
+				area = upper_maine
+				area = acadia_area
+				area = western_brunswick_area
+				area = eastern_brunswick_area
+				area = new_lawrencia_area
+				area = lawrencian_islands_area
+				area = nova_scotia_area
+				area = mercantile_new_england_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			mercantile_new_england_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			vermont_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			new_hampshire_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			pro_patria_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			augusta_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			acadia_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			western_brunswick_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			eastern_brunswick_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			new_lawrencia_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lawrencian_islands_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			nova_scotia_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_maine_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_maine  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			new_cannan_region  = {
+				add_province_modifier = {
+					name = "rebuilding_canaan_project"
+					duration = 9125
+				}
+			}
+		}
+	}
+	rebuilding_land_of_antiquity = {
+		icon = mission_conquer_malwa_mer
+		required_missions = { march_to_the_sea }
+		position = 14
+		trigger = {
+			development_in_provinces = {
+				value = 700 
+				OR = {
+					region = new_cannan_region
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 10
+				region = new_cannan_region
+				has_building = university
+			}
+			num_of_owned_provinces_with = {
+				value = 10
+				region = new_cannan_region
+				has_manufactory_trigger = yes 
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			new_cannan_region  = {
+				add_province_modifier = {
+					name = "canaan_conversion_initiative"
+					duration = 9125
+				}
+			}
+		}
+	}
+}
+ohio_missions_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = X91
+	}
+	has_country_shield = yes
+	
+	dismantling_the_senate = {
+		icon = mission_city_of_the_world's_desire
+		required_missions = { creating_a_aegean_fleet }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = chicago_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			chicago_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			389 = {
+				add_province_modifier = {
+					name = "the_city_of_peter"
+					duration = -1
+				}
+			}
+		}
+	}
+	capitalize_off_the_interior_trade = {
+		icon = mission_dominate_genoa
+		required_missions = { the_grand_caliphate }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				province_id = 337
+			}
+		}
+		trigger = {
+			337 = { 
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			}
+			337 = {
+				province_has_center_of_trade_of_level = 3
+			}
+			monthly_income = 50
+		}
+		effect = {
+			country_event = { id = ohio_events.1013 }
+			des_moines_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			westcago_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			dubuque_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			the_corn_fields_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			zae_proper_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			northcago_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	the_green_wall = {
+		icon = mission_found_havana
+		required_missions = { capitalize_off_the_interior_trade }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = des_moines_area
+				area = westcago_area
+				area = dubuque_area
+				area = the_corn_fields_area
+				area = zae_proper_area
+				area = northcago_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			des_moines_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			westcago_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			dubuque_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			the_corn_fields_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			zae_proper_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northcago_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			yooperland_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			green_bay_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			greater_milwauke_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	michigan_coast = {
+		icon = mission_protect_albania
+		required_missions = { the_green_wall }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = greater_milwauke_area
+				area = green_bay_area
+				area = yooperland_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			yooperland_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			green_bay_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			greater_milwauke_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			406 = {
+				add_province_modifier = {
+					name = "whitefish_ports"
+					duration = -1
+				}
+			}
+			453 = {
+				center_of_trade = 1
+			}
+			east_wisconsin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			winoana_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			duluth_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			minneapolis_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			sota_norte_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	the_free_cities = {
+		icon = mission_spoils_of_war
+		required_missions = { michigan_coast }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = east_wisconsin_area
+				area = winoana_area
+				area = duluth_area
+				area = minneapolis_area
+				area = sota_norte_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			east_wisconsin_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			winoana_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			duluth_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			minneapolis_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sota_norte_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "cities_of_ideas"
+				duration = -1
+			}
+			dakota_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	dismantling_dakota = {
+		icon = mission_order_in_the_domain
+		required_missions = { the_free_cities }
+		position = 15
+		provinces_to_highlight = {
+			OR = {
+				region = dakota_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			dakota_region  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			italia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	the_western_front = {
+		icon = mission_rule_italy
+		required_missions = { dismantling_dakota }
+		position = 16
+		provinces_to_highlight = {
+			OR = {
+				region = italia_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			italia_region  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 250
+			add_dip_power = 250
+			add_mil_power = 250
+			idaho_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			roosevelt_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+ohio_missions_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = X91
+	}
+	has_country_shield = yes
+	
+	fill_government_positions = {
+		icon = mission_indian_stateman
+		required_missions = { }
+		position = 1
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = fill_government_positions
+				OR = {
+					has_ruler_flag = kaaba_custodian_employed
+					has_ruler_flag = buckeye_vizier_employed
+					has_ruler_flag = siaphi_captain_employed
+					has_ruler_flag = ulama_founder_employed
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 25
+			add_dip_power = 25
+			add_mil_power = 25
+		}
+	}
+	renew_the_caliphate_titles = {
+		icon = mission_deccanis
+		required_missions = { fill_government_positions }
+		position = 2
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = renew_the_caliphate_titles
+				OR = {
+					AND = {
+						has_ruler_flag = kaaba_custodian_employed
+						has_ruler_flag = buckeye_vizier_employed
+					}
+					AND = {
+						has_ruler_flag = siaphi_captain_employed
+						has_ruler_flag = ulama_founder_employed
+					}
+					
+					AND = {
+						has_ruler_flag = kaaba_custodian_employed
+						has_ruler_flag = siaphi_captain_employed
+					}
+					AND = {
+						has_ruler_flag = buckeye_vizier_employed
+						has_ruler_flag = ulama_founder_employed
+					}
+					AND = {
+						has_ruler_flag = kaaba_custodian_employed
+						has_ruler_flag = ulama_founder_employed
+					}
+					AND = {
+						has_ruler_flag = buckeye_vizier_employed
+						has_ruler_flag = siaphi_captain_employed
+					}
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+		}
+	}
+	stacking_the_courts = {
+		icon = mission_gharbianss
+		required_missions = { renew_the_caliphate_titles }
+		position = 3
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = stacking_the_courts
+				OR = {
+					AND = {
+						has_ruler_flag = kaaba_custodian_employed
+						has_ruler_flag = buckeye_vizier_employed
+						has_ruler_flag = siaphi_captain_employed
+					}
+					AND = {
+						has_ruler_flag = kaaba_custodian_employed
+						has_ruler_flag = ulama_founder_employed
+						has_ruler_flag = siaphi_captain_employed
+					}
+					AND = {
+						has_ruler_flag = kaaba_custodian_employed
+						has_ruler_flag = buckeye_vizier_employed
+						has_ruler_flag = ulama_founder_employed
+					}
+					AND = {
+						has_ruler_flag = buckeye_vizier_employed
+						has_ruler_flag = ulama_founder_employed
+						has_ruler_flag = siaphi_captain_employed
+					}
+				}
+			}
+		}
+		effect = {
+			add_prestige = 10
+			add_legitimacy = 25
+		}
+	}
+	a_packed_administration = {
+		icon = mission_rajput_trade_guilds
+		required_missions = { stacking_the_courts }
+		position = 4
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = a_packed_administration
+				has_ruler_flag = kaaba_custodian_employed
+				has_ruler_flag = buckeye_vizier_employed
+				has_ruler_flag = siaphi_captain_employed
+				has_ruler_flag = ulama_founder_employed
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "the_old_order"
+				duration = 9125
+			}
+		}
+	}
+	the_grand_caliphate = {
+		icon = mission_restore_faith_in_the_throne
+		required_missions = { game_set_match a_packed_administration the_mighty_spartans }
+		position = 6
+		trigger = {
+			
+		}
+		effect = {
+			set_government_rank = 3
+			override_country_name = OHIO_CALIPHATE
+			grand_rapdis_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			north_indiana_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			ann_arbor_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			detroit_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			327 = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			2521 = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			new_toledo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			buffalo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			eastsylvannia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			westsylvannia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			harpers_fairy_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			the_capital_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	convert_the_masses = {
+		icon = mission_restore_caliphate_of_cordoba
+		required_missions = { the_grand_caliphate }
+		position = 8
+		trigger = {
+			religious_unity = 0.9
+		}
+		effect = {
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+			add_country_modifier = {
+				name = "the_greentide"
+				duration = 18250
+			}
+		}
+	}
+	hordeland_to_homeland = {
+		icon = mission_plus_ultra
+		required_missions = { convert_the_masses }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = grand_columbus_area
+				area = metropolitan_ohio_area
+			}
+		}
+		trigger = {
+			development_in_provinces = {
+				value = 150 #starts at 90 (of which 20 owned by Venice)
+				OR = {
+					area = grand_columbus_area
+					area = metropolitan_ohio_area
+				}
+			}
+		}
+		effect = {
+			grand_columbus_area = {
+				add_province_modifier = {
+					name = "homeland_ohio"
+					duration = 9125
+				}
+			}
+			metropolitan_ohio_area = {
+				add_province_modifier = {
+					name = "homeland_ohio"
+					duration = 9125
+				}
+			}
+			the_north_colonies_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	reclaim_the_northern_colonies = {
+		icon = mission_colonize_florida
+		required_missions = { hordeland_to_homeland }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				area = the_north_colonies_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			the_north_colonies_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = { id = ohio_events.1017 }
+			florida_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	assimilate_the_floridians = {
+		icon = mission_trade_with_cathay
+		required_missions = { reclaim_the_northern_colonies }
+		position = 13
+		provinces_to_highlight = {
+			OR = {
+				region = florida_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			florida_region  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = refused_slavery
+				}
+				add_adm_power = 50
+			}
+			else = {
+				west_nile_area = {
+					change_trade_goods = slaves
+				}
+				mouth_of_the_nile_area = {
+					change_trade_goods = slaves
+				}
+				nature_coast_area = {
+					change_trade_goods = slaves
+				}
+			}
+			new_orleans_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			new_mississippi_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			cajun_country_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			piney_woods_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	unite_alabama = {
+		icon = mission_rb_monopolize_the_channel
+		required_missions = { assimilate_the_floridians }
+		position = 14
+		provinces_to_highlight = {
+			OR = {
+				area = new_orleans_area
+				area = new_mississippi_area
+				area = cajun_country_area
+				area = piney_woods_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			new_orleans_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			new_mississippi_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cajun_country_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			piney_woods_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "the_legacy_of_abu"
+				duration = -1
+			}
+			texas_region  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+	}
+}
+ohio_missions_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = X91
+	}
+	has_country_shield = yes
+	
+	the_virginian_massacre = {
+		icon = mission_abu_saids_dream
+		required_missions = { conquest_of_the_carolinians }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = virginia_interior
+				area = lower_piedmont_area
+				area = upper_piedmont_area
+				area = upper_tar_heel
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			virginia_interior  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_piedmont_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_piedmont_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_tar_heel  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 10
+			2549 = {
+				add_province_modifier = {
+					name = "new_monticello"
+					duration = 9125
+				}
+			}
+		}
+	}
+	the_isle_of_tigers_mission = {
+		icon = mission_retake_ceuta
+		required_missions = { the_grand_caliphate }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = grand_rapdis_area
+				area = north_indiana_area
+				area = ann_arbor_area
+				area = detroit_area
+				province_id = 327
+				province_id = 2521
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			grand_rapdis_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+			north_indiana_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+			ann_arbor_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+			detroit_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+			327  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+			2521  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			322 = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			gaylord_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			detroit_area = {
+				add_province_modifier = {
+					name = "settling_michigan"
+					duration = 18250
+				}
+			}
+			ann_arbor_area = {
+				add_province_modifier = {
+					name = "settling_michigan"
+					duration = 18250
+				}
+			}
+			north_indiana_area = {
+				add_province_modifier = {
+					name = "settling_michigan"
+					duration = 18250
+				}
+			}
+			grand_rapdis_area = {
+				add_province_modifier = {
+					name = "settling_michigan"
+					duration = 18250
+				}
+			}
+			add_legitimacy = 15
+		}
+	}
+	up_the_lawrence = {
+		icon = mission_recruit_the_cossacks
+		required_missions = { into_ontario }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = montreal_area
+				area = west_montreal_area
+				area = quebecois_hudsonian_area
+				area = saguenay_area
+				area = north_montreal_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			montreal_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_montreal_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			quebecois_hudsonian_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			saguenay_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			north_montreal_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			208 = {
+				add_province_modifier = {
+					name = "the_caliphs_island"
+					duration = -1
+				}
+			}
+			labrador_proper_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			quebecer_lawrencia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			southern_labrador_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_newfoundland_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_newfoundland_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_hudsonia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			inner_forts_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			new_greenland_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	crushing_the_maratimes = {
+		icon = mission_scandinavian_port_authority
+		required_missions = { up_the_lawrence }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				area = quebecer_lawrencia_area
+				area = southern_labrador_area
+				area = lower_newfoundland_area
+				area = upper_newfoundland_area
+				area = east_hudsonia_area
+				area = inner_forts_area
+				area = labrador_proper_area
+				area = new_greenland_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			quebecer_lawrencia_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			new_greenland_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			southern_labrador_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_newfoundland_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_newfoundland_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_hudsonia_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			inner_forts_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			labrador_proper_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = { id = ohio_events.1015 }
+		}
+	}
+}
+ohio_missions_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = X91
+	}
+	has_country_shield = yes
+	
+	the_board_is_set = {
+		icon = mission_accomodate_the_rajputs
+		required_missions = { }
+		position = 1
+		trigger = {
+			army_size_percentage = 0.9
+		}
+		effect = {
+			charlotte_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			jessamine_coast_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_tar_heel = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	the_betrayl_at_asheville = {
+		icon = mission_crush_delhi
+		required_missions = { the_board_is_set }
+		position = 2
+		trigger = {
+			if = {
+				limit = {
+					exists = X49
+				}
+				war_with = X49
+			}
+			else = {
+				146  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "betrayer_amongst_the_ranks"
+				duration = 730
+			}
+			if {
+				limit = {
+					any_known_country = {
+						owns_core_province = 146
+						war_with = FROM
+					}
+				}
+				146 = {
+					change_controller = ROOT
+				}
+			}
+		}
+	}
+	conquest_of_the_carolinians = {
+		icon = develop_konigsberg
+		required_missions = { the_betrayl_at_asheville }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = lower_tar_heel
+				area = jessamine_coast_area
+				area = charlotte_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			lower_tar_heel  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+			jessamine_coast_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+			charlotte_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			antebella_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	tidewater_dominence = {
+		icon = invest_in_the_rich_trades
+		required_missions = { conquest_of_the_carolinians }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = chesapeak_area
+				area = outer_banks
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			chesapeak_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+			outer_banks  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			950 = {
+				add_trade_modifier = {
+					who = root
+					duration = 18250
+					power = 25
+					key = new_tidewater_power
+				}
+			}
+		}
+	}
+	game_set_match = {
+		icon = game_set_match
+		required_missions = { tidewater_dominence the_virginian_massacre }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				region = antebella_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			antebella_region  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+			}
+			NOT = {
+				any_owned_province = {
+					culture = carolinian
+					AND = {
+						local_autonomy = 50
+						unrest = 2
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = { id = ohio_events.1007 }
+		}
+	}
+	a_jihad_in_sudbury = {
+		icon = mission_reliable_allies
+		required_missions = { }
+		position = 6
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = a_jihad_in_sudbury_tt
+				has_global_flag = the_lawrencian_spring
+				offensive_war_with = X67
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "an_islamist_on_the_throne"
+				duration = 9125
+			}
+		}
+	}
+	the_north_mitt = {
+		icon = mission_unite_the_princes
+		required_missions = { the_isle_of_tigers_mission }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = gaylord_area
+				province_id = 322
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			gaylord_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			322  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			bruce_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			niagra_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			toronto_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			parry_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			ottawa_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	into_ontario = {
+		icon = mission_subdue_rajputana
+		required_missions = { the_north_mitt }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = bruce_area
+				area = niagra_area
+				area = toronto_area
+				area = parry_area
+				area = ottawa_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			bruce_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			niagra_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			toronto_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			parry_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ottawa_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "claiming_the_lakes_jewel"
+				duration = 9125
+			}
+			algonquin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			subury_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			greater_otter_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			north_superior_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			superior_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			fort_hope_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			
+			quebecois_hudsonian_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			west_montreal_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			saguenay_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			north_montreal_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			montreal_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	the_superior_route = {
+		icon = mission_protect_granada
+		required_missions = { into_ontario }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = algonquin_area
+				area = subury_area
+				area = greater_otter_area
+				area = north_superior_area
+				area = superior_area
+				area = fort_hope_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			algonquin_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			subury_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			greater_otter_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			north_superior_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			superior_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			fort_hope_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}	
+		}
+		effect = {
+			298 = {
+				add_trade_modifier = {
+					who = root
+					duration = 18250
+					power = 100
+					key = ohioan_oars
+				}
+			}
+			hudson_rapids_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			ontarian_north_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			the_bulk_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			west_hudsonia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			bay_isles_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	the_northwest_passage = {
+		icon = mission_protect_white_sea_trade
+		required_missions = { the_superior_route }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				area = hudson_rapids_area
+				area = ontarian_north_area
+				area = the_bulk_area
+				area = west_hudsonia_area
+				area = bay_isles_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			hudson_rapids_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ontarian_north_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			the_bulk_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_hudsonia_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			bay_isles_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = { id = ohio_events.1014 }
+			add_dip_power = 100
+		}
+	}
+	a_new_throne = {
+		icon = mission_rb_trinity_college_dublin
+		required_missions = { crushing_the_maratimes the_northwest_passage }
+		position = 12
+		trigger = {
+			NOT = {
+				any_owned_province = {
+					culture = cosmopolitan_canadian
+					AND = {
+						local_autonomy = 50
+						unrest = 2
+					}
+				}
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "beylerbey_of_canada"
+				duration = -1
+			}
+			country_event = { id = ohio_events.1016 }
+		}
+	}
+	extracting_canadian_riches = {
+		icon = mission_restore_trade_superiority
+		required_missions = { a_new_throne }
+		position = 14
+		trigger = {
+			religious_unity = 0.9
+			2670 = { 
+				trade_share = {
+					country = ROOT
+					share = 75
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			tohoku_hokkaido = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			nippon_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			seto_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	silencing_the_east = {
+		icon = mission_trade_with_japan
+		required_missions = { extracting_canadian_riches rebuilding_land_of_antiquity }
+		position = 15
+		provinces_to_highlight = {
+			OR = {
+				region = tohoku_hokkaido
+				region = nippon_area
+				region = seto_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			tohoku_hokkaido  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			nippon_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			seto_region  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "reiwan_knowledge"
+				duration = -1
+			}
+		}
+	}
+}
+

@@ -1,0 +1,500 @@
+# If you add religions, and use those tags, do not change them without changing everywhere they are used.
+
+# Uses all 'modifiers' possible thats exported as a Modifier.
+
+japanese_group = {
+	can_form_personal_unions = yes
+	defender_of_faith = yes
+	flag_emblem_index_range = { 110 110 }
+	zahran = {
+		color = { 189 230 149 }
+		icon = 48
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+		 	adm_tech_cost_modifier = -0.05
+			tolerance_heretic = 2
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		heretic = { MAZDAKI MANICHEAN }	
+	}
+	neoshinto = {
+		color = { 204 0 0 }
+		icon = 10
+		province = {
+			local_missionary_strength = -0.01
+		}
+		country = {
+			land_morale = 0.05
+			tolerance_heretic = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		heretic = { MAZDAKI MANICHEAN }	
+	}
+	harmonized_modifier = harmonized_zoroastrian_group
+	crusade_name = HOLY_WAR
+}
+
+neo_christian_group = {
+	flag_emblem_index_range = { 110 110 }
+	defender_of_faith = yes
+	can_form_personal_unions = yes
+	evangelical = {
+		color = { 153 252 255 }
+		icon = 2
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+			production_efficiency = 0.05
+			tolerance_heathen = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		heretic = { MAZDAKI MANICHEAN }	
+	}
+	catholico = {
+		color = { 204 204 0 }
+		icon = 1
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+		 	global_missionary_strength = 0.01
+			tolerance_heathen = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		heretic = { MAZDAKI MANICHEAN }	
+	}
+	espiritismo = {
+		color = { 126 66 32 }
+		icon = 52
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+			tolerance_heretic = 2
+			tolerance_heathen = 2
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		heretic = { MAZDAKI MANICHEAN }	
+	}	
+	harmonized_modifier = harmonized_indonesian_group
+	crusade_name = HOLY_WAR
+	harmonized_modifier = harmonized_zoroastrian_group
+	
+	crusade_name = HOLY_WAR
+	
+}
+
+sacramental_group = {
+	flag_emblem_index_range = { 110 110 }
+	defender_of_faith = yes
+	can_form_personal_unions = yes
+	center_of_religion = 706 # Salt Lake City
+	
+	dynastic = {
+		color = { 219 172 34 }
+		icon = 35
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+			yearly_corruption = -0.05
+		 	tolerance_own = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		heretic = { MAZDAKI MANICHEAN }	
+	}
+	sacramental = {
+		color = { 255 250 179 }
+		icon = 39
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+		 	core_creation = -0.05
+			tolerance_heretic = -2
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		allowed_conversion = {
+			partisan
+			anarchist
+			despotic
+			collectivist
+		}
+		on_convert = {
+			change_religion = sacramental
+			add_prestige = -100
+			
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}			
+		}
+		heretic = { MAZDAKI MANICHEAN }	
+	}
+	partisan = {
+		color = { 69 157 208 }
+		icon = 58
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+		 	diplomatic_reputation = 1
+			tolerance_heretic = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		allowed_conversion = {
+			sacramental
+			anarchist
+			despotic
+			collectivist
+		}
+		on_convert = {
+			change_religion = partisan
+			add_prestige = -100
+			
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}			
+		}
+		heretic = { MAZDAKI MANICHEAN }	
+		hre_religion = yes
+	}
+	anarchist = {
+		color = { 26 26 26 }
+		icon = 34
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+		 	global_trade_goods_size_modifier = 0.05
+			tolerance_heretic = -2
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		allowed_center_conversion = {
+			partisan
+		}
+		will_get_center = { 
+			any_owned_province = {
+				can_have_center_of_reformation_trigger = {
+					RELIGION = anarchist
+				}
+			}
+		}
+		allowed_conversion = {
+			sacramental
+			partisan
+			despotic
+			collectivist
+		}
+		on_convert = {
+			change_religion = anarchist
+			add_prestige = -100
+			
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+			hidden_effect = {
+				random_owned_province = {
+					limit = {
+						can_have_center_of_reformation_trigger = {
+							RELIGION = anarchist
+						}
+					}
+					change_religion = anarchist
+					add_reform_center = anarchist
+				}
+			}
+		}
+		date = 1553.1.1
+		heretic = { MAZDAKI MANICHEAN }	
+	}
+	despotic = {
+		color = { 168 168 168 }
+		icon = 41
+		allowed_center_conversion = {
+			partisan
+		}
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+			legitimacy = 1
+			tolerance_heretic = -2
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		will_get_center = { 
+			any_owned_province = {
+				can_have_center_of_reformation_trigger = {
+					RELIGION = despotic
+				}
+			}
+		}
+		allowed_conversion = {
+			sacramental
+			partisan
+			anarchist
+			collectivist
+		}
+		on_convert = {
+			change_religion = despotic
+			add_prestige = -100
+			
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+			hidden_effect = {
+				random_owned_province = {
+					limit = {
+						can_have_center_of_reformation_trigger = {
+							RELIGION = despotic
+						}
+					}
+					change_religion = despotic
+					add_reform_center = despotic
+				}
+			}
+		}
+		heretic = { FILLER FILLER }	
+		date = 1553.1.1
+		hre_heretic_religion = yes
+	}
+	
+	harmonized_modifier = harmonized_zoroastrian_group
+	
+	crusade_name = HOLY_WAR
+	
+}
+
+new_cannanite = {
+	defender_of_faith = yes
+	can_form_personal_unions = yes
+	defender_of_faith = yes
+	flag_emblem_index_range = { 110 110 }
+	new_jewish = {
+		icon = 20
+		color = { 153 25 102 }
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+			tolerance_own = 2
+			advisor_pool = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		heretic = { MAZDAKI MANICHEAN }	
+	}
+	harmonized_modifier = harmonized_zoroastrian_group
+	crusade_name = HOLY_WAR
+}
+
+islam_group = {
+	defender_of_faith = yes
+	flag_emblem_index_range = { 110 110 }
+	islam = {
+		color = { 164 240 24 }
+		icon = 5
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+			infantry_power = 0.05
+		 	heir_chance = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		heretic = { MAZDAKI MANICHEAN }	
+	}
+	harmonized_modifier = harmonized_zoroastrian_group
+	crusade_name = HOLY_WAR
+}
+
+ancient_faiths_group = {
+	defender_of_faith = yes
+	flag_emblem_index_range = { 110 110 }
+	yanantin = {
+		color = { 64 115 115 }
+		icon = 18
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+		 	trade_efficiency = 0.05
+		 	tolerance_own = 2
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		heretic = { MAZDAKI MANICHEAN }	
+	}
+	paganry = {
+		color = { 163 181 109 }
+		icon = 53
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+		 	global_unrest = -1
+		  	tolerance_own = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		heretic = { MAZDAKI MANICHEAN }	
+	}
+	shamanist = {
+		color = { 214 175 237 }
+		icon = 12
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+			global_unrest = -1
+		  	tolerance_own = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		heretic = { MAZDAKI MANICHEAN }	
+	}
+	idolatrous = {
+		color = { 245 179 66 }
+		icon = 9
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+			global_unrest = -1
+		  	tolerance_own = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		heretic = { MAZDAKI MANICHEAN }	
+	}
+	penitent = {
+		color = { 153 255 209 }
+		icon = 4
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+		 	stability_cost_modifier = -0.1
+		  	tolerance_heathen = 2
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		
+		heretic = { MAZDAKI MANICHEAN }	
+	}
+	harmonized_modifier = harmonized_zoroastrian_group
+	crusade_name = HOLY_WAR
+}
+
+collectivist_group = {
+	center_of_religion = 2304 #Anchorage I guess???
+	defender_of_faith = yes
+	flag_emblem_index_range = { 110 110 }
+	collectivist = {
+		color = { 221 0 0 }
+		icon = 45
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country = {
+		 	global_tax_modifier = 0.05
+		 	heir_chance = 1
+		}
+		country_as_secondary = {
+			merchants = 1
+			tolerance_own = 1
+		}
+		allowed_center_conversion = {
+			partisan
+			sacramental
+		}
+		heretic = { MAZDAKI MANICHEAN }	
+		will_get_center = { 
+			any_owned_province = {
+				can_have_center_of_reformation_trigger = {
+					RELIGION = collectivist
+				}
+			}
+		}
+		allowed_conversion = {
+			sacramental
+			partisan
+			despotic
+			anarchist
+		}
+		on_convert = {
+			change_religion = collectivist
+			add_prestige = -100
+			
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}			
+		}
+	}
+	harmonized_modifier = harmonized_zoroastrian_group
+	crusade_name = HOLY_WAR
+}

@@ -1,0 +1,16 @@
+#4281 - Dhamar
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V66 
+controller = V66 
+add_core = V66
+culture = zuilian
+religion = catholico
+capital = "Dhamar"
+trade_goods = cotton #they make cotton
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

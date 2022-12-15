@@ -1,0 +1,122 @@
+connect_with_nature_theanite = {
+	sprite = "connect_with_nature_theanite"
+	cost = 100
+	trigger = {
+		any_owned_province = {
+			NOT = {
+				development = 20
+			}
+		}	
+	}
+	effect = {
+		random_owned_province = {
+			limit = {
+				NOT = {
+					development = 20
+				}
+			}
+			add_base_tax = 1
+		}	
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			any_owned_province = {
+				NOT = {
+					development = 20
+				}
+			}	
+		}
+	}
+}
+
+require_reflection = {
+	sprite = "require_reflection"
+	cost = 100
+	trigger = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = require_reflection.tt
+		hidden_effect = {
+			define_advisor = {
+				type = philosopher
+				skill = 2
+				discount = yes
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+channel_positive_energy = {
+	sprite = "channel_positive_energy"
+	cost = 100
+	trigger = {
+		NOT = {
+			has_country_modifier = positive_energy
+		}
+	}
+	effect = {
+		custom_tooltip = positive_energy.tt
+		hidden_effect = {
+			add_country_modifier = {
+				name = "positive_energy"
+				duration = 3650
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 0.5
+		modifier = {
+			factor = 4
+			NOT = {
+				diplomatic_reputation = 1
+			}
+		}
+	}
+}
+
+respect_ancient_ways = {
+	sprite = "respect_ancient_ways"
+	cost = 100
+	trigger = {
+		NOT = {
+			army_tradition = 100
+		}
+	}
+	effect = {
+		add_army_tradition = 10	
+	}
+	ai_will_do = {
+		factor = 4
+		modifier = {
+			factor = 0.5
+			army_tradition = 30	
+		}
+	}
+}
+
+align_chakras = {
+	sprite = "align_chakras"
+	cost = 100
+	trigger = {
+		corruption = 1
+	}
+	effect = {
+		add_corruption = -1
+	}
+	ai_will_do = {
+		factor = 4
+		modifier = {
+			factor = 0
+			NOT = {
+				corruption = 2
+			}
+		}
+	}
+}
+

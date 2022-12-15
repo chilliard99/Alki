@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = royal_iowan
+religion = islam
+technology_group = eastern
+capital = 461	#Dubuque
+
+1423.11.11 = {
+	monarch = {
+		name = "Ryan"
+		dynasty = "Des Moines"
+		birth_date = 1423.11.11
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1442.2.3 = {
+	heir = {
+		name = "Ricky"
+		monarch_name = "Ricky II"
+		dynasty = "Des Moines"
+		birth_date = 1442.2.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 1
+		mil = 0
+	}
+}

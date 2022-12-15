@@ -1,0 +1,17 @@
+#717 - Selenge
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y35
+controller = Y35
+add_core = Y35
+culture = metropolitan_shoshone
+religion = sacramental
+capital = "Kherlen"
+trade_goods = livestock #Curlew Grassland
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 3
+is_city = yes

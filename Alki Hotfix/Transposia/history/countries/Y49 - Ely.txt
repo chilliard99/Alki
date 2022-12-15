@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = portugers
+religion = partisan
+technology_group = western
+capital = 1140	 #Ely
+
+1421.5.15 = {
+	monarch = {
+		name = "Luis"
+		dynasty = "Jesus"
+		birth_date = 1421.5.15
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+}
+1443.5.12 = {
+	heir = {
+		name = "Mauricio"
+		monarch_name = "Mauricio"
+		dynasty = "Jesus"
+		birth_date = 1443.5.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 4
+		mil = 0
+	}
+}

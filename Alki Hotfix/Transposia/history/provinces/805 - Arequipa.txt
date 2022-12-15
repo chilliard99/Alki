@@ -1,0 +1,14 @@
+#805 - Arequipa
+discovered_by = indian
+owner = V81
+controller = V81
+add_core = V81
+culture = incan
+religion = yanantin
+capital = "Arequipa"
+trade_goods = naval_supplies #palm oil, IDK what the fuck else it should be but fuck it you can probably use it somewhere on a ship
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

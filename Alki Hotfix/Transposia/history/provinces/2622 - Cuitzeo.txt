@@ -1,0 +1,16 @@
+# No previous file for Cuitzeo
+discovered_by = ottoman
+discovered_by = muslim
+culture = michoacan
+owner = W78
+controller = W78
+add_core = W78
+is_city = yes
+religion = catholico
+capital = "Zinapecuaro"
+trade_goods = naval_supplies #Lumber industries
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+

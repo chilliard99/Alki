@@ -1,0 +1,19 @@
+#1051 - Uchurskoye
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y34
+controller = Y34
+add_core = Y34
+culture = navajan
+religion = sacramental
+capital = "Aldan"
+trade_goods = gems #turqouis jewelry
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 5
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

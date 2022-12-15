@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = caraqueno
+religion = espiritismo	 
+technology_group = indian
+capital = 831	#Caracas
+
+1412.4.15 = {
+	monarch = {
+		name = "Phillip"
+		dynasty = "Losada"
+		birth_date = 1412.4.15
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1431.5.12 = {
+	heir = {
+		name = "Jose"
+		monarch_name = "Jose"
+		dynasty = "Losada"
+		birth_date = 1431.5.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 4
+		mil = 1
+	}
+}

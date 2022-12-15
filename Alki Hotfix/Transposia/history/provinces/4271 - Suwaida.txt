@@ -1,0 +1,16 @@
+#4271 - Suwaida
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V46
+controller = V46
+add_core = V46
+culture = choco
+religion = catholico
+capital = "As-Suwayda"
+trade_goods = coffee #coffee axis
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

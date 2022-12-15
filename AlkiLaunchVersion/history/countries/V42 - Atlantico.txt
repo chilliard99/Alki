@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = cariben
+religion = catholico 
+technology_group = indian
+capital = 4173	#Barranquilla
+
+1403.2.12 = {
+	monarch = {
+		name = "Marco"
+		dynasty = "de Barranquilla"
+		birth_date = 1403.2.12
+		adm = 1
+		dip = 1
+		mil = 4
+	}
+}
+1429.4.19 = {
+	heir = {
+		name = "Rodriguez"
+		monarch_name = "Rodriguez"
+		dynasty = "de Barranquilla"
+		birth_date = 1429.4.19
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+}

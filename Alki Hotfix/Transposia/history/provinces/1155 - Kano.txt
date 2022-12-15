@@ -1,0 +1,20 @@
+#1155 - Kano
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y56
+controller = Y56
+add_core = Y56
+culture = jackpotter
+is_city = yes
+base_manpower = 3
+religion = partisan
+capital = "Kano"
+trade_goods = fish #"Cutthroat Trout Eaters"
+hre = yes
+base_tax = 3
+base_production = 3
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

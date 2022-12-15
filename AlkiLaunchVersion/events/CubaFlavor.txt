@@ -1,0 +1,803 @@
+namespace = cuban_events
+country_event = { #Yearly event tick
+	id = cuban_events.1
+	title = cuban_events.1.t
+	desc = cuban_events.1.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		NOT = {
+			has_country_flag = no_more_complicated_shit
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = war_interrupted_peace_cuba
+				}
+			}
+			change_variable = {
+				which = peacetimeCubaCounter
+				value = 1
+			}
+		}
+	}
+	option = {
+		name = cuban_events.1.a
+		if = {
+			limit = {
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 5
+				}
+				NOT = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 6
+					}
+				}
+			}
+			country_event = { id = cuban_events.3 }
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 10
+				}
+				NOT = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 11
+					}
+				}
+			}
+			country_event = { id = cuban_events.4 }
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 20
+				}
+				NOT = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 21
+					}
+				}
+			}
+			country_event = { id = cuban_events.5 }
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 40
+				}
+				NOT = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 41
+					}
+				}
+			}
+			country_event = { id = cuban_events.6 }
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 60
+				}
+				NOT = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 61
+					}
+				}
+			}
+			country_event = { id = cuban_events.7 }
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 80
+				}
+				NOT = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 81
+					}
+				}
+			}
+			country_event = { id = cuban_events.8 }
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 100
+				}
+				NOT = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 101
+					}
+				}
+			}
+			country_event = { id = cuban_events.9 }
+		}
+		else = {
+			country_event = {
+				id = cuban_events.1
+				days = 365
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = { #Wartime Aversion
+	id = cuban_events.2
+	title = cuban_events.2.t
+	desc = cuban_events.2.d
+	picture = RELIGIOUS_WARS_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = {
+			has_country_flag = no_more_complicated_shit
+		}
+		OR = {
+			tag = V05
+			tag = U34
+		}
+	}
+	
+	option = {
+		name = cuban_events.2.a
+		add_country_modifier = {
+			name = "war_weary"
+			duration = -1
+		}
+		hidden_effect = {
+			country_event = {
+				id = cuban_events.1
+				days = 365
+			}
+		}
+	}
+}
+
+country_event = { #Five Years of Peace
+	id = cuban_events.3
+	title = cuban_events.3.t
+	desc = cuban_events.3.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			has_country_flag = no_more_complicated_shit
+		}
+	}
+	
+	option = {
+		name = cuban_events.3.a
+		remove_country_modifier = war_weary
+		add_country_modifier = {
+			name = "recovered_peoples"
+			duration = -1
+		}
+		hidden_effect = {
+			country_event = {
+				id = cuban_events.1
+				days = 365
+			}
+		}
+	}
+}
+
+country_event = { #Ten Years of Peace
+	id = cuban_events.4
+	title = cuban_events.4.t
+	desc = cuban_events.4.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			has_country_flag = no_more_complicated_shit
+		}
+	}
+	
+	option = {
+		name = cuban_events.4.a
+		remove_country_modifier = recovered_peoples
+		add_country_modifier = {
+			name = "normalcy_restored"
+			duration = -1
+		}
+		hidden_effect = {
+			country_event = {
+				id = cuban_events.1
+				days = 365
+			}
+		}
+	}
+}
+
+country_event = { #Twenty Years of Peace
+	id = cuban_events.5
+	title = cuban_events.5.t
+	desc = cuban_events.5.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			has_country_flag = no_more_complicated_shit
+		}
+	}
+	
+	option = {
+		name = cuban_events.5.a
+		remove_country_modifier = normalcy_restored
+		add_country_modifier = {
+			name = "productive_peace"
+			duration = -1
+		}
+		hidden_effect = {
+			country_event = {
+				id = cuban_events.1
+				days = 365
+			}
+		}
+	}
+}
+
+country_event = { #Fourty Years of Peace
+	id = cuban_events.6
+	title = cuban_events.6.t
+	desc = cuban_events.6.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			has_country_flag = no_more_complicated_shit
+		}
+	}
+	
+	option = {
+		name = cuban_events.6.a
+		remove_country_modifier = productive_peace
+		add_country_modifier = {
+			name = "the_long_peace"
+			duration = -1
+		}
+		hidden_effect = {
+			country_event = {
+				id = cuban_events.1
+				days = 365
+			}
+		}
+	}
+}
+
+country_event = { #Sixty Years of Peace
+	id = cuban_events.7
+	title = cuban_events.7.t
+	desc = cuban_events.7.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			has_country_flag = no_more_complicated_shit
+		}
+	}
+	
+	option = {
+		name = cuban_events.7.a
+		remove_country_modifier = the_long_peace
+		add_country_modifier = {
+			name = "budding_complacency"
+			duration = -1
+		}
+		hidden_effect = {
+			country_event = {
+				id = cuban_events.1
+				days = 365
+			}
+		}
+	}
+}
+
+country_event = { #Eighty Years of Peace
+	id = cuban_events.8
+	title = cuban_events.8.t
+	desc = cuban_events.8.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			has_country_flag = no_more_complicated_shit
+		}
+	}
+	
+	option = {
+		name = cuban_events.8.a
+		remove_country_modifier = budding_complacency
+		add_country_modifier = {
+			name = "prosperous_peace"
+			duration = -1
+		}
+		hidden_effect = {
+			country_event = {
+				id = cuban_events.1
+				days = 365
+			}
+		}
+	}
+}
+
+country_event = { #One Hundred Years of Peace
+	id = cuban_events.9
+	title = cuban_events.9.t
+	desc = cuban_events.9.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			has_country_flag = no_more_complicated_shit
+		}
+	}
+	
+	option = {
+		name = cuban_events.9.a
+		remove_country_modifier = prosperous_peace
+		add_country_modifier = {
+			name = "pax_cubana"
+			duration = -1
+		}
+		hidden_effect = {
+			country_event = {
+				id = cuban_events.1
+				days = 365
+			}
+		}
+	}
+}
+
+country_event = { #Dev Event
+	id = cuban_events.10
+	title = cuban_events.10.t
+	desc = cuban_events.10.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = no
+		check_variable = {
+			which = peacetimeCubaCounter
+			value = 1
+		}
+	}
+	
+	option = {
+		name = cuban_events.10.a
+		change_variable = {
+			which = peacetimeCubaCounter
+			value = 100
+		}
+	}
+	option = {
+		name = cuban_events.10.b
+		change_variable = {
+			which = peacetimeCubaCounter
+			value = 50
+		}
+	}
+	option = {
+		name = cuban_events.10.c
+		change_variable = {
+			which = peacetimeCubaCounter
+			value = 20
+		}
+	}
+	option = {
+		name = cuban_events.10.e
+		change_variable = {
+			which = peacetimeCubaCounter
+			value = 10
+		}
+	}
+	option = {
+		name = cuban_events.10.f
+		change_variable = {
+			which = peacetimeCubaCounter
+			value = 5
+		}
+	}
+	option = {
+		name = cuban_events.10.g
+		change_variable = {
+			which = peacetimeCubaCounter
+			value = 1
+		}
+	}
+	option = {
+		name = cuban_events.10.h
+	}
+}
+
+country_event = { #War interuption
+	id = cuban_events.11
+	title = cuban_events.11.t
+	desc = cuban_events.11.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		OR = {
+			tag = V05
+			tag = U34
+		}
+		NOT = {
+			has_country_flag = war_interrupted_peace_cuba
+		}
+		any_country = {
+			NOT = {
+				has_country_flag = brazilian_challenge
+			}
+			OR = {
+				is_great_power = yes
+				capital_scope = {
+					continent = mexico
+				}
+			}
+			is_in_war = {
+				defender_leader = THIS
+				attacker_leader = ROOT
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cuban_events.11.a
+		remove_country_modifier = war_weary
+		remove_country_modifier = recovered_peoples
+		remove_country_modifier = normalcy_restored
+		remove_country_modifier = productive_peace
+		remove_country_modifier = the_long_peace
+		remove_country_modifier = budding_complacency
+		remove_country_modifier = prosperous_peace
+		remove_country_modifier = pax_cubana
+		set_country_flag = war_interrupted_peace_cuba
+		hidden_effect = {
+			set_variable = {
+				which = peacetimeCubaCounter
+				value = 0
+			}
+		}
+	}
+}
+
+country_event = { #War interuption
+	id = cuban_events.12
+	title = cuban_events.12.t
+	desc = cuban_events.12.d
+	picture = RELIGIOUS_WARS_eventPicture
+	
+	trigger = {
+		NOT = {
+			has_country_flag = no_more_complicated_shit
+		}
+		has_country_flag = war_interrupted_peace_cuba
+		is_at_war = no
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cuban_events.12.a
+		clr_country_flag = war_interrupted_peace_cuba
+		add_country_modifier = {
+			name = "war_weary"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Future of our Country
+	id = cuban_events.13
+	title = cuban_events.13.t
+	desc = cuban_events.13.d
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = cuban_events.13.a
+		set_country_flag = peace_focused_path
+		swap_non_generic_missions = yes
+		custom_tooltip = peace_path_tooltip.tt
+		
+	}
+	option = {
+		name = cuban_events.13.b
+		set_country_flag = war_focused_path
+		swap_non_generic_missions = yes
+		custom_tooltip = war_path_tooltip.tt
+	}
+}
+
+country_event = { #Crushing the resistance
+	id = cuban_events.14
+	title = cuban_events.14.t
+	desc = cuban_events.14.d
+	picture = REVOLUTION_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = cuban_events.14.a
+		change_tag = U34
+		custom_tooltip = kings_revolt_cuba.tt
+		hidden_effect = {
+			every_core_province = {
+				limit = {
+					culture = oriente
+				}
+				add_core = U33
+			}
+			486 = {
+				add_core = U33
+				cede_province = U33
+			}
+			U33 = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.3
+					}
+				}
+				set_government_rank = 1
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+				declare_war_with_cb = {
+					who = U34
+					casus_belli = cb_annex
+				}
+			}
+			every_core_province = {
+				limit = {
+					culture = matancero
+				}
+				add_core = U30
+			}
+			4165 = {
+				add_core = U30
+				cede_province = U30
+			}
+			U30 = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.3
+					}
+				}
+				set_government_rank = 1
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+				join_all_offensive_wars_of = U33
+			}
+			every_core_province = {
+				limit = {
+					culture = villan
+				}
+				add_core = U31
+			}
+			4623 = {
+				add_core = U31
+				cede_province = U31
+			}
+			U31 = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.3
+					}
+				}
+				set_government_rank = 1
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+				join_all_offensive_wars_of = U33
+			}
+			every_core_province = {
+				limit = {
+					culture = camaguey
+				}
+				add_core = U32
+			}
+			2656 = {
+				add_core = U32
+				cede_province = U32
+			}
+			U32 = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.3
+					}
+				}
+				set_government_rank = 1
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+				join_all_offensive_wars_of = U33
+			}
+		}
+	}
+}
+
+country_event = { #Future of our Country
+	id = cuban_events.15
+	title = cuban_events.15.t
+	desc = cuban_events.15.d
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = cuban_events.15.a
+		4618 = {
+			add_province_modifier = {
+				name = "hispaniolan_capital"
+				duration = -1
+			}
+		}
+		custom_tooltip = haitian_capital_hispaniola.tt
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					culture = haitian
+				}
+				add_province_modifier = {
+					name = "capital_runoff_hispaniola"
+					duration = -1
+				}
+			}
+		}
+	}
+	option = {
+		name = cuban_events.15.b
+		4219 = {
+			add_province_modifier = {
+				name = "hispaniolan_capital"
+				duration = -1
+			}
+		}
+		custom_tooltip = domingo_capital_hispaniola.tt
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					culture = dominican
+				}
+				add_province_modifier = {
+					name = "capital_runoff_hispaniola"
+					duration = -1
+				}
+			}
+		}
+	}
+	option = {
+		name = cuban_events.15.c
+		4229 = {
+			add_province_modifier = {
+				name = "hispaniolan_capital"
+				duration = -1
+			}
+		}
+		custom_tooltip = cibao_capital_hispaniola.tt
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					culture = cibao
+				}
+				add_province_modifier = {
+					name = "capital_runoff_hispaniola"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Envy of the Tides
+	id = cuban_events.16
+	title = cuban_events.16.t
+	desc = cuban_events.16.d
+	picture = HARBOUR_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = cuban_events.16.a #We will grow our domestic wealth!
+		add_country_modifier = {
+			name = "domestic_focus"
+			duration = -1
+		}
+	}
+	option = {
+		name = cuban_events.16.b #Sucess is beyond the seas!
+		add_country_modifier = {
+			name = "foreign_focus"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Cuban Event AI behavior tweaker
+	id = cuban_events.17
+	title = cuban_events.17.t
+	desc = cuban_events.17.d
+	picture = POPE_PREACHING_eventPicture
+	hidden = yes
+	
+	trigger = {
+		tag = V05
+		has_country_flag = peace_focused_path
+		NOT = {
+			personality = ai_diplomat
+		}
+		ai = yes
+	}
+	
+	option = {
+		name = cuban_events.16.a #We will grow our domestic wealth!
+		set_ai_personality = {
+			personality = ai_diplomat
+			locked = yes
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}

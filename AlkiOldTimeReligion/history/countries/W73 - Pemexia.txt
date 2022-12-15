@@ -1,0 +1,33 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = tamper
+religion = catholico
+technology_group = muslim
+capital = 2776	#Monterrey
+
+1444.1.1 = { set_country_flag = a_super_cool_company }
+1412.1.4 = {
+	monarch = {
+		name = "Pedro II"
+		dynasty = "Slim"
+		birth_date = 1412.1.4
+		adm = 3
+		dip = 6
+		mil = 4
+	}
+	save_event_target_as = CEO_of_empresia
+}
+1439.2.12 = {
+	heir = {
+		name = "Diego"
+		monarch_name = "Diego"
+		dynasty = "Slim"
+		birth_date = 1439.2.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 5
+		mil = 4
+	}
+}

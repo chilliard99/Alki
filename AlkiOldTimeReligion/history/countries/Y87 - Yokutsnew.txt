@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = joaquin
+religion = partisan
+technology_group = western
+capital = 4637	 #Stockton
+religious_school = progressive_party
+
+1416.3.13 = {
+	monarch = {
+		name = "Estanislao II"
+		dynasty = "Yokut"
+		birth_date = 1416.3.13
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1433.4.15 = {
+	heir = {
+		name = "Estanislao"
+		monarch_name = "Estanislao III"
+		dynasty = "Yokut"
+		birth_date = 1433.4.15
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}

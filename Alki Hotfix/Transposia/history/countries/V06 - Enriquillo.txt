@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = dominican
+religion = espiritismo 
+technology_group = ottoman
+capital = 4217	#Barahona
+
+1405.2.15 = {
+	monarch = {
+		name = "Senora"
+		dynasty = "Valdesia"
+		birth_date = 1405.2.15
+		adm = 3
+		dip = 2
+		mil = 2
+		female = yes
+	}
+}
+1426.3.19 = {
+	heir = {
+		name = "Franscisco"
+		monarch_name = "Franscisco"
+		dynasty = "Valdesia"
+		birth_date = 1426.3.19
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 0
+		mil = 1
+	}
+}

@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = portugers
+religion = partisan
+technology_group = western
+capital = 1070	 #Ring of Fire
+religious_school = traditionalist_party
+
+1413.1.2 = {
+	monarch = {
+		name = "Hugo"
+		dynasty = "Alves"
+		birth_date = 1413.1.2
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+1436.3.5 = {
+	heir = {
+		name = "Mehmet"
+		monarch_name = "Mehmet"
+		dynasty = "Alves"
+		birth_date = 1436.3.5
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}

@@ -1,0 +1,15 @@
+#2209 - Ilam
+discovered_by = eastern
+discovered_by = western
+owner = W03
+controller = W03
+add_core = W03
+culture = neochipewyan
+religion = sacramental
+capital = "Ilam"
+trade_goods = fur #fur trapping
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

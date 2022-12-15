@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = old_metis
+religion = sacramental
+technology_group = western
+capital = 2122	 #Saskatoon
+
+
+1388.5.23 = {
+	monarch = {
+		name = "Brassankle"
+		dynasty = "Riel"
+		birth_date = 1388.5.23
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1426.12.12 = {
+	heir = {
+		name = "We-Sort"
+		monarch_name = "We-Sort"
+		dynasty = "Riel"
+		birth_date = 1426.12.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 5
+		dip = 5
+		mil = 5
+	}
+}

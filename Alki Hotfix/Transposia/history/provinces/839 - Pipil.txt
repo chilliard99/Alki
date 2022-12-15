@@ -1,0 +1,16 @@
+#839 - Pipil
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V03
+controller = V03
+add_core = V03
+is_city = yes
+culture = salvi 
+religion = catholico
+capital = "Pipil" 
+trade_goods = fish #idk what else is here
+hre = no 
+base_tax = 5
+base_production = 5
+base_manpower = 4

@@ -1,0 +1,18 @@
+# No previous file for Cuetlaxtlan
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W85
+controller = W85
+add_core = W85
+culture = jarocho
+is_city = yes
+religion = catholico
+capital = "Cuetlaxtlan"
+center_of_trade = 3
+trade_goods = glass #I have no idea what to put here
+hre = no
+fort_15th = yes
+base_tax = 10
+base_production = 10
+base_manpower = 8

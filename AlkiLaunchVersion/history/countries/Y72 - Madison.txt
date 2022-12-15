@@ -1,0 +1,31 @@
+government = republic
+add_government_reform = free_city
+government_rank = 1
+primary_culture = joaquin
+religion = partisan
+technology_group = western
+capital = 870	 #Turlock
+
+1423.3.13 = {
+	monarch = {
+		name = "John"
+		dynasty = "Ballico"
+		birth_date = 1423.3.13
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}
+1443.4.15 = {
+	heir = {
+		name = "William"
+		monarch_name = "William III"
+		dynasty = "Ballico"
+		birth_date = 1443.4.15
+		death_date = 1483.8.30
+		claim = 95
+		adm = 0
+		dip = 1
+		mil = 2
+	}
+}

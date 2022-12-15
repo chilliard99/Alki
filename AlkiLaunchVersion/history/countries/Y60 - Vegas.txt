@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = gambler
+religion = partisan
+technology_group = western
+capital = 1060	 #Vegas
+elector = yes
+
+1379.5.12 = {
+	monarch = {
+		name = "Robert IV"
+		dynasty = "House"
+		birth_date = 1371.5.12
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}
+1387.12.12 = {
+	heir = {
+		name = "Full IX"
+		monarch_name = "Full"
+		dynasty = "House"
+		birth_date = 1387.12.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

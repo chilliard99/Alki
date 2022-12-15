@@ -1,0 +1,15 @@
+#2197 - Kabardia
+discovered_by = eastern
+discovered_by = western
+owner = W01
+controller = W01
+add_core = W01
+culture = niitsitapi
+religion = theanite
+capital = "Nalchik"
+trade_goods = fur #fur trading posts
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

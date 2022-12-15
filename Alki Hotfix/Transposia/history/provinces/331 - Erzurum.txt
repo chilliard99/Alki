@@ -1,0 +1,14 @@
+#331 - Erserum
+discovered_by = south_american
+culture = neocaucasian
+religion = idolatrous
+capital = "Tabriz"
+trade_goods = unknown
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = no
+native_size = 80
+native_ferocity = 4
+native_hostileness = 9 

@@ -1,0 +1,15 @@
+#4189 - Sagami
+discovered_by = chinese
+owner = X23
+controller = X23
+add_core = X23
+culture = high_nippon
+religion = neoshinto
+capital = "Kamakura"
+trade_goods = gold #Toi Gold Mine
+hre = no
+base_tax = 5
+base_manpower = 5
+base_production = 5
+is_city = yes
+discovered_by = eastern

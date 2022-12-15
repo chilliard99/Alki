@@ -1,0 +1,185 @@
+namespace = southerncitymission_events
+country_event = { #Proclaim The New City
+	id = southerncitymission_events.1001
+	title = southerncitymission_events.1001.t
+	desc = southerncitymission_events.1001.d
+	picture = CITY_VIEW_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = southerncitymission_events.1001.a 
+		set_capital = 1028
+		1028 = {
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+	}
+	option = {
+		name = southerncitymission_events.1001.b
+		trigger = {
+			NOT = {
+				capital = 1028
+			}
+		}
+		capital_scope = {
+			add_base_tax = 2
+			add_base_production = 2
+			add_base_manpower = 2
+		}
+	}
+}
+country_event = { #The delagation to Hokuriku
+	id = southerncitymission_events.1002
+	title = southerncitymission_events.1002.t
+	desc = southerncitymission_events.1002.d
+	picture = CORRUPTION_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = southerncitymission_events.1002.a 
+		custom_tooltip = southerncitymission.1002.a.tooltip
+		hidden_effect = {
+			X28 = {
+				country_event = { id = southerncitymission_events.1003 }
+				months = 2
+			}
+		}
+	}
+	option = {
+		name = southerncitymission_events.1002.b
+		add_dip_power = 200
+		add_adm_power = 200
+		add_mil_power = 200
+		add_prestige = 25
+	}
+}
+country_event = { #A delegation from Tokyo
+	id = southerncitymission_events.1003
+	title = southerncitymission_events.1003.t
+	desc = southerncitymission_events.1003.d
+	picture = ACCUSATION_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = southerncitymission_events.1003.a 
+		custom_tooltip = southerncitymission.1003.a.tooltip
+		hidden_effect = {
+			X41 = {
+				country_event = { id = southerncitymission_events.1004 }
+				months = 2
+			}
+		}
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				num_of_cities = 10
+			}
+		}
+	}
+	option = {
+		name = southerncitymission_events.1003.b
+		custom_tooltip = southerncitymission.1003.b.tooltip
+		hidden_effect = {
+			X41 = {
+				country_event = { id = southerncitymission_events.1005 }
+				months = 2
+			}
+		}
+	} 
+}
+country_event = { #They have accepted our offer
+	id = southerncitymission_events.1004
+	title = southerncitymission_events.1004.t
+	desc = southerncitymission_events.1004.d
+	picture = COURT_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	option = {
+		name = southerncitymission_events.1004.a 
+		create_union = X28
+	}
+}
+country_event = { #They have denied our generous offer
+	id = southerncitymission_events.1005
+	title = southerncitymission_events.1005.t
+	desc = southerncitymission_events.1005.d
+	picture = COURT_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = southerncitymission_events.1005.a 
+		add_casus_belli = {
+			target = X28
+			type = cb_annex
+			months = 120
+		}
+	}
+}
+country_event = { #City of Odin 
+	id = southerncitymission_events.1006
+	title = southerncitymission_events.1006.t
+	desc = southerncitymission_events.1006.d
+	picture = WOUNDED_SOLDIERS_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = southerncitymission_events.1006.a #Tear down the city
+		183 = {
+			add_base_tax = -2
+			add_base_production = -2
+			add_base_manpower = -2
+			change_religion = ROOT
+			change_culture = ROOT
+			add_province_modifier = {
+				name = "paris_destroyed"
+				duration = 18250
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = southerncitymission_events.1006.b #We shall allow it to remain
+		183 = {
+			add_province_modifier = {
+				name = "pagans_in_the_streets"
+				duration = 36500
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}

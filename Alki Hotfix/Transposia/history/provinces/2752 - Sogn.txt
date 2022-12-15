@@ -1,0 +1,15 @@
+#Romsdal
+discovered_by = ottoman
+discovered_by = muslim
+owner = W70
+controller = W70
+add_core = W70
+culture = durangan
+religion = catholico
+hre = no
+base_tax = 1
+base_production = 2
+trade_goods = livestock #i mean come on, its called rodeo
+base_manpower = 2
+is_city = yes
+capital = "Molde"

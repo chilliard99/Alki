@@ -1,0 +1,14 @@
+#4289 - Shushtar
+discovered_by = indian
+owner = V89
+controller = V89
+add_core = V89
+culture = newvietnamese
+religion = yanantin
+capital = "Shushtar"
+trade_goods = cotton #thats its name
+hre = no
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes

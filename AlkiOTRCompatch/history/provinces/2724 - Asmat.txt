@@ -1,0 +1,15 @@
+#2724 - Asmat
+discovered_by = ottoman
+discovered_by = muslim
+owner = W65
+controller = W65
+add_core = W65
+culture = durangan
+religion = catholico
+capital = "Asmat"
+trade_goods = livestock #Lotta cows
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

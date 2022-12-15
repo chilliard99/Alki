@@ -1,0 +1,19 @@
+#2071 - Limbuwan
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y41
+controller = Y41
+add_core = Y41
+culture = colville
+religion = sacramental
+capital = "Phedap"
+trade_goods = wine #lower columbia basin wine? 
+hre = no
+base_tax = 7
+base_production = 7
+base_manpower = 5
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

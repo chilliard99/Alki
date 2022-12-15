@@ -1,0 +1,564 @@
+namespace = la_luz_events
+####################VULGAR##########################
+country_event = { #A Bright Light
+	id = la_luz_events.1
+	title = la_luz_events.1.t
+	desc = la_luz_events.1.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		is_religion_enabled = cruzite
+		religion = catholico
+		NOT = {
+			reform_desire = 0.5
+		}
+		if = {
+			limit = {
+				is_year = 1550
+			}
+			any_owned_province = {
+				region = isthmo_region
+				can_have_center_of_reformation_trigger = {
+					RELIGION = la_luz
+				}
+			}
+		}
+		else = {
+			OR = {
+				4128 = {
+					owned_by = root
+					can_have_center_of_reformation_trigger = {
+						RELIGION = la_luz
+					}
+				}
+				4114 = {
+					owned_by = root
+					can_have_center_of_reformation_trigger = {
+						RELIGION = la_luz
+					}
+				}
+				4107 = {
+					owned_by = root
+					can_have_center_of_reformation_trigger = {
+						RELIGION = la_luz
+					}
+				}
+				2640 = {
+					owned_by = root
+					can_have_center_of_reformation_trigger = {
+						RELIGION = la_luz
+					}
+				}
+				4089 = {
+					owned_by = root
+					can_have_center_of_reformation_trigger = {
+						RELIGION = la_luz
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					is_year = 1550
+				}
+				random_owned_province = {
+					limit = {
+						region = isthmo_region
+						can_have_center_of_reformation_trigger = {
+							RELIGION = la_luz
+						}
+					}
+					save_event_target_as = place_that_la_luz_is_going_to_spawn
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						owns = 4128
+					}
+					4128 = {
+						save_event_target_as = place_that_la_luz_is_going_to_spawn
+					}
+				}
+				else_if = {
+					limit = {
+						owns = 4114
+					}
+					4114 = {
+						save_event_target_as = place_that_la_luz_is_going_to_spawn
+					}
+				}
+				else_if = {
+					limit = {
+						owns = 4107
+					}
+					4107 = {
+						save_event_target_as = place_that_la_luz_is_going_to_spawn
+					}
+				}
+				else_if = {
+					limit = {
+						owns = 2640
+					}
+					2640 = {
+						save_event_target_as = place_that_la_luz_is_going_to_spawn
+					}
+				}
+				else = {
+					4089 = {
+						save_event_target_as = place_that_la_luz_is_going_to_spawn
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = la_luz_events.1.a #Heresy!
+	 	event_target:place_that_la_luz_is_going_to_spawn = {
+			enable_religion = la_luz
+			change_religion = la_luz
+			add_reform_center = la_luz
+			add_permanent_province_modifier = {
+				name = "religious_zeal_at_conv"
+				duration = 9000
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					exists = W83
+				}
+				country_event = { 
+					id = la_luz_events.2
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Extremists in Isthmo
+	id = la_luz_events.2
+	title = la_luz_events.2.t
+	desc = la_luz_events.2.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = W83
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = la_luz_events.2.a #Horror!
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = completed_sure_compass_otrep
+				}
+			}
+			add_reform_desire = -0.05
+		}
+	}
+}
+
+country_event = { #City of Promise ***PULSE***
+	id = la_luz_events.3
+	title = la_luz_events.3.t
+	desc = la_luz_events.3.d
+	picture = GREAT_BUILDING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		is_religion_enabled = la_luz
+		OR = {
+			religion = catholico
+			religion = la_luz
+		}
+		any_owned_province = {
+			OR = {
+				province_id = 4128
+				province_id = 4114
+				province_id = 4107
+				province_id = 2640
+				province_id = 4089
+			}
+			NOT = {
+				has_province_flag = chance_to_convert_and_spawn_center
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = la_luz_events.3.a #Interesting
+		if = {
+			limit = {
+				owns_core_province = 4128
+			}
+			4128 = {
+				change_religion = la_luz
+				add_reform_center = la_luz
+				add_permanent_province_modifier = {
+					name = "religious_zeal_at_conv"
+					duration = 9000
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				owns_core_province = 4114
+			}
+			4114 = {
+				change_religion = la_luz
+				add_reform_center = la_luz
+				add_permanent_province_modifier = {
+					name = "religious_zeal_at_conv"
+					duration = 9000
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				owns_core_province = 4107
+			}
+			4107 = {
+				change_religion = la_luz
+				add_reform_center = la_luz
+				add_permanent_province_modifier = {
+					name = "religious_zeal_at_conv"
+					duration = 9000
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				owns_core_province = 2640
+			}	
+			2640 = {
+				change_religion = la_luz
+				add_reform_center = la_luz
+				add_permanent_province_modifier = {
+					name = "religious_zeal_at_conv"
+					duration = 9000
+				}
+			}
+		}
+		else = {
+			4089 = {
+				change_religion = la_luz
+				add_reform_center = la_luz
+				add_permanent_province_modifier = {
+					name = "religious_zeal_at_conv"
+					duration = 9000
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Catholic Backlash ***PULSE***
+	id = la_luz_events.4
+	title = la_luz_events.4.t
+	desc = la_luz_events.4.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = la_luz
+		any_owned_province = {
+			religion = catholico
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = catholico
+				}
+				save_event_target_as = uncooperative_catholics_laluz
+			}
+		}
+	}
+	
+	option = {
+		name = la_luz_events.4.a #It is their right
+		event_target:uncooperative_catholics_laluz = {
+			add_province_modifier = {
+				name = "resistant_catholics_laluz"
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = la_luz_events.4.b #They will pay!
+		event_target:uncooperative_catholics_laluz = {
+			spawn_rebels = {
+				type = catholico_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+country_event = { #Cocoa Houses ***PULSE***
+	id = la_luz_events.5
+	title = la_luz_events.5.t
+	desc = la_luz_events.5.d
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = la_luz
+		any_owned_province = {
+			OR = {
+				province_id = 4128
+				province_id = 4114
+				province_id = 4107
+				province_id = 2640
+				province_id = 4089
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = { #for the loc
+				limit = {
+					OR = {
+						province_id = 4128
+						province_id = 4114
+						province_id = 4107
+						province_id = 2640
+						province_id = 4089
+					}
+				}
+				save_event_target_as = cocoa_houses_holy_city_prov_laluz
+			}
+		}
+	}
+	
+	option = {
+		name = la_luz_events.5.a #Innovations Galore!
+		add_country_modifier = {
+			name = "innovations_galore_laluz"
+			duration = 3650
+		}
+	}
+	option = {
+		name = la_luz_events.5.b #Brimming with Ideas!
+		add_country_modifier = {
+			name = "brimming_with_ideas_laluz"
+			duration = 3650
+		}
+	}
+	option = {
+		name = la_luz_events.5.c #On the Cutting Edge!
+		event_target:cocoa_houses_holy_city_prov_laluz = {
+			add_next_institution_embracement = 25
+		}
+	}
+}
+
+country_event = { #An Isthmo Faith ***PULSE***
+	id = la_luz_events.6
+	title = la_luz_events.6.t
+	desc = la_luz_events.6.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = la_luz
+		culture_group = ismitho
+		any_owned_province = {
+			NOT = {
+				culture_group = ismitho
+			}
+			religion = la_luz
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = la_luz_events.6.a #Regretable
+		custom_tooltip = provs_that_are_not_isthmo_get_the_thing.tt
+		tooltip = {
+			add_province_modifier = {
+				name = "exclusionary_faith_laluz"
+				duration = 1825
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					NOT = {
+						culture_group = ismitho
+					}
+					religion = la_luz
+				}
+				add_province_modifier = {
+					name = "exclusionary_faith_laluz"
+					duration = 1825
+				}
+			}
+		}
+	}
+	option = {
+		name = la_luz_events.6.b #We can alter tha faith
+		add_country_modifier = {
+			name = "bending_the_rules_laluz"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Worldly Pursuits ***PULSE***
+	id = la_luz_events.7
+	title = la_luz_events.7.t
+	desc = la_luz_events.7.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = la_luz
+		culture_group = ismitho
+		any_owned_province = {
+			NOT = {
+				culture_group = ismitho
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = la_luz_events.7.a #We will improve our administration
+		add_ruler_modifier = {
+			name = "improving_our_administration_laluz"
+			duration = -1
+		}
+	}
+	option = {
+		name = la_luz_events.7.b #We will work on our health
+		add_ruler_modifier = {
+			name = "improving_health_laluz"
+			duration = -1
+		}
+	}
+	option = {
+		name = la_luz_events.7.c #We will build up the cities
+		add_ruler_modifier = {
+			name = "developing_the_cities_laluz"
+			duration = -1
+		}
+	}
+	option = {
+		name = la_luz_events.7.e #We will reach out to others
+		add_ruler_modifier = {
+			name = "reaching_out_to_others_laluz"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #A Rational Faith ***PULSE***
+	id = la_luz_events.8
+	title = la_luz_events.8.t
+	desc = la_luz_events.8.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = la_luz
+		is_lacking_institutions = yes
+		capital_scope = {
+			NOT = {
+				current_institution = 100
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = la_luz_events.8.a #Interesting
+		add_adm_power = 10
+		add_dip_power = 10
+		add_mil_power = 10
+		capital_scope = {
+			add_next_institution_embracement = 25
+		}
+	}
+}
+
+country_event = { #New World Rationalism ***PULSE***
+	id = la_luz_events.9
+	title = la_luz_events.9.t
+	desc = la_luz_events.9.d
+	picture = COLONIZATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		is_religion_enabled = la_luz
+		current_age = age_of_reformation
+		is_colonial_nation = yes
+		any_owned_province = {
+			religion = catholico
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = catholico
+				}
+				save_event_target_as = for_loc_place_where_rationalism_laluz
+			}	
+		}
+	}
+	
+	option = {
+		name = la_luz_events.9.a #Interesting
+		event_target:for_loc_place_where_rationalism_laluz = {
+			change_religion = la_luz
+		}
+	}
+}

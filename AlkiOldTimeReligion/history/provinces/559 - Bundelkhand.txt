@@ -1,0 +1,18 @@
+#559 - Bundelkhand
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = Y23
+controller = Y23
+add_core = Y23
+culture = adriatic
+religion = sacramental
+capital = "Jhansi"
+trade_goods = wool #John C Fremont
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

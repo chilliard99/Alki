@@ -1,0 +1,40 @@
+convert_tributary = {
+	category = influence
+	#alert_index = 5
+	alert_tooltip = decrease_autonomous_vassal_tt
+	require_acceptance = no 
+	is_visible = {
+		has_country_flag = can_convert_tributaries
+		FROM = {
+			is_subject_of_type = tributary_state
+			NOT = {
+				religion = islam
+			}
+		}
+	}
+	is_allowed = {
+		imperial_mandate = 5
+	}
+	on_accept = {
+		hidden_effect = {	
+			add_mandate = -5
+			FROM = {
+				change_religion = islam
+				add_country_modifier = {
+					name = "lafayette_conversion"
+					duration = 3650
+				}
+				capital_scope = {
+					change_religion = islam
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		NOT = {
+			any_neighbor_country = {
+				tech_difference = 1
+			}
+		}
+	}
+}

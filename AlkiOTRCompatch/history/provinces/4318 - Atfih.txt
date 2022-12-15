@@ -1,0 +1,15 @@
+#4318 - Atfih
+discovered_by = indian
+owner = V97
+controller = V97
+add_core = V97
+culture = ecuadorian
+religion = catholico
+capital = "Atfih"
+trade_goods = dyes #ecuadorian flower dyes
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes
+

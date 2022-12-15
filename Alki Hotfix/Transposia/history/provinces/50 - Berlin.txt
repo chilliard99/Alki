@@ -1,0 +1,15 @@
+discovered_by = north_american
+owner = Z06
+controller = Z06
+add_core = Z06
+culture = neogermanic
+religion = paganry
+hre = no
+base_tax = 3
+base_production = 4
+trade_goods = grain
+base_manpower = 3
+fort_15th = yes
+capital = "Berlin-Cölln"
+is_city = no
+center_of_trade = 1

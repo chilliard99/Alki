@@ -1,0 +1,15 @@
+# No previous file for Acambaro
+discovered_by = ottoman
+discovered_by = muslim
+owner = W81
+controller = W81
+add_core = W81
+culture = michoacan
+religion = catholico
+capital = "Acambaro"
+trade_goods = glass #glass crafts are a trademark of Queretaro
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 6
+is_city = yes

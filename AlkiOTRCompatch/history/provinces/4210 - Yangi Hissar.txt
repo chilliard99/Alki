@@ -1,0 +1,15 @@
+#4210 - Yangi Hissar
+discovered_by = ottoman
+discovered_by = muslim
+owner = V12
+controller = V12
+add_core = V12
+culture = haitian
+religion = espiritismo
+capital = "Yangi Hissar"
+trade_goods = fish #its an island
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

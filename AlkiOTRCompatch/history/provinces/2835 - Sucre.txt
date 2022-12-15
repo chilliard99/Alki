@@ -1,0 +1,14 @@
+# - Sucre
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neobornean
+religion = espiritismo
+capital = "Sucre"
+trade_goods = naval_supplies #logging
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes

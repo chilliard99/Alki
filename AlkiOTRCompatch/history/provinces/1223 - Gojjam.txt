@@ -1,0 +1,17 @@
+#1223 - Gojjam
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y54
+controller = Y54
+add_core = Y54
+culture = goldbugger 
+religion = partisan
+capital = "Debre Asbo"
+is_city = yes
+base_manpower = 2
+trade_goods = dyes #some nice flowers :)
+hre = yes
+base_tax = 2 
+base_production = 2

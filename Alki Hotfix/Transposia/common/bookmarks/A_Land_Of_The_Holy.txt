@@ -1,0 +1,19 @@
+bookmark = {
+	name = "LADEDADDEORO"
+	desc = "LADEDADDEORO_DESC"
+	date = 1444.11.11
+	
+	center = 2998
+	default = yes
+	
+	country = W85
+	country = W89
+	country = W84
+	country = W80
+	country = W79
+	country = W90
+	country = W73
+	
+	easy_country = W85
+
+}

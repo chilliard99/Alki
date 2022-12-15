@@ -1,0 +1,17 @@
+#Kovno
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y36
+controller = Y36 
+add_core = Y36
+culture = boisan
+religion = partisan
+capital = "Kovno"
+trade_goods = grain #potatoes
+hre = no
+base_tax = 7
+base_production = 7
+base_manpower = 5
+is_city = yes

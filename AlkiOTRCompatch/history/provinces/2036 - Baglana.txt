@@ -1,0 +1,17 @@
+#2036 - Baglana
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y88
+controller = Y88
+add_core = Y88
+culture = paiute
+religion = partisan
+capital = "Mayuragiri"
+trade_goods = grain #some more farmers	
+hre = yes
+base_tax = 2 
+base_production = 2
+base_manpower = 2
+is_city = yes

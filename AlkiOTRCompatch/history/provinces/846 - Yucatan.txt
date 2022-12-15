@@ -1,0 +1,16 @@
+#846 - Yucatan
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W90
+controller = W90
+add_core = W90
+culture = rivieran
+religion = catholico
+capital = "Sotuta" 
+trade_goods = livestock #ranchin 
+hre = no 
+base_tax = 3
+base_production = 3 
+base_manpower = 2
+is_city = yes

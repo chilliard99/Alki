@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = franciscan
+religion = partisan
+technology_group = western
+capital = 1780	 #Golden Gate
+
+1411.4.4 = {
+	monarch = {
+		name = "Angelo"
+		dynasty = "Strauss"
+		birth_date = 1411.4.4
+		adm = 4
+		dip = 3
+		mil = 2
+	}
+}
+1427.5.5 = {
+	heir = {
+		name = "Rossi"
+		monarch_name = "Rossi"
+		dynasty = "Strauss"
+		birth_date = 1427.5.5
+		death_date = 1483.8.30
+		claim = 95
+		adm = 0
+		dip = 5
+		mil = 1
+	}
+}

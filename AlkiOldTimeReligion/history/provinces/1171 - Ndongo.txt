@@ -1,0 +1,17 @@
+#1171 - Ndongo
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y55
+controller = Y55 
+add_core = Y55
+culture = jackpotter
+religion = partisan
+capital = "Kabasa"
+trade_goods = gold #Cortez?
+hre = yes
+base_tax = 2 
+base_production = 4
+base_manpower = 3
+is_city = yes

@@ -1,0 +1,16 @@
+#210 - Navarra
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+add_core = X75
+owner = X75
+controller = X75
+culture = englander
+religion = dynastic
+hre = no
+base_tax = 5
+base_production = 5
+trade_goods = fur #New England Furs
+base_manpower = 5
+capital = "Pamplona" 
+is_city = yes

@@ -1,0 +1,16 @@
+#118 - Roma
+discovered_by = chinese
+owner = X16
+controller = X16
+add_core = X16
+culture = hokkaidan 
+religion = neoshinto 
+hre = no
+base_tax = 6
+base_production = 6
+trade_goods = naval_supplies #big hiba trees
+base_manpower = 6
+capital = "Roma"
+is_city = yes
+discovered_by = eastern
+center_of_trade = 1

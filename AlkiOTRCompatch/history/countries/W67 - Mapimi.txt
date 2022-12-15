@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = durangan
+religion = catholico
+technology_group = muslim
+capital = 2618	#Jimenez
+
+1444.1.1 = { set_country_flag = a_super_cool_company }
+1402.12.13 = {
+	monarch = {
+		name = "Agustin"
+		dynasty = "Ojuela"
+		birth_date = 1402.12.13
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}
+1421.4.23 = {
+	heir = {
+		name = "Anton"
+		monarch_name = "Anton IV"
+		dynasty = "Ojuela"
+		birth_date = 1421.4.23
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 3
+		mil = 4
+	}
+}

@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = columbian
+religion = dynastic
+technology_group = eastern
+capital = 957	# Delaware? Should be Dover but I'm Lazy
+
+1426.1.2 = {
+	monarch = {
+		name = "Herbert II"
+		dynasty = "Hamilton"
+		birth_date = 1426.1.2
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
+1444.10.10 {
+	heir = {
+		name = "Elizabeth"
+		monarch_name = "Elizabeth"
+		dynasty = "Hamilton"
+		birth_date = 1444.10.10
+		death_date = 1483.8.30
+		claim = 95
+		adm = 6
+		dip = 6
+		mil = 5
+		female = yes
+	}
+}

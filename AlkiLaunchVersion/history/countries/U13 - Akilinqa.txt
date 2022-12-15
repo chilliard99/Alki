@@ -1,0 +1,7 @@
+government = monarchy 
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = cosmopolitan_canadian
+religion = dynastic
+technology_group = eastern
+capital = 183	#Celtland

@@ -1,0 +1,15 @@
+# 2117 - Zasagt
+discovered_by = eastern
+discovered_by = western
+add_core = Y31
+owner = Y31
+controller = Y31
+culture = niitsitapi
+religion = sacramental
+capital = "Zasagt"
+trade_goods = fur #more furs
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 2
+is_city = yes

@@ -1,0 +1,17 @@
+#1971 - Tsaritsyn
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y94
+controller = Y94 
+add_core = Y94
+culture = cooser
+religion = partisan
+hre = yes
+base_tax = 3 
+base_production = 3
+trade_goods = naval_supplies #timber capital of the nation 
+base_manpower = 2
+capital = "Sary-Su"
+is_city = yes

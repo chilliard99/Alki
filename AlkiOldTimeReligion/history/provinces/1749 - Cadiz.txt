@@ -1,0 +1,17 @@
+#1749 - Cadiz
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y70		
+controller = Y70
+add_core = Y70
+culture = bigsur
+religion = partisan
+hre = yes
+base_tax = 4
+base_production = 3
+trade_goods = wine #a ton of wine apparently
+base_manpower = 3
+capital = "Cadiz" 
+is_city = yes

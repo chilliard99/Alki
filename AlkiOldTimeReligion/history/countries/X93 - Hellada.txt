@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = hellaldan
+religion = islam
+technology_group = eastern
+capital = 361	#Route City
+
+1423.11.11 = {
+	monarch = {
+		name = "Konstantinos II"
+		dynasty = "Papadimitriou"
+		birth_date = 1423.11.11
+		adm = 4
+		dip = 4
+		mil = 6
+	}
+}
+1442.2.3 = {
+	heir = {
+		name = "Konstantinos"
+		monarch_name = "Konstantinos III"
+		dynasty = "Papadimitriou"
+		birth_date = 1442.2.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 5
+		mil = 6
+	}
+}

@@ -1,0 +1,17 @@
+# No previous file for Zuni
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W48
+controller = W48
+add_core = W48
+is_city = yes
+culture = argelino
+religion = catholico
+capital = "Zuni"
+trade_goods = gems #traditional jewelry, coral or turcquis
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 5

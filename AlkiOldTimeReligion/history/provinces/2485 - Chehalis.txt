@@ -1,0 +1,17 @@
+# No previous file for Chehalis
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y97
+controller = Y97
+add_core = Y97
+culture = yakama
+religion = partisan
+capital = "Chehalis"
+trade_goods = grain #biga agricultural area
+hre = yes
+base_tax = 2
+base_production = 3
+base_manpower = 3
+is_city = yes 

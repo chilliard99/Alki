@@ -1,0 +1,15 @@
+#4209 - Maralbexi
+discovered_by = ottoman
+discovered_by = muslim
+owner = V12
+controller = V12
+add_core = V12
+culture = haitian
+religion = espiritismo
+capital = "Maralbexi"
+trade_goods = grain #i guess
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

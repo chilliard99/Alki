@@ -1,0 +1,15 @@
+# No previous file for Hebina
+discovered_by = eastern
+discovered_by = western
+add_core = Y31
+owner = Y31
+controller = Y31
+culture = niitsitapi
+religion = sacramental
+capital = "Hebina"
+trade_goods = grain #heart of the wheat belt rosetown
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

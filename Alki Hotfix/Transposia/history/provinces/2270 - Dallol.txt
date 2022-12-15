@@ -1,0 +1,17 @@
+# No previous file for Dallol
+discovered_by = western
+discovered_by = eastern
+owner = W13
+controller = W13
+add_core = W13
+is_city = yes
+culture = northern_salishan 
+religion = collectivist
+capital = "Say"
+trade_goods = paper #pulp mills
+hre = no
+base_tax = 4
+base_production = 5
+base_manpower = 5
+fort_15th = yes
+center_of_trade = 1

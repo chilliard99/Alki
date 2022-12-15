@@ -1,0 +1,17 @@
+# No previous file for Piegan
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+add_core = Y31
+owner = Y31
+controller = Y31
+culture = crow
+religion = sacramental
+capital = "Piegan"
+trade_goods = wool #Bighorn Sheep
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

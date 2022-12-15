@@ -1,0 +1,681 @@
+namespace = ohio_events
+country_event = { #Virginian Proposal 
+	id = ohio_events.1007
+	title = ohio_events.1007.t
+	desc = ohio_events.1007.d
+	picture = WESTERNISATION_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = ohio_events.1007.a #Take up their offer
+		antebella_region = {
+			add_province_modifier = {
+				name = "virginian_compliance"
+				duration = 18250
+			}
+		}
+		set_country_flag = virginian_compliance
+	}
+	option = {
+		name = ohio_events.1007.b #We will not rely on the evangelicals
+		add_prestige = 15
+	}
+}
+
+country_event = { #The Reign of Usman 
+	id = ohio_events.1008
+	title = ohio_events.1008.t
+	desc = ohio_events.1008.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = X91
+	}
+	
+	immediate = {
+		set_ruler_flag = had_popup_at_least_once
+	}
+	
+	option = {
+		name = ohio_events.1008.a #Reforms will follow
+		add_ruler_modifier = {
+			name = "empty_ohio_government"
+			duration = -1
+		}
+		set_ruler_flag = usman_the_second_warning
+	}
+}
+
+country_event = { #Virginian Revolt 
+	id = ohio_events.1009
+	title = ohio_events.1009.t
+	desc = ohio_events.1009.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	fire_only_once = yes
+	
+	mean_time_to_happen  = {
+		years = 10
+	}
+	
+	trigger = {
+		has_country_flag = virginian_compliance
+		NOT = { has_ruler_flag = usman_the_second }
+	}
+	
+	option = {
+		name = ohio_events.1009.a #We shall accept their demands
+		virginia_interior  = {
+			add_core = X54
+			cede_province = X54
+		}
+		lower_piedmont_area  = {
+			add_core = X54
+			cede_province = X54
+		}
+		upper_piedmont_area  = {
+			add_core = X54
+			cede_province = X54
+		}
+		upper_tar_heel  = {
+			add_core = X54
+			cede_province = X54
+		}
+		vassalize = X54
+		add_prestige = -25
+	}
+	option = {
+		name = ohio_events.1009.b #We will never negotiate
+		add_prestige = 25
+		virginia_interior  = {
+			add_core = X54
+		}
+		lower_piedmont_area  = {
+			add_core = X54
+		}
+		upper_piedmont_area  = {
+			add_core = X54
+		}
+		upper_tar_heel  = {
+			add_core = X54
+		}
+		157 = {
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 1
+				win = yes
+			}
+		}
+		2549 = {
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 3
+				win = yes
+			}
+		}
+		164 = {
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 2
+				win = yes
+			}
+		}
+		147 = {
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 2
+				win = yes
+			}
+		}	
+	}
+}
+
+country_event = { #A New Ohio Ruler
+	id = ohio_events.1010
+	title = ohio_events.1010.t
+	desc = ohio_events.1010.d
+	picture = ADVISOR_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = X91
+		NOT = { 
+			OR = {
+				has_ruler_flag = usman_the_second_warning 
+				has_country_flag = carried_over_ohio
+				has_ruler_flag = standard_warning
+				has_ruler_flag = advanced_warning
+				has_country_flag = buckeye_coup
+				has_ruler_flag = had_popup_at_least_once
+			}
+		}
+	}
+	
+	immediate = {
+		set_ruler_flag = had_popup_at_least_once
+	}
+	
+	option = {
+		name = ohio_events.1010.a #Leave the administration alone (Scarry Version)
+		trigger = { 
+			has_country_flag = had_kaaba_custodian_in_this_life
+			has_country_flag = had_buckeye_vizier_in_this_life
+			has_country_flag = had_siaphi_captain_in_this_life
+			has_country_flag = had_ulama_founder_in_this_life
+		}
+		add_ruler_modifier = {
+			name = "ulama_founder_employed"
+			duration = -1
+		}
+		set_ruler_flag = ulama_founder_employed
+		add_ruler_modifier = {
+			name = "siaphi_captain_installed"
+			duration = -1
+		}
+		set_ruler_flag = siaphi_captain_employed
+		add_ruler_modifier = {
+			name = "grand_buckeye_vizier_employed"
+			duration = -1
+		}
+		set_ruler_flag = buckeye_vizier_employed
+		add_ruler_modifier = {
+			name = "new_kaaba_custodian"
+			duration = -1
+		}
+		set_ruler_flag = kaaba_custodian_employed
+		set_country_flag = carried_over_ohio
+		set_ruler_flag = standard_warning 
+	}
+	option = {
+		name = ohio_events.1010.b #Leave the administration alone
+		trigger = { 
+			OR = {
+				has_country_flag = had_kaaba_custodian_in_this_life
+				has_country_flag = had_buckeye_vizier_in_this_life
+				has_country_flag = had_siaphi_captain_in_this_life
+				has_country_flag = had_ulama_founder_in_this_life
+			}
+			NOT = {
+				AND = {
+					has_country_flag = had_kaaba_custodian_in_this_life
+					has_country_flag = had_buckeye_vizier_in_this_life
+					has_country_flag = had_siaphi_captain_in_this_life
+					has_country_flag = had_ulama_founder_in_this_life
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = had_kaaba_custodian_in_this_life
+			}
+			add_ruler_modifier = {
+				name = "new_kaaba_custodian"
+				duration = -1
+				}
+			set_ruler_flag = kaaba_custodian_employed
+		}
+		if = {
+			limit = {
+				has_country_flag = had_buckeye_vizier_in_this_life
+			}
+			add_ruler_modifier = {
+					name = "grand_buckeye_vizier_employed"
+					duration = -1
+			}
+			set_ruler_flag = buckeye_vizier_employed
+		}
+		if = {
+			limit = {
+				has_country_flag = had_siaphi_captain_in_this_life
+			}
+			add_ruler_modifier = {
+					name = "siaphi_captain_installed"
+					duration = -1
+			}
+			set_ruler_flag = siaphi_captain_employed
+		}
+		if = {
+			limit = {
+				has_country_flag = had_ulama_founder_in_this_life
+			}
+			add_ruler_modifier = {
+				name = "ulama_founder_employed"
+				duration = -1
+			}
+			set_ruler_flag = ulama_founder_employed
+		}
+	}
+	option = {
+		name = ohio_events.1010.c #Purge the ranks
+		add_ruler_modifier = {
+			name = "empty_ohio_government"
+			duration = -1
+		}
+		clr_country_flag = had_kaaba_custodian_in_this_life
+		clr_country_flag = had_buckeye_vizier_in_this_life
+		clr_country_flag = had_siaphi_captain_in_this_life
+		clr_country_flag = had_ulama_founder_in_this_life
+	}
+}
+
+country_event = { #The insitutions fight for autonomy
+	id = ohio_events.1011
+	title = ohio_events.1011.t
+	desc = ohio_events.1011.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = X91
+		has_country_flag = carried_over_ohio
+		NOT = { 
+			OR = {
+				has_ruler_flag = standard_warning
+				has_ruler_flag = advanced_warning
+				has_ruler_flag = had_popup_at_least_once
+				has_country_flag = buckeye_coup
+				has_country_flag = insitution_coup
+			}
+		}
+	}
+	
+	immediate = {
+		set_ruler_flag = had_popup_at_least_once
+	}
+	
+	option = {
+		name = ohio_events.1011.a #Leave the administration alone
+		add_ruler_modifier = {
+			name = "ulama_founder_employed"
+			duration = -1
+			}
+		set_ruler_flag = ulama_founder_employed
+		add_ruler_modifier = {
+			name = "siaphi_captain_installed"
+			duration = -1
+		}
+		set_ruler_flag = siaphi_captain_employed
+		add_ruler_modifier = {
+			name = "grand_buckeye_vizier_employed"
+			duration = -1
+		}
+		set_ruler_flag = buckeye_vizier_employed
+		add_ruler_modifier = {
+			name = "new_kaaba_custodian"
+			duration = -1
+		}
+		set_ruler_flag = kaaba_custodian_employed
+		set_country_flag = insitution_coup
+		set_ruler_flag = advanced_warning
+	}
+	option = {
+		name = ohio_events.1011.b #Purge the ranks
+		add_stability = -1
+		add_ruler_modifier = {
+			name = "empty_ohio_government"
+			duration = -1
+		}
+		add_country_modifier = {
+			name = "resistant_insitutions"
+			duration = 18250
+		}
+		clr_country_flag = carried_over_ohio
+		set_ruler_flag = advanced_warning
+	}
+}
+
+country_event = { #The Buckeye Coup
+	id = ohio_events.1012
+	title = ohio_events.1012.t
+	desc = ohio_events.1012.d
+	picture = WOUNDED_SOLDIERS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = X91
+		has_country_flag = insitution_coup
+		NOT = { 
+			OR = {
+				has_ruler_flag = standard_warning
+				has_ruler_flag = advanced_warning
+				has_ruler_flag = had_popup_at_least_once
+				has_country_flag = buckeye_coup
+			}
+		}
+	}
+	
+	immediate = {
+		set_ruler_flag = had_popup_at_least_once
+	}
+	
+	option = {
+		name = ohio_events.1012.a #Horror!
+		define_ruler = {
+			name = "Selim IV"
+			dynasty = "Halil"
+			adm = 4
+			dip = 3
+			mil = 6
+			age = 26
+			claim = 0
+		}	
+		set_country_flag = buckeye_coup
+		change_tag = V18
+		add_country_modifier = {
+			name = "vizier_in_power"
+			duration = 36500
+		}
+	}
+}
+
+country_event = { #The Great Lakes Company
+	id = ohio_events.1013
+	title = ohio_events.1013.t
+	desc = ohio_events.1013.d
+	picture = GLOBAL_TRADE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = ohio_events.1013.a #We Shall Give It Independence!
+		add_country_modifier = {
+			name = "independence_for_the_ohio_company"
+			duration = -1
+		}
+		add_years_of_income = -1
+	}
+	option = {
+		name = ohio_events.1013.b #We Shall Pillage The Riches!
+		add_country_modifier = {
+			name = "centralized_ohioan_trade"
+			duration = -1
+		}
+		add_years_of_income = 1
+	}
+}
+
+country_event = { #Frigid North
+	id = ohio_events.1014
+	title = ohio_events.1014.t
+	desc = ohio_events.1014.d
+	picture = MERCHANTS_ARGUING_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = ohio_events.1014.a #Grant it to the Company
+		trigger = { 
+			has_country_modifier = independence_for_the_ohio_company
+		}
+		remove_country_modifier = independence_for_the_ohio_company
+		add_country_modifier = {
+			name = "expanded_ohio_company"
+			duration = -1
+		}
+		298 = {
+			add_trade_modifier = {
+				who = root
+				duration = 18250
+				power = 100
+				key = ohioan_oars
+			}
+		}
+	}
+	option = {
+		name = ohio_events.1014.b #The Throne's Company holds legitimacy
+		298 = {
+			add_trade_modifier = {
+				who = root
+				duration = 18250
+				power = 100
+				key = ohioan_oars
+			}
+		}
+		1003 = {
+			add_base_production = 2
+			add_base_tax = 2
+			add_base_manpower = 2
+		}
+		if = {
+			limit = {
+				NOT = {
+					1003 = {
+						province_has_center_of_trade_of_level = 3
+					}
+				}
+			}
+			1003 = {
+				add_center_of_trade_level = 1
+			}
+		}
+	}
+	option = {
+		name = ohio_events.1014.c #The Grandbay Company holds legitimacy
+		298 = {
+			add_trade_modifier = {
+				who = root
+				duration = 18250
+				power = 100
+				key = ohioan_oars
+			}
+		}
+		2107 = {
+			add_base_production = 2
+			add_base_tax = 2
+			add_base_manpower = 2
+		}
+		if = {
+			limit = {
+				NOT = {
+					2107 = {
+						province_has_center_of_trade_of_level = 3
+					}
+				}
+			}
+			2107 = {
+				add_center_of_trade_level = 1
+			}
+		}
+	}
+}
+
+country_event = { #The Canadian Colonial Machine
+	id = ohio_events.1015
+	title = ohio_events.1015.t
+	desc = ohio_events.1015.d
+	picture = SHIP_SAILING_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = ohio_events.1015.a #To Foreign Shores!
+		add_country_modifier = {
+			name = "employ_canadian_colonists"
+			duration = -1
+		}
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+		add_years_of_income = 1
+		europa_occident_region = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		intermarium_region = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}
+
+country_event = { #Move the Caliph's Palace
+	id = ohio_events.1016
+	title = ohio_events.1016.t
+	desc = ohio_events.1016.d
+	picture = TRANSYLVANIAN_OTTOMAN_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = ohio_events.1016.a #It is certainly a central location
+		set_capital = 2670
+		2670 = {
+			add_base_manpower = 2
+			add_base_production = 2
+			add_base_tax = 2
+			change_culture = buckeye
+			change_religion = islam
+		}
+	}
+	option = {
+		name = ohio_events.1016.b #The ancient capital holds legitimacy
+		add_prestige = 25
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 100
+		}
+		else = {
+			add_stability = 1
+		}
+	}
+}
+
+country_event = { #Floridian Slave Trade
+	id = ohio_events.1017
+	title = ohio_events.1017.t
+	desc = ohio_events.1017.d
+	picture = OVEREXTENSION_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = ohio_events.1017.a #It served the Caliphs of old, it shall serve us
+		the_north_colonies_area  = {
+			change_trade_goods = slaves
+		}
+		add_years_of_income = 1
+	}
+	option = {
+		name = ohio_events.1017.b #Heresy! No man is above another!
+		add_prestige = 25
+		set_country_flag = refused_slavery
+	}
+}
+
+country_event = { #Ancient House of Albany
+	id = ohio_events.1018
+	title = ohio_events.1018.t
+	desc = ohio_events.1018.d
+	picture = GREAT_BUILDING_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = ohio_events.1018.a #It will be a holy site
+		add_adm_power = -50
+		add_years_of_income = -0.5
+		188 = {
+			add_province_modifier = {
+				name = "mosque_of_albany"
+				duration = -1
+			}
+		}
+		add_country_modifier = {
+			name = "angered_religious_minorities_ohio"
+			duration = 3650
+		}
+	}
+	option = {
+		name = ohio_events.1018.b #I am a caliph, not a barbarian
+		add_prestige = 15
+		add_country_modifier = {
+			name = "jewish_minorities_appeased"
+			duration = 3650
+		}
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 100
+		}
+		else = {
+			add_stability = 1
+		}
+	}
+	option = {
+		name = ohio_events.1018.c #Keep it as is
+		add_prestige = 25
+	}
+}
+
+country_event = { #Sipahi Dissidents
+	id = ohio_events.1019
+	title = ohio_events.1019.t
+	desc = ohio_events.1019.d
+	picture = SWORD_OF_OSMAN_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = buckeye_coup
+	}
+	
+	mean_time_to_happen  = {
+		years = 10
+	}
+	
+	option = {
+		name = ohio_events.1019.a #We Will Ensure Unity
+		custom_tooltip = goodriver_revolt.tt
+		hidden_effect = {
+			every_owned_province = { 
+				limit = {
+					nationalism = 1
+				}
+				add_core = V17
+				add_province_modifier = {
+					name = "goodriver_seperatism"
+					duration = 3650
+				}
+				add_nationalism = 10
+			}
+		}
+	}
+}

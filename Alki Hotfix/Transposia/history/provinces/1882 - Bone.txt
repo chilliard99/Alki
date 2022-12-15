@@ -1,0 +1,17 @@
+#340 - Constantine
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y35
+controller = Y35
+add_core = Y35
+culture = beaverheads
+religion = sacramental
+capital = "Annaba"
+trade_goods = naval_supplies #forests
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 1
+is_city = yes

@@ -1,0 +1,18 @@
+#4186 - Iyo
+discovered_by = chinese
+owner = X35
+controller = X35
+add_core = X35
+culture = shikokuan
+religion = neoshinto
+capital = "Yuzuki"
+trade_goods = copper #Big ol copper mine
+hre = no
+base_tax = 7
+base_manpower = 7
+base_production = 4
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman
+fort_15th = yes
+center_of_trade = 1

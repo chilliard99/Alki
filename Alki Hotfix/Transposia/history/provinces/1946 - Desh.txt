@@ -1,0 +1,17 @@
+#1946 - (Southern) Desh
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y35
+controller = Y35
+add_core = Y35
+culture = beaverheads
+religion = sacramental
+capital = "Satara"
+trade_goods = fish #trout
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes

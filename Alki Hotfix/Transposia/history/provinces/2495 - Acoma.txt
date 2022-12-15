@@ -1,0 +1,18 @@
+# No previous file for Acoma
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W48
+controller = W48
+add_core = W48
+is_city = yes
+culture = argelino
+religion = catholico
+capital = "Acoma"
+trade_goods = cloth #gadsden cloths
+center_of_trade = 2
+hre = no
+base_tax = 8
+base_production = 5
+base_manpower = 5

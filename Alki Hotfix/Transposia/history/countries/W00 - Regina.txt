@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = assiniboine
+religion = sacramental
+technology_group = western
+capital = 2116	 #Regina
+
+
+1377.5.25 = {
+	monarch = {
+		name = "Asiniy"
+		dynasty = "Hohe"
+		birth_date = 1377.5.25
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1443.12.25 = {
+	heir = {
+		name = "Pwata"
+		monarch_name = "Pwata"
+		dynasty = "Hohe"
+		birth_date = 1443.12.25
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}

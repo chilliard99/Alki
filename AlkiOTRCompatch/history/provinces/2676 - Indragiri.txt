@@ -1,0 +1,18 @@
+#2676 - Indragiri
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = chinese
+owner = W49
+controller = W49
+add_core = W49
+culture = libio
+religion = catholico
+capital = "Indragiri"
+trade_goods = cotton #historic cotton center in taylor
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 3
+is_city = yes

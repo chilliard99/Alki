@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = dakotan
+religion = sacramental
+technology_group = western
+capital = 476 #Fargo
+
+1396.11.21 = {
+	monarch = {
+		name = "Sven"
+		dynasty = "Erickson"
+		birth_date = 1396.11.21
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}
+1432.2.3 = {
+	heir = {
+		name = "Klein"
+		monarch_name = "Klein III"
+		dynasty = "Erickson"
+		birth_date = 1432.2.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}

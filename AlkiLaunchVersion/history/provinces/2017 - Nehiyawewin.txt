@@ -1,0 +1,15 @@
+#2017 - Nehiyawewin
+discovered_by = eastern
+discovered_by = western
+add_core = Y31
+owner = Y31
+controller = Y31
+culture = niitsitapi
+religion = sacramental 
+capital = "Nehiyawewin" 
+trade_goods = sugar #sugar beets
+hre = no 
+base_tax = 1 
+base_production = 1
+base_manpower = 1 
+is_city = yes

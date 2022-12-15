@@ -1,0 +1,18 @@
+#509 - Kangra
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = Y22
+controller = Y22
+add_core = Y22
+culture = dakotan
+religion = sacramental
+capital = "Kangra"
+trade_goods = grain #midwestern farmers
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

@@ -1,0 +1,15 @@
+#107 - Brescia
+discovered_by = chinese
+owner = X16
+controller = X16
+add_core = X16
+culture = niigatan 
+religion = neoshinto 
+hre = no 
+base_tax = 2
+base_production = 2
+trade_goods = gold #sado gold mine
+base_manpower = 3
+capital = "Brescia" 
+is_city = yes
+discovered_by = eastern

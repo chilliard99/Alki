@@ -1,0 +1,14 @@
+#1220 - Dar Ja'al
+discovered_by = mesoamerican
+culture = neoethiopian 
+religion = shamanist
+capital = "Bayuda"
+is_city = no
+trade_goods = unknown
+base_manpower = 1
+hre = no
+base_tax = 1 
+base_production = 1
+native_size = 80
+native_ferocity = 4
+native_hostileness = 9 

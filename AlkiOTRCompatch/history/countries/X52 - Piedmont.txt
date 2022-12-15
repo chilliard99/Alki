@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = piedmontian
+religion = evangelical
+technology_group = eastern
+capital = 164	# Lynchburg
+
+1425.6.22 = {
+	monarch = {
+		name = "Nora"
+		dynasty = "Virginia"
+		birth_date = 1425.6.22
+		adm = 3
+		dip = 3
+		mil = 0
+		female = yes
+	}
+}

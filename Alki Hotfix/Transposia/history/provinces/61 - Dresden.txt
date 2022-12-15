@@ -1,0 +1,14 @@
+#61 - neogermanicy
+discovered_by = north_american
+owner = Z05
+controller = Z05
+add_core = Z05
+culture = neogermanic
+religion = paganry
+capital = "Meissen"
+trade_goods = iron
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 2
+is_city = no

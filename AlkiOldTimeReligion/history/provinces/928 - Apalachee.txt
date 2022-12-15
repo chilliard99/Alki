@@ -1,0 +1,18 @@
+#928 - Apalachee
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X13
+controller = X13
+add_core = X13
+culture = west_nilean
+religion = zahran
+capital = "Apalachee"
+trade_goods = fish #there is literally nothing here
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 5
+city = yes 
+discovered_by = eastern

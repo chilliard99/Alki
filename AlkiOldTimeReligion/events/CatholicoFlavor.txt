@@ -1,0 +1,3235 @@
+namespace = catholico_events
+####################AUTHORITY EVENTS##########################
+country_event = { #The Sinful Crowd **PULSE**
+	id = catholico_events.1
+	title = catholico_events.1.t
+	desc = catholico_events.1.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.1.a #Let them Practice
+	 	if = {
+			limit = {
+				has_global_flag = completed_sure_compass_otrep
+			}
+			add_reform_desire = -0.005
+		}
+		else = {
+			add_reform_desire = -0.01
+		}
+	}
+	option = {
+		name = catholico_events.1.b #Shut them Down!
+		add_mil_power = -25
+		add_country_modifier = {
+			name = "crushing_heretic_practices"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #Love Thy Neighbor **PULSE**
+	id = catholico_events.2
+	title = catholico_events.2.t
+	desc = catholico_events.2.d
+	picture = BATTLE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		is_great_power = yes
+		any_known_country = {
+			war_with = ROOT
+			is_great_power = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.2.a #We decide when to stop!
+	 	if = {
+			limit = {
+				has_global_flag = completed_sure_compass_otrep
+			}
+			add_reform_desire = -0.005
+		}
+		else = {
+			add_reform_desire = -0.01
+		}
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0
+				tag = W83
+			}
+		}
+	}
+	option = {
+		name = catholico_events.2.b #We'll face the consequences
+		add_country_modifier = {
+			name = "disrupting_the_peace_catlo"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #Repurposing Chapels **PULSE**
+	id = catholico_events.3
+	title = catholico_events.3.t
+	desc = catholico_events.3.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		any_owned_province = {
+			has_building = temple
+		}	
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.3.a #Sell off some relics
+	 	if = {
+			limit = {
+				has_global_flag = completed_sure_compass_otrep
+			}
+			add_reform_desire = -0.0025
+		}
+		else = {
+			add_reform_desire = -0.005
+		}
+		add_years_of_income = 1
+	}
+	option = {
+		name = catholico_events.3.b #Put the priests to work
+		if = {
+			limit = {
+				has_global_flag = completed_sure_compass_otrep
+			}
+			add_reform_desire = -0.0025
+		}
+		else = {
+			add_reform_desire = -0.005
+		}
+		add_country_modifier = {
+			name = "chapel_workshops_catlo"
+			duration = 3650
+		}
+	}
+	option = {
+		name = catholico_events.3.c #Tax the clergy
+		if = {
+			limit = {
+				has_global_flag = completed_sure_compass_otrep
+			}
+			add_reform_desire = -0.0025
+		}
+		else = {
+			add_reform_desire = -0.005
+		}
+		add_country_modifier = {
+			name = "taxing_chapels_catlo"
+			duration = 3650
+		}
+	}
+	option = {
+		name = catholico_events.3.e #Let them continue their practice
+		add_prestige = -5
+	}
+}
+
+country_event = { #Grip of the Church **PULSE**
+	id = catholico_events.4
+	title = catholico_events.4.t
+	desc = catholico_events.4.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.4.a #Edge them out of government
+	 	if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+		if = {
+			limit = {
+				has_global_flag = completed_sure_compass_otrep
+			}
+			add_reform_desire = -0.0025
+		}
+		else = {
+			add_reform_desire = -0.005
+		}
+	}
+	option = {
+		name = catholico_events.4.b #Let them reign
+		add_prestige = 15
+		add_country_modifier = {
+			name = "clergy_in_power_catlo"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #Lord of Lords **PULSE**
+	id = catholico_events.5
+	title = catholico_events.5.t
+	desc = catholico_events.5.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.5.a #We are all knowing
+	 	if = {
+			limit = {
+				has_global_flag = completed_sure_compass_otrep
+			}
+			add_reform_desire = -0.005
+		}
+		else = {
+			add_reform_desire = -0.01
+		}
+		add_adm_power = 50
+	}
+	option = {
+		name = catholico_events.5.b #Our mercy lasts forever
+		if = {
+			limit = {
+				has_global_flag = completed_sure_compass_otrep
+			}
+			add_reform_desire = -0.005
+		}
+		else = {
+			add_reform_desire = -0.01
+		}
+		add_dip_power = 50
+	}
+	option = {
+		name = catholico_events.5.c #We are all mighty
+		if = {
+			limit = {
+				has_global_flag = completed_sure_compass_otrep
+			}
+			add_reform_desire = -0.005
+		}
+		else = {
+			add_reform_desire = -0.01
+		}
+		add_mil_power = 50
+	}
+	option = {
+		name = catholico_events.5.e #We are eternally devout
+		add_legitimacy = -10
+		add_horde_unity = -10
+		add_devotion = -10
+		add_meritocracy = -10
+		add_republican_tradition = -5
+	}
+}
+
+country_event = { #Heathen Friends **PULSE**
+	id = catholico_events.6
+	title = catholico_events.6.t
+	desc = catholico_events.6.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		is_great_power = yes
+		any_ally = {
+			NOT = {
+				religion = catholico
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.6.a #We are all knowing
+	 	if = {
+			limit = {
+				has_global_flag = completed_sure_compass_otrep
+			}
+			add_reform_desire = -0.005
+		}
+		else = {
+			add_reform_desire = -0.01
+		}
+	}
+}
+
+country_event = { #A Bishop in Need **PULSE**
+	id = catholico_events.7
+	title = catholico_events.7.t
+	desc = catholico_events.7.d
+	picture = CHURCH_ESTATE_1_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		total_development = 50
+		if = {
+			limit = {
+				current_age = age_of_reformation 
+			}
+			always = no
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.7.a #Assist Him!
+	 	add_reform_desire = 0.005
+		add_years_of_income = -0.01
+	}
+	option = {
+		name = catholico_events.7.b #The church will sort him out.
+	 	add_prestige = 5
+	}
+}
+
+country_event = { #Corrupt Purity **PULSE**
+	id = catholico_events.8
+	title = catholico_events.8.t
+	desc = catholico_events.8.d
+	picture = CORRUPTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		corruption = 1
+		if = {
+			limit = {
+				current_age = age_of_reformation 
+			}
+			always = no
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.8.a #We are pure under his light
+	 	add_reform_desire = 0.005
+		add_adm_power = -25
+		add_corruption = -1
+	}
+	option = {
+		name = catholico_events.8.b #We will cure our own ills
+	 	add_prestige = 10
+		add_adm_power = 25
+	}
+}
+
+country_event = { #Cathedral Expansion **PULSE**
+	id = catholico_events.9
+	title = catholico_events.9.t
+	desc = catholico_events.9.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		any_owned_province = {
+			has_building = temple
+		}
+		if = {
+			limit = {
+				current_age = age_of_reformation 
+			}
+			always = no
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_building = temple
+				}
+				save_event_target_as = cool_temple_video_thing
+			}
+		}
+	}
+	
+	option = {
+		name = catholico_events.9.a #Fund their request
+		add_reform_desire = 0.005
+	 	add_years_of_income = -0.25
+		event_target:cool_temple_video_thing = {
+			add_province_modifier = {
+				name = "expanded_cathedral_catlo"
+				duration = 1825
+			}
+		}
+	}
+	option = {
+		name = catholico_events.9.b #Ignore their pleas
+		add_adm_power = 25
+	}
+}
+
+
+
+country_event = { #Rigid Devotion **PULSE**
+	id = catholico_events.10
+	title = catholico_events.10.t
+	desc = catholico_events.10.d
+	picture = ADVISOR_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		OR = {
+			advisor = inquisitor
+			advisor = theologian
+			advisor = philosopher
+		}
+		if = {
+			limit = {
+				current_age = age_of_reformation 
+			}
+			always = no
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.10.a #Accept their guidance
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
+	}
+	option = {
+		name = catholico_events.10.b #Listen to the church
+		add_reform_desire = 0.005
+	}
+}
+
+country_event = { #Model Catholics **PULSE**
+	id = catholico_events.11
+	title = catholico_events.11.t
+	desc = catholico_events.11.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		all_owned_province = {
+			religion = catholico
+		}
+		if = {
+			limit = {
+				current_age = age_of_reformation 
+			}
+			always = no
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.11.a #Fund their request
+		add_prestige = 15
+		add_reform_desire = 0.005
+	}
+}
+
+country_event = { #Reaching out to [Ally] **PULSE**
+	id = catholico_events.12
+	title = catholico_events.12.t
+	desc = catholico_events.12.d
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		any_ally = {
+			NOT = {
+				religion = catholico
+			}
+			religion_group = neo_christian_group
+		}
+		if = {
+			limit = {
+				current_age = age_of_reformation 
+			}
+			always = no
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_ally = {
+				limit = {
+					NOT = {
+						religion = catholico
+					}
+					religion_group = neo_christian_group
+				}
+				save_event_target_as = ally_who_is_getting_catholiced
+			}
+		}
+	}
+	
+	option = {
+		name = catholico_events.12.a #They must be brought to the true faith
+		custom_tooltip = explain_what_reaching_out_will_do_cool.tt
+		tooltip = {
+			add_country_modifier = {
+				name = "holy_negotiator_catlo"
+				duration = 9125
+			}
+		}
+		event_target:ally_who_is_getting_catholiced = {
+			country_event = { 
+				id = catholico_events.13 
+				days = 5
+			}
+		}
+	}
+	option = {
+		name = catholico_events.12.b #We will let them practice
+		add_prestige = -5
+		if = {
+			limit = {
+				has_global_flag = completed_sure_compass_otrep
+			}
+			add_reform_desire = -0.005
+		}
+		else = {
+			add_reform_desire = -0.01
+		}
+	}
+}
+
+country_event = { #The Catholic Request
+	id = catholico_events.13
+	title = catholico_events.13.t
+	desc = catholico_events.13.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.13.a #A foolish idea
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = attempted_to_convert_catlo
+			}
+			country_event = { 
+				id = catholico_events.14
+				days = 5
+			}
+		}
+	}
+	option = {
+		name = catholico_events.13.b #Perhaps they are right
+		change_religion = catholico
+		capital_scope = {
+			change_religion = catholico
+		}
+		add_country_modifier = {
+			name = "the_catholic_return_catlo"
+			duration = 9125
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = joined_the_faith_catlo
+			}
+			country_event = { 
+				id = catholico_events.15
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { #The Heretic Sort
+	id = catholico_events.14
+	title = catholico_events.14.t
+	desc = catholico_events.14.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.14.a #A foolish idea
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = attempted_to_convert_catlo
+			}
+		}
+	}
+}
+
+country_event = { #A Stronger Faith
+	id = catholico_events.15
+	title = catholico_events.15.t
+	desc = catholico_events.15.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.15.a #A foolish idea
+		add_reform_desire = 0.01
+		add_country_modifier = {
+			name = "holy_negotiator_catlo"
+			duration = 9125
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = joined_the_faith_catlo
+			}
+		}
+	}
+}
+
+####################CARDINAL EVENTS##########################
+
+country_event = { #Luring a Cardinal **PULSE**
+	id = catholico_events.16
+	title = catholico_events.16.t
+	desc = catholico_events.16.d
+	picture = SPY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		any_owned_province = {
+			NOT = {
+				has_cardinal = yes
+			}
+			any_neighbor_province = {
+				NOT = {
+					owned_by = ROOT
+				}
+				has_cardinal = yes
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					NOT = {
+						has_cardinal = yes
+					}
+					any_neighbor_province = {
+						NOT = {
+							owned_by = ROOT
+						}
+						has_cardinal = yes
+					}
+				}
+				save_event_target_as = place_where_cardinal_will_be_lured_to
+				random_neighbor_province = {
+					limit = {
+						NOT = {
+							owned_by = ROOT
+						}
+						has_cardinal = yes
+					}
+					save_event_target_as = place_where_cardinal_will_be_lured_from
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = catholico_events.16.a #If hes offering...
+		add_corruption = 2
+		if = {
+			limit = {
+				has_global_flag = completed_sure_compass_otrep
+			}
+			add_reform_desire = -0.005
+		}
+		else = {
+			add_reform_desire = -0.01
+		}
+		event_target:place_where_cardinal_will_be_lured_to = {
+			add_cardinal = yes
+		}
+		event_target:place_where_cardinal_will_be_lured_from = {
+			remove_cardinal = yes
+			owner = {
+				country_event = { 
+					id = catholico_events.17
+					days = 5
+				}
+			}
+		}
+	}
+	option = {
+		name = catholico_events.16.b #The church needs to be cleaned!
+		add_prestige = 5
+	}
+}
+
+country_event = { #Loss of a Cardinal
+	id = catholico_events.17
+	title = catholico_events.17.t
+	desc = catholico_events.17.d
+	picture = CORRUPTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.17.a #Damn them!
+		add_prestige = -5
+	}
+}
+
+country_event = { #Thumb on the Scale **PULSE**
+	id = catholico_events.18
+	title = catholico_events.18.t
+	desc = catholico_events.18.d
+	picture = CORRUPTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		num_of_cardinals = 1 
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_cardinal = yes
+				}
+				save_event_target_as = this_is_for_loc_tots
+			}
+		}
+	}
+	
+	option = {
+		name = catholico_events.18.a #A More Personal Audience
+		add_papal_influence = 100
+		add_corruption = 1
+	}
+	option = {
+		name = catholico_events.18.b #How far the church has fallen
+		add_prestige = 5
+	}
+}
+
+country_event = { #Heretics Target Cardinal **PULSE**
+	id = catholico_events.19
+	title = catholico_events.19.t
+	desc = catholico_events.19.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		any_owned_province = {
+			has_cardinal = yes
+			any_neighbor_province = {
+				NOT = {
+					religion = catholico
+				}
+				religion_group = neo_christian_group
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.19.a #We will increase defense
+		add_mil_power = -100
+	}
+	option = {
+		name = catholico_events.19.b #They wouldn't dare
+		random_list = {
+			50 = {
+				country_event = { 
+					id = catholico_events.20
+				}
+				
+			}
+			50 = {
+				custom_tooltip = nothing_will_happen.tt
+			}
+		}
+	}
+}
+
+country_event = { #Death of a Cardinal
+	id = catholico_events.20
+	title = catholico_events.20.t
+	desc = catholico_events.20.d
+	picture = RELIGIOUS_WARS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_cardinal = yes
+					any_neighbor_province = {
+						NOT = {
+							religion = catholico
+						}
+						religion_group = neo_christian_group
+					}
+				}
+				save_event_target_as = place_where_cardinal_dies
+				remove_cardinal = yes
+			}
+		}
+	}
+	
+	option = {
+		name = catholico_events.20.a #We will mourne
+		add_prestige = -25
+		hidden_effect = {
+			random_known_country = {
+				limit = {
+					is_papal_controller = yes
+				}
+				country_event = { 
+					id = catholico_events.21
+					days = 5
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Grave News from [From]
+	id = catholico_events.21
+	title = catholico_events.21.t
+	desc = catholico_events.21.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.21.a #These heretics will pay!
+		add_prestige = -5
+		if = {
+			limit = {
+				has_global_flag = completed_sure_compass_otrep
+			}
+			add_reform_desire = -0.005
+		}
+		else = {
+			add_reform_desire = -0.01
+		}
+	}
+}
+
+####################POPE RELOCATION EVENTS##########################
+
+country_event = { #Home in Tepeyec
+	id = catholico_events.22
+	title = catholico_events.22.t
+	desc = catholico_events.22.d
+	picture = POPE_PREACHING_eventPicture
+	
+	trigger = {
+		owns = 2998
+		religion = catholico
+		NOT = {
+			tag = W83
+			has_country_flag = tepeyec_denied_to_pope
+			has_global_flag = treaty_of_diego
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.22.a #It is his city
+		2998 = {
+			add_core = W83
+			cede_province = W83
+		}
+		add_prestige = 10
+		every_known_country = {
+			limit = {
+				has_country_flag = tepeyec_denied_to_pope 
+			}
+			clr_country_flag = tepeyec_denied_to_pope
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				capital_scope = {
+					region = anahuac_region
+				}
+			}
+		}
+	}
+	option = {
+		name = catholico_events.22.b #He should focus on the heavens
+		custom_tooltip = we_will_get_events_related_to_the_tepeyac_papacy.tt
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100	
+		}
+		if = {
+			limit = {
+				has_global_flag = completed_sure_compass_otrep
+			}
+			add_reform_desire = -0.025
+		}
+		else = {
+			add_reform_desire = -0.05
+		}
+		
+		set_country_flag = tepeyec_denied_to_pope
+	}
+}
+
+country_event = { #A Pope Without a State
+	id = catholico_events.23
+	title = catholico_events.23.t
+	desc = catholico_events.23.d
+	picture = RELIGIOUS_WARS_eventPicture
+	major = yes
+	
+	trigger = {
+		owns = 2998
+		religion = catholico 
+		NOT = {
+			has_global_flag = godless_world_rip
+			has_global_flag = decline_of_the_papacy
+			has_global_flag = treaty_of_diego
+			exists = W83
+		}
+		has_country_flag = tepeyec_denied_to_pope
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.23.a #Oh no! Anyway
+		set_country_flag = denied_pope_to_settle
+		set_global_flag = decline_of_the_papacy
+		
+		if = {
+			limit = {
+				has_global_flag = completed_sure_compass_otrep
+			}
+			add_reform_desire = -0.025
+		}
+		else = {
+			add_reform_desire = -0.05
+		}
+	}
+}
+
+country_event = { #Home Away From Home
+	id = catholico_events.24
+	title = catholico_events.24.t
+	desc = catholico_events.24.d
+	picture = POPE_PREACHING_eventPicture
+	
+	trigger = {
+		has_global_flag = decline_of_the_papacy
+		NOT = {
+			has_global_flag = godless_world_rip
+			has_global_flag = treaty_of_diego
+			exists = W83
+		}
+		religion = catholico 
+		NOT = {
+			has_country_flag = denied_pope_to_settle
+		}
+		any_owned_province = {
+			religion = catholico
+			NOT = {
+				is_capital = yes
+			}	
+			any_neighbor_province = {
+				NOT = {
+					owned_by = ROOT
+				}
+			}
+			development = 10
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = catholico
+					NOT = {
+						is_capital = yes
+					}	
+					any_neighbor_province = {
+						NOT = {
+							owned_by = ROOT
+						}
+					}
+					development = 10
+				}
+				save_event_target_as = province_which_the_pope_is_trynna_settle_on
+			}
+		}
+	}
+	
+	option = {
+		name = catholico_events.24.a #We will give him [prov]
+		event_target:province_which_the_pope_is_trynna_settle_on = {
+			add_core = W83
+			cede_province = W83
+		}
+	}
+	option = {
+		name = catholico_events.24.b #It is not our burden
+		add_prestige = -5
+		set_country_flag = denied_pope_to_settle
+	}
+}
+
+country_event = { #A Godless World
+	id = catholico_events.25
+	title = catholico_events.25.t
+	desc = catholico_events.25.d
+	picture = PRAYING_eventPicture
+	major = yes
+	
+	trigger = {
+		has_global_flag = decline_of_the_papacy
+		NOT = {
+			has_global_flag = godless_world_rip
+			has_global_flag = treaty_of_diego
+			exists = W83
+		}
+		religion = catholico 
+		NOT = {
+			any_country = {
+				religion = catholico 
+				NOT = {
+					has_country_flag = denied_pope_to_settle
+				}
+				any_owned_province = {
+					religion = catholico
+					NOT = {
+						is_capital = yes
+					}	
+					any_neighbor_province = {
+						NOT = {
+							owned_by = ROOT
+						}
+					}
+					development = 10
+				}
+			}
+		}
+		owns = 2998
+		has_country_flag = tepeyec_denied_to_pope
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.25.a #Horror!
+		add_prestige = 5
+		set_global_flag = godless_world_rip
+	}
+}
+
+country_event = { #Papal Revival
+	id = catholico_events.26
+	title = catholico_events.26.t
+	desc = catholico_events.26.d
+	picture = POPE_PREACHING_eventPicture
+	major = yes
+	
+	trigger = {
+		OR = {
+			has_global_flag = godless_world_rip
+			has_global_flag = decline_of_the_papacy
+		}
+		owns = 2998
+		exists = W83
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			clr_global_flag = godless_world_rip
+			clr_global_flag = decline_of_the_papacy
+			clr_global_flag = treaty_of_diego
+			every_country = {
+				clr_country_flag = denied_pope_to_settle
+				clr_country_flag = tepeyec_denied_to_pope
+			}
+		}
+	}
+	
+	option = {
+		name = catholico_events.26.a #Interesting
+		add_reform_desire = 0.005
+	}
+}
+
+
+country_event = { #War for the Catholic Faith
+	id = catholico_events.27
+	title = catholico_events.27.t
+	desc = catholico_events.27.d
+	picture = RELIGIOUS_WARS_eventPicture
+	
+	trigger = {
+		religion = catholico
+		reform_desire = 1
+		is_in_war = {
+			attacker_leader = ROOT
+			defender_leader = W83
+		}
+		NOT = {
+			has_global_flag = papacy_war_event_start
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = papacy_war_event_start
+	}
+	
+	option = {
+		name = catholico_events.27.a #This can only mean trouble
+		custom_tooltip = we_will_lose_relations_with_all_catholic_nations
+		add_prestige = -5
+		hidden_effect = {
+			REB = {
+				set_variable = {            
+					which = papal_support_from_abroad
+					value = 1
+				}
+			}
+			every_country = {
+				limit = {
+					religion = catholico
+					NOT = {
+						tag = ROOT
+						tag = W83
+						war_with = W83
+					}
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = attacked_papacy
+				}
+				country_event = { 
+					id = catholico_events.28
+				}
+			}
+			W83 = {
+				country_event = { 
+					id = catholico_events.29
+				}
+				country_event = { 
+					id = catholico_events.30
+					days = 30
+				}
+			}
+		}
+	}
+}
+
+country_event = { #The Brutes of [From]
+	id = catholico_events.28
+	title = catholico_events.28.t
+	desc = catholico_events.28.d
+	picture = RELIGIOUS_WARS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.28.a #He must be protected!
+		custom_tooltip = our_support_efforts_will_go_towards_helping_the_papacy.tt
+		add_adm_power = -10
+		add_dip_power = -10
+		add_mil_power = -10
+		add_years_of_income = -0.1
+		add_papal_influence = 10
+		hidden_effect = {
+			REB = {
+				change_variable  = {            
+					which = papal_support_from_abroad
+					value = 1
+				}
+			}
+		}
+	}
+	option = {
+		name = catholico_events.28.a #The Lord will protect him
+		add_prestige = -5
+	}
+}
+
+country_event = { #War with [from]
+	id = catholico_events.29
+	title = catholico_events.29.t
+	desc = catholico_events.29.d
+	picture = RELIGIOUS_WARS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.29.a #The Lord will Protect Us!
+		custom_tooltip = we_will_recieve_aid_from_other_nations_in_the_world.tt
+	}
+}
+
+country_event = { #War with [from]
+	id = catholico_events.30
+	title = catholico_events.30.t
+	desc = catholico_events.30.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			REB = {
+				set_variable = {            
+					which = papal_support_mana_gain
+					which = papal_support_from_abroad
+				}
+				multiply_variable = {            
+					which = papal_support_mana_gain
+					value = 2
+				}
+				set_variable = {            
+					which = papal_support_money_gain
+					which = papal_support_from_abroad
+				}
+				divide_variable = {            
+					which = papal_support_money_gain
+					value = 20
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = catholico_events.30.a #They always come around
+		custom_tooltip = this_is_what_we_are_going_to_get_cool.tt
+		hidden_effect = {
+			while = {
+				limit = {
+					REB = {
+						check_variable = {
+							which = papal_support_from_abroad
+							who = REB
+							value = 1
+						}
+					}
+				}
+				add_years_of_income = 0.05
+				add_adm_power = 2
+				add_dip_power = 2
+				add_mil_power = 2
+				REB = {
+					subtract_variable = {
+						which = papal_support_from_abroad
+						value = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+####################CURIA CONTROLLER EVENTS##########################
+
+country_event = { #Building Back Trust **PULSE**
+	id = catholico_events.31
+	title = catholico_events.31.t
+	desc = catholico_events.31.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		is_papal_controller = yes
+		NOT = {
+			reform_desire = 1
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.31.a #We will sacrifice our administration
+		trigger = {
+			adm = 1
+		}
+		change_adm = -1
+		custom_tooltip = generate_one_papal_authority_every_two_years.tt
+		set_country_flag = curia_get_papal_authority_every_two_years
+		hidden_effect = {
+			REB = {
+				change_variable = {
+					which = current_papal_authority_tick
+					value = 0.5
+				}
+			}
+		}
+	}
+	option = {
+		name = catholico_events.31.b #We will sacrifice our diplomacy
+		trigger = {
+			dip = 1
+		}
+		change_dip = -1
+		custom_tooltip = generate_one_papal_authority_every_two_years.tt
+		set_country_flag = curia_get_papal_authority_every_two_years
+		hidden_effect = {
+			REB = {
+				change_variable = {
+					which = current_papal_authority_tick
+					value = 0.5
+				}
+			}
+		}
+	}
+	option = {
+		name = catholico_events.31.c #We will sacrifice our military
+		trigger = {
+			mil = 1
+		}
+		change_mil = -1
+		custom_tooltip = generate_one_papal_authority_every_two_years.tt
+		set_country_flag = curia_get_papal_authority_every_two_years
+		hidden_effect = {
+			REB = {
+				change_variable = {
+					which = current_papal_authority_tick
+					value = 0.5
+				}
+			}
+		}
+	}
+	option = {
+		name = catholico_events.31.e #We cannot make sacrifices
+		add_prestige = 5
+	}
+}
+
+country_event = { #Face of Catholicism **PULSE**
+	id = catholico_events.32
+	title = catholico_events.32.t
+	desc = catholico_events.32.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		is_papal_controller = yes
+		reform_desire = 1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.32.a #We will lead!
+		if = {
+			limit = {
+				reform_desire = 2
+			}
+			add_ruler_modifier = {
+				name = "200_face_of_cath_catlo"
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				reform_desire = 1.5
+			}
+			add_ruler_modifier = {
+				name = "150_face_of_cath_catlo"
+				duration = -1
+			}
+		}
+		else = {
+			add_ruler_modifier = {
+				name = "100_face_of_cath_catlo"
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Counter-Reformation Leadership **PULSE**
+	id = catholico_events.33
+	title = catholico_events.33.t
+	desc = catholico_events.33.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		is_papal_controller = yes
+		reform_desire = 1
+		any_owned_province = {
+			OR = {
+				religion = vacandist
+				religion = vulgar
+				religion = sagrado
+				religion = cruzite
+				religion = la_luz
+			}
+		}
+		NOT = {
+			has_country_modifier = counter_reformation_resistance_catlo
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.33.a #We will weather this storm, together. 
+		add_adm_power = -100
+		add_dip_power = -100
+		add_mil_power = -100
+		custom_tooltip = all_catholic_nations_will_gain_minor_resistance_to_reformation
+		tooltip = {
+			add_country_modifier = {
+				name = "counter_reformation_resistance_catlo"
+				duration = 5475
+			}
+		}
+		add_country_modifier = {
+			name = "counter_reformation_resistance_catlo"
+			duration = 5475
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					religion = catholico
+					NOT = {
+						tag = ROOT
+					}
+				}
+				country_event = { 
+					id = catholico_events.34
+				}
+			}
+		}
+	}
+	option = {
+		name = catholico_events.33.b #They must face it alone
+		add_prestige = 5
+	}
+}
+
+country_event = { #Leadership from [From]
+	id = catholico_events.34
+	title = catholico_events.34.t
+	desc = catholico_events.34.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.34.a #We will endure
+		add_country_modifier = {
+			name = "counter_reformation_resistance_catlo"
+			duration = 5475
+		}
+	}
+}
+
+country_event = { #Power Behind the Pope **PULSE**
+	id = catholico_events.35
+	title = catholico_events.35.t
+	desc = catholico_events.35.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		is_papal_controller = yes
+		is_great_power = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.35.a #We will Bolster The See's authority
+		add_reform_desire = 0.01
+	}
+	option = {
+		name = catholico_events.35.b #We will deepner our influence
+		add_papal_influence = 25
+	}
+}
+
+####################REFORMATION EVENTS##########################
+
+country_event = { #Citizens Lose Faith **PULSE**
+	id = catholico_events.36
+	title = catholico_events.36.t
+	desc = catholico_events.36.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		is_religion_enabled = vacandist
+		NOT = {
+			reform_desire = 0.25
+			has_global_flag = completed_sure_compass_otrep
+		}
+		any_owned_province = {
+			religion = catholico
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = catholico
+				}
+				save_event_target_as = citizens_lose_faith_prov_targ
+			}
+		}
+	}
+	
+	option = {
+		name = catholico_events.36.a #Horror!
+		event_target:citizens_lose_faith_prov_targ = {
+			change_religion = vacandist
+		}
+	}
+}
+
+country_event = { #Romanismo **PULSE**
+	id = catholico_events.37
+	title = catholico_events.37.t
+	desc = catholico_events.37.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		any_neighbor_country = {
+			religion = vulgar
+		}
+		any_province = {
+			religion = catholico
+			any_neighbor_province = {
+				religion = vulgar
+				NOT = {
+					owned_by = ROOT
+				}
+				owner = {
+					religion = vulgar
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = catholico
+					any_neighbor_province = {
+						religion = vulgar
+						NOT = {
+							owned_by = ROOT
+						}
+						owner = {
+							religion = vulgar
+						}
+					}
+				}
+				save_event_target_as = romanismo_target_prov_catlo
+			}
+		}
+	}
+	
+	option = {
+		name = catholico_events.37.a #Horror!
+		add_corruption = 1
+		event_target:romanismo_target_prov_catlo = {
+			change_religion = vulgar
+		}
+	}
+}
+
+country_event = { #A Mystical Side  **PULSE**
+	id = catholico_events.38
+	title = catholico_events.38.t
+	desc = catholico_events.38.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		any_neighbor_country = {
+			religion = sagrado
+		}
+		capital_scope = {
+			continent = colombia
+		}
+		NOT = {
+			reform_desire = 0.75
+			has_global_flag = STOP_sagrado_NOW
+		}
+		
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = catholico
+				}
+				save_event_target_as = mystical_target_prov_catlo_one
+			}
+			if = {
+				limit = {
+					calc_true_if = {
+						all_owned_province = {
+							religion = catholico
+						}
+						amount = 2
+					}
+				}
+				random_owned_province = {
+					limit = {
+						religion = catholico
+						NOT = {
+							province_id = event_target:mystical_target_prov_catlo_one
+						}
+					}
+					save_event_target_as = mystical_target_prov_catlo_two
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = catholico_events.38.a #Horror!
+		event_target:mystical_target_prov_catlo_one = {
+			change_religion = sagrado
+		}
+		if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						religion = catholico
+					}
+					amount = 2
+				}
+			}
+			event_target:mystical_target_prov_catlo_two = {
+				change_religion = sagrado
+			}
+		}
+	}
+}
+
+country_event = { #The Gospel of Wealth **PULSE**
+	id = catholico_events.39
+	title = catholico_events.39.t
+	desc = catholico_events.39.d
+	picture = BANKRUPTCY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		any_neighbor_country = {
+			religion = cruzite
+		}
+		NOT = {
+			reform_desire = 0.5
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = catholico
+				}
+				save_event_target_as = gospel_target_prov_catlo_one
+			}
+			if = {
+				limit = {
+					calc_true_if = {
+						all_owned_province = {
+							religion = catholico
+						}
+						amount = 2
+					}
+				}
+				random_owned_province = {
+					limit = {
+						religion = catholico
+						NOT = {
+							province_id = event_target:gospel_target_prov_catlo_one
+						}
+					}
+					save_event_target_as = gospel_target_prov_catlo_two
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = catholico_events.39.a #We must soothe their issues
+		add_years_of_income = -5	
+	}
+	option = {
+		name = catholico_events.39.b #We will spend what we can
+		add_years_of_income = -2
+		event_target:gospel_target_prov_catlo_one = {
+			change_religion = cruzite
+		}
+	}
+	option = {
+		name = catholico_events.39.c #We will not negotiate with HEATHENS!
+		event_target:gospel_target_prov_catlo_one = {
+			change_religion = cruzite
+		}
+		if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						religion = catholico
+					}
+					amount = 2
+				}
+			}
+			event_target:gospel_target_prov_catlo_two = {
+				change_religion = cruzite
+			}
+		}
+	}
+}
+
+country_event = { #A Spirit of Revolution **PULSE**
+	id = catholico_events.40
+	title = catholico_events.40.t
+	desc = catholico_events.40.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		NOT = {
+			reform_desire = 0.5
+		}
+		any_owned_province = {
+			religion = la_luz
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = catholico
+				}
+				save_event_target_as = luzrev_target_prov_catlo_one
+			}
+			if = {
+				limit = {
+					calc_true_if = {
+						all_owned_province = {
+							religion = catholico
+						}
+						amount = 3
+					}
+				}
+				random_owned_province = {
+					limit = {
+						religion = catholico
+						NOT = {
+							province_id = event_target:luzrev_target_prov_catlo_one
+						}
+					}
+					save_event_target_as = luzrev_target_prov_catlo_two
+				}
+			}
+			if = {
+				limit = {
+					calc_true_if = {
+						all_owned_province = {
+							religion = catholico
+						}
+						amount = 2
+					}
+				}
+				random_owned_province = {
+					limit = {
+						religion = catholico
+						NOT = {
+							province_id = event_target:luzrev_target_prov_catlo_one
+							province_id = event_target:luzrev_target_prov_catlo_two
+						}
+					}
+					save_event_target_as = luzrev_target_prov_catlo_three
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = catholico_events.40.a #Horror!
+		event_target:luzrev_target_prov_catlo_one = {
+			change_religion = la_luz
+		}
+		if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						religion = catholico
+					}
+					amount = 3
+				}
+			}
+			event_target:luzrev_target_prov_catlo_two = {
+				change_religion = la_luz
+			}
+		}
+		if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						religion = catholico
+					}
+					amount = 2
+				}
+			}
+			event_target:luzrev_target_prov_catlo_three = {
+				change_religion = la_luz
+			}
+		}
+	}
+}
+
+country_event = { #Resurgence of Belief **PULSE**
+	id = catholico_events.41
+	title = catholico_events.41.t
+	desc = catholico_events.41.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		reform_desire = 1
+		any_owned_province = {
+			religion = vacandist
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = vacandist
+				}
+				save_event_target_as = vacandist_prov_to_target
+			}
+		}
+	}
+	
+	option = {
+		name = catholico_events.41.a #Wonderful
+		event_target:vacandist_prov_to_target = {
+			change_religion = catholico
+		}
+	}
+}
+
+country_event = { #Taming Heathen mobs **PULSE**
+	id = catholico_events.42
+	title = catholico_events.42.t
+	desc = catholico_events.42.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		any_owned_province = {
+			OR = {
+				religion = vacandist
+				religion = vulgar
+				religion = sagrado
+				religion = cruzite
+				religion = la_luz
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.42.a #We will make the sacrifices
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100	
+		}
+		add_country_modifier = {
+			name = "resisting_the_Reformation_catlo"
+			duration = 7300
+		}
+	}
+	option = {
+		name = catholico_events.42.b #They will return to the faith in time
+		add_papal_influence = 5
+		add_prestige = 5
+	}
+}
+
+country_event = { #Cardinal Corrects Heretics **PULSE**
+	id = catholico_events.43
+	title = catholico_events.43.t
+	desc = catholico_events.43.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		any_owned_province = {
+			OR = {
+				religion = vacandist
+				religion = vulgar
+				religion = sagrado
+				religion = cruzite
+				religion = la_luz
+			}
+		}
+		num_of_cardinals = 1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { 
+					OR = {
+						religion = vacandist
+						religion = vulgar
+						religion = sagrado
+						religion = cruzite
+						religion = la_luz
+					}
+				}
+				save_event_target_as = prov_for_cardinal_conversion
+			}
+		}
+	}
+	
+	option = {
+		name = catholico_events.43.a #We will make the sacrifices
+		event_target:prov_for_cardinal_conversion = {
+			change_religion = catholico
+		}
+	}
+}
+
+country_event = { #Reformation Takes Hold Over Sea **PULSE**
+	id = catholico_events.44
+	title = catholico_events.44.t
+	desc = catholico_events.44.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		any_owned_province = {
+			OR = {
+				religion = vacandist
+				religion = vulgar
+				religion = sagrado
+				religion = cruzite
+				religion = la_luz
+			}
+		}
+		any_subject_country = {
+			is_colonial_nation = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = { #Theres probably a much easier way to do this
+		hidden_effect = {
+			set_variable = {
+				which = to_check_for_random_catlo_heresy
+				value = 1
+			}
+			random_subject_country = {
+				limit = { 
+					is_colonial_nation = yes
+				}
+				save_event_target_as = colonial_nation_that_is_gonna_fall_to_reformation
+			}
+			while = {
+				limit = {
+					check_variable = {
+						which = to_check_for_random_catlo_heresy
+						value = 2
+					}
+				}
+				random_list = {
+					20 = {
+						if = {
+							limit = {
+								any_owned_province = {
+									religion = vacandist
+								}
+							}
+							event_target:colonial_nation_that_is_gonna_fall_to_reformation = {
+								set_country_flag = getting_catlo_heresy_vacandist
+							}
+							change_variable = {
+								which = to_check_for_random_catlo_heresy
+								value = 2
+							}
+						}
+					}
+					20 = {
+						if = {
+							limit = {
+								any_owned_province = {
+									religion = vulgar
+								}
+							}
+							event_target:colonial_nation_that_is_gonna_fall_to_reformation = {
+								set_country_flag = getting_catlo_heresy_vulgar
+							}
+							change_variable = {
+								which = to_check_for_random_catlo_heresy
+								value = 2
+							}
+						}
+					}
+					20 = {
+						if = {
+							limit = {
+								any_owned_province = {
+									religion = sagrado
+								}
+							}
+							event_target:colonial_nation_that_is_gonna_fall_to_reformation = {
+								set_country_flag = getting_catlo_heresy_sagrado
+							}
+							change_variable = {
+								which = to_check_for_random_catlo_heresy
+								value = 2
+							}
+						}
+					}
+					20 = {
+						if = {
+							limit = {
+								any_owned_province = {
+									religion = cruzite
+								}
+							}
+							event_target:colonial_nation_that_is_gonna_fall_to_reformation = {
+								set_country_flag = getting_catlo_heresy_cruzite
+							}
+							change_variable = {
+								which = to_check_for_random_catlo_heresy
+								value = 2
+							}
+						}
+					}
+					20 = {
+						if = {
+							limit = {
+								any_owned_province = {
+									religion = la_luz
+								}
+							}
+							event_target:colonial_nation_that_is_gonna_fall_to_reformation = {
+								set_country_flag = getting_catlo_heresy_la_luz
+							}
+							change_variable = {
+								which = to_check_for_random_catlo_heresy
+								value = 2
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = catholico_events.44.a #We must stop this spread!
+		add_dip_power = -100
+		add_country_modifier = {
+			name = "prevented_heretic_colonization_catlo"
+			duration = 3650
+		}
+	}
+	option = {
+		name = catholico_events.44.b #We will make the sacrifices
+		custom_tooltip = our_colony_will_get_fucked.tt
+		hidden_effect = {
+			event_target:colonial_nation_that_is_gonna_fall_to_reformation = {
+				country_event = { 
+					id = catholico_events.34
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Reformation comes to [Root] 
+	id = catholico_events.45
+	title = catholico_events.45.t
+	desc = catholico_events.45.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						religion = catholico
+					}
+					amount = 10
+				}
+			}
+			set_variable = {
+				which = provs_to_convert_overseas_ref
+				value = 10
+			}
+			set_country_flag = getting_ten_provs_overseas_ref_catlo
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						religion = catholico
+					}
+					amount = 7
+				}
+			}
+			set_variable = {
+				which = provs_to_convert_overseas_ref
+				value = 7
+			}
+			set_country_flag = getting_sev_provs_overseas_ref_catlo
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						religion = catholico
+					}
+					amount = 5
+				}
+			}
+			set_variable = {
+				which = provs_to_convert_overseas_ref
+				value = 5
+			}
+			set_country_flag = getting_five_provs_overseas_ref_catlo
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						religion = catholico
+					}
+					amount = 3
+				}
+			}
+			set_variable = {
+				which = provs_to_convert_overseas_ref
+				value = 3
+			}
+			set_country_flag = getting_three_provs_overseas_ref_catlo
+		}
+		else = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						religion = catholico
+					}
+					amount = 1
+				}
+			}
+			set_variable = {
+				which = provs_to_convert_overseas_ref
+				value = 1
+			}
+			set_country_flag = getting_one_provs_overseas_ref_catlo
+		}
+		
+		while = {
+			limit = {
+				check_variable = {
+					which = provs_to_convert_overseas_ref
+					value = 1
+				}
+			}
+			random_owned_province = { #I am in pain, I have not eaten in 16 hours and have to piss
+				limit = {
+					religion = catholico
+				}
+				if = {
+					limit = {
+						has_country_flag = getting_catlo_heresy_vacandist
+					}
+					change_religion = vacandist
+				}
+				else_if = {
+					limit = {
+						has_country_flag = getting_catlo_heresy_vulgar
+					}
+					change_religion = vulgar
+				}
+				else_if = {
+					limit = {
+						has_country_flag = getting_catlo_heresy_sagrado
+					}
+					change_religion = sagrado
+				}
+				else_if = {
+					limit = {
+						has_country_flag = getting_catlo_heresy_cruzite
+					}
+					change_religion = cruzite
+				}
+				else = {
+					change_religion = la_luz
+				}
+			}
+			subtract_variable = {
+				which = provs_to_convert_overseas_ref
+				value = 1
+			}
+		}
+	}
+	
+	option = {
+		name = catholico_events.45.a #Horror!
+		if = {
+			limit = { #Fuck it long block of text 
+				has_country_flag = getting_ten_provs_overseas_ref_catlo 
+			}
+			custom_tooltip = you_get_ten_prov_converted_overseas_ref_catlo.tt
+		}
+		else_if = {
+			limit = {
+				has_country_flag = getting_sev_provs_overseas_ref_catlo
+			}
+			custom_tooltip = you_get_sev_prov_converted_overseas_ref_catlo.tt
+		}
+		else_if = {
+			limit = {
+				has_country_flag = getting_five_provs_overseas_ref_catlo
+			}
+			custom_tooltip = you_get_five_prov_converted_overseas_ref_catlo.tt
+		}
+		else_if = {
+			limit = {
+				has_country_flag = getting_three_provs_overseas_ref_catlo
+			}
+			custom_tooltip = you_get_three_prov_converted_overseas_ref_catlo.tt
+		}
+		else = {
+			limit = {
+				has_country_flag = getting_one_provs_overseas_ref_catlo
+			}
+			custom_tooltip = you_get_one_prov_converted_overseas_ref_catlo.tt
+		}
+		add_papal_influence = 10
+	}
+	option = {
+		name = catholico_events.45.b #Might as well join them
+		if = {
+			limit = {
+				has_country_flag = getting_ten_provs_overseas_ref_catlo
+			}
+			custom_tooltip = you_get_ten_prov_converted_overseas_ref_catlo.tt
+		}
+		else_if = {
+			limit = {
+				has_country_flag = getting_sev_provs_overseas_ref_catlo
+			}
+			custom_tooltip = you_get_sev_prov_converted_overseas_ref_catlo.tt
+		}
+		else_if = {
+			limit = {
+				has_country_flag = getting_five_provs_overseas_ref_catlo
+			}
+			custom_tooltip = you_get_five_prov_converted_overseas_ref_catlo.tt
+		}
+		else_if = {
+			limit = {
+				has_country_flag = getting_three_provs_overseas_ref_catlo
+			}
+			custom_tooltip = you_get_three_prov_converted_overseas_ref_catlo.tt
+		}
+		else = {
+			limit = {
+				has_country_flag = getting_one_provs_overseas_ref_catlo
+			}
+			custom_tooltip = you_get_one_prov_converted_overseas_ref_catlo.tt
+		}
+		if = {
+			limit = {
+				has_country_flag = getting_catlo_heresy_vacandist
+			}
+			change_religion = vacandist
+		}
+		else_if = {
+			limit = {
+				has_country_flag = getting_catlo_heresy_vulgar
+			}
+			change_religion = vulgar
+		}
+		else_if = {
+			limit = {
+				has_country_flag = getting_catlo_heresy_sagrado
+			}
+			change_religion = sagrado
+		}
+		else_if = {
+			limit = {
+				has_country_flag = getting_catlo_heresy_cruzite
+			}
+			change_religion = cruzite
+		}
+		else = {
+			change_religion = la_luz
+		}
+		add_country_modifier = {
+			name = "reformers_abroad_catlo"
+			duration = 3650
+		}
+	}
+}
+
+####################MISC CATHOLIC EVENTS##########################
+
+country_event = { #Santa Muerte **PULSE**
+	id = catholico_events.46
+	title = catholico_events.46.t
+	desc = catholico_events.46.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.46.a #We will celebrate
+		add_prestige = 15
+		add_reform_desire = 0.0025
+	}
+	option = {
+		name = catholico_events.46.b #Heresy!
+		add_prestige = -15
+	}
+}
+
+country_event = { #Sacred Education **PULSE**
+	id = catholico_events.47
+	title = catholico_events.47.t
+	desc = catholico_events.47.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		NOT = {
+			has_country_flag = proped_about_sacred_education_catlo
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.47.a #Let them in
+		add_country_modifier = {
+			name = "sacred_education_catlo"
+			duration = -1
+		}
+	}
+	option = {
+		name = catholico_events.47.b #Indoctrination!
+		add_prestige = -5
+	}
+	
+	after = {
+		set_country_flag = denied_sacred_education_catlo
+	}
+}
+
+country_event = { #Heretical Discovery **PULSE**
+	id = catholico_events.48
+	title = catholico_events.48.t
+	desc = catholico_events.48.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		has_country_flag = proped_about_sacred_education_catlo
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.48.a #Supress its spread
+		add_country_modifier = {
+			name = "supressing_discoveries_catlo"
+			duration = 3650
+		}
+	}
+	option = {
+		name = catholico_events.48.b #Let them investigate
+		add_papal_influence = -10
+		add_country_modifier = {
+			name = "allowing_heathen_research"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Public Schooling **PULSE**
+	id = catholico_events.49
+	title = catholico_events.49.t
+	desc = catholico_events.49.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		has_country_flag = proped_about_sacred_education_catlo
+		NOT = {
+			has_country_flag = proped_about_public_schooling_catlo
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.49.a #Supress its spread
+		custom_tooltip = modify_public_schooling_to_get_better.tt
+		tooltip = {
+			add_country_modifier = {
+				name = "sacred_education_catlo_with_schools"
+				duration = -1
+			}
+		}
+		add_prestige = -10
+		hidden_effect = {
+			remove_country_modifier = sacred_education_catlo
+			add_country_modifier = {
+				name = "sacred_education_catlo_with_schools"
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = catholico_events.49.b #Let them investigate
+		add_prestige = 20
+	}
+	
+	after = {
+		set_country_flag = proped_about_public_schooling_catlo
+	}
+}
+
+country_event = { #Our Lady **PULSE**
+	id = catholico_events.50
+	title = catholico_events.50.t
+	desc = catholico_events.50.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.50.a #We are forever thankful
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+	}
+}
+
+####################PAPAL ABILITIY EVENTS##########################
+
+country_event = { #Church Windfall **PULSE**
+	id = catholico_events.51
+	title = catholico_events.51.t
+	desc = catholico_events.51.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		OR = {
+			has_country_modifier = 25_catlo_church_tax
+			has_country_modifier = 50_catlo_church_tax
+			has_country_modifier = 75_catlo_church_tax
+			has_country_modifier = 100_catlo_church_tax
+			has_country_modifier = 125_catlo_church_tax
+			has_country_modifier = 150_catlo_church_tax
+			has_country_modifier = 175_catlo_church_tax
+			has_country_modifier = 200_catlo_church_tax
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.51.a #Wonderful!
+		add_yearS_of_income = 2
+	}
+}
+
+country_event = { #Valuable Relic **PULSE**
+	id = catholico_events.52
+	title = catholico_events.52.t
+	desc = catholico_events.52.d
+	picture = ARTWORK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		OR = {
+			has_country_modifier = 25_catlo_church_tax
+			has_country_modifier = 50_catlo_church_tax
+			has_country_modifier = 75_catlo_church_tax
+			has_country_modifier = 100_catlo_church_tax
+			has_country_modifier = 125_catlo_church_tax
+			has_country_modifier = 150_catlo_church_tax
+			has_country_modifier = 175_catlo_church_tax
+			has_country_modifier = 200_catlo_church_tax
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.52.a #We will keep it
+		add_legitimacy = 10
+		add_horde_unity = 10
+		add_devotion = 10
+		add_meritocracy = 10
+		add_republican_tradition = 5
+	}
+	option = {
+		name = catholico_events.52.b #Give it to the Papacy
+		add_papal_influence = 15
+	}
+	option = {
+		name = catholico_events.52.c #Sell it off
+		add_yearS_of_income = 1
+	}
+}
+
+country_event = { #Holy Opportunities **PULSE**
+	id = catholico_events.53
+	title = catholico_events.53.t
+	desc = catholico_events.53.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		OR = {
+			has_country_modifier = 25_catlo_forgive_ursury
+			has_country_modifier = 50_catlo_forgive_ursury
+			has_country_modifier = 75_catlo_forgive_ursury
+			has_country_modifier = 100_catlo_forgive_ursury
+			has_country_modifier = 125_catlo_forgive_ursury
+			has_country_modifier = 150_catlo_forgive_ursury
+			has_country_modifier = 175_catlo_forgive_ursury
+			has_country_modifier = 200_catlo_forgive_ursury
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.53.a #We could use the money
+		add_loan = {
+			interest_modifier = 0
+			fixed_interest = yes
+			duration = 60
+		}
+	}
+	option = {
+		name = catholico_events.53.b #We have no need
+		add_prestige = 5
+	}
+}
+
+country_event = { #Papal Purity **PULSE**
+	id = catholico_events.54
+	title = catholico_events.54.t
+	desc = catholico_events.54.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		OR = {
+			has_country_modifier = 25_catlo_forgive_ursury
+			has_country_modifier = 50_catlo_forgive_ursury
+			has_country_modifier = 75_catlo_forgive_ursury
+			has_country_modifier = 100_catlo_forgive_ursury
+			has_country_modifier = 125_catlo_forgive_ursury
+			has_country_modifier = 150_catlo_forgive_ursury
+			has_country_modifier = 175_catlo_forgive_ursury
+			has_country_modifier = 200_catlo_forgive_ursury
+		}
+		corruption = 2
+		num_of_loans = 1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.54.a #Wonderful!
+		add_corruption = -2
+	}
+}
+
+country_event = { #Divine Might **PULSE**
+	id = catholico_events.55
+	title = catholico_events.55.t
+	desc = catholico_events.55.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		OR = {
+			has_country_modifier = 25_catlo_bless_ruler
+			has_country_modifier = 50_catlo_bless_ruler
+			has_country_modifier = 75_catlo_bless_ruler
+			has_country_modifier = 100_catlo_bless_ruler
+			has_country_modifier = 125_catlo_bless_ruler
+			has_country_modifier = 150_catlo_bless_ruler
+			has_country_modifier = 175_catlo_bless_ruler
+			has_country_modifier = 200_catlo_bless_ruler
+		}
+		any_owned_province = {
+			OR = {
+				religion = vacandist
+				religion = vulgar
+				religion = sagrado
+				religion = cruzite
+				religion = la_luz
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					any_owned_province = {
+						OR = {
+							religion = vacandist
+							religion = vulgar
+							religion = sagrado
+							religion = cruzite
+							religion = la_luz
+						}
+					}
+				}
+				save_event_target_as = province_to_convert_divine_might_catlo
+			}
+		}
+	}
+	
+	option = {
+		name = catholico_events.55.a #We will crush them!
+		event_target:province_to_convert_divine_might_catlo = {
+			if = {
+				limit = {
+					religion = vacandist
+				}
+				spawn_rebels = {
+					type = vacandist_rebels
+					size = 1
+				}
+			}
+			else_if = {
+				limit = {
+					religion = vulgar
+				}
+				spawn_rebels = {
+					type = vulgar_rebels
+					size = 1
+				}
+			}
+			else_if = {
+				limit = {
+					religion = la_luz
+				}
+				spawn_rebels = {
+					type = la_luz_rebels
+					size = 1
+				}
+			}
+			else_if = {
+				limit = {
+					religion = sagrado
+				}
+				spawn_rebels = {
+					type = sagrado_rebels
+					size = 1
+				}
+			}
+			else = {
+				spawn_rebels = {
+					type = cruzite_rebels
+					size = 1
+				}
+			}
+			change_religion = catholico
+		}
+		add_country_modifier = {
+			name = "supreme_heretic_crusher_catlo"
+			duration = 3650
+		}
+	}
+	option = {
+		name = catholico_events.55.b #Too Dangerous
+		add_country_modifier = {
+			name = "heathen_cowardice_catlo"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Zelous Defense **PULSE**
+	id = catholico_events.56
+	title = catholico_events.56.t
+	desc = catholico_events.56.d
+	picture = BATTLE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		OR = {
+			has_country_modifier = 25_catlo_bless_ruler
+			has_country_modifier = 50_catlo_bless_ruler
+			has_country_modifier = 75_catlo_bless_ruler
+			has_country_modifier = 100_catlo_bless_ruler
+			has_country_modifier = 125_catlo_bless_ruler
+			has_country_modifier = 150_catlo_bless_ruler
+			has_country_modifier = 175_catlo_bless_ruler
+			has_country_modifier = 200_catlo_bless_ruler
+		}
+		at_war_with_religious_enemy = yes
+		is_in_war = {
+			defender_leader = ROOT
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.56.a #We will endure!
+		add_country_modifier = {
+			name = "inspired_to_defend_catlo"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #The Armies of God **PULSE**
+	id = catholico_events.57
+	title = catholico_events.57.t
+	desc = catholico_events.57.d
+	picture = BATTLE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		OR = {
+			has_country_modifier = 25_catlo_holy_war
+			has_country_modifier = 50_catlo_holy_war
+			has_country_modifier = 75_catlo_holy_war
+			has_country_modifier = 100_catlo_holy_war
+			has_country_modifier = 125_catlo_holy_war
+			has_country_modifier = 150_catlo_holy_war
+			has_country_modifier = 175_catlo_holy_war
+			has_country_modifier = 200_catlo_holy_war
+		}
+		at_war_with_religious_enemy = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.57.a #We will endure!
+		add_war_exhaustion = -2
+	}
+	option = {
+		name = catholico_events.57.b #One last stand!
+		add_army_tradition = 10
+	}
+}
+
+country_event = { #The Armies of God **PULSE**
+	id = catholico_events.58
+	title = catholico_events.58.t
+	desc = catholico_events.58.d
+	picture = RELIGIOUS_WARS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		OR = {
+			has_country_modifier = 25_catlo_holy_war
+			has_country_modifier = 50_catlo_holy_war
+			has_country_modifier = 75_catlo_holy_war
+			has_country_modifier = 100_catlo_holy_war
+			has_country_modifier = 125_catlo_holy_war
+			has_country_modifier = 150_catlo_holy_war
+			has_country_modifier = 175_catlo_holy_war
+			has_country_modifier = 200_catlo_holy_war
+		}
+		at_war_with_religious_enemy = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.58.a #We need more men for our armies
+		add_yearly_manpower = 2.5
+	}
+	option = {
+		name = catholico_events.58.b #We need more sailors for our navy
+		add_yearly_sailors = 2.5
+	}
+}
+
+country_event = { #Forgiven Sins **PULSE**
+	id = catholico_events.59
+	title = catholico_events.59.t
+	desc = catholico_events.59.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		OR = {
+			has_country_modifier = 25_catlo_papal_legate
+			has_country_modifier = 50_catlo_papal_legate
+			has_country_modifier = 75_catlo_papal_legate
+			has_country_modifier = 100_catlo_papal_legate
+			has_country_modifier = 125_catlo_papal_legate
+			has_country_modifier = 150_catlo_papal_legate
+			has_country_modifier = 175_catlo_papal_legate
+			has_country_modifier = 200_catlo_papal_legate
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.59.a #It will purify our hearts
+		add_prestige = 10
+	}
+	option = {
+		name = catholico_events.59.b #It will clean our tounges
+		add_country_modifier = {
+			name = "sins_forgiven_diplo_catlo"
+			duration = 1825
+		}
+	}
+	option = {
+		name = catholico_events.59.c #It will keep our goals pure
+		add_corruption = -0.25
+		add_adm_power = 15
+		add_dip_power = 15
+		add_mil_power = 15
+	}
+}
+
+country_event = { #The Ear of His Eminence **PULSE**
+	id = catholico_events.60
+	title = catholico_events.60.t
+	desc = catholico_events.60.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = catholico
+		OR = {
+			has_country_modifier = 25_catlo_papal_legate
+			has_country_modifier = 50_catlo_papal_legate
+			has_country_modifier = 75_catlo_papal_legate
+			has_country_modifier = 100_catlo_papal_legate
+			has_country_modifier = 125_catlo_papal_legate
+			has_country_modifier = 150_catlo_papal_legate
+			has_country_modifier = 175_catlo_papal_legate
+			has_country_modifier = 200_catlo_papal_legate
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.60.a #Send a message of cooperation
+		add_papal_influence = 10
+	}
+	option = {
+		name = catholico_events.60.b #Send a message of purity
+		add_country_modifier = {
+			name = "message_of_purity_catlo"
+			duration = 1825
+		}
+	}
+	option = {
+		name = catholico_events.60.c #Send a message of excellence
+		add_prestige = 10
+	}
+}
+
+country_event = { #Get extra pap authority event **PULSE**
+	id = catholico_events.61
+	title = catholico_events.61.t
+	desc = catholico_events.61.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		religion = catholico
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = catholico_events.61.a #does not matter
+		if = {
+			limit = {
+				has_country_flag = reviving_papal_legitimacy
+			}
+			add_reform_desire = 0.005
+		}
+		if = {
+			limit = {
+				has_country_flag = curia_get_papal_authority_every_two_years
+			}
+			add_reform_desire = 0.005
+		}
+		if = {
+			limit = {
+				tag = W83
+				has_global_flag = getting_minus_one_pap_per_year
+			}
+			add_reform_desire = -0.01
+		}
+		if = {
+			limit = {
+				tag = W83
+				has_country_flag = became_reino_de_dios
+			}
+			add_reform_desire = 0.01
+		}
+		if = {
+			limit = {
+				tag = W83
+				has_global_flag = completed_sure_compass_otrep
+			}
+			add_reform_desire = 0.03
+		}
+		if = {
+			limit = {
+				has_country_modifier = guadalupe_inquisition_otrep
+			}
+			add_reform_desire = 0.01
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}

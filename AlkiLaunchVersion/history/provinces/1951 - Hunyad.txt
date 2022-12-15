@@ -1,0 +1,17 @@
+#1951 - Hunyad
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y39
+controller = Y39 
+add_core = Y39
+culture = blackfeet
+religion = sacramental
+capital = "Alba Iulia"
+trade_goods = livestock #montana ranchers
+hre = no
+base_tax = 6
+base_production = 6
+base_manpower = 6
+is_city = yes

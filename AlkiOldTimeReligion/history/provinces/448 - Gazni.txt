@@ -1,0 +1,16 @@
+#448 - Gazni
+discovered_by = south_american
+culture = neoafghani
+religion = idolatrous
+capital = "Gazni"
+trade_goods = copper #i guess
+hre = no
+base_tax = 2 
+base_production = 1
+base_manpower = 1
+native_size = 80
+native_ferocity = 4
+native_hostileness = 9 
+add_core = Z60
+owner = Z60
+controller = Z60

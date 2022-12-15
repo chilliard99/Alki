@@ -1,0 +1,16 @@
+#2408 - Yelets
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W19
+controller = W19
+add_core = W19
+culture = comundian
+religion = partisan
+hre = yes
+base_tax = 3
+base_production = 3
+trade_goods = fish #what else would it be
+base_manpower = 3
+capital = "Yelets"
+is_city = yes

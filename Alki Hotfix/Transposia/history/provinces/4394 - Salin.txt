@@ -1,0 +1,14 @@
+#4394 - Salin
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neobrazilian
+religion = espiritismo
+capital = "Salin"
+trade_goods = spices #something spicy
+hre = no
+base_tax = 3 
+base_production = 3
+base_manpower = 3
+is_city = yes

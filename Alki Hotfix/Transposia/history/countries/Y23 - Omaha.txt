@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = adriatic
+religion = sacramental
+technology_group = western
+capital = 554 #Omaha
+
+1413.12.12 = {
+	monarch = {
+		name = "Steven II"
+		dynasty = "Bonnell"
+		birth_date = 1413.12.12
+		adm = 3
+		dip = 5
+		mil = 1
+	}
+}
+1439.1.1 = {
+	heir = {
+		name = "Nathan"
+		monarch_name = "Nathanial"
+		dynasty = "Bonnell"
+		birth_date = 1439.1.1
+		death_date = 1483.8.30
+		claim = 100
+		adm = 5
+		dip = 4
+		mil = 5
+	}
+}

@@ -1,0 +1,17 @@
+#870 - Yorkuts	
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y87
+controller = Y87
+add_core = Y87
+culture = joaquin
+religion = partisan
+capital = "Yorkuts" 
+trade_goods = livestock #turkeys and chicken 
+hre = yes 
+base_tax = 5
+base_production = 5
+base_manpower = 5
+is_city = yes 

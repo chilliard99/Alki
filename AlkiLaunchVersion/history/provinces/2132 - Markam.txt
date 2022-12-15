@@ -1,0 +1,15 @@
+# 2132 - Markam
+discovered_by = eastern
+discovered_by = western
+owner = Y00
+controller = Y00
+add_core = Y00
+culture = old_metis
+religion = sacramental
+capital = "Markam"
+trade_goods = fur #idk furs
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 2
+is_city = yes

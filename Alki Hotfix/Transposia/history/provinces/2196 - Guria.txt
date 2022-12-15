@@ -1,0 +1,15 @@
+#2196 - Guria
+discovered_by = eastern
+discovered_by = western
+owner = Y98
+controller = Y98
+add_core = Y98
+culture = neochipewyan
+religion = sacramental
+capital = "Batumi"
+trade_goods = grain #largely agricultural
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

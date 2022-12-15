@@ -1,0 +1,18 @@
+# - Thubaqt
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = chinese
+owner = W49
+controller = W49
+add_core = W49
+culture = tunecino
+religion = catholico
+capital = "Thubaqt"
+trade_goods = fish #palo duro fisheries
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

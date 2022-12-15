@@ -1,0 +1,54 @@
+country_decisions = {
+
+	establish_kalender_pag = {
+		potential = {
+			religion = paganry
+			is_religion_reformed = no
+			NOT = {
+				has_country_modifier = formalized_kalender_pag
+			}
+		}
+		allow = {
+			OR = {
+				adm = 3
+				dip = 3
+				mil = 3
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "formalized_kalender_pag"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	
+	reform_kalender_pag = {
+		potential = {
+			religion = paganry
+			is_religion_reformed = yes
+			has_country_modifier = formalized_kalender_pag
+			NOT = {
+				has_country_modifier = reformed_kalender_pag
+			}
+		}
+		allow = {
+			adm_tech = 10
+		}
+		effect = {
+			remove_country_modifier = formalized_kalender_pag
+			add_country_modifier = {
+				name = "reformed_kalender_pag"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	
+}
+

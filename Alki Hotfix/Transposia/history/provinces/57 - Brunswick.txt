@@ -1,0 +1,17 @@
+#57 - Brunswick
+discovered_by = eastern
+discovered_by = western
+owner = W04
+controller = W04
+add_core = W04
+culture = winnipegger
+religion = dynastic
+capital = "Braunschweig"
+trade_goods = chinaware #canadian china
+hre = no
+base_tax = 7
+base_production = 7
+base_manpower = 6
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

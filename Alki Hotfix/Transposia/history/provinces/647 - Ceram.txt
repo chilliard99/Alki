@@ -1,0 +1,20 @@
+#647 - Ceram
+latent_trade_goods = {
+	coal #North Antelope Rochelle
+}
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+add_core = Y31
+owner = Y31
+controller = Y31
+culture = crow
+religion = sacramental
+capital = "Ceram"
+trade_goods = wool #midwestern ranchers
+hre = no
+base_tax = 3 
+base_production = 3
+base_manpower = 4
+is_city = yes

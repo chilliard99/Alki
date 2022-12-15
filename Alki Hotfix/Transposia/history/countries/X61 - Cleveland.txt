@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = yorker
+religion = dynastic
+technology_group = eastern
+capital = 947	# Cleveland
+
+1419.5.30 = {
+	monarch = {
+		name = "Evan"
+		dynasty = "Miller"
+		birth_date = 1419.5.30
+		adm = 5
+		dip = 5
+		mil = 4
+	}
+}

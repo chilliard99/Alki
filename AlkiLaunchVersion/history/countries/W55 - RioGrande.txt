@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+primary_culture = antonian
+religion = catholico
+technology_group = muslim
+capital = 2473	 #San Antonio
+
+
+1388.9.10 = {
+	monarch = {
+		name = "Jesus"
+		dynasty = "de Laredo"
+		birth_date = 1388.9.10
+		adm = 1
+		dip = 2
+		mil = 6
+	}
+}
+1423.2.12 = {
+	heir = {
+		name = "Rosillo"
+		monarch_name = "Rosillo IV"
+		dynasty = "de Laredo"
+		birth_date = 1423.2.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 2
+		mil = 0
+	}
+}

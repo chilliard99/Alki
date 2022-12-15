@@ -1,0 +1,19 @@
+#2447 - Mantrega
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = chinese
+owner = W49
+controller = W49
+add_core = W49
+culture = aliengenas
+religion = catholico
+hre = no
+fort_15th = yes
+base_tax = 6
+base_production = 5
+trade_goods = cloth #gadsden cloths
+base_manpower = 5
+capital = "Matrega"
+is_city = yes

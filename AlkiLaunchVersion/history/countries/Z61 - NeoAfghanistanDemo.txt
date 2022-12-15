@@ -1,0 +1,16 @@
+government_rank = 1 #How did I mess up the names of these files its an iranian democratic party movement cause i thought the flag looked cool dont @me 
+government = native
+primary_culture = neopersian
+religion = idolatrous
+technology_group = south_american
+capital = 2213	#Qom
+
+1444.11.11 = {
+	monarch = {
+		name = "Iranian Council"
+		adm = 1
+		dip = 1
+		mil = 1
+		regent = yes
+	}
+}

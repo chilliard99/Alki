@@ -1,0 +1,33 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = chinese
+religion = neoshinto
+primary_culture = kyushuan_g
+capital = 1818 #Fukuoka
+
+
+1394.12.4 = {
+	monarch = {
+		name = "Iki"
+		dynasty = "Fukuoka"
+		birth_date = 1394.12.4
+		adm = 5
+		dip = 5
+		mil = 4
+		female = yes
+	}
+}
+1443.2.3 = {
+	heir = {
+		name = "Oda"
+		monarch_name = "Oda IV"
+		dynasty = "Fukuoka"
+		birth_date = 1443.2.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 0
+		dip = 0
+		mil = 1
+	}
+}

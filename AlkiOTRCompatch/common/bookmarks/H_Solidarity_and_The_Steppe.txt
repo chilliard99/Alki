@@ -1,0 +1,20 @@
+bookmark = {
+	name = "SOLIDARITYANDTHESTEPPE"
+	desc = "SOLIDARITYANDTHESTEPPE_DESC"
+	date = 1444.11.11
+	
+	center = 2195
+	default = no
+	
+	country = W06
+	country = W04
+	country = Y00
+	country = W14
+	country = W10
+	country = Y99
+	country = W11
+	
+	easy_country = W06
+	easy_country = W04
+
+}

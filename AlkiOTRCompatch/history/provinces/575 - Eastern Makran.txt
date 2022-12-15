@@ -1,0 +1,17 @@
+#575 - Eastern Makran
+discovered_by = south_american
+culture = neobaluchi
+religion = idolatrous
+capital = "Gwadar"
+trade_goods = fish #pearls?
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+native_size = 80
+native_ferocity = 4
+native_hostileness = 9 
+add_core = Z57
+owner = Z57
+controller = Z57
+center_of_trade = 1

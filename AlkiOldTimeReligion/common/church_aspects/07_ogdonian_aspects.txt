@@ -1,0 +1,124 @@
+invite_council_representative = {
+	sprite = "invite_council_representative"
+	cost = 100
+	trigger = {
+		NOT = {
+			stability = 3
+		}
+	}
+	effect = {
+		add_stability = 1
+	}
+	ai_will_do = {
+		factor = 0.5
+		modifier = {
+			factor = 4
+			NOT = {
+				stability = 0
+			}
+		}
+	}
+}
+
+rally_priesthood = {
+	sprite = "rally_priesthood"
+	cost = 100
+	trigger = {
+		NOT = {
+			manpower_percentage = 1
+		}
+	}
+	effect = {
+		add_yearly_manpower = 0.5
+	}
+	ai_will_do = {
+		factor = 0.5
+		modifier = {
+			factor = 4
+			NOT = {
+				manpower_percentage = 0.25
+			}
+		}
+		modifier = {
+			factor = 20
+			NOT = {
+				manpower_percentage = 0.1
+			}
+		}
+	}
+}
+
+found_outreach_program = {
+	sprite = "found_outreach_program"
+	cost = 100
+	trigger = {
+		custom_trigger_tooltip = {
+			trigger = any_province_of_different_religion
+			any_owned_province = {
+				NOT = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+	effect = {
+		random_owned_province = {
+			limit = {
+				NOT = {
+					religion = ROOT
+				}
+			}
+			change_religion = ROOT
+		}
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			religious_unity = 1
+		}
+	}
+}
+
+inspire_holy_wrath = {
+	sprite = "inspire_holy_wrath"
+	cost = 100
+	trigger = {
+		NOT = {
+			has_country_modifier = holy_wrath_ogdonian
+		}
+		at_war_with_religious_enemy = yes
+	}
+	effect = {
+		custom_tooltip = holy_wrath_ogdonian.tt
+		hidden_effect = {
+			add_country_modifier = {
+				name = "holy_wrath_ogdonian"
+				duration = 365
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 3
+		modifier = {
+			factor = 0
+			is_at_war = no
+		}
+	}
+}
+
+promote_commerce = {
+	sprite = "promote_commerce"
+	cost = 100
+	trigger = {
+		NOT = {
+			mercantilism = 100
+		}
+	}
+	effect = {
+		add_mercantilism = 1
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}

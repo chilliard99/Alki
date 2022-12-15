@@ -1,0 +1,16 @@
+government_rank = 1
+government = native
+primary_culture = neoswahili
+religion = shamanist
+technology_group = mesoamerican
+capital = 1201	#Zanzibar
+
+1444.11.11 = {
+	monarch = {
+		name = "Zanzibarian Committee"
+		adm = 1
+		dip = 1
+		mil = 1
+		regent = yes
+	}
+}

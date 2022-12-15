@@ -1,0 +1,1739 @@
+oaxacan_missions_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = W85
+	}
+	has_country_shield = yes
+	
+	above_the_valley = {
+		icon = mission_divert_trade_from_bengal
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			is_capital_of = ROOT
+		}
+		trigger = {
+			capital_scope = {
+				development = 30
+			}
+		}
+		effect = {
+			country_event = { id = oaxacan_events.8 }
+		}
+	}
+	language_of_trade = {
+		icon = bibliotheca_corviana
+		required_missions = { above_the_valley }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				culture = jarocho
+			}
+		}
+		trigger = {
+			dip_power = 200
+			custom_trigger_tooltip = {
+				tooltip = own_all_jarocho_provinces.tt
+				NOT = {
+					any_province = {
+						culture = jarocho
+						NOT = {
+							owned_by = ROOT
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = { id = oaxacan_events.9 }
+		}
+	}
+	consolidate_the_courts = {
+		icon = contracts_of_correspondence
+		required_missions = { language_of_trade }
+		position = 4
+		trigger = {
+			has_adm_advisor_3 = yes
+			has_dip_advisor_3 = yes
+			has_mil_advisor_3 = yes
+		}
+		effect = {
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+		}
+	}
+	machine_of_a_state = {
+		icon = concert_of_europe
+		required_missions = { consolidate_the_courts }
+		position = 6
+		trigger = {
+			grown_by_development = 300
+		}
+		effect = {
+			capital_scope = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+				add_province_modifier = {
+					name = "capital_of_the_growing_empire"
+					duration = -1
+				}
+			}
+		}
+	}
+	heart_of_mexico = {
+		icon = develop_the_po_valley
+		required_missions = { machine_of_a_state }
+		position = 8
+		provinces_to_highlight = {
+			is_capital_of = ROOT
+		}
+		trigger = {
+			capital_scope = {
+				development = 65
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "warden_of_the_worlds_city"
+				duration = -1
+			}
+		}
+	}
+	revolucion_verde = {
+		icon = mission_iroquois_food_surplus
+		required_missions = { heart_of_mexico }
+		position = 9
+		provinces_to_highlight = {
+			area = istmo_oaxaca_area
+		}
+		trigger = {
+			development_in_provinces = {
+				area = istmo_oaxaca_area
+				value = 100
+			}
+		}
+		effect = {
+			istmo_oaxaca_area = {
+				add_province_modifier = {
+					name = "green_revolution"
+					duration = -1
+				}
+			}
+		}
+	}
+	vast_beuracracy = {
+		icon = mission_rb_control_electors
+		required_missions = { revolucion_verde }
+		position = 10
+		trigger = {
+			absolutism = 100
+			stability = 3
+		}
+		effect = {
+			country_event = { id = oaxacan_events.10 }
+		}
+	}
+	riches_in_the_dark = {
+		icon = mission_rb_colonise_spice_islands
+		required_missions = { unity_in_yucatan }
+		position = 13
+		provinces_to_highlight = {
+			AND = {
+				trade_goods = dyes
+				region = new_yucatan_region
+			}
+		}
+		trigger = {
+			trading_bonus = {
+				trade_goods = dyes
+				value = yes
+			}
+			development_in_provinces = {
+				trade_goods = dyes
+				region = new_yucatan_region
+				value = 50
+			}
+		}
+		effect = {
+			custom_tooltip = dyes_boost_base_prodcution_oaxaca.tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = dyes
+					}
+					add_base_production = 1
+				}
+			}
+		}
+	}
+	fresh_mahogeny = {
+		icon = mission_rb_scottish_north_sea_trade
+		required_missions = { riches_in_the_dark }
+		position = 14
+		provinces_to_highlight = {
+			AND = {
+				trade_goods = tropical_wood
+			}
+			continent = mexico
+		}
+		trigger = {
+			trading_bonus = {
+				trade_goods = tropical_wood
+				value = yes
+			}
+			num_of_heavy_ship = 20
+		}
+		effect = {
+			add_country_modifier = {
+				name = "mahogeny_hulls"
+				duration = -1
+			}
+		}
+	}
+}
+
+oaxacan_missions_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = W85
+	}
+	has_country_shield = yes
+	
+	fortifying_spirits = {
+		icon = confront_the_lombards
+		required_missions = { checking_ranks }
+		position = 2
+		trigger = {
+			army_tradition = 20
+		}
+		effect = {
+			chiapas_exterior_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			chiapas_interior_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			grijavla_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	chiapan_campaign = {
+		icon = mission_nah_the_enemy_way
+		required_missions = { fortifying_spirits }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = chiapas_exterior_area
+				area = chiapas_interior_area
+				area = grijavla_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			chiapas_exterior_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			chiapas_interior_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			grijavla_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "southern_campaign"
+				duration = 7300
+			}
+			new_campeche_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tabasco_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			merida_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	the_mayan_capital = {
+		icon = mission_crush_delhi
+		required_missions = { chiapan_campaign }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = new_campeche_area
+				area = tabasco_area
+				area = merida_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			merida_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			tabasco_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			new_campeche_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = { id = oaxacan_events.5 }
+			calakmul_sur_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			calakmul_norte_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			cancun_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			riviera_maya_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	quintana_roo = {
+		icon = mission_onward_to_gaur
+		required_missions = { the_mayan_capital }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = calakmul_sur_area
+				area = calakmul_norte_area
+				area = cancun_area
+				area = riviera_maya_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calakmul_sur_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			calakmul_norte_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			cancun_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			riviera_maya_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			chetumal_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			belize_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	bashing_belize = {
+		icon = mission_steer_trade_to_bengal
+		required_missions = { quintana_roo }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				area = chetumal_area
+				area = belize_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			chetumal_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			belize_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mercantilism = 3
+			843 = {
+				add_province_modifier = {
+					name = "belizian_ports"
+					duration = -1
+				}
+			}
+			gran_maya_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			izabal_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			cuchumantanes_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			guate_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	unity_in_yucatan = {
+		icon = mission_turning_the_tables
+		required_missions = { bashing_belize }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				area = gran_maya_area
+				area = izabal_area
+				area = cuchumantanes_area
+				area = guate_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			gran_maya_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			izabal_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			cuchumantanes_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			guate_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			higueras_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tegucigalpa_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			salvador_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			guaymuras_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			miskito_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ruins_of_the_republic = {
+		icon = fortress_of_belgrade
+		required_missions = { unity_in_yucatan }
+		position = 15
+		provinces_to_highlight = {
+			OR = {
+				area = higueras_area
+				area = tegucigalpa_area
+				area = salvador_area
+				area = guaymuras_area
+				area = miskito_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			higueras_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			tegucigalpa_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			salvador_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			guaymuras_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			miskito_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mercantilism = 3
+			every_owned_province = {
+				limit = {
+					area = miskito_area
+				}
+				add_province_modifier = {
+					name = "miskito_woods"
+					duration = -1
+				}
+			}
+			4233 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 7300
+					power = 50
+					key = miskito_trade_gains_oaxaca
+				}
+			}
+			fonseca_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			atlantico_nicaragua_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			cocibolca_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	lakes_edge_oaxaca = {
+		icon = mission_ne_great_lakes_conquest
+		required_missions = { ruins_of_the_republic }
+		position = 16
+		provinces_to_highlight = {
+			OR = {
+				area = fonseca_area
+				area = atlantico_nicaragua_area
+				area = cocibolca_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			fonseca_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			atlantico_nicaragua_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			cocibolca_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = { id = oaxacan_events.6 }
+			isthmo_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	panamanian_promise = {
+		icon = mission_se_along_the_river
+		required_missions = { lakes_edge_oaxaca }
+		position = 17
+		provinces_to_highlight = {
+			OR = {
+				region = isthmo_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			isthmo_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "emperor_of_all_ismitho"
+				duration = -1
+			}
+			choco_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			antioquia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			gran_bolivar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			caribe_coast = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			matanzas_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+oaxacan_missions_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = W85
+	}
+	has_country_shield = yes
+	
+	checking_ranks = {
+		icon = mission_teutonic_knights
+		required_missions = {  }
+		position = 1
+		trigger = {
+			army_size_percentage = 0.9
+			num_of_generals = 1
+		}
+		effect = {
+			tlaxcala_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			veracruz_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			huesteca_central_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hidalgo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	the_deathblow = {
+		icon = king_of_poland
+		required_missions = { checking_ranks }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = tlaxcala_area
+				area = veracruz_area
+				area = hidalgo_area
+				area = huesteca_central_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			tlaxcala_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			veracruz_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			hidalgo_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			huesteca_central_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = { id = oaxacan_events.3 }
+			anahuac_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	unity_in_anahuac = {
+		icon = mission_unite_home_region
+		required_missions = { the_deathblow }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				region = anahuac_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			anahuac_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			tag = V27
+		}
+		effect = {
+			add_prestige = 25
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 25
+			}
+			add_country_modifier = {
+				name = "guadelupe_empire"
+				duration = 18250
+			}
+			atoyac_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			new_michoacan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			gran_colima_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	march_into_michiocan = {
+		icon = mission_crusade_for_varna
+		required_missions = { unity_in_anahuac }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = atoyac_area
+				area = new_michoacan_area
+				area = gran_colima_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			atoyac_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			new_michoacan_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			gran_colima_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			gran_colima_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			sierra_de_amula_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			narayit_sur_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			narayit_norte_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	pearl_of_the_bahio = {
+		icon = mission_sw_yucca_plants
+		required_missions = { march_into_michiocan }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = sierra_de_amula_area
+				area = narayit_sur_area
+				area = narayit_norte_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			sierra_de_amula_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			narayit_sur_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			narayit_norte_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			4579 = {
+				add_province_modifier = {
+					name = "pearl_of_the_bajio"
+					duration = -1
+				}
+			}
+			bajio_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	bearing_the_tithe = {
+		icon = mission_protect_albania
+		required_missions = { pearl_of_the_bahio }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				region = bajio_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			bajio_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "emperor_of_all_bajios"
+				duration = -1
+			}
+		}
+	}
+	cocoa_baron = {
+		icon = mission_dominate_persian_gulf
+		required_missions = { unity_in_yucatan }
+		position = 13
+		provinces_to_highlight = {
+			AND = {
+				trade_goods = cocoa
+				continent = mexico
+				owned_by = ROOT
+			}
+		}
+		trigger = {
+			trading_bonus = {
+				trade_goods = cocoa
+				value = yes
+			}
+			development_in_provinces = {
+				trade_goods = cocoa
+				value = 75
+			}
+		}
+		effect = {
+			add_mercantilism = 3
+			add_years_of_income = 1
+		}
+	}
+	flavored_empire = {
+		icon = mission_consume_the_baghels
+		required_missions = { cocoa_baron }
+		position = 14
+		provinces_to_highlight = {
+			AND = {
+				trade_goods = cocoa
+				continent = mexico
+				owned_by = ROOT
+				has_manufactory_trigger = no
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = cocoa_owned_tooltip.tt
+				NOT = {
+					any_owned_province = {
+						trade_goods = cocoa
+						has_manufactory_trigger = no
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = dev_boost_in_all_cocoa_provinces.tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = cocoa
+					}
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+			}
+		}
+	}
+	the_catholic_frontier = {
+		icon = mission_new_kingdom_of_granada
+		required_missions = { panamanian_promise }
+		position = 18
+		provinces_to_highlight = {
+			OR = {
+				area = choco_area
+				area = antioquia_area
+				area = gran_bolivar_area
+				area = caribe_coast
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			choco_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			antioquia_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			gran_bolivar_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			caribe_coast = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			new_colombia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	colombia_united = {
+		icon = jageillonian_union
+		required_missions = { the_catholic_frontier }
+		position = 22
+		provinces_to_highlight = {
+			OR = {
+				region = new_colombia_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			new_colombia_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = { id = oaxacan_events.12 }
+		}
+	}
+}
+
+oaxacan_missions_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = W85
+	}
+	has_country_shield = yes
+	
+	huastec_subservience = {
+		icon = friends_in_high_places
+		required_missions = { the_deathblow }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2987
+			}
+		}
+		trigger = {
+			2987 = {
+				development = 25
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+				OR = {
+					has_building = marketplace
+					has_building = trade_depot
+					has_building = stock_exchange
+				}
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+			NOT = {
+				any_owned_province = {
+					culture_group = huesteca
+					AND = {
+						local_autonomy = 50
+						unrest = 2
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "emperor_of_all_huastecs"
+				duration = -1
+			}
+		}
+	}
+	land_of_the_holy = {
+		icon = invest_in_the_provinces
+		required_missions = { unity_in_anahuac }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2998
+			}
+		}
+		trigger = {
+			2998 = {
+				development = 40
+				printing_press = 100
+			}
+		}
+		effect = {
+			country_event = { id = oaxacan_events.7 }
+		}
+	}
+	wealth_of_the_gulf = {
+		icon = mission_war_chest
+		required_missions = { bearing_the_tithe la_edad_del_oro }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4579
+				province_id = 4333
+			}
+		}
+		trigger = {
+			has_institution = global_trade
+			4579 = { 
+				trade_share = {
+					country = ROOT
+					share = 80
+				}
+			}
+			4333 = { 
+				trade_share = {
+					country = ROOT
+					share = 80
+				}
+			}
+			4333 = {
+				highest_value_trade_node = yes
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "veracruz_the_trade_well"
+				duration = -1
+			}
+			tamaulipas_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tampico_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			nuevo_leon_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	companys_downfall = {
+		icon = mission_african_gold
+		required_missions = { wealth_of_the_gulf }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				area = tamaulipas_area
+				area = tampico_area
+				area = nuevo_leon_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			2776 = { 
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			}
+			tamaulipas_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			tampico_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			nuevo_leon_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mercantilism = 5
+			bushlands_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			laredo_stretch_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			old_alamo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			salado_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			frontera_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	antonio_rush = {
+		icon = dominant_economy
+		required_missions = { companys_downfall }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				area = bushlands_area
+				area = laredo_stretch_area
+				area = old_alamo_area
+				area = salado_area
+				area = frontera_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			2473 = { 
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			}
+			bushlands_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			laredo_stretch_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			old_alamo_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			salado_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			frontera_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mercantilism = 5
+			crossroads_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			gavlestone_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			sabine_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			cajun_country_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			piney_woods_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			new_mississippi_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			new_orleans_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	gulf_hegemon = {
+		icon = mission_colonize_the_caribbean
+		required_missions = { antonio_rush }
+		position = 15
+		provinces_to_highlight = {
+			OR = {
+				area = new_orleans_area
+				area = new_mississippi_area
+				area = piney_woods_area
+				area = cajun_country_area
+				area = sabine_area
+				area = gavlestone_area
+				area = crossroads_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			1280 = { 
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			}
+			new_orleans_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			new_mississippi_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			piney_woods_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			cajun_country_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			sabine_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			gavlestone_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			crossroads_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "empire_of_riches_oaxaca"
+				duration = -1
+			}
+			pinar_del_rio_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			havana_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			matanzas_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	across_the_channel_oaxaca = {
+		icon = mission_look_west
+		required_missions = { global_hegemon_oaxaca gulf_hegemon }
+		position = 19
+		provinces_to_highlight = {
+			OR = {
+				area = pinar_del_rio_area
+				area = havana_area
+				area = matanzas_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			pinar_del_rio_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			havana_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			matanzas_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			484 = {
+				add_province_modifier = {
+					name = "oaxacan_havanna"
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = culture_spread_oaxaca_activated
+				}
+				484 = {
+					change_culture = ROOT
+				}
+			}
+			las_villas_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_camaguey_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_camaguey_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	fruits_of_labor = {
+		icon = mission_market_place_with_asian_traders
+		required_missions = { across_the_channel_oaxaca }
+		position = 20
+		provinces_to_highlight = {
+			OR = {
+				area = las_villas_area
+				area = upper_camaguey_area
+				area = lower_camaguey_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			las_villas_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			upper_camaguey_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			lower_camaguey_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_dip_power = 50
+			add_mercantilism = 3
+			holguin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			granma_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			guantanamo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	catholic_caribbean = {
+		icon = mission_conquer_romania
+		required_missions = { fruits_of_labor }
+		position = 21
+		provinces_to_highlight = {
+			OR = {
+				area = holguin_area
+				area = granma_area
+				area = guantanamo_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			holguin_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			granma_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			guantanamo_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = boost_production_in_sugar_provinces.tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = sugar
+					}
+					add_base_production = 1
+				}
+			}
+		}
+	}
+	viva_mexico = {
+		icon = a_real_roman_empire
+		required_missions = { catholic_caribbean colombia_united }
+		position = 23
+		trigger = {
+			development_in_provinces = {
+				continent = mexico
+				value = 3000
+			}
+		}
+		effect = {
+			override_country_name = MEXICO_NAME_OAXACA
+		}
+	}
+}
+
+oaxacan_missions_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = W85
+	}
+	has_country_shield = yes
+
+	house_of_cards = {
+		icon = control_the_church
+		required_missions = { }
+		position = 1
+		trigger = {
+			if = {
+				limit = {
+					calc_true_if = {
+						all_country = {
+							capital_scope = {
+								continent = mexico
+							}
+							is_great_power = yes
+						}	
+						amount = 3
+					}
+				}
+				is_great_power = yes
+				any_ally = {
+					capital_scope = {
+						continent = mexico
+					}
+					is_great_power = yes
+				}
+				any_rival_country = {
+					capital_scope = {
+						continent = mexico
+					}
+					is_great_power = yes
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = no_mexican_great_powers.tt
+					always = yes
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					calc_true_if = {
+						all_country = {
+							capital_scope = {
+								continent = mexico
+							}
+							is_great_power = yes
+						}	
+						amount = 3
+					}
+				}
+				add_country_modifier = {
+					name = "mexican_house_of_cards"
+					duration = 7300
+				}
+				add_dip_power = 50
+			}
+			else = {
+				custom_tooltip = no_mexican_great_powers.tt
+			}
+		}
+	}
+	la_edad_del_oro = {
+		icon = assert_our_sovereignty
+		required_missions = { house_of_cards }
+		position = 9
+		trigger = {
+			NOT = {
+				great_power_rank = 2
+			}
+		}
+		effect = {
+			custom_tooltip = unlocks_nation_obsession.tt
+			hidden_effect = {
+				set_country_flag = national_obsession
+			}
+		}
+	}
+	global_hegemon_oaxaca = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { la_edad_del_oro }
+		position = 18
+		trigger = {
+			is_Hegemon = yes
+		}
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 50
+			}
+			add_prestige = 50
+			add_legitimacy = 50
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+		}
+	}
+}

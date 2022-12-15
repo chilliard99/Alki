@@ -1,0 +1,17 @@
+#Blekinge
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+add_core = Y93
+owner = Y93
+controller = Y93
+culture = oregonite
+religion = partisan
+hre = yes
+base_tax = 4
+base_production = 5
+trade_goods = wine #Oak Knoll and more
+base_manpower = 5
+capital = "Ronneby"
+is_city = yes

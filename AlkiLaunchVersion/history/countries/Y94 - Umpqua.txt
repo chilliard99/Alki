@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = cooser
+religion = partisan
+technology_group = western
+capital = 1971	 #Roseburg
+
+1428.5.19 = {
+	monarch = {
+		name = "Yoncalla"
+		dynasty = "Kuitsh"
+		birth_date = 1428.5.19
+		adm = 4
+		dip = 4
+		mil = 3
+	}
+}

@@ -1,0 +1,15 @@
+# No previous file for Pame
+discovered_by = ottoman
+discovered_by = muslim
+owner = W84
+controller = W84
+add_core = W84
+is_city = yes
+culture = teocuitlatl 
+religion = catholico
+capital = "Pame" 
+trade_goods = wool #goat ranchers?
+hre = no 
+base_tax = 2
+base_production = 2
+base_manpower = 2 

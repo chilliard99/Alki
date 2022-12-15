@@ -1,0 +1,16 @@
+# 2245 - Wagadu
+discovered_by = western
+discovered_by = eastern
+owner = W10
+controller = W10
+add_core = W10
+is_city = yes
+culture = couverite 
+religion = sacramental
+capital = "Dia"
+trade_goods = cloth #cascadian cloths
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 6
+fort_15th = yes

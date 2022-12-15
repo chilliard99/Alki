@@ -1,0 +1,15 @@
+#2018 - Tsuu Tina
+discovered_by = eastern
+discovered_by = western
+owner = W03
+controller = W03
+add_core = W03
+culture = neochipewyan
+religion = sacramental 
+capital = "Tsuutina" 
+trade_goods = gems #entwistle 
+hre = no 
+base_tax = 1 
+base_production = 1
+base_manpower = 1 
+is_city = yes

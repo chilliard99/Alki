@@ -1,0 +1,15 @@
+# 2126 - Chuy
+discovered_by = eastern
+discovered_by = western
+owner = W00
+controller = W00
+add_core = W00
+culture = assiniboine
+religion = sacramental
+capital = "Chuy"
+trade_goods = fur #Fort Qu'Appelle 
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 2
+is_city = yes

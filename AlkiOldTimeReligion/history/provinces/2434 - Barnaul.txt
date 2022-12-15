@@ -1,0 +1,17 @@
+#2434 - Barnaul
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W48
+controller = W48
+add_core = W48
+culture = argelino
+religion = catholico
+capital = "Barnaul"
+trade_goods = livestock #magdalena is a ranching community to the west so this is too now fuck you
+hre = no
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes

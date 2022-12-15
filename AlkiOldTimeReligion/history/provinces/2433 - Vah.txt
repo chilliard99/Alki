@@ -1,0 +1,17 @@
+#2433 - Kemerovo
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W48
+controller = W48
+add_core = W48
+culture = argelino
+religion = catholico
+capital = "Vah"
+trade_goods = grain #carrizozo cherry cider?
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 2
+is_city = yes

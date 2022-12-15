@@ -1,0 +1,17 @@
+#1878 - Aachen
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y35
+controller = Y35
+add_core = Y35
+culture = metropolitan_shoshone
+religion = sacramental
+trade_goods = gems #wyoming jade
+capital = "Aachen"
+base_tax = 5
+base_production = 4
+is_city = no
+base_manpower = 4
+hre = no

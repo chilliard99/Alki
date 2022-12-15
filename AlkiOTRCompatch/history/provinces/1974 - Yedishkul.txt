@@ -1,0 +1,17 @@
+#1974 - Yedishkul
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y96
+controller = Y96
+add_core = Y96
+culture = cooser
+religion = partisan
+hre = yes
+base_tax = 3
+base_production = 3
+trade_goods = grain #its called grass seed, duh! its albany but we alredy have an albany sadga
+base_manpower = 2
+capital = "Kherson"
+is_city = yes

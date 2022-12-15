@@ -1,0 +1,49 @@
+country_decisions = {
+
+	pass_act_of_entry_cruzite = {
+		potential = {
+			religion = cruzite
+			current_age = age_of_absolutism
+			NOT = {
+				has_country_modifier = manipulated_bishops_sagrado
+			}
+		}
+		allow = {
+			absolutism = 5
+		}
+		effect = {
+			add_absolutism = -5
+			add_country_modifier = {
+				name = "act_of_entry_cruz"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	honor_legacy_of_mendoza_cruzite = {
+		potential = {
+			has_global_flag = death_of_mendoza
+			religion = cruzite
+			NOT = {
+				has_ruler_flag = honored_mendoza_cruz
+			}
+		}
+		allow = {
+			religious_unity = 0.9
+			adm = 2
+			dip = 2
+			mil = 2
+		}
+		effect = {
+			add_church_power = 100
+			set_ruler_flag = honored_mendoza_cruz
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
+

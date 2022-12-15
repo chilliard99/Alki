@@ -1,0 +1,15 @@
+# 129 - Krain
+owner = X16
+controller = X16
+add_core = X16
+culture = neoainu
+religion = neoshinto
+base_tax = 2
+base_production = 2
+trade_goods = fish #kuril fisheries,  if the russians want it its gotta endure
+base_manpower = 2
+capital = "Laibach"
+is_city = yes
+hre = no
+discovered_by = chinese
+discovered_by = eastern

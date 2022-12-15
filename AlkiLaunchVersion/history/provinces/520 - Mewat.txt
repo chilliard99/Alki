@@ -1,0 +1,20 @@
+#520 - Mewat
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = Y19
+controller = Y19
+add_core = Y19
+culture = metropolitan_sioux
+religion = sacramental
+capital = "Alwar"
+trade_goods = livestock #cattle ranchers
+hre = no
+base_tax = 6
+base_production = 6
+base_manpower = 7
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

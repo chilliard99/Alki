@@ -1,0 +1,23 @@
+# 171 - Vannetais
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+latent_trade_goods = {
+	coal #the west pennsylvania stuff
+}
+owner = X56
+controller = X56
+add_core = X56
+capital = "Vannes"
+is_city = yes
+culture = columbian
+religion = dynastic
+hre = no
+base_tax = 4
+base_production = 4
+trade_goods = livestock #cattle
+base_manpower = 3
+fort_15th = yes
+center_of_trade = 1

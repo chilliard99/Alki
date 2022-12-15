@@ -1,0 +1,14 @@
+# - Melodia
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neobornean
+religion = espiritismo
+capital = "Melodia"
+trade_goods = spices #pepper
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 2
+is_city = yes

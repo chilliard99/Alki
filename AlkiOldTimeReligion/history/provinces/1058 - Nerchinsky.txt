@@ -1,0 +1,19 @@
+#1058 - Nerchinsky
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y60
+controller = Y60
+add_core = Y60
+culture = gambler
+religion = partisan
+capital = "Onan Gol"
+trade_goods = glass #vegas glass
+hre = yes
+base_tax = 8
+base_production = 8
+base_manpower = 7
+is_city = yes
+fort_15th = yes
+center_of_trade = 2

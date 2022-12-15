@@ -1,0 +1,17 @@
+#705 - Dangla
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y32
+controller = Y32
+add_core = Y32
+culture = gasconian
+religion = sacramental
+capital = "Gyegu"
+trade_goods = fur #trappers
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 2
+is_city = yes

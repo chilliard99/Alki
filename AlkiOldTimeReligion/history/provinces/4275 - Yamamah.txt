@@ -1,0 +1,16 @@
+#4275 - Al-Yamamah
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V43
+controller = V43
+add_core = V43
+culture = zuilian
+religion = catholico
+capital = "Kharj"
+trade_goods = grain #pogchamp more grain
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

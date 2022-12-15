@@ -1,0 +1,16 @@
+# No previous file for Ulva
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V01
+controller = V01
+add_core = V01
+culture = nicas
+religion = catholico
+capital = "Ulva"
+trade_goods = livestock #90% of beef in nicaragua
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

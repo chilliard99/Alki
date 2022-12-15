@@ -1,0 +1,17 @@
+#2065 - Bhattiana
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y38
+controller = Y38
+add_core = Y38
+culture = colville
+religion = partisan
+capital = "Hisar"
+trade_goods = grain #idk for this one
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 2
+is_city = yes

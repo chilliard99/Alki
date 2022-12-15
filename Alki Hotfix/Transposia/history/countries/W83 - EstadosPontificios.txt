@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = chilango
+religion = catholico
+technology_group = muslim
+capital = 2998	#Ciudad de Mexico
+
+1388.5.6 = {
+	monarch = {
+		name = "Diego IX"
+		dynasty = "Tepeyac"
+		birth_date = 1388.5.6
+		adm = 3
+		dip = 2
+		mil = 4
+	}
+}

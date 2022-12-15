@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = redwood
+religion = partisan
+technology_group = western
+capital = 1865	 #Klamath
+
+1419.12.25 = {
+	monarch = {
+		name = "Patterson VI"
+		dynasty = "Six Rivers"
+		birth_date = 1419.12.25
+		adm = 3
+		dip = 1
+		mil = 1
+	}
+}
+1437.4.15 = {
+	heir = {
+		name = "Gimlin"
+		monarch_name = "Gimlin III"
+		dynasty = "Six Rivers"
+		birth_date = 1437.4.15
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 0
+		mil = 0
+	}
+}

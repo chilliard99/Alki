@@ -1,0 +1,15 @@
+#2005 - Asinaan
+discovered_by = eastern
+discovered_by = western
+owner = W00
+controller = W00
+add_core = W00
+culture = assiniboine
+religion = sacramental
+capital = "Asinaan"
+trade_goods = livestock #buffalo
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

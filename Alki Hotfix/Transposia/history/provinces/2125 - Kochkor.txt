@@ -1,0 +1,15 @@
+# 2125 - Kochkor
+discovered_by = eastern
+discovered_by = western
+owner = Y00
+controller = Y00
+add_core = Y00
+culture = old_metis
+religion = sacramental
+capital = "Kochkor"
+trade_goods = livestock #IDk what the fuck is out here 
+hre = no
+base_tax = 2 
+base_production = 1
+base_manpower = 1
+is_city = yes

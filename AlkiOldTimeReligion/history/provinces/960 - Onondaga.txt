@@ -1,0 +1,19 @@
+#960 - Onondaga
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X62
+controller = X62
+add_core = X62
+culture = vannian
+religion = dynastic
+capital = "Onondaga"
+trade_goods = salt #upstate salt mines
+hre = no
+base_tax = 5
+base_production = 6
+base_manpower = 6
+is_city = yes
+fort_15th = yes

@@ -1,0 +1,7 @@
+government_rank = 3
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = austrian
+religion = heathenry
+technology_group = north_american
+capital = 50	# Berlin

@@ -1,0 +1,18 @@
+# 2110 - Yehe
+discovered_by = eastern
+discovered_by = western
+latent_trade_goods = {
+	coal
+}
+owner = Y22
+controller = Y22
+add_core = Y22
+culture = assiniboine
+religion = sacramental
+capital = "Yehe"
+trade_goods = grain #farmin
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes

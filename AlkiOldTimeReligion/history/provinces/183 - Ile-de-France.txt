@@ -1,0 +1,15 @@
+# 183 Île-de-France - Principal cities: Paris
+discovered_by = north_american
+capital = "Paris"
+is_city = no
+culture = gallic
+religion = paganry
+hre = no
+base_tax = 3
+base_production = 4
+trade_goods = livestock #ranchers
+base_manpower = 3
+owner = Z10
+controller = Z10 
+add_core = Z10
+center_of_trade = 1

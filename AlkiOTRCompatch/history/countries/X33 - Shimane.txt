@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = chinese
+religion = neoshinto
+primary_culture = chugokan
+capital = 75 #Matsue
+
+
+1402.12.4 = {
+	monarch = {
+		name = "Soseki"
+		dynasty = "Itsukushima"
+		birth_date = 1402.12.4
+		adm = 1
+		dip = 1
+		mil = 0
+	}
+}
+1427.2.3 = {
+	heir = {
+		name = "Soseki"
+		monarch_name = "Soseki II"
+		dynasty = "Itsukushima"
+		birth_date = 1427.2.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 2
+		mil = 0
+	}
+}

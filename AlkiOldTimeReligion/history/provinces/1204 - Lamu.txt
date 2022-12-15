@@ -1,0 +1,17 @@
+#1204 - Lamu
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y32
+controller = Y32
+add_core = Y32
+culture = jackpotter
+religion = partisan
+capital = "Lamu"
+is_city = yes
+base_manpower = 2
+trade_goods = grain #corn
+hre = yes
+base_tax = 3 
+base_production = 3

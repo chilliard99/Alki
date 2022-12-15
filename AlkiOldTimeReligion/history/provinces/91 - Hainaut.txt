@@ -1,0 +1,15 @@
+# 91 Hainaut - Principal cities: Mons & Tournai
+discovered_by = chinese
+owner = X21
+controller = X21
+add_core = X21
+capital = "Mons"
+is_city = yes
+culture = high_nippon
+religion = neoshinto
+hre = no
+base_tax = 4
+base_production = 3
+trade_goods = fish #resalinization 
+base_manpower = 3
+discovered_by = eastern

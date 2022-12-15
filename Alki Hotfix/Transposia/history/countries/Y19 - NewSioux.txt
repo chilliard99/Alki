@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+primary_culture = metropolitan_sioux
+religion = sacramental
+technology_group = western
+capital = 520 #Rosebud
+
+1387.8.15 = {
+	monarch = {
+		name = "Hotah"
+		dynasty = "Capa"
+		birth_date = 1387.8.15
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1424.3.3 = {
+	heir = {
+		name = "Hanska"
+		monarch_name = "Hanska"
+		dynasty = "Capa"
+		birth_date = 1424.3.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 5
+		dip = 5
+		mil = 6
+	}
+}

@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = chinese
+religion = neoshinto
+primary_culture = kyushuan_g
+capital = 88 #Nagoya
+
+
+1401.12.4 = {
+	monarch = {
+		name = "Miyazaki XX"
+		dynasty = "Akira"
+		birth_date = 1401.12.4
+		adm = 4
+		dip = 4
+		mil = 3
+	}
+}
+1444.2.3 = {
+	heir = {
+		name = "Miyazaki"
+		monarch_name = "Miyazaki XXI"
+		dynasty = "Akira"
+		birth_date = 1444.2.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}

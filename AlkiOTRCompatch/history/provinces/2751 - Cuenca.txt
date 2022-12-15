@@ -1,0 +1,15 @@
+#2751 - Cuenca
+discovered_by = ottoman
+discovered_by = muslim
+owner = W68
+controller = W68
+add_core = W68
+culture = durangan
+religion = catholico
+hre = no
+base_tax = 2
+base_production = 1
+trade_goods = sugar #Originally known as Pueblo de Canas 
+base_manpower = 1
+capital = "Cuenca" 
+is_city = yes

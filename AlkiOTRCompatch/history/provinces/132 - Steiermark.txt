@@ -1,0 +1,15 @@
+#132 - Steiermark
+discovered_by = north_american
+owner = Z01
+controller = Z01
+add_core = Z01
+add_core = STY
+culture = neogermanic
+religion = paganry
+base_tax = 1
+base_production = 2
+trade_goods = grain
+base_manpower = 2
+capital = "Judenburg" 
+is_city = no
+hre = no

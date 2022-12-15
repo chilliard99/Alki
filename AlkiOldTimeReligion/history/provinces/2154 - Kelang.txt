@@ -1,0 +1,15 @@
+# 2154 - Kelang
+discovered_by = eastern
+discovered_by = western
+owner = Y98
+controller = Y98
+add_core = Y98
+culture = old_metis
+religion = theanite
+capital = "Kelang"
+trade_goods = grain #three million bushels
+hre = no
+base_tax = 2 
+base_production = 1
+base_manpower = 1
+is_city = yes

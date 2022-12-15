@@ -1,0 +1,7 @@
+government = monarchy 
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = habanero
+religion = catholico
+technology_group = ottoman
+capital = 2290	#Lagos

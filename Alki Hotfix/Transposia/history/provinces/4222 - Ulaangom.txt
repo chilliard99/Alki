@@ -1,0 +1,15 @@
+#4222 - Ulaangom
+discovered_by = ottoman
+discovered_by = muslim
+owner = V06
+controller = V06
+add_core = V06
+culture = dominican
+religion = espiritismo
+capital = "Ulaangom"
+trade_goods = livestock #cattle are raised around the lake
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = chipewyan
+religion = sacramental
+technology_group = western
+capital = 2199	 #Grand Prarie
+
+
+1426.10.23 = {
+	monarch = {
+		name = "Chinchaga"
+		dynasty = "Whitecourt"
+		birth_date = 1426.10.23
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+}
+1438.6.30	 = {
+	heir = {
+		name = "Hay-Zama"
+		monarch_name = "Hay-Zama"
+		dynasty = "Whitecourt"
+		birth_date = 1438.6.30
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 1
+		mil = 1
+	}
+}

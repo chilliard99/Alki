@@ -1,0 +1,17 @@
+#650 - Tidore
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = Y30
+controller = Y30
+add_core = Y30
+culture = western_southron
+religion = sacramental
+capital = "Tidore"
+trade_goods = grain #montana wheat
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

@@ -1,0 +1,15 @@
+# No previous file for Metztitlan
+discovered_by = ottoman
+discovered_by = muslim
+owner = W84
+controller = W84
+add_core = W84
+is_city = yes
+culture = teocuitlatl
+religion = catholico
+capital = "Metztitlan"
+trade_goods = grain #literally called rio verde
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 3 

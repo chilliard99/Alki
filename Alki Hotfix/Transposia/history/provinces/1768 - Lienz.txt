@@ -1,0 +1,14 @@
+#1768 - Lienz
+discovered_by = north_american
+owner = Z01
+controller = Z01
+add_core = Z01
+culture = neogermanic
+religion = paganry
+base_tax = 1
+base_production = 1
+trade_goods = iron
+base_manpower = 2
+capital = "Lienz" 
+is_city = no
+hre = no

@@ -1,0 +1,17 @@
+#2756 - Welayta
+discovered_by = mesoamerican
+culture = neoethiopian  
+religion = shamanist
+capital = "Bonga"
+is_city = no
+base_manpower = 1
+trade_goods = livestock #cows
+hre = no
+base_tax = 1
+base_production = 1
+native_size = 40
+native_ferocity = 4
+native_hostileness = 9
+owner = Z38
+controller = Z38
+add_core = Z38

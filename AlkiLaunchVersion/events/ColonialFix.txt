@@ -1,0 +1,75 @@
+namespace = colonial_fix_events
+country_event = { #Buff for colonies
+	id = colonial_fix_events.1
+	title = colonial_fix_events.1.t
+	desc = colonial_fix_events.1.d
+	picture = RELIGIOUS_WARS_eventPicture
+	hidden = yes
+	
+	trigger = {
+		is_colonial_nation = yes
+		NOT = {
+			has_country_flag = gotten_colonial_buff
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = colonial_fix_events.1.a
+		set_country_flag = gotten_colonial_buff
+		add_country_modifier = {
+			name = "fresh_colony"
+			duration = 18250
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = { #Nerf for natives
+	id = colonial_fix_events.2
+	title = colonial_fix_events.2.t
+	desc = colonial_fix_events.2.d
+	picture = RELIGIOUS_WARS_eventPicture
+	hidden = yes
+	
+	trigger = {
+		NOT = {
+			has_country_flag = been_nerfed_natives
+		}
+		OR = {
+			technology_group = north_american
+			technology_group = mesoamerican
+			technology_group = south_american
+			technology_group = andean
+			technology_group = nomad_group
+		}
+		ai = yes
+		any_known_country = {
+			OR = {
+				technology_group = eastern
+				technology_group = chinese
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = colonial_fix_events.2.a
+		set_country_flag = been_nerfed_natives
+		add_country_modifier = {
+			name = "diseased_natives"
+			duration = 18250
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}

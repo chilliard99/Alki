@@ -1,0 +1,15 @@
+#1092 - Bundjalung
+discovered_by = sub_saharan
+owner = U06
+controller = U06
+add_core = U06
+culture = aussie
+religion = idolatrous
+capital = "Bundjalung"
+trade_goods = cotton
+hre = no
+base_tax = 3 
+base_production = 3
+base_manpower = 3
+is_city = yes
+center_of_trade = 1

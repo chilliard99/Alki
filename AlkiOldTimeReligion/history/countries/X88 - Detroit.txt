@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = industrial_heartlander
+religion = islam
+technology_group = eastern
+capital = 1000	#Fort Rupert
+
+1405.8.4 = {
+	monarch = {
+		name = "Lawrence II"
+		dynasty = "Detroit"
+		birth_date = 1405.8.4
+		adm = 3
+		dip = 4
+		mil = 4
+	}
+}
+1429.1.31 = {
+	heir = {
+		name = "Lawrence"
+		monarch_name = "Lawrence III"
+		dynasty = "Detroit"
+		birth_date = 1429.1.31
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 4
+		mil = 5
+	}
+}

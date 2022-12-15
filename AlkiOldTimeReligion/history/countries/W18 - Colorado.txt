@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = coloradan
+religion = partisan
+technology_group = western
+capital = 2407	 #Colorado
+religious_school = traditionalist_party
+
+1421.4.15 = {
+	monarch = {
+		name = "Antonia X"
+		dynasty = "Colorado"
+		birth_date = 1421.4.15
+		adm = 1
+		dip = 1
+		mil = 0
+	}
+}
+1443.6.22 = {
+	heir = {
+		name = "Antonia"
+		monarch_name = "Antonia XI"
+		dynasty = "Colorado"
+		birth_date = 1443.6.22
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}

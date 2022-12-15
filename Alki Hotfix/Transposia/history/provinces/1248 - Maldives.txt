@@ -1,0 +1,11 @@
+#1248 - Maldives
+
+capital = "Malé"
+trade_goods = unknown
+hre = no
+native_size = 2
+native_ferocity = 8
+native_hostileness = 4
+is_city = yes
+religion = idolatrous
+culture = neodravidian

@@ -1,0 +1,17 @@
+#529 - North Konkan (Thana, Mahim, Bombay, Bassein, up to Daman)
+discovered_by = south_american
+culture = neohindi
+religion = idolatrous
+capital = "Thana"
+trade_goods = cotton #mostly cotton
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+native_ferocity = 4
+native_hostileness = 9 
+native_size = 5
+add_core = Z72
+owner = Z72
+controller = Z72
+center_of_trade = 1

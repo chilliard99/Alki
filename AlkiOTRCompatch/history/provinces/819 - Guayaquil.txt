@@ -1,0 +1,16 @@
+#819 - Guayaquil
+discovered_by = indian
+owner = V80
+controller = V80
+add_core = V80
+culture = ecuadorian
+religion = catholico
+capital = "Guayaquil"
+is_city = yes
+trade_goods = cloth #important cloth production center
+hre = no
+fort_15th = yes
+base_tax = 6
+base_production = 6
+base_manpower = 5
+center_of_trade = 1

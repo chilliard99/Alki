@@ -1,0 +1,18 @@
+# No previous file for Mandan
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = Y18
+controller = Y18
+add_core = Y18
+culture = dakotan
+religion = sacramental
+capital = "Mandan"
+trade_goods = grain #great plains farmers
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 2
+is_city = yes

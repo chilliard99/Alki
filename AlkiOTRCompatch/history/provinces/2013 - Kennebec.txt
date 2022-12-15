@@ -1,0 +1,15 @@
+discovered_by = western
+discovered_by = eastern
+discovered_by = chinese
+add_core = X75
+owner = X75
+controller = X75
+culture = englander
+religion = dynastic
+capital = "Kennebec"
+trade_goods = fish #Portland Fishin
+hre = no
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes

@@ -1,0 +1,123 @@
+country_decisions = {
+
+	
+	kaaba_custodian = {
+		major = yes
+		potential = {
+			tag = X91
+			NOT = {
+				OR = {
+					has_ruler_flag = kaaba_custodian_employed
+					has_country_flag = buckeye_coup
+				}
+			}
+		}
+		allow = {
+			is_at_war = no
+			NOT = {
+				unrest = 0
+			}
+			legitimacy = 50
+		}
+		effect = {
+			add_legitimacy = -10
+			add_ruler_modifier = {
+				name = "new_kaaba_custodian"
+				duration = -1
+			}
+			
+			set_ruler_flag = kaaba_custodian_employed
+			set_country_flag = had_kaaba_custodian_in_this_life
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	buckeye_vizier = {
+		major = yes
+		potential = {
+			tag = X91
+			NOT = {
+				OR = {
+					has_ruler_flag = buckeye_vizier_employed
+					has_country_flag = buckeye_coup
+				}
+			}
+		}
+		allow = {
+			army_tradition = 25
+		}
+		effect = {
+			add_army_tradition = -15
+			add_ruler_modifier = {
+				name = "grand_buckeye_vizier_employed"
+				duration = -1
+			}
+			set_ruler_flag = buckeye_vizier_employed
+			set_country_flag = had_buckeye_vizier_in_this_life
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	siaphi_captain = {
+		major = yes
+		potential = {
+			tag = X91
+			NOT = {
+				OR = {
+					has_ruler_flag = siaphi_captain_employed
+					has_country_flag = buckeye_coup
+				}
+			}
+		}
+		allow = {
+			years_of_income = 0.25
+		}
+		effect = {
+			add_years_of_income = -0.25
+			add_ruler_modifier = {
+				name = "siaphi_captain_installed"
+				duration = -1
+			}
+			set_ruler_flag = siaphi_captain_employed
+			set_country_flag = had_siaphi_captain_in_this_life
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	ulama_founder = {
+		major = yes
+		potential = {
+			tag = X91
+			NOT = {
+				OR = {
+					has_ruler_flag = ulama_founder_employed
+					has_country_flag = buckeye_coup
+				}
+			}
+		}
+		allow = {
+			is_at_war = no
+			dip_power = 100
+		}
+		effect = {
+			add_dip_power = -100
+			add_ruler_modifier = {
+				name = "ulama_founder_employed"
+				duration = -1
+			}
+			set_ruler_flag = ulama_founder_employed
+			add_prestige = 5
+			set_country_flag = had_ulama_founder_in_this_life
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+}

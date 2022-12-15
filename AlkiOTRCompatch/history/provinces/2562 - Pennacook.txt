@@ -1,0 +1,16 @@
+# No previous file for Pennacook
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+add_core = X74
+owner = X74
+controller = X74
+culture = englander
+religion = dynastic
+capital = "Pennacook"
+trade_goods = fur #New England Furs
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes

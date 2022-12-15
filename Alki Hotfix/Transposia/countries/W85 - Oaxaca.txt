@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+primary_culture = oaxacan
+religion = catholico
+technology_group = muslim
+capital = 2629	#Oaxaca
+
+1411.6.15 = {
+	monarch = {
+		name = "Emiliano II"
+		dynasty = "Mixteca"
+		birth_date = 1411.6.15
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
+1429.5.17 = {
+	heir = {
+		name = "Gabino"
+		monarch_name = "Gabino"
+		dynasty = "Mixteca"
+		birth_date = 1429.5.17
+		death_date = 1483.8.30
+		claim = 95
+		adm = 5
+		dip = 5
+		mil = 4
+	}
+}

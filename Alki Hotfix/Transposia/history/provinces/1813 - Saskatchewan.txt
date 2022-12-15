@@ -1,0 +1,15 @@
+# 1813 - Saskatchewan
+discovered_by = eastern
+discovered_by = western
+owner = Y99
+controller = Y99
+add_core = Y99
+culture = neochipewyan
+religion = sacramental
+capital = "Saskatchewan"
+trade_goods = fur #furs i guess
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

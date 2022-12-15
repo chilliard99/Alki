@@ -1,0 +1,17 @@
+#1955 - Kholmogory
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y39 
+controller = Y39 
+add_core = Y39
+culture = nez_perce
+religion = sacramental
+hre = no
+base_tax = 2 
+base_production = 2
+trade_goods = paper #paper mills 
+base_manpower = 1
+capital = "Kholmogory"
+is_city = yes

@@ -1,0 +1,543 @@
+namespace = kanata_events
+country_event = { #The Maple Throne
+	id = kanata_events.1
+	title = kanata_events.1.t
+	desc = kanata_events.1.d
+	picture = POPE_PREACHING_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = kanata_events.1.a #A Useless Institution
+		dismantle_empire_of_china = yes
+		add_stability = -1
+		ontario_region = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_core = ROOT
+		}
+		quebec_region = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_core = ROOT
+		} 
+		remove_government_reform = canadian_empire_reform
+		hidden_effect = {
+			every_subject_country = {
+				limit { is_subject_of_type = tributary_state }
+				grant_independence = yes
+			}
+			set_global_flag = empire_of_china_dismantled
+			set_country_flag = prevent_canadian_empire_reform
+		}
+	}
+	option = {
+		name = kanata_events.1.b #Our Ancient Heritage
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 100
+		}
+		else = {
+			add_stability = 1
+		}
+		add_mandate = 20
+		custom_tooltip = gain_tributary_cb_on_ontario_quebec.tt
+		hidden_effect = {
+			save_global_event_target_as = islamist_on_throne_et
+			every_known_country = { 
+				limit = {
+					capital_scope = {
+						OR { 
+							region = ontario_region
+							region = quebec_region
+						}
+					}
+				}
+				country_event = { id = kanata_events.2 }
+			}
+		}
+		swap_non_generic_missions = yes
+	}
+}
+
+country_event = { #TRIBUTARY_EVENT
+	id = kanata_events.2
+	title = kanata_events.2.t
+	desc = kanata_events.2.d
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = kanata_events.2.a #Gains Tributaries CB
+		set_country_flag = tributary_forced_inland
+		event_target:islamist_on_throne_et = {
+			add_casus_belli = {
+				target = ROOT
+				type = cb_force_tributary
+				months = -1
+			}		
+		}
+		ai_chance = { factor = 100 }
+	}
+}
+
+country_event = { #Proposition the Islamic World
+	id = kanata_events.3
+	title = kanata_events.3.t
+	desc = kanata_events.3.d
+	picture = MERCHANTS_TALKING_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = kanata_events.3.a #Makes Muslim countries into tributaries
+		custom_tooltip = muslim_tributary_kanata_alt.tt
+		hidden_effect = {
+			every_known_country = { 
+				limit = {
+					religion = islam
+				}
+				country_event = { id = kanata_events.4 }
+			}
+		}
+	}
+	option = {
+		name = kanata_events.3.b #Rejects it
+		add_prestige = 50
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+	}
+}
+
+country_event = { #Become Tributary Muslim Kanata Alt
+	id = kanata_events.4
+	title = kanata_events.4.t
+	desc = kanata_events.4.d
+	picture = MERCHANTS_TALKING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			development_in_provinces = {
+				value = 100
+			}
+		}
+	}
+	
+	option = {
+		name = kanata_events.4.a #Gains Tributaries CB
+		event_target:islamist_on_throne_et = {
+			create_subject = {
+				subject_type = tributary_state
+				subject = ROOT
+			}	
+		}	
+	}
+	option = {
+		name = kanata_events.4.b #Gains Tributaries CB
+		add_prestige = 5
+	}
+}
+
+country_event = { #The Grandbay Proposition
+	id = kanata_events.5
+	title = kanata_events.5.t
+	desc = kanata_events.5.d
+	picture = WESTERNISATION_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = kanata_events.5.a #Its Worth a Shot
+		add_years_of_income = -1.5
+		W11 = {
+			country_event = { id = kanata_events.6 }
+		}
+	}
+	option = {
+		name = kanata_events.5.b #Too Expensive
+		add_prestige = 5
+	}
+}
+
+country_event = { #An Offer from the Kanatans
+	id = kanata_events.6
+	title = kanata_events.6.t
+	desc = kanata_events.6.d
+	picture = WESTERNISATION_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = kanata_events.6.a #Filled Coffers!
+		W58 = {
+			country_event = { id = kanata_events.7 }
+		}
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				development = 100
+			}
+		}
+	}
+	option = {
+		name = kanata_events.6.b #Ridiculous
+		add_prestige = 5
+		W58 = {
+			country_event = { id = kanata_events.8 }
+		}
+	}
+}
+
+country_event = { #The Grandbay Response
+	id = kanata_events.7
+	title = kanata_events.7.t
+	desc = kanata_events.7.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = kanata_events.7.a #A Worthwhile Investment!
+		inherit = W11 
+		hidden_effect = {
+			the_bulk_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			nunavut_bay_coast_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			bay_isles_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			baffin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+country_event = { #The Grandbay Response
+	id = kanata_events.8
+	title = kanata_events.8.t
+	desc = kanata_events.8.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = kanata_events.8.a #Devils! All of them!
+		add_years_of_income = 1.5
+		the_bulk_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		nunavut_bay_coast_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		bay_isles_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		baffin_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}
+
+country_event = { #The Nunistan Promise
+	id = kanata_events.9
+	title = kanata_events.9.t
+	desc = kanata_events.9.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = kanata_events.9.a #A Promising Opertunity
+		custom_tooltip = nunastan_transfer.tt
+		add_mandate = 50
+		hidden_effect = {
+			every_core_province = {
+				limit = {
+					region = nunavut_region
+				}
+				add_core = U28
+				cede_province = U28
+				remove_core = event_target:islamist_on_throne_et
+			}
+			U28 = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.3
+					}
+				}
+				set_government_rank = 1
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+			}
+			create_subject = {
+				subject_type = tributary_state
+				subject = U28
+			}
+		}
+	}
+	option = {
+		name = kanata_events.9.b #Now Is Not the Time
+		add_prestige = 5
+	}
+}
+
+country_event = { #The Enlightened Despot
+	id = kanata_events.10
+	title = kanata_events.10.t
+	desc = kanata_events.10.d
+	picture = COURT_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = kanata_events.10.a #I Am The State	
+		set_country_flag = absolute_despot
+		swap_non_generic_missions = yes
+	}
+	option = {
+		name = kanata_events.10.b #With the Lightest Touch
+		if = {
+			limit = {
+				tag = event_target:islamist_on_throne_et 
+			}
+			add_country_modifier = {
+				name = "suzerain_of_the_lakes"
+				duration = -1
+			}
+		}
+		else = {
+			add_adm_power = 250
+			add_dip_power = 250
+			add_mil_power = 250
+			if = {
+				limit = {
+					stability = 3
+				}
+				add_adm_power = 100
+			}
+			else = {
+				add_stability = 1
+			}
+			add_prestige = 50
+		}
+	}
+}
+
+country_event = { #Reigning In The West
+	id = kanata_events.11
+	title = kanata_events.11.t
+	desc = kanata_events.11.d
+	picture = SENCRATIC_ALTER_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = kanata_events.11.a #Guide them to the Light
+		arborea_region = {
+			add_province_modifier = {
+				name = "arborean_conversions"
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = kanata_events.11.b #They are not Collectivist or Sacramental, but KANATIAN!
+		add_country_modifier = {
+			name = "kanatan_benevolence"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Our holdings in Michigan
+	id = kanata_events.12
+	title = kanata_events.12.t
+	desc = kanata_events.12.d
+	picture = KINGS_CHOICE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = kanata_events.12.a #A Perfect Solution
+		custom_tooltip = traverse_transfer.tt
+		hidden_effect = {
+			every_core_province = {
+				limit = {
+					OR = {
+						area = gaylord_area
+						area = flint_area
+						area = grand_rapdis_area
+						area = detroit_area
+						area = ann_arbor_area
+						area = north_indiana_area
+					}
+				}
+				add_core = X84
+				cede_province = X84
+				remove_core = W58
+			}
+			X84 = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.3
+					}
+				}
+				set_government_rank = 1
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+			}
+			create_subject = {
+				subject_type = tributary_state
+				subject = X84
+			}
+		}
+	}
+	option = {
+		name = kanata_events.12.b #But it was my home
+		add_prestige = 5
+	}
+}
+
+country_event = { #Designate Maratime Port
+	id = kanata_events.13
+	title = kanata_events.13.t
+	desc = kanata_events.13.d
+	picture = HARBOUR_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = kanata_events.13.a #The Historic Halifax
+		223 = {
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+			add_province_modifier = {
+				name = "staple_port_maritime"
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = kanata_events.13.b #The Illustrious St John
+		227 = {
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+			add_province_modifier = {
+				name = "staple_port_maritime"
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = kanata_events.13.c #The Humble Happy Goose
+		2575 = {
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+			add_province_modifier = {
+				name = "staple_port_maritime"
+				duration = -1
+			}
+		}
+	}
+}

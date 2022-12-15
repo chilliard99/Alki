@@ -1,0 +1,18 @@
+#1947 - Gingee
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y35
+controller = Y35 
+add_core = Y35
+culture = blackfeet
+religion = sacramental
+capital = "Gingee"
+trade_goods = wool #beaverhead ranching
+hre = no
+base_tax = 3 
+base_production = 3
+base_manpower = 2
+is_city = yes
+fort_15th = yes

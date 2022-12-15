@@ -1,0 +1,17 @@
+# 2188 - Alchuka
+discovered_by = eastern
+discovered_by = western
+owner = W05
+controller = W05
+add_core = W05
+culture = niitsitapi
+religion = sacramental
+capital = "Alchuka"
+trade_goods = cloth #some cloths
+hre = no
+base_tax = 6
+base_production = 5
+base_manpower = 5
+is_city = yes
+fort_15th = yes
+center_of_trade = 2

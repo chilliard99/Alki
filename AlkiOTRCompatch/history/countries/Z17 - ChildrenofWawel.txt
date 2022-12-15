@@ -1,0 +1,16 @@
+government_rank = 1
+government = native
+primary_culture = neopolelander
+religion = paganry
+technology_group = north_american
+capital = 262	#Krakow
+
+1444.11.11 = {
+	monarch = {
+		name = "European Council"
+		adm = 1
+		dip = 1
+		mil = 1
+		regent = yes
+	}
+}

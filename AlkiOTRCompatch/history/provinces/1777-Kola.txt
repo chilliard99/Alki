@@ -1,0 +1,17 @@
+#Kola
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y73
+controller = Y73 
+add_core = Y73
+capital = "Kola"
+culture = stanislaus
+religion = partisan
+hre = yes
+base_tax = 3
+base_production = 3
+is_city = yes
+trade_goods = naval_supplies #there was litearally a place called "logtown"
+base_manpower = 3

@@ -1,0 +1,15 @@
+# No previous file for Quenebigon
+discovered_by = eastern
+discovered_by = western
+owner = W11
+controller = W11
+add_core = W11
+culture = baydwellers
+religion = dynastic
+capital = "Quenebigon"
+trade_goods = livestock #Caribou and stuff
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

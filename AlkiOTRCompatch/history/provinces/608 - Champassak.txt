@@ -1,0 +1,18 @@
+#608 - Champasak
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = Y25
+controller = Y25
+add_core = Y25
+culture = northend_wranglers
+religion = sacramental
+capital = "Champasak"
+trade_goods = fish #copied from base italy
+hre = no
+base_tax = 3 
+base_production = 4
+base_manpower = 4
+is_city = yes

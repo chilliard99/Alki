@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = paiute
+religion = partisan
+technology_group = western
+capital = 2036	 #Burns
+
+
+1420.6.16 = {
+	monarch = {
+		name = "Walpapi IV"
+		dynasty = "Wadatika"
+		birth_date = 1420.6.16
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1439.1.15 = {
+	heir = {
+		name = "Hunipuitöka"
+		monarch_name = "Hunipuitöka II"
+		dynasty = "Wadatika"
+		birth_date = 1439.1.15
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}

@@ -1,0 +1,18 @@
+#914 - Winnebago
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y01
+controller = Y01
+add_core = Y01
+culture = wiconsiner
+religion = dynastic
+capital = "Winnebago"
+trade_goods = fish #great lakes fisheries
+hre = no
+base_tax = 6
+base_production = 5
+base_manpower = 5
+is_city = yes
+discovered_by = western

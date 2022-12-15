@@ -1,0 +1,14 @@
+# 2369 - Upper Ishim, formerly Lower Ishim
+
+
+culture = caribou_inuit
+religion = inua
+capital = "Zhanibek"
+trade_goods = unknown
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+native_size = 5
+native_ferocity = 1
+native_hostileness = 2

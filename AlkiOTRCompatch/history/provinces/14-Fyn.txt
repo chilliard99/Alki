@@ -1,0 +1,19 @@
+#Fyn-Langeland
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+add_core = X10
+owner = X10
+controller = X10
+culture = alyabania
+religion = zahran
+hre = no
+base_tax = 5
+base_production = 5
+trade_goods = sugar #Martin County
+base_manpower = 6
+capital = "Odense"
+is_city = yes
+discovered_by = eastern
+fort_15th = yes

@@ -1,0 +1,14 @@
+#4301 - Kartli
+discovered_by = indian
+owner = V82
+controller = V82
+add_core = V82
+culture = newkhmer
+religion = yanantin
+capital = "Gori"
+trade_goods = grain #idk
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

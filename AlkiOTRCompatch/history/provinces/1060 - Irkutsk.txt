@@ -1,0 +1,17 @@
+#1060 - Irkutsk
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y60
+controller = Y60
+add_core = Y60
+culture = gambler
+religion = partisan
+capital = "Irkutsk"
+trade_goods = fish #transposian fisheries
+hre = yes
+base_tax = 5
+base_production = 4
+base_manpower = 4
+is_city = yes

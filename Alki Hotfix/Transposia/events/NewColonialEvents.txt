@@ -1,0 +1,73 @@
+namespace = new_colonial_events
+
+country_event = { #Arrival from across the seas
+	id = new_colonial_events.1
+	title = new_colonial_events.1.t
+	desc = new_colonial_events.1.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	trigger = {
+		ai = yes
+		OR = {
+			AND = {
+				OR = {
+					technology_group = north_american
+					technology_group = mesoamerican
+					technology_group = south_american
+					technology_group = andean
+					technology_group = nomad_group
+				}
+				NOT = { has_country_flag = first_arrival_seas }
+				any_known_country = {
+					OR = {
+						technology_group = eastern
+						technology_group = western
+						technology_group = chinese
+						technology_group = ottoman
+						technology_group = muslim
+						technology_group = indian
+					}
+				}
+			}
+			has_country_flag = former_native_nation
+		}
+		NOT = {
+			has_country_modifier = disease_ridden_intruders
+		}
+	}
+
+	
+	mean_time_to_happen = {
+		months	= 1
+	}
+	
+	option = {
+		name = new_colonial_events.1.a #A Curse from the Gods!
+		set_country_flag = first_arrival_seas
+		add_country_modifier = {
+			name = "disease_ridden_intruders"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Adoption of new medicines
+	id = new_colonial_events.2
+	title = new_colonial_events.2.t
+	desc = new_colonial_events.2.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	trigger = {
+		has_country_modifier = disease_ridden_intruders
+		is_year = 1700
+	}
+	
+	mean_time_to_happen = {
+		months	= 1
+	}
+	
+	option = {
+		name = new_colonial_events.2.a #A Curse from the Gods!
+		remove_country_modifier = disease_ridden_intruders
+	}
+}

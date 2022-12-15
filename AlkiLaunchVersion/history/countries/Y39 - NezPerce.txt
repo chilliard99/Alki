@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = nez_perce
+religion = sacramental
+technology_group = western
+capital = 1954	 #Nez Perce
+
+1416.4.24 = {
+	monarch = {
+		name = "Yutu XI"
+		dynasty = "Nez"
+		birth_date = 1416.4.24
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
+1437.12.12 = {
+	heir = {
+		name = "Fun"
+		monarch_name = "Fun"
+		dynasty = "Nez"
+		birth_date = 1437.12.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 2
+		mil = 1
+	}
+}

@@ -1,0 +1,17 @@
+#Lolland-Falster
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+add_core = Y93
+owner = Y93
+controller = Y93
+culture = oregonite
+religion = partisan
+hre = yes
+base_tax = 5
+base_production = 5
+trade_goods = grain #old grist mill
+base_manpower = 6
+capital = "Nykobing"
+is_city = yes

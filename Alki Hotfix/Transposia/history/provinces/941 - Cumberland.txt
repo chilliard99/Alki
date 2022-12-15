@@ -1,0 +1,18 @@
+#941 - Cumberland
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = muslim
+discovered_by = ottoman
+owner = X91
+controller = X91
+add_core = X91
+culture = cinicinatian
+religion = islam
+capital = "Cumberland"
+trade_goods = tobacco #Turkish Tobacco
+hre = no
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes
+discovered_by = western

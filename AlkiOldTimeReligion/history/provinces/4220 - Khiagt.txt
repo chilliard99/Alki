@@ -1,0 +1,16 @@
+# 4220 - Khiagt
+discovered_by = ottoman
+discovered_by = muslim
+owner = V14
+controller = V14 
+add_core = V14
+culture = dominican
+religion = espiritismo
+capital = "Khiagt"
+trade_goods = grain #i guess?
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes
+

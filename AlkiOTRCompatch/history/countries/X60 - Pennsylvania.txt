@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = vannian
+religion = dynastic
+technology_group = eastern
+capital = 955	# Harrisburg
+
+1379.12.29 = {
+	monarch = {
+		name = "Hunter XI"
+		dynasty = "Clark"
+		birth_date = 1379.12.29
+		adm = 5
+		dip = 5
+		mil = 4
+	}
+	
+}
+1399.5.7 {
+	heir = {
+		name = "Colton"
+		monarch_name = "Colton III"
+		dynasty = "Clark"
+		birth_date = 1399.5.7
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}

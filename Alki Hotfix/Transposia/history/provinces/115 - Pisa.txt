@@ -1,0 +1,15 @@
+#115 - Pisa
+discovered_by = chinese
+owner = X19
+controller = X19
+add_core = X19
+culture = sendai
+religion = neoshinto
+hre = no
+base_tax = 6
+base_production = 6
+trade_goods = wine #Tendo
+base_manpower = 3
+capital = "Pisa"
+is_city = yes	# Estimated
+discovered_by = eastern

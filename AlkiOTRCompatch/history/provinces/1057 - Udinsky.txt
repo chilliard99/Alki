@@ -1,0 +1,17 @@
+#1057 - Udinsky
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y34
+controller = Y34
+add_core = Y34
+culture = bulean
+religion = partisan
+capital = "Udinskoye"
+trade_goods = grain #fremont and pueblans grew potatoes here
+hre = no
+base_tax = 3 
+base_production = 3
+base_manpower = 2
+is_city = yes

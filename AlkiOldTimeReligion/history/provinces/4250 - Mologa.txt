@@ -1,0 +1,16 @@
+#4250 - Mologa
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V41
+controller = V41
+add_core = V41
+culture = zuilian
+religion = catholico
+hre = no 
+base_tax = 3
+base_production = 3
+trade_goods = cotton #cotton is really good 
+base_manpower = 2
+capital = "Mologa"
+is_city = yes

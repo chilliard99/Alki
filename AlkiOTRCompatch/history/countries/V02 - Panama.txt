@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = panameno
+religion = catholico 
+technology_group = muslim
+capital = 4128	#Ciudad de Panama
+
+1393.2.12 = {
+	monarch = {
+		name = "Pedro II"
+		dynasty = "Bayano"
+		birth_date = 1393.2.12
+		adm = 0
+		dip = 1
+		mil = 1
+	}
+}
+1415.2.13 = {
+	heir = {
+		name = "Bunau"
+		monarch_name = "Bunau"
+		dynasty = "Bayano"
+		birth_date = 1415.2.13
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 2
+		mil = 1
+	}
+}

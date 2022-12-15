@@ -1,0 +1,16 @@
+#1820 - Awa
+discovered_by = chinese
+owner = X35
+controller = X35
+add_core = X35
+culture = shikokuan
+religion = neoshinto
+capital = "Tokushima"
+trade_goods = dyes #Indigo
+hre = no
+base_tax = 3
+base_production = 5
+base_manpower = 2
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman

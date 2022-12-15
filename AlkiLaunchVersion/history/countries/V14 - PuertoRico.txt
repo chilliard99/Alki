@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = boricua
+religion = espiritismo 
+technology_group = ottoman
+capital = 492	#San Juan
+
+1394.2.13 = {
+	monarch = {
+		name = "Ramon IV"
+		dynasty = "Ponce"
+		birth_date = 1394.2.13
+		adm = 5
+		dip = 5
+		mil = 4
+	}
+}
+1418.3.15 = {
+	heir = {
+		name = "Simon"
+		monarch_name = "Simon"
+		dynasty = "Ponce"
+		birth_date = 1418.3.15
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+}

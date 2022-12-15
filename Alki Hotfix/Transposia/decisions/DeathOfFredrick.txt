@@ -1,0 +1,79 @@
+country_decisions = {
+
+	neutralize_the_cree_tribes = {
+		major = yes
+		was_never_end_game_tag_trigger = yes
+		potential = {
+			has_country_modifier = the_wake_of_fredrick
+			NOT = {
+				has_country_flag = reigned_in_the_cree
+			}
+		}
+		allow = {
+			dip_power = 350
+			mil_power = 350
+			treasury = 2500
+			stability = 2
+		}
+		effect = {
+			add_dip_power = 350
+			add_mil_power = 350
+			add_treasury = -2500
+			add_stability = -2
+			set_country_flag = reigned_in_the_cree
+			add_country_modifier = {
+				name = "cree_slaughtered"
+				duration = 18250 
+			}	
+		}
+	}
+	reform_the_tributaries = {
+		major = yes
+		was_never_end_game_tag_trigger = yes
+		potential = {
+			has_country_modifier = the_wake_of_fredrick
+			NOT = {
+				has_country_flag = reformed_the_tributary_system
+			}
+		}
+		allow = {
+			legitimacy_equivalent = 100
+			any_subject_country = { 
+				NOT = {
+					liberty_desire = 50
+				}
+			}
+			stability = 2
+		}
+		effect = {
+			add_meritocracy = -100
+			add_stability = -2
+			set_country_flag = reformed_the_tributary_system
+		}
+	}
+	tie_up_loose_ends = {
+		major = yes
+		was_never_end_game_tag_trigger = yes
+		potential = {
+			has_country_modifier = the_wake_of_fredrick
+			NOT = {
+				has_country_flag = lafayete_line_consolidated
+			}
+		}
+		allow = {
+			gaylord_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_stability = 2
+			all_subject_country = { 
+				add_opinion = {
+					modifier = murdered_the_exiled_king
+				}
+			}
+			set_country_flag = lafayete_line_consolidated
+		}
+	}
+}

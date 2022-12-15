@@ -1,0 +1,15 @@
+#4187 - Kii
+discovered_by = chinese
+owner = X30
+controller = X30
+add_core = X30
+culture = wajin
+religion = neoshinto
+capital = "Wakayama"
+trade_goods = cloth #knitting economy
+hre = no
+base_tax = 2
+base_manpower = 2
+base_production = 3
+is_city = yes
+discovered_by = eastern

@@ -1,0 +1,16 @@
+# - Darien 
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V02
+controller = V02
+add_core = V02
+culture = choco
+religion = catholico
+capital = "Darien"
+trade_goods = tropical_wood #theres nothing here
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

@@ -1,0 +1,15 @@
+#4434 - Dharangaon
+discovered_by = sub_saharan
+owner = U08
+controller = U08
+add_core = U08
+culture = victorian
+religion = penitent
+capital = "Dharangaon"
+trade_goods = cotton
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes
+center_of_trade = 1

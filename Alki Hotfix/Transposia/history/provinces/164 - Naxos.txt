@@ -1,0 +1,20 @@
+#164 - Naxos
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X52
+controller = X52
+add_core = X52
+culture = piedmontian
+religion = evangelical
+capital = "Naxos"
+trade_goods = wine #Monticello Wine Belt
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 3
+is_city = yes
+fort_15th = yes
+center_of_trade = 2

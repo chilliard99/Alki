@@ -1,0 +1,17 @@
+#1066 - Altai
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y46
+controller = Y46
+add_core = Y46
+culture = silveritte
+religion = partisan
+capital = "Altai Uriankhai"
+trade_goods = livestock #some random place bruh what you want from me
+hre = yes
+base_tax = 3
+base_production = 3
+base_manpower = 4
+is_city = yes

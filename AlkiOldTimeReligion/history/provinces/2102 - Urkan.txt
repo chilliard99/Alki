@@ -1,0 +1,16 @@
+# 2102 - Urkan
+discovered_by = eastern
+discovered_by = western
+owner = Y99
+controller = Y99
+add_core = Y99
+culture = neochipewyan
+religion = theanite
+capital = "Urkantun"
+trade_goods = copper #pogger copper mining town
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 3
+is_city = yes
+center_of_trade = 1

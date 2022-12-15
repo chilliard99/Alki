@@ -1,0 +1,15 @@
+# 2190 - Qaraqorum
+discovered_by = eastern
+discovered_by = western
+add_core = Y31
+owner = Y31
+controller = Y31
+culture = niitsitapi
+religion = sacramental
+capital = "Qaraqorum"
+trade_goods = grain #wheatland county
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes

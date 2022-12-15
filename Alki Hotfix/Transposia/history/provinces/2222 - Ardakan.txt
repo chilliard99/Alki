@@ -1,0 +1,14 @@
+#2222 - Ardakan
+discovered_by = south_american
+culture = neopersian
+religion = idolatrous
+capital = "Ardakan"
+trade_goods = unknown
+hre = no
+base_tax = 2 
+base_production = 1
+base_manpower = 1
+is_city = yes
+native_size = 80
+native_ferocity = 4
+native_hostileness = 9 

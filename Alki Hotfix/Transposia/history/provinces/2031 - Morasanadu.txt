@@ -1,0 +1,17 @@
+#2031 - Morasanadu
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y97
+controller = Y97
+add_core = Y97
+culture = oregonite
+religion = partisan
+capital = "Devarayanagara"
+trade_goods = naval_supplies #timber
+hre = yes
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes

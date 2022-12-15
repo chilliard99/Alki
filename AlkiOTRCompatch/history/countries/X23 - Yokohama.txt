@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = chinese
+religion = neoshinto
+primary_culture = high_nippon
+capital = 90 #Yokohama
+
+
+1396.12.4 = {
+	monarch = {
+		name = "Toyotomi"
+		dynasty = "Chiba"
+		birth_date = 1396.12.4
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}

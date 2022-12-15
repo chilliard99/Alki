@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = renonians
+religion = partisan
+technology_group = western
+capital = 1110	 #Reno
+elector = yes
+
+1424.1.22 = {
+	monarch = {
+		name = "Jaxon XI"
+		dynasty = "Ash"
+		birth_date = 1424.1.22
+		adm = 3
+		dip = 2
+		mil = 1
+	}
+}
+1439.5.5 = {
+	heir = {
+		name = "Seth"
+		monarch_name = "Seth"
+		dynasty = "Ash"
+		birth_date = 1439.5.5
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
