@@ -1,0 +1,17 @@
+#2035 - Gulbarga
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y38
+controller = Y38
+add_core = Y38
+culture = yakama
+religion = partisan
+capital = "Gulbarga"
+trade_goods = grain #barley
+hre = no
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes

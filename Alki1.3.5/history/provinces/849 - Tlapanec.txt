@@ -1,0 +1,16 @@
+#849 - Tlapanec
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W85
+controller = W85
+add_core = W85
+culture = costeno
+religion = catholico
+capital = "Acapulco"
+trade_goods = tea #hibiscus tea
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

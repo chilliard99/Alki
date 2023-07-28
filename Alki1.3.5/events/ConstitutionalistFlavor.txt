@@ -1,0 +1,2196 @@
+namespace = partisan_events
+#########################UNION DAY FESTIVAL##########################
+# country_event = { #Introduction to Union Day
+	# id = partisan_events.1
+	# title = partisan_events.1.t
+	# desc = partisan_events.1.d
+	# picture = HRE_eventPicture
+	
+	# trigger = {
+		# is_emperor = yes
+		# is_at_war = no
+		# is_year = 1450
+		# is_month = 0
+		# NOT = {
+			# is_month = 1
+		# }
+		# NOT = {
+			# OR = {
+				# has_global_flag = despotic_reformation
+				# has_global_flag = union_day_festival_planned
+			# }
+		# }
+		# any_known_country = {
+			# NOT = {
+				# OR = {
+					# has_country_modifier = festival_host_union_day
+					# has_country_modifier = good_festival_host_union_day
+					# has_country_modifier = bad_festival_host_union_day
+				# }
+			# }
+		# }
+	# }
+	
+	# mean_time_to_happen = {
+		# days = 1
+	# }
+	
+	# immediate = {
+		# random_known_country = {
+			# limit = {
+				# is_part_of_hre = yes
+				# is_elector = yes
+				# is_at_war = no
+			# }
+			# save_event_target_as = elector_union_day_host
+		# }
+		# random_known_country = {
+			# limit = {
+				# is_part_of_hre = yes
+				# check_same_partisan_school = yes
+				# is_at_war = no
+				# NOT = {
+					# tag = event_target:elector_union_day_host
+				# }
+			# }
+			# save_event_target_as = same_religious_school_host
+		# }
+		# random_known_country = {
+			# limit = {
+				# is_part_of_hre = yes
+				# is_at_war = no
+				# NOT = {
+					# OR = { 
+						# tag = event_target:elector_union_day_host
+						# tag = event_target:same_religious_school_host
+					# }
+				# }	
+			# }
+			# save_event_target_as = letting_fates_decide_host
+		# }
+	# }
+	
+	# option = {
+		# name = partisan_events.1.a #I will host it myself!
+		# custom_tooltip = hosting_union_day_desc.tt
+	 	# add_imperial_influence = 5
+		# hidden_effect = {
+			# set_global_flag = union_day_festival_planned
+			# set_country_flag = union_day_festival_planner
+			# set_variable = {
+				# which = festival_positive_counter
+				# value = 3
+			# }
+		# }
+	# }
+	# option = {
+		# name = partisan_events.1.b #Maybe one of the electors?
+		# custom_tooltip = random_elector_hosts_union_day_festival.tt
+		# add_years_of_income = -0.25
+		# hidden_effect = {
+			# set_global_flag = union_day_festival_planned
+			# event_target:elector_union_day_host = {
+				# set_country_flag = union_day_festival_planner
+				# country_event = { id = partisan_events.2 }
+			# }
+		# }
+	# }
+	# option = {
+		# name = partisan_events.1.c #One of our colleges
+		# custom_tooltip = random_party_memeber_hosts_union_day_festival.tt
+		# add_years_of_income = -0.25
+		# hidden_effect = {
+			# set_global_flag = union_day_festival_planned
+			# event_target:same_religious_school_host = {
+				# set_country_flag = union_day_festival_planner
+				# country_event = { id = partisan_events.2 }
+			# }
+		# }
+	# }
+	# option = {
+		# name = partisan_events.1.e #Let the fates decide
+		# custom_tooltip = random_uoc_nation_hosts.tt
+		# add_years_of_income = -0.25
+		# hidden_effect = {
+			# set_global_flag = union_day_festival_planned
+			# event_target:letting_fates_decide_host = {
+				# set_country_flag = union_day_festival_planner
+				# country_event = { id = partisan_events.2 }
+			# }
+		# }
+	# }
+	# option = {
+		# name = partisan_events.1.f #We will not fund these lavish wastes
+		# add_imperial_influence = -5
+	# }
+# }
+
+# country_event = { #Tapped for Union day
+	# id = partisan_events.2
+	# title = partisan_events.2.t
+	# desc = partisan_events.2.d
+	# picture = HRE_eventPicture
+	# is_triggered_only = yes
+	
+	# trigger = {
+		# always = yes
+	# }
+	
+	# option = {
+		# name = partisan_events.2.a #A heavy responsibility
+		# custom_tooltip = hosting_union_day_desc.tt
+		# add_treasury = 250
+		# hidden_effect = {
+			# set_variable = {
+				# which = festival_positive_counter
+				# value = 3
+			# }
+		# }
+	# }
+# }
+
+# country_event = { #Wine from Where?
+	# id = partisan_events.3
+	# title = partisan_events.3.t
+	# desc = partisan_events.3.d
+	# picture = TRADEGOODS_eventPicture
+	
+	# trigger = {
+		# has_country_flag = union_day_festival_planner
+		# NOT = {
+			# has_country_flag = wine_selected_union_day_festival
+		# }
+	# }
+	
+	# mean_time_to_happen = {
+		# months = 1
+	# }
+	
+	# option = {
+		# name = partisan_events.3.a #Napan of Course
+	 	# add_treasury = -50
+		# if = {
+			# limit = {
+				# owns_core_province = 1815
+			# }
+			# add_years_of_income = 0.1
+		# }
+		# else = {
+			# every_known_country = {
+				# limit = {
+					# owns_core_province = 1815
+				# }
+				# add_opinion = {
+					# who = ROOT
+					# modifier = regional_wine_selected
+				# }
+			# }	
+		# }
+		# set_country_flag = wine_selected_union_day_festival
+	# }
+	# option = {
+		# name = partisan_events.3.b #I hear Willamette has nice wines
+	 	# add_treasury = -50
+		# set_country_flag = wine_selected_union_day_festival
+		# every_known_country = {
+			# limit = {
+				# capital_scope = {
+					# region = washington_region
+				# }
+				# wine = 1
+				# is_part_of_hre = yes
+			# }
+			# add_opinion = {
+				# who = ROOT
+				# modifier = regional_wine_selected
+			# }
+		# }
+	# }
+	# option = {
+		# name = partisan_events.3.c #Something foreign, Italia perhaps?
+	 	# add_treasury = -100
+		# set_country_flag = wine_selected_union_day_festival
+		# custom_tooltip = this_will_impact_the_festivals_quality_good.tt
+		# hidden_effect = {
+			# change_variable = {
+				# which = festival_positive_counter
+				# value = 1
+			# }
+		# }
+	# }
+	# option = {
+		# name = partisan_events.3.e #A Dry Festival
+	 	# custom_tooltip = this_will_impact_the_festivals_quality_bad.tt
+		# hidden_effect = {
+			# set_country_flag = wine_selected_union_day_festival
+			# subtract_variable = {
+				# which = festival_positive_counter
+				# value = 1
+			# }
+		# }
+	# }
+# }
+
+# country_event = { #Foreign Guests
+	# id = partisan_events.4
+	# title = partisan_events.4.t
+	# desc = partisan_events.4.d
+	# picture = WESTERNISATION_eventPicture
+	
+	# trigger = {
+		# has_country_flag = union_day_festival_planner
+		# NOT = {
+			# has_country_flag = foreign_guests_invited
+		# }
+	# }
+	
+	# mean_time_to_happen = {
+		# months = 2
+	# }
+	
+	# immediate = {
+		# random_known_country = {
+			# limit = {
+				# is_at_war = no
+				# total_development = 200
+			# }
+			# save_event_target_as = foreign_guest_for_uoc
+		# }
+	# }
+	
+	# option = {
+		# name = partisan_events.4.a #Open the invitation!
+	 	# custom_tooltip = we_reach_out_to_a_powerful_nation.tt
+		# set_country_flag = foreign_guests_invited
+		# event_target:foreign_guest_for_uoc = {
+			# country_event = {
+				# id = partisan_events.5
+				# days = 2
+			# }
+		# }
+	# }
+	# option = {
+		# name = partisan_events.4.b #This is our day
+	 	# add_prestige = 5
+		# set_country_flag = foreign_guests_invited
+	# }
+# }
+
+# country_event = { #An invitation to union day
+	# id = partisan_events.5
+	# title = partisan_events.5.t
+	# desc = partisan_events.5.d
+	# picture = WESTERNISATION_eventPicture
+	# is_triggered_only = yes
+	
+	# trigger = {
+		# always = yes
+	# }
+	
+	# option = {
+		# name = partisan_events.5.a #I will attend
+		# custom_tooltip = honored_by_our_attendence.tt
+		# hidden_effect = {
+			# every_known_country = {
+				# limit = {
+					# is_part_of_hre = yes
+				# }
+				# add_opinion = {
+					# who = ROOT
+					# modifier = attending_union_day
+				# }
+			# }
+		# }
+		# ai_chance = {
+			# factor = 33
+		# }
+	# }
+	# option = {
+		# name = partisan_events.5.b #Kindly reject their offer
+	 	# random_known_country = {
+			# limit = {
+				# has_country_flag = union_day_festival_planner
+			# }
+			# add_opinion = {
+				# who = ROOT
+				# modifier = declined_attendence_gracefully
+			# }
+			# country_event = {
+				# id = partisan_events.7
+				# days = 2
+			# }
+		# }
+		# ai_chance = {
+			# factor = 33
+			# modifier = {
+				# factor = 0
+				# has_opinion = {
+					# who = FROM
+					# value = 50
+				# }
+			# }
+		# }
+	# }
+	# option = {
+		# name = partisan_events.5.c #An insult!
+	 	# random_known_country = {
+			# limit = {
+				# has_country_flag = union_day_festival_planner
+			# }
+			# add_opinion = {
+				# who = ROOT
+				# modifier = declined_attendence_rudely
+			# }
+			# country_event = {
+				# id = partisan_events.6
+				# days = 2
+			# }
+		# }
+		# ai_chance = {
+			# factor = 33
+			# modifier = {
+				# factor = 0
+				# has_opinion = {
+					# who = FROM
+					# value = 0
+				# }
+			# }
+		# }
+	# }
+# }
+
+# country_event = { #Foreign invitation drama
+	# id = partisan_events.6
+	# title = partisan_events.6.t
+	# desc = partisan_events.6.d
+	# picture = BAD_WITH_MONARCH_eventPicture
+	# is_triggered_only = yes
+	
+	# trigger = {
+		# always = yes
+	# }
+	
+	# option = {
+		# name = partisan_events.6.a #Horror!
+		# custom_tooltip = this_will_impact_the_festivals_quality_bad.tt 
+		# hidden_effect = {
+			# change_variable = {
+				# which = festival_positive_counter
+				# value = -1
+			# }
+		# }
+	# }
+# }
+
+# country_event = { #A Polite Decline
+	# id = partisan_events.7
+	# title = partisan_events.7.t
+	# desc = partisan_events.7.d
+	# picture = GOOD_WITH_MONARCH_eventPicture
+	# is_triggered_only = yes
+	
+	# trigger = {
+		# always = yes
+	# }
+	
+	# option = {
+		# name = partisan_events.7.a #Dissapointing, but not a disaster
+		# add_prestige = 5
+	# }
+# }
+
+# country_event = { #A Positive Response
+	# id = partisan_events.8
+	# title = partisan_events.8.t
+	# desc = partisan_events.8.d
+	# picture = GOOD_WITH_MONARCH_eventPicture
+	# is_triggered_only = yes
+	
+	# trigger = {
+		# always = yes
+	# }
+	
+	# option = {
+		# name = partisan_events.8.a #Perfect!
+		# custom_tooltip = this_will_impact_the_festivals_quality_good.tt
+		# hidden_effect = {
+			# change_variable = {
+				# which = festival_positive_counter
+				# value = 1
+			# }
+		# }
+	# }
+# }
+
+# country_event = { #Crafting a Speech
+	# id = partisan_events.9
+	# title = partisan_events.9.t
+	# desc = partisan_events.9.d
+	# picture = STREET_SPEECH_eventPicture
+	
+	# trigger = {
+		# has_country_flag = union_day_festival_planner
+		# NOT = {
+			# has_country_flag = foreign_guests_invited
+		# }
+	# }
+	
+	# mean_time_to_happen = {
+		# months = 3
+	# }
+	
+	# option = {
+		# name = partisan_events.9.a #For the people!
+	 	# add_piety = -0.25
+	# }
+	# option = {
+		# name = partisan_events.9.b #For the monarchs!
+	 	# add_piety = 0.25
+	# }
+	# option = {
+		# name = partisan_events.9.c #Lets keep politics out of it
+	 	# add_prestige = 5
+	# }
+# }
+
+# country_event = { #Necessary Entertainment
+	# id = partisan_events.10
+	# title = partisan_events.10.t
+	# desc = partisan_events.10.d
+	# picture = THEATRE_eventPicture
+	
+	# trigger = {
+		# has_country_flag = union_day_festival_planner
+		# NOT = {
+			# has_country_flag = entertainment_chosen_union_day
+		# }
+	# }
+	
+	# mean_time_to_happen = {
+		# months = 4
+	# }
+	
+	# option = {
+		# name = partisan_events.10.a #The standard affair
+	 	# add_treasury = -100
+		# set_country_flag = entertainment_chosen_union_day
+	# }
+	# option = {
+		# name = partisan_events.10.b #We must have the most exotic animals 
+	 	# add_treasury = -200
+		# custom_tooltip = this_will_impact_the_festivals_quality_good.tt
+		# hidden_effect = {
+			# set_country_flag = entertainment_chosen_union_day
+			# change_variable = {
+				# which = festival_positive_counter
+				# value = 1
+			# }
+		# }
+	# }
+	# option = {
+		# name = partisan_events.10.c #I am the entertainment
+	 	# custom_tooltip = this_will_impact_the_festivals_quality_bad.tt 
+		# hidden_effect = {
+			# set_country_flag = entertainment_chosen_union_day
+			# change_variable = {
+				# which = festival_positive_counter
+				# value = -1
+			# }
+		# }
+	# }
+# }
+
+# country_event = { #Accomodations
+	# id = partisan_events.11
+	# title = partisan_events.11.t
+	# desc = partisan_events.11.d
+	# picture = BANKRUPTCY_eventPicture
+	
+	# trigger = {
+		# has_country_flag = union_day_festival_planner
+		# NOT = {
+			# has_country_flag = foreign_guests_invited
+		# }
+	# }
+	
+	# mean_time_to_happen = {
+		# months = 5
+	# }
+	
+	# option = {
+		# name = partisan_events.11.a #Keep it equal
+	 	# add_piety = -0.25
+		# add_treasury = -100
+	# }
+	# option = {
+		# name = partisan_events.11.b #The finest quarters for the nobles
+	 	# add_piety = 0.25
+		# add_treasury = -100
+	# }
+	# option = {
+		# name = partisan_events.11.c #Why not both?
+		# add_treasury = -200
+		# custom_tooltip = this_will_impact_the_festivals_quality_good.tt
+		# hidden_effect = {
+			# set_country_flag = entertainment_chosen_union_day
+			# change_variable = {
+				# which = festival_positive_counter
+				# value = 1
+			# }
+		# }
+	# }
+	# option = {
+		# name = partisan_events.11.e #We have plenty of tents
+	 	# custom_tooltip = this_will_impact_the_festivals_quality_bad.tt 
+		# hidden_effect = {
+			# change_variable = {
+				# which = festival_positive_counter
+				# value = -1
+			# }
+		# }
+	# }
+# }
+
+# country_event = { #A Standard Festival
+	# id = partisan_events.12
+	# title = partisan_events.12.t
+	# desc = partisan_events.12.d
+	# picture = CULTURE_eventPicture
+	
+	# trigger = {
+		# has_country_flag = union_day_festival_planner
+		# is_month = 7
+		# is_at_war = no
+		# check_variable = {
+			# which = festival_positive_counter
+			# value = 3
+		# }
+		# NOT = {
+			# check_variable = {
+				# which = festival_positive_counter
+				# value = 4
+			# }
+		# }
+	# }
+	
+	# mean_time_to_happen = {
+		# days = 1
+	# }
+	
+	# option = {
+		# name = partisan_events.12.a #At least we survived
+	 	# add_country_modifier = {
+			# name = "festival_host_union_day"
+			# duration = 9125
+		# }
+		# clr_country_flag = union_day_festival_planner
+		# clr_global_flag = union_day_festival_planned
+	# }
+# }
+
+# country_event = { #An Excellent Festival
+	# id = partisan_events.13
+	# title = partisan_events.13.t
+	# desc = partisan_events.13.d
+	# picture = CULTURE_eventPicture
+	
+	# trigger = {
+		# has_country_flag = union_day_festival_planner
+		# is_month = 7
+		# is_at_war = no
+		# check_variable = {
+			# which = festival_positive_counter
+			# value = 4
+		# }
+	# }
+	
+	# mean_time_to_happen = {
+		# days = 1
+	# }
+	
+	# option = {
+		# name = partisan_events.13.a #A Jolly Time
+	 	# add_country_modifier = {
+			# name = "good_festival_host_union_day"
+			# duration = 9125
+		# }
+		# clr_country_flag = union_day_festival_planner
+		# clr_global_flag = union_day_festival_planned
+	# }
+# }
+
+# country_event = { #A Terrible Festival
+	# id = partisan_events.14
+	# title = partisan_events.14.t
+	# desc = partisan_events.14.d
+	# picture = CULTURE_eventPicture
+	
+	# trigger = {
+		# has_country_flag = union_day_festival_planner
+		# is_month = 7
+		# is_at_war = no
+		# NOT = {
+			# check_variable = {
+				# which = festival_positive_counter
+				# value = 3
+			# }
+		# }
+	# }
+	
+	# mean_time_to_happen = {
+		# days = 1
+	# }
+	
+	# option = {
+		# name = partisan_events.14.a #What a shame
+	 	# add_country_modifier = {
+			# name = "bad_festival_host_union_day"
+			# duration = 9125
+		# }
+		# clr_country_flag = union_day_festival_planner
+		# clr_global_flag = union_day_festival_planned
+	# }
+# }
+
+# country_event = { #Festival Called off
+	# id = partisan_events.15
+	# title = partisan_events.15.t
+	# desc = partisan_events.15.d
+	# picture = BAD_WITH_MONARCH_eventPicture
+	
+	# trigger = {
+		# has_country_flag = union_day_festival_planner
+		# is_at_war = yes
+	# }
+	
+	# mean_time_to_happen = {
+		# days = 1
+	# }
+	
+	# option = {
+		# name = partisan_events.15.a #At least we survived
+	 	# add_prestige = -20
+		# clr_country_flag = union_day_festival_planner
+		# clr_global_flag = union_day_festival_planned
+	# }
+# }
+
+#########################UNION DAY FESTIVAL##########################
+
+#########################CHOSE PARTY EVENTS################################
+country_event = { #Choose a Party (Partisan)
+	id = partisan_events.17
+	title = partisan_events.17.t
+	desc = partisan_events.17.d
+	picture = DECLARATION_INDEPENDENCE_eventPicture
+	
+	trigger = {
+		religion = partisan
+		has_religious_school = no
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = partisan_events.17.a #The Progressive Party
+	 	set_religious_school = {
+			group = constitutionalist_group
+			school = progressive_party
+		}
+	}
+	option = {
+		name = partisan_events.17.b #The Traditionalist Party
+	 	set_religious_school = {
+			group = constitutionalist_group
+			school = traditionalist_party
+		}
+	}
+	option = {
+		name = partisan_events.17.c #The Freedonian Party
+	 	set_religious_school = {
+			group = constitutionalist_group
+			school = freedonian_party
+		}
+	}
+	option = {
+		name = partisan_events.17.e #The Naturalist Party
+	 	set_religious_school = {
+			group = constitutionalist_group
+			school = naturalist_party
+		}
+	}
+}
+
+country_event = { #Choose a Party (Despotic)
+	id = partisan_events.18
+	title = partisan_events.18.t
+	desc = partisan_events.18.d
+	picture = DECLARATION_INDEPENDENCE_eventPicture
+	
+	trigger = {
+		religion = despotic
+		has_religious_school = no
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = partisan_events.18.a #The Blue Party
+	 	set_religious_school = {
+			group = constitutionalist_group
+			school = blue_party
+		}
+	}
+	option = {
+		name = partisan_events.18.b #The Red Party
+	 	set_religious_school = {
+			group = constitutionalist_group
+			school = red_party
+		}
+	}
+	option = {
+		name = partisan_events.18.c #The Yellow Party
+	 	set_religious_school = {
+			group = constitutionalist_group
+			school = yellow_party
+		}
+	}
+	option = {
+		name = partisan_events.18.e #The Green Party
+	 	set_religious_school = {
+			group = constitutionalist_group
+			school = green_party
+		}
+	}
+}
+
+country_event = { #Choose a Party (Anarchist)
+	id = partisan_events.19
+	title = partisan_events.19.t
+	desc = partisan_events.19.d
+	picture = DECLARATION_INDEPENDENCE_eventPicture
+	
+	trigger = {
+		religion = anarchist
+		has_religious_school = no
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = partisan_events.19.a #The Blue Party
+	 	set_religious_school = {
+			group = constitutionalist_group
+			school = actionist_party
+		}
+	}
+	option = {
+		name = partisan_events.19.b #The Red Party
+	 	set_religious_school = {
+			group = constitutionalist_group
+			school = constitutionalist_party
+		}
+	}
+	option = {
+		name = partisan_events.19.c #The Yellow Party
+	 	set_religious_school = {
+			group = constitutionalist_group
+			school = goldencrat_party
+		}
+	}
+	option = {
+		name = partisan_events.19.e #The Green Party
+	 	set_religious_school = {
+			group = constitutionalist_group
+			school = protectioner_party
+		}
+	}
+}
+
+#########################REFORMATION EVENTS##########################
+country_event = { #Despotic Reformation
+	id = partisan_events.20
+	title = partisan_events.20.t
+	desc = partisan_events.20.d
+	picture = HRE_eventPicture
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		religion = partisan
+		any_owned_province = {
+			can_have_center_of_reformation_trigger = {
+				RELIGION = despotic
+			}
+			region = sunkissed_region
+		}
+		is_year = 1500
+	}
+	
+	mean_time_to_happen = {
+		months = 100
+	}
+	
+	option = {
+		name = partisan_events.20.a 
+		enable_religion = despotic
+		set_country_flag = origin_of_the_despotic_reformation
+		random_owned_province = {
+			limit = {
+				can_have_center_of_reformation_trigger = {
+					RELIGION = despotic
+				}
+			}
+			change_religion = despotic
+			add_reform_center = despotic
+			add_permanent_province_modifier = {
+				name = "religious_zeal_at_conv"
+				duration = 9000
+			}
+			if = {
+				limit = {
+					NOT = { is_capital = yes }
+				}
+				root = {
+					capital_scope = {
+						change_religion = despotic
+						add_permanent_province_modifier = {
+							name = "religious_zeal_at_conv"
+							duration = 9000
+						}
+					}
+				}
+			}
+		}
+		set_global_flag = despotic_reformation
+	}
+}
+
+country_event = { #Anarchist Reformation
+	id = partisan_events.21
+	title = partisan_events.21.t
+	desc = partisan_events.21.d
+	picture = HRE_eventPicture
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		religion = partisan
+		any_owned_province = {
+			can_have_center_of_reformation_trigger = {
+				RELIGION = anarchist
+			}
+			region = nevada_region
+		}
+		is_year = 1500
+		has_global_flag = despotic_reformation
+	}
+	
+	mean_time_to_happen = {
+		months = 50
+	}
+	
+	option = {
+		name = partisan_events.21.a 
+		enable_religion = anarchist
+		random_owned_province = {
+			limit = {
+				can_have_center_of_reformation_trigger = {
+					RELIGION = anarchist
+				}
+				region = nevada_region
+			}
+			change_religion = anarchist
+			add_reform_center = anarchist
+			add_permanent_province_modifier = {
+				name = "religious_zeal_at_conv"
+				duration = 9000
+			}
+			if = {
+				limit = {
+					NOT = { is_capital = yes }
+				}
+				root = {
+					capital_scope = {
+						change_religion = anarchist
+						add_permanent_province_modifier = {
+							name = "religious_zeal_at_conv"
+							duration = 9000
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Despots flock to our state
+	id = partisan_events.22
+	title = partisan_events.22.t
+	desc = partisan_events.22.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		religion = partisan
+		has_global_flag = despotic_reformation
+		piety = 0.75
+		any_owned_province = {
+			religion = despotic
+		}
+		any_owned_province = {
+			religion = partisan
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = {
+		name = partisan_events.22.a #Interesting
+		add_piety = -0.25
+		random_owned_province = {
+			limit = {
+				religion = partisan
+			}
+			change_religion = despotic
+		}
+	}
+}
+
+country_event = { #Anarchists flock to our state
+	id = partisan_events.23
+	title = partisan_events.23.t
+	desc = partisan_events.23.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		religion = partisan
+		has_global_flag = despotic_reformation
+		NOT = {
+			piety = -0.75
+		}
+		any_owned_province = {
+			religion = anarchist
+		}
+		any_owned_province = {
+			religion = partisan
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = {
+		name = partisan_events.22.a #Interesting
+		add_piety = -0.25
+		random_owned_province = {
+			limit = {
+				religion = partisan
+			}
+			change_religion = anarchist
+		}
+	}
+}
+
+country_event = { #Heresy of the Great Seer 
+	id = partisan_events.24
+	title = partisan_events.24.t
+	desc = partisan_events.24.d
+	picture = CHURCH_ESTATE_1_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		religion = partisan
+		is_emperor = yes
+		has_global_flag = despotic_reformation
+	}
+	
+	mean_time_to_happen = {
+		months = 50
+	}
+	
+	option = {
+		name = partisan_events.24.a #Death is the only fitting punishment!
+		add_piety = -0.1
+		every_known_country = {
+			limit = {
+				religion = despotic
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = executed_great_seer
+			}
+		}
+	}
+	option = {
+		name = partisan_events.24.b #Imprison him!
+		every_known_country = {
+			limit = {
+				religion = despotic
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = imprisoned_great_seer
+			}
+		}
+	}
+	option = {
+		name = partisan_events.24.c #What crime did he commit?
+		add_piety = 0.1
+	}
+}
+
+country_event = { #End of the Reformation
+	id = partisan_events.25
+	title = partisan_events.25.t
+	desc = partisan_events.25.d
+	picture = HRE_eventPicture
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		has_global_flag = despotic_reformation
+		is_year = 1620
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = partisan_events.25.a #We will recover
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 100
+		}
+		else = {
+			add_stability = 1
+		}
+		clr_global_flag = despotic_reformation
+	}
+}
+#########################LIBERALISM EVENTS##########################
+country_event = { #Constitutionalist Debate
+	id = partisan_events.26
+	title = partisan_events.26.t
+	desc = partisan_events.26.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = constitutionalist_group
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = partisan_events.26.a #The answer is with the people!
+		add_piety = -0.1
+	}
+	option = {
+		name = partisan_events.26.b #The answer is in the state!
+		add_piety = 0.1
+	}
+}
+
+country_event = { #Populist Administration
+	id = partisan_events.27
+	title = partisan_events.27.t
+	desc = partisan_events.27.d
+	picture = BIG_BOOK_eventPicture
+	
+	trigger = {
+		NOT = {
+			piety = -0.75
+		}
+		OR = {
+			religious_school = {
+				group = constitutionalist_group
+				school = traditionalist_party
+			}
+			religious_school = {
+				group = constitutionalist_group
+				school = red_party
+			}
+			religious_school = {
+				group = constitutionalist_group
+				school = constitutionalist_party
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+	}
+	
+	option = {
+		name = partisan_events.27.a #We will embrace it!
+		add_piety = -0.1
+		if = {
+			limit = {
+				religion = partisan
+			}
+			set_religious_school = {
+				group = constitutionalist_group
+				school = progressive_party
+			}
+		}
+		if = {
+			limit = {
+				religion = despotic
+			}
+			set_religious_school = {
+				group = constitutionalist_group
+				school = blue_party
+			}
+		}
+		if = {
+			limit = {
+				religion = anarchist
+			}
+			set_religious_school = {
+				group = constitutionalist_group
+				school = actionist_party
+			}
+		}
+	}
+	option = {
+		name = partisan_events.27.b #Never!
+		add_prestige = 5
+	}
+}
+
+country_event = { #Regalist Administration
+	id = partisan_events.28
+	title = partisan_events.28.t
+	desc = partisan_events.28.d
+	picture = BIG_BOOK_eventPicture
+	
+	trigger = {
+		piety = 0.75
+		OR = {
+			religious_school = {
+				group = constitutionalist_group
+				school = progressive_party
+			}
+			religious_school = {
+				group = constitutionalist_group
+				school = blue_party
+			}
+			religious_school = {
+				group = constitutionalist_group
+				school = actionist_party
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+	}
+	
+	option = {
+		name = partisan_events.28.a #We will embrace it!
+		add_piety = 0.1
+		if = {
+			limit = {
+				religion = partisan
+			}
+			set_religious_school = {
+				group = constitutionalist_group
+				school = traditionalist_party
+			}
+		}
+		if = {
+			limit = {
+				religion = despotic
+			}
+			set_religious_school = {
+				group = constitutionalist_group
+				school = red_party
+			}
+		}
+		if = {
+			limit = {
+				religion = anarchist
+			}
+			set_religious_school = {
+				group = constitutionalist_group
+				school = constitutionalist_party
+			}
+		}
+	}
+	option = {
+		name = partisan_events.28.b #Never!
+		add_prestige = 5
+	}
+}
+
+country_event = { #Trade Intervention
+	id = partisan_events.29
+	title = partisan_events.29.t
+	desc = partisan_events.29.d
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		NOT = {
+			has_country_modifier = let_market_free_partisan
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = partisan_events.29.a #We must intervene
+		add_piety = 0.1
+		add_years_of_income = 0.25
+	}
+	option = {
+		name = partisan_events.29.b #Let the market decide
+		add_piety = -0.1
+		add_country_modifier = {
+			name = "let_market_free_partisan"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #War Time Disorganization
+	id = partisan_events.30
+	title = partisan_events.30.t
+	desc = partisan_events.30.d
+	picture = SEIGE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		is_at_war = yes
+		NOT = {
+			has_country_modifier = military_command
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = partisan_events.30.a #We must take charge
+		add_piety = 0.1
+		add_country_modifier = {
+			name = "military_command"
+			duration = 1825
+		}
+	}
+	option = {
+		name = partisan_events.30.b #Hire more talent
+		add_piety = -0.1
+		create_general = { tradition = 50 }
+	}
+}
+
+country_event = { #Legitimate Problems
+	id = partisan_events.31
+	title = partisan_events.31.t
+	desc = partisan_events.31.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		NOT = {
+			legitimacy_equivalent = 50
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = partisan_events.31.a #We must take charge
+		add_piety = -0.2
+	}
+}
+
+country_event = { #Iron Will
+	id = partisan_events.32
+	title = partisan_events.32.t
+	desc = partisan_events.32.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = constitutionalist_group
+	 	legitimacy_equivalent = 90
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = partisan_events.32.a #I am the state
+		add_piety = 0.2
+	}
+}
+
+country_event = { #Order of the Stone Crown
+	id = partisan_events.33
+	title = partisan_events.33.t
+	desc = partisan_events.33.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = constitutionalist_group
+	 	NOT = {
+			has_country_flag = order_of_the_stone_crown_prompted
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = partisan_events.33.a #We accept their ancient legitimacy
+		add_piety = 0.1
+		set_country_flag = order_of_the_stone_crown_embraced
+		set_country_flag = order_of_the_stone_crown_prompted
+	}
+	option = {
+		name = partisan_events.33.b #I am the state
+		add_piety = -0.1
+		set_country_flag = order_of_the_stone_crown_prompted
+	}
+
+}
+
+country_event = { #Stone Crown sends a champion
+	id = partisan_events.34
+	title = partisan_events.34.t
+	desc = partisan_events.34.d
+	picture = TOURNAMENT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		has_country_flag = order_of_the_stone_crown_embraced
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = partisan_events.34.a #We accept their ancient legitimacy
+		add_piety = 0.1
+		create_general = { tradition = 50 }
+	}
+}
+
+country_event = { #Stone Crown sends volunteers
+	id = partisan_events.35
+	title = partisan_events.35.t
+	desc = partisan_events.35.d
+	picture = BATTLE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		has_country_flag = order_of_the_stone_crown_embraced
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = partisan_events.35.a #We accept their ancient legitimacy
+		add_piety = 0.1
+		add_yearly_manpower = 0.25
+	}
+}
+
+country_event = { #The Everyman Band
+	id = partisan_events.36
+	title = partisan_events.36.t
+	desc = partisan_events.36.d
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		NOT = { has_country_flag = everyman_band_prompted }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = partisan_events.36.a #We will join their band!
+		add_piety = -0.1
+		set_country_flag = everyman_band_prompted
+		set_country_flag = everyman_band_embraced
+	}
+	option = {
+		name = partisan_events.36.b #Heresy!
+		add_piety = 0.1
+		set_country_flag = everyman_band_prompted
+	}
+}
+
+country_event = { #Everyman Band sends talent
+	id = partisan_events.37
+	title = partisan_events.37.t
+	desc = partisan_events.37.d
+	picture = PAINTER_ARTIST_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		has_country_flag = everyman_band_embraced
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = partisan_events.37.a #May they enrich our culture!
+		add_piety = -0.1
+		define_advisor = {
+			type = artist
+			skill = 2
+			cost_multiplier = 0.5
+		}
+	}
+}
+
+country_event = { #Everyman Band offers invention	
+	id = partisan_events.38
+	title = partisan_events.38.t
+	desc = partisan_events.38.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		has_country_flag = everyman_band_embraced
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = partisan_events.38.a #A bountiful gift!
+		add_piety = -0.1
+	 	change_innovativeness = 2
+	}
+}
+
+country_event = { #Local Deacon Preaches Heresy
+	id = partisan_events.40
+	title = partisan_events.40.t
+	desc = partisan_events.40.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = constitutionalist_group
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = partisan_events.40.a #Reprimand Him
+		add_piety = 0.15
+	}
+	option = {
+		name = partisan_events.40.b #We will not silence his truth
+		add_piety = -0.15
+	}
+}
+
+country_event = { #The Court Movement
+	id = partisan_events.41
+	title = partisan_events.41.t
+	desc = partisan_events.41.d
+	picture = UNIVERSITY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		is_year = 1600
+		NOT = {
+			OR = {
+				has_country_flag = court_movement_embraced
+				has_country_flag = court_movement_denied
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = partisan_events.41.a #We will found a national court
+		add_piety = -0.5
+		set_country_flag = court_movement_embraced
+	}
+	option = {
+		name = partisan_events.41.b #We reject such a premise
+		add_piety = 0.5
+		set_country_flag = court_movement_denied
+	}
+}
+
+country_event = { #Judicial Rebels
+	id = partisan_events.42
+	title = partisan_events.42.t
+	desc = partisan_events.42.d
+	picture = ANGRY_MOB_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		has_country_flag = court_movement_denied
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = partisan_events.42.a #Crush them!
+		add_piety = 0.1
+		random_core_province = {
+			if = {
+				limit = {
+					religion = partisan
+				}
+				spawn_rebels = {
+					type = partisan_rebels
+					size = 1
+				}
+			}
+			else_if = {
+				limit = {
+					religion = despotic
+				}
+				spawn_rebels = {
+					type = despotic_rebels
+					size = 1
+				}
+			}
+			else = {
+				limit = {
+					religion = anarchist
+				}
+				spawn_rebels = {
+					type = anarchist_rebels
+					size = 1
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Court Rules Against Monarch
+	id = partisan_events.43
+	title = partisan_events.43.t
+	desc = partisan_events.43.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		has_country_flag = court_movement_embraced
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = partisan_events.43.a #Damn the Justices
+		add_piety = -0.5
+	}
+}
+
+country_event = { #Court Rules In Favor of Monarch
+	id = partisan_events.44
+	title = partisan_events.44.t
+	desc = partisan_events.44.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		has_country_flag = court_movement_embraced
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = partisan_events.44.a #As they should
+		add_piety = 0.5
+	}
+}
+
+country_event = { #Court Curbs Power of Monarch
+	id = partisan_events.45
+	title = partisan_events.45.t
+	desc = partisan_events.45.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		has_country_flag = court_movement_embraced
+		NOT = {
+			has_ruler_modifier = court_restriction
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = partisan_events.45.a #This is unacceptable 
+		add_piety = -0.5
+		add_ruler_modifier = {
+			name = "court_restriction"
+			duration = -1
+		}
+	}
+}
+
+##################SPECIFIC PARTY EVENTS##########################
+
+country_event = { #Constructing a Monument to our dynasty
+	id = partisan_events.51
+	title = partisan_events.51.t
+	desc = partisan_events.51.d
+	picture = GREAT_BUILDING_eventPicture
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		religious_school = {
+			group = constitutionalist_group
+			school = progressive_party
+		}
+		NOT = {
+			has_country_flag = prompted_to_build_monument
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 2400
+	}
+	
+	option = {
+		name = partisan_events.51.a #May we be remembered forever
+		add_years_of_income = -1
+		capital_scope = {
+			add_province_modifier = {
+				name = "monument_to_our_dynasty"
+				duration = -1
+			}
+		}
+		add_prestige = 25
+		set_country_flag = prompted_to_build_monument
+	}
+	option = {
+		name = partisan_events.51.b #Unecesary
+		add_prestige = -5
+		set_country_flag = prompted_to_build_monument
+	}
+}
+
+country_event = { #Checking the Balance
+	id = partisan_events.52
+	title = partisan_events.52.t
+	desc = partisan_events.52.d
+	picture = PRAYING_eventPicture
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		religious_school = {
+			group = constitutionalist_group
+			school = traditionalist_party
+		}
+		NOT = {
+			OR = {
+				has_country_modifier = conservative_royal_advisory
+				has_country_modifier = conservative_power_granted_to_lords
+				has_country_modifier = conservative_deacons_given_power
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	option = {
+		name = partisan_events.52.a #Create royal advisory
+		add_country_modifier = {
+			name = "conservative_royal_advisory"
+			duration = 18250
+		}
+	}
+	option = {
+		name = partisan_events.52.b #Hand power to the lords
+		add_country_modifier = {
+			name = "conservative_power_granted_to_lords"
+			duration = 18250
+		}
+	}
+	option = {
+		name = partisan_events.52.c #Give Deacons power
+		add_country_modifier = {
+			name = "conservative_deacons_given_power"
+			duration = 18250
+		}
+	}
+}
+
+country_event = { #Funding the Companies
+	id = partisan_events.53
+	title = partisan_events.53.t
+	desc = partisan_events.53.d
+	picture = TRADEGOODS_eventPicture
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		religious_school = {
+			group = constitutionalist_group
+			school = freedonian_party
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+	}
+	
+	option = {
+		name = partisan_events.53.a #A worthy exchange
+		add_years_of_income = -0.5
+		add_piety = -0.5
+	}
+	option = {
+		name = partisan_events.53.b #They waste our resources
+		add_prestige = 5
+	}
+}
+
+country_event = { #Setting aside naturalist land
+	id = partisan_events.54
+	title = partisan_events.54.t
+	desc = partisan_events.54.d
+	picture = COLONIZATION_eventPicture
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		religious_school = {
+			group = constitutionalist_group
+			school = naturalist_party
+		}
+		any_owned_province = {
+			OR = {
+				has_terrain = mountain
+				has_terrain = highlands
+			}
+			NOT = {
+				development = 10
+				has_province_modifier = divine_park
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+	}
+	
+	option = {
+		name = partisan_events.54.a #This is a wonderous cause!
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 25
+		random_owned_province = {
+			limit = {
+				OR = {
+					has_terrain = mountain
+					has_terrain = highlands
+				}
+				NOT = {
+					development = 10
+				}
+			}
+			add_province_modifier = {
+				name = "divine_park"
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = partisan_events.54.b #But this land is necesarry
+		add_prestige = -5
+	}
+}
+
+country_event = { #Absolute Rule
+	id = partisan_events.55
+	title = partisan_events.55.t
+	desc = partisan_events.55.d
+	picture = KING_DOING_GREAT_eventPicture
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		religious_school = {
+			group = constitutionalist_group
+			school = blue_party
+		}
+		current_age = age_of_absolutism
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+	}
+	
+	option = {
+		name = partisan_events.55.a #A worthy exchange
+		add_piety = 0.25
+		add_absolutism = 10
+	}
+}
+
+country_event = { #Samson's Legacy
+	id = partisan_events.56
+	title = partisan_events.56.t
+	desc = partisan_events.56.d
+	picture = HRE_eventPicture
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		religious_school = {
+			group = constitutionalist_group
+			school = red_party
+		}
+		NOT = {
+			has_country_modifier = samsons_legacy_prompted
+		}
+	}
+	
+	immediate = {
+		set_country_flag = samsons_legacy_prompted
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	option = {
+		name = partisan_events.56.a #Embrace the Sacramental Roots
+		add_country_modifier = {
+			name = "sons_of_samson_red_party"
+			duration = -1
+		}
+	}
+	option = {
+		name = partisan_events.56.b #We are heirs to none other than the founder above
+		add_country_modifier = {
+			name = "a_new_legacy_red_party"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Powerful Greed
+	id = partisan_events.57
+	title = partisan_events.57.t
+	desc = partisan_events.57.d
+	picture = MERCHANTS_TALKING_eventPicture
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		religious_school = {
+			group = constitutionalist_group
+			school = yellow_party
+		}
+		is_at_war = yes
+		NOT = {
+			has_country_modifier = purchased_arms
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 50
+	}
+	
+	
+	option = {
+		name = partisan_events.57.a #It is necesarry for our surival
+		add_years_of_income = -0.5
+		add_country_modifier = {
+			name = "purchased_arms"
+			duration = 1825
+		}
+	}
+	option = {
+		name = partisan_events.57.b #Improve training
+		add_piety = -0.5
+	}
+}
+
+country_event = { #Enforcing Naturalism
+	id = partisan_events.58
+	title = partisan_events.58.t
+	desc = partisan_events.58.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		religious_school = {
+			group = constitutionalist_group
+			school = green_party
+		}
+		any_owned_province = {
+			any_neighbor_province = {
+				NOT = {
+					owned_by = ROOT
+				}
+				OR = {
+					has_terrain = mountain
+					has_terrain = highlands
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+	}
+	
+	
+	option = {
+		name = partisan_events.58.a #We will crush the pollutors
+		every_owned_province = {
+			every_neighbor_province = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+					OR = {
+						has_terrain = mountain
+						has_terrain = highlands
+					}
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+		}
+	}
+}
+
+country_event = { #Centralizing The Mob
+	id = partisan_events.59
+	title = partisan_events.59.t
+	desc = partisan_events.59.d
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		religious_school = {
+			group = constitutionalist_group
+			school = actionist_party
+		}
+		NOT = {
+			any_owned_province = {
+				has_province_modifier = anarchic_administration
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+	}
+	
+	
+	option = {
+		name = partisan_events.59.a #Push forward the capital
+		capital_scope = {
+			add_base_production = 1
+			add_province_modifier = {
+				name = "anarchic_administration"
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = partisan_events.59.b #Let the Mob Decide
+		random_owned_province = {
+			add_base_production = 1
+			add_province_modifier = {
+				name = "anarchic_administration"
+				duration = 3650
+			}
+		}
+	}
+}
+
+country_event = { #Question of the spirit's nature
+	id = partisan_events.60
+	title = partisan_events.60.t
+	desc = partisan_events.60.d
+	picture = BIG_BOOK_eventPicture
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		religious_school = {
+			group = constitutionalist_group
+			school = constitutionalist_party
+		}
+		NOT = {
+			has_country_flag = decided_on_the_spirits_nature
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	immediate = {
+		set_country_flag = decided_on_the_spirits_nature
+	}
+	
+	option = {
+		name = partisan_events.60.a #It is within everyone and everything
+		add_country_modifier = {
+			name = "universalism_constitutional_party"
+			duration = -1
+		}
+	}
+	option = {
+		name = partisan_events.60.b #It is only within the founder's children
+		add_country_modifier = {
+			name = "selectivism_constitutional_party"
+			duration = -1
+		}
+	}
+	option = {
+		name = partisan_events.60.c #It is only within the founder's chosen children
+		add_country_modifier = {
+			name = "destined_children_constitutional_party"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Share the wealth
+	id = partisan_events.61
+	title = partisan_events.61.t
+	desc = partisan_events.61.d
+	picture = MERCHANTS_TALKING_eventPicture
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		religious_school = {
+			group = constitutionalist_group
+			school = goldencrat_party
+		}
+		NOT = {
+			has_country_modifier = wealth_shared_goldencrat
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+	}
+	
+	
+	option = {
+		name = partisan_events.61.a #It is our duty!
+		add_years_of_income = -0.5
+		add_country_modifier = {
+			name = "wealth_shared_goldencrat"
+			duration = 3650
+		}
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
+	}
+	option = {
+		name = partisan_events.61.b #Expensive
+		add_piety = -0.25
+	}
+}
+
+country_event = { #Tragedy of the Mob
+	id = partisan_events.62
+	title = partisan_events.62.t
+	desc = partisan_events.62.d
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		religion_group = constitutionalist_group
+		religious_school = {
+			group = constitutionalist_group
+			school = protectioner_party
+		}
+		NOT = {
+			has_country_flag = decided_on_the_spirits_nature
+		}
+	}
+	
+	immediate = {
+		set_country_flag = decided_on_the_spirits_nature
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	
+	option = {
+		name = partisan_events.62.a #Move to stop them!
+		add_country_modifier = {
+			name = "protected_parks_protectioner"
+			duration = -1
+		}
+	}
+	option = {
+		name = partisan_events.62.b #Let them do as they please.
+		add_country_modifier = {
+			name = "tragedy_of_the_mob_protectioner"
+			duration = -1
+		}
+	}
+}

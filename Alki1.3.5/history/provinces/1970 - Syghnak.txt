@@ -1,0 +1,17 @@
+#1970 - Syghnak
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y89
+controller = Y89
+add_core = Y89
+culture = oregonite
+religion = partisan
+capital = "Syghnak"
+trade_goods = fur #fur output
+base_tax = 3
+base_production = 3
+base_manpower = 3
+hre = yes
+is_city = yes

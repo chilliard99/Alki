@@ -1,0 +1,14 @@
+#655 - Palawan
+
+add_core = Y31
+owner = Y31
+controller = Y31
+culture = crow
+religion = sacramental
+capital = "Palawan"
+trade_goods = livestock
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 2
+is_city = yes

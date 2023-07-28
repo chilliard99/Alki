@@ -1,0 +1,478 @@
+namespace = idolatrous_events
+####################AUTHORITY EVENTS##########################
+country_event = { #Idolatrous Reforms ***SPECIAL CASE***
+	id = idolatrous_events.1
+	title = idolatrous_events.1.t
+	desc = idolatrous_events.1.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = idolatrous
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {		
+			add_authority = -100 
+			add_stability = -2
+			random_owned_province = {
+				limit = { 
+					is_in_capital_area = yes 
+					is_capital = no
+				}
+				set_province_flag = civil_war_prov_1
+			}		
+			random_owned_province = {
+				limit = { 
+					is_in_capital_area = yes
+					is_capital = no
+					NOT = { has_province_flag = civil_war_prov_1 }
+				}
+				set_province_flag = civil_war_prov_2
+			}
+			random_owned_province = {
+				limit = { 
+					is_in_capital_area = yes 
+					is_capital = no
+					NOT = { has_province_flag = civil_war_prov_1 }
+					NOT = { has_province_flag = civil_war_prov_2 }
+				}
+				set_province_flag = civil_war_prov_3
+			}			
+			
+			random_owned_province = {
+				limit = { has_province_flag = civil_war_prov_1 }
+				pretender_rebels = 4
+				clr_province_flag = civil_war_prov_1
+			}
+			random_owned_province = {
+				limit = { has_province_flag = civil_war_prov_2 }
+				pretender_rebels = 3
+				clr_province_flag = civil_war_prov_2
+			}
+			random_owned_province = {
+				limit = { has_province_flag = civil_war_prov_3 }
+				pretender_rebels = 3
+				clr_province_flag = civil_war_prov_3
+			}			
+		}
+	}
+	
+	option = {
+		name = idolatrous_events.1.a #Everything has a price. 
+		tooltip = {
+			add_stability = -2
+			add_authority = -100			
+		}	
+	}
+}
+
+country_event = { #The Pestilence ***PULSE***
+	id = idolatrous_events.2
+	title = idolatrous_events.2.t
+	desc = idolatrous_events.2.d
+	picture = FAMINE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = idolatrous
+		is_religion_reformed = no
+		any_known_country = {
+			is_colonial_nation = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = idolatrous_events.2.a #Horror!
+		add_authority = -50
+	}
+}
+
+country_event = { #A Meager Offering ***PULSE***
+	id = idolatrous_events.3
+	title = idolatrous_events.3.t
+	desc = idolatrous_events.3.d
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = idolatrous
+		is_religion_reformed = no
+		NOT = {
+			has_country_modifier = crafting_offerings_sham
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = idolatrous_events.3.a #May the Gods favor us.
+		add_authority = 15
+		add_country_modifier = {
+			name = "crafting_offerings_sham"
+			duration = 1825
+		}
+	}
+	option = {
+		name = idolatrous_events.3.b #We will find our own way.
+		add_prestige = -10
+	}
+}
+
+country_event = { #Cries of the Intolerant ***PULSE***
+	id = idolatrous_events.4
+	title = idolatrous_events.4.t
+	desc = idolatrous_events.4.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = idolatrous
+		is_religion_reformed = no
+		
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = idolatrous
+				}
+				save_event_target_as = place_where_the_intolerant_will_emerge
+			}
+		}
+	}
+	
+	option = {
+		name = idolatrous_events.4.a #Teach them tolerance.
+		event_target:place_where_the_intolerant_will_emerge = {
+			spawn_rebels = {
+				type = idolatrous_rebels
+				size = 2
+			}
+		}
+	}
+	option = {
+		name = idolatrous_events.4.b #Accept their demands.
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100	
+		}
+	}
+	option = {
+		name = idolatrous_events.4.c #Let the faithful sort them out.
+		add_authority = -20
+	}
+}
+
+country_event = { #Absolute Authority ***PULSE***
+	id = idolatrous_events.5
+	title = idolatrous_events.5.t
+	desc = idolatrous_events.5.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = idolatrous
+		is_religion_reformed = no
+		legitimacy_equivalent = 90
+		OR = {
+			adm = 4
+			dip = 4
+			mil = 4
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = idolatrous_events.5.a #Above all others.
+		add_authority = 15
+	}
+}
+####################GODS EVENTS##########################
+country_event = { #The Western God ***PULSE***
+	id = idolatrous_events.6
+	title = idolatrous_events.6.t
+	desc = idolatrous_events.6.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = idolatrous
+		NOT = {
+			OR = {
+				has_country_modifier = sided_with_sunnites_idol
+				has_country_modifier = sided_with_shia_idol
+			}
+		}
+		OR = {
+			primary_culture = arabian
+			primary_culture = neocaucasian
+			primary_culture = neopersian
+			primary_culture = neoafghani
+			primary_culture = neobaluchi
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = idolatrous_events.6.a #Side with the Sunnites
+		add_country_modifier = {
+			name = "sided_with_sunnites_idol"
+			duration = 3650
+		}
+	}
+	option = {
+		name = idolatrous_events.6.b #Side with the Shia
+		add_country_modifier = {
+			name = "sided_with_shia_idol"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #The Christs ***PULSE***
+	id = idolatrous_events.7
+	title = idolatrous_events.7.t
+	desc = idolatrous_events.7.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = idolatrous
+		NOT = {
+			OR = {
+				has_ruler_modifier = ilohymn_idol
+				has_ruler_modifier = jihouva_idol
+				has_ruler_modifier = jahway_idol
+				has_ruler_modifier = ohlord_idol
+				has_ruler_modifier = father_idol
+			}
+		}
+		OR = {
+			primary_culture = aussie
+			primary_culture = victorian
+			primary_culture = outbacker
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = idolatrous_events.7.a #Ilohymn
+		add_ruler_modifier = {
+			name = "ilohymn_idol"
+			duration = -1
+		}
+	}
+	option = {
+		name = idolatrous_events.7.b #Jahway
+		add_ruler_modifier = {
+			name = "jahway_idol"
+			duration = -1
+		}
+	}
+	option = {
+		name = idolatrous_events.7.c #Jihouva
+		add_ruler_modifier = {
+			name = "jihouva_idol"
+			duration = -1
+		}
+	}
+	option = {
+		name = idolatrous_events.7.e #Ohlord
+		add_ruler_modifier = {
+			name = "ohlord_idol"
+			duration = -1
+		}
+	}
+	option = {
+		name = idolatrous_events.7.f #Father
+		add_ruler_modifier = {
+			name = "father_idol"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Many Faces ***PULSE***
+	id = idolatrous_events.8
+	title = idolatrous_events.8.t
+	desc = idolatrous_events.8.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = idolatrous
+		NOT = {
+			OR = {
+				has_ruler_modifier = ganesha_idol
+				has_ruler_modifier = ganga_idol
+				has_ruler_modifier = shakti_idol
+				has_ruler_modifier = shiva_idol
+				has_ruler_modifier = surya_idol
+				has_ruler_modifier = vishnu_idol
+			}
+		}
+		OR = {
+			primary_culture = pakistani
+			primary_culture = neohindi
+			primary_culture = neobengali
+			primary_culture = neodravidian
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = idolatrous_events.8.a #Ganesha
+		add_ruler_modifier = {
+			name = "ganesha_idol"
+			duration = -1
+		}
+	}
+	option = {
+		name = idolatrous_events.8.b #Ganga
+		add_ruler_modifier = {
+			name = "ganga_idol"
+			duration = -1
+		}
+	}
+	option = {
+		name = idolatrous_events.8.c #Shakti
+		add_ruler_modifier = {
+			name = "shakti_idol"
+			duration = -1
+		}
+	}
+	option = {
+		name = idolatrous_events.8.e #Shiva
+		add_ruler_modifier = {
+			name = "shiva_idol"
+			duration = -1
+		}
+	}
+	option = {
+		name = idolatrous_events.8.f #Surya
+		add_ruler_modifier = {
+			name = "surya_idol"
+			duration = -1
+		}
+	}
+	option = {
+		name = idolatrous_events.8.g #Vishnu
+		add_ruler_modifier = {
+			name = "vishnu_idol"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Inward Thought ***PULSE***
+	id = idolatrous_events.9
+	title = idolatrous_events.9.t
+	desc = idolatrous_events.9.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = idolatrous
+		culture_group = neochinese_group
+		NOT = {
+			OR = {
+				has_ruler_modifier = mahayana_idol
+				has_ruler_modifier = theravada_idol
+				has_ruler_modifier = vajrayana_idol
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = idolatrous_events.9.a #Mahayana
+		add_ruler_modifier = {
+			name = "mahayana_idol"
+			duration = -1
+		}
+	}
+	option = {
+		name = idolatrous_events.9.b #Theravada
+		add_ruler_modifier = {
+			name = "theravada_idol"
+			duration = -1
+		}
+	}
+	option = {
+		name = idolatrous_events.9.c #Vajrayana
+		add_ruler_modifier = {
+			name = "vajrayana_idol"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Harmony ***PULSE***
+	id = idolatrous_events.10
+	title = idolatrous_events.10.t
+	desc = idolatrous_events.10.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = idolatrous
+		culture_group = neochinese_group
+		NOT = {
+			has_country_modifier = harmony_with_nature_idol
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = idolatrous_events.10.a #Embrace the Harmony
+		add_country_modifier = {
+			name = "harmony_with_nature_idol"
+			duration = 3650
+		}
+	}
+	option = {
+		name = idolatrous_events.10.b #We have many faults
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+	}
+}

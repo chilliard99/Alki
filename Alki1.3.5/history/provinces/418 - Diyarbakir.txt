@@ -1,0 +1,18 @@
+#418 - Diyarbakir
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y01
+controller = Y01
+add_core = Y01
+culture = yooper
+religion = islam
+capital = "Diyar Bekir"
+trade_goods = iron #Menominee Range
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+discovered_by = western

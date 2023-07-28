@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = chinese
+religion = neoshinto
+primary_culture = hokurikuan
+capital = 104 #Toyama
+
+
+1425.12.4 = {
+	monarch = {
+		name = "Kato"
+		dynasty = "Toyama"
+		birth_date = 1425.12.4
+		adm = 3
+		dip = 3
+		mil = 5
+	}
+}

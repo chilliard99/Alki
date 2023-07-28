@@ -1,0 +1,65 @@
+
+spriteTypes = {
+	spriteType = {
+		name = "elevate_denomination_ecclesial"
+		texturefile = "gfx//interface//elevate_denomination_ecclesial.dds"
+	}
+	spriteType = {
+		name = "grand_quorum_procession"
+		texturefile = "gfx//interface//grand_quorum_procession.dds"
+	}
+	spriteType = {
+		name = "encourage_frontiersmen"
+		texturefile = "gfx//interface//encourage_frontiersmen.dds"
+	}
+	spriteType = {
+		name = "evoke_spritual_guidance"
+		texturefile = "gfx//interface//evoke_spritual_guidance.dds"
+	}
+	spriteType = {
+		name = "tap_into_tithes"
+		texturefile = "gfx//interface//tap_into_tithes.dds"
+	}
+	spriteType = {
+		name = "invite_council_representative"
+		texturefile = "gfx//interface//invite_council_representative.dds"
+	}
+	spriteType = {
+		name = "rally_priesthood"
+		texturefile = "gfx//interface//rally_priesthood.dds"
+	}
+	spriteType = {
+		name = "found_outreach_program"
+		texturefile = "gfx//interface//found_outreach_program.dds"
+	}
+	spriteType = {
+		name = "inspire_holy_wrath"
+		texturefile = "gfx//interface//inspire_holy_wrath.dds"
+	}
+	spriteType = {
+		name = "promote_commerce"
+		texturefile = "gfx//interface//promote_commerce.dds"
+	}
+	
+	spriteType = {
+		name = "connect_with_nature_theanite"
+		texturefile = "gfx//interface//connect_with_nature_theanite.dds"
+	}
+	spriteType = {
+		name = "require_reflection"
+		texturefile = "gfx//interface//require_reflection.dds"
+	}
+	spriteType = {
+		name = "channel_positive_energy"
+		texturefile = "gfx//interface//channel_positive_energy.dds"
+	}
+	spriteType = {
+		name = "respect_ancient_ways"
+		texturefile = "gfx//interface//respect_ancient_ways.dds"
+	}
+	spriteType = {
+		name = "align_chakras"
+		texturefile = "gfx//interface//align_chakras.dds"
+	}
+	
+}	

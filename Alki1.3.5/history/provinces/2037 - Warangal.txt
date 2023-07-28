@@ -1,0 +1,17 @@
+#2037 - Warangal
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y88
+controller = Y88
+add_core = Y88
+culture = paiute
+religion = partisan
+capital = "Warangal"
+trade_goods = gold #DeLamar Mine, silver but aint nobody gotta know
+hre = yes
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes

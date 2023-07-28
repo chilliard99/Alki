@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = antioqueno
+religion = catholico 
+technology_group = indian
+capital = 4253	#Bucaramanga
+
+1418.2.18 = {
+	monarch = {
+		name = "Geo"
+		dynasty = "Socorro"
+		birth_date = 1418.2.18
+		adm = 4
+		dip = 2
+		mil = 4
+	}
+}
+1437.1.12 = {
+	heir = {
+		name = "Antionio V"
+		monarch_name = "Antionio V"
+		dynasty = "Socorro"
+		birth_date = 1437.1.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 1
+		mil = 6
+	}
+}

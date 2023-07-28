@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = stanislaus
+religion = partisan
+technology_group = western
+capital = 1827	 #Stanislaus
+religious_school = freedonian_party
+
+1417.5.15 = {
+	monarch = {
+		name = "Gabriel"
+		dynasty = "Stanislaus"
+		birth_date = 1417.5.15
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}
+1436.3.12 = {
+	heir = {
+		name = "Thompson"
+		monarch_name = "Thompson"
+		dynasty = "Stanislaus"
+		birth_date = 1436.3.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 0
+		dip = 1
+		mil = 0
+	}
+}

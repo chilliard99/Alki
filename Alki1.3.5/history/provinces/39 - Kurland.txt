@@ -1,0 +1,15 @@
+#Kurland, center at Goldingen
+discovered_by = chinese
+owner = V05
+controller = V05
+add_core = X39
+culture = kyushuan_g
+religion = neoshinto
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = iron #Iron Sand 
+base_manpower = 1
+capital = "Goldingen"
+is_city = yes
+discovered_by = ottoman

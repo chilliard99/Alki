@@ -1,0 +1,15 @@
+#120 - Abbruzzi
+discovered_by = chinese
+owner = X17
+controller = X17
+add_core = X17
+culture = hokkaidan 
+religion = neoshinto 
+hre = no 
+base_tax = 3
+base_production = 3
+trade_goods = gems #Noda Tamagawa mine. Manganese = Rhodonite. Wow gem knowledge in my eu4?!? I wanna kill myself.  
+base_manpower = 3
+capital = "L'Aquila" 
+is_city = yes 
+discovered_by = eastern

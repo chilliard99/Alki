@@ -1,0 +1,17 @@
+#2046 - Nasirabad
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y90
+controller = Y90
+add_core = Y90
+culture = seattlain
+religion = partisan
+capital = "Nasirabad"
+trade_goods = fish #clatsop
+hre = yes
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

@@ -1,0 +1,15 @@
+# 2114 - Ereen
+discovered_by = eastern
+discovered_by = western
+owner = W00
+controller = W00
+add_core = W00
+culture = assiniboine
+religion = theanite
+capital = "Ereen"
+trade_goods = grain #highest grain production in north west territories
+hre = no
+base_tax = 2 
+base_production = 1
+base_manpower = 1
+is_city = yes

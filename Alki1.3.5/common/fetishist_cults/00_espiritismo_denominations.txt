@@ -1,0 +1,600 @@
+#############CUBANO DENOMINATIONS#####################
+santeria_denom = {
+	diplomatic_reputation = 2
+	diplomat = 1
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = santeria_denom
+		OR = {
+			culture_group = cubano
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 1
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+	        NOT = {
+				num_of_allies = 1
+			}
+			factor = 2
+		}
+	}
+}
+
+palo_denom = {
+	horde_unity = 1
+	legitimacy = 1
+	republican_tradition = 0.25
+	devotion = 1
+	meritocracy = 1
+	max_absolutism = 5
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = palo_denom
+		OR = {
+			culture_group = cubano
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 2
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+	        NOT = {
+				legitimacy_equivalent = 90
+			}
+			factor = 2
+		}
+		modifier = {
+			current_age = age_of_absolutism
+			factor = 2
+		}
+	}
+}
+
+abakua_denom = {
+	land_morale = 0.1
+	spy_offence = 0.1
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = abakua_denom
+		OR = {
+			culture_group = cubano
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 3
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+#############HISPANIOLAN DENOMINATIONS#####################
+
+divisiones_denom = {
+	advisor_cost = -0.15
+	advisor_pool = 1
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = divisiones_denom
+		OR = {
+			culture_group = hispaniolan
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 4
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			OR = {
+				primary_culture = dominican
+			}
+			factor = 3
+		}
+	}
+}
+
+vodou_denom = {
+	ae_impact = -0.1
+	discipline = 0.05
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = vodou_denom
+		OR = {
+			culture_group = hispaniolan
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 5
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			OR = {
+				primary_culture = haitian
+			}
+			factor = 3
+		}
+	}
+}
+
+orishan_denom = {
+	global_unrest = -2
+	num_accepted_cultures = 1
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = orishan_denom
+		OR = {
+			culture_group = hispaniolan
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 6
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+#############ANTILLEAN DENOMINATIONS#####################
+
+rastafari_denom = {
+	stability_cost_modifier = -0.15
+	production_efficiency = 0.1
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = rastafari_denom
+		OR = {
+			culture_group = antillian
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 7
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			OR = {
+				primary_culture = jamaican
+			}
+			factor = 3
+		}
+	}
+}
+
+hijos_de_dios_denom = {
+	tolerance_heretic = 2
+	tolerance_own = 2
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = hijos_de_dios_denom
+		OR = {
+			culture_group = antillian
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 8
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+cemi_denom = {
+	tolerance_heathen = 2
+	hostile_attrition = 1
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = cemi_denom
+		OR = {
+			culture_group = antillian
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 9
+
+	ai_will_do = {
+		modifier = {
+			OR = {
+				primary_culture = boricua
+			}
+			factor = 3
+		}
+	}
+}
+#############AMAZONIAN DENOMINATIONS#####################
+winti_denom = {
+	culture_conversion_cost = -0.1
+	dip_tech_cost_modifier = -0.1
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = winti_denom
+		OR = {
+			culture_group = amazonian
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+lioncero_denom = {
+	may_recruit_female_generals = yes
+	leader_cost = -0.33
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = lioncero_denom
+		OR = {
+			culture_group = amazonian
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 11
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			primary_culture = caraqueno
+			factor = 3
+		}
+	}
+}
+
+tambor_de_mina_denom = {
+	defensiveness = 0.2
+	global_trade_goods_size_modifier = 0.05
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = tambor_de_mina_denom
+		OR = {
+			culture_group = amazonian
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 12
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			is_in_war = {
+				defender_leader = ROOT
+			}
+			factor = 2
+		}
+	}
+}
+#############MALAY+PATAGONIAN DENOMINATIONS#####################
+
+candomble_denom = {
+	idea_cost = -0.05
+	army_tradition = 0.05
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = candomble_denom
+		OR = {
+			culture_group = neomalay
+			culture_group = neopatagonian
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 13
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			NOT = {
+				army_tradition = 50
+			}	
+			factor = 2
+		}
+	}
+}
+
+umbanda_denom = {
+	administrative_efficiency = 0.05
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = umbanda_denom
+		OR = {
+			culture_group = neomalay
+			culture_group = neopatagonian
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 14
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			primary_culture = neobrazilian
+			factor = 3
+		}
+	}
+}
+
+anitism_denom = {
+	land_forcelimit_modifier = 0.1
+	manpower_recovery_speed = 0.1
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = anitism_denom
+		OR = {
+			culture_group = neomalay
+			culture_group = neopatagonian
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 15
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			primary_culture = neofilipino
+			factor = 3
+		}
+	}
+}
+
+#############NEW WORLD DENOMINATIONS#####################
+
+yorubite_denom = {
+	native_assimilation = 0.25
+	land_attrition = -0.1
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = yorubite_denom
+		OR = {
+			capital_scope = {
+				OR = {
+					continent = pablonia
+					continent = akilineq
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 16
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+zhongish_denom = {
+	diplomats = 1
+	improve_relation_modifier = 0.1
+	
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = zhongish_denom
+		OR = {
+			capital_scope = {
+				OR = {
+					continent = pablonia
+					continent = akilineq
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 17
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			NOT = {
+				num_of_allies = 1
+			}
+			factor = 2
+		}
+	}
+}
+
+#############COLOMBIAN AND ANDEAN DENOMINATIONS#####################
+
+yanin_denom = {
+	years_of_nationalism = -5
+	religious_unity = 0.25
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = yanin_denom
+		OR = {
+			culture_group = newandean
+			culture_group = colombian
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 18
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}
+	}
+}
+
+yuyu_denom = {
+	core_creation = -0.1
+	development_cost = -0.1
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = yuyu_denom
+		OR = {
+			culture_group = newandean
+			culture_group = colombian
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 19
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}
+	}
+}
+
+#############AMERICAN DENOMINATIONS#####################
+
+hoodoo_denom = {
+	colonists = 1
+	naval_morale = 0.1
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = hoodoo_denom
+		OR = {
+			technology_group = western
+			technology_group = eastern
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 20
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}
+	}
+}
+
+#############JAPANESE DENOMINATIONS#####################
+
+shinteria_denom = {
+	fire_damage = 0.1
+	yearly_corruption = -0.05
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = shinteria_denom
+		OR = {
+			technology_group = chinese
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 21
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}
+	}
+}
+
+#############MEXICAN DENOMINATIONS#####################
+
+santa_muerte_denom = {
+	global_manpower_modifier = 0.1
+	build_cost = -0.1
+
+	allow = {
+		religion = espiritismo
+		has_unlocked_cult = santa_muerte_denom
+		OR = {
+			technology_group = muslim
+			custom_trigger_tooltip = {
+				tooltip = has_enacted_promote_spiritual_diversity_decision
+				has_country_flag = accepting_other_cults_espi
+			}	
+		}
+	}
+	sprite = 22
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1
+		}
+	}
+}

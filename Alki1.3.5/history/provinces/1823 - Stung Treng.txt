@@ -1,0 +1,17 @@
+#1823 - Stung Treng
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y76
+controller = Y76
+add_core = Y76
+culture = vinyard
+religion = partisan
+capital = "Stung Treng"
+trade_goods = wine #napa?
+hre = yes
+base_tax = 4
+base_production = 5
+base_manpower = 5
+is_city = yes

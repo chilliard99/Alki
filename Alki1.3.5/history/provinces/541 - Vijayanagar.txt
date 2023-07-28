@@ -1,0 +1,17 @@
+#541 - Vijayanagar
+discovered_by = south_american
+culture = neodravidian
+religion = idolatrous
+capital = "Vijayanagar"
+trade_goods = gold #Bengaluru gold fields
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 4
+native_size = 50
+native_ferocity = 4
+native_hostileness = 9
+add_core = Z69
+owner = Z69
+controller = Z69
+center_of_trade = 1

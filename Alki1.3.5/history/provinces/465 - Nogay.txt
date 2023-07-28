@@ -1,0 +1,18 @@
+#465 - Nogay
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = X00
+controller = X00
+add_core = X00
+culture = zean
+religion = theanite
+capital = "Saraychik"
+trade_goods = gems #Gypsum
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 3
+is_city = yes
+discovered_by = western

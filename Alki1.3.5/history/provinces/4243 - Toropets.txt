@@ -1,0 +1,14 @@
+#4243 - Toropets
+discovered_by = ottoman
+owner = V08
+controller = V08
+add_core = V08
+culture = leeward
+religion = espiritismo
+hre = no
+base_tax = 4
+base_production = 4
+trade_goods = cotton #more sea island cotton 
+base_manpower = 3
+capital = "Toropets"
+is_city = yes	 

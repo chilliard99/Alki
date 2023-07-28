@@ -1,0 +1,16 @@
+#808 - Cuzco
+discovered_by = indian
+owner = V95
+controller = V95
+add_core = V95
+culture = incan
+religion = yanantin
+capital = "Cuzco"
+trade_goods = gems #I think
+hre = no
+fort_15th = yes
+base_tax = 7
+base_production = 7
+base_manpower = 6
+is_city = yes
+center_of_trade = 1

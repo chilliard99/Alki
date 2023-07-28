@@ -1,0 +1,17 @@
+#1020 - Yamashiro (Kyoto)
+discovered_by = chinese
+owner = X29
+controller = X29
+add_core = X29
+culture = wajin
+religion = neoshinto
+capital = "Kyoto"
+trade_goods = silk #Silk Capital
+hre = no
+base_tax = 6
+base_production = 6
+base_manpower = 7
+is_city = yes
+discovered_by = eastern
+fort_15th = yes
+add_province_triggered_modifier = shrine_of_fushimi_inari_taisha

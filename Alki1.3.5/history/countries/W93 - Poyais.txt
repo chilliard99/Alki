@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = baymen
+religion = catholico
+technology_group = muslim
+capital = 4081	#Belmonpan
+
+1402.2.14 = {
+	monarch = {
+		name = "Hattie II"
+		dynasty = "MacGregor"
+		birth_date = 1402.2.14
+		adm = 5
+		dip = 4
+		mil = 5
+		female = yes
+	}
+}
+1426.7.8 = {
+	heir = {
+		name = "Khalid II"
+		monarch_name = "Khalid II"
+		dynasty = "MacGregor"
+		birth_date = 1426.7.8
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}

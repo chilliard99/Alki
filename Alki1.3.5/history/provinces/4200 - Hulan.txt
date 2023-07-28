@@ -1,0 +1,16 @@
+#4200 - Hulan
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = chinese
+owner = V05
+controller = V05
+add_core = V05
+culture = oriente
+religion = catholico
+capital = "Hulan"
+trade_goods = sugar #JESUS ITS ALL SUGAR
+hre = no
+base_tax = 5
+base_production = 4
+base_manpower = 4
+is_city = yes

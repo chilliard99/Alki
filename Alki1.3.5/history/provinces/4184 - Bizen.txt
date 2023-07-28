@@ -1,0 +1,17 @@
+#4184 - Bizen
+discovered_by = chinese
+add_core = X32
+controller = X32
+owner = X32
+culture = chugokan
+religion = neoshinto
+capital = "Okayama"
+trade_goods = iron #Fukuyama big iron
+hre = no
+base_tax = 7
+base_manpower = 7
+base_production = 6
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman
+fort_15th = yes

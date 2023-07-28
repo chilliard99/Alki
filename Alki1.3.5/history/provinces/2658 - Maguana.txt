@@ -1,0 +1,15 @@
+# No previous file for Maguana
+discovered_by = ottoman
+discovered_by = muslim
+owner = V10
+controller = V10
+add_core = V10
+culture = dominican
+religion = espiritismo
+capital = "Maguana"
+trade_goods = livestock #important livestock center
+hre = no
+base_tax = 5 
+base_production = 5
+base_manpower = 4
+is_city = yes

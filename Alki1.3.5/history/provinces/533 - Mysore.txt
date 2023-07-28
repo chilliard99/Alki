@@ -1,0 +1,16 @@
+#533 - Mysore
+discovered_by = south_american
+culture = neodravidian
+religion = idolatrous
+capital = "Ummatur"
+trade_goods = silk #Idolatrous silk
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 2
+native_size = 50
+native_ferocity = 4
+native_hostileness = 9
+add_core = Z68
+owner = Z68
+controller = Z68

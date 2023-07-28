@@ -1,0 +1,110 @@
+	### Transposian Mission Icons ###
+
+spriteTypes = {
+	spriteType = {
+		name = "expanding_the_sphere"
+		texturefile = "gfx//interface//missions//expanding_the_sphere.dds"
+	}
+	spriteType = {
+		name = "great_nippon"
+		texturefile = "gfx//interface//missions//great_nippon.dds"
+	}
+	spriteType = {
+		name = "reaching_across_the_isle"
+		texturefile = "gfx//interface//missions//reaching_across_the_isle.dds"
+	}
+	spriteType = {
+		name = "rivals_in_the_north"
+		texturefile = "gfx//interface//missions//rivals_in_the_north.dds"
+	}
+	spriteType = {
+		name = "taking_back_our_city"
+		texturefile = "gfx//interface//missions//taking_back_our_city.dds"
+	}
+	spriteType = {
+		name = "the_ishikawan_breeze"
+		texturefile = "gfx//interface//missions//the_ishikawan_breeze.dds"
+	}
+	spriteType = {
+		name = "the_nakatsugwans"
+		texturefile = "gfx//interface//missions//the_nakatsugwans.dds"
+	}
+	spriteType = {
+		name = "enlist_northern_push"
+		texturefile = "gfx//interface//missions//enlist_northern_push.dds"
+	}
+	spriteType = {
+		name = "enlist_southern_push"
+		texturefile = "gfx//interface//missions//enlist_southern_push.dds"
+	}
+	spriteType = {
+		name = "tohoku_domination"
+		texturefile = "gfx//interface//missions//tohoku_domination.dds"
+	}
+	spriteType = {
+		name = "freeing_the_niigatans"
+		texturefile = "gfx//interface//missions//freeing_the_niigatans.dds"
+	}
+	spriteType = {
+		name = "into_hokkaido"
+		texturefile = "gfx//interface//missions//into_hokkaido.dds"
+	}
+	spriteType = {
+		name = "a_dynasty_to_rival_reiwan"
+		texturefile = "gfx//interface//missions//a_dynasty_to_rival_reiwan.dds"
+	}
+	spriteType = {
+		name = "southern_honshu"
+		texturefile = "gfx//interface//missions//southern_honshu.dds"
+	}
+	spriteType = {
+		name = "land_of_the_kami"
+		texturefile = "gfx//interface//missions//land_of_the_kami.dds"
+	}
+	spriteType = {
+		name = "the_noble_isle"
+		texturefile = "gfx//interface//missions//the_noble_isle.dds"
+	}
+	
+	spriteType = {
+		name = "reclaim_the_shogun_trade"
+		texturefile = "gfx//interface//missions//reclaim_the_shogun_trade.dds"
+	}
+	spriteType = {
+		name = "combat_ainu_trade_agression"
+		texturefile = "gfx//interface//missions//combat_ainu_trade_agression.dds"
+	}
+	spriteType = {
+		name = "the_great_port_of_tokyo"
+		texturefile = "gfx//interface//missions//the_great_port_of_tokyo.dds"
+	}
+	spriteType = {
+		name = "proclaim_trading_supremacy"
+		texturefile = "gfx//interface//missions//proclaim_trading_supremacy.dds"
+	}
+	spriteType = {
+		name = "dominate_yoroppan_hinterlands"
+		texturefile = "gfx//interface//missions//dominate_yoroppan_hinterlands.dds"
+	}
+	spriteType = {
+		name = "a_paradise_across_the_sea"
+		texturefile = "gfx//interface//missions//a_paradise_across_the_sea.dds"
+	}
+	spriteType = {
+		name = "game_set_match"
+		texturefile = "gfx//interface//missions//game_set_match.dds"
+	}
+	spriteType = {
+		name = "the_grand_caliphate"
+		texturefile = "gfx//interface//missions//the_grand_caliphate.dds"
+	}
+	spriteType = {
+		name = "kanata_civil_war_victory"
+		texturefile = "gfx//interface//missions//kanata_civil_war_victory.dds"
+	}
+	
+	spriteType = {
+		name = "ending_mendozas_plot_otrep"
+		texturefile = "gfx//interface//missions//ending_mendozas_plot_otrep.dds"
+	}
+}	

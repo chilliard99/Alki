@@ -1,0 +1,15 @@
+#2759 - Gambela
+discovered_by = ottoman
+discovered_by = muslim
+owner = W55
+controller = W55
+add_core = W55
+culture = antonian 
+religion = catholico
+capital = "Gambela"
+is_city = yes
+base_manpower = 1
+trade_goods = grain #more farmin
+hre = no
+base_tax = 2
+base_production = 1

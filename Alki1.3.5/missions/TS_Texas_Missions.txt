@@ -1,0 +1,2094 @@
+texan_missions_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = W49
+	}
+	has_country_shield = yes
+	
+	louisian_affairs = {
+		icon = catholic_confraternity
+		required_missions = { into_the_breach }
+		position = 2
+		trigger = {
+			if = {
+				limit = {
+					any_known_country = {
+						culture_group = louisian
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = ally_any_nation_of_louisiana_culture
+					any_ally = {
+						culture_group = louisian
+					}
+				}
+				mil_power = 200
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = no_more_louisians.tt
+					always = yes
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					any_known_country = {
+						culture_group = louisian
+						alliance_with = ROOT
+						development_in_provinces = {
+							value = 100
+						}
+					}
+				}
+				add_dip_power = 200
+			}
+			else_if = {
+				limit = {
+					any_known_country = {
+						culture_group = louisian
+					}
+				}
+				add_mil_power = -200
+				country_event = { id = texan_events.6 }
+			}
+			else = {
+				custom_tooltip = no_more_louisians.tt
+			}
+		}
+	}
+	texans_in_the_bayou = {
+		icon = mission_portuguese_interference
+		required_missions = { louisian_affairs }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = cajun_country_area
+				area = new_orleans_area
+				area = new_mississippi_area
+				area = piney_woods_area
+				area = sabine_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+		 	cajun_country_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			new_orleans_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			new_mississippi_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			piney_woods_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sabine_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			tampa_bay_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			orlando_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			nature_coast_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			mouth_of_the_nile_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			west_nile_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			the_north_colonies_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	alexandria_whole = {
+		icon = mission_colonize_florida
+		required_missions = { restore_texan_glory texans_in_the_bayou }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				area = tampa_bay_area
+				area = orlando_area
+				area = nature_coast_area
+				area = mouth_of_the_nile_area
+				area = west_nile_area
+				area = the_north_colonies_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+		 	tampa_bay_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			orlando_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			nature_coast_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mouth_of_the_nile_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_nile_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			the_north_colonies_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = all_cotton_prov_gain_base_prod_texas.tt
+			hidden_effect = {
+				all_owned_province = {
+					limit = {
+						trade_goods = cotton
+					}
+					add_base_production = 1
+				}
+			}
+		}
+	}
+	the_riverside_revolt = {
+		icon = army_reforms
+		required_missions = { consolidate_texas }
+		position = 15
+		trigger = {
+		 	army_size = W55
+		}
+		effect = {
+			texas_region  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_core = ROOT
+			}
+		}
+	}
+	reclaiming_the_river = {
+		icon = consolidate_the_stadholders
+		required_missions = { the_riverside_revolt }
+		position = 23
+		provinces_to_highlight = {
+			OR = {
+				region = texas_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+		 	texas_region  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = { id = texan_events.8 }
+			tampico_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tamaulipas_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			frontera_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			nuevo_leon_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	tampering_in_tamaulipas = {
+		icon = confront_the_lombards
+		required_missions = { reclaiming_the_river }
+		position = 25
+		provinces_to_highlight = {
+			OR = {
+				area = tampico_area
+				area = tamaulipas_area
+				area = frontera_area
+				area = nuevo_leon_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			tampico_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tamaulipas_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			frontera_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			nuevo_leon_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			las_parras_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			cuatrociengas_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			salado_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			curva_inversa_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	containing_coahuila = {
+		icon = end_the_habsburgs
+		required_missions = { tampering_in_tamaulipas }
+		position = 26
+		provinces_to_highlight = {
+			OR = {
+				area = las_parras_area
+				area = cuatrociengas_area
+				area = salado_area
+				area = curva_inversa_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			las_parras_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cuatrociengas_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			salado_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			curva_inversa_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_years_of_income = 5
+		}
+	}
+}
+
+texan_missions_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = W49
+	}
+	has_country_shield = yes
+	
+	secure_protection_texas = {
+		icon = mission_alliances
+		required_missions = { into_the_breach }
+		position = 2
+		trigger = {
+			num_of_allies = 2
+		}
+		effect = {
+			add_dip_power = 50
+			custom_tooltip = gain_back_diplomats_texas.tt
+			hidden_effect = {
+				remove_country_modifier = tenuous_reputationI
+				add_country_modifier = {
+					name = "tenuous_reputationII"
+					duration = -1
+				}
+			}
+		}
+	}
+	enforce_hegemony_texas = {
+		icon = crush_heretic_strongholds
+		required_missions = { secure_protection_texas purge_the_generals }
+		position = 7
+		trigger = {
+			stability = 3
+		}
+		effect = {
+			add_stability = -5
+			custom_tooltip = lose_autonomy_in_states_texas.tt
+			hidden_effect = {
+				every_province = {
+					limit = {
+						has_province_modifier = poor_bureaucracy
+					}
+					remove_province_modifier = poor_bureaucracy
+				}
+			}
+		}
+	}
+	stomp_out_corruption = {
+		icon = mission_brazilian_bandeirantes
+		required_missions = { enforce_hegemony_texas }
+		position = 9
+		trigger = {
+			legitimacy = 100
+			mil_power = 300
+		}
+		effect = {
+			add_mil_power = -300
+			custom_tooltip = lose_corruption_creep_texas.tt
+			hidden_effect = {
+				remove_country_modifier = total_corruption
+			}
+		}
+	}
+	restore_texan_glory = {
+		icon = mission_empire
+		required_missions = { stomp_out_corruption total_solvency classicalism_texas }
+		position = 11
+		trigger = {
+		 	is_great_power = yes
+		}
+		effect = {
+			add_prestige = 25
+			custom_tooltip = get_back_diplo_rep.tt
+			custom_tooltip = gain_cores_on_all_territories_held_at_game_start_without_cores.tt
+			hidden_effect = {
+				remove_country_modifier = tenuous_reputationII
+				grandhandle_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+				new_llano_estacado_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+				concho_valley_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+				blackland_praries_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+				austin_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+				crossroads_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+				gavlestone_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+				brazos_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+				tatouine_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+				great_carson_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+				1812 = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+				2446 = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+				2445 = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+				2440 = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+				2497 = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+				2456 = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+				2475 = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+				883 = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+				2474 = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+				2688 = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+			}
+		}
+	}
+	consolidate_texas = {
+		icon = mission_recruit_streltsy
+		required_missions = { restore_texan_glory }
+		position = 14
+		provinces_to_highlight = {
+			OR = {
+				area = grandhandle_area
+				area = new_llano_estacado_area
+				area = concho_valley_area
+				area = blackland_praries_area
+				area = austin_area
+				area = crossroads_area
+				area = gavlestone_area
+				area = brazos_area
+				area = tatouine_area
+				area = great_carson_area
+				province_id = 1812 
+				province_id = 2446 
+				province_id = 2445
+				province_id = 2440
+				province_id = 2497 
+				province_id = 2456
+				province_id = 2475
+				province_id = 883 
+				province_id = 2474 
+				province_id = 2688 
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = own_all_territories_held_at_game_start_texas.tt
+				grandhandle_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				new_llano_estacado_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				concho_valley_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				blackland_praries_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				austin_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				crossroads_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				gavlestone_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				brazos_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				tatouine_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				great_carson_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				1812  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				2446  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				2445  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				2440  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				2497  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				2456  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				2475  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				883  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				2474  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				2688  = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			country_event = { id = texan_events.7 }
+			white_sands_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			ablubuerque_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			elephant_butte_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			zuni_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			gilas_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			ghardaia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	nuevo_mexico = {
+		icon = mission_consolidate_the_state
+		required_missions = { consolidate_texas }
+		position = 16
+		provinces_to_highlight = {
+			OR = {
+				area = white_sands_area
+				area = ablubuerque_area
+				area = elephant_butte_area
+				area = gilas_area
+				area = ghardaia_area
+				area = zuni_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			zuni_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			white_sands_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ablubuerque_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			elephant_butte_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			gilas_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ghardaia_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			agmod_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			pheonix_wilds_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tohono_dents_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			white_mountains_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tuscon_border_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	assassin_of_arizonia = {
+		icon = mission_teutonic_knights
+		required_missions = { nuevo_mexico }
+		position = 17
+		provinces_to_highlight = {
+			OR = {
+				area = agmod_area
+				area = pheonix_wilds_area
+				area = tohono_dents_area
+				area = white_mountains_area
+				area = tuscon_border_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			agmod_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			pheonix_wilds_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tohono_dents_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			white_mountains_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tuscon_border_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			2419 = {
+				add_province_modifier = {
+					name = "bulwark_against_the_partisans"
+					duration = -1
+				}
+			}
+			bahia_penasco_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			disparate_de_zaino_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hermosillo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hiak_vatwe_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			alamos_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	silencing_sonora = {
+		icon = mission_landsknecht_soldier
+		required_missions = { assassin_of_arizonia }
+		position = 21
+		provinces_to_highlight = {
+			OR = {
+				area = bahia_penasco_area
+				area = disparate_de_zaino_area
+				area = hermosillo_area
+				area = hiak_vatwe_area
+				area = alamos_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			bahia_penasco_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			disparate_de_zaino_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hermosillo_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hiak_vatwe_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			alamos_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mil_power = 100
+			cuarenta_casas_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			juarez_tramo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			chihuahua_central_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tutuaca_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			conchos_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	crushing_chihuahua = {
+		icon = mission_conquer_romania
+		required_missions = { silencing_sonora }
+		position = 22
+		provinces_to_highlight = {
+			OR = {
+				area = cuarenta_casas_area
+				area = juarez_tramo_area
+				area = chihuahua_central_area
+				area = tutuaca_area
+				area = conchos_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			cuarenta_casas_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			juarez_tramo_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			chihuahua_central_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tutuaca_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			conchos_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			el_norte_region = {
+				add_province_modifier = {
+					name = "reigning_in_el_norte"
+					duration = 9125
+				}
+			}
+			sinaloa_norte_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			sinaloa_sur_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	africa_united = {
+		icon = mission_restore_faith_in_the_throne
+		required_missions = { reclaiming_the_river crushing_chihuahua }
+		position = 24
+		trigger = {
+		 	development_in_provinces = {
+				value = 2000
+				continent = mexico
+			}
+		}
+		effect = {
+			country_event = { id = texan_events.9 }
+		}
+	}
+}
+
+texan_missions_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = W49
+	}
+	has_country_shield = yes
+	
+	into_the_breach = {
+		icon = balance_the_estates
+		required_missions = { }
+		position = 1
+		trigger = {
+			stability = 1
+			dip_power = 200
+		}
+		effect = {
+			add_years_of_income = 0.25
+			custom_tooltip = gain_back_merchants_texas.tt
+			hidden_effect = {
+				remove_country_modifier = disorganized_tradeI
+				add_country_modifier = {
+					name = "disorganized_tradeII"
+					duration = -1
+				}
+			}
+		}
+	}
+	dictating_markets_texas = {
+		icon = dominant_economy
+		required_missions = { into_the_breach secure_protection_texas }
+		position = 3
+		trigger = {
+			mercantilism = 15
+		}
+		effect = {
+			add_mercantilism = -15
+			custom_tooltip = abolish_final_trade_barrier_texas.tt
+			hidden_effect = {
+				remove_country_modifier = disorganized_tradeII
+			}
+		}
+	}
+	death_and_taxes_texas = {
+		icon = mission_high_income
+		required_missions = { dictating_markets_texas paying_whats_due_texas }
+		position = 5
+		trigger = {
+			stability = 2
+			adm_power = 200
+		}
+		effect = {
+			country_event = { id = texan_events.5 }
+		}
+	}
+	copy_what_works_texas = {
+		icon = mission_war_chest
+		required_missions = { enforce_hegemony_texas death_and_taxes_texas }
+		position = 8
+		trigger = {
+			stability = 3
+			NOT = { num_of_loans = 0 }
+			NOT = { inflation = 0 }
+		}
+		effect = {
+			add_stability = -3
+			custom_tooltip = remove_ineffective_economy.tt
+			hidden_effect = {
+				remove_country_modifier = ineffective_economy
+			}
+		}
+	}
+	total_solvency = {
+		icon = austria_prospers
+		required_missions = { copy_what_works_texas }
+		position = 10
+		trigger = {
+			current_income_balance = 5
+			years_of_income = 1
+		}
+		effect = {
+			if = {
+				limit = {
+					stability = 3
+				}
+				add_adm_power = 100
+			}
+			else = {
+				add_stability = 1
+			}
+			add_prestige = 10
+			add_country_modifier = {
+				name = "post_crisis_boom"
+				duration = 18250
+			}
+		}
+	}
+	spirit_of_santa_ana = {
+		icon = mission_seize_the_isles
+		required_missions = { revive_the_waco_docks }
+		position = 13
+		provinces_to_highlight = {
+			OR = {
+				area = southern_sicily_area
+				area = northern_sicily_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			southern_sicily_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northern_sicily_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "crusader_seal_italy"
+				duration = 9125
+			}
+		 	wichita_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kansas_bay_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			wrangleria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	approaching_eden = { 
+		icon = mission_rb_mediterranean_authority
+		required_missions = { spirit_of_santa_ana }
+		position = 14
+		provinces_to_highlight = {
+			OR = {
+				area = wichita_area
+				area = kansas_bay_area
+				area = wrangleria_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			wichita_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kansas_bay_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			wrangleria_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+		 	italia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	righting_the_wrong = {
+		icon = mission_steppe_warriors
+		required_missions = { approaching_eden }
+		position = 15
+		provinces_to_highlight = {
+			OR = {
+				region = italia_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			italia_region  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+		 	607 = {
+				change_province_name = "Rome"
+			}
+			italia_region = {
+				add_province_modifier = {
+					name = "catholic_italy"
+					duration = -1
+				}
+			}
+			lower_provencial_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	rome_restored = {
+		icon = invest_in_the_provinces
+		required_missions = { righting_the_wrong }
+		position = 16
+		provinces_to_highlight = {
+			OR = {
+				province_id = 607
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			607 = {
+				development = 40
+			}
+			religious_unity = 0.9
+		}
+		effect = {
+			if = {
+				limit = {
+					W83 = {
+						exists = yes
+						NOT = {
+							development_in_provinces = {
+								value = 300
+							}
+						}
+						ai = yes
+					}
+				}
+				country_event = { id = texan_events.11 }
+			}
+			else = {
+				if = {
+					limit = {
+						stability = 3
+					}
+					add_adm_power = 300
+				}
+				else = {
+					add_stability = 3
+				}
+				add_adm_power = 100
+				add_dip_power = 100
+				add_mil_power = 100
+			}
+		}
+	}
+	the_partisan_threat = {
+		icon = establish_a_standing_army
+		required_missions = { assassin_of_arizonia }
+		position = 18
+		trigger = {
+			army_size = emperor
+		}
+		effect = {
+			add_country_modifier = {
+				name = "crusader_zeal_baja"
+				duration = 9125
+			}
+			colorado_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			playas_rosarito_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			ensenada_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			san_quintin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			puerto_paraiso_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	across_the_colorado = {
+		icon = empower_the_junkers
+		required_missions = { the_partisan_threat }
+		position = 19
+		provinces_to_highlight = {
+			OR = {
+				area = colorado_area
+				area = playas_rosarito_area
+				area = ensenada_area
+				area = san_quintin_area
+				area = puerto_paraiso_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			colorado_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			playas_rosarito_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ensenada_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			san_quintin_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			puerto_paraiso_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			emperor = {
+				add_country_modifier = {
+					name = "baja_norte_lost"
+					duration = 9125
+				}
+			}
+			mulege_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			loreto_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			comondu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			cabos_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	send_them_packing = {
+		icon = assert_our_sovereignty
+		required_missions = { across_the_colorado }
+		position = 20
+		provinces_to_highlight = {
+			OR = {
+				area = mulege_area
+				area = loreto_area
+				area = comondu_area
+				area = cabos_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			mulege_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			loreto_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			comondu_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cabos_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			emperor = {
+				add_country_modifier = {
+					name = "union_embarassed"
+					duration = 9125
+				}
+			}
+			paradise_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			arizona_peninsula_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hopi_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	union_busting = {
+		icon = mission_rb_control_state_religion
+		required_missions = { send_them_packing }
+		position = 21
+		trigger = {
+			NOT = { hre_size = 1 } 
+		}
+		effect = {
+			add_country_modifier = {
+				name = "liberator_of_california"
+				duration = -1
+			}
+			add_prestige = 50
+		}
+	}
+	baja_bay_breeze = {
+		icon = mission_italian_condottiere
+		required_missions = { crushing_chihuahua }
+		position = 23
+		provinces_to_highlight = {
+			OR = {
+				area = sinaloa_norte_area
+				area = sinaloa_sur_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			sinaloa_norte_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sinaloa_sur_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			mapimi_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			nazas_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			sierra_madre_durango_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			durango_metropolitana_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	dunking_on_durango = {
+		icon = mission_impaled_soldies
+		required_missions = { baja_bay_breeze }
+		position = 25
+		provinces_to_highlight = {
+			OR = {
+				area = mapimi_area
+				area = nazas_area
+				area = sierra_madre_durango_area
+				area = durango_metropolitana_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			mapimi_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			nazas_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sierra_madre_durango_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			durango_metropolitana_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "empresian_efficiency"
+				duration = -1
+			}
+		}
+	}
+}
+
+texan_missions_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = W49
+	}
+	has_country_shield = yes
+	
+	temporary_solution_texas = {
+		icon = mission_establish_the_prikazy
+		required_missions = { }
+		position = 1
+		trigger = {
+			manpower_percentage = 0.75
+		 	army_professionalism = 0.05
+		}
+		effect = {
+		 	add_yearly_manpower = -3
+			custom_tooltip = gain_back_forcelimit_texas.tt
+			hidden_effect = {
+				remove_country_modifier = disloyal_forcesI
+				add_country_modifier = {
+					name = "disloyal_forcesII"
+					duration = -1
+				}
+			}
+		}
+	}
+	paying_whats_due_texas = {
+		icon = friends_in_high_places
+		required_missions = { temporary_solution_texas dictating_markets_texas }
+		position = 4
+		trigger = {
+			treasury = 1000
+		}
+		effect = {
+		 	add_treasury = -1000
+			custom_tooltip = gain_back_disipline_texas.tt
+			add_country_modifier = {
+				name = "paying_off_remaining_solidiers"
+				duration = 1825
+			}
+			hidden_effect = {
+				remove_country_modifier = disloyal_forcesII
+				add_country_modifier = {
+					name = "disloyal_forcesIII"
+					duration = -1
+				}
+			}
+		}
+	}
+	purge_the_generals = {
+		icon = french_revolution
+		required_missions = { paying_whats_due_texas death_and_taxes_texas }
+		position = 6
+		trigger = {
+			army_tradition = 20
+		}
+		effect = {
+			add_army_tradition = -20
+			add_manpower = -0.023
+			custom_tooltip = crisis_averted_texas.tt
+			hidden_effect = {
+				kill_leader = {
+					type = general
+				}
+				set_country_flag = purged_generals_texas
+			}
+		}
+	}
+	regain_war_enthusiasm_texas = {
+		icon = king_of_poland
+		required_missions = { purge_the_generals }
+		position = 7
+		trigger = {
+			is_at_war = yes
+		}
+		effect = {
+			if = {
+				limit = {
+					stability = 3
+				}
+				add_adm_power = 100
+			}
+			else = {
+				add_stability = 1
+			}
+			add_army_tradition = 5
+			custom_tooltip = remove_disloyal_forces.tt
+			hidden_effect = {
+				remove_country_modifier = disloyal_forcesIII
+			}
+		}
+	}
+	revive_the_waco_docks = {
+		icon = mission_early_game_buildings
+		required_missions = { restore_texan_glory }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				province_id = 886
+			}
+		}
+		trigger = {
+			886 = {
+				development = 25
+				has_shipyard_building_trigger = yes
+				owned_by = ROOT
+			}
+		}
+		effect = {
+		 	add_country_modifier = {
+				name = "revived_naval_capacity"
+				duration = 3650
+			}
+			northern_sicily_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_core = ROOT
+			}
+			southern_sicily_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_core = ROOT
+			}
+		}
+	}
+	prepare_a_crusader_fleet = {
+		icon = crusader_fleet
+		required_missions = { revive_the_waco_docks assassin_of_arizonia }
+		position = 18
+		trigger = {
+			num_of_heavy_ship = 20
+			navy_size_percentage = 0.75
+		}
+		effect = {
+			add_country_modifier = {
+				name = "crusader_zeal_utah"
+				duration = 9125
+			}
+		 	the_unitah_coast_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			unitah_central_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	heresey_of_venus = {
+		icon = mission_crusade_for_varna
+		required_missions = { prepare_a_crusader_fleet }
+		position = 20
+		provinces_to_highlight = {
+			OR = {
+				area = the_unitah_coast_area
+				area = unitah_central_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			the_unitah_coast_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			unitah_central_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+		 	the_bluffs_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			north_andalucia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	securing_uintah_holdings = {
+		icon = mission_conquer_5_states
+		required_missions = { heresey_of_venus }
+		position = 22
+		provinces_to_highlight = {
+			OR = {
+				area = the_bluffs_area
+				area = north_andalucia_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			the_bluffs_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			north_andalucia_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+		 	provo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			the_homeland_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	false_prophets = {
+		icon = mission_establish_jesuit_missions
+		required_missions = { securing_uintah_holdings }
+		position = 23
+		provinces_to_highlight = {
+			OR = {
+				province_id = 706
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			706 = {
+				religion = catholico
+			}
+		}
+		effect = {
+			add_prestige = 50
+			add_country_modifier = {
+				name = "humanizing_the_heretics"
+				duration = 9125
+			}
+			custom_tooltip = all_sacramental_nations_get_debuff.tt
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						religion = sacramental
+					}
+					add_country_modifier = {
+						name = "lost_salt_lake"
+						duration = 9125
+					}
+				}
+			}
+		}
+	}
+}
+
+texan_missions_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = W49
+	}
+	has_country_shield = yes
+	
+	rebuild_pearland = {
+		icon = mission_golden_century
+		required_missions = { dictating_markets_texas }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2682
+			}
+		}
+		trigger = {
+			if {
+				limit = {
+					2682 = {
+						owned_by = ROOT
+					}
+				}
+				2682 = {
+					development = 20
+				}
+				years_of_income = 0.5
+				adm_power = 100
+				is_institution_enabled = renaissance
+			}
+		}
+		effect = {
+			add_adm_power = -100
+			add_years_of_income = -0.5
+			2682 = {
+				add_institution_embracement = {
+					which = renaissance
+					value = 100
+				}	
+				add_province_modifier = {
+					name = "pearland_restored_kanata"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	attract_intellectuals = {
+		icon = adjust_the_general_means
+		required_missions = { rebuild_pearland }
+		position = 6
+		trigger = {
+			adm_tech = 4
+			dip_tech = 4
+			mil_tech = 4
+		}
+		effect = {
+			add_country_modifier = {
+				name = "reaching_out_to_intellectuals_texas"
+				duration = 1825
+			}
+			custom_tooltip = remove_tech_cost_texas.tt
+			hidden_effect = {
+				remove_country_modifier = creatively_bankruptI
+				add_country_modifier = {
+					name = "creatively_bankruptII"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	texan_enginuity = {
+		icon = found_the_vatican_library
+		required_missions = { enforce_hegemony_texas attract_intellectuals }
+		position = 8
+		trigger = {
+			adm_tech = 5
+			adm_power = 50
+			has_advisor = yes
+		}
+		effect = {
+			add_adm_power = -50
+			custom_tooltip = remove_insitution_embrace_cost_texas.tt
+			hidden_effect = {
+				remove_country_modifier = creatively_bankruptII
+				add_country_modifier = {
+					name = "creatively_bankruptIII"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	classicalism_texas = {
+		icon = continue_the_renaissance
+		required_missions = { texan_enginuity }
+		position = 10
+		trigger = {
+			has_institution = renaissance
+			capital_scope = {
+				development = 35
+			}
+		}
+		effect = {
+			custom_tooltip = remove_idea_cost_penalty_teaxas.tt
+			hidden_effect = {
+				remove_country_modifier = creatively_bankruptIII
+			}
+		}
+	}
+	
+	restoring_houston = {
+		icon = expand_the_doges_palace
+		required_missions = { classicalism_texas restore_texan_glory }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2685
+			}
+		}
+		trigger = {
+			2685 = {
+				development = 40
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+				OR = {
+					has_building = marketplace
+					has_building = trade_depot
+					has_building = stock_exchange
+				}
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			2685 = {
+				add_province_modifier = {
+					name = "capital_of_all_africas"
+					duration = -1
+				}
+			}
+		}
+	}
+	stock_pearland_university = {
+		icon = immaculate_government
+		required_missions = { restoring_houston }
+		position = 13
+		trigger = {
+			has_adm_advisor_3 = yes
+			has_dip_advisor_3 = yes
+			has_mil_advisor_3 = yes
+		}
+		effect = {
+			country_event = { id = texan_events.10 }
+		}
+	}
+	alabaman_dominence = {
+		icon = mission_african_gold
+		required_missions = { stock_pearland_university }
+		position = 14
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1280
+			}
+		}
+		trigger = {
+			is_institution_enabled = global_trade
+			1280 = { 
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_institution_embracement = {
+					which = global_trade
+					value = 100
+				}
+			}
+			1505 = {
+				add_trade_modifier = {
+					who = root
+					duration = 7300
+					power = 50
+					key = sweets_of_the_east
+				}
+			}
+		}
+	}
+	industrial_capacity = {
+		icon = mission_rb_build_furnaces
+		required_missions = { alabaman_dominence }
+		position = 15
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 15
+				has_manufactory_trigger = yes 
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "innovative_economy"
+				duration = 18250
+			}
+		}
+	}
+}

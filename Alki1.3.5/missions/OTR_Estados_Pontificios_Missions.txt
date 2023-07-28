@@ -1,0 +1,3383 @@
+###########################COLUMN ONE MISSIONS###########################
+estados_pontificios_missions_one_main = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+	}
+	has_country_shield = yes
+	
+	crushing_the_borda_resistance_otrep = {
+		icon = mission_cannons_firing
+		required_missions = { ally_pious_rulers_otrep }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = toluca_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			toluca_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mercantilism = 2
+			2645 = {
+				add_base_manpower = 1
+				add_province_modifier = {
+					name = "reinvigorated_atoyac_trade_otrep"
+					duration = 5475
+				}
+			}
+		}
+	}
+	
+	costal_beauty_otrep = {
+		icon = develop_provence
+		required_missions = { crushing_the_borda_resistance_otrep }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4021
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			4021 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			4021 = {
+				change_trade_goods = glass
+				add_unit_construction = {
+					type = light_ship
+					amount = 5
+					speed = 0.1
+					cost = 0
+				}
+			}
+			add_navy_tradition = 10
+			custom_tooltip = all_provs_trade_center.tt
+			tooltip = {
+				4021 = {
+					add_center_of_trade_level = 1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						zihuatanejo_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+					4021 = {
+						center_of_trade = 1
+					}
+				}
+			}
+		}
+	}
+	
+	the_holy_sea_otrep = {
+		icon = mission_galleys_in_port
+		required_missions = { costal_beauty_otrep }
+		position = 4
+		trigger = {
+			navy_tradition = 50
+			navy_size = 50
+			naval_reformer = 3
+		}
+		effect = {
+			add_mercantilism = 5
+			custom_tooltip = every_naval_good_prov_get_this_bonnus.tt
+			tooltip = {
+				add_province_modifier = {
+					name = "supplying_a_modern_navy_otrep"
+					duration = 7300
+				}
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "the_pontific_navy_otrep"
+					duration = -1
+				}
+			}
+			custom_tooltip = can_be_upgraded_if_we_have_twenyfif_ports.tt
+			hidden_effect = {
+				if = {
+					limit = {
+						num_of_ports = 25
+					}
+					add_country_modifier = {
+						name = "the_better_pontific_navy_otrep"
+						duration = -1
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = "the_pontific_navy_otrep"
+						duration = -1
+					}
+				}
+				every_owned_province = {
+					limit = {
+						trade_goods = fish
+						trade_goods = naval_supplies
+					}
+					add_province_modifier = {
+						name = "supplying_a_modern_navy_otrep"
+						duration = 7300
+					}
+				}
+			}
+		}
+	}
+}
+
+estados_pontificios_missions_one_branching = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+		NOT = {
+			OR = {
+				is_year = 1500
+				has_global_flag = no_compromise_for_cuatla_outcome
+				has_global_flag = total_independence_outcome
+				has_global_flag = mexico_city_state_outcome
+				has_global_flag = tepeyac_alone_outcome
+				has_global_flag = guadalupe_agreement_outcome
+				has_global_flag = war_ending_otrep
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	unknown_seven_otrep = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_one_otrep }
+		position = 6
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_oaxaca_dealings.tt
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_oaxaca_dealings.tt
+		}
+	}
+	
+	unknown_sixteen_otrep = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_four_otrep }
+		position = 9
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_oaxaca_dealings.tt
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_oaxaca_dealings.tt
+		}
+	}
+}
+
+estados_pontificios_missions_one_misc_ending_path = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+		OR = {
+			has_global_flag = mexico_city_state_outcome
+			has_global_flag = tepeyac_alone_outcome
+			has_global_flag = guadalupe_agreement_outcome
+		}
+	}
+	has_country_shield = yes
+	
+	foreign_support_otrep = {
+		icon = mission_have_two_subjects
+		required_missions = { relegated_to_nothing_otrep }
+		position = 6
+		
+		trigger = {
+			calc_true_if = {
+				all_ally = {
+					religion = catholico
+					trust = {
+						who = ROOT
+						value = 85
+					}
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			custom_tooltip = both_of_those_nations_get_fifteen_trust_with_us.tt
+			add_country_modifier = {
+				name = "foreign_support_mod_otrep"
+				duration = 18250
+			}
+			hidden_effect = {
+				random_ally = {
+					limit = {
+						religion = catholico
+						trust = {
+							who = ROOT
+							value = 85
+						}
+					}
+					set_country_flag = don't_pick_this_one_otrep
+					add_trust = {
+						who = ROOT
+						value = 15
+					}
+				}
+				random_ally = {
+					limit = {
+						religion = catholico
+						trust = {
+							who = ROOT
+							value = 85
+						}
+						NOT = {
+							has_country_flag = don't_pick_this_one_otrep
+						}
+					}
+					add_trust = {
+						who = ROOT
+						value = 15
+					}
+				}
+				every_ally = {
+					clr_country_flag = t_pick_this_one_otrep
+				}
+			}
+		}
+	}
+}
+
+estados_pontificios_missions_one_war_ending_path = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+		has_global_flag = war_ending_otrep
+	}
+	has_country_shield = yes
+	
+	villa_rica_otrep = {
+		icon = mission_onward_to_gaur
+		required_missions = { papal_fury_otrep }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = veracruz_area
+				area = tlaxcala_area
+				area = huesteca_central_area
+				area = hidalgo_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			2647 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = at_least_ten_provs_in_these_areas_villa_rica.tt
+					all_owned_province = {
+						OR = {
+							area = veracruz_area
+							area = tlaxcala_area
+							area = huesteca_central_area
+							area = hidalgo_area
+						}
+					}
+				}
+				amount = 10
+			}
+		}
+		effect = {
+			add_navy_tradition = 10
+			2647 = {
+				add_base_production = 1
+			}
+			add_mil_power = 100
+			custom_tooltip = all_jarocho_provs_get_this.tt
+			tooltip = {
+				add_province_modifier = {
+					name = "following_the_riches_otrep"
+					duration = 9125
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						culture = jarocho
+					}
+					add_province_modifier = {
+						name = "following_the_riches_otrep"
+						duration = 9125
+					}
+				}
+			}
+		}
+	}
+	mission_to_brazil_dos_otrep = {
+		icon = mission_mnd_maj_rein_in_brunei
+		required_missions = { reclaiming_baja_dos_otrep }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				region = new_brazil_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = ten_catholic_provinces_in_brazil.tt
+					new_brazil_region = {
+						religion = catholico
+						type = all
+					}
+				}
+				amount = 10
+			}	
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = V98
+				}
+				custom_tooltip = brazil_will_be_given_the_opportunity_to_convert_we_get.tt
+				tooltip = {
+					add_country_modifier = {
+						name = "catholic_brazil_otrep"
+						duration = -1
+					}
+				}
+				hidden_effect = {
+					V98 = {
+						country_event = { id = otrep_events.25 }
+					}
+				}
+			}
+			else = {
+				add_years_of_income = 5
+				add_country_modifier = {
+					name = "catholic_brazil_otrep"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+
+estados_pontificios_missions_one_total_cuatla_path = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+		OR = {
+			has_global_flag = no_compromise_for_cuatla_outcome
+			has_global_flag = total_independence_outcome
+			AND = {
+				NOT = {
+					OR = {
+						has_global_flag = no_compromise_for_cuatla_outcome
+						has_global_flag = total_independence_outcome
+						has_global_flag = mexico_city_state_outcome
+						has_global_flag = tepeyac_alone_outcome
+						has_global_flag = guadalupe_agreement_outcome
+						has_global_flag = war_ending_otrep
+					}
+				}
+				is_year = 1500
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	ruins_of_jalisco_otrep = {
+		icon = mission_conquer_50_development
+		required_missions = { what_remains_otrep }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4579
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			4579 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = catholico
+			}
+			custom_trigger_tooltip = {
+				tooltip = we_own_two_centers_of_trade_in_the_bajio.tt
+				calc_true_if = {
+					bajio_region = {
+						province_has_center_of_trade_of_level = 1
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					amount = 2
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					accepted_culture = tapatio
+				}
+				add_adm_power = 25
+				add_dip_power = 25
+				add_mil_power = 25
+			}
+			else = {
+				custom_tooltip = we_will_get_tapatio_culture_for_free.tt
+				hidden_effect = {
+					add_accepted_culture = tapatio
+					add_country_modifier = { 
+						name = free_tapatio_culture_otrep
+						duration = -1  
+						hidden = yes
+					}
+				}
+			}
+			4579 = {
+				add_base_manpower = 1
+				add_trade_modifier = {
+					who = ROOT
+					duration = 9125
+					power = 15
+					key = anahuac_bajio_integration
+				}
+			}
+			
+			custom_tooltip = if_we_complete_while_owning_stuff_get_good_guadalajara_otrep.tt
+			tooltip = {
+				4579 = {
+					add_province_modifier = {
+						name = "capital_of_the_lerma_otrep"
+						duration = -1
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						lerma_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT	
+						}
+						guanajuato_este_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+					4579 = {
+						add_province_modifier = {
+							name = "capital_of_the_lerma_otrep"
+							duration = -1
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	mission_to_brazil_otrep = {
+		icon = mission_mnd_maj_rein_in_brunei
+		required_missions = { reclaiming_baja_otrep }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				region = new_brazil_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = ten_catholic_provinces_in_brazil.tt
+					new_brazil_region = {
+						religion = catholico
+						type = all
+					}
+				}
+				amount = 10
+			}	
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = V98
+				}
+				custom_tooltip = brazil_will_be_given_the_opportunity_to_convert_we_get.tt
+				tooltip = {
+					add_country_modifier = {
+						name = "catholic_brazil_otrep"
+						duration = -1
+					}
+				}
+				hidden_effect = {
+					V98 = {
+						country_event = { id = otrep_events.25 }
+					}
+				}
+			}
+			else = {
+				add_years_of_income = 5
+				add_country_modifier = {
+					name = "catholic_brazil_otrep"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+estados_pontificios_missions_one_reformation = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+	}
+	has_country_shield = yes
+	
+	turning_off_the_lights_otrep = {
+		icon = mission_mosque
+		required_missions = { fires_of_reformation_otrep }
+		position = 12
+		trigger = {
+			OR = {
+				AND = {
+					NOT = {
+						is_religion_enabled = la_luz
+					}
+					is_year = 1650
+				}
+				AND = {
+					is_religion_enabled = la_luz
+					owns_core_province = 4128
+					owns_core_province = 4114
+					owns_core_province = 4107
+					owns_core_province = 2640
+					owns_core_province = 4089
+				}
+				AND = {
+					is_religion_enabled = la_luz
+					reform_desire = 0.75
+					custom_trigger_tooltip = {
+						tooltip = there_are_no_more_luzian_nations.tt
+						NOT = {
+							any_country = {
+								religion = la_luz
+								capital_scope = {
+									continent = mexico
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			4128 = {
+				if = {
+					limit = {
+						NOT = {
+							religion = catholico
+						}
+					}
+					change_religion = catholico
+					hidden_effect = {
+						owner = {
+							if = {
+								limit = {
+									NOT = {
+										tag = W83
+									}
+								}
+								country_event = { id = otrep_events.22 }
+							}
+						}
+					}
+				}
+			}
+			4114 = {
+				if = {
+					limit = {
+						NOT = {
+							religion = catholico
+						}
+					}
+					change_religion = catholico
+					hidden_effect = {
+						owner = {
+							if = {
+								limit = {
+									NOT = {
+										tag = W83
+									}
+								}
+								country_event = { id = otrep_events.22 }
+							}
+						}
+					}
+				}
+			}
+			4107 = {
+				if = {
+					limit = {
+						NOT = {
+							religion = catholico
+						}
+					}
+					change_religion = catholico
+					hidden_effect = {
+						owner = {
+							if = {
+								limit = {
+									NOT = {
+										tag = W83
+									}
+								}
+								country_event = { id = otrep_events.22 }
+							}
+						}
+					}
+				}
+			}
+			2640 = {
+				if = {
+					limit = {
+						NOT = {
+							religion = catholico
+						}
+					}
+					change_religion = catholico
+					hidden_effect = {
+						owner = {
+							if = {
+								limit = {
+									NOT = {
+										tag = W83
+									}
+								}
+								country_event = { id = otrep_events.22 }
+							}
+						}
+					}
+				}
+			}
+			4089 = {
+				if = {
+					limit = {
+						NOT = {
+							religion = catholico
+						}
+					}
+					change_religion = catholico
+					hidden_effect = {
+						owner = {
+							if = {
+								limit = {
+									NOT = {
+										tag = W83
+									}
+								}
+								country_event = { id = otrep_events.22 }
+							}
+						}
+					}
+				}
+			}
+			add_country_modifier = {
+				name = "luzian_knowledge_otrep"
+				duration = 9125
+			}
+			custom_tooltip = if_we_complete_this_while_there_are_no_luzian_centers_in_ithsmo_double.tt
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = {
+							isthmo_region = {
+								is_reformation_center = no
+							}
+						}
+					}
+				}
+				add_country_modifier = {
+					name = "luzian_knowledge_otrep"
+					duration = 9125
+				}
+			}
+		}
+	}
+}
+
+###########################COLUMN TWO MISSIONS###########################
+
+estados_pontificios_missions_two_main = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+	}
+	has_country_shield = yes
+	
+	ally_pious_rulers_otrep = {
+		icon = mission_alliances
+		required_missions = { }
+		position = 1
+		trigger = {
+			num_of_allies = 2
+		}
+		effect = {
+			custom_tooltip = we_wil_get_25_realtions_with_allied_countries.tt
+			toluca_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			zihuatanejo_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			atoyac_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			new_michoacan_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = if_one_of_our_allies_is_a_cath_gp_otrep.tt
+			tooltip = {
+				add_country_modifier = {
+					name = "allied_pious_rulers_otrep"
+					duration = 3650
+				}
+			}
+			hidden_effect = {
+				every_ally = {
+					add_opinion = {
+						who = ROOT
+						modifier = papal_ally_otr
+					}
+				}
+				if = = {
+					limit = {
+						any_ally = {
+							is_great_power = yes
+							religion = catholico
+						}
+					}
+					add_country_modifier = {
+						name = "allied_pious_rulers_otrep"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	
+	challenge_the_three_kings_otrep = {
+		icon = consolidate_the_stadholders
+		required_missions = { ally_pious_rulers_otrep }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = new_michoacan_area
+				area = atoyac_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = need_to_own_five_provinces_in_atoyac_and_michoacan.tt
+					all_owned_province = {
+						OR = {
+							area = new_michoacan_area
+							area = atoyac_area
+						}
+						
+					}
+				}
+				amount = 5
+			}
+			W78 = {
+				NOT = {
+					total_development = 50
+				}
+			}
+		}
+		effect = {
+			add_devotion = 10
+			add_curia_treasury = 500
+			define_advisor = {
+				type = diplomat
+				skill = 2
+				cost_multiplier = 0.75
+			}
+		}
+	}
+	
+	oaxacan_dealings_otrep = {
+		icon = catholic_confraternity
+		required_missions = { costal_beauty_otrep challenge_the_three_kings_otrep }
+		position = 4
+		trigger = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = we_have_negotiated_with_oaxaca.tt
+					OR = {
+						has_global_flag = no_compromise_for_cuatla_outcome
+						has_global_flag = total_independence_outcome
+						has_global_flag = mexico_city_state_outcome
+						has_global_flag = tepeyac_alone_outcome
+						has_global_flag = guadalupe_agreement_outcome
+						has_global_flag = war_ending_otrep
+					}
+				}
+				is_year = 1500
+			}
+		}
+		effect = {
+			swap_non_generic_missions = yes
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = no_compromise_for_cuatla_outcome
+						has_global_flag = total_independence_outcome
+						is_year = 1500
+					}
+				}
+				custom_tooltip = gain_claims_on_all_not_owned_by_oaxaca.tt
+				add_country_modifier = {
+					name = "papal_negotiator_otrep"
+					duration = 5475
+				}
+				hidden_effect = {
+					anahuac_region  = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { owned_by = W85 }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_global_flag = guadalupe_agreement_outcome
+				}
+				custom_tooltip = get_this_modifier_in_all_guadalupe_provs.tt
+				tooltip = {
+					add_province_modifier = {
+						name = "guadalupe_alone_otrep"
+						duration = 5475
+					}
+				}
+				hidden_effect = {
+					guadalupe_area = {
+						add_country_modifier = {
+							name = "guadalupe_alone_otrep"
+							duration = 5475
+						}
+					}
+				}
+			}
+			else_if = { 
+				limit = {
+					OR = {
+						has_global_flag = mexico_city_state_outcome
+						has_global_flag = tepeyac_alone_outcome
+					}
+				}
+				2998 = {
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+					add_province_modifier = {
+						name = "glory_of_tepeyac_otrep"
+						duration = -1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_global_flag = war_ending_otrep
+				}
+				morelos_area  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				new_puebla_area  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				gran_oaxaca_area  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				add_country_modifier = {
+					name = "courting_the_devil_otrep"
+					duration = 5475
+				}
+			}
+			else = {
+				custom_tooltip = depending_on_the_outcome_of_the_event_we_will_get_bonuses.tt
+			}
+		}
+	}
+}
+
+estados_pontificios_missions_two_branching = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+		NOT = {
+			OR = {
+				is_year = 1500
+				has_global_flag = no_compromise_for_cuatla_outcome
+				has_global_flag = total_independence_outcome
+				has_global_flag = mexico_city_state_outcome
+				has_global_flag = tepeyac_alone_outcome
+				has_global_flag = guadalupe_agreement_outcome
+				has_global_flag = war_ending_otrep
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	unknown_one_otrep = {
+		icon = mission_unknown_mission
+		required_missions = { oaxacan_dealings_otrep }
+		position = 5
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_oaxaca_dealings.tt
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_oaxaca_dealings.tt
+		}
+	}
+	
+	unknown_two_otrep = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_one_otrep }
+		position = 6
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_oaxaca_dealings.tt
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_oaxaca_dealings.tt
+		}
+	}
+	
+	unknown_three_otrep = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_two_otrep unknown_seven_otrep unknown_eight_otrep }
+		position = 7
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_oaxaca_dealings.tt
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_oaxaca_dealings.tt
+		}
+	}
+	
+	unknown_four_otrep = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_three_otrep }
+		position = 8
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_oaxaca_dealings.tt
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_oaxaca_dealings.tt
+		}
+	}
+	
+	unknown_five_otrep = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_four_otrep }
+		position = 9
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_oaxaca_dealings.tt
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_oaxaca_dealings.tt
+		}
+	}
+	
+	unknown_six_otrep = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_five_otrep }
+		position = 10
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_oaxaca_dealings.tt
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_oaxaca_dealings.tt
+		}
+	}
+	
+}
+
+estados_pontificios_missions_two_war_ending_path = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+		has_global_flag = war_ending_otrep
+	}
+	has_country_shield = yes
+
+	
+	papal_fury_otrep = {
+		icon = humiliate_austria
+		required_missions = { oaxacan_dealings_otrep }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2629
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			has_won_war_against = {
+				who = W85
+				max_years_since = 10
+			}
+			custom_trigger_tooltip = {
+				tooltip = own_all_of_the_provinces_we_have_cores_on.tt
+				all_core_province = {
+					owned_by = ROOT
+				}
+			}
+			stability = 0
+		}
+		effect = {
+			anahuac_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 15
+			}
+			add_country_modifier = {
+				name = "turning_the_tide_otrep"
+				duration = 3650
+			}
+		}
+	}
+	home_of_the_zapotec_otrep = {
+		icon = alpine_defenses
+		required_missions = { papal_fury_otrep }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2629
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			gran_oaxaca_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			custom_trigger_tooltip = {
+				tooltip = own_at_least_once_province_in_the_olmeca_area.tt
+				any_owned_province = {
+					area = olmeca_area
+				}
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_country_modifier = {
+				name = "lord_of_anahuac_otrep"
+				duration = 3650
+			}
+			add_mil_power = 100
+			custom_tooltip = we_will_gain_claims_on_the_remaining_oaxacan_provs.tt
+			hidden_effect = {
+				W85 = {
+					every_owned_province = {
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+	peace_in_anahuac_otrep = {
+		icon = mission_unite_home_region
+		required_missions = { home_of_the_zapotec_otrep villa_rica_otrep }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				region = anahuac_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			NOT = {
+				calc_true_if = {
+					custom_trigger_tooltip = {
+						tooltip = oaxaca_owns_less_than_then_provs_in_anahuac.tt
+						W85 = {
+							all_owned_province = {
+								OR = {
+									region = anahuac_region
+								}
+							}
+						}
+					}
+					amount = 10
+				}
+			}
+			calc_true_if = {	
+				custom_trigger_tooltip = {
+					tooltip = we_own_fourty_provinces_in_anahuac.tt
+					all_owned_province = {
+						OR = {
+							region = anahuac_region
+						}
+					}
+				}
+				amount = 40
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "slayer_of_zapotec_otrep"
+				duration = -1
+			}
+			if = {
+				limit = {
+					mil = 6
+				}
+				add_mil_power = 300
+			}
+			else = {
+				change_mil = 1
+			}
+		}
+	}
+	reino_de_dios_dos_otrep = {
+		icon = chivalry_is_not_dead
+		required_missions = { peace_in_anahuac_otrep }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				region = anahuac_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			stability = 2
+			anahuac_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			is_great_power = yes
+			reform_desire = 1
+			prestige = 50
+		}
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						has_reform = clerical_commission_reform
+						has_reform = divine_guidance_reform
+						has_reform = theocratic_democracy_reform
+						has_reform = constitional_theocracy_reform
+						has_reform = regionally_elected_commanders
+						has_reform = monastic_elections_reform
+						has_reform = commander_king_reform
+						has_reform = admiral_king_reform
+					}
+				}
+				add_government_reform =  reino_de_dios_reform_otr
+			}
+			override_country_name = REINO_DE_DIOS
+			set_country_flag = became_reino_de_dios
+			custom_tooltip = we_will_get_plus_one_yearly_papal_authority_till_end_of_game.tt
+			custom_tooltip = every_catholic_nation_will_get_this_for_the_next_fifteen_years.tt
+			tooltip = {
+				add_country_modifier = {
+					name = "a_papal_empire_otrep"
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				REB = {
+					change_variable = {
+						which = current_papal_authority_tick
+						value = 1
+					}
+				}
+				every_known_country = {
+					limit = {
+						religion = catholico
+					}
+					country_event = { id = otrep_events.24 }
+				}
+			}
+		}
+	}
+	reclaiming_baja_dos_otrep = {
+		icon = mission_colonize_california
+		required_missions = { reino_de_dios_dos_otrep }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				region = baja_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = seven_catholic_provinces_in_baja.tt
+					baja_region = {
+						religion = catholico
+						type = all
+					}
+				}
+				amount = 7
+			}	
+		}
+		effect = {
+			custom_tooltip = baja_nations_will_be_given_opportunity_to_convert.tt
+			tooltip = {
+				add_prestige = 25
+				add_country_modifier = {
+					name = "joined_the_catholic_faith_otrep"
+					duration = 9125
+				}
+			}
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						capital_scope = {
+							region = baja_region
+						}
+						NOT = {
+							religion = catholico
+						}
+					}
+					country_event = { id = otrep_events.25 }
+				}
+			}
+		}
+	}
+	
+	the_willing_of_florida_dos_otrep = {
+		icon = mission_colonize_florida
+		required_missions = { reclaiming_baja_dos_otrep }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				region = florida_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = three_catholic_provinces_in_florida.tt
+					florida_region = {
+						religion = catholico
+						type = all
+					}
+				}
+				amount = 3
+			}	
+		}
+		effect = {
+			if = {
+				limit = {
+					dip = 6
+				}
+				add_dip_power = 300
+			}
+			else = {
+				change_dip = 1
+			}
+			custom_tooltip = florida_nations_will_be_given_opportunity_to_convert.tt
+			tooltip = {
+				add_prestige = 25
+				add_country_modifier = {
+					name = "joined_the_catholic_faith_otrep"
+					duration = 9125
+				}
+			}
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						capital_scope = {
+							region = florida_region
+						}
+						NOT = {
+							religion = catholico
+						}
+					}
+					country_event = { id = otrep_events.25 }
+				}
+			}
+		}
+	}
+	
+	kurisuchans_dos_otrep = {
+		icon = mission_to_japan
+		required_missions = { the_willing_of_florida_dos_otrep }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				superregion = japanese_superregion
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = five_catholic_provinces_in_japan_mainland.tt
+					OR = {
+						seto_region = {
+							religion = catholico
+						}
+						nippon_area = {
+							religion = catholico
+						}
+						tohoku_hokkaido = {
+							religion = catholico
+						}
+					}
+				}	
+				amount = 5
+			}
+			custom_trigger_tooltip = {
+				tooltip = any_ally_has_their_capital_in_japan.tt
+				any_ally = {
+					capital_scope = {
+						superregion = japanese_superregion
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					any_ally = {
+						capital_scope = {
+							superregion = japanese_superregion
+						}
+					}
+				}
+				random_ally = {
+					limit = {
+						capital_scope = {
+							superregion = japanese_superregion
+						}
+					}
+					add_opinion = {
+						modifier = friend_in_christ_otrep
+						who = W83
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_flag = can_get_kirisuto_deity
+							}
+						}
+						set_country_flag = can_get_kirisuto_deity
+						custom_tooltip = unlock_the_kirisuto_diety_for_one_of_japanese_allies.tt
+					}
+				}
+			}
+			
+			custom_tooltip = shinto_nations_will_be_far_more_likely_to_select_kirisuto_and_convertshit.tt
+			hidden_effect = {
+				event_target:kirisuto_recieving_ally_otrep = {
+					
+				}
+				every_known_country = {
+					limit = {
+						religion = shinto
+					}
+					remove_opinion = {
+						who = W83
+						modifier = different_religions_group
+					}
+					remove_opinion = {
+						who = W83
+						modifier = different_religions_group_border
+					}
+				}
+				set_global_flag = pick_kirisuto_now
+			}
+		}
+	}
+}
+
+estados_pontificios_missions_two_misc_ending_path = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+		OR = {
+			has_global_flag = mexico_city_state_outcome
+			has_global_flag = tepeyac_alone_outcome
+			has_global_flag = guadalupe_agreement_outcome
+		}
+	}
+	has_country_shield = yes
+	
+	relegated_to_nothing_otrep = {
+		icon = mission_guilds_of_barcelona
+		required_missions = { oaxacan_dealings_otrep }
+		position = 5
+		
+		trigger = {
+			is_papal_controller = yes
+			reform_desire = 0.5
+			if = { 
+				limit = {
+					exists = W85
+				}
+				reverse_has_opinion = {
+					who = W85
+					value = 100
+				}
+			}
+		}
+		effect = {
+			add_trust = {
+				who = W85
+				value = 10
+			}
+			add_reform_desire = 0.02
+			add_dip_power = 50
+		}
+	}
+	
+	glory_of_tepeyac_otrep = {
+		icon = mission_early_game_buildings
+		required_missions = { relegated_to_nothing_otrep }
+		position = 6
+		
+		trigger = {
+			owns_core_province = 2998
+			2998 = {
+				development = 50
+				province_has_center_of_trade_of_level = 3
+				NOT = {
+					num_free_building_slots = 1
+				}
+			}
+		}
+		effect = {
+			2998 = {
+				add_province_modifier = {
+					name = "tepeyac_city_state"
+					duration = -1
+				}
+			}
+			custom_tooltip = when_we_dev_the_capital_we_have_the_chance_to_get_dev.tt
+		}
+	}
+	
+	beauty_in_simplicity_otrep = {
+		icon = mission_empire
+		required_missions = { glory_of_tepeyac_otrep foreign_support_otrep }
+		position = 7
+		
+		trigger = {
+			NOT = {
+				num_of_cities = 5
+			}
+			total_development = 150
+			reform_desire = 1.5
+		}
+		effect = {
+			add_country_modifier = {
+				name = "a_novel_state_otrep"
+				duration = -1
+			}
+			custom_tooltip = if_we_still_have_foreign_support_mod_otrep.tt
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_modifier = foreign_support_mod_otrep
+					}	
+					add_country_modifier = {
+						name = "foreign_support_mod_otrep"
+						duration = 18250
+					}
+				}
+			}
+		}
+	}
+}
+
+
+estados_pontificios_missions_two_total_cuatla_path = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+		OR = {
+			has_global_flag = no_compromise_for_cuatla_outcome
+			has_global_flag = total_independence_outcome
+			AND = {
+				NOT = {
+					OR = {
+						has_global_flag = no_compromise_for_cuatla_outcome
+						has_global_flag = total_independence_outcome
+						has_global_flag = mexico_city_state_outcome
+						has_global_flag = tepeyac_alone_outcome
+						has_global_flag = guadalupe_agreement_outcome
+						has_global_flag = war_ending_otrep
+					}
+				}
+				is_year = 1500
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	what_remains_otrep = {
+		icon = invade_poland
+		required_missions = { oaxacan_dealings_otrep }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				region = anahuac_region
+			}
+			NOT = { owned_by = ROOT }
+			NOT = { owned_by = W85 }
+			NOT = { owned_by = V27 }
+		}
+		
+		trigger = {
+			OR = {
+				calc_true_if = {
+					custom_trigger_tooltip = {
+						tooltip = own_twenty_provinces_in_anahuac.tt
+						all_owned_province = {
+							region = anahuac_region
+						}
+					}
+					amount = 20
+				}
+				custom_trigger_tooltip = {
+					tooltip = anahuac_is_split_between_us_and_oaxaca.tt
+					NOT = {
+						anahuac_region = { 
+							OR = {
+								NOT = {
+									owned_by = ROOT
+									owned_by = W85
+									owned_by = V27
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			lerma_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			guanajuato_este_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			sierra_de_amula_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			gran_colima_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_army_tradition = 10
+			add_prestige = 15
+			add_country_modifier = {
+				name = "lord_of_anahuac_otrep"
+				duration = 3650
+			}
+		}
+	}
+	
+	leonese_approach_otrep = {
+		icon = mission_conquer_romania
+		required_missions = { what_remains_otrep }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2621
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			2621 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = catholico
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+		effect = {
+			country_event = { id = otrep_events.23 }
+			bajio_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	reino_de_dios_otrep = {
+		icon = chivalry_is_not_dead
+		required_missions = { leonese_approach_otrep plunder_colima_otrep ruins_of_jalisco_otrep }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				region = bajio_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_45_provinces_in_bajio.tt
+					all_owned_province = {
+						region = bajio_region
+					}
+				}
+				amount = 45
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						has_reform = clerical_commission_reform
+						has_reform = divine_guidance_reform
+						has_reform = theocratic_democracy_reform
+					}
+				}
+				add_government_reform =  reino_de_dios_reform_otr
+			}
+			override_country_name = REINO_DE_DIOS
+			set_country_flag = became_reino_de_dios
+			custom_tooltip = we_will_get_plus_one_yearly_papal_authority_till_end_of_game.tt
+			custom_tooltip = every_catholic_nation_will_get_this_for_the_next_fifteen_years.tt
+			tooltip = {
+				add_country_modifier = {
+					name = "a_papal_empire_otrep"
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				REB = {
+					change_variable = {
+						which = current_papal_authority_tick
+						value = 1
+					}
+				}
+				every_known_country = {
+					limit = {
+						religion = catholico
+					}
+					country_event = { id = otrep_events.24 }
+				}
+			}
+		}
+	}
+	
+	reclaiming_baja_otrep = {
+		icon = mission_colonize_california
+		required_missions = { reino_de_dios_otrep }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				region = baja_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = seven_catholic_provinces_in_baja.tt
+					baja_region = {
+						religion = catholico
+						type = all
+					}
+				}
+				amount = 7
+			}
+		}
+		effect = {
+			custom_tooltip = baja_nations_will_be_given_opportunity_to_convert.tt
+			tooltip = {
+				add_prestige = 25
+				add_country_modifier = {
+					name = "joined_the_catholic_faith_otrep"
+					duration = 9125
+				}
+			}
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						capital_scope = {
+							region = baja_region
+						}
+						NOT = {
+							religion = catholico
+						}
+					}
+					country_event = { id = otrep_events.25 }
+				}
+			}
+		}
+	}
+	
+	the_willing_of_florida_otrep = {
+		icon = mission_colonize_florida
+		required_missions = { reclaiming_baja_otrep }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				region = florida_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = three_catholic_provinces_in_florida.tt
+					florida_region = {
+						religion = catholico
+						type = all
+					}
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					dip = 6
+				}
+				add_dip_power = 300
+			}
+			else = {
+				change_dip = 1
+			}
+			custom_tooltip = florida_nations_will_be_given_opportunity_to_convert.tt
+			tooltip = {
+				add_prestige = 25
+				add_country_modifier = {
+					name = "joined_the_catholic_faith_otrep"
+					duration = 9125
+				}
+			}
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						capital_scope = {
+							region = florida_region
+						}
+						NOT = {
+							religion = catholico
+						}
+					}
+					country_event = { id = otrep_events.25 }
+				}
+			}
+		}
+	}
+	
+	kurisuchans_otrep = {
+		icon = mission_to_japan
+		required_missions = { the_willing_of_florida_otrep }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				superregion = japanese_superregion
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = five_catholic_provinces_in_japan_mainland.tt
+						seto_region = {
+							religion = catholico
+							type = all
+						}
+						nippon_area = {
+							religion = catholico
+							type = all
+						}
+						tohoku_hokkaido = {
+							religion = catholico
+							type = all
+						}
+				}	
+				amount = 5
+			}	
+			custom_trigger_tooltip = {
+				tooltip = any_ally_has_their_capital_in_japan.tt
+				any_ally = {
+					capital_scope = {
+						superregion = japanese_superregion
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					any_ally = {
+						capital_scope = {
+							superregion = japanese_superregion
+						}
+					}
+				}
+				random_ally = {
+					limit = {
+						capital_scope = {
+							superregion = japanese_superregion
+						}
+					}
+					add_opinion = {
+						modifier = friend_in_christ_otrep
+						who = W83
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_flag = can_get_kirisuto_deity
+							}
+						}
+						set_country_flag = can_get_kirisuto_deity
+						custom_tooltip = unlock_the_kirisuto_diety_for_one_of_japanese_allies.tt
+					}
+				}
+			}
+			
+			custom_tooltip = shinto_nations_will_be_far_more_likely_to_select_kirisuto_and_convertshit.tt
+			hidden_effect = {
+				event_target:kirisuto_recieving_ally_otrep = {
+					
+				}
+				every_known_country = {
+					limit = {
+						religion = shinto
+					}
+					remove_opinion = {
+						who = W83
+						modifier = different_religions_group
+					}
+					remove_opinion = {
+						who = W83
+						modifier = different_religions_group_border
+					}
+				}
+				set_global_flag = pick_kirisuto_now
+			}
+		}
+	}
+}
+
+
+estados_pontificios_missions_two_reformation = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+	}
+	has_country_shield = yes
+	
+	
+	the_antipope_otrep = {
+		icon = answer_the_roman_question
+		required_missions = { fires_of_reformation_otrep }
+		position = 12
+		trigger = {
+			OR = {
+				AND = {
+					NOT = {
+						is_religion_enabled = vulgar
+					}
+					is_year = 1650
+				}
+				AND = {
+					is_religion_enabled = vulgar
+					NOT = {
+						exists = U35
+					}
+					NOT = {
+						calc_true_if = {
+							custom_trigger_tooltip = {
+								tooltip = there_are_less_than_two_vulgar_nations_in_africa.tt
+								all_country = {
+									capital_scope = {
+										superregion = spanish_africa_superregion
+									}
+									religion = vulgar
+								}
+								amount = 2
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = get_rid_of_latin_papacy_permanently.tt
+			set_global_flag = noooo_more_latin_papacy
+			add_country_modifier = {
+				name = "the_only_bishop_otrep"
+				duration = -1
+			}
+			hidden_effect = {
+				U35 = {
+					every_core_province = {
+						remove_core = U35
+					}	
+				}
+			}
+		}
+	}
+}
+
+###########################COLUMN THREE MISSIONS###########################
+
+estados_pontificios_missions_three_branching_one = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+		NOT = {
+			OR = {
+				has_country_flag = the_good_ol_tradition_train
+				has_country_flag = the_no_good_reformer_route
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	
+	unknown_twelve_otrep = {
+		icon = mission_unknown_mission
+		required_missions = { state_of_the_faith_otrep }
+		position = 2
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_first_tepeyac_council.tt
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_first_tepeyac_council.tt
+		}
+	}
+	
+	unknown_thirteen_otrep = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_twelve_otrep }
+		position = 3
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_first_tepeyac_council.tt
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_first_tepeyac_council.tt
+		}
+	}
+	
+}
+
+
+estados_pontificios_missions_three_tradition_route = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+		has_country_flag = the_good_ol_tradition_train
+	}
+	has_country_shield = yes
+	
+	expand_bishop_control_otrep = {
+		icon = control_the_church
+		required_missions = { state_of_the_faith_otrep }
+		position = 2
+		trigger = {
+			inquisitor = 3
+			num_of_cardinals = 5
+			custom_trigger_tooltip = {
+				tooltip = another_nation_has_the_same_amount_of_cardinals_as_we_do.tt
+				any_known_country {
+					num_of_cardinals = ROOT
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "filled_bishop_ranks_otrep"
+				duration = 9125
+			}
+			custom_tooltip = every_time_we_convert_above_ten_dev.tt
+			hidden_effect = {
+				set_country_flag = on_convert_gain_papal_authority
+			}
+		}
+	}
+	
+	
+	stockpile_curia_wealth_otrep = {
+		icon = dominant_economy
+		required_missions = { expand_bishop_control_otrep }
+		position = 4
+		trigger = {
+			treasury = 5000
+		 	monthly_income = 50
+		}
+		effect = {
+			add_treasury = 500
+			add_curia_treasury = 500
+			add_inflation = -2
+			custom_tooltip = unlock_decision_to_siphon_money_out_of_curia.tt
+		}
+	}
+	
+}
+
+estados_pontificios_missions_three_reformer_route = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+		has_country_flag = the_no_good_reformer_route
+	}
+	has_country_shield = yes
+	
+	
+	promote_jesuit_investigation_otrep = {
+		icon = mission_establish_jesuit_missions
+		required_missions = { state_of_the_faith_otrep }
+		position = 2
+		trigger = {
+			has_institution = renaissance
+			natural_scientist = 1
+			2998 = {
+				renaissance = 100
+				has_province_modifier = local_catholic_brotherhood_catlo
+			}
+		}
+		effect = {
+			add_reform_desire = 0.01
+			tooltip = {
+				add_country_modifier = {
+					name = "jesuit_investigation_otrep"
+					duration = 3650
+				}
+			}
+			custom_tooltip = we_have_the_same_number_or_more_techs_get_bonus.tt
+			hidden_effect = {
+				if = {
+					limit = {
+						any_neighbor_country = {
+							tech_difference = 1
+						}
+					}
+					add_country_modifier = {
+						name = "jesuit_investigation_otrep"
+						duration = 3650
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = "jesuit_investigation_better_otrep"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	
+	modernize_mexico_city_otrep = {
+		icon = mission_golden_century
+		required_missions = { promote_jesuit_investigation_otrep }
+		position = 3
+		trigger = {
+			adm_tech = 10
+			2998 = {
+				development = 40
+			}
+			OR = {
+				has_reform = protect_his_eminence_reform_otr
+				has_reform = crush_heathens_reform_otr
+				has_reform = care_for_creation_reform_otr
+			}
+			OR = {
+				has_adm_advisor_3 = yes
+				has_dip_advisor_3 = yes
+				has_mil_advisor_3 = yes
+			}
+		}
+		effect = {
+			2998 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+				add_province_modifier = {
+					name = "a_modern_capital_otrep"
+					duration = -1
+				}
+			}
+			
+			custom_tooltip = if_we_still_have_last_modifier_extend_it.tt
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_modifier = jesuit_investigation_better_otrep
+					}
+					add_country_modifier = {
+						name = "jesuit_investigation_better_otrep"
+						duration = 3650
+					}
+				}	
+			}	
+		}
+	}
+	
+}
+
+estados_pontificios_missions_three_branching_two = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+		NOT = {
+			OR = {
+				is_year = 1500
+				has_global_flag = no_compromise_for_cuatla_outcome
+				has_global_flag = total_independence_outcome
+				has_global_flag = mexico_city_state_outcome
+				has_global_flag = tepeyac_alone_outcome
+				has_global_flag = guadalupe_agreement_outcome
+				has_global_flag = war_ending_otrep
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	unknown_eight_otrep = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_one_otrep }
+		position = 6
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_oaxaca_dealings.tt
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_oaxaca_dealings.tt
+		}
+	}
+	
+}
+
+estados_pontificios_missions_three_total_cuatla_path = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+		OR = {
+			has_global_flag = no_compromise_for_cuatla_outcome
+			has_global_flag = total_independence_outcome
+			AND = {
+				NOT = {
+					OR = {
+						has_global_flag = no_compromise_for_cuatla_outcome
+						has_global_flag = total_independence_outcome
+						has_global_flag = mexico_city_state_outcome
+						has_global_flag = tepeyac_alone_outcome
+						has_global_flag = guadalupe_agreement_outcome
+						has_global_flag = war_ending_otrep
+					}
+				}
+				is_year = 1500
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	plunder_colima_otrep = {
+		icon = mission_raid_christian_trade
+		required_missions = { what_remains_otrep }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = gran_colima_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			gran_colima_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			num_of_light_ship = 10
+		}
+		effect = {
+			add_years_of_income = 1
+			add_mercantilism = 3
+			2962 = {
+				add_unit_construction = {
+					type = heavy_ship
+					amount = 5
+					speed = 0.1
+					cost = 0
+				}
+			}
+			
+			custom_tooltip = if_we_do_it_wit_da_colima_vassal_we_get.tt
+			tooltip = {
+				W77 = {
+					add_country_modifier = {
+						name = "coliman_colonists_otrep"
+						duration = 9125
+					}
+				}
+				create_explorer = { tradition = 50 }
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						W77 = {
+							vassal_of = ROOT
+						}
+					}
+					W77 = {
+						create_explorer = { tradition = 50 }
+						add_country_modifier = {
+							name = "coliman_colonists_otrep"
+							duration = 9125
+						}
+						set_country_flag = you_will_select_exploration_ideas
+					}
+				}
+			}
+		}
+	}
+}
+
+estados_pontificios_missions_three_main = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+	}
+	has_country_shield = yes
+	
+	
+	reform_apostolic_guard = {
+		icon = gory_to_the_black_army
+		required_missions = { fortify_eternal_walls_otrep }
+		position = 8
+		trigger = {
+			army_size = 20
+			land_morale = 5
+			has_completed_idea_group_of_category = {
+				mil_ideas = yes
+			}
+			num_of_mercenaries = 1
+		}
+		effect = {
+			tooltip = {
+				add_country_modifier = {
+					name = "apostolic_discipline_otrep"
+					duration = -1
+				}
+			}
+			add_country_modifier = {
+				name = "reaching_out_to_pious_companies_otrep"
+				duration = 9125
+			}
+			custom_tooltip = if_we_have_lotta_discipline_make_it_five.tt
+			hidden_effect = {
+				if = {
+					limit = {
+						has_global_modifier_value = {
+							which = discipline
+							value = 0.15
+						}
+					}
+					add_country_modifier = {
+						name = "apostolic_discipline_buffed_otrep"
+						duration = -1
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = "apostolic_discipline_otrep"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	
+	armies_of_god_otrep = {
+		icon = professional_army
+		required_missions = { reform_apostolic_guard }
+		position = 9
+		trigger = {
+			army_size = 100
+			army_tradition = 75
+			grown_by_development = 250
+			has_mil_advisor_3 = yes
+		}
+		effect = {
+			add_mil_power = 50
+			if = {
+				limit = {
+					mil = 6
+				}
+				add_mil_power = 300
+			}
+			else = {
+				change_mil = 1
+			}
+			add_country_modifier = {
+				name = "armies_of_god_otrep"
+				duration = -1
+			}
+		}
+	}
+	
+	fires_of_reformation_otrep = {
+		icon = mission_rb_control_state_religion
+		required_missions = { }
+		position = 11
+		trigger = {
+			OR = {
+				is_year = 1650
+				custom_trigger_tooltip = {
+					tooltip = any_reformation_faith_is_enabled.tt
+					OR = {
+						is_religion_enabled = cruzite
+						is_religion_enabled = la_luz
+						is_religion_enabled = vulgar
+						is_religion_enabled = vacandist
+						is_religion_enabled = sagrado
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "repelling_heretic_hoards_otrep"
+				duration = 5475
+			}
+			custom_tooltip = we_will_get_special_cb_against_all_heretics.tt
+		}
+	}
+	
+	ending_mendozas_plot_otrep = {
+		icon = ending_mendozas_plot_otrep
+		required_missions = { fires_of_reformation_otrep }
+		position = 12
+		trigger = {
+			OR = {
+				AND = {
+					NOT = {
+						is_religion_enabled = cruzite
+					}
+					is_year = 1650
+				}
+				AND = {
+					is_religion_enabled = cruzite
+					custom_trigger_tooltip = {
+						tooltip = mendoza_is_dead.tt
+						has_global_flag = death_of_mendoza
+					}
+					custom_trigger_tooltip = {
+						tooltip = there_are_no_centers_of_reformation_in_empresa.tt
+						NOT = {
+							empresia_region = {
+								is_reformation_center = no
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_curia_treasury = 250
+			add_country_modifier = {
+				name = "cruzite_hatred_otrep"
+				duration = -1
+			}
+		}
+	}
+	
+	christiandad_otrep = {
+		icon = invest_in_the_provinces
+		required_missions = { turning_off_the_lights_otrep the_antipope_otrep ending_mendozas_plot_otrep winning_hearts_and_minds_otrep restoring_faith_otrep }
+		position = 13
+		trigger = {
+			reform_desire = 1
+			custom_trigger_tooltip = {
+				tooltip = there_are_no_reformation_nations_pap.tt
+				NOT = {
+					any_country = {
+						capital_scope = {
+							continent = mexico
+						}
+						OR = {
+							religion = sagrado
+							religion = cruzite
+							religion = la_luz
+							religion = vulgar
+							religion = vacandist
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "100_catlo_papal_legate"
+				duration = 18250
+			}
+			add_country_modifier = {
+				name = "100_catlo_holy_war"
+				duration = 18250
+			}
+			add_country_modifier = {
+				name = "100_catlo_forgive_ursury"
+				duration = 18250
+			}
+			add_country_modifier = {
+				name = "100_catlo_grant_indulgence"
+				duration = 18250
+			}
+			add_country_modifier = {
+				name = "100_catlo_bless_ruler"
+				duration = 18250
+			}
+			add_country_modifier = {
+				name = "100_catlo_church_tax"
+				duration = 18250
+			}
+		}
+	}
+}
+
+
+
+###########################COLUMN FOUR MISSIONS###########################
+
+estados_pontificios_missions_four_main = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+	}
+	has_country_shield = yes
+	
+	state_of_the_faith_otrep = {
+		icon = hand-picked_bureaucrats
+		required_missions = { }
+		position = 1
+		trigger = {
+			total_number_of_cardinals = 15
+			reform_desire = 0.75
+			is_papal_controller = yes
+			if = {
+				limit = {
+					ai = no
+				}
+				custom_trigger_tooltip = {
+					tooltip = enacted_any_golden_bull.tt
+					has_country_flag = enacted_golden_bull
+				}
+			}
+		}
+		effect = {
+			country_event = { id = otrep_events.17 }
+		}
+	}
+	
+}
+
+estados_pontificios_missions_four_branching = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+		NOT = {
+			OR = {
+				has_country_flag = the_good_ol_tradition_train
+				has_country_flag = the_no_good_reformer_route
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	unknown_nine_otrep = {
+		icon = mission_unknown_mission
+		required_missions = { state_of_the_faith_otrep }
+		position = 2
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_first_tepeyac_council.tt
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_first_tepeyac_council.tt
+		}
+	}
+	
+	unknown_ten_otrep = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_nine_otrep unknown_thirteen_otrep unknown_fifteen_otrep }
+		position = 4
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_first_tepeyac_council.tt
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_first_tepeyac_council.tt
+		}
+	}
+	
+	unknown_eleven_otrep = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_ten_otrep }
+		position = 5
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_first_tepeyac_council.tt
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_first_tepeyac_council.tt
+		}
+	}
+}
+
+estados_pontificios_missions_four_tradition_route = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+		has_country_flag = the_good_ol_tradition_train
+	}
+	has_country_shield = yes
+	
+	
+	establish_guadalupe_inquisition_otrep = {
+		icon = join_the_reformation
+		required_missions = { state_of_the_faith_otrep }
+		position = 2
+		trigger = {
+			num_of_missionaries = 3
+		}
+		effect = {
+			country_event = { id = otrep_events.29 }
+			custom_tooltip = if_we_finish_this_mission_while_we_have_religious.tt
+			hidden_effect = {
+				if = {
+					limit = {
+						has_idea_group = humanist_ideas
+					}
+					add_reform_desire = 0.03
+				}
+			}
+		}
+	}
+	
+	promote_crusading_zeal_otrep = {
+		icon = mission_crusade_for_varna
+		required_missions = { establish_guadalupe_inquisition_otrep }
+		position = 3
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = any_country_is_the_target_of_a_crusade.tt
+				crusade_target = { 
+					exists = yes
+				}
+			}
+			OR = {
+				calc_true_if = {
+					custom_trigger_tooltip = {
+						tooltip = there_are_ten_catholic_provinces_in_italy.tt
+						italia_region = {
+							religion = catholico
+							type = all
+						}
+					}
+					amount = 10
+				}
+				calc_true_if = {
+					custom_trigger_tooltip = {
+						tooltip = there_are_three_catholic_provinces_in_baja.tt
+						baja_region = {
+							religion = catholico
+							type = all
+						}
+					}
+					amount = 3
+				}
+				calc_true_if = {
+					custom_trigger_tooltip = {
+						tooltip = there_is_a_catholic_province_in_florida.tt
+						florida_region = {
+							religion = catholico
+							type = all
+						}
+					}
+					amount = 1
+				}
+				calc_true_if = {
+					custom_trigger_tooltip = {
+						tooltip = there_are_two_catholic_provinces_in_utah.tt
+						utah_region = {
+							religion = catholico
+							type = all
+						}
+					}
+					amount = 2
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "frontline_zeal_otrep"
+				duration = -1
+			}
+			custom_tooltip = get_chance_of_reform_desire_on_winning_battle.tt
+		}
+	}
+	
+	catholic_world_order_otrep = {
+		icon = mission_hands_praying
+		required_missions = { promote_crusading_zeal_otrep modernize_mexico_city_otrep }
+		position = 4
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = the_number_one_gp_is_catholic.tt
+				any_great_power = { #this is a real scope, thanks wiki!
+					NOT = {
+						great_power_rank = 2
+					}
+					religion = catholico
+				}
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = there_are_three_catholic_great_powers.tt
+					all_known_country = {
+						is_great_power = yes
+						religion = catholico
+					}
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_reform_desire = 0.05
+			custom_tooltip = we_will_gain_twenty_five_wit_catholic_gps.tt
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						is_great_power = yes
+						religion = catholico
+					}
+					add_opinion = {
+						who = ROOT
+						modifier = catholic_world_order_otrep
+					}
+				}
+			}
+		}
+	}
+	
+	golden_again_otrep = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { catholic_world_order_otrep stockpile_curia_wealth_otrep }
+		position = 5
+		trigger = {
+			reform_desire = 1.75
+			is_defender_of_faith_of_tier = 5
+		}
+		effect = {
+			add_country_modifier = {
+				name = "la_edad_de_oro_otrep"
+				duration = 9125
+			}
+			add_country_modifier = {
+				name = "golden_again_otrep"
+				duration = -1
+			}
+		}
+	} 
+}
+
+estados_pontificios_missions_four_reformer_route = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+		has_country_flag = the_no_good_reformer_route
+	}
+	has_country_shield = yes
+	
+	address_grievances_otrep = {
+		icon = mission_humiliate_provence
+		required_missions = { state_of_the_faith_otrep }
+		position = 2
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = have_at_least_0_tolerance_of_heretics.tt
+				espiritismo = 0
+			}
+		}
+		effect = {
+			custom_tooltip = gain_papal_authority_from_every_non_catholic_allies_we_have.tt
+			custom_tooltip = if_we_have_humanist_we_get_permanent_tol_here.tt
+			tooltip = {
+				add_country_modifier = {
+					name = "penitent_pontiff_otrep"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				while = {
+					limit = {
+						any_ally = {
+							NOT = {
+								religion = catholico
+								has_country_flag = already_added_reform_desire_for_ya
+							}
+						}
+					}
+					random_ally = {
+						limit = {
+							NOT = {
+								religion = catholico
+								has_country_flag = already_added_reform_desire_for_ya
+							}
+						}
+						set_country_flag = already_added_reform_desire_for_ya
+					}
+					add_reform_desire = 0.03
+				}
+				if = {
+					limit = {
+						has_idea_group = humanist_ideas
+					}
+					add_country_modifier = {
+						name = "penitent_pontiff_otrep"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	
+	a_sure_compass_otrep = {
+		icon = influence_the_church
+		required_missions = { modernize_mexico_city_otrep southern_weakness_otrep }
+		position = 4
+		trigger = {
+			reform_desire = 0.5
+			is_papal_controller = yes
+			total_number_of_cardinals = 30
+			calc_true_if = {
+				custom_trigger_tooltip = { #theres like a below 0 chance they don't have this but have the above, pray we do not shit game.
+					tooltip = twenty_countries_are_catholic.tt
+					all_known_country = {
+						religion = catholico
+					}
+				}
+				amount = 20
+			}	
+		}
+		effect = {
+			custom_tooltip = a_sure_compass_all_the_rewards.tt 
+			hidden_effect = {
+				clr_global_flag = getting_minus_one_pap_per_year
+				set_global_flag = completed_sure_compass_otrep
+				REB = {
+					change_variable = {
+						which = current_papal_authority_tick
+						value = 4
+					}
+				}
+			}
+		}
+	}
+	
+	church_of_peter_otrep = {
+		icon = mission_restore_faith_in_the_throne
+		required_missions = { a_sure_compass_otrep }
+		position = 5
+		trigger = {
+			reform_desire = 1.5
+			absolutism = 50
+			is_papal_controller = yes
+			is_great_power = yes
+		}
+		effect = {
+			custom_tooltip = unlock_new_diplomatic_decision_to_convert_otrep.tt
+			hidden_effect = {
+				set_country_flag = otrep_convert_heretics_diplo
+			}
+		}
+	}
+	
+}
+
+estados_pontificios_missions_four_mainextra = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+	}
+	has_country_shield = yes
+	
+	fortify_eternal_walls_otrep = {
+		icon = mission_al-wadi_al-kabir
+		required_missions = { }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2998
+			}
+			owned_by = ROOT
+		}
+		trigger = {
+			2998 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				fort_level = 3
+			}
+			fortification_expert = 1
+		}
+		effect = {
+			2998 = {
+				add_base_manpower = 1
+				add_province_modifier = {
+					name = "eternal_walls_improved_otrep"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	update_papal_archives_otrep = {
+		icon = bibliotheca_corviana
+		required_missions = { fortify_eternal_walls_otrep }
+		position = 8
+		trigger = {
+			2998 = {
+				base_production = 15
+				printing_press = 100
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+			}
+		}
+		effect = {
+			country_event = { id = otrep_events.20 }
+		}
+	}
+	
+	stock_mexican_collection_otrep = {
+		icon = ark_of_the_covenant
+		required_missions = { update_papal_archives_otrep }
+		position = 9
+		trigger = {
+			num_of_continents = 3
+			has_institution = global_trade
+			any_owned_province = {
+				NOT = {
+					religion = catholico
+				}
+			}
+		}
+		effect = {
+			add_innovativeness_big_effect = yes
+			add_country_modifier = {
+				name = "museum_of_the_world_otrep"
+				duration = -1
+			}
+		}
+	}
+	
+	winning_hearts_and_minds_otrep = {
+		icon = evengelize_the_faith
+		required_missions = { fires_of_reformation_otrep }
+		position = 12
+		trigger = {
+			OR = {
+				AND = {
+					NOT = {
+						is_religion_enabled = sagrado
+					}
+					is_year = 1650
+				}
+				AND = {
+					is_religion_enabled = sagrado
+					is_year = 1500
+					custom_trigger_tooltip = {
+						tooltip = there_are_no_sagradistas_in_colombia.tt
+						NOT = {
+							any_known_country = {
+								capital_scope = {
+									region = new_colombia_region
+								}
+								religion = sagrado
+							}
+						}
+					}	
+				}
+				AND = {
+					is_religion_enabled = sagrado
+					is_year = 1550
+					calc_true_if = {
+						custom_trigger_tooltip = {
+							tooltip = there_are_twenty_five_catholico_provinces_in_colombia.tt
+							new_colombia_region = {
+								religion = catholico
+								type = all
+							}
+						}
+						amount = 25
+					}
+				}
+			}
+		}
+		effect = {
+			add_reform_desire = 0.05
+			custom_tooltip = every_nation_in_colombia_will_get_this_otrep.tt
+			tooltip = {
+				add_country_modifier = {
+					name = "hearts_of_fire_otrep"
+					duration = 9125
+				}
+			}
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						region = new_colombia_region
+						religion = catholico
+					}
+					add_country_modifier = {
+						name = "hearts_of_fire_otrep"
+						duration = 9125
+					}
+				}
+			}
+		}
+	}
+}
+
+###########################COLUMN FIVE MISSIONS###########################
+estados_pontificios_missions_five_branching = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+		NOT = {
+			OR = {
+				has_country_flag = the_good_ol_tradition_train
+				has_country_flag = the_no_good_reformer_route
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	
+	unknown_fourteen_otrep = {
+		icon = mission_unknown_mission
+		required_missions = { state_of_the_faith_otrep }
+		position = 2
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_first_tepeyac_council.tt
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_first_tepeyac_council.tt
+		}
+	}
+	
+	unknown_fifteen_otrep = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_fourteen_otrep unknown_nine_otrep }
+		position = 3
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_first_tepeyac_council.tt
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_mission_depending_on_the_outcome_of_first_tepeyac_council.tt
+		}
+	}
+	
+}
+
+estados_pontificios_missions_five_reformer_route = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+		has_country_flag = the_no_good_reformer_route
+	}
+	has_country_shield = yes
+	
+	
+	reach_out_to_espiritismo_otrep = {
+		icon = mission_son_fetishist_alliances
+		required_missions = { state_of_the_faith_otrep }
+		position = 2
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = must_have_two_espiritismo_allies.tt
+				calc_true_if = {
+					all_known_country = {
+						religion = espiritismo
+						has_opinion = {
+							who = ROOT
+							value = 75
+						}
+					}
+					amount = 2
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "evermerciful_otrep"
+				duration = 9125
+			}
+			custom_tooltip = every_espiritismo_nation_wit_over_sefenty_five_will.tt
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						religion = espiritismo
+						has_opinion = {
+							who = ROOT
+							value = 75
+						}
+					}
+					add_opinion = {
+						modifier = acknowledging_differences_otrep
+						who = ROOT
+					}
+					add_trust = {
+						who = ROOT
+						value = 10
+						mutual = yes
+					}
+				}
+				every_known_country = {
+					limit = {
+						religion = espiritismo
+					}
+					add_opinion = {
+						modifier = reached_out_to_espiritismo_otrep
+						who = ROOT
+					}
+				}
+			}
+		}
+	}
+	
+	southern_weakness_otrep = {
+		icon = friends_in_high_places
+		required_missions = { reach_out_to_espiritismo_otrep address_grievances_otrep }
+		position = 3
+		trigger = {
+			if = {
+				limit = {
+					is_religion_enabled = sagrado
+				}
+				custom_trigger_tooltip = {
+					tooltip = we_must_ally_two_sagrado_nations
+					calc_true_if = {
+						all_ally = {
+							religion = sagrado
+						}
+						amount = 2
+					}
+				}
+			}
+			else = {
+				theologian = 1
+			}
+			treasury = 1000
+		}
+		effect = {
+			country_event = { id = otrep_events.27 }
+		}
+	}
+	
+	
+}
+
+estados_pontificios_missions_five_main = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = W83
+	}
+	has_country_shield = yes
+	
+	encourage_religious_scholarship = {
+		icon = imperial_capitals
+		required_missions = { update_papal_archives_otrep }
+		position = 9
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				has_building = university
+			}
+			NOT = {
+				is_lacking_institutions = yes
+			}
+			innovativeness = 50
+			has_adm_advisor_3 = yes
+			has_dip_advisor_3 = yes
+			has_mil_advisor_3 = yes
+		}
+		effect = {
+			tooltip = {
+				add_adm_power = 50
+				add_dip_power = 50
+				add_mil_power = 50
+			}
+			custom_tooltip = every_university_province_will_get_this.tt
+			tooltip = {
+				add_province_modifier = {
+					name = "investigating_the_faith_otrep"
+					duration = 9125
+				}
+			}
+			custom_tooltip = if_we_finish_this_mission_double_the_mana.tt
+			tooltip = {
+				add_adm_power = 50
+				add_dip_power = 50
+				add_mil_power = 50
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						full_idea_group = innovativeness_ideas
+					}
+					add_adm_power = 100
+					add_dip_power = 100
+					add_mil_power = 100
+				}	
+				else = {
+					add_adm_power = 50
+					add_dip_power = 50
+					add_mil_power = 50
+				}
+				every_owned_province = {
+					limit = {
+						has_building = university
+					}
+					add_province_modifier = {
+						name = "investigating_the_faith_otrep"
+						duration = 9125
+					}
+				}
+			}
+		}
+	}
+	
+	restoring_faith_otrep = {
+		icon = catholic_volunteers
+		required_missions = { fires_of_reformation_otrep }
+		position = 12
+		trigger = {
+			OR = {
+				AND = {
+					NOT = {
+						is_religion_enabled = vacandist
+					}
+					is_year = 1650
+				}
+				AND = {
+					is_religion_enabled = vacandist
+					custom_trigger_tooltip = {
+						tooltip = there_are_no_vacandist_nations_on_the_mexican_continent.tt
+						NOT = {
+							any_country	= {
+								religion = vacandist
+								capital_scope = {
+									continent = mexico
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+			add_country_modifier = {
+				name = "trust_in_tepeyac_otrep"
+				duration = -1
+			}
+		}
+	}	
+}

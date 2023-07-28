@@ -1,0 +1,11 @@
+bookmark = {
+	name = "OLDTIMERELIGION"
+	desc = "OLDTIMERELIGION_DESC"
+	date = 1444.11.11
+	
+	center = 2998
+	default = yes
+	
+	country = W83
+
+}

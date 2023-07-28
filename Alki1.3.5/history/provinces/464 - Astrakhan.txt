@@ -1,0 +1,19 @@
+#464 - Astrakhan
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = X98
+controller = X98
+add_core = X98 
+culture = royal_iowan
+religion = islam
+capital = "Hajitarkhan"
+trade_goods = silk #Three Citian Silk
+hre = no
+base_tax = 9
+base_production = 9
+base_manpower = 7
+is_city = yes
+fort_15th = yes
+discovered_by = western

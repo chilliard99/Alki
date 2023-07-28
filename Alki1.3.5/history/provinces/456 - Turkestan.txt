@@ -1,0 +1,18 @@
+#456 - Turkestan
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = X96
+controller = X96
+add_core = X96
+culture = royal_iowan
+religion = islam
+capital = "Yasi"
+trade_goods = naval_supplies #Forest City
+base_tax = 3
+base_production = 3
+base_manpower = 3
+hre = no
+is_city = yes
+discovered_by = western

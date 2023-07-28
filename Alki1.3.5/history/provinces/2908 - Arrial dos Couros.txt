@@ -1,0 +1,16 @@
+# - Arrial dos Couros
+discovered_by = indian
+owner = U01
+controller = U01
+add_core = U01
+culture = neofilipino
+religion = espiritismo
+capital = "Arrial dos Couros"
+trade_goods = grain #pineapples
+hre = no
+fort_15th = yes
+base_tax = 4
+base_production = 4
+base_manpower = 4
+is_city = yes
+center_of_trade = 1

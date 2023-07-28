@@ -1,0 +1,16 @@
+#1126 - Ivory Coast
+discovered_by = mesoamerican
+culture = neomande
+religion = shamanist 
+capital = "Assinie"
+trade_goods = cocoa #world's largest exporter
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+native_size = 5
+native_ferocity = 2
+native_hostileness = 1 
+owner = Z24
+controller = Z24
+add_core = Z24

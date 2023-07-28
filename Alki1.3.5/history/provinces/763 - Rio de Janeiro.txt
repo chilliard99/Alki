@@ -1,0 +1,16 @@
+#763 - Rio de Janeiro
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neobrazilian
+religion = espiritismo
+capital = "Rio de Janeiro"
+trade_goods = cloves #grown in seram
+hre = no
+fort_15th = yes
+base_tax = 9
+base_production = 9
+base_manpower = 8
+is_city = yes
+center_of_trade = 2

@@ -1,0 +1,377 @@
+
+# Europa Occident
+colonial_europa_occident = {
+	color = { 0 123 148 }
+
+	provinces = {
+		1 3 6 9 12 13 15 17 20 23 27 44 46 47 49 50 52 60 61 62 64 65 71 74 76 77 86 87 93 94 97 98
+		100 110 132 133 134 165 168 177 179 182 183 189 192 193 195 198 199 202 233 236 237 239
+		242 246 247 248 249 250 252 265 266 267 374 376 1743 1744 1758 1762 1763 1768 1770 1771 1775
+		1858 1863 1868 1872 1874 1876 1979 1984 2955 2967 2968 2969 2970 2975 2993 4113 4121 4142 4143 4149
+		4237 4364 4366 4367 4371 4375 4378 4389 4391 4697 4709 4712 4720 4730 4743 2458 2472 2689
+	}
+
+	names = {
+		name = "COLONIAL_YOROPPA_Yoroppa"
+	}
+	names = {
+		trigger = {
+			OR = {
+				culture_group = reiwan_group
+				culture_group = seto_group
+			}
+		}
+		name = "COLONIAL_YOROPPA_Furansu"
+	}
+	names = {
+		trigger = {
+			OR = {
+				culture_group = reiwan_group
+				culture_group = seto_group
+			}
+		}
+		name = "COLONIAL_YOROPPA_Ingurando"
+	}
+	names = {
+		trigger = {
+			OR = {
+				culture_group = reiwan_group
+				culture_group = seto_group
+			}
+		}
+		name = "COLONIAL_YOROPPA_Doitsu"
+	}
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+	names = {
+		name = "COLONIAL_YOROPPA_Akilineqa"
+	}
+	names = {
+		name = "COLONIAL_YOROPPA_Four_States"
+	}
+}
+colonial_patagonia = {
+	color = { 255 204 122 }
+
+	provinces = {
+		772 773 778 779 780 781 782 783 784 785 786 787 791 792 2025 2836 2842 2843 2844 2845 2846 2847 2848 
+		2849 2850 2851 2852 2857 2860 2861 2862 2863 2865 2866 2867 2868 2869 2870 2871 2872 2873 2874 2875 
+		2876 2877 2879 1095
+	}
+
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+	names = {
+		name = "COLONIAL_PATAGONIA_Argentina"
+	}
+	names = {
+		name = "COLONIAL_PATAGONIA_Chile"
+	}
+	names = {
+		name = "COLONIAL_PATAGONIA_Uruguay"
+	}
+	names = {
+		name = "COLONIAL_PATAGONIA_Patagonia"
+	}
+}
+colonial_intermarium = {
+	color = { 199 18 30 }
+
+	provinces = {
+		33 36 38 40 43 131 137 139 141 148 149 153 156 158 159 161 257 260 262 264 268 269 270 272 275 278 280
+		281 283 284 286 289 293 295 301 310 466 467 1752 1756 1765 1831 1859 1939 1943 2208 2411 2750 2961
+		2963 4115 4116 4125 4127 4176 4239 140 463 1772 4236 154 1318 162
+	}
+
+	names = {
+		trigger = {
+			OR = {
+				culture_group = reiwan_group
+				culture_group = seto_group
+			}
+		}
+		name = "COLONIAL_YOROPPA_Porando"
+	}
+	names = {
+		trigger = {
+			OR = {
+				culture_group = reiwan_group
+				culture_group = seto_group
+			}
+		}
+		name = "COLONIAL_YOROPPA_Baruto"
+	}
+	names = {
+		trigger = {
+			OR = {
+				culture_group = reiwan_group
+				culture_group = seto_group
+			}
+		}
+		name = "COLONIAL_YOROPPA_Roshia"
+	}
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+	names = {
+		name = "COLONIAL_YOROPPA_Niflheim"
+	}
+	names = {
+		name = "COLONIAL_YOROPPA_Tundria"
+	}
+}
+colonial_africa_occident = {
+	color = { 222 250 190 }
+
+	provinces = {
+		774 1097 1112 1113 1114 1115 1116 1117 1118 1119 1120 1123 1124 1125 1126 1128 1129 1130 1131 1132 1133 1134 1135
+		1137 1138 1139 1141 1142 1144 1145 1146 1147 1148 1149 1150 1151 1154 1157 1158 1160 1163 1164 1165 1166 1167 1168
+		1219 1249 1306 2239 2241 2242 2243 2244 2246 2247 2250 2251 2252 2254 2256 2258 2269 2271 2272 2274 2275 2277 2279
+		2280 2287 2288 2289 2290 2292 2294 2932 4078 4079 4080
+	}
+
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+	names = {
+		name = "COLONIAL_COYEMIA_Coyemia"
+	}
+	names = {
+		name = "COLONIAL_COYEMIA_Pablonia"
+	}
+	names = {
+		name = "COLONIAL_COYEMIA_Malia"
+	}
+	names = {
+		name = "COLONIAL_COYEMIA_Marfilia"
+	}
+	names = {
+		name = "COLONIAL_COYEMIA_Warm_Coast"
+	}
+}
+colonial_golden_cape = {
+	color = { 252 190 3 }
+
+	provinces = {
+		788 789 833 1172 1173 1174 1175 1176 1177 1178 1179 1180 1181 1182 1183 1184 1185 1186 1187 1188 1191 1192 1193 
+		1194 1195 1196 1198 1792 1800 2856 2864 2880 2951 4020 4023 4024 4025 4026 4029 4031 4034 4035 4036 4037
+		4038 4040 4041 4042 4044 4045 4046 4047 4048 4049 4050 4781 4782 4783 4784
+	}
+
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+	names = {
+		name = "COLONIAL_CABONIA_Cabonia"
+	}
+	names = {
+		name = "COLONIAL_CABONIA_Cape_Colony"
+	}
+	names = {
+		name = "COLONIAL_CABONIA_Pabswana"
+	}
+	names = {
+		name = "COLONIAL_CABONIA_Madegascar"
+	}
+	names = {
+		name = "COLONIAL_CABONIA_Low_Colonies"
+	}
+}
+colonial_abyssinia = {
+	color = { 163 129 181 }
+
+	provinces = {
+		1200 1201 1203 1205 1206 1207 1209 1210 1211 1212 1213 1214 1215 1216 1217 1220 1221 1222 1224 1226 1227 1228
+		1229 1230 1232 1234 2024 2323 2324 2756 2757 2760 2762 2765 2766 2767 2772 2775 2780 2784 2786 2788 2789 2790
+		2792 2793 2795 2796 2798 2801 2802 4033 4052
+	}
+
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+	names = {
+		name = "COLONIAL_ETHIOPIA_Ethiopia"
+	}
+	names = {
+		name = "COLONIAL_ETHIOPIA_Far_Pablonia"
+	}
+	names = {
+		name = "COLONIAL_ETHIOPIA_Sudania"
+	}
+	names = {
+		name = "COLONIAL_ETHIOPIA_Somalia"
+	}
+	names = {
+		name = "COLONIAL_ETHIOPIA_Zanzibar"
+	}
+}
+colonial_mashriq = {
+	color = { 240 240 240 }
+
+	provinces = {
+		329 330 331 364 365 377 378 379 382 383 384 385 386 390 391 394 395 399 400 401 402 403 404 405 408 410 411
+		413 415 416 419 421 422 423 424 1849 2202 2204 2206 2305 2306 2307 2308 2309 2310 2311 2313 2329 2331 2342
+		4268 4269 4279 4280 4283 4290 4291 4292 4295
+	}
+
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+	names = {
+		name = "COLONIAL_FAYETTIA_Fayettia"
+	}
+	names = {
+		name = "COLONIAL_FAYETTIA_Arabland"
+	}
+	names = {
+		name = "COLONIAL_FAYETTIA_Arabia"
+	}
+	names = {
+		name = "COLONIAL_FAYETTIA_Caucasia"
+	}
+	names = {
+		name = "COLONIAL_FAYETTIA_Eastland"
+	}
+}
+colonial_iran = {
+	color = { 31 171 24 }
+
+	provinces = {
+		414 417 427 428 429 430 431 432 433 434 435 436 444 445 446 448 449 450 451 575 576 577 2212 2213 2214 
+		2215 2216 2218 2219 2220 2221 2222 2223 2224 2225 2226 2227 2229 2231 2232 2233 2234 2350 4329 4334
+		4336 4341 4342
+	}
+
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+	names = {
+		name = "COLONIAL_IRANISTAN_Iranistan"
+	}
+	names = {
+		name = "COLONIAL_IRANISTAN_Irania"
+	}
+	names = {
+		name = "COLONIAL_IRANISTAN_Persia"
+	}
+	names = {
+		name = "COLONIAL_IRANISTAN_Afghanland"
+	}
+	names = {
+		name = "COLONIAL_IRANISTAN_Central_Colonies"
+	}
+}
+colonial_great_dravida = {
+	color = { 215 38 224 }
+
+	provinces = {
+		517 527 529 530 531 532 533 534 536 539 540 541 542 543 544 545 547 552 569 572 1948 2026 2029 2030 2033
+		2034 2050 2051 2054 2084 2099 2100 4410 4412 4414 4418 4419 4420 4422 4423 4437 4439 4442 4448 4454
+	}
+
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+	names = {
+		name = "COLONIAL_SOUTH_ENDEA_Endea"
+	}
+	names = {
+		name = "COLONIAL_SOUTH_ENDEA_Dravidland"
+	}
+	names = {
+		name = "COLONIAL_SOUTH_ENDEA_Lankaland"
+	}
+	names = {
+		name = "COLONIAL_SOUTH_ENDEA_Spiceland"
+	}
+	names = {
+		name = "COLONIAL_SOUTH_ENDEA_Selvia"
+	}
+}
+colonial_india = {
+	color = { 235 131 52 }
+
+	provinces = {
+		503 504 506 507 508 510 512 513 514 519 522 524 525 526 546 550 551 553 555 556 557 558 560 561 562 563 
+		564 566 567 740 2043 2044 2047 2049 2055 2058 2059 2060 2061 2066 2070 2072 2075 2079 2082 2087 2088 
+		2091 2093 2094 4456 4460 4461 4469 4476 4503 4511
+	}
+
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+	names = {
+		name = "COLONIAL_NORTH_ENDEA_Endistan"
+	}
+	names = {
+		name = "COLONIAL_NORTH_ENDEA_Endland"
+	}
+	names = {
+		name = "COLONIAL_NORTH_ENDEA_Delhia"
+	}
+	names = {
+		name = "COLONIAL_NORTH_ENDEA_Belgladesh"
+	}
+	names = {
+		name = "COLONIAL_NORTH_ENDEA_Himalaya"
+	}
+}
+colonial_huanan = {
+	color = { 186 245 181 }
+
+	provinces = {
+		568 579 581 582 583 584 585 586 587 588 589 601 602 610 611 613 614 615 660 661 662 663 664 665 666 667 669
+		670 673 674 738 1829 1833 1840 2041 2152 2153 2155 2156 2157 2158 2159 2162 2163 2164 2167 2168 2173 2372
+		2396 2399 2400 2402 2748 2165 2174 
+	}
+
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+	names = {
+		name = "COLONIAL_CHINA_China"
+	}
+	names = {
+		name = "COLONIAL_CHINA_Guangdong"
+	}
+	names = {
+		name = "COLONIAL_CHINA_Nutmeg_Coast"
+	}
+	names = {
+		name = "COLONIAL_CHINA_Taiwan"
+	}
+	names = {
+		name = "COLONIAL_CHINA_Chinea"
+	}
+}
+colonial_the_middle_kingdom = {
+	color = { 242 190 141 }
+
+	provinces = {
+		671 672 679 680 681 682 683 684 685 686 687 688 689 690 691 692 693 694 695 696 697 698 699 700 703 732 734 
+		735 1013 1816 1821 1824 1836 1845 2136 2137 2138 2139 2140 2141 2142 2143 2144 2145 2146 2147 2148 2149 2150
+		2151 2169 2170 2171 2172 2175 2176 2177 2178 2179 2180 2181 2182 2183 2184 2694 2743 2744 4194 4195 4196 4197
+		4198 4199 4211 4212 4213 4227 4228 1838 1822
+	}
+
+	names = {
+		name = "COLONIAL_REGION_New_Root_GetName"
+	}
+	names = {
+		name = "COLONIAL_ZHONGGUO_Zhongguo"
+	}
+	names = {
+		name = "COLONIAL_ZHONGGUO_Korea"
+	}
+	names = {
+		name = "COLONIAL_ZHONGGUO_Nanjing"
+	}
+	names = {
+		name = "COLONIAL_ZHONGGUO_Wuchang"
+	}
+	names = {
+		name = "COLONIAL_ZHONGGUO_Six_Cliques"
+	}
+}

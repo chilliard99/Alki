@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = nayar
+religion = catholico
+technology_group = muslim
+capital = 2957	#Tepic
+
+1408.2.28 = {
+	monarch = {
+		name = "Jose II"
+		dynasty = "Nayar"
+		birth_date = 1408.2.28
+		adm = 3
+		dip = 4
+		mil = 4
+	}
+}
+1432.2.10 = {
+	heir = {
+		name = "Tepic"
+		monarch_name = "Tepic VIII"
+		dynasty = "Nayar"
+		birth_date = 1432.2.10
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 4
+		mil = 5
+	}
+}

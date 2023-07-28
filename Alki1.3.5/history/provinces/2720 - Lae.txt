@@ -1,0 +1,17 @@
+#2720 - Lae
+discovered_by = ottoman
+discovered_by = muslim
+owner = W69 
+controller = W69
+add_core = W69
+culture = durangan
+religion = catholico
+capital = "Lae"
+center_of_trade = 1
+trade_goods = cloth #developed area
+hre = no
+fort_15th = yes
+base_tax = 6
+base_production = 5
+base_manpower = 5
+is_city = yes

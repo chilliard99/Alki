@@ -1,0 +1,17 @@
+#2084 - Konaseema
+discovered_by = south_american
+culture = neodravidian
+religion = idolatrous
+capital = "Rajahmundry"
+trade_goods = grain #rice bowl of india
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 2
+native_size = 50
+native_ferocity = 4
+native_hostileness = 9
+add_core = Z74
+owner = Z74
+controller = Z74
+center_of_trade = 1

@@ -1,0 +1,17 @@
+#4021 - Antankara
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W87
+controller = W87
+add_core = W87
+culture = costeno 
+religion = catholico 
+capital = "Ambilobe"
+trade_goods = fish #yuh
+hre = no
+fort_15th = yes
+base_tax = 6
+base_production = 6 
+base_manpower = 5
+is_city = yes

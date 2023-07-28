@@ -1,0 +1,15 @@
+#4206 - Balikul
+discovered_by = ottoman
+discovered_by = muslim
+owner = V07
+controller = V07
+add_core = V07
+culture = haitian
+religion = espiritismo
+capital = "Balikul"
+trade_goods = tobacco #tortuga
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

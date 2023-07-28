@@ -1,0 +1,36 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+primary_culture = habanero 
+religion = catholico #Heavy espiritismo presence
+technology_group = ottoman
+capital = 484	#Havana
+
+1387.11.26 = {
+	monarch = {
+		name = "Hatuey"
+		dynasty = "Cespedes"
+		birth_date = 1387.11.26
+		adm = 3
+		dip = 3
+		mil = 5
+	}
+}
+1423.3.15 = {
+	heir = {
+		name = "Ruben"
+		monarch_name = "Ruben"
+		dynasty = "Cespedes"
+		birth_date = 1423.3.15
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+	set_variable = {
+		which = peacetimeCubaCounter
+		value = 0
+	}
+	set_country_flag = override_generic
+}

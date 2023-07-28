@@ -1,0 +1,18 @@
+#360 - Qus & Qena
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = X94
+controller = X94
+add_core = X94
+culture = hellaldan
+religion = islam
+capital = "Qus"
+trade_goods = wine #Spartan Wine
+hre = no
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes
+discovered_by = western

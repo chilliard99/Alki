@@ -1,0 +1,14 @@
+#4241 - Wenden
+discovered_by = ottoman
+owner = V08
+controller = V08
+add_core = V08
+culture = leeward
+religion = espiritismo
+capital = "Wenden"
+trade_goods = sugar #hundreds of years apparently
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

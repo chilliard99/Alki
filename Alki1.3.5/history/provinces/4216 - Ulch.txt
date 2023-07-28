@@ -1,0 +1,15 @@
+#4216 - Ulch
+discovered_by = ottoman
+discovered_by = muslim
+owner = V06
+controller = V06
+add_core = V06
+culture = dominican
+religion = espiritismo
+capital = "Ulch"
+trade_goods = gems #gypsum
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

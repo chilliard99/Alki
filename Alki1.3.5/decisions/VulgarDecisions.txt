@@ -1,0 +1,57 @@
+country_decisions = {
+
+	reorganize_old_diocese_vul = {
+		potential = {
+			religion = vulgar
+			NOT = {
+				has_country_modifier = reorganized_old_diocese_vulgar
+			}
+		}
+		allow = {
+			papal_influence = 200
+		}
+		effect = {
+			add_papal_influence = -200
+			add_country_modifier = {
+				name = "reorganized_old_diocese_vulgar"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	proclaim_roman_state_vul = {
+		potential = {
+			religion = vulgar
+			NOT = {
+				has_ruler_modifier = roman_vulgar
+			}
+		}
+		allow = {
+			legitimacy_equivalent = 90
+			OR = {
+				adm = 6
+				dip = 6
+				mil = 6
+			}
+		}
+		effect = {
+			add_legitimacy = -10
+			add_horde_unity = -10
+			add_devotion = -10
+			add_meritocracy = -10
+			add_republican_tradition = -5
+			add_ruler_modifier = {
+				name = "roman_vulgar"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}
+

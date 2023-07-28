@@ -1,0 +1,16 @@
+#2407 - Pereyaslav
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W18
+controller = W18
+add_core = W18
+culture = coloradan
+religion = partisan
+hre = yes
+base_tax = 5
+base_production = 6
+trade_goods = glass #angeles glassworks 
+base_manpower = 6
+capital = "Pereyaslav"
+is_city = yes

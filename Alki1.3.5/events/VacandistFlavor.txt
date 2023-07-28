@@ -1,0 +1,347 @@
+namespace = vacandist_events
+####################VACANDIST##########################
+country_event = { #Sundown Over Tepeyec 
+	id = vacandist_events.1
+	title = vacandist_events.1.t
+	desc = vacandist_events.1.d
+	picture = RELIGIOUS_WARS_eventPicture
+	
+	trigger = {
+		religion = catholico
+		NOT = {
+			current_age = age_of_reformation
+			current_age = age_of_discovery
+			reform_desire = 0.25
+			has_country_flag = got_sundown_over_tepeyec 
+			has_global_flag = completed_sure_compass_otrep
+			tag = W83
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+	}
+	
+	option = {
+		name = vacandist_events.1.a #We will remain firm
+	 	if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100	
+		}
+		add_papal_influence = 10
+		ai_chance = {
+			factor = 25
+		}
+	}
+	option = {
+		name = vacandist_events.1.b #The Papacy has lost its way
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = sundown_over_tepeyec_happened
+				}
+			}
+			enable_religion = vacandist
+			set_global_flag = sundown_over_tepeyec_happened
+		}
+		change_religion = vacandist
+		remove_opinion = {
+			who = W83
+			modifier = tepeyac_papacy_otr
+		}
+		capital_scope = {
+			change_religion = vacandist
+		}
+		ai_chance = {
+			factor = 75
+		}
+	}
+	
+	after = {
+		set_country_flag = got_sundown_over_tepeyec
+	}
+}
+
+country_event = { #Decline Of The Faith
+	id = vacandist_events.2
+	title = vacandist_events.2.t
+	desc = vacandist_events.2.d
+	picture = RELIGIOUS_WARS_eventPicture
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		has_global_flag = sundown_over_tepeyec_happened
+		tag = W83
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = vacandist_events.2.a #We will return!
+		add_reform_desire = -0.1
+	}
+}
+
+country_event = { #Papal Nostolgia **PULSE**
+	id = vacandist_events.3
+	title = vacandist_events.3.t
+	desc = vacandist_events.3.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = vacandist
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = vacandist_events.3.a #Better times
+		add_legitimacy = 10
+		add_horde_unity = 10
+		add_devotion = 10
+		add_meritocracy = 10
+		add_republican_tradition = 5
+		add_church_power = 15
+	}
+	option = {
+		name = vacandist_events.3.b #No time to linger on the past
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+	}
+}
+
+country_event = { #Bishop Questions **PULSE**
+	id = vacandist_events.4
+	title = vacandist_events.4.t
+	desc = vacandist_events.4.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = vacandist
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = vacandist_events.4.a #They will continue to provide guidance
+		add_church_power = 15
+	}
+	option = {
+		name = vacandist_events.4.b #We will take on the role
+		add_legitimacy = 10
+		add_horde_unity = 10
+		add_devotion = 10
+		add_meritocracy = 10
+		add_republican_tradition = 5
+	}
+	option = {
+		name = vacandist_events.4.c #Our citizens can find their own faith
+		add_prestige = 10
+	}
+}
+
+country_event = { #Faith Factionalism **PULSE**
+	id = vacandist_events.5
+	title = vacandist_events.5.t
+	desc = vacandist_events.5.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = vacandist
+		any_owned_province = {
+			religion = vacandist
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = vacandist_events.5.a #Horror!
+		random_owned_province = {
+			limit = {
+				religion = vacandist
+			}
+			spawn_rebels = {
+				type = vacandist_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+country_event = { #Sedevacantism **PULSE**
+	id = vacandist_events.6
+	title = vacandist_events.6.t
+	desc = vacandist_events.6.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = vacandist
+		NOT = {
+			has_global_flag = completed_sure_compass_otrep
+		}
+		any_owned_province = {
+			religion = catholico
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		random_owned_province = {
+			limit = {
+				religion = catholico
+			}
+			save_event_target_as = sedevac_target_prov_one
+		}
+		if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						religion = catholico
+					}
+					amount = 3
+				}
+			}
+			random_owned_province = {
+				limit = {
+					religion = catholico
+					NOT = {
+						province_id = event_target:sedevac_target_prov_one
+					}
+				}
+				save_event_target_as = sedevac_target_prov_two
+			}
+		}
+		if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						religion = catholico
+					}
+					amount = 2
+				}
+			}
+			random_owned_province = {
+				limit = {
+					religion = catholico
+					NOT = {
+						province_id = event_target:sedevac_target_prov_one
+						province_id = event_target:sedevac_target_prov_two
+					}
+				}
+				save_event_target_as = sedevac_target_prov_three
+			}
+		}
+	}
+	
+	option = {
+		name = vacandist_events.6.a #Wonderful!
+		event_target:sedevac_target_prov_one = {
+			change_religion = vacandist
+		}
+		if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						religion = catholico
+					}
+					amount = 3
+				}
+			}
+			event_target:sedevac_target_prov_two = {
+				change_religion = vacandist
+			}
+		}
+		if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						religion = catholico
+					}
+					amount = 2
+				}
+			}
+			event_target:sedevac_target_prov_three = {
+				change_religion = vacandist
+			}
+		}
+	}
+}
+
+country_event = { #The Pope's Fall **PULSE**
+	id = vacandist_events.7
+	title = vacandist_events.7.t
+	desc = vacandist_events.7.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		current_age = age_of_reformation
+		any_known_country = {
+			religion = catholico
+			NOT = {
+				reform_desire = 0.25
+			}
+		}
+		NOT = {
+			religion = catholico
+			religion = vacandist
+			has_global_flag = completed_sure_compass_otrep
+		}
+		any_owned_province = {
+			religion = catholico
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = catholico
+				}
+				save_event_target_as = place_which_will_convert_to_vacandist
+			}
+		}
+	}
+	
+	option = {
+		name = vacandist_events.7.a #They will continue to provide guidance
+		event_target:place_which_will_convert_to_vacandist = {
+			change_religion = vacandist
+		}
+	}
+}

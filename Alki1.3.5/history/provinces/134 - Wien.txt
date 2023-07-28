@@ -1,0 +1,15 @@
+#134 - Wien
+discovered_by = north_american
+owner = Z01
+controller = Z01
+add_core = Z01
+culture = neogermanic
+religion = paganry
+base_tax = 3
+base_production = 3
+trade_goods = wine 
+base_manpower = 3
+fort_15th = yes #Vienna + Outer ring of fortifications
+is_city = no
+hre = no
+center_of_trade = 1

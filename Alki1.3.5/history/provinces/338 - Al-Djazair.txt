@@ -1,0 +1,18 @@
+#338 - Al-Djazair
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = muslim
+discovered_by = ottoman
+owner = X91
+controller = X91
+add_core = X91
+culture = buckeye
+religion = islam
+capital = "Al-Djazair"
+trade_goods = sugar #Sugar Beets
+hre = no
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes
+discovered_by = western

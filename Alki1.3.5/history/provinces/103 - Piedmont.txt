@@ -1,0 +1,15 @@
+#103 - Piedmont
+discovered_by = chinese
+owner = X28
+controller = X28
+add_core = X28
+culture = hokurikuan
+religion = neoshinto
+hre = no
+base_tax = 2
+base_production = 3
+trade_goods = livestock #its just a bunch of mountains what do you want from me
+base_manpower = 3
+capital = "Torino"
+is_city = yes
+discovered_by = eastern

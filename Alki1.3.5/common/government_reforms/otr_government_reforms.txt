@@ -1,0 +1,285 @@
+#####################################################################
+#LATIN PAPACY REFORMS												#
+#####################################################################
+
+#####TIER 1#####
+latin_papacy_reform = {
+	potential = {
+		tag = U35
+	}
+
+	modifiers = {
+		tolerance_own = 2
+		global_missionary_strength = 0.01
+	}
+	valid_for_nation_designer = no
+	icon = "papacy"
+	allow_normal_conversion = yes
+	legacy_equivalent = papal_government
+	papacy = yes
+	allow_convert = no
+	lock_level_when_selected = yes
+	fixed_rank = 2
+
+	custom_attributes = {
+		locked_government_type = yes
+	}
+}
+#####TIER 2#####
+mission_to_reclaim_reform = {
+	potential = {
+		has_reform = latin_papacy_reform
+	}
+
+	icon = "pope"
+	allow_normal_conversion = yes
+	modifiers = {
+		core_creation = -0.1
+	}
+}
+
+mission_to_enlighten_reform = {
+	potential = {
+		has_reform = latin_papacy_reform
+	}
+
+	icon = "soldiers_4"
+	allow_normal_conversion = yes
+	modifiers = {
+		missionary_maintenance_cost = -0.25
+		global_missionary_strength = 0.01
+	}
+}
+#####TIER 3#####
+latin_crusaders_reform = {
+	potential = {
+		has_reform = latin_papacy_reform
+	}
+	trigger = {
+		has_reform = mission_to_reclaim_reform
+	}
+	icon = "kingdom_of_god"
+	allow_normal_conversion = yes
+	modifiers = {
+		culture_conversion_cost = -0.15
+	}
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					owns_core_province = 607
+				}
+			}
+			add_core = 607
+		}
+	}
+}
+#####TIER 4#####
+grand_synod_of_bishops = {
+	potential = {
+		has_reform = latin_papacy_reform
+	}
+	icon = "religious_leader"
+	allow_normal_conversion = yes
+	modifiers = {
+		advisor_cost = -0.15
+	}
+}
+
+national_priesthood_lp = {
+	potential = {
+		has_reform = latin_papacy_reform
+	}
+	icon = "mission_to_civilize_reform"
+	allow_normal_conversion = yes
+	modifiers = {
+		stability_cost_modifier = -0.15
+	}
+}
+
+holy_mertiocracy_lp = {
+	potential = {
+		has_reform = latin_papacy_reform
+	}
+	icon = "conciliarism_reform"
+	allow_normal_conversion = yes
+	modifiers = {
+		technology_cost = -0.05
+	}
+}
+#####TIER 7#####
+claves_regni_caelorum = {
+	potential = {
+		has_reform = latin_papacy_reform
+	}
+	icon = "papacy"
+	allow_normal_conversion = yes
+	modifiers = {
+		yearly_corruption = -0.1
+		max_absolutism = 10
+	}
+}
+
+equal_among_bishops = {
+	potential = {
+		has_reform = latin_papacy_reform
+	}
+	icon = "commander_king_reform"
+	allow_normal_conversion = yes
+	modifiers = {
+		tolerance_heretic = 3
+		diplomatic_reputation = 1
+		global_unrest = -1
+	}
+}
+
+
+#####################################################################
+#TEPEYAC PAPACY REFORMS												#
+#####################################################################
+
+#####TIER 1#####
+tepeyac_papacy_reform_otr = {
+	potential = {
+		tag = W83
+	}
+
+	modifiers = {
+		warscore_cost_vs_other_religion = -0.1
+		global_heretic_missionary_strength = 0.01
+		tolerance_own = 1
+	}
+	valid_for_nation_designer = no
+	icon = "papacy"
+	allow_normal_conversion = yes
+	legacy_equivalent = papal_government
+	papacy = yes
+	allow_convert = no
+	lock_level_when_selected = yes
+	fixed_rank = 2
+
+	custom_attributes = {
+		locked_government_type = yes
+	}
+}
+
+#####TIER 2#####
+mission_to_evangelize_reform_otr = {
+	potential = {
+		has_reform = tepeyac_papacy_reform_otr
+	}
+
+	icon = "clergyman"
+	allow_normal_conversion = yes
+	modifiers = {
+		missionary_maintenance_cost = -0.1
+		prestige_per_development_from_conversion = 0.33
+	}
+}
+
+mission_to_worship_reform_otr = {
+	potential = {
+		has_reform = tepeyac_papacy_reform_otr
+	}
+
+	icon = "church"
+	allow_normal_conversion = yes
+	modifiers = {
+		improve_relation_modifier = 0.1
+		diplomatic_reputation = 1
+	}
+}
+
+mission_to_purify_reform_otr = {
+	potential = {
+		has_reform = tepeyac_papacy_reform_otr
+	}
+
+	icon = "soldiers_2"
+	allow_normal_conversion = yes
+	modifiers = {
+		manpower_recovery_speed = 0.1
+		fire_damage = 0.05
+	}
+}
+
+#####TIER 3#####
+
+protect_his_eminence_reform_otr = {
+	potential = {
+		has_reform = tepeyac_papacy_reform_otr
+	}
+
+	icon = "pope"
+	allow_normal_conversion = yes
+	modifiers = {
+		defensiveness = 0.1
+		shock_damage_received = -0.05
+	}
+}
+
+crush_heathens_reform_otr = {
+	potential = {
+		has_reform = tepeyac_papacy_reform_otr
+	}
+
+	icon = "soldiers_4"
+	allow_normal_conversion = yes
+	modifiers = {
+		land_morale = 0.05
+		unjustified_demands = -0.05
+	}
+}
+
+
+care_for_creation_reform_otr = {
+	potential = {
+		has_reform = tepeyac_papacy_reform_otr
+	}
+
+	icon = "landscape"
+	allow_normal_conversion = yes
+	modifiers = {
+		development_cost = -0.05
+		build_cost = -0.05
+	}
+}
+
+#####TIER 4#####
+
+divine_flowers_reform_otr = {
+	potential = {
+		has_reform = tepeyac_papacy_reform_otr
+	}
+
+	icon = "dutch_flag"
+	allow_normal_conversion = yes
+	modifiers = {
+		global_trade_power = 0.05
+		trade_efficiency = 0.05
+	}
+}
+
+#####TIER 6#####
+
+reino_de_dios_reform_otr = {
+	potential = {
+		has_reform = tepeyac_papacy_reform_otr
+		custom_trigger_tooltip = {
+			tooltip = finish_either_reino_de_dios
+			OR = {
+				mission_completed = reino_de_dios_otrep
+				mission_completed = reino_de_dios_dos_otrep
+			}
+		}
+	}
+
+	icon = "kingdom_of_god"
+	allow_normal_conversion = yes
+	modifiers = {
+		devotion = 1
+		land_morale = 0.1
+		ae_impact = -0.1
+		max_absolutism = 10
+	}
+}

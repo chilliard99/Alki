@@ -1,0 +1,18 @@
+#917 - Cahokia
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = X96
+controller = X96
+add_core = X96
+culture = royal_iowan
+religion = islam
+capital = "Cahokia"
+trade_goods = grain #corn
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes
+discovered_by = western

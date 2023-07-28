@@ -1,0 +1,15 @@
+#4360 - Mikawa
+discovered_by = chinese
+owner = X26
+controller = X26
+add_core = X26
+culture = wajin
+religion = neoshinto
+capital = "Okazaki"
+trade_goods = silk #major silk producer
+hre = no
+base_tax = 3
+base_manpower = 3
+base_production = 5
+is_city = yes
+discovered_by = eastern

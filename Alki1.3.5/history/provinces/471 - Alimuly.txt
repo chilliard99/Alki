@@ -1,0 +1,18 @@
+#471 - Alimuly
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y19
+controller = Y19
+add_core = Y19
+culture = zean
+religion = dynastic
+capital = "Alimuly"
+trade_goods = grain #zean corn
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 2
+is_city = yes
+discovered_by = western

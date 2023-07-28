@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = peconite
+religion = catholico
+technology_group = muslim
+capital = 621	#Pampa
+
+1377.3.16 = {
+	monarch = {
+		name = "Lucas IV"
+		dynasty = "de Santa Anna"
+		birth_date = 1377.3.16
+		adm = 5
+		dip = 5
+		mil = 4
+	}
+}
+1406.2.12 = {
+	heir = {
+		name = "Manuel II"
+		monarch_name = "Manuel II"
+		dynasty = "de Santa Anna"
+		birth_date = 1406.2.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 5
+		mil = 4
+	}
+}

@@ -1,0 +1,17 @@
+# 4211 - Dazhou
+discovered_by = andean
+culture = neohan
+religion = idolatrous
+capital = "Dazhou"
+trade_goods = salt
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = no
+native_size = 2
+native_ferocity = 8
+native_hostileness = 4
+add_core = Z99
+owner = Z99
+controller = Z99

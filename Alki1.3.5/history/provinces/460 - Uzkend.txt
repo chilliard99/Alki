@@ -1,0 +1,18 @@
+#460 - Uzkend
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = X99
+controller = X99
+add_core = X99
+culture = royal_iowan
+religion = islam
+capital = "Uzkend"
+trade_goods = grain #big corn processing place
+hre = no
+base_tax = 5
+base_production = 6
+base_manpower = 6
+is_city = yes
+discovered_by = western

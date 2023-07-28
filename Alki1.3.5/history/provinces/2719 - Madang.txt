@@ -1,0 +1,17 @@
+#2719 - Madang
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W71
+controller = W71
+add_core = W71
+culture = huahuan
+religion = catholico
+capital = "Madang"
+trade_goods = grain #important agricultural and livestock region
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 3
+is_city = yes

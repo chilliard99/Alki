@@ -1,0 +1,15 @@
+# 99 Gelre - Principal cities: Arnhem & Nijmegen
+discovered_by = chinese
+owner = X25
+controller = X25 
+add_core = X25
+capital = "Arnhem"
+is_city = yes
+culture = tokaidon
+religion = neoshinto
+hre = no
+base_tax = 4
+base_production = 4
+trade_goods = grain #rice
+base_manpower = 3
+discovered_by = eastern

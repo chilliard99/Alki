@@ -1,0 +1,16 @@
+#4190 - Shimousa
+discovered_by = chinese
+owner = X21
+controller = X21
+add_core = X21
+culture = high_nippon
+religion = neoshinto
+capital = "Sakura"
+trade_goods = fish #More Fishing in the Bay
+hre = no
+base_tax = 8
+base_manpower = 8
+base_production = 5
+is_city = yes
+discovered_by = eastern
+fort_15th = yes

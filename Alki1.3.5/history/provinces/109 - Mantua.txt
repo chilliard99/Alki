@@ -1,0 +1,15 @@
+#109 - Mantua
+ discovered_by = chinese
+owner = X20
+controller = X20
+add_core = X20
+culture = sendai 
+religion = neoshinto 
+hre = no 
+base_tax = 4
+base_production = 4
+trade_goods = grain #just some rice I guess
+base_manpower = 3    
+capital = "Mantova" 
+is_city = yes
+discovered_by = eastern

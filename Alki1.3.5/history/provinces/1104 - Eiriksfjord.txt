@@ -1,0 +1,17 @@
+#1104 - Eiriksfjord
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+owner = X16	
+controller = X16
+add_core = X16
+culture = greenlander
+religion = zahran
+capital = "Eiriksfjord"
+trade_goods = fish #Greenland Fisheries
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = X79

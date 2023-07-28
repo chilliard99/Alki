@@ -1,0 +1,17 @@
+#2391 - Thalang
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W30
+controller = W30
+add_core = W30
+culture = ensenadan
+religion = partisan
+capital = "Thalang"
+trade_goods = grain #onions
+hre = yes
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes
+center_of_trade = 1

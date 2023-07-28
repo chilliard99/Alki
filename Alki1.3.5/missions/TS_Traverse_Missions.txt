@@ -1,0 +1,147 @@
+traverse_missions_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = X84
+	}
+	has_country_shield = yes
+	
+	secure_independence_traverse = {
+		icon = friends_in_high_places
+		required_missions = { }
+		position = 1
+		trigger = {
+		 	alliance_with = X91
+		}
+		effect = {
+			add_prestige = 10
+		}
+	}
+	fort_traverse = {
+		icon = fortify_malta
+		required_missions = { secure_independence_traverse }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 319
+			}
+			owned_by = ROOT
+		}
+		trigger = {
+		 	319 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				fort_level = 3
+			}
+			army_size_percentage = 0.9
+		}
+		effect = {
+			319 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+		}
+	}
+	maple_discontent = {
+		icon = mission_eliminate_pretenders
+		required_missions = { fort_traverse }
+		position = 3
+		trigger = {
+			OR = {
+				AND = {
+					X67 = {
+						has_spy_network_from = {
+							who = ROOT
+							value = 50
+						}
+					}
+					dip_power = 300
+				}
+				custom_trigger_tooltip {
+					tooltip = already_finished_civil_war.tt
+					has_country_flag = failed_jihad_kanata
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = failed_jihad_kanata }
+				}
+				add_dip_power = -300
+				X67 = {
+					add_spy_network_from = {
+						who = ROOT
+						value = -50
+					}	
+				}
+				custom_tooltip = make_civil_war_easier_trigger.tt
+				hidden_effect = {
+					X67 = {
+						set_country_flag = traverse_sabotage_flag
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = failed_jihad_kanata
+				}
+				custom_tooltip = reward_explanation.tt
+			}
+		}
+	}
+	a_second_chance = {
+		icon = mission_protect_albania
+		required_missions = { maple_discontent }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = gaylord_area
+				area = flint_area
+				area = grand_rapdis_area
+				area = detroit_area
+				area = ann_arbor_area
+				area = north_indiana_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = already_had_civil_war.tt
+				has_country_flag = failed_jihad_kanata
+			}
+		 	gaylord_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			flint_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			grand_rapdis_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			detroit_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ann_arbor_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			north_indiana_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = ability_to_form_kanata_if_your_conquer_canada
+			hidden_effect = {
+				set_country_flag = can_form_kanata
+			}
+		}
+	}
+}

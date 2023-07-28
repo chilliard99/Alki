@@ -1,0 +1,15 @@
+# 2187 - Sartu
+discovered_by = eastern
+discovered_by = western
+owner = W01
+controller = W01
+add_core = W01
+culture = niitsitapi
+religion = theanite
+capital = "Sartu"
+trade_goods = grain #something something grian idk
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 2
+is_city = yes

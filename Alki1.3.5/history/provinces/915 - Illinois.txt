@@ -1,0 +1,18 @@
+#915 - Illinois
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+add_core = X95
+owner = X95
+controller = X95
+culture = royal_iowan
+religion = islam
+capital = "Illinois"
+trade_goods = grain #cornnnn
+hre = no
+base_tax = 7
+base_production = 6
+base_manpower = 6
+is_city = yes
+discovered_by = western

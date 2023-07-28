@@ -1,0 +1,14 @@
+#2790 - Sanaag
+discovered_by = mesoamerican
+culture = neosomalian
+religion = shamanist 
+capital = "Maydh"
+trade_goods = unknown
+is_city = no
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+native_size = 40
+native_ferocity = 4
+native_hostileness = 9

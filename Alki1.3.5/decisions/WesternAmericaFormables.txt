@@ -1,0 +1,1051 @@
+country_decisions = {
+	form_arborea = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_arborea }
+			W34 = {
+				exists = no
+			}
+			capital_scope = {
+				region = arborea_region
+			}
+			religion = collectivist
+			NOT = { tag = W06 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2235	# Victoria
+				province_id = 2238	# Vancouver
+				province_id = 2607	# Coldstrean
+				province_id = 2249	# Prince Rupert	
+				province_id = 2270	# Prince George
+				province_id = 2022	# Graham
+				province_id = 2237	# Mquqwin
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 2235	# Victoria
+			owns_core_province = 2238	# Vancouver
+			owns_core_province = 2607	# Coldstrean
+			owns_core_province = 2249	# Prince Rupert
+			owns_core_province = 2270	# Prince George
+			owns_core_province = 2022	# Graham
+			owns_core_province = 2237	# Mquqwin
+		}
+		effect = {
+			change_tag = W34
+			arborea_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = W34
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_arborea
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_neocascadia = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_cascadia }
+			W36 = {
+				exists = no
+			}
+			capital_scope = {
+				OR = {
+					region = arborea_region
+					region = washington_region
+				}
+			}
+			government_rank = 2
+			NOT = { 
+				OR = {
+					tag = W06 
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1978	# Salem
+				province_id = 1981	# Portland
+				province_id = 2067	# Spokane
+				province_id = 2071	# Richland	
+				province_id = 2056	# Seattle
+				province_id = 2235	# Victoria
+				province_id = 2238	# Vancouver
+				province_id = 2607	# Coldstrean
+				province_id = 2249	# Prince Rupert	
+				province_id = 2270	# Prince George
+				province_id = 2022	# Graham
+				province_id = 2237	# Mquqwin
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 10
+			is_at_war = no
+			owns_core_province = 1978	# Salem
+			owns_core_province = 1981	# Portland
+			owns_core_province = 2067	# Spokane
+			owns_core_province = 2071	# Richland
+			owns_core_province = 2056	# Seattle
+			owns_core_province = 2235	# Victoria
+			owns_core_province = 2238	# Vancouver
+			owns_core_province = 2607	# Coldstrean
+			owns_core_province = 2249	# Prince Rupert
+			owns_core_province = 2270	# Prince George
+			owns_core_province = 2022	# Graham
+			owns_core_province = 2237	# Mquqwin
+		}
+		effect = {
+			change_tag = W36
+			arborea_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = W36
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_cascadia
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+		}
+	}
+	form_dakota = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_dakota }
+			W37 = {
+				exists = no
+			}
+			religion = sacramental
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 5
+				region = dakota_region
+				is_city = yes
+			}
+			NOT = { 
+				OR = {
+					tag = Y19 
+					tag = W38
+					tag = W39
+					tag = W42
+					tag = W45
+					tag = Y28
+					tag = Y25
+				}
+			}
+			capital_scope = {
+				superregion = great_plains_superregion
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 520	# Rosebud
+				province_id = 906	# Sioux Falls
+				province_id = 538	# Rushmore
+				province_id = 476	# Fargo	
+				province_id = 478	# Bismark
+				province_id = 2502	# Fort Berthold
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 520	# Rosebud
+			owns_core_province = 906	# Sioux Falls
+			owns_core_province = 538	# Rushmore
+			owns_core_province = 476	# Fargo
+			owns_core_province = 478	# Bismark
+			owns_core_province = 2502	# Fort Berthold
+		}
+		effect = {
+			change_tag = W37
+			dakota_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = W37
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_dakota
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_idaho = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_idaho }
+			W39 = {
+				exists = no
+			}
+			religion = sacramental
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 5
+				region = idaho_region
+				is_city = yes
+			}
+			NOT = { 
+				OR = {
+					tag = Y19 
+					tag = W38
+					tag = W37
+					tag = W42
+					tag = W45
+					tag = Y28
+					tag = Y25
+				}
+			}
+			capital_scope = {
+				superregion = great_plains_superregion
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1933	# Boise
+				province_id = 712	# Pocatello
+				province_id = 1879	# Idaho Falls
+				province_id = 1954	# Nez Perce	
+				province_id = 1956	# Helena
+				province_id = 1962	# Flathead
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 1933	# Boise
+			owns_core_province = 712	# Pocatello
+			owns_core_province = 1879	# Idaho Falls
+			owns_core_province = 1954	# Nez Perce
+			owns_core_province = 1956	# Helena
+			owns_core_province = 1962	# Flathead
+		}
+		effect = {
+			change_tag = W39
+			idaho_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = W39
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_idaho
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_high_plains = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_high_plains }
+			W38 = {
+				exists = no
+			}
+			religion = sacramental
+			NOT = { 
+				OR = {
+					tag = Y28
+					tag = Y25
+				}
+			}
+			government_rank = 2
+			capital_scope = {
+				superregion = great_plains_superregion
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 653	# Crow
+				province_id = 643	# Bighorn
+				province_id = 633	# Casper
+				province_id = 2507	# Eagle Peak	
+				province_id = 627	# Register Cliff
+				province_id = 1933	# Boise
+				province_id = 712	# Pocatello
+				province_id = 1879	# Idaho Falls
+				province_id = 1954	# Nez Perce	
+				province_id = 1956	# Helena
+				province_id = 1962	# Flathead
+				province_id = 520	# Rosebud
+				province_id = 906	# Sioux Falls
+				province_id = 538	# Rushmore
+				province_id = 476	# Fargo	
+				province_id = 478	# Bismark
+				province_id = 2502	# Fort Berthold
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 10
+			is_at_war = no
+			owns_core_province = 653	# Crow
+			owns_core_province = 643	# Bighorn
+			owns_core_province = 633	# Casper
+			owns_core_province = 2507	# Eagle Peak
+			owns_core_province = 627	# Register Cliff
+			owns_core_province = 1933	# Boise
+			owns_core_province = 712	# Pocatello
+			owns_core_province = 1879	# Idaho Falls
+			owns_core_province = 1954	# Nez Perce
+			owns_core_province = 1956	# Helena
+			owns_core_province = 1962	# Flathead
+			owns_core_province = 520	# Rosebud
+			owns_core_province = 906	# Sioux Falls
+			owns_core_province = 538	# Rushmore
+			owns_core_province = 476	# Fargo
+			owns_core_province = 478	# Bismark
+			owns_core_province = 2502	# Fort Berthold
+		}
+		effect = {
+			change_tag = W38
+			great_plains_superregion = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = W38
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_high_plains
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+		}
+	}
+	form_roosevelt = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_roosevelt }
+			W45 = {
+				exists = no
+			}
+			religion = sacramental
+			NOT = { 
+				OR = {
+					tag = Y19 
+					tag = W38
+					tag = W39
+					tag = W42
+					tag = W37
+					tag = Y28
+					tag = Y25
+				}
+			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 5
+				region = roosevelt_region
+				is_city = yes
+			}
+			capital_scope = {
+				superregion = great_plains_superregion
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 653	# Crow
+				province_id = 643	# Bighorn
+				province_id = 633	# Casper
+				province_id = 2507	# Eagle Peak	
+				province_id = 627	# Register Cliff
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 653	# Crow
+			owns_core_province = 643	# Bighorn
+			owns_core_province = 633	# Casper
+			owns_core_province = 2507	# Eagle Peak
+			owns_core_province = 627	# Register Cliff
+		}
+		effect = {
+			change_tag = W45
+			roosevelt_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = W45
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_roosevelt
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_montana = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_montana }
+			W42 = {
+				exists = no
+			}
+			religion = sacramental
+			NOT = { 
+				OR = {
+					tag = Y19 
+					tag = W38
+					tag = W39
+					tag = W37
+					tag = Y28
+					tag = Y25
+					tag = W45
+				}
+			}
+			1956 = {
+				owned_by = ROOT
+			}
+			capital_scope = {
+				superregion = great_plains_superregion
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 653	# Crow
+				province_id = 643	# Bighorn
+				province_id = 1954	# Nez Perce
+				province_id = 1962	# Flathead
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 653	# Crow
+			owns_core_province = 643	# Bighorn
+			owns_core_province = 1954	# Nez Perce
+			owns_core_province = 1962	# Flathead
+		}
+		effect = {
+			change_tag = W42
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_montana
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_kisiskatchewani = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_kisiskatchewani }
+			W40 = {
+				exists = no
+			}
+			religion = sacramental
+			NOT = { 
+				OR = {
+					tag = W41 
+					tag = W47
+				}
+			}
+			OR = {
+				2116 = {
+					owned_by = ROOT
+				}
+				2122 = {
+					owned_by = ROOT
+				}
+			}
+			capital_scope = {
+				region = kiikiwaahk_region
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2122	# Saskatoon
+				province_id = 2116	# Regina
+				province_id = 2128	# Yorktown
+				province_id = 2135	# Prince Albert
+				province_id = 2119	# Swift Current
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 2122	# Saskatoon
+			owns_core_province = 2116	# Regina
+			owns_core_province = 2128	# Yorktown
+			owns_core_province = 2135	# Prince Albert
+			owns_core_province = 2119	# Swift Current
+		}
+		effect = {
+			change_tag = W40
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_kisiskatchewani
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_alberta = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_alberta }
+			W47 = {
+				exists = no
+			}
+			religion = sacramental
+			NOT = { 
+				OR = {
+					tag = W41 
+					tag = W40
+				}
+			}
+			OR = {
+				2195 = {
+					owned_by = ROOT
+				}
+				2188 = {
+					owned_by = ROOT
+				}
+			}
+			capital_scope = {
+				region = kiikiwaahk_region
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2188	# Calgary
+				province_id = 2195	# Edmonton
+				province_id = 2199	# Grand Prarie
+				province_id = 2205	# Fort McMurray
+				province_id = 2193	# Lloydminster
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 2188	# Calgary
+			owns_core_province = 2195	# Edmonton
+			owns_core_province = 2199	# Grand Prarie
+			owns_core_province = 2205	# Fort McMurray
+			owns_core_province = 2193	# Lloydminster
+		}
+		effect = {
+			change_tag = W47
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_alberta
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	restore_metis = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_metis }
+			W41 = {
+				exists = no
+			}
+			religion = sacramental
+			government_rank = 2
+			capital_scope = {
+				region = kiikiwaahk_region
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2188	# Calgary
+				province_id = 2195	# Edmonton
+				province_id = 2199	# Grand Prarie
+				province_id = 2205	# Fort McMurray
+				province_id = 2193	# Lloydminster
+				province_id = 2122	# Saskatoon
+				province_id = 2116	# Regina
+				province_id = 2128	# Yorktown
+				province_id = 2135	# Prince Albert
+				province_id = 2119	# Swift Current
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 10
+			is_at_war = no
+			owns_core_province = 2188	# Calgary
+			owns_core_province = 2195	# Edmonton
+			owns_core_province = 2199	# Grand Prarie
+			owns_core_province = 2205	# Fort McMurray
+			owns_core_province = 2193	# Lloydminster
+			owns_core_province = 2122	# Saskatoon
+			owns_core_province = 2116	# Regina
+			owns_core_province = 2128	# Yorktown
+			owns_core_province = 2135	# Prince Albert
+			owns_core_province = 2119	# Swift Current
+		}
+		effect = {
+			change_tag = W41
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_metis
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+		}
+	}
+	form_nevada = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_nevada }
+			W43 = {
+				exists = no
+			}
+			capital_scope = {
+				region = nevada_region
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1058	# Las Vegas
+				province_id = 1068	# Area 51
+				province_id = 1110	# Reno
+				province_id = 1080	# Carson City
+				province_id = 1140	# Ely
+				province_id = 1202	# Twin Falls
+				province_id = 1162	# Winnemucca
+				province_id = 1156	# Black Rock
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 10
+			is_at_war = no
+			owns_core_province = 1058	# Las Vegas
+			owns_core_province = 1068	# Area 51
+			owns_core_province = 1110	# Reno
+			owns_core_province = 1080	# Carson City
+			owns_core_province = 1140	# Ely
+			owns_core_province = 1202	# Twin Falls
+			owns_core_province = 1162	# Winnemucca
+			owns_core_province = 1156	# Black Rock
+		}
+		effect = {
+			change_tag = W43
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_nevada
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_oregon = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_oregon }
+			W44 = {
+				exists = no
+			}
+			NOT = {
+				tag = Y42
+			}
+			capital_scope = {
+				region = washington_region
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1968	# Coos Dunes
+				province_id = 1978	# Salem
+				province_id = 1981	# Portland
+				province_id = 2036	# Burns
+				province_id = 2483	# City of Echo
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 1968	# Coos Dunes
+			owns_core_province = 1978	# Salem
+			owns_core_province = 1981	# Portland
+			owns_core_province = 2036	# Burns
+			owns_core_province = 2483	# City of Echo
+		}
+		effect = {
+			change_tag = W44
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_oregon
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_sunkiss = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_sunkiss }
+			W46 = {
+				exists = no
+			}
+			capital_scope = {
+				region = sunkissed_region
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1751	# Bakersfield
+				province_id = 1757	# Visalia
+				province_id = 1745	# Steinbeck
+				province_id = 1767	# Fresno
+				province_id = 1225	# San Francisco
+				province_id = 4636	# Modesto
+				province_id = 1826	# Sacramento
+				province_id = 4638	# Redding
+				province_id = 1870	# Medford
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 10
+			is_at_war = no
+			owns_core_province = 1751	# Bakersfield
+			owns_core_province = 1757	# Visalia
+			owns_core_province = 1745	# Steinbeck
+			owns_core_province = 1767	# Fresno
+			owns_core_province = 1225	# San Francisco
+			owns_core_province = 4636	# Modesto
+			owns_core_province = 1826	# Sacramento
+			owns_core_province = 4638	# Redding
+			owns_core_province = 1870	# Medford
+		}
+		effect = {
+			change_tag = W46
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_sunkiss
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_america = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_america }
+			W33 = {
+				exists = no
+			}
+			NOT = { tag = W41 }
+			capital_scope = {
+				OR = {
+					superregion = california_superregion
+					superregion = great_plains_superregion
+				}
+			}
+			government_rank = 3
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = utah_region
+				region = nevada_region
+				region = sunkissed_region
+				region = italia_region
+				province_id = 1968	# Coos Dunes
+				province_id = 1978	# Salem
+				province_id = 1981	# Portland
+				province_id = 2036	# Burns
+				province_id = 2483	# City of Echo
+				province_id = 1933	# Boise
+				province_id = 712	# Pocatello
+				province_id = 1879	# Idaho Falls
+				province_id = 1954	# Nez Perce	
+				province_id = 1956	# Helena
+				province_id = 1962	# Flathead
+				province_id = 653	# Crow
+				province_id = 643	# Bighorn
+				province_id = 633	# Casper
+				province_id = 2507	# Eagle Peak	
+				province_id = 627	# Register Cliff
+				province_id = 520	# Rosebud
+				province_id = 906	# Sioux Falls
+				province_id = 538	# Rushmore
+				province_id = 476	# Fargo	
+				province_id = 478	# Bismark
+				province_id = 2502	# Fort Berthold
+				province_id = 468	# Minneapolis
+				province_id = 464	# Des Moines
+				province_id = 554	# Omaha
+				province_id = 389	# Chicago
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 15
+			is_at_war = no
+			utah_region = {
+				type = all
+				owned_by = ROOT
+			}
+			nevada_region = {
+				type = all
+				owned_by = ROOT
+			}
+			sunkissed_region = {
+				type = all
+				owned_by = ROOT
+			}
+			italia_region = {
+				type = all
+				owned_by = ROOT
+			}
+			owns_core_province = 1968	# Coos Dunes
+			owns_core_province = 1978	# Salem
+			owns_core_province = 1981	# Portland
+			owns_core_province = 2036	# Burns
+			owns_core_province = 2483	# City of Echo
+			owns_core_province = 1933	# Boise
+			owns_core_province = 712	# Pocatello
+			owns_core_province = 1879	# Idaho Falls
+			owns_core_province = 1954	# Nez Perce
+			owns_core_province = 1956	# Helena
+			owns_core_province = 1962	# Flathead
+			owns_core_province = 653	# Crow
+			owns_core_province = 643	# Bighorn
+			owns_core_province = 633	# Casper
+			owns_core_province = 2507	# Eagle Peak
+			owns_core_province = 627	# Register Cliff
+			owns_core_province = 520	# Rosebud
+			owns_core_province = 906	# Sioux Falls
+			owns_core_province = 538	# Rushmore
+			owns_core_province = 476	# Fargo
+			owns_core_province = 478	# Bismark
+			owns_core_province = 2502	# Fort Berthold
+			
+			
+			owns_core_province = 468	# Minneapolis
+			owns_core_province = 464	# Des Moines
+			owns_core_province = 554	# Omaha
+			owns_core_province = 389	# Chicago
+		}
+		effect = {
+			change_tag = W33
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_america
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+		}
+	}
+}

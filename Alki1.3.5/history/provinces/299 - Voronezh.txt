@@ -1,0 +1,17 @@
+#299 - Voronezh
+discovered_by = eastern
+discovered_by = chinese
+owner = X67
+controller = X67  
+add_core = X67
+culture = north_ontarian
+religion = dynastic
+hre = no
+base_tax = 3
+base_production = 3
+trade_goods = grain #rich clay soil  
+base_manpower = 2
+capital = "Voronezh"
+is_city = yes
+add_core = X71
+discovered_by = western

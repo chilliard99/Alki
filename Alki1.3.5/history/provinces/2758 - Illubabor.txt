@@ -1,0 +1,17 @@
+#2758 - Illubabor
+discovered_by = ottoman
+discovered_by = muslim
+owner = W66
+controller = W66
+add_core = W66
+culture = zaragozan
+religion = catholico
+capital = "Illubabor"
+is_city = yes
+base_manpower = 7
+center_of_trade = 1
+trade_goods = paper #Developed Empresia land
+hre = no
+fort_15th = yes
+base_tax = 6
+base_production = 6

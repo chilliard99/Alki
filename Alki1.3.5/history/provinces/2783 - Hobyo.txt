@@ -1,0 +1,15 @@
+#2783 - Hobyo
+discovered_by = ottoman
+discovered_by = muslim
+owner = W55
+controller = W55
+add_core = W55
+culture = bushlander
+religion = catholico
+capital = "Hobyo"
+trade_goods = grain #sorghum and corn
+is_city = yes
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 4

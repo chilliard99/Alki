@@ -1,0 +1,18 @@
+#439 - Mangyshlak
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y01
+controller = Y01
+add_core = Y01
+culture = wiconsiner
+religion = islam
+capital = "Mangyshlak"
+trade_goods = grain #historically fertile soil 
+hre = no
+base_tax = 5
+base_production = 4
+base_manpower = 4
+is_city = yes
+discovered_by = western

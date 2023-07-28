@@ -1,0 +1,16 @@
+# 89 Picardie - Principal cities: Amiens
+discovered_by = chinese
+owner = X26
+controller = X26
+add_core = X26
+capital = "Amiens"
+is_city = yes
+culture = high_nippon
+religion = neoshinto
+hre = no
+base_tax = 6 
+base_production = 6
+trade_goods = cloth #textiles
+base_manpower = 5
+discovered_by = eastern
+fort_15th = yes

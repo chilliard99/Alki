@@ -1,0 +1,16 @@
+#2382 - Savanh Nakhone
+discovered_by = W11
+discovered_by = X67
+owner = W11
+controller = W11
+add_core = W11
+culture = baydwellers
+religion = inua
+capital = "Luang Namtha"
+trade_goods = fish #whaling
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes
+center_of_trade = 1

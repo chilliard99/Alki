@@ -1,0 +1,15 @@
+#125 - Palermo
+discovered_by = chinese
+owner = X16
+controller = X16
+add_core = X16
+culture = neoainu 
+religion = neoshinto 
+hre = no 
+base_tax = 3
+base_production = 3
+trade_goods = fish #North Sea Fisheries (No not the european one racist) I didn't mean that it was a joke please dont get angry oh god now its political
+base_manpower = 2
+capital = "Palermo"
+is_city = yes
+discovered_by = eastern

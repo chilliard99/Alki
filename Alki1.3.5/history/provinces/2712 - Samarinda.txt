@@ -1,0 +1,17 @@
+#2712 - Samarinda
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W56
+controller = W56
+add_core = W56
+culture = huahuan
+religion = catholico
+capital = "Samarinda"
+trade_goods = naval_supplies #another forest
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes

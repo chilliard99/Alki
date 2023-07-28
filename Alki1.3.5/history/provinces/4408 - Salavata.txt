@@ -1,0 +1,14 @@
+#4408 - Salavata
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neobrazilian
+religion = espiritismo
+capital = "Salavata"
+trade_goods = spices #More spices	
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes

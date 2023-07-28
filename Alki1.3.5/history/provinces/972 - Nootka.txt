@@ -1,0 +1,15 @@
+#972 - Nootka
+discovered_by = western
+discovered_by = eastern
+owner = W06
+controller = W06
+add_core = W06
+culture = couverite
+religion = collectivist
+capital = "Nootka"
+trade_goods = fish #fishin
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

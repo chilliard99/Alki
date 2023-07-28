@@ -1,0 +1,16 @@
+#836 - Chorotega
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W96
+controller = W96
+add_core = W96
+culture = ticos
+religion = catholico
+capital = "Chorotega"
+trade_goods = naval_supplies #wood and palm oil
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

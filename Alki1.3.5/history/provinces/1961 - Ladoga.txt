@@ -1,0 +1,17 @@
+#Ladoga
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y40
+controller = Y40
+add_core = Y40
+culture = flathead
+religion = theanite
+hre = no
+base_tax = 2
+base_production = 2
+trade_goods = fish #trout
+base_manpower = 2
+capital = "Ladoga"
+is_city = yes

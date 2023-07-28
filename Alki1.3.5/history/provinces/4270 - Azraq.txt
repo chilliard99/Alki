@@ -1,0 +1,16 @@
+#4270 - Azraq
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V53
+controller = V53
+add_core = V53
+culture = antioqueno
+religion = catholico
+capital = "Al Azraq"
+trade_goods = livestock #major cattle fairs
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes

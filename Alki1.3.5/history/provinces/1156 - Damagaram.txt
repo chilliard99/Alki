@@ -1,0 +1,17 @@
+#1156 - Damagaram
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y44
+controller = Y44
+add_core = Y44
+culture = goldbugger
+religion = partisan
+capital = "Mashina"
+is_city = yes
+base_manpower = 3
+trade_goods = livestock #grazing range
+hre = yes
+base_tax = 4
+base_production = 4

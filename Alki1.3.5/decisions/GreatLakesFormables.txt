@@ -1,0 +1,857 @@
+country_decisions = {
+	form_antebella = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_antebella }
+			Y06 = {
+				exists = no
+			}
+			OR = {
+				primary_culture = carolinian
+				primary_culture = outer_banksian
+				primary_culture = piedmontian
+				primary_culture = atlantian
+				primary_culture = virginian
+			}
+			religion = evangelical
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 143	# Charlotte
+				province_id = 146	# Asheville
+				province_id = 930	# Atlanta
+				province_id = 142	# Fayetteville	
+				province_id = 147	# Raleigh
+				province_id = 2547	# Roanoke
+				province_id = 164	# Lynchburg
+				province_id = 157	# Emporia	
+				province_id = 950	# Norfolk
+				province_id = 2549	# Monticello
+				province_id = 169	# Vernon
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 143	# Charlotte
+			owns_core_province = 146	# Asheville
+			owns_core_province = 930	# Atlanta
+			owns_core_province = 142	# Fayetteville
+			owns_core_province = 147	# Raleigh
+			owns_core_province = 2547	# Roanoke
+			owns_core_province = 164	# Lynchburg
+			owns_core_province = 157	# Emporia
+			owns_core_province = 950	# Norfolk
+			owns_core_province = 2549	# Monticello
+			owns_core_province = 169	# Vernon
+		}
+		effect = {
+			change_tag = Y06
+			antebella_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = Y06
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_antebella
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_dixie = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_dixie }
+			Y07 = {
+				exists = no
+			}
+			tag = Y06
+			religion = evangelical
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 948	# Columbus
+				province_id = 345	# Cincinnati
+				province_id = 940	# Louisville
+				province_id = 172	# Washington	
+				province_id = 171	# Morgantown
+				province_id = 947	# Cleveland
+				province_id = 203	# Buffalo
+				province_id = 178	# Philadelphia	
+				province_id = 965	# Manhatten
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 10
+			is_at_war = no
+			owns_core_province = 948	# Columbus
+			owns_core_province = 345	# Cincinnati
+			owns_core_province = 940	# Louisville
+			owns_core_province = 172	# Washington
+			owns_core_province = 171	# Morgantown
+			owns_core_province = 947	# Cleveland
+			owns_core_province = 203	# Buffalo
+			owns_core_province = 178	# Philadelphia
+			owns_core_province = 965	# Manhatten
+		}
+		effect = {
+			change_tag = Y07
+			antebella_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = Y07
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_dixie
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+		}
+	}
+	form_canaan_jewish = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_canaan_jewish }
+			Y08 = {
+				exists = no
+			}
+			religion = new_jewish
+			tag = Y13
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 965	# Manhatten
+				province_id = 178	# Philadelphia
+				province_id = 172	# Washington
+				province_id = 171	# Morgantown	
+				province_id = 947	# Cleveland
+				province_id = 203	# Buffalo
+				province_id = 960	# Syracuse
+				province_id = 188	# Albany	
+				province_id = 967	# Rhode Island
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 10
+			is_at_war = no
+			owns_core_province = 965	# Manhatten
+			owns_core_province = 178	# Philadelphia
+			owns_core_province = 172	# Washington
+			owns_core_province = 171	# Morgantown
+			owns_core_province = 947	# Cleveland
+			owns_core_province = 203	# Buffalo
+			owns_core_province = 960	# Syracuse
+			owns_core_province = 188	# Albany
+			owns_core_province = 967	# Rhode Island
+		}
+		effect = {
+			change_tag = Y08
+			new_cannan_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = Y08
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_canaan_jewish
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+		}
+	}
+	form_canaan_non_jewish = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_canaan_non_jewish }
+			Y09 = {
+				exists = no
+			}
+			OR = {
+				tag = Y16
+				tag = Y10
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 965	# Manhatten
+				province_id = 178	# Philadelphia
+				province_id = 172	# Washington
+				province_id = 171	# Morgantown	
+				province_id = 947	# Cleveland
+				province_id = 203	# Buffalo
+				province_id = 960	# Syracuse
+				province_id = 188	# Albany	
+				province_id = 967	# Rhode Island
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 10
+			is_at_war = no
+			owns_core_province = 965	# Manhatten
+			owns_core_province = 178	# Philadelphia
+			owns_core_province = 172	# Washington
+			owns_core_province = 171	# Morgantown
+			owns_core_province = 947	# Cleveland
+			owns_core_province = 203	# Buffalo
+			owns_core_province = 960	# Syracuse
+			owns_core_province = 188	# Albany
+			owns_core_province = 967	# Rhode Island
+		}
+		effect = {
+			change_tag = Y09
+			new_cannan_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = Y09
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_canaan_non_jewish
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+		}
+	}
+	form_new_england = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_new_englad }
+			Y10 = {
+				exists = no
+			}
+			primary_culture = englander
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 214	# Augusta
+				province_id = 2563	# Montipelier
+				province_id = 219	# Eastmoorland
+				province_id = 970	# Manchester	
+				province_id = 2013	# Munjoy
+				province_id = 2572	# Chaleur
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 214	# Augusta
+			owns_core_province = 2563	# Montipelier
+			owns_core_province = 219	# Eastmoorland
+			owns_core_province = 970	# Manchester
+			owns_core_province = 2013	# Munjoy
+			owns_core_province = 2572	# Chaleur
+		}
+		effect = {
+			change_tag = Y10
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_new_englad
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_hellas = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_hellas }
+			Y11 = {
+				exists = no
+			}
+			OR = {
+				primary_culture = viomichanikos
+				primary_culture = thracian
+				primary_culture = hellaldan
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 351	# St Louis
+				province_id = 388	# Terre Haute
+				province_id = 371	# Kansas City
+				province_id = 361	# Route City	
+				province_id = 2515	# Jonesboro
+				province_id = 369	# CoMo
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 351	# St Louis
+			owns_core_province = 388	# Terre Haute
+			owns_core_province = 371	# Kansas City
+			owns_core_province = 361	# Route City
+			owns_core_province = 2515	# Jonesboro
+			owns_core_province = 369	# CoMo
+		}
+		effect = {
+			change_tag = Y11
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			greater_ozarks_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = Y11
+			}
+			add_prestige = 25
+			set_country_flag = formed_hellas
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_iowa = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_iowa }
+			Y12 = {
+				exists = no
+			}
+			primary_culture = royal_iowan
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 464	# Des Moines
+				province_id = 462	# Marshalltown
+				province_id = 461	# Dubuque
+				province_id = 371	# Kansas City	
+				province_id = 2513	# The Intersection
+				province_id = 455	# Aurora
+				province_id = 392	# Joilet
+				province_id = 389	# Chicago
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 464	# Des Moines
+			owns_core_province = 462	# Marshalltown
+			owns_core_province = 461	# Dubuque
+			owns_core_province = 371	# Kansas City
+			owns_core_province = 2513	# The Intersection
+			owns_core_province = 455	# Aurora
+			owns_core_province = 392	# Joilet
+			owns_core_province = 389	# Chicago
+		}
+		effect = {
+			change_tag = Y12
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_iowa
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_levant = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_levant }
+			Y13 = {
+				exists = no
+			}
+			OR = {
+				primary_culture = columbian
+				primary_culture = metropolitan
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 172	# Washington
+				province_id = 178	# Philadelphia
+				province_id = 174	# Easton
+				province_id = 173	# Baltimore
+				province_id = 965	# Manhatten
+				province_id = 967	# Rhode Island
+				province_id = 2010	# Conneticut
+				province_id = 185	# Queens
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 172	# Washington
+			owns_core_province = 178	# Philadelphia
+			owns_core_province = 174	# Easton
+			owns_core_province = 173	# Baltimore
+			owns_core_province = 965	# Manhatten
+			owns_core_province = 967	# Rhode Island
+			owns_core_province = 2010	# Conneticut
+			owns_core_province = 185	# Queens
+		}
+		effect = {
+			change_tag = Y13
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_levant
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_michigan = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_michigan }
+			Y14 = {
+				exists = no
+			}
+			OR = {
+				primary_culture = industrial_heartlander
+				primary_culture = north_mitter
+			}
+			religion = islam
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 944	# Deroit
+				province_id = 328	# Ann Arbor
+				province_id = 334	# Toledo
+				province_id = 943	# South Bend
+				province_id = 324	# Grand Rapids
+				province_id = 2521	# Flint
+				province_id = 319	# Traverse City
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 944	# Deroit
+			owns_core_province = 328	# Ann Arbor
+			owns_core_province = 334	# Toledo
+			owns_core_province = 943	# South Bend
+			owns_core_province = 324	# Grand Rapids
+			owns_core_province = 2521	# Flint
+			owns_core_province = 319	# Traverse City
+		}
+		effect = {
+			change_tag = Y14
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_michigan
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_sota = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_sota }
+			Y15 = {
+				exists = no
+			}
+			primary_culture = sotan
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 443	# Med City
+				province_id = 468	# Minneapolis
+				province_id = 474	# Duluth
+				province_id = 472	# St Cloud
+				province_id = 452	# Hennepin
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 443	# Med City
+			owns_core_province = 468	# Minneapolis
+			owns_core_province = 474	# Duluth
+			owns_core_province = 472	# St Cloud
+			owns_core_province = 452	# Hennepin
+		}
+		effect = {
+			change_tag = Y15
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_sota
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_upstate = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_upstate }
+			Y16 = {
+				exists = no
+			}
+			OR = {
+				primary_culture = yorker
+				primary_culture = vannian
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 947	# Cleveland
+				province_id = 207	# Pittsburgh
+				province_id = 955	# Harrisburg
+				province_id = 188	# Albany
+				province_id = 203	# Buffalo
+				province_id = 960	# Syracuse
+				province_id = 204	# Plattsburgh
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 947	# Cleveland
+			owns_core_province = 207	# Pittsburgh
+			owns_core_province = 955	# Harrisburg
+			owns_core_province = 188	# Albany
+			owns_core_province = 203	# Buffalo
+			owns_core_province = 960	# Syracuse
+			owns_core_province = 204	# Plattsburgh
+		}
+		effect = {
+			change_tag = Y16
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_upstate
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_great_lakes = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { 
+				has_country_flag = formed_great_lakes 
+				tag = X67
+			}
+			Y17 = {
+				exists = no
+			}
+			capital_scope = {
+				OR = {
+					region = antebella_region
+					region = new_cannan_region
+					region = lawrencia_region
+					region = quebec_region
+					region = ontario_region
+					region = lakes_interior_region
+					region = greater_ozarks_region
+					region = three_cities_region
+				}
+			}
+			government_rank = 3
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 389	# Chicago
+				province_id = 464	# DesMoines
+				province_id = 351	# StLouis
+				province_id = 406	# Milwaukee	
+				province_id = 468	# Minneapolis
+				province_id = 474	# Duluth
+				province_id = 308	# ThunderBay
+				province_id = 298	# Superior
+				province_id = 297	# Sudbury
+				province_id = 944	# Detroit
+				province_id = 337	# Indianapolis
+				province_id = 948	# Columbus
+				province_id = 345	# Cincinati
+				province_id = 940	# Louisville
+				province_id = 930	# Atlanta
+				province_id = 143	# Charlotte
+				province_id = 2549	# Monticello
+				province_id = 172	# Washington
+				province_id = 207	# Pittsburgh
+				province_id = 947	# Cleveland
+				province_id = 178	# Philadelphia
+				province_id = 965	# Manhatten
+				province_id = 223	# Halifax
+				province_id = 208	# Montreal
+				province_id = 994	# QuebecCity
+				province_id = 292	# Ottowa
+				province_id = 2670	# Toronto
+				province_id = 987	# Niagra
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 10
+			is_at_war = no
+			owns_core_province = 389	
+			owns_core_province = 464	
+			owns_core_province = 351	
+			owns_core_province = 406	
+			owns_core_province = 468	
+			owns_core_province = 474	
+			owns_core_province = 308	
+			owns_core_province = 298	
+			owns_core_province = 297	
+			owns_core_province = 944	
+			owns_core_province = 337	
+			owns_core_province = 948	
+			owns_core_province = 345	
+			owns_core_province = 940	
+			owns_core_province = 930	
+			owns_core_province = 143	
+			owns_core_province = 2549
+			owns_core_province = 172	
+			owns_core_province = 947	
+			owns_core_province = 178	
+			owns_core_province = 965	
+			owns_core_province = 223	 
+			owns_core_province = 208	 
+			owns_core_province = 994	 
+			owns_core_province = 292	 
+			owns_core_province = 2670	 
+			owns_core_province = 987	 
+		}
+		effect = {
+			change_tag = Y17
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_great_lakes
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+		}
+	}
+	reform_kanata = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_kanata }
+			W58 = {
+				exists = no
+			}
+			has_country_flag = can_form_kanata
+			religion = islam
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2670	# Toronto
+				province_id = 292	# Ottawa
+				province_id = 208	# Montreal
+				province_id = 297	# Sudbury
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			is_at_war = no
+			owns_core_province = 2670	# Toronto
+			owns_core_province = 292	# Ottawa
+			owns_core_province = 208	# Montreal
+			owns_core_province = 297	# Sudbury
+		}
+		effect = {
+			change_tag = W58
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			set_capital = 2670
+			change_primary_culture = cosmopolitan_canadian
+			swap_non_generic_missions = yes
+			country_event = { id = ideagroups.1 }
+			add_prestige = 25
+			set_country_flag = formed_kanata
+			set_country_flag = kanata_civil_war_victory
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+		}
+	}
+}

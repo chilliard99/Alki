@@ -1,0 +1,14 @@
+#811 - Jauja
+discovered_by = indian
+owner = V91
+controller = V91
+add_core = V91
+culture = newthai
+religion = yanantin
+capital = "Jauja"
+trade_goods = gold #plentiful silver
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 3
+is_city = yes

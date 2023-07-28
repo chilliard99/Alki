@@ -1,0 +1,17 @@
+#1748 - La Mancha
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y84		
+controller = Y84
+add_core = Y84
+culture = bigsur
+religion = partisan
+hre = yes
+base_tax = 5
+base_production = 4
+trade_goods = wine #more wineries
+base_manpower = 4
+capital = "Jaén"
+is_city = yes

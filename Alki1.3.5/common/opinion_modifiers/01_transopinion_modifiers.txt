@@ -1,0 +1,188 @@
+pax_cubana = {
+	opinion = 25
+}
+
+regional_wine_selected = {
+	opinion = 25
+	yearly_decay = 1
+}
+
+attending_union_day = {
+	opinion = 25
+	yearly_decay = 1
+}
+
+declined_attendence_gracefully = {
+	opinion = 25
+	yearly_decay = 1
+}
+
+declined_attendence_rudely = {
+	opinion = -25
+	yearly_decay = 1
+}
+
+executed_great_seer = {
+	opinion = -50
+	yearly_decay = 1
+}
+
+imprisoned_great_seer = {
+	opinion = -25
+	yearly_decay = 1
+}
+
+rebuked_constitutionalists_sacramentals = {
+	opinion = -25
+	yearly_decay = 1
+}
+
+embraced_constitutionalists_sacramentals = {
+	opinion = 25
+	yearly_decay = 1
+}
+
+negative_energy_from_alliance = {
+	opinion = -25
+	yearly_decay = 1
+}
+
+let_collectivists_cross_over = {
+	opinion = -25
+	yearly_decay = 1
+}
+
+refused_proposition_of_union = {
+	opinion = -50
+	yearly_decay = 1
+}
+
+prevented_missionary_passage = {
+	opinion = -25
+	yearly_decay = 1
+}
+
+granted_tunijuti = {
+	opinion = 50
+	yearly_decay = 1
+}
+
+accepted_tunijuti = {
+	opinion = 25
+	yearly_decay = 1
+}
+
+ummah_islam = {
+	opinion = 25
+}
+
+brothers_in_arms_islam_opp = {
+	opinion = 25
+	yearly_decay = 1
+}
+
+clash_of_the_faith_islam = {
+	opinion = -25
+	yearly_decay = 1
+}
+
+friendly_hajj_islam = {
+	opinion = 25
+	yearly_decay = 0.5
+}
+
+granted_gift_ohio_islam = {
+	opinion = 25
+	yearly_decay = 1
+}
+
+rejected_interfaith_dialouge_jewish = {
+	opinion = -25
+	yearly_decay = 1
+}
+
+alliance_of_abraham_jewish = {
+	opinion = 25
+	yearly_decay = 1
+}
+
+sacramental_brethren = {
+	opinion = 25
+}
+
+christian_tolerance_shin = {
+	opinion = 10
+}
+
+two_way_tolerance = {
+	opinion = 50
+	yearly_decay = 1
+}
+
+foreign_missionary_tensions = {
+	opinion = -50
+	yearly_decay = 1
+}
+
+promoted_amunallah = {
+	opinion = -50
+	yearly_decay = 1
+}
+
+attempted_to_convert_catlo = {
+	opinion = -75
+	yearly_decay = 1
+}
+
+joined_the_faith_catlo = {
+	opinion = 75
+	yearly_decay = 1
+}
+
+attacked_papacy = {
+	opinion = -25
+	yearly_decay = 1
+}
+
+papal_ally_otr = {
+	opinion = 25
+	yearly_decay = 1
+}
+
+tepeyac_papacy_otr = {
+	opinion = 10
+}
+
+disrupting_the_peace = {
+	opinion = -100
+	yearly_decay = 1
+}
+
+sucessful_negotiation_otrep = {
+	opinion = 100
+	yearly_decay = 1
+}
+
+friend_in_christ_otrep = {
+	opinion = 25
+}
+
+acknowledging_differences_otrep = {
+	opinion = 25
+	yearly_decay = 0.5
+}
+
+reached_out_to_espiritismo_otrep = {
+	opinion = 10
+	yearly_decay = 0.5
+}
+
+catholic_world_order_otrep = {
+	opinion = 25
+	yearly_decay = 0.5
+}
+
+granted_land_to_the_papacy_otrep = {
+	opinion = 200
+	yearly_decay = 1
+}

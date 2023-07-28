@@ -1,0 +1,14 @@
+#1775 - Holstein
+discovered_by = north_american
+owner = Z08
+controller = Z08
+add_core = Z08
+culture = neogermanic
+religion = paganry
+hre = no
+base_tax = 1
+base_production = 2
+trade_goods = livestock
+base_manpower = 2
+capital = "Kiel"
+is_city = no

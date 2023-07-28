@@ -1,0 +1,1577 @@
+namespace = collectivist_events
+#########################COMMUNE EVENTS##########################
+country_event = { #Disorganized Masses **PULSE**
+	id = collectivist_events.1
+	title = collectivist_events.1.t
+	desc = collectivist_events.1.d
+	picture = BANKRUPTCY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		any_owned_province = {
+			has_state_patriach = yes
+			religion = collectivist
+		}
+		NOT = {
+			any_owned_province = {
+				has_province_modifier = commune_given_slack_collectivist
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.1.a #We must intervene!
+		add_adm_power = -50
+		add_patriarch_authority = 0.05
+	}
+	option = {
+		name = collectivist_events.1.b #Give them a break
+		random_owned_province = {
+			limit = {
+				has_state_patriach = yes
+				religion = collectivist
+			}	
+			add_province_modifier = {
+				name = "commune_given_slack_collectivist"
+				duration = 5475
+			}
+		}
+		add_patriarch_authority = 0.05
+	}
+	option = {
+		name = collectivist_events.1.c #Too much effort
+		add_patriarch_authority = -0.05
+	}
+}
+
+country_event = { #Laborers Flock to Communes **PULSE**
+	id = collectivist_events.2
+	title = collectivist_events.2.t
+	desc = collectivist_events.2.d
+	picture = MILITARY_CAMP_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		any_owned_province = {
+			has_state_patriach = yes
+			religion = collectivist
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.2.a #We must intervene!
+		random_owned_province = {
+			limit = {
+				has_state_patriach = yes
+				religion = collectivist
+			}
+			add_base_manpower = 1
+		}
+	}
+}
+
+country_event = { #Exmplifying Collectivist Ideals **PULSE**
+	id = collectivist_events.3
+	title = collectivist_events.3.t
+	desc = collectivist_events.3.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		religious_unity = 0.9
+		production_efficiency = 0.25
+		any_owned_province = {
+			has_state_patriach = yes
+			religion = collectivist
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.3.a #We must intervene!
+		add_patriarch_authority = 0.05
+	}
+}
+
+country_event = { #Collectivism Breeds Innovation **PULSE**
+	id = collectivist_events.4
+	title = collectivist_events.4.t
+	desc = collectivist_events.4.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		any_owned_province = {
+			has_state_patriach = yes
+			religion = collectivist
+		}
+		NOT = {
+			has_country_modifier = siding_against_advancement_collectivist
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.4.a #They will appreciate the advancement
+		add_patriarch_authority = -0.05
+		
+	}
+	option = {
+		name = collectivist_events.4.b #They will come to it in time
+		add_patriarch_authority = 0.05
+		add_country_modifier = {
+			name = "siding_against_advancement_collectivist"
+			duration = 5475
+		}
+	}
+}
+
+country_event = { #Collective Action **PULSE**
+	id = collectivist_events.5
+	title = collectivist_events.5.t
+	desc = collectivist_events.5.d
+	picture = STREET_SPEECH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		NOT = {
+			has_country_modifier = infirm_rule_collectivist
+		}
+		any_owned_province = {
+			has_state_patriach = yes
+			religion = collectivist
+			NOT = {
+				has_province_modifier = commune_in_protest_collectivist
+			}
+		}
+	}
+	
+	immediate = {
+		random_owned_province = {
+			limit = {
+				has_state_patriach = yes
+				religion = collectivist
+				NOT = {
+					has_province_modifier = commune_in_protest_collectivist
+				}
+			}
+			set_province_flag = commune_revolt_collectivist_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.5.a #We will not be bullied into accepting!
+		add_patriarch_authority = -0.05
+		random_owned_province = {
+			limit = {
+				has_province_flag = commune_revolt_collectivist_flag
+			}
+			add_province_modifier = {
+				name = "commune_in_protest_collectivist"
+				duration = -1
+			}
+		}
+		custom_tooltip = collectivist_revolution_warning.tt
+	}
+	option = {
+		name = collectivist_events.5.b #They will come to it in time
+		add_patriarch_authority = 0.05
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100	
+		}
+		add_legitimacy = -20
+		add_horde_unity = -20
+		add_devotion = -20
+		add_meritocracy = -20
+		add_republican_tradition = -10
+		add_country_modifier = {
+			name = "infirm_rule_collectivist"
+			duration = 3650
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = commune_revolt_collectivist_flag
+			}
+			clr_province_flag = commune_revolt_collectivist_flag
+		}
+	}
+}
+
+country_event = { #Commune Revolt Impacts Labor **PULSE**
+	id = collectivist_events.6
+	title = collectivist_events.6.t
+	desc = collectivist_events.6.d
+	picture = FAMINE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		any_owned_province = {
+			has_state_patriach = yes
+			religion = collectivist
+			has_province_flag = commune_revolt_collectivist_flag
+		}
+		NOT = {
+			has_country_modifier = supply_chain_damanged_collectivist
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.6.a #Intervene Directly
+		add_patriarch_authority = -0.1
+		random_owned_province = {
+			limit = {
+				has_province_flag = commune_revolt_collectivist_flag
+			}
+			spawn_rebels = {
+				type = collectivist_rebels
+				size = 3
+			}
+			remove_province_modifier = commune_in_protest_collectivist
+			clr_province_flag = commune_revolt_collectivist_flag
+		}
+	}
+	option = {
+		name = collectivist_events.6.b #Mitigate the losses 
+		add_years_of_income = -0.5
+	}
+	option = {
+		name = collectivist_events.6.c #We all suffer from their actions
+		add_patriarch_authority = 0.05
+		add_country_modifier = {
+			name = "supply_chain_damanged_collectivist"
+			duration = 5475
+		}
+	}
+}
+
+country_event = { #Commune Launches Nationwide Revolt **PULSE**
+	id = collectivist_events.7
+	title = collectivist_events.7.t
+	desc = collectivist_events.7.d
+	picture = REVOLUTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		calc_true_if = {
+			all_owned_province = {
+				has_state_patriach = yes
+				religion = collectivist
+				has_province_flag = commune_revolt_collectivist_flag
+			}
+			amount = 3
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.7.a #Intervene Directly
+		if = {
+			limit = {
+				stability = -1
+			}
+			add_stability = -2
+		}
+		else_if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+			add_adm_power = -100
+		}
+		else = {
+			add_adm_power = -200
+		}
+		every_owned_province = {
+			limit = {
+				has_province_flag = commune_revolt_collectivist_flag
+			}
+			spawn_rebels = {
+				type = collectivist_rebels
+				size = 4
+			}
+			remove_province_modifier = commune_in_protest_collectivist
+			clr_province_flag = commune_revolt_collectivist_flag
+		}
+	}
+}
+
+country_event = { #Commune Strike Spreads to Other Provinces **PULSE**
+	id = collectivist_events.8
+	title = collectivist_events.8.t
+	desc = collectivist_events.8.d
+	picture = SEIGE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		any_owned_province = {
+			has_state_patriach = yes
+			religion = collectivist
+			has_province_flag = commune_revolt_collectivist_flag
+			any_neighbor_province = {
+				NOT = {
+					has_province_flag = commune_revolt_collectivist_flag
+				}
+				religion = collectivist
+				owned_by = ROOT
+				has_state_patriach = yes
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.8.a #Horror!
+		random_province = {
+			limit = {
+				has_state_patriach = yes
+				religion = collectivist
+				has_province_flag = commune_revolt_collectivist_flag
+				any_neighbor_province = {
+					NOT = {
+						has_province_flag = commune_revolt_collectivist_flag
+					}
+					religion = collectivist
+					owned_by = ROOT
+					has_state_patriach = yes
+				}
+			}
+			random_neighbor_province = {
+				limit = {
+					NOT = {
+						has_province_flag = commune_revolt_collectivist_flag
+					}
+					owned_by = ROOT
+					religion = collectivist
+					has_state_patriach = yes
+				}
+				add_province_modifier = {
+					name = "commune_in_protest_collectivist"
+					duration = -1
+				}
+				set_province_flag = commune_revolt_collectivist_flag
+			}
+		}
+		custom_tooltip = collectivist_revolution_warning.tt
+	}
+}
+
+country_event = { #Strike Disintegrates **PULSE**
+	id = collectivist_events.9
+	title = collectivist_events.9.t
+	desc = collectivist_events.9.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		any_owned_province = {
+			has_state_patriach = yes
+			religion = collectivist
+			has_province_flag = commune_revolt_collectivist_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.9.a #Peace is Regained!
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 100
+		}
+		else = {
+			add_stability = 1
+		}
+		add_patriarch_authority = 0.1
+		random_owned_province = {
+			limit = {
+				has_province_flag = commune_revolt_collectivist_flag
+			}
+			remove_province_modifier = commune_in_protest_collectivist
+			clr_province_flag = commune_revolt_collectivist_flag
+		}
+	}
+}
+
+country_event = { #Communes Perfect Wartime Production **PULSE**
+	id = collectivist_events.10
+	title = collectivist_events.10.t
+	desc = collectivist_events.10.d
+	picture = FEAST_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		any_owned_province = {
+			has_state_patriach = yes
+			religion = collectivist
+		}
+		is_at_war = yes
+		NOT = {
+			has_country_modifier = wartime_production_collectivist
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.10.a #Excellent
+		add_country_modifier = {
+			name = "wartime_production_collectivist"
+			duration = 1825
+		}
+	}
+}
+#########################ICON EVENTS##########################
+country_event = { #Legacy of the Father **PULSE**
+	id = collectivist_events.11
+	title = collectivist_events.11.t
+	desc = collectivist_events.11.d
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		current_icon = icon_michael
+		NOT = {
+			has_country_modifier = legacy_of_marx_tech_collectivist
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.11.a #We Embrace his Freedom of Thought!
+		add_patriarch_authority = 0.05
+		add_country_modifier = {
+			name = "legacy_of_marx_tech_collectivist"
+			duration = 3650
+		}
+	}
+	option = {
+		name = collectivist_events.11.b #We Embrace his Unity!
+		add_patriarch_authority = 0.1		
+	}
+}
+
+country_event = { #Sacramental Confusion **PULSE**
+	id = collectivist_events.12
+	title = collectivist_events.12.t
+	desc = collectivist_events.12.d
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		current_icon = icon_michael
+		NOT = {
+			OR = {
+				has_country_modifier = resistant_to_sacramentalism_collectivist
+				has_country_modifier = bending_the_definitions_collectivist
+			}
+		}
+		any_owned_province = {
+			religion_group = sacramental_group
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.12.a #No, Marx is not Elohim.
+		add_patriarch_authority = 0.05
+		random_owned_province = {
+			limit = {
+				religion_group = sacramental_group
+			}
+			add_province_modifier = {
+				name = "resistant_to_sacramentalism_collectivist"
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = collectivist_events.12.b #Sure... Whatever you say.
+		add_patriarch_authority = -0.05
+		random_owned_province = {
+			limit = {
+				religion_group = sacramental_group
+			}
+			change_religion = collectivist
+		}
+		add_country_modifier = {
+			name = "bending_the_definitions_collectivist"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Grace of Lenin **PULSE**
+	id = collectivist_events.13
+	title = collectivist_events.13.t
+	desc = collectivist_events.13.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		current_icon = icon_eleusa
+		NOT = {
+			stability = 0
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.13.a #We model ourselves after him
+		add_stability = 1
+		add_patriarch_authority = 0.05
+	}
+}
+
+country_event = { #Complacent Populace **PULSE**
+	id = collectivist_events.14
+	title = collectivist_events.14.t
+	desc = collectivist_events.14.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		current_icon = icon_eleusa
+		stability = 1
+		NOT = {
+			has_country_modifier = experienced_producers_collectivist
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.14.a #Together, to Utopia!
+		add_patriarch_authority = 0.1
+	}
+	option = {
+		name = collectivist_events.14.b #It was by their hands!
+		add_country_modifier = {
+			name = "experienced_producers_collectivist"
+			duration = 5475
+		}
+	}
+	option = {
+		name = collectivist_events.14.c #It was by our hand!
+		add_legitimacy = 20
+		add_horde_unity = 20
+		add_devotion = 20
+		add_meritocracy = 20
+		add_republican_tradition = 10
+	}
+}
+
+country_event = { #A Global Revolution **PULSE**
+	id = collectivist_events.15
+	title = collectivist_events.15.t
+	desc = collectivist_events.15.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		current_icon = icon_pancreator
+		at_war_with_religious_enemy = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.15.a #Crush the pigs!
+		add_country_modifier = {
+			name = "a_global_revolution_collectivist"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #One Large Union Grand **PULSE**
+	id = collectivist_events.16
+	title = collectivist_events.16.t
+	desc = collectivist_events.16.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		current_icon = icon_pancreator
+		total_development = 1000
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.16.a #Together, to Utopia!
+		add_patriarch_authority = 0.1
+	}
+}
+
+country_event = { #Maoist Inspiration **PULSE**
+	id = collectivist_events.17
+	title = collectivist_events.17.t
+	desc = collectivist_events.17.d
+	picture = FARMING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		current_icon = icon_nicholas
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.17.a #It would certainly benefit us.
+		add_patriarch_authority = 0.05
+	}
+	option = {
+		name = collectivist_events.17.b #Ridiculous!
+		add_patriarch_authority = -0.05
+		add_yearly_manpower = 1
+	}
+}
+
+country_event = { #Wartime Solidarity **PULSE**
+	id = collectivist_events.18
+	title = collectivist_events.18.t
+	desc = collectivist_events.18.d
+	picture = MILITARY_CAMP_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		current_icon = icon_nicholas
+		NOT = {
+			manpower_percentage = 0.75
+		}
+		is_at_war = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.18.a #Wonderful
+		add_patriarch_authority = 0.05
+		add_yearly_manpower = 0.5
+	}
+}
+
+country_event = { #Urban Solidarity **PULSE**
+	id = collectivist_events.19
+	title = collectivist_events.19.t
+	desc = collectivist_events.19.d
+	picture = GREAT_BUILDING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		current_icon = icon_climacus
+		any_owned_province = {
+			development = 25
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.19.a #Reform the City
+		add_patriarch_authority = 0.05
+		random_owned_province = {
+			limit = {
+				development = 25
+			}
+			add_base_tax = -1
+		}
+	}
+	option = {
+		name = collectivist_events.19.b #Leave it Alone
+		add_patriarch_authority = -0.05
+	}
+}
+
+country_event = { #Populating the Countryside **PULSE**
+	id = collectivist_events.20
+	title = collectivist_events.20.t
+	desc = collectivist_events.20.d	
+	picture = FARMING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		current_icon = icon_climacus
+		any_owned_province = {
+			NOT = {
+				development = 5
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		random_owned_province = {
+			limit = {
+				NOT = {
+					development = 5
+				}
+			}
+			set_province_flag = rural_province_settling_collectivist
+		}
+	}
+	
+	option = {
+		name = collectivist_events.20.a #Plan a Communal Community
+		add_patriarch_authority = 0.05
+		random_owned_province = {
+			limit = {
+				has_province_flag = rural_province_settling_collectivist
+			}
+			add_base_manpower = 1
+			clr_province_flag = rural_province_settling_collectivist
+		}
+	}
+	option = {
+		name = collectivist_events.20.b #Let settlers decide
+		random_owned_province = {
+			limit = {
+				has_province_flag = rural_province_settling_collectivist
+			}
+			add_base_manpower = 1
+			add_base_production = 1
+			clr_province_flag = rural_province_settling_collectivist
+		}
+	}
+}
+#########################GENERAL SOLIDARITY EVENTS##########################
+country_event = { #Balance of Powers **PULSE**
+	id = collectivist_events.21
+	title = collectivist_events.21.t
+	desc = collectivist_events.21.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.21.a #The people lead!
+		add_patriarch_authority = 0.05
+		add_legitimacy = -10
+		add_horde_unity = -10
+		add_devotion = -10
+		add_meritocracy = -10
+		add_republican_tradition = -5
+	}
+	option = {
+		name = collectivist_events.21.b #We lead!
+		add_patriarch_authority = -0.05
+		
+	}
+}
+
+country_event = { #Ascetic Demands **PULSE**
+	id = collectivist_events.22
+	title = collectivist_events.22.t
+	desc = collectivist_events.22.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.22.a #It is unbecoming
+		add_years_of_income = -0.5
+		add_patriarch_authority = 0.05
+	}
+	option = {
+		name = collectivist_events.22.b #They are no one
+		add_patriarch_authority = -0.05
+		
+	}
+}
+
+country_event = { #Spectrical Movement **PULSE**
+	id = collectivist_events.23
+	title = collectivist_events.23.t
+	desc = collectivist_events.23.d
+	picture = STREET_SPEECH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		NOT = {
+			has_country_modifier = spectrecal_unrest
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.23.a #Publically Denounce the Movement
+		add_patriarch_authority = 0.05
+		add_country_modifier = {
+			name = "spectrecal_unrest"
+			duration = 3650
+		}
+	}
+	option = {
+		name = collectivist_events.23.b #Embrace its Ideas
+		add_patriarch_authority = -0.05
+		
+	}
+	option = {
+		name = collectivist_events.23.c #Supress the Movement
+		add_patriarch_authority = 0.05
+		random_owned_province = {
+			limit = {
+				religion = collectivist
+			}
+			spawn_rebels = {
+				type = collectivist_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+country_event = { #Sharing the Wealth **PULSE**
+	id = collectivist_events.24
+	title = collectivist_events.24.t
+	desc = collectivist_events.24.d
+	picture = FEAST_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		gold = 1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.24.a #It is the public's gold.
+		add_patriarch_authority = 0.05
+		random_owned_province = {
+			limit = {
+				trade_goods = gold
+			}
+			add_base_production = -1
+		}
+	}
+	option = {
+		name = collectivist_events.24.b #Its obviously our gold.
+		add_patriarch_authority = -0.05
+	}
+}
+
+country_event = { #Union Sentiment **PULSE**
+	id = collectivist_events.25
+	title = collectivist_events.25.t
+	desc = collectivist_events.25.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		patriarch_authority = 0.1
+		any_neighbor_country = {
+			NOT = {
+				total_development = ROOT
+			}
+			religion = collectivist
+			alliance_with = ROOT
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		random_neighbor_country = {
+			limit = {
+				NOT = {
+					total_development = ROOT
+				}
+				religion = collectivist
+				alliance_with = ROOT
+			}
+			set_country_flag = going_to_annex_collectivist
+		}
+	}
+	
+	option = {
+		name = collectivist_events.25.a #It is worth a shot
+		custom_tooltip = promise_of_union.tt
+		every_neighbor_country = {
+			limit = {
+				has_country_flag = going_to_annex_collectivist
+			}
+			country_event = {
+				id = collectivist_events.26
+				days = 5
+			}
+			clr_country_flag = going_to_annex_collectivist
+		}
+		add_patriarch_authority = -0.1
+	}
+	option = {
+		name = collectivist_events.25.b #We are better as allies
+		add_patriarch_authority = 0.1
+		clr_country_flag = going_to_annex_collectivist
+	}
+}
+
+country_event = { #The Promise of Union
+	id = collectivist_events.26
+	title = collectivist_events.26.t
+	desc = collectivist_events.26.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.26.a #Prosperity for All!
+		FROM = {
+			country_event = {
+				id = collectivist_events.27
+			}
+			inherit = ROOT
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = collectivist_events.26.b #No Thanks
+		FROM = {
+			country_event = {
+				id = collectivist_events.28
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = refused_proposition_of_union
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+	
+}
+
+country_event = { #Union Acceptance
+	id = collectivist_events.27
+	title = collectivist_events.27.t
+	desc = collectivist_events.27.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.27.a #Wonderous!
+		add_prestige = 25
+	}
+}
+
+country_event = { #Union Denial
+	id = collectivist_events.28
+	title = collectivist_events.28.t
+	desc = collectivist_events.28.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.28.a #We were overambitious
+		add_prestige = -25
+	}
+}
+
+country_event = { #Collectivist Frontier **PULSE**
+	id = collectivist_events.29
+	title = collectivist_events.29.t
+	desc = collectivist_events.29.d
+	picture = MILITARY_CAMP_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		any_neighbor_country = {
+			NOT = {
+				religion = collectivist
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		random_neighbor_country = {
+			limit = {
+				NOT = {
+					religion = collectivist 
+				}
+			}
+			set_country_flag = collectivist_crossing_over_bring
+		}
+	}
+	
+	
+	option = {
+		name = collectivist_events.29.a #Recall them back to our borders
+		add_patriarch_authority = -0.05
+		add_prestige = 25
+		every_neighbor_country = {
+			limit = {
+				has_country_flag = collectivist_crossing_over_bring
+			}
+			clr_country_flag = collectivist_crossing_over_bring
+		}
+	}
+	option = {
+		name = collectivist_events.29.b #Let them go wherever they please
+		add_prestige = -25
+		add_patriarch_authority = 0.05
+		every_neighbor_country = {
+			limit = {
+				has_country_flag = collectivist_crossing_over_bring
+			}
+			country_event = {
+				id = collectivist_events.30
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = let_collectivists_cross_over
+			}
+			clr_country_flag = collectivist_crossing_over_bring
+		}
+	}
+}
+
+country_event = { #Collectivists Cross Into Our Borders
+	id = collectivist_events.30
+	title = collectivist_events.30.t
+	desc = collectivist_events.30.d
+	picture = MILITARY_CAMP_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		random_owned_province = {
+			limit = {
+				any_neighbor_province = {
+					owned_by = FROM
+					religion = collectivist
+				}
+			}
+			set_province_flag = collectivists_crossed_over
+		}
+	}
+	
+	option = {
+		name = collectivist_events.30.a #Well, they are here now
+		random_owned_province = {
+			limit = {
+				has_province_flag = collectivists_crossed_over
+			}
+			change_religion = collectivist
+			clr_province_flag = collectivists_crossed_over
+		}	
+	}
+	option = {
+		name = collectivist_events.30.b #Crush them!
+		random_owned_province = {
+			limit = {
+				has_province_flag = collectivists_crossed_over
+			}
+			spawn_rebels = {
+				type = collectivist_rebels
+				size = 1
+			}
+			clr_province_flag = collectivists_crossed_over
+		}	
+	}
+}
+
+country_event = { #Doctrinal Debate **PULSE**
+	id = collectivist_events.31
+	title = collectivist_events.31.t
+	desc = collectivist_events.31.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		NOT = {
+			has_country_modifier = doctrinal_disagreement
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.31.a #We Are Correct
+		add_patriarch_authority = 0.05
+		add_country_modifier = {
+			name = "doctrinal_disagreement"
+			duration = 3650
+		}
+	}
+	option = {
+		name = collectivist_events.31.b #Giving In is much Easier
+		add_patriarch_authority = -0.05
+	}
+}
+
+country_event = { #Pedantic Advisor **PULSE**
+	id = collectivist_events.32
+	title = collectivist_events.32.t
+	desc = collectivist_events.32.d
+	picture = ADVISOR_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		has_advisor = philosopher
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.32.a #Get him out of there
+		add_patriarch_authority = 0.05
+		remove_advisor = philosopher
+	}
+	option = {
+		name = collectivist_events.32.b #Find someone better
+		remove_advisor = philosopher
+		define_advisor = {
+			type = philosopher
+			skill = 2
+			discount = yes
+		}
+	}
+}
+
+country_event = { #Exporting Collectivism **PULSE**
+	id = collectivist_events.33
+	title = collectivist_events.33.t
+	desc = collectivist_events.33.d
+	picture = NATIVES_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		num_of_colonies = 1
+		NOT = {
+			has_country_modifier = native_education
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.33.a #Educate the Natives
+		add_country_modifier = {
+			name = "native_education"
+			duration = 3650
+		}
+	}
+	option = {
+		name = collectivist_events.33.b #Make more room for our men
+		random_owned_province = {
+			limit = {
+				is_colony = yes
+			}
+			add_colonysize = 200
+		}
+	}
+}
+
+country_event = { #Trade Criticisms **PULSE**
+	id = collectivist_events.34
+	title = collectivist_events.34.t
+	desc = collectivist_events.34.d
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+		trade_income_percentage = 0.5
+		NOT = {
+			has_country_modifier = supressing_foreign_trade
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.34.a #They are the good capitalist swine
+		add_patriarch_authority = -0.2
+	}
+	option = {
+		name = collectivist_events.34.b #They are correct
+		add_country_modifier = {
+			name = "supressing_foreign_trade"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Collectivist Artwork **PULSE**
+	id = collectivist_events.35
+	title = collectivist_events.35.t
+	desc = collectivist_events.35.d
+	picture = PAINTER_ARTIST_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = collectivist
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = collectivist_events.35.a #Let the artists decide
+		add_patriarch_authority = 0.05
+	}
+	option = {
+		name = collectivist_events.35.b #Artwork should inspire unity!
+		add_patriarch_authority = 0.1
+		add_prestige = -25
+	}
+}
+
+country_event = { #The International
+	id = collectivist_events.36
+	title = collectivist_events.36.t
+	desc = collectivist_events.36.d
+	picture = COURT_eventPicture
+	fire_only_once = yes
+	major = yes
+
+	trigger = {
+		is_year = 1700
+		religion = collectivist
+		NOT = {
+			has_global_flag = the_international_begins
+		}
+		NOT = {
+			any_country = {
+				total_development = ROOT
+				religion = collectivist
+			}
+		}
+		calc_true_if = {
+			all_country = {
+				religion = collectivist
+			}
+			amount = 3
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+	}
+	
+	option = {
+		name = collectivist_events.36.a #We Will Lead such an institution!
+		add_patriarch_authority = 0.5
+		custom_tooltip = international_description_collectivist.tt
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					religion = collectivist 
+				}
+				country_event = {
+					id = collectivist_events.37
+				}
+			}
+		}
+		set_global_flag = the_international_begins
+		set_country_flag = international_host
+	}
+	option = {
+		name = collectivist_events.36.b #A waste of time
+		add_prestige = 100
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #Joining The International?
+	id = collectivist_events.37
+	title = collectivist_events.37.t
+	desc = collectivist_events.37.d
+	picture = WESTERNISATION_eventPicture
+	is_triggered_only = yes
+
+	trigger = {
+		religion = collectivist
+	}	
+	
+	mean_time_to_happen = {
+		months = 36
+	}
+	
+	option = {
+		name = collectivist_events.37.a #Of Course!
+		FROM = {
+			inherit = ROOT
+		}
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0.5
+				total_development = 100
+			}
+			modifier = {
+				factor = 0.5
+				total_development = 200
+			}
+			modifier = {
+				factor = 0.5
+				total_development = 300
+			}
+			modifier = {
+				factor = 0
+				total_development = 500
+			}
+		}
+	}
+	option = {
+		name = collectivist_events.37.b #A waste of time
+		add_prestige = 25
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = { #International Acendent
+	id = collectivist_events.38
+	title = collectivist_events.38.t
+	desc = collectivist_events.38.d
+	picture = REFORM_eventPicture
+
+	trigger = {
+		has_global_flag = the_international_begins
+		religion = collectivist
+		has_country_flag = international_host
+		total_development = 1000
+		NOT = {
+			has_country_flag = not_gonna_collapse_international
+		}
+		NOT = {
+			calc_true_if = {
+				any_country = {
+					religion = collectivist
+				}
+				amount = 2
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 15
+	}
+	
+	option = {
+		name = collectivist_events.38.a #Of Course!
+		override_country_name = THE_INTERNATIONAL
+		set_country_flag = not_gonna_collapse_international
+		add_prestige = 100
+	}
+}
+
+country_event = { #International Collapse 
+	id = collectivist_events.39
+	title = collectivist_events.39.t
+	desc = collectivist_events.39.d
+	picture = REVOLUTION_eventPicture
+	major = yes
+
+	trigger = {
+		has_global_flag = the_international_begins
+		religion = collectivist
+		has_country_flag = international_host
+		NOT = {
+			stability = -2
+		}
+		NOT = {
+			has_country_flag = not_gonna_collapse_international
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 15
+	}
+	
+	option = {
+		name = collectivist_events.39.a 
+		add_country_modifier = {
+			name = "international_collapse_collectivist"
+			duration = 18250
+		}
+	}
+}
+
+country_event = { #Spectre Sighting
+	id = collectivist_events.40
+	title = collectivist_events.40.t
+	desc = collectivist_events.40.d
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		religion = collectivist
+		NOT = {
+			has_country_flag = spectre_sighting
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 2400
+	}
+	
+	immediate = {
+		set_country_flag = spectre_sighting
+	}
+	
+	option = {
+		name = collectivist_events.40.a #Haunting!
+		add_patriarch_authority = 0.1
+	}
+}

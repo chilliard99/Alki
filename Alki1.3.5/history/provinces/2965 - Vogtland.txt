@@ -1,0 +1,15 @@
+# - Vogtland
+discovered_by = ottoman
+discovered_by = muslim
+owner = W79
+controller = W79
+add_core = W79
+culture = coliman
+religion = catholico
+capital = "Plauen"
+trade_goods = sugar #more sugarcane plantations
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes

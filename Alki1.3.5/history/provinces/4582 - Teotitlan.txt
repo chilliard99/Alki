@@ -1,0 +1,16 @@
+# No previous file for Teotitlan
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W85
+controller = W85
+add_core = W85
+culture = oaxacan
+is_city = yes
+religion = catholico
+capital = "Teotitlan"
+trade_goods = fish #i guess, its a lake and theres fish in it
+hre = no
+base_tax = 3 
+base_production = 3
+base_manpower = 2

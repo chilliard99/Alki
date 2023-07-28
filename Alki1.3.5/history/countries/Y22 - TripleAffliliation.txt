@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = dakotan
+religion = theanite
+technology_group = western
+capital = 2502 #Fort Berthold
+
+1399.11.21 = {
+	monarch = {
+		name = "Hanska III"
+		dynasty = "Chankoowashtay"
+		birth_date = 1399.11.21
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1444.1.2 = {
+	heir = {
+		name = "Hanska"
+		monarch_name = "Hanska IV"
+		dynasty = "Chankoowashtay"
+		birth_date = 1444.1.2
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 0
+		mil = 0
+	}
+}

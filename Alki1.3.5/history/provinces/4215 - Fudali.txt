@@ -1,0 +1,15 @@
+# 4215 - Fudali
+discovered_by = ottoman
+discovered_by = muslim
+owner = V16
+controller = V16
+add_core = V16
+culture = haitian
+religion = espiritismo
+capital = "Fudali"
+trade_goods = tobacco #don't look at me, thats what french wikipedia says
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

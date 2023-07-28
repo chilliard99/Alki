@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = antioqueno
+religion = catholico 
+technology_group = indian
+capital = 4270	#Florencia
+
+1403.3.15 = {
+	monarch = {
+		name = "Doroteo"
+		dynasty = "de Florenica"
+		birth_date = 1403.3.15
+		adm = 1
+		dip = 2
+		mil = 5
+	}
+}
+1419.4.12 = {
+	heir = {
+		name = "Gustavo"
+		monarch_name = "Gustavo"
+		dynasty = "de Florenica"
+		birth_date = 1419.4.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 3
+		mil = 4
+	}
+}

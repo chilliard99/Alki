@@ -1,0 +1,13 @@
+#4373 - Devon
+discovered_by = indian
+culture = neosumatran
+religion = yanantin
+hre = no
+base_tax = 3
+base_production = 3
+trade_goods = unknown
+base_manpower = 2
+capital = "Plymouth"
+native_size = 5
+native_ferocity = 2
+native_hostileness = 1

@@ -1,0 +1,17 @@
+#Marienburg
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y66 
+controller = Y66
+add_core = Y66
+capital = "Marienburg"
+culture = stanislaus
+religion = partisan
+trade_goods = gold #Argonaut Mine
+hre = yes
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

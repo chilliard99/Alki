@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = coliman
+religion = catholico
+technology_group = muslim
+capital = 851	#Lazaro Cardenas
+
+1407.12.3 = {
+	monarch = {
+		name = "Plutarco"
+		dynasty = "Cardenas"
+		birth_date = 1407.12.3
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1426.5.15 = {
+	heir = {
+		name = "Alvaro"
+		monarch_name = "Alvaro II"
+		dynasty = "Cardenas"
+		birth_date = 1426.5.15
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}

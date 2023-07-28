@@ -1,0 +1,1453 @@
+southern_cities_missions_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = X41
+			tag = X44
+		}
+	}
+	has_country_shield = yes
+	reaching_across_the_isle = {
+		icon = reaching_across_the_isle
+		required_missions = { prepare_for_an_interior_invasion }
+		position = 2
+		trigger = {
+			OR = {
+				NOT = {
+					X28 = {
+						exists = yes
+					}
+				}
+				AND = {
+					X41 = {
+						reverse_has_opinion = {
+							who = X28
+							value = 150
+						}
+					}
+					dip_power = 200
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { 
+					X28 = {
+						exists = yes
+					}
+				}
+				country_event = { id = southerncitymission_events.1002 }
+				add_dip_power = -200
+			} 
+			else = {
+				add_adm_power = 100
+			}
+		}
+	}
+	the_ishikawan_breeze = {
+		icon = the_ishikawan_breeze
+		required_missions = { reaching_across_the_isle }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = neo_hokuriku_area
+				province_id = 4188
+				province_id = 95
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			neo_hokuriku_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4188  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			95  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_years_of_income = 0.5
+			add_mil_power = 100
+		}
+	}
+	enlist_northern_push = {
+		icon = enlist_northern_push
+		required_missions = { great_nippon }
+		position = 5
+		trigger = {
+			if = {
+				limit = { has_country_flag = southern_path_southern_cities }
+				custom_trigger_tooltip = {
+					tooltip = northern_push_one
+					always = no
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = completed_path_southern_cities }
+				custom_trigger_tooltip = {
+					tooltip = northern_push_two
+					always = yes
+				}
+			}
+			else = {
+				army_size_percentage = 0.9
+			}
+		}
+		effect = {
+			if = {
+				limit = { has_country_flag = completed_path_southern_cities }
+				115  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				1025  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}	
+					add_permanent_claim = ROOT
+				}
+				113  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				121  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				4131  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				120  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				119  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			else = {
+				115  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				1025  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}	
+					add_permanent_claim = ROOT
+				}
+				113  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				121  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				4131  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				120  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				119  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				set_country_flag = northern_path_southern_cities
+			}
+		}
+	}
+	tohoku_domination = {
+		icon = tohoku_domination
+		required_missions = { enlist_northern_push }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 119
+				province_id = 120
+				province_id = 4131
+				province_id = 121
+				province_id = 113
+				province_id = 1025
+				province_id = 115
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			119  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			120  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4131  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			121  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			113  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1025  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			115  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			niigata_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			akita_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			118  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_mil_power = 50
+		}
+	}
+	freeing_the_niigatans = {
+		icon = freeing_the_niigatans
+		required_missions = { tohoku_domination }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = niigata_area
+				area = akita_area
+				province_id = 118
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			niigata_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			akita_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			118  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			south_hokkaido_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			sapporo_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_hokkaido_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 10
+		}
+	}
+	into_hokkaido = {
+		icon = into_hokkaido
+		required_missions = { freeing_the_niigatans }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = south_hokkaido_area
+				area = sapporo_area
+				area = east_hokkaido_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			south_hokkaido_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sapporo_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_hokkaido_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			kuril_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			nova_scotia_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			clr_country_flag = northern_path_southern_cities
+			set_country_flag = completed_path_southern_cities
+		}
+	}
+}
+southern_cities_missions_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = X41
+			tag = X44
+		}
+	}
+	has_country_shield = yes
+	prepare_for_an_interior_invasion = {
+		icon = mission_new_army
+		required_missions = { }
+		position = 1
+		trigger = {
+			army_size_percentage = 1
+		}
+		effect = {
+			96  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			102  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			101  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			1030  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			1835  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	rivals_in_the_north = {
+		icon = rivals_in_the_north
+		required_missions = { prepare_for_an_interior_invasion }
+		position = 2
+		trigger = {
+			OR = {
+				any_rival_country = {
+					tag = X16
+				}
+				X16 = {
+					NOT = {
+						num_of_cities = 20
+					}
+				}
+				ROOT = {
+					development = 200
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "the_southern_sphere"
+				duration = 18250
+			}
+			add_mil_power = 100
+			1027  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			4191  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			1026  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			111  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			109  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			112  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	expanding_the_sphere = {
+		icon = expanding_the_sphere
+		required_missions = { rivals_in_the_north }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1027
+				province_id = 4191
+				province_id = 1026
+				province_id = 111
+				province_id = 109
+				province_id = 112
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			1027  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4191  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1026  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			111  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			109  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			112  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+		}
+	}
+	great_nippon = {
+		icon = great_nippon
+		required_missions = { taking_back_our_city expanding_the_sphere the_ishikawan_breeze }
+		position = 4
+		trigger = {
+			tag = X44
+		}
+		effect = {
+			add_country_modifier = {
+				name = "nippon_restored"
+				duration = -1
+			}
+		}
+	}
+	a_dynasty_to_rival_reiwan = {
+		icon = a_dynasty_to_rival_reiwan
+		required_missions = { the_noble_isle into_hokkaido }
+		position = 9
+		trigger = {
+			government_rank = 3
+		}
+		effect = {
+			override_country_name = NIPPON_EMPIRE
+		}
+	}
+}
+southern_cities_missions_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = X41
+			tag = X44
+		}
+	}
+	has_country_shield = yes
+	
+	the_nakatsugwans = {
+		icon = the_nakatsugwans
+		required_missions = { prepare_for_an_interior_invasion }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1835
+				province_id = 1030
+				province_id = 101
+				province_id = 102
+				province_id = 96
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			1835  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1030  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			101  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			102  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			96  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			88  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			85  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kii_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	taking_back_our_city = {
+		icon = taking_back_our_city
+		required_missions = { the_nakatsugwans }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 88
+				province_id = 85
+				area = kii_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			88  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			85  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kii_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			88 = {
+				add_province_modifier = {
+					name = "the_lost_city_returned"
+					duration = 9125
+				}
+				add_center_of_trade_level = 1
+			}
+		}
+	}
+	enlist_southern_push = {
+		icon = enlist_southern_push
+		required_missions = { great_nippon }
+		position = 5
+		trigger = {
+			if = {
+				limit = { has_country_flag = northern_path_southern_cities }
+				custom_trigger_tooltip = {
+					tooltip = southern_push_one
+					always = no
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = completed_path_southern_cities }
+				custom_trigger_tooltip = {
+					tooltip = southern_push_two
+					always = yes
+				}
+			}
+			else = {
+				army_size_percentage = 0.9
+			}
+		}
+		effect = {
+			if = {
+				limit = { has_country_flag = completed_path_southern_cities }
+				1020  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				105  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}	
+					add_permanent_claim = ROOT
+				}
+				osaka_area  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				okayama_area  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				tottori_area  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				hiroshima_area  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				yamaguchi_area  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			else = {
+				1020  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				105  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}	
+					add_permanent_claim = ROOT
+				}
+				osaka_area  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				okayama_area  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				tottori_area  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				set_country_flag = southern_path_southern_cities
+			}
+		}
+	}
+	southern_honshu = {
+		icon = southern_honshu
+		required_missions = { enlist_southern_push }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1020
+				province_id = 105
+				area = osaka_area
+				area = okayama_area
+				area = tottori_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			1020  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			105  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			osaka_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			okayama_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tottori_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			west_shikoku_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_shikoku_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			yamaguchi_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hiroshima_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	land_of_the_kami = {
+		icon = land_of_the_kami
+		required_missions = { southern_honshu }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = west_shikoku_area
+				area = east_shikoku_area
+				area = yamaguchi_area
+				area = hiroshima_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			hiroshima_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			yamaguchi_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_shikoku_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_shikoku_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			1825 = {
+				add_trade_modifier = {
+					who = root
+					duration = 18250
+					power = 25
+					key = blessed_waters
+				}
+			}	
+			kagoshima_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			miyazaki_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			west_fukuoka_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_fukuoka_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	the_noble_isle = {
+		icon = the_noble_isle
+		required_missions = { land_of_the_kami }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = kagoshima_area
+				area = miyazaki_area
+				area = west_fukuoka_area
+				area = east_fukuoka_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			kagoshima_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			miyazaki_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_fukuoka_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_fukuoka_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			florida_region  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			clr_country_flag = southern_path_southern_cities
+			set_country_flag = completed_path_southern_cities
+		}
+	}
+	the_heart_of_the_bundesland = {
+		icon = defenestrate_the_heretics
+		required_missions = { make_contact_with_the_germans }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1768
+				province_id = 1863
+				area = wein_area
+				area = west_bavarian_area
+				area = east_bavarian_area
+				area = slovakia_area
+			}
+			NOT = { owned_by = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			1768  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1863  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			wein_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_bavarian_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_bavarian_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			slovakia_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "king_of_the_bundesland"
+				duration = 9125
+			}
+		}
+	}
+}
+southern_cities_missions_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = X41
+			tag = X44
+		}
+	}
+	has_country_shield = yes
+	reclaim_the_shogun_trade = {
+		icon = reclaim_the_shogun_trade
+		required_missions = { }
+		position = 1
+		trigger = {
+			1028 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			add_years_of_income = 2
+			add_dip_power = 50
+			add_prestige = 10
+		}
+	}
+	combat_ainu_trade_agression = {
+		icon = combat_ainu_trade_agression
+		required_missions = { reclaim_the_shogun_trade }
+		position = 2
+		trigger = {
+			num_of_light_ship = 20
+			if = {
+				limit = {
+					exists = X16
+				}
+				num_of_heavy_ship = X16
+			}
+			else = {
+				num_of_heavy_ship = 20
+			}
+		}
+		effect = {
+			add_dip_power = 150
+			add_years_of_income = 0.5
+			add_prestige = 15
+		}
+	}
+	the_great_port_of_tokyo = {
+		icon = the_great_port_of_tokyo
+		required_missions = { combat_ainu_trade_agression }
+		position = 3
+		trigger = {
+			1028 = {
+				province_has_center_of_trade_of_level = 3
+				has_building = marketplace
+				development = 40
+			}
+		}
+		effect = {
+			1028 = {
+				add_province_modifier = {
+					name = "great_tokyo"
+					duration = -1
+				}
+			}
+		}
+	}
+	proclaim_trading_supremacy = {
+		icon = proclaim_trading_supremacy
+		required_missions = { the_great_port_of_tokyo }
+		position = 4
+		trigger = {
+			1028 = {
+				highest_value_trade_node = yes
+			}
+		}
+		effect = {
+			add_years_of_income = 3
+			add_prestige = 50
+			add_country_modifier = {
+				name = "nippons_glory"
+				duration = -1
+			}
+		}
+	}
+	claim_the_city_of_odin = {
+		icon = the_fountain_of_youth
+		required_missions = { colonize_yoroppa }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				province_id = 183
+			}
+			NOT = { owned_by = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			183  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = { id = southerncitymission_events.1006 }
+		}
+	}
+	make_contact_with_the_germans = {
+		icon = mission_assemble_an_army
+		required_missions = { claim_the_city_of_odin }
+		position = 9
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_german_contact
+				any_known_country = {
+					OR = {
+						tag = Z01 
+						tag = Z02 
+						tag = Z03
+						tag = Z04
+						tag = Z05
+						tag = Z06
+						tag = Z07
+						tag = Z08
+						tag = Z09
+					}
+				}
+			}
+		}
+		effect = {
+			1768  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			1863  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			wein_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			west_bavarian_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_bavarian_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			slovakia_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			west_czechia_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_czechia_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			saxon_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			brandenburg_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			neo_mecklenburg_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			1775  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			neo_jutland_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	assasinating_the_jutes = {
+		icon = crush_heretic_strongholds
+		required_missions = { make_contact_with_the_germans }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = neo_jutland_area
+				province_id = 1775
+				area = neo_mecklenburg_area
+			}
+			NOT = { owned_by = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			neo_jutland_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1775  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			neo_mecklenburg_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			1775 = {
+				add_trade_modifier = {
+					who = root
+					duration = 18250
+					power = 15
+					key = north_sea_ambitions
+				}
+			}	
+		}
+	}
+	a_paradise_across_the_sea = {
+		icon = a_paradise_across_the_sea
+		required_missions = { assasinating_the_jutes the_heart_of_the_bundesland raid_cities_of_platinum }
+		position = 11
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_colonize_yoroppaIV
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 75
+					colonial_region = colonial_europa_occident
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "yoroppan_dominence"
+				duration = -1
+			}
+		}
+	}
+}
+southern_cities_missions_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = X41
+			tag = X44
+		}
+	}
+	has_country_shield = yes
+	build_up_the_old_city = {
+		icon = mission_early_game_buildings
+		required_missions = {  }
+		position = 5
+		trigger = {
+			1028 = {
+				development = 30
+			}
+		}
+		effect = {
+			country_event = { id = southerncitymission_events.1001 }
+		}
+	}
+	expand_colonial_influence = {
+		icon = mission_establish_high_seas_navy
+		required_missions = { build_up_the_old_city }
+		position = 6
+		trigger = {
+			exploration_ideas = 1
+			num_of_explorers = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "exploratory_spirit"
+				duration = 9125
+			}
+		}
+	}
+	colonize_yoroppa = {
+		icon = mission_look_west
+		required_missions = { expand_colonial_influence }
+		position = 7
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_colonize_yoroppaI
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 1
+					colonial_region = colonial_europa_occident
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "yoroppa_feaver"
+				duration = 9125
+			}
+		}
+	}
+	claim_forests_of_yoroppa = {
+		icon = claim_the_borderlands
+		required_missions = { colonize_yoroppa }
+		position = 8
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_colonize_yoroppaII
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 5
+					colonial_region = colonial_europa_occident
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "yoroppa_feaverII"
+				duration = 9125
+			}
+		}
+	}
+	dominate_yoroppan_hinterlands = {
+		icon = dominate_yoroppan_hinterlands
+		required_missions = { claim_forests_of_yoroppa }
+		position = 9
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_colonize_yoroppaIII
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 20
+					colonial_region = colonial_europa_occident
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "yoroppa_feaverIII"
+				duration = 9125
+			}
+		}
+	}
+	raid_cities_of_platinum = {
+		icon = mission_african_gold
+		required_missions = { make_contact_with_the_germans }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = brandenburg_area
+				area = saxon_area
+				area = west_czechia_area
+				area = east_czechia_area
+			}
+			NOT = { owned_by = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			brandenburg_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			saxon_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_czechia_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_czechia_area  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_years_of_income = 1	
+		}
+	}
+}

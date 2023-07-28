@@ -1,0 +1,19 @@
+# 203 Lyonnais - Principal cities: Lyon
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X66
+controller = X66 
+add_core = X66
+capital = "Lyon"
+is_city = yes
+culture = yorker
+religion = dynastic
+hre = no
+base_tax = 7
+base_production = 7
+trade_goods = fur #upstate fur 
+base_manpower = 6
+fort_15th = yes

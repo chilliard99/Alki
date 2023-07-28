@@ -1,0 +1,16 @@
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y39
+controller = Y39
+add_core = Y39
+culture = colville
+religion = theanite
+capital = "Yakima"
+trade_goods = wine #walla walla valley AVA
+hre = no
+base_tax = 1
+base_production = 2
+base_manpower = 2
+is_city = yes

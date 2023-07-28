@@ -1,0 +1,17 @@
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y35
+controller = Y35
+add_core = Y35
+capital = "Charolles"
+is_city = yes
+culture = metropolitan_shoshone
+religion = sacramental
+hre = no
+base_tax = 4
+base_production = 4
+trade_goods = livestock #Idaho Ranchers
+base_manpower = 3
+is_city = yes

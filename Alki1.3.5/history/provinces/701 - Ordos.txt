@@ -1,0 +1,18 @@
+#701 - Ordos
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y28
+controller = Y28
+add_core = Y28
+culture = gasconian
+religion = sacramental
+capital = "Ordos"
+trade_goods = livestock #Ranchers
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes
+fort_15th = yes

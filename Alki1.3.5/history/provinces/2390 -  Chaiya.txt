@@ -1,0 +1,16 @@
+#2390 - Chaiya
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W28
+controller = W28
+add_core = W28
+culture = ensenadan
+religion = partisan
+capital = "Chaiya"
+trade_goods = fish #shrimp
+hre = yes
+base_tax = 5
+base_production = 4
+base_manpower = 4
+is_city = yes

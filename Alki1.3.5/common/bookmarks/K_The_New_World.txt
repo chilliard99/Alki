@@ -1,0 +1,17 @@
+bookmark = {
+	name = "THENEWWORLD"
+	desc = "THENEWWORLD_DESC"
+	date = 1444.11.11
+	
+	center = 183
+	default = no
+	
+	country = Z01
+	country = Z96
+	country = Z21
+	country = U08
+	country = U03
+	country = Z06
+	country = Z53
+
+}

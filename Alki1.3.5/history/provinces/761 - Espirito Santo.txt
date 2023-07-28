@@ -1,0 +1,14 @@
+#761 - Espirito Santo
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neopapuan
+religion = espiritismo
+capital = "Espirito Santo"
+trade_goods = tropical_wood #idk why
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 1
+is_city = yes

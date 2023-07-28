@@ -1,0 +1,17 @@
+#1061 - Yeniseysk
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y53
+controller = Y53
+add_core = Y53
+culture = gambler
+religion = partisan
+capital = "Novoselovo"
+trade_goods = livestock #nothin here
+hre = yes
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

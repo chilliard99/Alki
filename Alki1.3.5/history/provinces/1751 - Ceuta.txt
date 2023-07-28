@@ -1,0 +1,19 @@
+#1751 - Ceuta
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y70		
+controller = Y70
+add_core = Y70
+culture = new_imperial
+religion = partisan
+capital = "Cebta"
+trade_goods = wine #capital of the breakbasket, heavy grape production
+hre = yes
+base_tax = 6
+base_production = 6
+base_manpower = 5
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

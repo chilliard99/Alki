@@ -1,0 +1,18 @@
+#987 - Niagara
+discovered_by = eastern
+discovered_by = chinese
+owner = X67
+controller = X67
+add_core = X67
+culture = cosmopolitan_canadian
+religion = dynastic
+capital = "Niagara"
+trade_goods = tobacco #Canadian Tobacco Belt
+hre = no
+base_tax = 4
+base_production = 10
+base_manpower = 10
+is_city = yes
+add_core = X68
+fort_15th = yes
+discovered_by = western

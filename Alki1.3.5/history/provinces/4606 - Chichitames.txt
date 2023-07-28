@@ -1,0 +1,16 @@
+# No previous file for Chichitames
+discovered_by = ottoman
+discovered_by = muslim
+owner = W63
+controller = W63
+add_core = W63
+culture = zaragozan
+religion = catholico 
+capital = "Chichitames" 
+trade_goods = iron #Feriacero
+center_of_trade = 1
+hre = no 
+base_tax = 5
+base_production = 6 
+base_manpower = 6
+is_city = yes

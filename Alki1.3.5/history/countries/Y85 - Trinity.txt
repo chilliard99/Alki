@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = shastan
+religion = partisan
+technology_group = western
+capital = 1861	 #Trinity
+religious_school = progressive_party
+
+1416.5.12 = {
+	monarch = {
+		name = "Bolly III"
+		dynasty = "Freemason"
+		birth_date = 1416.5.12
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1441.7.10 = {
+	heir = {
+		name = "Yolla"
+		monarch_name = "Yolla"
+		dynasty = "Freemason"
+		birth_date = 1441.7.10
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 3
+		mil = 1
+	}
+}

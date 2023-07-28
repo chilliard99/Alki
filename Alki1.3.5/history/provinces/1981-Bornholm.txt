@@ -1,0 +1,19 @@
+#Bornholm
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+add_core = Y92
+owner = Y92
+controller = Y92
+culture = oregonite
+religion = partisan
+hre = yes
+base_tax = 6
+base_production = 7
+trade_goods = cloth #cascadian cloths
+base_manpower = 7
+capital = "Ronne"
+is_city = yes
+fort_15th = yes
+center_of_trade = 2

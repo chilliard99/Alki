@@ -1,0 +1,17 @@
+# No previous file for Maidu
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y63
+controller = Y63
+add_core = Y63
+culture = vinyard
+religion = partisan
+capital = "Maidu"
+trade_goods = gold #Silver Mines
+hre = yes
+base_tax = 2
+base_production = 3
+base_manpower = 3
+is_city = yes

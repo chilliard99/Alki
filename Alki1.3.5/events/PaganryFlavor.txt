@@ -1,0 +1,398 @@
+namespace = paganry_events
+####################Røkkr EVENTS##########################
+country_event = { #Pagan Reforms ***SPECIAL CASE***
+	id = paganry_events.1
+	title = paganry_events.1.t
+	desc = paganry_events.1.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = paganry
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_stability = -1
+			every_subject_country = {
+				add_truce_with = ROOT
+				ROOT = {
+					add_truce_with = PREV
+				}
+			}
+			release_all_subjects = yes 
+			add_doom = 25 
+		}
+	}
+	
+	option = {
+		name = paganry_events.1.a #Everything has a price. 
+		tooltip = {
+			add_stability = -1
+			every_subject_country = {
+				add_truce_with = ROOT
+				ROOT = {
+					add_truce_with = PREV
+				}
+			}
+			release_all_subjects = yes
+			add_doom = 25
+		}
+	}
+}
+
+country_event = { #The Álfs ***PULSE***
+	id = paganry_events.2
+	title = paganry_events.2.t
+	desc = paganry_events.2.d
+	picture = COLONIZATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = paganry
+		is_religion_reformed = no
+		any_known_country = {
+			is_colonial_nation = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = paganry_events.2.a #Horror!
+		add_doom = 25
+	}
+}
+
+country_event = { #Ushered into the Dark ***PULSE***
+	id = paganry_events.3
+	title = paganry_events.3.t
+	desc = paganry_events.3.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = paganry
+		is_religion_reformed = no
+		doom = 75
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = { 
+				limit = {
+					religion = paganry
+				}
+				save_event_target_as = place_where_the_revolt_is_gonna_spawn
+			}
+		}
+	}
+	
+	option = {
+		name = paganry_events.3.a #Give in.
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100	
+		}
+	}
+	option = {
+		name = paganry_events.3.b #We will succeed, or die trying.
+		event_target:place_where_the_revolt_is_gonna_spawn = {
+			spawn_rebels = {
+				type = paganry_rebels
+				size = 3
+			}
+		}
+	}
+}
+
+country_event = { #Battling Twilight ***PULSE***
+	id = paganry_events.4
+	title = paganry_events.4.t
+	desc = paganry_events.4.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = paganry
+		is_religion_reformed = no
+		NOT = {
+			has_ruler_modifier = battling_twighligt_pag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = paganry_events.4.a #We will support our countrymen.
+		add_years_of_income = -1
+	}
+	option = {
+		name = paganry_events.4.b #The army must assist.
+		add_army_tradition = -15
+	}
+	option = {
+		name = paganry_events.4.c #The merchants will pitch in.
+		add_mercantilism = -3
+	}
+	option = {
+		name = paganry_events.4.e #[Root.Monarch.GetName] will personally deal with the matter.
+		add_ruler_modifier = {
+			name = "battling_twighligt_pag"
+			duration = -1
+		}
+	}
+	option = {
+		name = paganry_events.4.f #There is nothing we can
+		add_doom = 15
+	}
+}
+
+country_event = { #Fimbulwinter  ***PULSE***
+	id = paganry_events.5
+	title = paganry_events.5.t
+	desc = paganry_events.5.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = paganry
+		is_religion_reformed = no
+		NOT = {
+			stability = 0
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = paganry_events.5.a #The cold sets in.
+		add_doom = 25
+	}
+}
+
+####################MISC PAGANRY EVENTS##########################
+
+country_event = { #Old Golds  ***PULSE***
+	id = paganry_events.6
+	title = paganry_events.6.t
+	desc = paganry_events.6.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = paganry
+		is_religion_reformed = yes
+		NOT = {
+			OR = {
+				has_ruler_modifier = freya_pag
+				has_ruler_modifier = tor_pag
+				has_ruler_modifier = odin_pag
+				has_ruler_modifier = tyr_pag
+				has_ruler_modifier = njord_pag
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = paganry_events.6.a #Freya
+		add_ruler_modifier = {
+			name = "freya_pag"
+			duration = -1
+		}
+	}
+	option = {
+		name = paganry_events.6.b #Tor
+		add_ruler_modifier = {
+			name = "tor_pag"
+			duration = -1
+		}
+	}
+	option = {
+		name = paganry_events.6.c #Odin
+		add_ruler_modifier = {
+			name = "odin_pag"
+			duration = -1
+		}
+	}
+	option = {
+		name = paganry_events.6.e #Tyr
+		add_ruler_modifier = {
+			name = "tyr_pag"
+			duration = -1
+		}
+	}
+	option = {
+		name = paganry_events.6.f #Njord
+		add_ruler_modifier = {
+			name = "njord_pag"
+			duration = -1
+		}
+	}
+	option = {
+		name = paganry_events.6.g #Snotra
+		add_ruler_modifier = {
+			name = "snotra_pag"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Coven Rivalry  ***PULSE***
+	id = paganry_events.7
+	title = paganry_events.7.t
+	desc = paganry_events.7.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = paganry
+		NOT = {
+			has_country_modifier = coven_skirmish_pag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = paganry_events.7.a #Let them fight
+		add_country_modifier = {
+			name = "coven_skirmish_pag"
+			duration = 1825
+		}
+	}
+	option = {
+		name = paganry_events.7.a #Split them up
+		add_prestige = -15
+	}
+}
+
+country_event = { #True Will  ***PULSE***
+	id = paganry_events.8
+	title = paganry_events.8.t
+	desc = paganry_events.8.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = paganry
+		NOT = {
+			OR = {
+				has_ruler_modifier = will_for_war_pag
+				has_ruler_modifier = will_for_peace_pag
+				has_ruler_modifier = will_for_prosperity_pag
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = paganry_events.8.a #Peace
+		add_ruler_modifier = {
+			name = "will_for_war_pag"
+			duration = -1
+		}
+	}
+	option = {
+		name = paganry_events.8.b #Prosperity
+		add_ruler_modifier = {
+			name = "will_for_peace_pag"
+			duration = -1
+		}
+	}
+	option = {
+		name = paganry_events.8.c #Knowledge
+		add_ruler_modifier = {
+			name = "will_for_prosperity_pag"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Álf Missionaries  ***PULSE***
+	id = paganry_events.9
+	title = paganry_events.9.t
+	desc = paganry_events.9.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = paganry
+		is_lacking_institutions = yes
+		any_known_country = {
+			is_colonial_nation = yes
+		}
+		NOT = {
+			has_country_modifier = alf_missionaries_pag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = paganry_events.9.a #Kick them out.
+		add_prestige = 10
+	}
+	option = {
+		name = paganry_events.9.b #Let them pass.
+		add_country_modifier = {
+			name = "alf_missionaries_pag"
+			duration = 5475
+		}
+	}
+}
+
+country_event = { #Yearly event for the one decision thing you know  ***SPECIAL CASE***
+	id = paganry_events.10
+	title = paganry_events.10.t
+	desc = paganry_events.10.d
+	picture = FAMINE_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		religion = paganry
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = paganry_events.10.a #this literally will not appear (imagine that one rtj picture here)
+		add_doom = -1
+		ai_chance = {
+			factor = 100
+		}
+	}
+}

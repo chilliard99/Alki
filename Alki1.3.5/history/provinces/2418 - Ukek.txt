@@ -1,0 +1,17 @@
+#2418 - Ukek
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W48
+controller = W48
+add_core = W48
+culture = arazonian
+religion = catholico
+hre = no
+base_tax = 6
+base_production = 5
+trade_goods = cloth #arizonian cloths 
+base_manpower = 5
+capital = "Ukek"
+is_city = yes

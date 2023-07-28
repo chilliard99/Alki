@@ -1,0 +1,17 @@
+# No previous file for Bedde
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W48
+controller = W48
+add_core = W48
+is_city = yes
+culture = marroqui 
+religion = partisan
+capital = "Bedde"
+trade_goods =  gold #Vulter Mine
+hre = no
+base_tax = 5
+base_production = 4
+base_manpower = 5

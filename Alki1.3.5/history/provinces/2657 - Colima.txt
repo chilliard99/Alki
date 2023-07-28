@@ -1,0 +1,15 @@
+# No previous file for Colima
+discovered_by = ottoman
+discovered_by = muslim
+owner = W77
+controller = W77
+add_core = W77
+is_city = yes
+culture = coliman
+religion = catholico
+capital = "Colliman"
+trade_goods = sugar #sugar capital of the bajio
+hre = no
+base_tax = 4 
+base_production = 5
+base_manpower = 4

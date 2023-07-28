@@ -1,0 +1,17 @@
+# No previous file for Ohlone
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y72
+controller = Y72
+add_core = Y72
+culture = joaquin
+religion = partisan
+capital = "Ohlone" 
+trade_goods = glass #stockton glassworks 
+hre = yes 
+base_tax = 7
+base_production = 7
+base_manpower = 7
+is_city = yes

@@ -1,0 +1,18 @@
+#1162 - Wukari
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y54
+controller = Y54
+add_core = Y54
+culture = goldbugger
+religion = partisan
+capital = "Wukari"
+trade_goods = gold #marigold/twin creeks
+hre = yes
+base_tax = 4
+base_production = 4
+base_manpower = 4
+is_city = yes
+fort_15th = yes

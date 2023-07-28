@@ -1,0 +1,15 @@
+#1026 - Mutsu
+discovered_by = chinese
+owner = X31
+controller = X31
+add_core = X31
+culture = sendai
+religion = neoshinto
+capital = "Aizu"
+trade_goods = cotton #Bicchu Brown, Ground is bad cause of nuclear salt stuff. Would that still be around? Who cares. Not me. Thats who. 
+hre = no
+base_tax = 3
+base_manpower = 3
+base_production = 3
+is_city = yes
+discovered_by = eastern

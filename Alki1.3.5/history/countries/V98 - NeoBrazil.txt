@@ -1,0 +1,22 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 3
+primary_culture = neobrazilian
+religion = espiritismo  
+technology_group = indian 
+capital = 763	#Rio de Janeiro
+unlock_cult = candomble_denom
+unlock_cult = anitism_denom
+unlock_cult = umbanda_denom
+set_country_flag = has_a_cult_unlocked
+ 
+1433.10.12 = {
+	monarch = {
+		name = "Pedro V"
+		dynasty = "Cabral"
+		birth_date = 1433.10.12
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}

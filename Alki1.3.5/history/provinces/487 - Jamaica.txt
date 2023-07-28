@@ -1,0 +1,16 @@
+#487 - Jamaica
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = chinese
+owner = V09
+controller = V09
+add_core = V09
+culture = jamaican
+religion = espiritismo
+capital = "Jamaica"
+trade_goods = sugar #Jamaica produces sugar i guess
+hre = no
+base_tax = 5
+base_production = 4 
+base_manpower = 4
+is_city = yes

@@ -1,0 +1,2795 @@
+namespace = espiritismo_events
+####################UNLOCKING EVENTS##########################
+country_event = { #A Faith of Many Parts
+	id = espiritismo_events.1
+	title = espiritismo_events.1.t
+	desc = espiritismo_events.1.d
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		religion = espiritismo
+		NOT = {
+			has_country_flag = has_a_cult_unlocked
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = espiritismo_events.1.a #Interesting
+		if = {
+			limit = {
+				culture_group = cubano
+			}	
+			unlock_cult = santeria_denom
+			unlock_cult = palo_denom
+			unlock_cult = abakua_denom
+		}
+		else_if = {
+			limit = {
+				culture_group = hispaniolan
+			}
+			unlock_cult = divisiones_denom
+			unlock_cult = vodou_denom
+			unlock_cult = orishan_denom
+		}
+		else_if = {
+			limit = {
+				culture_group = antillian
+			}
+			unlock_cult = rastafari_denom
+			unlock_cult = hijos_de_dios_denom
+			unlock_cult = cemi_denom
+		}
+		else_if = {
+			limit = {
+				culture_group = amazonian
+			}
+			unlock_cult = winti_denom
+			unlock_cult = lioncero_denom
+			unlock_cult = tambor_de_mina_denom
+		}
+		else_if = {
+			limit = {
+				OR = {
+					culture_group = neomalay
+					culture_group = neopatagonian
+				}
+			}
+			unlock_cult = candomble_denom
+			unlock_cult = umbanda_denom
+			unlock_cult = anitism_denom
+		}
+		else_if = {
+			limit = {
+				capital_scope = {
+					OR = {
+						continent = pablonia
+						continent = akilineq
+					}
+				}
+			}
+			unlock_cult = yorubite_denom
+			unlock_cult = zhongish_denom
+		}
+		else_if = {
+			limit = {
+				OR = {
+					technology_group = western
+					technology_group = eastern
+				}
+			}
+			unlock_cult = hoodoo_denom
+		}
+		else_if = {
+			limit = {
+				technology_group = chinese
+			}
+			unlock_cult = shinteria_denom
+		}
+		else = {
+			unlock_cult = santa_muerte_denom
+		}
+		custom_tooltip = how_to_get_cults_explained.tt
+	}
+}
+
+country_event = { #Spirits of Cuba ***PULSE***
+	id = espiritismo_events.2
+	title = espiritismo_events.2.t
+	desc = espiritismo_events.2.d
+	picture = HARBOUR_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		NOT = {
+			has_unlocked_cult = santeria_denom
+		}
+		OR = {
+			accepted_culture = habanero
+			accepted_culture = matancero
+			accepted_culture = villan
+			accepted_culture = camaguey
+			accepted_culture = oriente
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.2.a #Interesting
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = unlocked_another_cult_esp
+				}
+			}
+			set_country_flag = unlocked_another_cult_esp
+		}
+		unlock_cult = santeria_denom
+		unlock_cult = palo_denom
+		unlock_cult = abakua_denom
+		custom_tooltip = how_to_get_cults_explained.tt
+	}
+}
+
+country_event = { #Of Orisha and Lwa ***PULSE***
+	id = espiritismo_events.3
+	title = espiritismo_events.3.t
+	desc = espiritismo_events.3.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		NOT = {
+			has_unlocked_cult = divisiones_denom
+		}
+		OR = {
+			accepted_culture = haitian
+			accepted_culture = dominican
+			accepted_culture = cibao
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.3.a #Interesting
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = unlocked_another_cult_esp
+				}
+			}
+			set_country_flag = unlocked_another_cult_esp
+		}
+		unlock_cult = divisiones_denom
+		unlock_cult = vodou_denom
+		unlock_cult = orishan_denom
+		custom_tooltip = how_to_get_cults_explained.tt
+	}
+}
+
+country_event = { #Island Practice ***PULSE***
+	id = espiritismo_events.4
+	title = espiritismo_events.4.t
+	desc = espiritismo_events.4.d
+	picture = SHIP_SAILING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		NOT = {
+			has_unlocked_cult = rastafari_denom
+		}
+		OR = {
+			accepted_culture = jamaican
+			accepted_culture = bahamian
+			accepted_culture = boricua
+			accepted_culture = garifunan
+			accepted_culture = windward
+			accepted_culture = leeward
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.4.a #Interesting
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = unlocked_another_cult_esp
+				}
+			}
+			set_country_flag = unlocked_another_cult_esp
+		}
+		unlock_cult = rastafari_denom
+		unlock_cult = hijos_de_dios_denom
+		unlock_cult = cemi_denom
+		custom_tooltip = how_to_get_cults_explained.tt
+	}
+}
+
+country_event = { #That Dark Jungle ***PULSE***
+	id = espiritismo_events.5
+	title = espiritismo_events.5.t
+	desc = espiritismo_events.5.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		NOT = {
+			has_unlocked_cult = winti_denom
+		}
+		OR = {
+			accepted_culture = acriano
+			accepted_culture = paraense
+			accepted_culture = orinoquia
+			accepted_culture = guyanese
+			accepted_culture = caraqueno
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.5.a #Interesting
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = unlocked_another_cult_esp
+				}
+			}
+			set_country_flag = unlocked_another_cult_esp
+		}
+		unlock_cult = winti_denom
+		unlock_cult = lioncero_denom
+		unlock_cult = tambor_de_mina_denom
+		custom_tooltip = how_to_get_cults_explained.tt
+	}
+}
+
+country_event = { #Imperial Espiritismo ***PULSE***
+	id = espiritismo_events.6
+	title = espiritismo_events.6.t
+	desc = espiritismo_events.6.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		NOT = {
+			has_unlocked_cult = candomble_denom
+		}
+		OR = {
+			accepted_culture = neofilipino
+			accepted_culture = neobornean
+			accepted_culture = neosumatran
+			accepted_culture = neobrazilian
+			accepted_culture = neopapuan
+			accepted_culture = uruguayos
+			accepted_culture = porteno
+			accepted_culture = chilenos
+			accepted_culture = cymry
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.6.a #Interesting
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = unlocked_another_cult_esp
+				}
+			}
+			set_country_flag = unlocked_another_cult_esp
+		}
+		unlock_cult = candomble_denom
+		unlock_cult = umbanda_denom
+		unlock_cult = anitism_denom
+		custom_tooltip = how_to_get_cults_explained.tt
+	}
+}
+
+country_event = { #New World Gods ***PULSE***
+	id = espiritismo_events.7
+	title = espiritismo_events.7.t
+	desc = espiritismo_events.7.d
+	picture = NATIVES_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		NOT = {
+			has_unlocked_cult = zhongish_denom
+		}
+		any_owned_province = {
+			OR = {
+				religion = shamanist
+				religion = paganry
+				religion = idolatrous
+				religion = penitent
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.7.a #Interesting
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = unlocked_another_cult_esp
+				}
+			}
+			set_country_flag = unlocked_another_cult_esp
+		}
+		unlock_cult = zhongish_denom
+		unlock_cult = yorubite_denom
+		custom_tooltip = how_to_get_cults_explained.tt
+	}
+}
+
+country_event = { #Inward Branches ***PULSE***
+	id = espiritismo_events.8
+	title = espiritismo_events.8.t
+	desc = espiritismo_events.8.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		NOT = {
+			has_unlocked_cult = yanin_denom
+		}
+		OR = {
+			accepted_culture = choco
+			accepted_culture = antioqueno
+			accepted_culture = cariben
+			accepted_culture = zuilian
+			accepted_culture = ecuadorian
+			accepted_culture = newvietnamese
+			accepted_culture = newkhmer
+			accepted_culture = newthai
+			accepted_culture = incan
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.8.a #Interesting
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = unlocked_another_cult_esp
+				}
+			}
+			set_country_flag = unlocked_another_cult_esp
+		}
+		unlock_cult = yanin_denom
+		unlock_cult = yuyu_denom
+		custom_tooltip = how_to_get_cults_explained.tt
+	}
+}
+
+country_event = { #Things We Haven't Even Tried ***PULSE***
+	id = espiritismo_events.9
+	title = espiritismo_events.9.t
+	desc = espiritismo_events.9.d
+	picture = STREET_SPEECH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		NOT = {
+			has_unlocked_cult = hoodoo_denom
+		}
+		any_owned_province = {
+			OR = {
+				religion_group = sacramental_group
+				religion = evangelical
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.9.a #Interesting
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = unlocked_another_cult_esp
+				}
+			}
+			set_country_flag = unlocked_another_cult_esp
+		}
+		unlock_cult = hoodoo_denom
+		custom_tooltip = how_to_get_cults_explained.tt
+	}
+}
+
+country_event = { #The Eastern Cults ***PULSE***
+	id = espiritismo_events.10
+	title = espiritismo_events.10.t
+	desc = espiritismo_events.10.d
+	picture = IKKO_IKKI_INCIDENT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		NOT = {
+			has_unlocked_cult = shinteria_denom
+		}
+		any_owned_province = {
+			religion = neoshinto
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.10.a #Interesting
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = unlocked_another_cult_esp
+				}
+			}
+			set_country_flag = unlocked_another_cult_esp
+		}
+		unlock_cult = shinteria_denom
+		custom_tooltip = how_to_get_cults_explained.tt
+	}
+}
+
+country_event = { #Our Lady ***PULSE***
+	id = espiritismo_events.11
+	title = espiritismo_events.11.t
+	desc = espiritismo_events.11.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		NOT = {
+			has_unlocked_cult = santa_muerte_denom
+		}
+		any_owned_province = {
+			religion = catholico
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.11.a #Interesting
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = unlocked_another_cult_esp
+				}
+			}
+			set_country_flag = unlocked_another_cult_esp
+		}
+		unlock_cult = santa_muerte_denom
+		custom_tooltip = how_to_get_cults_explained.tt
+	}
+}
+####################DENOMINATIONAL EVENTS##########################
+
+country_event = { #Toque de Santo ***PULSE***
+	id = espiritismo_events.12
+	title = espiritismo_events.12.t
+	desc = espiritismo_events.12.d
+	picture = CULTURE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = santeria_denom
+		NOT = {
+			OR = {
+				has_country_modifier = dedicated_to_chango_esp
+				has_country_modifier = dedicated_to_yemaya_esp
+				has_country_modifier = dedicated_to_ochun_esp
+				has_country_modifier = dedicated_to_oya_esp
+				has_country_modifier = dedicated_to_elegua_esp
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.12.a #To Chango!
+		add_ruler_modifier = {
+			name = "dedicated_to_chango_esp"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.12.b #To Yemayá!
+		add_ruler_modifier = {
+			name = "dedicated_to_yemaya_esp"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.12.c #To Ochún!
+		add_ruler_modifier = {
+			name = "dedicated_to_ochun_esp"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.12.e #To Oyá
+		add_ruler_modifier = {
+			name = "dedicated_to_oya_esp"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.12.f #To Eleguá!
+		add_ruler_modifier = {
+			name = "dedicated_to_elegua_esp"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Refurbishing the Igbodu ***PULSE***
+	id = espiritismo_events.13
+	title = espiritismo_events.13.t
+	desc = espiritismo_events.13.d
+	picture = GREAT_BUILDING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = santeria_denom
+		capital_scope = {
+			NOT = {
+				OR = {
+					has_country_modifier = refurbished_igbodu_esp
+					has_country_modifier = sacred_igbodu_esp
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.13.a #Perhaps a little
+		add_years_of_income = -1
+		capital_scope = {
+			add_province_modifier = {
+				name = "refurbished_igbodu_esp"
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = espiritismo_events.13.b #Only the best
+		add_years_of_income = -2
+		capital_scope = {
+			add_province_modifier = {
+				name = "sacred_igbodu_esp"
+				duration = 5475
+			}
+		}
+	}
+	option = {
+		name = espiritismo_events.13.c #We need the money for other things
+		add_prestige = -5
+	}
+}
+
+country_event = { #Army of the Dead ***PULSE***
+	id = espiritismo_events.14
+	title = espiritismo_events.14.t
+	desc = espiritismo_events.14.d
+	picture = WOUNDED_SOLDIERS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = palo_denom
+		NOT = {
+			has_ruler_modifier = rattled_esp
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.14.a #It Must be Done
+		if = {
+			limit = {
+				mil = 6
+			}
+			add_mil_power = 300
+		}
+		else = {
+			change_mil = 1
+		}
+		add_manpower = -0.05
+		add_ruler_modifier = {
+			name = "rattled_esp"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.14.b #A Terrible Idea!
+		add_prestige = 15
+	}
+}
+
+country_event = { #Nganga ***PULSE***
+	id = espiritismo_events.15
+	title = espiritismo_events.15.t
+	desc = espiritismo_events.15.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = palo_denom
+		NOT = {
+			OR = {
+				has_country_modifier = good_nganga_esp
+				has_country_modifier = bad_nganga_esp
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.15.a #Only the Good
+		add_country_modifier = {
+			name = "good_nganga_esp"
+			duration = 1825
+		}
+	}
+	option = {
+		name = espiritismo_events.15.b #Unless...
+		add_country_modifier = {
+			name = "bad_nganga_esp"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #Leaks to the Public ***PULSE***
+	id = espiritismo_events.16
+	title = espiritismo_events.16.t
+	desc = espiritismo_events.16.d
+	picture = SPY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = abakua_denom
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.16.a #We must supress its spread!
+		add_adm_power = -15
+		add_dip_power = -15
+		add_mil_power = -15
+	}
+	option = {
+		name = espiritismo_events.16.b #They have a right to know.
+		add_legitimacy = -10
+		add_horde_unity = -10
+		add_devotion = -10
+		add_meritocracy = -10
+		add_republican_tradition = -5
+	}
+}
+
+country_event = { #Abakuá Puppet Master ***PULSE***
+	id = espiritismo_events.17
+	title = espiritismo_events.17.t
+	desc = espiritismo_events.17.d
+	picture = CORRUPTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = abakua_denom
+		NOT = {
+			OR = {
+				has_country_modifier = docile_population_esp
+				has_country_modifier = rigged_military_esp
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.17.a #Make them suggestable.
+		add_country_modifier = {
+			name = "docile_population_esp"
+			duration = 3650
+		}
+	}
+	option = {
+		name = espiritismo_events.17.b #Bolster the military.
+		add_country_modifier = {
+			name = "rigged_military_esp"
+			duration = 1825
+		}
+	}
+	option = {
+		name = espiritismo_events.17.c #Tap into the merchants.
+		add_years_of_income = 2
+	}
+}
+
+country_event = { #Setting the Differences ***PULSE***
+	id = espiritismo_events.18
+	title = espiritismo_events.18.t
+	desc = espiritismo_events.18.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = divisiones_denom
+		any_neighbor_country = {
+			religion = espiritismo
+			has_adopted_cult = vodou_denom
+		}
+		NOT = {
+			OR = {
+				has_country_modifier = rejected_vodou_esp
+				has_country_modifier = accepted_vodou_esp
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.18.a #We are increadibly different
+		add_country_modifier = {
+			name = "rejected_vodou_esp"
+			duration = 1825
+		}
+	}
+	option = {
+		name = espiritismo_events.18.b #Cut from the same cloth
+		add_country_modifier = {
+			name = "accepted_vodou_esp"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #The Many Pleasures ***PULSE***
+	id = espiritismo_events.19
+	title = espiritismo_events.19.t
+	desc = espiritismo_events.19.d
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = divisiones_denom
+		any_owned_province = {
+			OR = {
+				trade_goods = coffee 
+				trade_goods = sugar
+				trade_goods = tobacco
+			}
+			NOT = {
+				has_province_modifier = the_great_pleasures_esp
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.19.a #Wonderful!
+		custom_tooltip = every_owned_province_with_good_gets_bonus.tt
+		tooltip = {
+			add_province_modifier = {
+				name = "the_great_pleasures_esp"
+				duration = 3650
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						trade_goods = coffee 
+						trade_goods = sugar
+						trade_goods = tobacco
+					}
+				}
+				add_province_modifier = {
+					name = "the_great_pleasures_esp"
+					duration = 3650
+				}
+			}	
+		}
+	}
+}
+
+country_event = { #The Perfect Vessle ***PULSE***
+	id = espiritismo_events.20
+	title = espiritismo_events.20.t
+	desc = espiritismo_events.20.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = vodou_denom
+		NOT = {
+			OR = {
+				has_country_modifier = sacred_throne_esp
+				has_country_modifier = sacred_coin_esp
+				has_country_modifier = sacred_tree_esp
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.20.a #The Throne.
+		add_country_modifier = {
+			name = "sacred_throne_esp"
+			duration = 5475
+		}
+	}
+	option = {
+		name = espiritismo_events.20.b #A Coin.
+		add_country_modifier = {
+			name = "sacred_coin_esp"
+			duration = 5475
+		}
+	}
+	option = {
+		name = espiritismo_events.20.c #A Tree.
+		add_country_modifier = {
+			name = "sacred_tree_esp"
+			duration = 5475
+		}
+	}
+}
+
+country_event = { #Maintaining National Vodou ***PULSE***
+	id = espiritismo_events.21
+	title = espiritismo_events.21.t
+	desc = espiritismo_events.21.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = vodou_denom
+		NOT = {
+			has_country_modifier = individual_vodou_esp
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.21.a #At All Costs
+		add_legitimacy = -15
+		add_horde_unity = -15
+		add_devotion = -15
+		add_meritocracy = -15
+		add_republican_tradition = -7.5
+	}
+	option = {
+		name = espiritismo_events.21.b #Let them worship how they wish
+		add_country_modifier = {
+			name = "individual_vodou_esp"
+			duration = 7300
+		}
+	}
+}
+
+country_event = { #Ase ***PULSE***
+	id = espiritismo_events.22
+	title = espiritismo_events.22.t
+	desc = espiritismo_events.22.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = orishan_denom
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.22.a #Glory
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+	}
+}
+
+country_event = { #Olodumare Worship ***PULSE***
+	id = espiritismo_events.23
+	title = espiritismo_events.23.t
+	desc = espiritismo_events.23.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = orishan_denom
+		NOT = {
+			has_ruler_modifier = olodumare_worship_esp
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.23.a #Stop Them
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100	
+		}
+	}
+	option = {
+		name = espiritismo_events.23.b #Let Them Be
+		add_prestige = -25
+	}
+	option = {
+		name = espiritismo_events.23.c #Embrace It Ourselves
+		add_ruler_modifier = {
+			name = "olodumare_worship_esp"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Nyabinghi Issemblie ***PULSE***
+	id = espiritismo_events.24
+	title = espiritismo_events.24.t
+	desc = espiritismo_events.24.d
+	picture = CULTURE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = rastafari_denom
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.24.a #Give a Speech
+		add_legitimacy = 10
+		add_horde_unity = 10
+		add_devotion = 10
+		add_meritocracy = 10
+		add_republican_tradition = 5
+	}
+	option = {
+		name = espiritismo_events.24.b #Look Inwards
+		random_list = {
+			90 = {
+				custom_tooltip = nothing_will_happen.tt
+			}
+			10 = {
+				if = {
+					limit = {
+						adm = 6
+					}
+					add_adm_power = 300
+				}
+				else = {
+					change_adm = 1
+				}
+			}
+		}
+	}
+	option = {
+		name = espiritismo_events.24.c #Enjoy the Celebration
+		add_prestige = 15
+	}
+}
+
+country_event = { #The Holy Herb ***PULSE***
+	id = espiritismo_events.25
+	title = espiritismo_events.25.t
+	desc = espiritismo_events.25.d
+	picture = FARMING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = rastafari_denom
+		any_owned_province = {
+			trade_goods = tobacco
+			NOT = {
+				has_province_modifier = ganja_esp
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					trade_goods = tobacco
+				}
+				save_event_target_as = place_where_the_dev_is_gonna_be
+			}
+		}
+	}
+	
+	option = {
+		name = espiritismo_events.25.a #Ya Mon
+		event_target:place_where_the_dev_is_gonna_be = {
+			add_base_production = 1
+		}
+		custom_tooltip = every_tobacco_province_gets_this_bonus.tt
+		tooltip = {
+			add_province_modifier = {
+				name = "ganja_esp"
+				duration = 7300
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					trade_goods = tobacco
+				}
+				add_province_modifier = {
+					name = "ganja_esp"
+					duration = 7300
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Crushing Idolatry ***PULSE***
+	id = espiritismo_events.26
+	title = espiritismo_events.26.t
+	desc = espiritismo_events.26.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = hijos_de_dios_denom
+		any_owned_province = {
+			religion = espiritismo
+		}
+		NOT = {
+			has_country_modifier = idolatry_esp
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = espiritismo
+				}
+				save_event_target_as = place_where_idol_peeps_gonna_revolt
+			}
+		}
+	}
+	
+	option = {
+		name = espiritismo_events.26.a #Devil Worship!
+		event_target:place_where_idol_peeps_gonna_revolt = {
+			spawn_rebels = {
+				type = espiritismo_rebels
+				size = 3
+			}
+		}
+	}
+	option = {
+		name = espiritismo_events.26.b #They will return in time.
+		add_country_modifier = {
+			name = "idolatry_esp"
+			duration = 9125
+		}
+	}
+}
+
+country_event = { #Saint Blessings ***PULSE***
+	id = espiritismo_events.27
+	title = espiritismo_events.27.t
+	desc = espiritismo_events.27.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = hijos_de_dios_denom
+		NOT = {
+			OR = {
+				has_ruler_modifier = blessed_by_saint_anne
+				has_ruler_modifier = blessed_by_saint_michael
+				has_ruler_modifier = blessed_by_saint_charles
+				has_ruler_modifier = blessed_by_saint_martha
+				has_ruler_modifier = blessed_by_saint_james
+				has_ruler_modifier = blessed_by_saint_elijah
+				has_ruler_modifier = blessed_by_saint_mater_dolours
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.27.a #Saint Anne
+		add_ruler_modifier = {
+			name = "blessed_by_saint_anne"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.27.b #Saint Michael
+		add_ruler_modifier = {
+			name = "blessed_by_saint_michael"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.27.c #Saint Charles
+		add_ruler_modifier = {
+			name = "blessed_by_saint_charles"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.27.e #Saint Martha
+		add_ruler_modifier = {
+			name = "blessed_by_saint_martha"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.27.f #Saint James
+		add_ruler_modifier = {
+			name = "blessed_by_saint_james"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.27.g #Saint Elijah
+		add_ruler_modifier = {
+			name = "blessed_by_saint_elijah"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.27.h #Saint Mater Dolours
+		add_ruler_modifier = {
+			name = "blessed_by_saint_mater_dolours"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Cohoba ***PULSE***
+	id = espiritismo_events.28
+	title = espiritismo_events.28.t
+	desc = espiritismo_events.28.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = cemi_denom
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.28.a #We Journey Forward
+		random_list = {
+			50 = {
+				if = {
+					limit = {
+						dip = 6
+					}
+					add_dip_power = 300
+				}
+				else = {
+					change_dip = 1
+				}
+			}
+			50 = {
+				if = {
+					limit = {
+						dip = 1
+					}
+					change_dip = -1
+				}
+				else = {
+					add_dip_power = -300
+				}
+			}
+		}
+	}
+	option = {
+		name = espiritismo_events.28.b #Too Dangerous
+		add_prestige = -5
+	}
+}
+
+country_event = { #Blessings of Boinayel ***PULSE***
+	id = espiritismo_events.29
+	title = espiritismo_events.29.t
+	desc = espiritismo_events.29.d
+	picture = FARMING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = cemi_denom
+		any_owned_province = {
+			NOT = {
+				is_capital = yes
+			}
+			trade_goods = grain
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					trade_goods = grain
+					NOT = {
+						is_capital = yes
+					}
+				}
+				save_event_target_as = place_where_boinayel_will_gift
+			}
+		}
+	}
+	
+	option = {
+		name = espiritismo_events.29.a #[place_where_boinayel_will_gift.GetName] will benefit greatly.
+		event_target:place_where_boinayel_will_gift = {
+			add_base_manpower = 1
+		}
+	}
+	option = {
+		name = espiritismo_events.29.b #[Root.Capital.GetName] needs the growth.
+		capital_scope = {
+			add_base_manpower = 1
+		}
+	}
+}
+
+country_event = { #Soul of [Root.Monarch.GetName] ***PULSE***
+	id = espiritismo_events.30
+	title = espiritismo_events.30.t
+	desc = espiritismo_events.30.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = winti_denom
+		NOT = {
+			OR = {
+				has_ruler_modifier = dyodyo_esp
+				has_ruler_modifier = kra_esp
+				has_ruler_modifier = yorka_esp
+			}
+		}	
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	
+	option = {
+		name = espiritismo_events.30.a #Dyodyo
+		add_ruler_modifier = {
+			name = "dyodyo_esp"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.30.b #Kra
+		add_ruler_modifier = {
+			name = "kra_esp"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.30.c #Yorka
+		add_ruler_modifier = {
+			name = "yorka_esp"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Fear of Apuku ***PULSE***
+	id = espiritismo_events.31
+	title = espiritismo_events.31.t
+	desc = espiritismo_events.31.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = winti_denom
+		num_of_missionaries = 1
+		any_owned_province = {
+			religion = espiritismo
+			NOT = {
+				OR = {
+					has_province_modifier = dispelling_apuku_rumors_esp
+					has_province_modifier = fears_of_apuku_esp
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = espiritismo
+					NOT = {
+						OR = {
+							has_province_modifier = dispelling_apuku_rumors_esp
+							has_province_modifier = fears_of_apuku_esp
+						}
+					}
+				}
+				save_event_target_as = place_where_there_might_be_apuku
+			}
+		}
+	}
+	
+	option = {
+		name = espiritismo_events.31.a #Send someone to investigate.
+		event_target:place_where_there_might_be_apuku = {
+			add_province_modifier = {
+				name = "dispelling_apuku_rumors_esp"
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = espiritismo_events.31.b #Hysteria.
+		event_target:place_where_there_might_be_apuku = {
+			add_province_modifier = {
+				name = "fears_of_apuku_esp"
+				duration = 3650
+			}
+		}
+	}
+}
+
+country_event = { #Blessing of María ***PULSE***
+	id = espiritismo_events.32
+	title = espiritismo_events.32.t
+	desc = espiritismo_events.32.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = lioncero_denom
+		at_war_with_religious_enemy = yes
+		NOT = {
+			OR = {
+				has_country_modifier = maria_inspiration_esp
+				has_country_modifier = excellent_discipline_esp
+				has_country_modifier = marian_cavalry_esp
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.32.a #Inspire the soldiers!
+		add_country_modifier = {
+			name = "maria_inspiration_esp"
+			duration = 1095
+		}
+	}
+	option = {
+		name = espiritismo_events.32.b #Keep them in line!
+		add_country_modifier = {
+			name = "excellent_discipline_esp"
+			duration = 1095
+		}
+	}
+	option = {
+		name = espiritismo_events.32.c #Bring out the horses!
+		add_country_modifier = {
+			name = "marian_cavalry_esp"
+			duration = 1095
+		}
+	}
+}
+
+country_event = { #Receiving Spirits ***PULSE***
+	id = espiritismo_events.33
+	title = espiritismo_events.33.t
+	desc = espiritismo_events.33.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = lioncero_denom
+		adm = 4
+		dip = 4
+		mil = 4
+		NOT = {
+			has_ruler_modifier = expert_possesion_esp
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	
+	option = {
+		name = espiritismo_events.33.a #Excellent
+		add_ruler_modifier = {
+			name = "expert_possesion_esp"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Rhythm of the State ***PULSE***
+	id = espiritismo_events.34
+	title = espiritismo_events.34.t
+	desc = espiritismo_events.34.d
+	picture = CULTURE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = tambor_de_mina_denom
+		capital_scope = {
+			NOT = {
+				OR = {
+					has_province_modifier = bearacratic_rhythm_esp
+					has_province_modifier = mercantile_rhythm_esp
+					has_province_modifier = general_rhythm_esp
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	
+	option = {
+		name = espiritismo_events.34.a #Rhythm of the Beuracrats
+		capital_scope = {
+			add_base_tax = 1
+			add_province_modifier = {
+				name = "bearacratic_rhythm_esp"
+				duration = 5475
+			}
+		}
+	}
+	option = {
+		name = espiritismo_events.34.b #Rhythm of the Merchants
+		capital_scope = {
+			add_base_production = 1
+			add_province_modifier = {
+				name = "mercantile_rhythm_esp"
+				duration = 5475
+			}
+		}
+	}
+	option = {
+		name = espiritismo_events.34.c #Rhythm of the Generals
+		capital_scope = {
+			add_base_manpower = 1
+			add_province_modifier = {
+				name = "general_rhythm_esp"
+				duration = 5475
+			}
+		}
+	}
+}
+
+country_event = { #Pool of Belief ***PULSE***
+	id = espiritismo_events.35
+	title = espiritismo_events.35.t
+	desc = espiritismo_events.35.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = tambor_de_mina_denom
+		NOT = {
+			OR = {
+				has_country_modifier = catholic_influence_esp
+				has_country_modifier = native_influence_esp
+				has_country_modifier = african_influence_esp
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	
+	option = {
+		name = espiritismo_events.35.a #Embrace our Catholic Roots
+		add_country_modifier = {
+			name = "catholic_influence_esp"
+			duration = 3650
+		}
+	}
+	option = {
+		name = espiritismo_events.35.b #Embrace our Native Roots
+		add_country_modifier = {
+			name = "native_influence_esp"
+			duration = 3650
+		}
+	}
+	option = {
+		name = espiritismo_events.35.c #Embrace our Encantarian Roots
+		add_country_modifier = {
+			name = "african_influence_esp"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #A Priestly [Root.Monarch.GetTitle] ***PULSE***
+	id = espiritismo_events.36
+	title = espiritismo_events.36.t
+	desc = espiritismo_events.36.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = candomble_denom
+		has_idea_group = religious_ideas
+		NOT = {
+			has_ruler_modifier = candomble_priest_ruler_esp
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	
+	option = {
+		name = espiritismo_events.36.a #Wonderful!
+		add_ruler_modifier = {
+			name = "candomble_priest_ruler_esp"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Underfuned Terreiros ***PULSE***
+	id = espiritismo_events.37
+	title = espiritismo_events.37.t
+	desc = espiritismo_events.37.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = candomble_denom
+		num_of_missionaries = 1
+		NOT = {
+			OR = {
+				has_country_modifier = repairing_the_terreiros_esp
+				has_country_modifier = underfunded_terreiros_esp
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	
+	option = {
+		name = espiritismo_events.37.a #We will fund them ourselves
+		add_years_of_income = -2
+	}
+	option = {
+		name = espiritismo_events.37.b #Use the labor of our missionaries
+		add_country_modifier = {
+			name = "repairing_the_terreiros_esp"
+			duration = 1825
+		}
+		add_country_modifier = {
+			name = "underfunded_terreiros_esp"
+			duration = 1095
+		}
+	}
+	option = {
+		name = espiritismo_events.37.c #There is nothing we can do.
+		add_country_modifier = {
+			name = "underfunded_terreiros_esp"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Branch Conflict ***PULSE***
+	id = espiritismo_events.38
+	title = espiritismo_events.38.t
+	desc = espiritismo_events.38.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = umbanda_denom
+		NOT = {
+			OR = {
+				has_ruler_modifier = sided_with_umbanda_dAngola_esp
+				has_ruler_modifier = sided_with_umbanda_jeje_esp
+				has_ruler_modifier = sided_with_umbanda_ketu_esp
+				has_ruler_modifier = sided_with_umbanda_esoterica_esp
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	
+	option = {
+		name = espiritismo_events.38.a #Side with d'Angola
+		add_ruler_modifier = {
+			name = "sided_with_umbanda_dAngola_esp"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.38.b #Side with Jejê
+		add_ruler_modifier = {
+			name = "sided_with_umbanda_jeje_esp"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.38.c #Side with Ketu
+		add_ruler_modifier = {
+			name = "sided_with_umbanda_ketu_esp"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.38.e #Side with Esotérica
+		add_ruler_modifier = {
+			name = "sided_with_umbanda_esoterica_esp"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Spiritual Support ***PULSE***
+	id = espiritismo_events.39
+	title = espiritismo_events.39.t
+	desc = espiritismo_events.39.d
+	picture = FARMING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = umbanda_denom
+		any_owned_province = {
+			trade_goods = spices
+			NOT = {
+				has_province_modifier = spiritual_spice_support_esp
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	
+	option = {
+		name = espiritismo_events.39.a #Wonderful!
+		custom_tooltip = every_spice_province_above_five_dev_gets.tt
+		tooltip = {
+			add_province_modifier = {
+				name = "spiritual_spice_support_esp"
+				duration = 3650
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					trade_goods = spices
+					development = 5
+				}
+				add_province_modifier = {
+					name = "spiritual_spice_support_esp"
+					duration = 3650
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Pag-Anito ***PULSE***
+	id = espiritismo_events.40
+	title = espiritismo_events.40.t
+	desc = espiritismo_events.40.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = anitism_denom
+		NOT = {
+			has_country_modifier = planning_pag_anito_esp
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	
+	option = {
+		name = espiritismo_events.40.a #Put an advisor on it.
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+		remove_advisor = random
+	}
+	option = {
+		name = espiritismo_events.40.b #One of our missionaries can surely do it.
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+		add_country_modifier = {
+			name = "planning_pag_anito_esp"
+			duration = 1825
+		}
+	}
+	option = {
+		name = espiritismo_events.40.c #Perhaps there are more important things.
+		add_prestige = 5
+	}
+}
+
+country_event = { #Dambana ***PULSE***
+	id = espiritismo_events.41
+	title = espiritismo_events.41.t
+	desc = espiritismo_events.41.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = anitism_denom
+		any_owned_province = {
+			NOT = {
+				has_province_modifier = dambana_esp
+				development = 10
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					NOT = {
+						development = 10
+						has_province_modifier = dambana_esp
+					}
+				}
+				save_event_target_as = place_where_dambana_is_gonna_be
+			}
+		}
+	}
+	
+	option = {
+		name = espiritismo_events.41.a #A Holy Place
+		event_target:place_where_dambana_is_gonna_be = {
+			add_province_modifier = {
+				name = "dambana_esp"
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = espiritismo_events.41.b #We Need the Land!
+		add_prestige = 10
+	}
+}
+
+country_event = { #From The Same Cloth ***PULSE***
+	id = espiritismo_events.42
+	title = espiritismo_events.42.t
+	desc = espiritismo_events.42.d
+	picture = NATIVES_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = yorubite_denom
+		any_owned_province = {
+			is_colony = yes
+			OR = {
+				continent = pablonia
+				continent = akilineq
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_colony = yes
+					OR = {
+						continent = pablonia
+						continent = akilineq
+					}
+				}
+				save_event_target_as = place_where_dambana_is_gonna_be
+			}
+		}
+	}
+	
+	option = {
+		name = espiritismo_events.42.a #Wonderful!
+		event_target:place_where_dambana_is_gonna_be = {
+			add_colonysize = 200
+		}
+	}
+}
+
+country_event = { #Harmoney Among the Orija ***PULSE***
+	id = espiritismo_events.43
+	title = espiritismo_events.43.t
+	desc = espiritismo_events.43.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = zhongish_denom
+		NOT = {
+			has_country_modifier = harmonious_populace_esp
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.43.a #Stabalize the State
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+	}
+	option = {
+		name = espiritismo_events.43.b #Pacify the People
+		add_country_modifier = {
+			name = "harmonious_populace_esp"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Balanced Pantheon ***PULSE***
+	id = espiritismo_events.44
+	title = espiritismo_events.44.t
+	desc = espiritismo_events.44.d
+	picture = COMET_SIGHTED_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = yanin_denom
+		NOT = {
+			OR = {
+				has_country_modifier = sun_worship_esp
+				has_country_modifier = moon_worship_esp
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.44.a #We Embrace the Sun
+		add_country_modifier = {
+			name = "sun_worship_esp"
+			duration = 3650
+		}
+	}
+	option = {
+		name = espiritismo_events.44.b #We Embrace the Moon
+		add_country_modifier = {
+			name = "moon_worship_esp"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Yuyu Enchantment ***PULSE***
+	id = espiritismo_events.45
+	title = espiritismo_events.45.t
+	desc = espiritismo_events.45.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = yuyu_denom
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.45.a #Bless an Amulet
+		add_legitimacy = 10
+		add_horde_unity = 10
+		add_devotion = 10
+		add_meritocracy = 10
+		add_republican_tradition = 5
+	}
+	option = {
+		name = espiritismo_events.45.b #Bless a Fetish
+		add_mercantilism = 1
+	}
+	option = {
+		name = espiritismo_events.45.c #Bless the Armies
+		add_army_tradition = 10
+	}
+}
+
+country_event = { #Seeking ***PULSE***
+	id = espiritismo_events.46
+	title = espiritismo_events.46.t
+	desc = espiritismo_events.46.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = hoodoo_denom
+		NOT = {
+			has_ruler_modifier = sought_esp
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.46.a #Sought
+		add_ruler_modifier = {
+			name = "sought_esp"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Okamisha ***PULSE***
+	id = espiritismo_events.47
+	title = espiritismo_events.47.t
+	desc = espiritismo_events.47.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = shinteria_denom
+		NOT = {
+			OR = {
+				has_ruler_modifier = emcraced_oloduratsu_okamisha_esp
+				has_ruler_modifier = emcraced_yebisu_okamisha_esp
+				has_ruler_modifier = emcraced_chajin_okamisha_esp
+				has_ruler_modifier = emcraced_elejin_okamisha_esp
+				has_ruler_modifier = emcraced_okachun_okamisha_esp
+				has_ruler_modifier = emcraced_kirimare_okamisha_esp
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.47.a #We Embrace Oloduratsu
+		add_ruler_modifier = {
+			name = "emcraced_oloduratsu_okamisha_esp"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.47.b #We Embrace Yebisu
+		add_ruler_modifier = {
+			name = "emcraced_yebisu_okamisha_esp"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.47.c #We Embrace Chajin
+		add_ruler_modifier = {
+			name = "emcraced_chajin_okamisha_esp"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.47.e #We Embrace Elejin
+		add_ruler_modifier = {
+			name = "emcraced_elejin_okamisha_esp"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.47.f #We Embrace Okachun
+		add_ruler_modifier = {
+			name = "emcraced_okachun_okamisha_esp"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.47.g #We Embrace Kirimare
+		trigger = {
+			any_known_country = {
+				has_country_flag = can_get_kirisuto_deity
+			}
+		}
+		add_ruler_modifier = {
+			name = "emcraced_kirimare_okamisha_esp"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Celebration of the Fallen ***SPECIAL CASE***
+	id = espiritismo_events.48
+	title = espiritismo_events.48.t
+	desc = espiritismo_events.48.d
+	picture = KING_SICK_IN_BED_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_adopted_cult = santa_muerte_denom
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.48.a #Wonderful!
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+	}
+}
+####################MISC EVENTS##########################
+country_event = { #Ancestor Guidance ***PULSE***
+	id = espiritismo_events.49
+	title = espiritismo_events.49.t
+	desc = espiritismo_events.49.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		NOT = {
+			has_ruler_flag = passed_on_guidance
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.49.a #Pass it on
+		trigger = {
+			NOT = {
+				has_country_flag = highest_level_ancestor_guidance_esp
+			}
+		}
+		custom_tooltip = future_rulers_that_get_this_event_can_get_greater_wisdom.tt
+		if = {
+			limit = {
+				has_country_flag = medium_level_ancestor_guidance_esp
+			}
+			set_country_flag = highest_level_ancestor_guidance_esp
+			clr_country_flag = medium_level_ancestor_guidance_esp
+		}
+		else = {
+			set_country_flag = medium_level_ancestor_guidance_esp
+		}
+		set_ruler_flag = passed_on_guidance
+	}
+	
+	option = {
+		name = espiritismo_events.49.b #Gracious Guidance!
+		if = {
+			limit = {
+				has_country_flag = highest_level_ancestor_guidance_esp
+			}
+			add_adm_power = 250
+			add_dip_power = 250
+			add_mil_power = 250
+			add_army_tradition = 25
+			add_mercantilism = 3
+			clr_country_flag = highest_level_ancestor_guidance_esp
+		}
+		else_if = {
+			limit = {
+				has_country_flag = medium_level_ancestor_guidance_esp
+			}
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_army_tradition = 10
+			add_mercantilism = 1
+			clr_country_flag = medium_level_ancestor_guidance_esp
+		}
+		else = {
+			add_adm_power = 25
+			add_dip_power = 25
+			add_mil_power = 25
+			add_army_tradition = 5
+		}
+	}
+}
+
+country_event = { #Divination ***PULSE***
+	id = espiritismo_events.50
+	title = espiritismo_events.50.t
+	desc = espiritismo_events.50.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		NOT = {
+			OR = {
+				has_country_modifier = predicted_sucess_esp
+				has_country_modifier = growing_nation_esp
+				has_ruler_modifier = knowing_the_date_esp
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.50.a #What will come from this war?
+		trigger = {
+			is_at_war = yes
+		}
+		add_country_modifier = {
+			name = "predicted_sucess_esp"
+			duration = 1825
+		}
+	}
+	option = {
+		name = espiritismo_events.50.b #Will our debt resolve itself?
+		trigger = {
+			num_of_loans = 1
+		}
+		add_years_of_income = 1
+	}
+	option = {
+		name = espiritismo_events.50.c #How will our rule end?
+		add_ruler_modifier = {
+			name = "knowing_the_date_esp"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.50.e #Who will carry on my legacy?
+		trigger = {
+			NOT = {
+				has_heir = yes
+			}
+		}
+		define_heir = {
+			dynasty = ROOT
+			max_random_adm = 2
+			max_random_dip = 2
+			max_random_mil = 2
+			
+			claim = 75		
+		}
+	}
+	option = {
+		name = espiritismo_events.50.f #Will our nation grow?
+		add_country_modifier = {
+			name = "growing_nation_esp"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #Preventative Measures ***PULSE***
+	id = espiritismo_events.51
+	title = espiritismo_events.51.t
+	desc = espiritismo_events.51.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.51.a #Eternal Blessings!
+		custom_tooltip = gain_a_stability_on_death_of_monarch.tt
+		add_adm_power = -30
+		add_dip_power = -30
+		add_mil_power = -30
+		hidden_effect = {
+			set_country_flag = gain_stab_on_monarch_death_esp
+		}
+	}
+	option = {
+		name = espiritismo_events.51.b #Useless.
+		add_prestige = 15
+	}
+}
+
+country_event = { #Guided Beyond ***SPECIAL CASE***
+	id = espiritismo_events.52
+	title = espiritismo_events.52.t
+	desc = espiritismo_events.52.d
+	picture = KING_SICK_IN_BED_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_country_flag = gain_stab_on_monarch_death_esp
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.52.a #We will remember
+		clr_country_flag = gain_stab_on_monarch_death_esp
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+	}
+}
+
+country_event = { #Possession ***PULSE***
+	id = espiritismo_events.53
+	title = espiritismo_events.53.t
+	desc = espiritismo_events.53.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.53.a #Flow through me.
+		#Tried a while loop, but it kept breaking so I'm doing it this way
+		custom_tooltip = randomize_the_stats_of_our_ruler.tt
+		hidden_effect = {
+			set_variable = {
+				which = random_conversion_variable_esp
+				value = 3
+			}
+			change_adm = -6
+			change_dip = -6
+			change_mil = -6
+			random_list = {
+				14 = {
+					change_adm = -1 #will this work, the =0 wasn't :(
+				}
+				14 = {
+					change_adm = 1
+				}
+				15 = {
+					change_adm = 2
+				}
+				14 = {
+					change_adm = 3
+				}
+				15 = {
+					change_adm = 4
+				} 
+				14 = {
+					change_adm = 5
+				}
+				14 = {
+					change_adm = 6
+				}
+			}
+			random_list = {
+				14 = {
+					change_adm = -1 #will this work, the =0 wasn't :(
+				}
+				14 = {
+					change_dip = 1
+				}
+				15 = {
+					change_dip = 2
+				}
+				14 = {
+					change_dip = 3
+				}
+				15 = {
+					change_dip = 4
+				} 
+				14 = {
+					change_dip = 5
+				}
+				14 = {
+					change_dip = 6
+				}
+			}
+			random_list = {
+				14 = {
+					change_adm = -1 #will this work, the =0 wasn't :(
+				}
+				14 = {
+					change_mil = 1
+				}
+				15 = {
+					change_mil = 2
+				}
+				14 = {
+					change_mil = 3
+				}
+				15 = {
+					change_mil = 4
+				} 
+				14 = {
+					change_mil = 5
+				}
+				14 = {
+					change_mil = 6
+				}
+			}
+		}
+	}
+	option = {
+		name = espiritismo_events.53.b #Heresy!
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+	}
+}
+
+country_event = { #Ritual Mistake ***PULSE***
+	id = espiritismo_events.54
+	title = espiritismo_events.54.t
+	desc = espiritismo_events.54.d
+	picture = religious_turmoil
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.54.a #Horror!
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100	
+		}
+	}
+}
+
+country_event = { #Worldy Spirits ***PULSE***
+	id = espiritismo_events.55
+	title = espiritismo_events.55.t
+	desc = espiritismo_events.55.d
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		NOT = {
+			has_country_modifier = invested_in_temples_esp
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.55.a #Full coffers.
+		add_years_of_income = 0.5
+	}
+	option = {
+		name = espiritismo_events.55.b #Invest in the temples.
+		add_country_modifier = {
+			name = "invested_in_temples_esp"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #Classical Music ***PULSE***
+	id = espiritismo_events.56
+	title = espiritismo_events.56.t
+	desc = espiritismo_events.56.d
+	picture = CULTURE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_institution = renaissance
+		NOT = {
+			OR = { 
+				has_country_modifier = resisting_classical_music
+				has_country_modifier = decline_of_folk_music_esp
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.56.a #We must resist
+		add_country_modifier = {
+			name = "resisting_classical_music"
+			duration = 5475
+		}
+	}
+	option = {
+		name = espiritismo_events.56.b #There is nothing we can do
+		add_prestige = -15
+		add_country_modifier = {
+			name = "decline_of_folk_music_esp"
+			duration = 5475
+		}
+	}
+}
+
+country_event = { #Codifying Our Faith ***PULSE***
+	id = espiritismo_events.57
+	title = espiritismo_events.57.t
+	desc = espiritismo_events.57.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_institution = printing_press
+		NOT = {
+			has_country_flag = attempted_to_codify_faith
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.57.a #Everyone must follow the proper practice!
+		add_country_modifier = {
+			name = "codified_espiritismo_esp"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.57.b #Let them practice as they please.
+		add_prestige = 10
+	}
+	
+	after = {
+		set_country_flag = attempted_to_codify_faith
+	}
+}
+
+country_event = { #Interpretation Scuffle ***PULSE***
+	id = espiritismo_events.58
+	title = espiritismo_events.58.t
+	desc = espiritismo_events.58.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		has_country_modifier = codified_espiritismo_esp
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.58.a #Set them right.
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100	
+		}
+	}
+	option = {
+		name = espiritismo_events.58.b #Abandon the Codification.
+		remove_country_modifier = codified_espiritismo_esp
+	}
+}
+
+country_event = { #Doctoring ***PULSE***
+	id = espiritismo_events.59
+	title = espiritismo_events.59.t
+	desc = espiritismo_events.59.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		NOT = {
+			OR = {
+				has_country_modifier = healthy_army_esp
+				has_country_modifier = healthy_population_esp
+				has_ruler_modifier = codified_espiritismo_esp
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.59.a #Health for the Army!
+		add_country_modifier = {
+			name = "healthy_army_esp"
+			duration = 3650
+		}
+	}
+	option = {
+		name = espiritismo_events.59.b #Health for [Root.Monarch.GetName]!
+		add_ruler_modifier = {
+			name = "healthy_ruler_esp"
+			duration = -1
+		}
+	}
+	option = {
+		name = espiritismo_events.59.c #Health for the People!
+		add_country_modifier = {
+			name = "healthy_population_esp"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Encantaria ***PULSE***
+	id = espiritismo_events.60
+	title = espiritismo_events.60.t
+	desc = espiritismo_events.60.d
+	picture = NATIVES_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = espiritismo
+		NOT = {
+			has_country_flag = discovered_encantaria_esp
+		}
+		has_discovered = 1146
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = espiritismo_events.60.a #At last.
+		add_prestige = 25
+		add_country_modifier = {
+			name = "found_encantaria_esp"
+			duration = 9125
+		}
+	}
+	
+	after = {
+		set_country_flag = discovered_encantaria_esp
+	}
+}

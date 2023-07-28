@@ -1,0 +1,13 @@
+#1229 - Berber
+discovered_by = mesoamerican
+culture = neoethiopian 
+religion = shamanist
+capital = "Berber"
+native_size = 50
+native_ferocity = 4
+native_hostileness = 9 
+base_manpower = 2
+trade_goods = unknown
+hre = no
+base_tax = 1 
+base_production = 1

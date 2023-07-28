@@ -1,0 +1,18 @@
+#1197 - Mzizima
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y32
+controller = Y32
+add_core = Y32
+culture = jackpotter
+religion = partisan 
+capital = "Mzizima"
+is_city = yes
+base_manpower = 3
+trade_goods = gold #nevada gold belt 
+hre = yes
+base_tax = 4
+base_production = 4
+center_of_trade = 1

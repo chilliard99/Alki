@@ -1,0 +1,14 @@
+#4443 - Karanja
+discovered_by = sub_saharan
+owner = U03
+controller = U03
+add_core = U03
+culture = victorian
+religion = penitent
+capital = "Karanja"
+trade_goods = wool
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

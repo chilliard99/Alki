@@ -1,0 +1,17 @@
+#4180 - Hyuga
+discovered_by = chinese
+owner = X40
+controller = X40
+add_core = X40
+culture = kyushuan_g
+religion = neoshinto
+capital = "Obi"
+trade_goods = tea #Miyazaki tea
+hre = no
+base_tax = 7
+base_manpower = 4
+base_production = 4
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman
+fort_15th = yes

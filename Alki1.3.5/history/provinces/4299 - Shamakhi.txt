@@ -1,0 +1,14 @@
+#4299 - Shamakhi
+discovered_by = indian
+owner = V92
+controller = V92
+add_core = V92
+culture = newkhmer
+religion = yanantin
+capital = "Shamakhi"
+trade_goods = grain #i guess
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

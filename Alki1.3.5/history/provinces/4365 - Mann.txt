@@ -1,0 +1,14 @@
+#4365 - Mann
+discovered_by = indian
+owner = V99
+controller = V99
+add_core = V99
+culture = neofilipino
+religion = espiritismo
+hre = no
+base_tax = 2
+base_production = 3
+trade_goods = sugar #lotta sugar
+base_manpower = 3
+capital = "Castletown"
+is_city = yes

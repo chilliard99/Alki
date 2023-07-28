@@ -1,0 +1,16 @@
+#2031 - Tarki
+discovered_by = eastern
+discovered_by = western
+owner = W03
+controller = W03
+add_core = W03
+culture = neochipewyan
+religion = theanite
+capital = "Tarku"
+trade_goods = grain #Barley and Wheat
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 3
+is_city = yes
+fort_15th = yes

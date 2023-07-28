@@ -1,0 +1,1039 @@
+#Country Scope
+do_years_of_peace_cuba = { 
+	#finally, after 8 months this deformity of a system will no longer burden the rest of the map
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = war_interrupted_peace_cuba
+			}
+		}
+		change_variable = {
+			which = peacetimeCubaCounter
+			value = 1
+		}
+		country_event = {
+			id = cuban_events.1
+			days = 365 
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 5
+				}
+				NOT = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 6
+					}
+				}
+			}
+			country_event = { id = cuban_events.3 }
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 10
+				}
+				NOT = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 11
+					}
+				}
+			}
+			country_event = { id = cuban_events.4 }
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 20
+				}
+				NOT = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 21
+					}
+				}
+			}
+			country_event = { id = cuban_events.5 }
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 40
+				}
+				NOT = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 41
+					}
+				}
+			}
+			country_event = { id = cuban_events.6 }
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 60
+				}
+				NOT = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 61
+					}
+				}
+			}
+			country_event = { id = cuban_events.7 }
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 80
+				}
+				NOT = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 81
+					}
+				}
+			}
+			country_event = { id = cuban_events.8 }
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = peacetimeCubaCounter
+					value = 100
+				}
+				NOT = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 101
+					}
+				}
+			}
+			country_event = { id = cuban_events.9 }
+		}
+	}
+}
+
+do_papal_authority_tick = {
+	clr_country_flag = got_pap_auth_tick #So that the event does not get sent more than once to a nation that gets pap auth
+	#Look, this is better than what it once was. It was a while loop before, A WHILE LOOP, could you imagine? 
+	if = {
+		limit = {
+			has_country_flag = reviving_papal_legitimacy #Country flags cleared on ruled death to change variable
+		}
+		add_reform_desire = 0.005
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = got_pap_auth_tick
+				}
+			}
+			country_event = { 
+				id = catholico_events.61
+				days = 365
+			}
+			set_country_flag = got_pap_auth_tick
+		}
+	}
+	if = {
+		limit = {
+			has_country_flag = curia_get_papal_authority_every_two_years
+		}
+		add_reform_desire = 0.005
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = got_pap_auth_tick
+				}
+			}
+			country_event = { 
+				id = catholico_events.61
+				days = 365
+			}
+			set_country_flag = got_pap_auth_tick
+		}
+	}
+	if = {
+		limit = {
+			tag = W83
+			has_global_flag = getting_minus_one_pap_per_year
+		}
+		add_reform_desire = -0.01
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = got_pap_auth_tick
+				}
+			}
+			country_event = { 
+				id = catholico_events.61
+				days = 365
+			}
+			set_country_flag = got_pap_auth_tick
+		}
+	}
+	if = {
+		limit = {
+			has_country_flag = became_reino_de_dios
+		}
+		add_reform_desire = 0.01
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = got_pap_auth_tick
+				}
+			}
+			country_event = { 
+				id = catholico_events.61
+				days = 365
+			}
+			set_country_flag = got_pap_auth_tick
+		}
+	}
+	if = {
+		limit = {
+			tag = W83
+			has_global_flag = completed_sure_compass_otrep
+		}
+		add_reform_desire = 0.03
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = got_pap_auth_tick
+				}
+			}
+			country_event = { 
+				id = catholico_events.61
+				days = 365
+			}
+			set_country_flag = got_pap_auth_tick
+		}
+	}
+	if = {
+		limit = {
+			has_country_modifier = guadalupe_inquisition_otrep
+		}
+		add_reform_desire = 0.01
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = got_pap_auth_tick
+				}
+			}
+			country_event = { 
+				id = catholico_events.61
+				days = 365
+			}
+			set_country_flag = got_pap_auth_tick
+		}
+	}
+	if = {
+		limit = {
+			tag = U35
+			religion = vulgar
+		}
+		add_reform_desire = 0.01
+	}
+	if = {
+		limit = {
+			has_country_flag = papacy_lose_an_extra_for_failure_ai
+		}
+		add_reform_desire = -0.01
+	}
+}
+
+
+set_up_country_paths = { #A little thing I'm trying out here
+	if = {
+		limit = {
+			tag = W83
+			ai = yes
+		}
+		W83 = {
+			random_list = {
+				50 = {
+					set_country_flag = tradition_ending_failure_otrep
+				}
+				25 = {
+					set_country_flag = modernization_ending_failure_otrep
+				}
+				10 = {
+					set_country_flag = medium_ending_papacy_otrep
+				}
+				7 = {
+					set_country_flag = reformed_ending_good_otrep
+				}
+				7 = {
+					set_country_flag = tradition_ending_good_otrep
+				}
+				1 = {
+					set_country_flag = god_pope_ending_otrep
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_known_country = {
+						ai = no
+						capital_scope = {
+							continent = mexico
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_flag = tradition_ending_failure_otrep
+						has_country_flag = modernization_ending_failure_otrep
+					}
+				}
+				set_country_flag = papacy_lose_an_extra_for_failure_ai
+			}
+			else_if = {
+				limit = {
+					has_country_flag = reformed_ending_good_otrep
+				}
+				add_country_modifier = {
+					name = "reformer_bonus_otrep"
+					duration = 36500
+					hidden = yes
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = tradition_ending_good_otrep
+				}
+				add_country_modifier = {
+					name = "tradition_bonus_otrep"
+					duration = 36500
+					hidden = yes
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = "god_papacy_otrep"
+					duration = 36500
+					hidden = yes
+				}
+				set_ai_personality = {
+					personality = ai_militarist
+					locked = yes
+				}
+			}
+		}
+	}
+}
+
+
+clear_representative_bonus_parties = {
+	remove_country_modifier = progressive_party_modifier
+	remove_country_modifier = traditionalist_party_modifier
+	remove_country_modifier = freedonian_party_modifier
+	remove_country_modifier = naturalist_party_modifier
+}
+
+change_party_to_despotic = {
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = progressive_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = blue_party
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = actionist_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = blue_party
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = traditionalist_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = red_party
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = constitutionalist_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = red_party
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = freedonian_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = yellow_party
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = goldencrat_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = yellow_party
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = naturalist_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = green_party
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = protectioner_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = green_party
+		}
+	}
+}
+
+change_party_to_anarchist = {
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = progressive_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = actionist_party 
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = blue_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = actionist_party
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = traditionalist_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = constitutionalist_party
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = red_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = constitutionalist_party
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = freedonian_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = goldencrat_party
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = yellow_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = goldencrat_party
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = naturalist_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = protectioner_party
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = green_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = protectioner_party
+		}
+	}
+}
+
+change_party_to_partisan = {
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = blue_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = progressive_party
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = actionist_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = progressive_party
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = red_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = traditionalist_party
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = constitutionalist_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = traditionalist_party
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = yellow_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = freedonian_party
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = goldencrat_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school =  freedonian_party
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = green_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = naturalist_party
+		}
+	}
+	if = {
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = protectioner_party
+			}
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = naturalist_party
+		}
+	}
+}
+
+initialize_party_effects = {
+	random_country = { #Progressives are disliked by traditionalists
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = progressive_party
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = constitutionalist_group
+					school = traditionalist_party
+				}
+			}
+			set_school_opinion = {
+				who = PREV
+				opinion = -1
+			}
+		}
+	}
+	random_country = { #Traditionalists are disliked by Progressives
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = traditionalist_party
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = constitutionalist_group
+					school = progressive_party
+				}
+			}
+			set_school_opinion = {
+				who = PREV
+				opinion = -1
+			}
+		}
+	}
+	random_country = { #Freedonians are disliked by Naturalists
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = freedonian_party
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = constitutionalist_group
+					school = naturalist_party
+				}
+			}
+			set_school_opinion = {
+				who = PREV
+				opinion = -1
+			}
+		}
+	}
+	random_country = { #Naturalists are disliked by Freedonians
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = naturalist_party
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = constitutionalist_group
+					school = freedonian_party
+				}
+			}
+			set_school_opinion = {
+				who = PREV
+				opinion = -1
+			}
+		}
+	}
+}
+
+red_coalition_created_effect = {
+
+	random_country = { #reds are liked by constitutionalists
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = red_party
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = constitutionalist_group
+					school = constitutionalist_party
+				}
+			}
+			set_school_opinion = {
+				who = PREV
+				opinion = 1
+			}
+		}
+	}
+	random_country = { #reds are liked by traditionalists
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = red_party
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = constitutionalist_group
+					school = traditionalist_party
+				}
+			}
+			set_school_opinion = {
+				who = PREV
+				opinion = 1
+			}
+		}
+	}
+	random_country = { #constitutionalists are liked by reds
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = constitutionalist_party
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = constitutionalist_group
+					school = red_party
+				}
+			}
+			set_school_opinion = {
+				who = PREV
+				opinion = 1
+			}
+		}
+	}
+	random_country = { #traditionalists are liked by reds
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = traditionalist_party
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = constitutionalist_group
+					school = red_party
+				}
+			}
+			set_school_opinion = {
+				who = PREV
+				opinion = 1
+			}
+		}
+	}
+	
+	random_country = { #traditionalists are liked by constitutionalists
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = traditionalist_party
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = constitutionalist_group
+					school = constitutionalist_party
+				}
+			}
+			set_school_opinion = {
+				who = PREV
+				opinion = 1
+			}
+		}
+	}
+	
+	random_country = { #constitutionalists are liked by traditionalists
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = constitutionalist_party
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = constitutionalist_group
+					school = traditionalist_party
+				}
+			}
+			set_school_opinion = {
+				who = PREV
+				opinion = 1
+			}
+		}
+	}
+}
+
+blue_coalition_created_effect = {
+
+	random_country = { #blues are liked by actionist
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = blue_party
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = constitutionalist_group
+					school = actionist_party
+				}
+			}
+			set_school_opinion = {
+				who = PREV
+				opinion = 1
+			}
+		}
+	}
+	random_country = { #blues are liked by progressive
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = blue_party
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = constitutionalist_group
+					school = progressive_party
+				}
+			}
+			set_school_opinion = {
+				who = PREV
+				opinion = 1
+			}
+		}
+	}
+	random_country = { #actionist are liked by blues
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = actionist_party
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = constitutionalist_group
+					school = blue_party
+				}
+			}
+			set_school_opinion = {
+				who = PREV
+				opinion = 1
+			}
+		}
+	}
+	random_country = { #progressive are liked by blues
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = progressive_party
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = constitutionalist_group
+					school = blue_party
+				}
+			}
+			set_school_opinion = {
+				who = PREV
+				opinion = 1
+			}
+		}
+	}
+	
+	random_country = { #progressive are liked by actionist
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = progressive_party
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = constitutionalist_group
+					school = actionist_party
+				}
+			}
+			set_school_opinion = {
+				who = PREV
+				opinion = 1
+			}
+		}
+	}
+	
+	random_country = { #actionist are liked by progressive
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = actionist_party
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = constitutionalist_group
+					school = progressive_party
+				}
+			}
+			set_school_opinion = {
+				who = PREV
+				opinion = 1
+			}
+		}
+	}
+}
+
+emperor_hatred = {
+	random_country = { #Progressives are disliked by Traditionalists
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = progressive_party
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = constitutionalist_group
+					school = traditionalist_party
+				}
+			}
+			set_school_opinion = {
+				who = PREV
+				opinion = -1
+			}
+		}
+	}
+	random_country = { #Progressives are disliked by Freedonians
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = progressive_party
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = constitutionalist_group
+					school = freedonian_party
+				}
+			}
+			set_school_opinion = {
+				who = PREV
+				opinion = -1
+			}
+		}
+	}
+	random_country = { #Progressives are disliked by Naturalists
+		limit = {
+			religious_school = {
+				group = constitutionalist_group
+				school = progressive_party
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = constitutionalist_group
+					school = naturalist_party
+				}
+			}
+			set_school_opinion = {
+				who = PREV
+				opinion = -1
+			}
+		}
+	}
+}

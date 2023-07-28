@@ -1,0 +1,15 @@
+# No previous file for Galam
+discovered_by = western
+discovered_by = eastern
+owner = W14
+controller = W14
+add_core = W14
+culture = couverite 
+religion = partisan
+capital = "Galam"
+trade_goods = grain #heavy agriculture center
+hre = no
+base_tax = 5
+base_production = 5
+is_city = yes
+base_manpower = 5

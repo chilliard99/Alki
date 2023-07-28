@@ -1,0 +1,125 @@
+country_decisions = {
+
+	enforce_ma_at_zah = {
+		potential = {
+			religion = zahran
+			NOT = {
+				has_country_modifier = enforced_maat
+			}
+		}
+		allow = {
+			total_development = 100
+		}
+		effect = {
+			add_country_modifier = {
+				name = "enforced_maat"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	adopt_title_of_kaliff_zah = {
+		potential = {
+			religion = zahran
+			NOT = {
+				has_country_modifier = kaliff_zah
+			}
+		}
+		allow = {
+			OR = {
+				adm = 4
+				dip = 4
+				mil = 4
+			}
+			harmony = 60
+			legitimacy_equivalent = 80
+		}
+		effect = {
+			add_harmony = -10
+			add_legitimacy = -10
+			add_horde_unity = -10
+			add_devotion = -10
+			add_meritocracy = -10
+			add_republican_tradition = -5
+			add_ruler_modifier = {
+				name = "kaliff_zah"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	ban_the_quran_zahran = {
+		potential = {
+			religion = zahran
+			NOT = {
+				has_country_modifier = banned_quran
+			}
+		}
+		allow = {
+			mil = 3
+			adm_tech = 5
+			NOT = {
+				harmony = 25
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "banned_quran"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	formalize_zahran_practice = {
+		potential = {
+			religion = zahran
+			NOT = {
+				has_country_modifier = formalized_zahran_practice
+			}
+			current_age = age_of_reformation
+		}
+		allow = {
+			num_of_harmonized = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "formalized_zahran_practice"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	ban_spirit_veneration_zah = {
+		potential = {
+			religion = zahran
+			NOT = {
+				has_country_modifier = banned_spirit_veneration
+			}
+			adm_tech = 5
+		}
+		allow = {
+			dip = 3
+		}
+		effect = {
+			add_country_modifier = {
+				name = "banned_spirit_veneration"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

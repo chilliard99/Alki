@@ -1,0 +1,15 @@
+# 2108 - Huncun
+discovered_by = eastern
+discovered_by = western
+owner = W11
+controller = W11
+add_core = W11
+culture = baydwellers
+religion = inua
+capital = "Huncun"
+trade_goods = fish #hudson fisheries
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 2
+is_city = yes

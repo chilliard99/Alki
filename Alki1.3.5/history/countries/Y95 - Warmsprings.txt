@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = paiute
+religion = partisan
+technology_group = western
+capital = 2032	 #Bend
+religious_school = traditionalist_party
+
+1417.3.12 = {
+	monarch = {
+		name = "Numu X"
+		dynasty = "Wasco"
+		birth_date = 1417.3.12
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1436.4.4 = {
+	heir = {
+		name = "Kah-Nee-Ta"
+		monarch_name = "Kah-Nee-Ta"
+		dynasty = "Wasco"
+		birth_date = 1436.4.4
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}

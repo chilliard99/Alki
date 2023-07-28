@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = joaquin
+religion = partisan
+technology_group = western
+capital = 2021	 #San Joaquin
+religious_school = freedonian_party
+
+1426.5.12 = {
+	monarch = {
+		name = "Dahle"
+		dynasty = "Milton"
+		birth_date = 1426.5.12
+		adm = 3
+		dip = 4
+		mil = 4
+	}
+}
+1436.4.15 = {
+	heir = {
+		name = "Frank"
+		monarch_name = "Frank II"
+		dynasty = "Milton"
+		birth_date = 1436.4.15
+		death_date = 1483.8.30
+		claim = 95
+		adm = 0
+		dip = 1
+		mil = 2
+	}
+}
