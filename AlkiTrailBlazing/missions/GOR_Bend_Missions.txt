@@ -1,0 +1,769 @@
+###########################BEND MISSIONS###########################
+bend_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = U51
+	}
+	has_country_shield = yes
+	
+	deschutes_alliance_bend = {
+		icon = merchant_handshake_gor
+		required_missions = { maintain_trade_supremacy_bend }
+		position = 2
+		trigger = {
+			OR = {
+				calc_true_if = { #Lets see how fucking complicated this comes out as in the OR 
+					custom_trigger_tooltip = {
+						tooltip = we_have_two_allies_with_capitals_in_inland_empire_or_jeff_node_bend 
+						all_ally = {
+							capital_scope = {
+								OR = {
+									trade_company_region = jefferson_trade_company
+									trade_company_region = inland_empire_trade_company
+								}
+							}
+						}
+					}
+					amount = 2
+				}
+				1856 = {
+					is_strongest_trade_power = ROOT
+				}
+				4516 = {
+					is_strongest_trade_power = ROOT
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = if_we_completed_by_gettin_allies_bend
+			tooltip = {
+				country_event = { id = bend_events.1 }
+			}
+			custom_tooltip = otherwise_get_get_this_shit_bend
+			tooltip = {
+				add_ruler_modifier = {
+					name = "gor_bringer_of_the_goods_bend"
+					duration = -1
+				}
+				if = {
+					limit = {
+						dip = 6
+					}
+					add_dip_power = 150
+				}
+				else = {
+					change_dip = 1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						calc_true_if = { 
+							custom_trigger_tooltip = {
+								tooltip = we_have_two_allies_with_capitals_in_inland_empire_or_jeff_node_bend 
+								all_ally = {
+									capital_scope = {
+										OR = {
+											trade_company_region = jefferson_trade_company
+											trade_company_region = inland_empire_trade_company
+										}
+									}
+								}
+							}
+							amount = 2
+						}
+					}
+					#set_country_flag = formed_three_star_league
+					country_event = { id = bend_events.1 }
+				}
+				else = {
+					add_ruler_modifier = {
+						name = "gor_bringer_of_the_goods_bend"
+						duration = -1
+					}
+					if = {
+						limit = {
+							dip = 6
+						}
+						add_dip_power = 150
+					}
+					else = {
+						change_dip = 1
+					}
+				}
+			}
+		}
+	}
+	
+	flood_of_ducats_bend = {
+		icon = ducats_gor
+		required_missions = { deschutes_alliance_bend educated_economy_bend }
+		position = 4
+		trigger = {
+			2063 = {
+				trade_share = {
+					country = ROOT
+					share = 40
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = if_we_have_formed_the_three_star_league_bend
+			tooltip = {
+				custom_tooltip = "COME FILL THIS IN ONCE YOU HAVE STARTED DESCHUTES"
+			}
+			custom_tooltip = otherwise_we_gain_bend
+			tooltip = {
+				add_years_of_income = 5
+				add_country_modifier = {
+					name = "gor_drowning_in_wealth_bend"
+					duration = 18250
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = formed_three_star_league
+					}
+					#TODO THIS PART TOO STOOPID
+				}
+				else = {
+					add_years_of_income = 5
+					add_country_modifier = {
+						name = "gor_drowning_in_wealth_bend"
+						duration = 18250
+					}
+				}
+			}
+		}
+	}
+}
+
+bend_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = U51
+	}
+	has_country_shield = yes
+	
+	maintain_trade_supremacy_bend = {
+		icon = merchant_with_gold_gor
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			province_id = 2063
+		}
+		trigger = {
+			is_year = 1455
+			2063 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			2063 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 3650
+					power = 15
+					key = deschutes_dominance_bend
+				}
+			}
+			4516 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 3650
+					power = 15
+					key = imperial_runoff_bend
+				}
+			}
+		}
+	}
+	
+	invest_in_the_bend_bend = {
+		icon = bend_gor
+		required_missions = { maintain_trade_supremacy_bend }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1972
+				province_id = 1974
+			}
+			NOT = { province_has_center_of_trade_of_level = 2 }
+		}
+		trigger = {
+			1972 = {
+				province_has_center_of_trade_of_level = 2
+			}
+			1974 = {
+				province_has_center_of_trade_of_level = 2
+			}
+		}
+		effect = {
+			1973 = {
+				add_center_of_trade_level = 1
+			}
+			define_advisor = {
+				type = trader
+				skill = 2
+				cost_multiplier = 0.5
+			}
+			custom_tooltip = if_we_have_trade_ideas_gain_bend
+			tooltip = {
+				add_mercantilism = 5
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_idea_group = trade_ideas
+					}
+					add_mercantilism = 5
+				}
+			}
+		}
+	}
+	
+	educated_economy_bend = {
+		icon = leaning_merchant_gor
+		required_missions = { invest_in_the_bend_bend }
+		position = 3
+		trigger = {
+			OR = {
+				full_idea_group = trade_ideas
+				full_idea_group = economic_ideas
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "gor_wise_investor_bend"
+				duration = -1
+			}
+			1974 = {
+				add_province_modifier = {
+					name = "gor_smart_production_bend"
+					duration = -1
+				}
+			}
+			custom_tooltip = if_we_have_a_workshop_or_otherwise_in_bend
+			tooltip = {
+				1974 = {
+					change_trade_goods = paper
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						1974 = {
+							has_production_building_trigger = yes
+						}
+					}
+					1974 = {
+						change_trade_goods = paper
+					}
+				}
+			}
+		}
+	}
+	
+	sweet_victory_bend = {
+		icon = sugar_beet_gor
+		required_missions = { oregonian_classicalism_bend }
+		position = 5
+		provinces_to_highlight = {
+			province_id = 1973
+			NOT = { has_production_building_trigger = yes }
+			NOT = { base_tax = 5 }
+		}
+		trigger = {
+			1973 = {
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+				base_tax = 5
+			}
+		}
+		effect = {
+			add_years_of_owned_provinces_production_income = {
+				years = 25
+				trigger = {
+					trade_goods = sugar
+				}
+				custom_tooltip = money_from_sugar_producing_provinces_bend
+			}
+			1973 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+				add_province_modifier = {
+					name = "gor_union_sweetheart_bend"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+bend_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = U51
+	}
+	has_country_shield = yes
+	
+	oregonian_classicalism_bend = {
+		icon = senator_writing_gor
+		required_missions = { }
+		position = 4
+		provinces_to_highlight = {
+			province_id = 1974
+			NOT = { has_building = temple }
+			NOT = { has_building = cathedral } 
+		}
+		trigger = {
+			is_institution_enabled = renaissance
+			1974 = {
+				OR = {
+					has_building = temple
+					has_building = cathedral 
+				}
+			}
+		}
+		effect = {
+			1974 = {
+				add_institution_embracement = {
+					which = renaissance
+					value = 100
+				}
+			}
+			add_country_modifier = {
+				name = "gor_birth_of_oregonian_classicalism_bend"
+				duration = 3650
+			}
+		}
+	}
+	
+	deschutes_artwork_bend = {
+		icon = art_beaver_gor
+		required_missions = { oregonian_classicalism_bend }
+		position = 5
+		provinces_to_highlight = {
+			province_id = 1974
+			NOT = { has_building = temple }
+			NOT = { has_building = cathedral } 
+		}
+		trigger = {
+			prestige = 50
+			artist = 3
+		}
+		effect = {
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+			add_ruler_modifier = {
+				name = "gor_purveyor_of_the_arts_bend"
+				duration = -1
+			}
+			add_country_modifier = {
+				name = "gor_masterpieces_of_oregon_bend"
+				duration = -1
+			}
+		}
+	}
+}
+
+bend_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = U51
+	}
+	has_country_shield = yes
+	
+	ready_the_men_bend = {
+		icon = horseback_knight_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			num_of_generals = 1
+			army_size_percentage = 0.9
+		}
+		effect = {
+			oregonian_cascades_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			morrow_crook_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_eager_soldiery_bend"
+				duration = 3650
+			}
+		}
+	}
+	
+	tenino_tragedy_bend = {
+		icon = farm_fire_gor
+		required_missions = { ready_the_men_bend }
+		position = 2
+		provinces_to_highlight = {
+			area = oregonian_cascades_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			oregonian_cascades_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mil_power = 50
+			custom_tooltip = gain_the_teino_culture_fo_free
+			hidden_effect = {
+				add_accepted_culture = tenino
+				add_country_modifier = {
+					name = "gor_tenino_acceptance_bend"
+					hidden = yes
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	the_hard_part_bend = {
+		icon = man_next_to_river_gor
+		required_missions = { tenino_tragedy_bend pruning_the_prines_bend }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 1974
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			1974 = {
+				development = 15
+			}
+			grown_by_development = 50
+		}
+		effect = {
+			country_event = { id = bend_events.3 }
+		}
+	}
+}
+
+bend_missions_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = U51
+	}
+	has_country_shield = yes
+	
+	pruning_the_prines_bend = {
+		icon = morrow_crook_gor
+		required_missions = { ready_the_men_bend }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2040
+				province_id = 2038
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			2040 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2038 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_years_of_income = 2.5
+			add_country_modifier = {
+				name = "gor_taxing_the_boonies_bend"
+				duration = 5475
+			}
+		}
+	}
+}
+
+###########################BRANCHING BEND MISSIONS###########################
+
+bend_missions_slot_four_branch = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = U51
+		NOT = { has_country_flag = oregon_path_bend }
+		NOT = { has_country_flag = deschutes_path_bend } 
+	}
+	has_country_shield = yes
+	
+	branching_one_bend = {
+		icon = mission_unknown_mission
+		required_missions = { the_hard_part_bend }
+		position = 4
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = depends_on_result_of_promises_event_bend
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = depends_on_result_of_promises_event_bend
+		}
+	}
+	
+	branching_two_bend = {
+		icon = mission_unknown_mission
+		required_missions = { branching_one_bend branching_three_bend }
+		position = 5
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = depends_on_result_of_promises_event_bend
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = depends_on_result_of_promises_event_bend
+		}
+	}
+}
+
+bend_missions_slot_five_branch = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = U51
+		NOT = { has_country_flag = oregon_path_bend }
+		NOT = { has_country_flag = deschutes_path_bend } 
+	}
+	has_country_shield = yes
+	
+	branching_three_bend = {
+		icon = mission_unknown_mission
+		required_missions = { the_hard_part_bend }
+		position = 4
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = depends_on_result_of_promises_event_bend
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = depends_on_result_of_promises_event_bend
+		}
+	}
+}
+
+###########################DESCHUTES BEND MISSIONS###########################
+
+bend_missions_slot_four_deschutes = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = U51
+		has_country_flag = deschutes_path_bend
+	}
+	has_country_shield = yes
+	
+	klamath_hijinks_bend = {
+		icon = klamath_gor
+		required_missions = { the_hard_part_bend }
+		position = 4
+		provinces_to_highlight = {
+			area = klamath_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			klamath_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			if = {
+				limit = {
+					mil = 6
+				}
+				add_mil_power = 150
+			}
+			else = {
+				change_mil = 1
+			}
+		}
+	}
+	
+}
+
+bend_missions_slot_five_deschutes = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = U51
+		has_country_flag = deschutes_path_bend
+	}
+	has_country_shield = yes
+	
+	promised_capital_bend = {
+		icon = shining_city_gor
+		required_missions = { the_hard_part_bend }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2027
+				province_id = 4493
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			2027 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4493 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = { id = bend_events.4 }
+		}
+	}
+}
+
+###########################OREGONIAN BEND MISSIONS###########################
+
+bend_missions_slot_four_oregonian = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = U51
+		has_country_flag = oregon_path_bend
+	}
+	has_country_shield = yes
+	
+	slaying_the_salemites_bend = {
+		icon = exploding_castle_gor
+		required_missions = { the_hard_part_bend }
+		position = 4
+		provinces_to_highlight = {
+			province_id = 1223 
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			1223 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+			1223 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			tillamook_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	pacific_promise_bend = {
+		icon = waves_gor
+		required_missions = { slaying_the_salemites_bend wasting_away_willamette_bend }
+		position = 5
+		provinces_to_highlight = {
+			area = tillamook_area 
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			tillamook_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_bendy_oregon_bend"
+				duration = 18250
+			}
+		}
+	}
+}
+
+bend_missions_slot_five_oregonian = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = U51
+		has_country_flag = oregon_path_bend
+	}
+	has_country_shield = yes
+	
+	wasting_away_willamette_bend = {
+		icon = willamette_gor
+		required_missions = { the_hard_part_bend }
+		position = 4
+		provinces_to_highlight = {
+			area = lower_willamette_area 
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			lower_willamette_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_years_of_owned_provinces_production_income = {
+				years = 10
+				trigger = {
+					trade_goods = wine
+				}
+				custom_tooltip = money_from_wine_producing_provinces_bend
+			}
+			custom_tooltip = every_wine_province_gives_bend
+			tooltip = {
+				add_base_production = 1
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = wine
+					}	
+					add_base_production = 1
+				}
+			}
+		}
+	}
+}

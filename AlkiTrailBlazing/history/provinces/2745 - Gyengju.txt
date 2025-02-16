@@ -1,0 +1,15 @@
+#2744 - Gyeongsang
+discovered_by = ottoman
+discovered_by = muslim
+owner = W64
+controller = W64
+add_core = W64
+culture = durangan
+religion = catholico
+capital = "Gyeongju"
+trade_goods = grain #corn and tomatoes
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 4
+is_city = yes

@@ -1,0 +1,22 @@
+government = republic
+add_government_reform = oligarchy_reform
+government_rank = 1
+primary_culture = renonians
+religion = partisan
+elector = yes
+technology_group = western
+capital = 1068	 #Tonopah
+religious_school = traditionalist_party
+set_country_flag = conservative_caucus
+
+1444.1.2 = {
+	monarch = {
+		name = "Jack"
+		dynasty = "Wingfield"
+		birth_date = 1428.3.11
+		adm = 4
+		dip = 4
+		mil = 1
+	}
+	
+}

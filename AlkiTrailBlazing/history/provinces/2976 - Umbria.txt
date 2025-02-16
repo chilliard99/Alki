@@ -1,0 +1,15 @@
+# 2976 - Perugia, formerly Umbria
+discovered_by = ottoman
+discovered_by = muslim
+owner = W80
+controller = W80
+add_core = W80
+culture = potosian 
+religion = catholico 
+hre = no
+base_tax = 4
+base_production = 4
+trade_goods = paper #timber made into paper
+base_manpower = 4
+capital = "Perugia" 
+is_city = yes

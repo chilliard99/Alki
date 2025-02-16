@@ -1,0 +1,15 @@
+# - Wankapampa
+discovered_by = indian
+owner = V84
+controller = V84
+add_core = V84
+culture = ecuadorian
+religion = yanantin
+capital = "Wankapampa"
+trade_goods = coffee #mainly make coffee
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes
+

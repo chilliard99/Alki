@@ -1,0 +1,19 @@
+# 1769 - Görz
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = U38
+controller = U38
+add_core = U38
+culture = bigsur
+religion = partisan
+base_tax = 6
+base_production = 6
+trade_goods = grain #Salad Bowl of the World
+base_manpower = 6
+capital = "Salinas"
+is_city = yes
+hre = yes
+fort_15th = yes
+center_of_trade = 1

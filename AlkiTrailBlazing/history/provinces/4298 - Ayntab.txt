@@ -1,0 +1,15 @@
+#4398 - Ayntab
+discovered_by = indian
+owner = V78
+controller = V78
+add_core = V78
+culture = newkhmer
+religion = yanantin
+capital = "Ayntab"
+trade_goods = fish #more fish
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes
+center_of_trade = 1

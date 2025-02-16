@@ -1,0 +1,512 @@
+country_decisions = {
+	lincolnite_nation = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			primary_culture = lincolnite
+			NOT = { tag = U76 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4516
+				province_id = 4513
+				province_id = 4501
+				province_id = 2485
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = U76 }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			owns_core_province = 4516	# Spokane
+			owns_core_province = 4513	# Colville
+			owns_core_province = 4501	# Mukha
+			owns_core_province = 2485	# Zabid
+		}
+		effect = {
+			change_tag = U76
+			set_capital = 4516
+			change_government = monarchy
+			washington_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = U76
+			}
+			add_prestige = 15
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	tualatin_nation = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { tag = Y93 }
+			primary_culture = goldbugger
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = washington_region
+				region = oregon_region
+				region = jefferson_region
+				region = nevada_region
+				region = sunkissed_region
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = Y93 }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provs_owned_in_cal_superreiong
+					all_owned_province = {
+						superregion = california_superregion
+					}
+				}
+				amount = 100
+			}
+		}
+		effect = {
+			change_tag = Y93
+			if = {
+				limit = {
+					owns_core_province = 868
+				}
+				set_capital = 868
+			}
+			add_prestige = 100
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	pugetite_nation = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			primary_culture = seattlain
+			NOT = { tag = U77 }
+			NOT = { tag = U78 }
+			NOT = { tag = U80 }
+			NOT = { religion = collectivist }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = high_puget_area
+				area = low_puget_area
+				area = olympic_penninsula_area
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = U77 }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			owns_core_province = 2052	# Olympia
+			owns_core_province = 2062	# Tacoma
+			owns_core_province = 2063	# Seattle
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_ten_provinces_in_puget_northsouth_olympia
+					high_puget_area = {
+						type = all
+						owned_by = ROOT
+					}
+					low_puget_area = {
+						type = all
+						owned_by = ROOT
+					}
+					olympic_penninsula_area = {
+						type = all
+						owned_by = ROOT
+					}
+				}
+				amount = 10
+			}
+		}
+		effect = {
+			change_tag = U77
+			set_capital = 2063 #Seattle
+			high_puget_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = U77
+			}
+			low_puget_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = U77
+			}
+			olympic_penninsula_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = U77
+			}
+			swap_non_generic_missions = yes
+			add_prestige = 15
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	washington_nation = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			OR = {
+				primary_culture = columbian_washingtonian
+				tag = U77
+				tag = U76
+			}
+			NOT = { tag = U78 }
+			NOT = { tag = U80 }
+			NOT = { religion = collectivist }
+		}
+		provinces_to_highlight = {
+			region = washington_region
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = U78 }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			adm_tech = 10
+			owns_core_province = 2063	# Seattle
+			owns_core_province = 2068	# Clark
+			owns_core_province = 4516	# Spokane
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_tweny_fif_provinces_in_washington
+					washington_region = {
+						type = all
+						owned_by = ROOT
+					}
+				}
+				amount = 25
+			}
+		}
+		effect = {
+			change_tag = U78
+			set_capital = 2063 #Seattle
+			washington_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = U78
+			}
+			if = {
+				limit = {
+					adm = 6
+				}
+				add_adm_power = 100
+			}
+			else = {
+				change_adm = 1
+			}
+			swap_non_generic_missions = yes
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	red_washington_nation = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			religion = collectivist
+			OR = {
+				primary_culture = columbian_washingtonian
+				primary_culture = seattlain
+				primary_culture = lincolnite
+			}
+			NOT = { tag = U81 }
+			NOT = { tag = U82 }
+		}
+		provinces_to_highlight = {
+			region = washington_region
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = U81 }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			adm_tech = 10
+			owns_core_province = 2063	# Seattle
+			owns_core_province = 2068	# Clark
+			owns_core_province = 4516	# Spokane
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_tweny_fif_provinces_in_washington
+					washington_region = {
+						type = all
+						owned_by = ROOT
+					}
+				}
+				amount = 25
+			}
+		}
+		effect = {
+			change_tag = U81
+			set_capital = 2063 #Seattle
+			washington_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = U81
+			}
+			if = {
+				limit = {
+					adm = 6
+				}
+				add_adm_power = 100
+			}
+			else = {
+				change_adm = 1
+			}
+			swap_non_generic_missions = yes
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	red_california_nation = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			religion = collectivist
+			culture_group = sunkissed
+			OR = {
+				tag = U81
+				AND = {
+					NOT = { primary_culture = columbian_washingtonian }
+					NOT = { primary_culture = seattlain }
+					NOT = { primary_culture = lincolnite }
+				}
+			}
+			NOT = { tag = U82 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 868
+				province_id = 1746
+				province_id = 1871
+				province_id = 1143
+				province_id = 1844
+				province_id = 2477
+				province_id = 1218
+				province_id = 1199
+				province_id = 2063
+				province_id = 4516
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = U82 }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_great_power = yes
+			adm_tech = 20
+			owns_core_province = 868	# San Francisco
+			owns_core_province = 1746	# Sacramento
+			owns_core_province = 1871	# Reno
+			owns_core_province = 1143	# Lisboa
+			owns_core_province = 1844	# Redding
+			owns_core_province = 2477	# Medford
+			owns_core_province = 1218	# Portland
+			owns_core_province = 1199	# Eugene
+			owns_core_province = 2063	# Seattle
+			owns_core_province = 4516	# Spokane
+		}
+		effect = {
+			change_tag = U82
+			set_capital = 2063 #Seattle
+			washington_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = U82
+			}
+			oregon_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = U82
+			}
+			jefferson_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = U82
+			}
+			sunkissed_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = U82
+			}
+			nevada_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = U82
+			}
+			if = {
+				limit = {
+					adm = 6
+				}
+				add_adm_power = 100
+			}
+			else = {
+				change_adm = 1
+			}
+			add_absolutism = 10
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	new_cascadia_nation = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			culture_group = cascadian
+			NOT = { tag = U80 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = washington_region
+				region = arborea_region
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = U80 }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			adm_tech = 20
+			government = republic
+			washington_region = {
+				type = all
+				owned_by = ROOT
+			}
+			arborea_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			change_tag = U80
+			set_capital = 2063 #Seattle
+			add_prestige = 25
+			if = {
+				limit = {
+					government = republic
+				}
+				add_republican_tradition = 25
+			}
+			else = {
+				add_legitimacy = 25
+			}
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+
+}

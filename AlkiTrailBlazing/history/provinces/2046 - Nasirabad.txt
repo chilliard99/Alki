@@ -1,0 +1,18 @@
+#2046 - Nasirabad
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = U57
+controller = U57
+add_core = U57
+culture = columbian_washingtonian
+religion = partisan
+capital = "Raymond"
+trade_goods = fish #fishing off the coast here
+hre = yes
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+fort_15th = yes

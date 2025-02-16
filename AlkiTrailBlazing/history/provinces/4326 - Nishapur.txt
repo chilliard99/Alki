@@ -1,0 +1,14 @@
+#4326 - Nishapur
+discovered_by = indian
+owner = V88
+controller = V88
+add_core = V88
+culture = newthai
+religion = yanantin
+capital = "Nishapur"
+trade_goods = grain #iguess
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes

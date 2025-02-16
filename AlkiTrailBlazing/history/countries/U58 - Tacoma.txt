@@ -1,0 +1,20 @@
+government = republic
+add_government_reform = democratic_republic_reform
+government_rank = 1
+primary_culture = seattlain
+religion = partisan
+technology_group = western
+capital = 2062	 #Tacoma
+historical_friend = W06
+religious_school = progressive_party
+
+1433.1.30 = {
+	monarch = {
+		name = "Dale"
+		dynasty = "Crosby"
+		birth_date = 1387.8.3
+		adm = 4
+		dip = 1
+		mil = 1
+	}
+}

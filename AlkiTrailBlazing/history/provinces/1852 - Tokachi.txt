@@ -1,0 +1,16 @@
+#1852 - Tokachi
+discovered_by = chinese
+
+owner = X16
+controller = X16
+add_core = X16
+is_city = yes
+culture = neoainu
+religion = neoshinto
+capital = "Tokachi"
+trade_goods = fish #yup fish
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 3
+discovered_by = eastern

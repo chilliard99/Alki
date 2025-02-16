@@ -1,0 +1,16 @@
+#2416 - Majar
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W31
+controller = W31
+add_core = W31
+culture = pazian
+religion = partisan
+hre = yes
+base_tax = 3
+base_production = 3
+trade_goods = grain #probably fruit too :(
+base_manpower = 4
+capital = "Majar"
+is_city = yes

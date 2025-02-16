@@ -1,0 +1,325 @@
+namespace = morrow_crook_events
+####################MORROW-CROOK EVENTS##########################
+country_event = { #Party Reflection 
+	id = morrow_crook_events.1
+	title = morrow_crook_events.1.t
+	desc = morrow_crook_events.1.d
+	picture = COURT_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			tag = U53
+			tag = U54 
+			tag = U85
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = morrow_crook_events.1.a #The Traditionalists have our back.
+		set_religious_school = {
+			group = constitutionalist_group
+			school = traditionalist_party
+		}
+		add_country_modifier = {
+			name = "gor_traditional_dedication_morrow_crook"
+			duration = -1
+		}
+	}
+	option = {
+		name = morrow_crook_events.1.b #We cannot abandon the President!
+		add_country_modifier = {
+			name = "gor_progressive_aformations_morrow_crook"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Career Change 
+	id = morrow_crook_events.2
+	title = morrow_crook_events.2.t
+	desc = morrow_crook_events.2.d
+	picture = RELIGIOUS_WARS_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			tag = U53
+			tag = U54 
+			tag = U85
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = morrow_crook_events.2.a #Dispell The Rumors
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 150
+		}
+		else = {
+			add_stability = 1
+		}
+		remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+	}
+	option = {
+		name = morrow_crook_events.2.b #The Republic Lives On!
+		custom_tooltip = remove_isnpired_to_rebellion_from_all
+		hidden_effect = {
+			every_owned_province = {
+				remove_province_modifier = gor_inspired_to_rebellion_genorg
+			}
+		}
+		if = {
+			limit = {
+				any_known_country = {
+					OR = {
+						tag = U86
+						tag = U87
+					}
+				}
+			}
+			random_known_country = {
+				limit = {
+					OR = {
+						tag = U86
+						tag = U87
+					}
+				}
+				switch_tag = THIS
+				inherit = ROOT
+			}
+		}
+		else = {
+			remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+			if = {
+				limit = {
+					NOT = { government = republic }
+				}
+				change_government = republic
+			}
+			change_tag = U86
+			add_government_reform = revolutionary_oregonian_republic_reform
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			swap_non_generic_missions = yes
+			if = {
+				limit = {
+					NOT = { has_global_flag = oregonian_incident_happened }
+					is_part_of_hre = yes
+				}
+				set_global_flag = oregonian_incident_happened
+				emperor = {
+					country_event = { id = oregonianmisc_events.1 }
+				}
+			}
+			custom_tooltip = every_nation_in_the_union_of_cali_gains_neg_two_hundo_wit_us
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					add_opinion = {
+						who = ROOT
+						modifier = nation_of_radicals_gor
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Noble Investment 
+	id = morrow_crook_events.3
+	title = morrow_crook_events.3.t
+	desc = morrow_crook_events.3.d
+	picture = NOBLE_ESTATE_eventPicture
+	
+	trigger = {
+		has_country_flag = get_noble_investment_morrow_crook
+		OR = {
+			tag = U53
+			tag = U54 
+			tag = U85
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 10
+	}
+	
+	option = {
+		name = morrow_crook_events.3.a #Enrich Coffers
+		add_years_of_income = 1
+	}
+	option = {
+		name = morrow_crook_events.3.b #Encourage Collusion
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
+	}
+}
+
+
+country_event = { #Mayoral Management 
+	id = morrow_crook_events.4
+	title = morrow_crook_events.4.t
+	desc = morrow_crook_events.4.d
+	picture = DIPLOMACY_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			tag = U53
+			tag = U54 
+			tag = U85
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = morrow_crook_events.4.a #They must accept
+		custom_tooltip = chance_to_either_annex_salem_or_gain
+		tooltip = {
+			if = {
+				limit = {
+					mil = 6
+				}
+				add_mil_power = 150
+			}
+			else = {
+				change_mil = 1
+			}
+		}
+		U50 = {
+			country_event = { 
+				id = morrow_crook_events.5
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { #Eastern Demands 
+	id = morrow_crook_events.5
+	title = morrow_crook_events.5.t
+	desc = morrow_crook_events.5.d
+	picture = DIPLOMACY_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = morrow_crook_events.5.a #We Must Accept
+		FROM = {
+			inherit = ROOT
+			country_event = { 
+				id = morrow_crook_events.6
+				days = 5
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = morrow_crook_events.5.b #Our Freedom is Guarenteed!
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100
+		}
+		FROM = {
+			country_event = { 
+				id = morrow_crook_events.7
+				days = 5
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #Strong-Arm Sucess 
+	id = morrow_crook_events.6
+	title = morrow_crook_events.6.t
+	desc = morrow_crook_events.6.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = morrow_crook_events.6.a #As They Should!
+		add_prestige = 15
+	}
+}
+
+country_event = { #Salemite Rejection 
+	id = morrow_crook_events.7
+	title = morrow_crook_events.7.t
+	desc = morrow_crook_events.7.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = morrow_crook_events.7.a #They will pay!
+		if = {
+			limit = {
+				mil = 6
+			}
+			add_mil_power = 150
+		}
+		else = {
+			change_mil = 1
+		}
+	}
+}

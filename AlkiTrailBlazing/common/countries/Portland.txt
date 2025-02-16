@@ -1,0 +1,102 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 0 105 53 }
+
+revolutionary_colors = { 10 14 8 }
+
+historical_idea_groups = {
+	defensive_ideas
+	religious_ideas
+	trade_ideas
+	economic_ideas
+	plutocracy_ideas
+	diplomatic_ideas
+	offensive_ideas
+	spy_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_longbow
+	gaelic_mercenary
+	gaelic_free_shooter
+	irish_charge
+	anglofrench_line
+	british_redcoat
+	british_hussar
+	british_square
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"James #0" = 25
+	"Mel #0" = 25
+	"Peter #0" = 25
+	"Baker #1" = 20
+	"Clive #0" = 20
+	"Ashton #0" = 15
+	"Todd #0" = 15
+	"Clark #0" = 10
+	"Woody #0" = 10
+	"Creed #0" = 10
+	"Isaiah #0" = 5
+	"Linus #0" = 5
+ 
+	"Liam #0" = 0
+	"Oliver #0" = 0
+	"Benjamin #0" = 0
+	"James #0" = 0
+	"Noah #0" = 0
+	"William #0" = 0
+	"Henry #0" = 0
+	"Edward #0" = 0
+	"Ethan #0" = 0
+	"Eluah #0" = 0
+	"Alexander #0" = 0
+	"Samuel #0" = 0
+	"Mason #0" = 0
+	"Owen #0" = 0
+	"Daniel #0" = 0
+	"Wyatt #0" = 0
+	"Logan #0" = 0
+	"Lucas #0" = 0
+	"Jackson #0" = 0
+
+	"Rachel #1" = -1
+	"Louise #1" = -1	
+	"Jean #0" = -1
+	"Margaret #0" = -1
+}
+
+leader_names = { 
+	Coos Duck Overton Leslie Umpqua Putnam Astor Crook Heppner Addy Bates Burrell Cleary Dutton Ellsbury Franzen Green Groening Herbert Hoover 
+	McGowan Morse Palahniuk Reed Wilkens Walton Drexler Petrovic Sabonis Pippen Lillard Shoaway Cabrillo Thompson McLoughlin Kotek Brown Kitzhaber
+	Kulongoski Roberts Goldschmidt Atiyeh Straub McCall Hatfield Holmes Smith Patterson mcKay Hall Snell Sprague Maretin Meier Hood Willamette
+	Malheur Harney Douglas 
+}
+
+ship_names = {
+	Ecotopia Earth Biodiversity Biophillia Sustainable Green 
+	Climate Renewable Wildlife Cleanup Conservancy Wilderness
+	Greenpeace Liberation Eathlife Bellamy Berry Bookchin
+	Brower Brown Buzzacott Carson Commoner Cousteau Daly
+	Roosevelt Jackson Hill Hayes Manos Lucas Lovins Nader Muir
+	Monbiot Pinchot Silverstone Sundaranand Suzuki Thoreau
+	Udall Thunberg Valentine Voynet Ward Waters Willow Zahniser
+	Monsanto
+	
+	Francisco Cruz Celestia Jose Oak Costa Lewis
+	Galactica "Golden Gate" Vallejo Solano Lodi
+	Stanford Salinas Monterey Moro Atascadero Wasco
+	Bakersfield Porterville Seqouia Vegas Inyo Faro 
+	Guadiana Sonoma Mendocino Bragg Eureka Redwood Crecent Curry
+	Coos Lane Newport Tillamook Clatsop Wahkiakum Grays Clallam 
+	Olympus Olympia Tacoma Seattle Everett Bellingham Kitsap
+	
+}

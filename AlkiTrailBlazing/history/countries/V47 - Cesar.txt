@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = zuilian
+religion = catholico 
+technology_group = indian
+capital = 4601	#Cesar
+
+1417.3.8 = {
+	monarch = {
+		name = "Hernando"
+		dynasty = "Castellanos"
+		birth_date = 1417.3.8
+		adm = 2
+		dip = 2
+		mil = 5
+	}
+}
+1436.1.11 = {
+	heir = {
+		name = "Ambrosio"
+		monarch_name = "Ambrosio"
+		dynasty = "Castellanos"
+		birth_date = 1436.1.11
+		death_date = 1483.8.30
+		claim = 95
+		adm = 6
+		dip = 1
+		mil = 3
+	}
+}

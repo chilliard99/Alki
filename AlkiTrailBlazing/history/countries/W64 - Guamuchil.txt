@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = durangan
+religion = catholico
+technology_group = muslim
+capital = 2745	#Guamuchil
+
+1444.1.1 = { set_country_flag = a_super_cool_company }
+1407.7.27 = {
+	monarch = {
+		name = "Alvarado II"
+		dynasty = "Evora"
+		birth_date = 1407.7.27
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1433.5.15 = {
+	heir = {
+		name = "Benito"
+		monarch_name = "Benito"
+		dynasty = "Evora"
+		birth_date = 1433.5.15
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 4
+		mil = 2
+	}
+}

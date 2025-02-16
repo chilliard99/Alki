@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = durangan
+religion = catholico
+technology_group = muslim
+capital = 859	#Culiacan
+
+1444.1.1 = { set_country_flag = a_super_cool_company }
+1397.2.14 = {
+	monarch = {
+		name = "Nuno II"
+		dynasty = "Coltzin"
+		birth_date = 1397.2.14
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1416.5.12 = {
+	heir = {
+		name = "Guzman"
+		monarch_name = "Guzman III"
+		dynasty = "Coltzin"
+		birth_date = 1416.5.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 4
+		mil = 3
+	}
+}

@@ -1,0 +1,16 @@
+# No previous file for Mema
+discovered_by = western
+discovered_by = eastern
+owner = W10
+controller = W10
+add_core = W10
+is_city = yes
+culture = colville 
+religion = collectivist
+capital = "Tendirma"
+trade_goods = wine #idk thats what the wiki says
+hre = no
+base_tax = 5
+base_production = 5
+is_city = yes
+base_manpower = 5

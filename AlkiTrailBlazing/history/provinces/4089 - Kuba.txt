@@ -1,0 +1,17 @@
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W91
+controller = W91
+add_core = W91
+culture = guatean
+religion = catholico
+capital = "Kuba"
+trade_goods = cloth #development center
+center_of_trade = 1
+hre = no
+fort_15th = yes
+base_tax = 8
+base_production = 7
+base_manpower = 7
+is_city = yes

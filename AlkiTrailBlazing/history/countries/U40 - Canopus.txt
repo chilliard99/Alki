@@ -1,0 +1,21 @@
+government = republic
+add_government_reform = oligarchy_reform
+government_rank = 1
+primary_culture = bigsur
+religion = partisan
+technology_group = western
+capital = 1827	 #Kings
+religious_school = progressive_party
+set_country_flag = progressive_caucus
+
+1433.1.30 = {
+	monarch = {
+		name = "Lyra"
+		female = yes
+		adm = 3
+		dip = 3
+		mil = 5
+	}
+}
+
+

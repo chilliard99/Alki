@@ -1,0 +1,19 @@
+#1933 - Bari
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y36
+controller = Y36 
+add_core = Y36
+culture = boisan 
+religion = theanite 
+hre = no 
+base_tax = 8
+base_production = 8
+trade_goods = grain #Idaho Potatoes
+base_manpower = 5
+capital = "Bari"
+is_city = yes
+fort_15th = yes
+center_of_trade = 2

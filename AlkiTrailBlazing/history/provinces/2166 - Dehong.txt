@@ -1,0 +1,15 @@
+# 2166 - Dehong
+discovered_by = eastern
+discovered_by = western
+owner = Y99
+controller = Y99
+add_core = Y99
+culture = neochipewyan
+religion = theanite
+capital = "Dehong"
+trade_goods = fish #lake fishing
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

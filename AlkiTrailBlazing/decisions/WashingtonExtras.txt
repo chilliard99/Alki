@@ -1,0 +1,317 @@
+country_decisions = {
+	
+	restore_dach_dynasty_nation = {
+		major = yes
+		potential = {
+			mission_completed = restoring_the_dachs_puget
+			NOT = { has_country_modifier = gor_the_magnanimous_dachs_baron }
+		}
+		allow = {
+			OR = {
+				dynasty = "Dach"
+				custom_trigger_tooltip = {
+					tooltip = monarch_with_six_adm_dip_or_mil
+					OR = {
+						adm = 6
+						dip = 6
+						mil = 6
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = have_one_fifty_dev_and_ninty_crownland
+					total_development = 150
+					crown_land_share = 90
+				}
+			}
+		}
+		effect = {
+			set_dynasty = "Dach"
+			add_country_modifier = {
+				name = "gor_the_magnanimous_dachs_baron"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	build_washington_railroad = {
+		major = yes
+		potential = {
+			OR = {
+				mission_completed = molten_empire_washington
+				mission_completed = a_different_revolution_tacoma
+			}
+			NOT = { has_global_flag = built_washington_railroad }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2063
+				province_id = 2062
+				province_id = 2052
+				province_id = 2057
+				province_id = 2046
+				province_id = 2068
+				province_id = 2064
+				province_id = 2067
+				province_id = 2069
+				province_id = 2486
+				province_id = 4501
+				province_id = 4504
+				province_id = 2056
+				province_id = 4516
+				province_id = 4513
+			}
+		}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = all_highlighed_provinces_have_ten_development_wash
+				washington_region = {
+					type = all
+					OR = {
+						NOT = { province_id = 2063 }
+						NOT = { province_id = 2062 }
+						NOT = { province_id = 2052 }
+						NOT = { province_id = 2057 }
+						NOT = { province_id = 2046 }
+						NOT = { province_id = 2068 }
+						NOT = { province_id = 2064 }
+						NOT = { province_id = 2067 }
+						NOT = { province_id = 2069 }
+						NOT = { province_id = 2486 }
+						NOT = { province_id = 4501 }
+						NOT = { province_id = 4504 }
+						NOT = { province_id = 2056 }
+						NOT = { province_id = 4516 }
+						NOT = { province_id = 4513 }
+						development = 10
+					}
+				}
+			}
+			treasury = 5000
+		}
+		effect = {
+			add_treasury = -5000
+			custom_trigger_tooltip = all_highlighted_provs_gain_wash
+			set_global_flag = built_washington_railroad
+			tooltip = {
+				add_permanent_province_modifier = {
+					name = "gor_washington_railroad_washington"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				washington_region = {
+					limit = {
+						OR = {
+							province_id = 2063
+							province_id = 2062
+							province_id = 2052
+							province_id = 2057
+							province_id = 2046
+							province_id = 2068
+							province_id = 2064
+							province_id = 2067
+							province_id = 2069
+							province_id = 2486
+							province_id = 4501
+							province_id = 4504
+							province_id = 2056
+							province_id = 4516
+							province_id = 4513
+						}
+					}
+					add_permanent_province_modifier = {
+						name = "gor_washington_railroad_washington"
+						duration = -1
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	build_inland_blastworks_washington = {
+		major = yes
+		potential = {
+			OR = {
+				mission_completed = molten_empire_washington
+				mission_completed = a_different_revolution_tacoma
+			}
+			NOT = { has_global_flag = built_inland_blastworks }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4516
+				province_id = 4513
+			}
+		}
+		allow = {
+			coal = 3
+			copper = 3
+			treasury = 5000
+		}
+		effect = {
+			add_treasury = -5000
+			set_global_flag = built_inland_blastworks
+			4516 = {
+				add_base_tax = 3
+				add_base_production = 3
+				add_base_manpower = 3
+				add_permanent_province_modifier = {
+					name = "gor_inland_blastworks_washington"
+					duration = -1
+				}
+			}
+			4513 = {
+				add_base_tax = 3
+				add_base_production = 3
+				add_base_manpower = 3
+				add_permanent_province_modifier = {
+					name = "gor_inland_blastworks_washington"
+					duration = -1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	vancouver_dam_washington = {
+		major = yes
+		potential = {
+			mission_completed = public_works_tacoma
+			NOT = { has_global_flag = vancouver_dam_done }
+		}
+		provinces_to_highlight = {
+			province_id = 2068
+		}
+		allow = {
+			adm_tech = 13
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = gor_national_spirit_of_labor_demo_rep
+					}
+				}
+				treasury = 2500
+			}
+			else = {
+				treasury = 5000
+				custom_tooltip = this_costs_less_if_you_have
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = gor_national_spirit_of_labor_demo_rep
+					}
+				}
+				add_treasury = -2500
+			}
+			else = {
+				add_treasury = -5000
+				custom_tooltip = this_costs_less_if_you_have
+			}
+			2068 = {
+				add_base_manpower = 5
+				add_center_of_trade_level = 1
+				add_permanent_province_modifier = {
+					name = "gor_the_vancouver_dam_redwash"
+					duration = -1
+				}
+			}
+			set_global_flag = vancouver_dam_done
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	kitsap_reclamation_project_washington = {
+		major = yes
+		potential = {
+			mission_completed = public_works_tacoma
+			NOT = { has_global_flag = kitsap_reclamation_done }
+		}
+		provinces_to_highlight = {
+			province_id = 2048
+		}
+		allow = {
+			adm_tech = 13
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = gor_national_spirit_of_labor_demo_rep
+					}
+				}
+				treasury = 2500
+			}
+			else = {
+				treasury = 5000
+				custom_tooltip = this_costs_less_if_you_have
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						has_country_modifier = gor_national_spirit_of_labor_demo_rep
+					}
+				}
+				add_treasury = -2500
+			}
+			else = {
+				add_treasury = -5000
+				custom_tooltip = this_costs_less_if_you_have
+			}
+			2048 = {
+				add_base_tax = 3
+				add_base_production = 3
+				add_base_manpower = 3
+				change_trade_goods = dyes
+			}
+			set_global_flag = kitsap_reclamation_done
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	
+	
+	reign_in_washington_gor = {
+		major = yes
+		potential = {
+			has_country_flag = trying_to_reign_in_washington_gor
+		}
+		provinces_to_highlight = {
+			province_id = 2062
+			province_id = 2068
+			province_id = 2063
+		}
+		allow = {
+			country_or_non_sovereign_subject_holds = 2062
+			country_or_non_sovereign_subject_holds = 2063
+			country_or_non_sovereign_subject_holds = 2068
+		}
+		effect = {
+			custom_tooltip = washington_will_not_attempt_to_leave_the_union
+			set_global_flag = washington_crisis_averted
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+}

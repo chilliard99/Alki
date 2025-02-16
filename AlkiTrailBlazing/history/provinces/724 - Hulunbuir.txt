@@ -1,0 +1,17 @@
+#724 - Hulunbuir
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y60
+controller = Y60
+add_core = Y60
+culture = gambler
+religion = partisan
+capital = "Faro"
+trade_goods = fish #taken from the eu4 map
+hre = yes
+base_tax = 3
+base_production = 3
+base_manpower = 3
+is_city = yes

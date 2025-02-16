@@ -1,0 +1,14 @@
+#2323 - Sahra an Nübyah
+discovered_by = mesoamerican
+culture = neoethiopian
+religion = shamanist
+capital = "Sahra an Nübyah"
+is_city = no
+base_manpower = 1
+trade_goods = unknown
+hre = no
+base_tax = 1 
+base_production = 1
+native_size = 80
+native_ferocity = 4
+native_hostileness = 9 

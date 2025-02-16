@@ -1,0 +1,17 @@
+# 1742 - Upper Guelders
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y76
+controller = Y76
+add_core = Y76
+is_city = yes
+capital = "Napa"
+culture = sacramentan
+religion = partisan
+hre = yes
+base_tax = 5
+base_production = 5
+trade_goods = wine #i mean come on
+base_manpower = 5

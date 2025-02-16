@@ -1,0 +1,17 @@
+#1773 - Achaea
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = U37
+controller = U37
+add_core = U37
+culture = bigsur
+religion = partisan
+capital = "Hollister"
+trade_goods = wine #San Benito AVA and they make wine too
+hre = yes
+base_tax = 4
+base_production = 4
+base_manpower = 4
+is_city = yes

@@ -1,0 +1,269 @@
+namespace = burns_events
+####################MORROW-CROOK EVENTS##########################
+country_event = { #Neutrality's Burden 
+	id = burns_events.1
+	title = burns_events.1.t
+	desc = burns_events.1.d
+	picture = RELIGION_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = Y88
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = burns_events.1.a #The Traditionalists have our back.
+		add_piety = 0.25
+		custom_tooltip = allies_in_high_places_may_help_later_on_cryptic_burns
+		set_country_flag = sided_with_traditionalists_burns
+	}
+	option = {
+		name = burns_events.1.b #We remain neutral
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 150
+		}
+		else = {
+			add_stability = 1
+		}
+		add_country_modifier = {
+			name = "gor_neturality_guarentee_burns"
+			duration = 5475
+		}
+	}
+}
+
+country_event = { #Valley Authority 
+	id = burns_events.2
+	title = burns_events.2.t
+	desc = burns_events.2.d
+	picture = DIPLOMACY_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = Y88
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = burns_events.2.a #We need unity.
+		custom_tooltip = instantly_annex_duck_valley_if_they_accept_or_get
+		tooltip = {
+			add_casus_belli = {
+				target = Y47
+				type = cb_restore_personal_union
+				months = 240
+			}
+		}
+		Y47 = {
+			country_event = { 
+				id = burns_events.3
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { #A Trueheir Union 
+	id = burns_events.3
+	title = burns_events.3.t
+	desc = burns_events.3.d
+	picture = DIPLOMACY_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = burns_events.3.a #We have to accept!
+		ROOT = {
+			country_event = { 
+				id = burns_events.4
+				days = 5
+			}
+		}
+		FROM = {
+			inherit = ROOT
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = burns_events.3.b #We will not become the Paiute's lapdogs.
+		tooltip = {
+			FROM = {
+				add_casus_belli = {
+					target = Y47
+					type = cb_restore_personal_union
+					months = 240
+				}
+			}
+		}
+		ROOT = {
+			country_event = { 
+				id = burns_events.5
+				days = 5
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #Our New Partners
+	id = burns_events.4
+	title = burns_events.4.t
+	desc = burns_events.4.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = Y88
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = burns_events.4.a #Welcome To The Family.
+		add_prestige = 5
+	}
+}
+
+country_event = { #Some Bad News
+	id = burns_events.5
+	title = burns_events.5.t
+	desc = burns_events.5.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = Y88
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = burns_events.5.a #They will pay.
+		add_casus_belli = {
+			target = Y47
+			type = cb_restore_personal_union
+			months = 240
+		}
+	}
+}
+
+
+
+country_event = { #Madukanna
+	id = burns_events.6
+	title = burns_events.6.t
+	desc = burns_events.6.d
+	picture = DIPLOMACY_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = Y88
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = burns_events.6.a #It Is Our Only Way Forward
+		change_primary_culture = madukanna
+		set_ruler_culture = madukanna
+		custom_tooltip = every_wadadada_and_high_oregonian_prov_we_own_becomes_madukanna
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						culture = highoregonean
+						culture = wadatika
+					}
+				}
+				change_culture = madukanna
+			}
+		}
+	}
+	option = {
+		name = burns_events.6.b #We Are Wadadökadö, Nothing Else
+		custom_tooltip = every_prov_with_wadadadada_gains
+		tooltip = {
+			add_province_modifier = {
+				name = "gor_trueheir_vigor_burns"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					culture = wadatika
+				}
+				change_culture = highoregonean
+			}
+		}
+	}
+	option = {
+		name = burns_events.6.c #We Will Take A Lesser Role
+		custom_tooltip = remove_all_burns_provinces_we_own_and_put_burns
+		tooltip = {
+			2482 = {
+				change_culture = ROOT
+				add_province_modifier = {
+					name = "gor_paiute_reservation_burns"
+					duration = -1
+				}
+			}
+		}
+		change_tag = U90
+		swap_non_generic_missions = yes
+		if = {
+			limit = {
+				has_custom_ideas = no
+			}
+			country_event = { id = ideagroups.1 } #Swap Ideas
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					culture = wadatika
+				}
+				change_culture = highoregonean
+			}
+			2482 = {
+				change_culture = wadatika
+				add_country_modifier = {
+					name = "gor_paiute_reservation_deschutes"
+					duration = -1
+				}
+			}
+		}
+	}
+}

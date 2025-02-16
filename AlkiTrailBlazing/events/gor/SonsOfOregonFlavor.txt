@@ -1,0 +1,572 @@
+namespace = sonsorg_events
+####################ASTORIAN EVENTS##########################
+country_event = { #Red Reputation
+	id = sonsorg_events.1
+	title = sonsorg_events.1.t
+	desc = sonsorg_events.1.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U86
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = sonsorg_events.1.a #Reach out to them.
+		custom_tooltip = if_we_conquest_puget_we_will_givem_to_alaska
+		tooltip = {
+			add_historical_friend = Y32
+			W06 = {
+				add_historical_friend = ROOT
+				create_alliance = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_alaskan_support_sonsorg"
+				duration = 9125
+			}
+		}
+		W06 = {
+			country_event = { 
+				id = sonsorg_events.2
+				days = 5
+			}
+		}
+	}
+	option = {
+		name = sonsorg_events.1.b #We are better alone!
+		add_prestige = 5
+		if = {
+			limit = {
+				dip = 6
+			}
+			add_dip_power = 150
+		}
+		else = {
+			change_dip = 1
+		}
+	}
+}
+
+country_event = { #Oregonian Opportunities
+	id = sonsorg_events.2
+	title = sonsorg_events.2.t
+	desc = sonsorg_events.2.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W06
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = sonsorg_events.2.a #A Damn Fine Deal
+		custom_tooltip = if_they_conquer_puget_they_will_give_it_to_us
+		add_historical_friend = FROM
+		create_alliance = FROM
+		tooltip = {
+			FROM = {
+				add_historical_friend = ROOT
+				add_country_modifier = {
+					name = "gor_alaskan_support_sonsorg"
+					duration = 9125
+				}
+			}
+		}
+		FROM = {
+			country_event = { 
+				id = sonsorg_events.3
+				days = 5
+			}
+		}
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = sonsorg_events.2.b #We should not meddle in the Union.
+		add_prestige = 5
+		FROM = {
+			country_event = { 
+				id = sonsorg_events.4
+				days = 5
+			}
+		}
+		ai_chance = { factor = 0 }
+	}
+}
+
+country_event = { #A Revolutionary Promise
+	id = sonsorg_events.3
+	title = sonsorg_events.3.t
+	desc = sonsorg_events.3.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U86
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = sonsorg_events.3.a #Our thanks to the Reds!
+		set_country_flag = alaskan_support_taken_sonsorg
+		add_historical_friend = ROOT
+		add_country_modifier = {
+			name = "gor_alaskan_support_sonsorg"
+			duration = 9125
+		}
+	}
+}
+
+country_event = { #Red Rejection
+	id = sonsorg_events.4
+	title = sonsorg_events.4.t
+	desc = sonsorg_events.4.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U86
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = sonsorg_events.4.a #How Dare They!?
+		add_prestige = -15
+		add_government_power = {
+			mechanic_type = rev_org_repub_mechanic
+			power_type = revolutionary_vigor
+			value = -5
+		}
+	}
+}
+
+country_event = { #Eastern Allies
+	id = sonsorg_events.5
+	title = sonsorg_events.5.t
+	desc = sonsorg_events.5.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U86
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = sonsorg_events.5.a #Reach out to them.
+		custom_tooltip = if_we_conquest_east_oregon_we_will_give_it_to_utah
+		tooltip = {
+			add_historical_friend = Y32
+			Y32 = {
+				add_historical_friend = ROOT
+				create_alliance = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_utahn_support_sonsorg"
+				duration = 9125
+			}
+		}
+		Y32 = {
+			country_event = { 
+				id = sonsorg_events.6
+				days = 5
+			}
+		}
+	}
+	option = {
+		name = sonsorg_events.5.b #We are better alone!
+		add_prestige = 5
+		if = {
+			limit = {
+				dip = 6
+			}
+			add_dip_power = 150
+		}
+		else = {
+			change_dip = 1
+		}
+	}
+}
+
+country_event = { #Oregonian Opportunities
+	id = sonsorg_events.6
+	title = sonsorg_events.6.t
+	desc = sonsorg_events.6.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = Y32
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = sonsorg_events.6.a #A Damn Fine Deal
+		custom_tooltip = if_they_conquer_east_oregon_they_will_give_it_to_us
+		add_historical_friend = FROM
+		create_alliance = FROM
+		tooltip = {
+			FROM = {
+				add_historical_friend = ROOT
+				add_country_modifier = {
+					name = "gor_utahn_support_sonsorg"
+					duration = 9125
+				}
+			}
+		}
+		FROM = {
+			country_event = { 
+				id = sonsorg_events.7
+				days = 5
+			}
+		}
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = sonsorg_events.6.b #We should not meddle in the Union.
+		add_prestige = 5
+		FROM = {
+			country_event = { 
+				id = sonsorg_events.8
+				days = 5
+			}
+		}
+		ai_chance = { factor = 0 }
+	}
+}
+
+country_event = { #A Revolutionary Promise
+	id = sonsorg_events.7
+	title = sonsorg_events.7.t
+	desc = sonsorg_events.7.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U86
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = sonsorg_events.7.a #Our thanks to the Utahns!
+		set_country_flag = utahn_support_taken_sonsorg
+		add_historical_friend = ROOT
+		add_country_modifier = {
+			name = "gor_utahn_support_sonsorg"
+			duration = 9125
+		}
+	}
+}
+
+country_event = { #Sacramental Rejection
+	id = sonsorg_events.8
+	title = sonsorg_events.8.t
+	desc = sonsorg_events.8.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U86
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = sonsorg_events.8.a #How Dare They!?
+		add_prestige = -15
+		add_government_power = {
+			mechanic_type = rev_org_repub_mechanic
+			power_type = revolutionary_vigor
+			value = -5
+		}
+	}
+}
+
+
+
+country_event = { #Sucessor To The Republic
+	id = sonsorg_events.9
+	title = sonsorg_events.9.t
+	desc = sonsorg_events.9.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U86
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = sonsorg_events.9.a #Reach out to them!
+		custom_tooltip = every_nation_in_oregon_will_get_opportunity_to_join_us
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					primary_culture = oregonite
+				}
+				country_event = { id = sonsorg_events.10 }
+			}
+		}
+	}
+}
+
+country_event = { #A New Republic?
+	id = sonsorg_events.10
+	title = sonsorg_events.10.t
+	desc = sonsorg_events.10.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U86
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = sonsorg_events.10.a #We Will Join Them!
+		if = {
+			limit = {
+				ai = no
+			}
+			switch_tag = FROM
+		}
+		FROM = {
+			inherit = ROOT
+		}
+		ai_chance = { 
+			factor = 25 
+			modifier = {
+				factor = 2
+				NOT = { total_development = 20 }
+			}
+		}
+	}
+	option = {
+		name = sonsorg_events.10.b #We'll pass
+		add_prestige = 5
+		ai_chance = { 
+			factor = 75 
+			modifier = {
+				factor = 0.5
+				alliance_with = FROM
+			}
+		}
+	}
+}
+
+country_event = { #A Mild Amount Of Tomfoolery
+	id = sonsorg_events.11
+	title = sonsorg_events.11.t
+	desc = sonsorg_events.11.d
+	picture = SPY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U86
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = sonsorg_events.11.a #Sic Semper Tyrannis
+		trigger = {
+			has_global_flag = disabled_wild_wasteland 
+		}
+		set_global_flag = too_much_trolling_oregon
+		custom_tooltip = explain_all_that_will_happen_if_we_assassinate_the_prez_sonsorg
+		swap_non_generic_missions = yes
+		emperor = {
+			tooltip = {
+				kill_ruler = yes
+				country_event = { id = sonsorg_events.12 }
+			}
+		}
+		hidden_effect = {
+			complete_mission = locked_miss_three_sonsorg
+			complete_mission = locked_miss_one_sonsorg
+			complete_mission = locked_miss_two_sonsorg
+		}
+	}
+	option = {
+		name = sonsorg_events.11.b #I'm Gonna Do What's Called a Pro Gamer Move
+		trigger = {
+			NOT = { has_global_flag = disabled_wild_wasteland }
+		}
+		set_global_flag = too_much_trolling_oregon
+		custom_tooltip = the_content_of_this_option_has_been_modified_by_wild_wasteland
+		custom_tooltip = explain_all_that_will_happen_if_we_assassinate_the_prez_sonsorg
+		swap_non_generic_missions = yes
+		emperor = {
+			tooltip = {
+				kill_ruler = yes
+				country_event = { id = sonsorg_events.12 }
+			}
+		}
+		hidden_effect = {
+			complete_mission = locked_miss_three_sonsorg
+			complete_mission = locked_miss_one_sonsorg
+			complete_mission = locked_miss_two_sonsorg
+			emperor = {
+				country_event = { id = sonsorg_events.12 }
+			}
+		}
+	}
+	option = {
+		name = sonsorg_events.11.c #Too Risky, hire the planner.
+		define_advisor = {
+			type = spymaster
+			skill = 2
+			cost_multiplier = 0.1
+		}
+	}
+}
+
+country_event = { #A Clutched Dagger
+	id = sonsorg_events.12
+	title = sonsorg_events.12.t
+	desc = sonsorg_events.12.d
+	picture = ASSASSINATION_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			kill_ruler = yes
+			every_known_country = {
+				limit = {
+					is_part_of_hre = yes
+				}
+				country_event = { sonsorg_events.14 } 
+			}
+		}
+	}
+	
+	option = {
+		name = sonsorg_events.12.a #We Mourne
+		custom_tooltip = the_president_dies_sonsorg
+		if = {
+			limit = {
+				NOT = {
+					is_emperor = yes
+				}
+			}
+			add_country_modifier = {
+				name = "gor_californian_tragedy_sonsorg"
+				duration = 18250
+			}
+		}
+		emperor = {
+			add_country_modifier = {
+				name = "gor_californian_tragedy_sonsorg"
+				duration = 18250
+			}
+			country_event = { 
+				id = sonsorg_events.13
+				days = 30
+			}
+		}
+	}
+}
+
+country_event = { #Too Much Trouble
+	id = sonsorg_events.13
+	title = sonsorg_events.13.t
+	desc = sonsorg_events.13.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			kill_ruler = yes
+		}
+	}
+	
+	option = {
+		name = sonsorg_events.13.a #Let The Congress Decide
+		set_imperial_incident = incident_oregonian_independence
+		set_global_flag = oregonian_incident_happened
+	}
+}
+
+country_event = { #Presidential Assasination
+	id = sonsorg_events.14
+	title = sonsorg_events.14.t
+	desc = sonsorg_events.14.d
+	picture = ASSASSINATION_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = sonsorg_events.14.a #What will this mean for the Union?
+		add_prestige = -10
+	}
+}

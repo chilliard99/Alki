@@ -1,0 +1,1669 @@
+traverse_missions_one_uni = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = W58
+	}
+	has_country_shield = yes
+	
+	classical_cities = {
+		icon = explore_caribbean
+		required_missions = { kanata_civil_war_victory }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 308
+				province_id = 298
+				province_id = 297
+				province_id = 2670
+				province_id = 292
+				province_id = 208
+				province_id = 994
+			}
+		}
+		trigger = {
+			is_institution_enabled = renaissance
+		 	308 = {
+				type = all
+				country_or_subject_holds = ROOT
+				NOT = {
+					devastation = 1
+				}
+			}
+			298 = {
+				type = all
+				country_or_subject_holds = ROOT
+				NOT = {
+					devastation = 1
+				}
+			}
+			297 = {
+				type = all
+				country_or_subject_holds = ROOT
+				NOT = {
+					devastation = 1
+				}
+			}
+			2670 = {
+				type = all
+				country_or_subject_holds = ROOT
+				NOT = {
+					devastation = 1
+				}
+			}
+			292 = {
+				type = all
+				country_or_subject_holds = ROOT
+				NOT = {
+					devastation = 1
+				}
+			}
+			208 = {
+				type = all
+				country_or_subject_holds = ROOT
+				NOT = {
+					devastation = 1
+				}
+			}
+			994 = {
+				type = all
+				country_or_subject_holds = ROOT
+				NOT = {
+					devastation = 1
+				}
+			}
+		}
+		effect = {
+			308 = {
+				add_institution_embracement = {
+					which = renaissance
+					value = 100
+				}	
+			}
+			298 = {
+				add_institution_embracement = {
+					which = renaissance
+					value = 100
+				}	
+			}
+			297 = {
+				add_institution_embracement = {
+					which = renaissance
+					value = 100
+				}	
+			}
+			2670 = {
+				add_institution_embracement = {
+					which = renaissance
+					value = 100
+				}	
+			}
+			292 = {
+				add_institution_embracement = {
+					which = renaissance
+					value = 100
+				}	
+			}
+			208 = {
+				add_institution_embracement = {
+					which = renaissance
+					value = 100
+				}	
+			}
+			994 = {
+				add_institution_embracement = {
+					which = renaissance
+					value = 100
+				}	
+			}
+		}
+	}
+	trade_hegemon_kanata = {
+		icon = mission_war_chest
+		required_missions = { classical_cities }
+		position = 3
+		trigger = {
+		 	num_of_owned_provinces_with = {
+				value = 4
+				province_has_center_of_trade_of_level = 2
+			}
+			num_of_owned_provinces_with = {
+				value = 1
+				province_has_center_of_trade_of_level = 3
+			}
+			monthly_income = 75
+			1659 = { 
+				trade_share = {
+					country = ROOT
+					share = 75
+				}
+			}
+			298 = { 
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			}
+		}
+		effect = {
+			if {
+				limit = {
+					tag = event_target:islamist_on_throne_et 
+				}
+				add_mandate = 5
+				add_years_of_income = 0.5
+			}
+			else = {
+				buffalo_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				west_upstate_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				east_upstate_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				pro_patria_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				mercantile_new_england_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	repairing_infustructure_kanata = {
+		icon = danubian_power
+		required_missions = { trade_hegemon_kanata }
+		position = 4
+		trigger = {
+		 	num_of_owned_provinces_with = {
+				value = 10
+				development = 15
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 10
+				development = 15
+				OR = {
+					has_building = marketplace
+					has_building = trade_depot
+					has_building = stock_exchange
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 10
+				development = 15
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "revived_infrastructure"
+				duration = 3650
+			}
+		}
+	}
+	an_industrial_empire = {
+		icon = mission_state_manufactories
+		required_missions = { repairing_infustructure_kanata }
+		position = 5
+		trigger = {
+		 	num_of_owned_provinces_with = {
+				value = 10
+				development = 30
+			}
+			num_of_owned_provinces_with = {
+				value = 20
+				has_manufactory_trigger = yes 
+			}
+			capital_scope = {
+				development = 50
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = "heart_of_the_lakes"
+					duration = -1
+				}
+			}
+		}
+	}
+	enlightened_despotism_kanata = {
+		icon = empower_the_junkers
+		required_missions = { an_industrial_empire }
+		position = 6
+		trigger = {
+			if = {
+				limit = {
+					tag = event_target:islamist_on_throne_et
+				}
+				has_institution = enlightenment
+				calc_true_if = {
+					all_country = {
+						is_subject_of_type = tributary_state
+						is_subject_of = ROOT
+					}
+					amount = 30
+				}
+			}
+			else { 
+				total_development = 2000
+				has_institution = enlightenment
+			}
+		}
+		effect = {
+			country_event = { id = kanata_events.10 }
+		}
+	}
+	traversing_the_tropics = {
+		icon = mission_colonize_the_caribbean
+		required_missions = { beyond_the_waves_kanata }
+		position = 9
+		trigger = {
+			any_owned_province = {
+				OR = {
+					region = east_caribbean_region
+					region = new_guyana_region
+				}
+			}
+		}
+		effect = {
+			add_prestige = 15
+			philippine_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_empty = yes }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	new_ontario = {
+		icon = mission_las_islas_filipinas
+		required_missions = { traversing_the_tropics }
+		position = 14
+		trigger = {
+			4362  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			custom_trigger_tooltip = {
+				tooltip = own_filipino_provinces_kanata
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 10
+					region = philippine_region
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			4362 = {
+				change_province_name = "Far Darany"
+				add_province_modifier = {
+					name = "capital_of_new_ontario"
+					duration = -1
+				}
+			}
+			gran_inca_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_malay_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			philippine_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	establishing_an_andean_presence = {
+		icon = mission_disrupt_portuguese_trade
+		required_missions = { new_ontario }
+		position = 15
+		trigger = {
+			any_owned_province = {
+				region = andes_region
+			}
+		}
+		effect = {
+			add_mercantilism = 3
+		}
+	}
+	oceanic_entry = {
+		icon = mission_retake_ceuta
+		required_missions = { establishing_an_andean_presence }
+		position = 17
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = own_oceanic_provinces
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 10
+					region = new_oceania_region
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "calm_waves_kanata"
+				duration = 9125
+			}
+		}
+	}
+	victorian_landing = {
+		icon = settle_austrialasia
+		required_missions = { oceanic_entry }
+		position = 18
+		trigger = {
+			any_owned_province = {
+				region = victoria_region
+			}
+		}
+		effect = {
+			victoria_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	gather_round_the_lake = {
+		icon = colonize_australia
+		required_missions = { victorian_landing }
+		position = 19
+		provinces_to_highlight = {
+			OR = {
+				region = victoria_region
+			}
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		trigger = {
+			victoria_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "global_influence_kanata"
+				duration = -1
+			}
+		}
+	}
+}
+
+traverse_missions_two_uni = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = W58
+	}
+	has_country_shield = yes
+	
+	recapturing_bay_trade = {
+		icon = crusader_fleet
+		required_missions = { kanata_civil_war_victory }
+		position = 2
+		trigger = {
+		 	1487 = { 
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						W11 = {
+							exists = no
+						}
+						tag = event_target:islamist_on_throne_et
+					}
+				}
+				add_dip_power = 50
+			}
+			else {
+				country_event = { id = kanata_events.5 }
+			}
+		}
+	}
+	cashing_out_kanata = {
+		icon = mission_seize_north_sea_trade
+		required_missions = { recapturing_bay_trade }
+		position = 3
+		trigger = {
+		 	baffin_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			bay_isles_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			nunavut_bay_coast_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			the_bulk_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			nunavut_region = {
+				discover_country = ROOT
+			}
+			if = {
+				limit = {
+					W11 = {
+						exists = yes
+						owns_all_provinces = {
+							area = nunavut_bay_coast_area
+						}
+						is_subject_of_type = tributary_state
+						is_subject_of = ROOT
+					}
+					tag = event_target:islamist_on_throne_et
+				}
+				custom_tooltip = annexing_nunavut_coast.tt
+				hidden_effect = {
+					nunavut_bay_coast_area = {
+						remove_core = W11
+						cede_province = event_target:islamist_on_throne_et
+						add_core = event_target:islamist_on_throne_et
+					}
+				}
+				nunavut_bay_coast_area = {
+					add_province_modifier = {
+						name = "hudson_gulf_bonuses_kanata"
+						duration = 7300
+					}
+				}
+			}
+			else {
+				baffin_area = {
+					add_province_modifier = {
+						name = "hudson_gulf_bonuses_kanata"
+						duration = 7300
+					}
+				}
+			}
+		}
+	}
+	rush_for_the_arctic = {
+		icon = mission_protect_white_sea_trade
+		required_missions = { cashing_out_kanata }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				region = nunavut_region
+			}
+			NOT = { country_or_subject_holds = ROOT }
+			is_empty = yes
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						calc_true_if = {
+							all_province = {
+								region = nunavut_region
+								is_empty = no
+							}
+							amount = 39
+						}
+						is_year = 1600
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = artic_already_colonized_or_is_1600.tt
+					always = yes
+				}
+			}
+			else = {
+				calc_true_if = {
+					desc = colonize_the_arctic_provinces
+					all_owned_province = {
+						region = nunavut_region
+						NOT = {
+							OR = {
+								area = nunavut_bay_coast_area
+								area = bay_isles_area
+								area = baffin_area
+							}
+						}
+					}
+					amount = 10
+				}
+			}
+		}
+		effect = {
+			if {
+				limit = {
+					OR = {
+						calc_true_if = {
+							all_province = {
+								region = nunavut_region
+								is_empty = no
+							}
+							amount = 39
+						}
+						is_year = 1600
+					}
+				}
+				add_prestige = 5
+			}
+			else = {
+				custom_tooltip = two_random_gold_kanata.tt
+				hidden_effect = {
+					random_core_province = { 
+						limit = {
+							region = nunavut_region
+							NOT = {
+								OR = {
+									area = nunavut_bay_coast_area
+									area = bay_isles_area
+									area = baffin_area
+								}
+							}
+						}
+						change_trade_goods = gold
+					}
+					random_core_province = { 
+						limit = {
+							region = nunavut_region
+							NOT = {
+								OR = {
+									area = nunavut_bay_coast_area
+									area = bay_isles_area
+									area = baffin_area
+								}
+							}
+						}
+						change_trade_goods = gold
+					}
+				}
+			}
+		}
+	}
+	cooling_tensions_kanata_artic = {
+		icon = mission_scandinavian_port_authority
+		required_missions = { rush_for_the_arctic }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				region = nunavut_region
+			}
+			NOT = { country_or_subject_holds = ROOT }
+			is_empty = yes
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = artic_already_colonized_or_is_1600.tt
+				OR = {
+					calc_true_if = {
+						all_province = {
+							region = nunavut_region
+							is_empty = no
+						}
+						amount = 39
+					}
+					is_year = 1600
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					tag = event_target:islamist_on_throne_et
+				}
+				custom_tooltip = gain_establish_tributary_cb.tt
+				hidden_effect = {
+					every_known_country = {
+						limit = {
+							any_owned_province = {
+								region = nunavut_region
+							}
+						}
+						country_event = { id = kanata_events.4 }
+					}
+				}
+			}
+			else = {
+				nunavut_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	artic_hegemony_kanata = {
+		icon = mission_reconquer_vologda
+		required_missions = { cooling_tensions_kanata_artic }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				region = nunavut_region
+			}
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		trigger = {
+		 	nunavut_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					tag = event_target:islamist_on_throne_et
+				}
+				country_event = { id = kanata_events.9 }
+			}
+			else {
+				alaska_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	the_plantation_promise = {
+		icon = mission_wine_monopolies
+		required_missions = { discover_akilineqa }
+		position = 10
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_colonize_akilineqaII
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 10
+					colonial_region = colonial_europa_occident
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = akilineqa_colonial_bonus.tt
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						capital_scope = {
+							colonial_region = colonial_europa_occident
+						}
+						is_subject_of = ROOT
+					}
+					add_country_modifier = {
+						name = "akilineqa_powerful_colony"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	tundrian_expanse = {
+		icon = mission_rb_settle_the_north
+		required_missions = { the_plantation_promise }
+		position = 11
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_colonize_tundriaI
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 5
+					colonial_region = colonial_intermarium
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = claims_on_intermarium.tt
+			colonial_intermarium  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_empty = yes }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	no_snow_nor_hail = {
+		icon = mission_rb_colonise_canada
+		required_missions = { tundrian_expanse }
+		position = 12
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_colonize_tundriaII
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 50
+					colonial_region = colonial_intermarium
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = tundria_colonial_bonus.tt
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						capital_scope = {
+							colonial_region = colonial_intermarium
+						}
+						is_subject_of = ROOT
+					}
+					add_country_modifier = {
+						name = "tundria_powerful_colony"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	colonial_hegemon_kanata = {
+		icon = claim_the_borderlands
+		required_missions = { no_snow_nor_hail }
+		position = 13
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = number_of_colonial_nations_five
+				num_of_colonies = 5
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "colonial_hegemon_kanata"
+				duration = -1
+			}
+		}
+	}
+	western_wastes = {
+		icon = mission_jawal_silver_mine
+		required_missions = { pushing_inland }
+		position = 16
+		trigger = {
+		 	custom_trigger_tooltip = {
+				tooltip = miss_colonize_iranistanII
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 20
+					colonial_region = colonial_iran
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "unearthing_relics"
+				duration = 7300
+			}
+		}
+	}
+}
+
+traverse_missions_three_uni = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = W58
+	}
+	has_country_shield = yes
+	
+	kanata_civil_war_victory = {
+		icon = mission_empire
+		required_missions = { }
+		position = 1
+		trigger = {
+		 	custom_trigger_tooltip = {
+				tooltip = kanata_civil_war_victory.tt
+				has_country_flag = kanata_civil_war_victory
+			}
+		}
+		effect = {
+			country_event = { id = kanata_events.1 }
+		}
+	}
+	
+	a_proper_fleet = {
+		icon = mission_establish_high_seas_navy
+		required_missions = { kanata_civil_war_victory }
+		position = 3
+		trigger = {
+		 	num_of_heavy_ship = 5
+		}
+		effect = {
+			add_dip_power = 50
+			add_prestige = 10
+		}
+	}
+	
+	beyond_the_waves_kanata = {
+		icon = mission_plus_ultra
+		required_missions = { a_proper_fleet }
+		position = 8
+		trigger = {
+		 	exploration_ideas = 1
+			num_of_explorers = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "exploratory_spirit"
+				duration = 1825
+			}
+			if = {
+				limit = {
+					NOT = {
+						tag = event_target:islamist_on_throne_et 
+					}
+				}
+				lawrencia_region  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	discover_akilineqa = {
+		icon = dominate_yoroppan_hinterlands
+		required_missions = { beyond_the_waves_kanata }
+		position = 9
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_colonize_akilineqaI
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 1
+					colonial_region = colonial_europa_occident
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = claims_on_akilineqa.tt
+			colonial_europa_occident = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_empty = yes }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	the_green_seas_end = {
+		icon = mission_potosi_silver
+		required_missions = { discover_akilineqa }
+		position = 10
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_colonize_fayettiaI
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 5
+					colonial_region = colonial_mashriq
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = claims_on_mashriq.tt
+			colonial_mashriq  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_empty = yes }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	whispers_of_gold = {
+		icon = mission_african_gold
+		required_missions = { the_green_seas_end }
+		position = 12
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_colonize_fayettiaII
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 25
+					colonial_region = colonial_mashriq
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = random_gold_provinces_fayettia.tt
+			hidden_effect = {
+				random_subject_country = {
+					limit = {
+						capital_scope = {
+							colonial_region = colonial_mashriq
+						}
+					}	
+					random_core_province = { 
+						change_trade_goods = gold
+					}
+					random_core_province = { 
+						change_trade_goods = gold
+					}
+				}
+			}
+		}
+	}
+	riches_of_endea = {
+		icon = mission_indian_soldier_elephant
+		required_missions = { whispers_of_gold }
+		position = 14
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_colonize_southendeaI
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 5
+					colonial_region = colonial_great_dravida
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = claims_on_south_endea.tt
+			colonial_great_dravida = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_empty = yes }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	pushing_inland = {
+		icon = mission_rein_in_the_velamas
+		required_missions = { riches_of_endea }
+		position = 15
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_colonize_iranistanI
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 5
+					colonial_region = colonial_india
+					is_city = yes
+				}
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 5
+					colonial_region = colonial_india
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = claims_on_endea.tt
+			colonial_india = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_empty = yes }
+				}
+				add_permanent_claim = ROOT
+			}
+			colonial_iran = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_empty = yes }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	divine_rivers_endea = {
+		icon = mission_grand_trunk_road_mug
+		required_missions = { pushing_inland }
+		position = 16
+		trigger = {
+		 	custom_trigger_tooltip = {
+				tooltip = miss_colonize_endea_propII
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 20
+					colonial_region = colonial_india
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = boost_grain_production_kanata_endea.tt
+			hidden_effect = {
+				random_subject_country = {
+					limit = {
+						capital_scope = {
+							colonial_region = colonial_india
+						}
+					}	
+					every_core_province = {
+						limit = {
+							trade_goods = grain
+						}
+						add_base_manpower = 1
+					}
+				}
+			}
+		}
+	}
+	the_smell_of_nutmeg = {
+		icon = mission_trade_with_japan
+		required_missions = { divine_rivers_endea dravidian_domination western_wastes }
+		position = 17
+		trigger = {
+		 	custom_trigger_tooltip = {
+				tooltip = miss_colonize_nutmegcoastI
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 5
+					colonial_region = colonial_huanan
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			1370 = {
+				add_trade_modifier = {
+					who = root
+					duration = 9125
+					power = 100
+					key = nutmeg_gains
+				}
+			}
+		}
+	}
+	the_spice_must_flow_kanata = {
+		icon = mission_portuguese_burma
+		required_missions = { the_smell_of_nutmeg }
+		position = 18
+		trigger = {
+		 	custom_trigger_tooltip = {
+				tooltip = miss_colonize_nutmegcoastII
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 20
+					colonial_region = colonial_huanan
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 25
+			add_dip_power = 25
+			add_mil_power = 25
+			add_mercantilism = 3
+		}
+	}
+	the_far_frontier = {
+		icon = mission_rice_field
+		required_missions = { the_spice_must_flow_kanata }
+		position = 19
+		trigger = {
+		 	custom_trigger_tooltip = {
+				tooltip = miss_colonize_china
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 5
+					colonial_region = colonial_the_middle_kingdom
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = claims_on_china.tt
+			colonial_the_middle_kingdom = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_empty = yes }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	collapsing_the_cliques = {
+		icon = mission_taula_de_canvi
+		required_missions = { the_far_frontier }
+		position = 20
+		trigger = {
+		 	custom_trigger_tooltip = {
+				tooltip = miss_colonize_chinaII
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 20
+					colonial_region = colonial_the_middle_kingdom
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "true_thalassocracy_kanata"
+				duration = -1
+			}
+		}
+	}
+}
+
+traverse_missions_four_pri = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			NOT = {
+				tag = event_target:islamist_on_throne_et 
+			}
+			tag = W58
+		}
+	}
+	has_country_shield = yes
+	
+	the_sudbury_conferance = {
+		icon = mission_consolidate_the_state
+		required_missions = { kanata_civil_war_victory }
+		position = 2
+		trigger = {
+		 	num_of_loans = 0
+			NOT = {
+				unrest = 2
+			}
+		}
+		effect = {
+			manitoba_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	the_march_east = {
+		icon = crush_heretic_strongholds
+		required_missions = { the_sudbury_conferance }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				region = manitoba_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+		 	manitoba_region  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			kiikiwaahk_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	metis_mayhem = {
+		icon = gory_to_the_black_army
+		required_missions = { the_march_east }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				region = kiikiwaahk_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+		 	kiikiwaahk_region  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			arborea_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	pacific_waves_kanata = {
+		icon = expand_the_swiss_guard
+		required_missions = { metis_mayhem	 }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				region = arborea_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+		 	arborea_region  = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = { id = kanata_events.11 }
+		}
+	}
+}
+
+traverse_missions_four_pri_extra = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			NOT = {
+				tag = event_target:islamist_on_throne_et 
+			}
+			tag = W58
+			has_country_flag = absolute_despot
+		}
+	}
+	has_country_shield = yes
+	
+	dar_al_islam = {
+		icon = mission_construct_a_corsair_fleet
+		required_missions = { pacific_waves_kanata enlightened_despotism_kanata  }
+		position = 7
+		trigger = {
+		 	always = yes
+		}
+		effect = {
+			great_plains_superregion  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			california_superregion  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			great_lakes_superregion  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+traverse_missions_four_alt = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = event_target:islamist_on_throne_et 
+	}
+	has_country_shield = yes
+	
+	michigan_network = {
+		icon = mission_rb_control_electors
+		required_missions = { kanata_civil_war_victory }
+		position = 2
+		trigger = {
+		 	calc_true_if = {
+				all_country = {
+					is_subject_of_type = tributary_state
+					is_subject_of = ROOT
+					OR = {
+						primary_culture = industrial_heartlander
+						primary_culture = north_mitter
+					}
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			country_event = { id = kanata_events.12 }
+			custom_tooltip = force_tributary_cb_michigan.tt
+			hidden_effect = {
+				every_known_country = { 
+					limit = {
+						OR = {
+							primary_culture = industrial_heartlander
+							primary_culture = north_mitter
+						}
+					}
+					country_event = { id = kanata_events.2 }
+				}
+			}
+		}
+	}
+	suring_up_the_north = {
+		icon = imperial_ascendancy
+		required_missions = { michigan_network }
+		position = 4
+		trigger = {
+		 	calc_true_if = {
+				all_country = {
+					is_subject_of_type = tributary_state
+					is_subject_of = ROOT
+				}
+				amount = 10
+			}
+		}
+		effect = {
+			custom_tooltip = force_tribu_can_one.tt
+			hidden_effect = {
+				set_country_flag = force_tribute_kan_one
+			}
+		}
+	}
+	fredricks_empire = {
+		icon = invade_poland
+		required_missions = { suring_up_the_north }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				region = lawrencia_region
+				region = new_cannan_region
+				region = three_cities_region
+			}
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		trigger = {
+		 	lawrencia_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			new_cannan_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			three_cities_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = force_tribu_can_two.tt
+			hidden_effect = {
+				clr_country_flag = force_tribute_kan_one
+				set_country_flag = force_tribute_kan_two
+			}
+		}
+	}
+	beyond_our_ancestors = {
+		icon = encroach_on_the_germans
+		required_missions = { fredricks_empire }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				region = greater_ozarks_region
+				region = lakes_interior_region
+				region = antebella_region
+			}
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		trigger = {
+		 	greater_ozarks_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			lakes_interior_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			antebella_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "great_lakes_hegemon"
+				duration = -1
+			}
+			custom_tooltip = can_conert_tributaries_kanata.tt
+			hidden_effect = {
+				set_country_flag = can_convert_tributaries
+			}
+		}
+	}
+}
+
+traverse_missions_four_alt_extra = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		AND = {
+			tag = event_target:islamist_on_throne_et 
+			has_country_flag = absolute_despot
+		}
+	}
+	has_country_shield = yes
+	
+	an_eternal_empire = {
+		icon = give_him_back_his_legions
+		required_missions = { beyond_our_ancestors enlightened_despotism_kanata  }
+		position = 7
+		trigger = {
+		 	always = yes
+		}
+		effect = {
+			custom_tooltip = force_tribu_can_three.tt
+			hidden_effect = {
+				clr_country_flag = force_tribute_kan_two
+				set_country_flag = force_tribute_kan_three
+			}
+		}
+	}
+}
+
+traverse_missions_four_uni = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = W58
+	}
+	has_country_shield = yes
+	dravidian_domination = {
+		icon = mission_reduce_champaner
+		required_missions = { pushing_inland }
+		position = 16
+		trigger = {
+		 	custom_trigger_tooltip = {
+				tooltip = miss_colonize_southendeaII
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 20
+					colonial_region = colonial_great_dravida
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			add_years_of_income = 2
+		}
+	}
+}
+
+traverse_missions_five_uni = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = W58
+	}
+	has_country_shield = yes
+	
+	reclaiming_lafayette_heritage = {
+		icon = mission_restore_faith_in_the_throne
+		required_missions = { kanata_civil_war_victory }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				region = quebec_region
+				region = ontario_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+		 	ontario_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			quebec_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					stability = 3
+				}
+				add_adm_power = 100
+			}
+			else = {
+				add_stability = 1
+			}
+			if = {
+				limit = {
+					tag = event_target:islamist_on_throne_et  
+				}
+				add_country_modifier = {
+					name = "the_ontarian_network"
+					duration = -1
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = "lafayette_lands_reclaimed"
+					duration = 18250
+				}
+			}
+		}
+	}
+	united_under_allah_kanata = {
+		icon = mission_conquer_malwa_mug
+		required_missions = { reclaiming_lafayette_heritage }
+		position = 3
+		trigger = {
+		 	religious_unity = 0.9
+		}
+		effect = {
+			if = {
+				limit = {
+					tag = event_target:islamist_on_throne_et 
+				}
+				country_event = { id = kanata_events.3 }
+			}
+			else = {
+				add_adm_power = 50
+				add_prestige = 15
+			}
+		}
+	}
+	the_maritime_reclimation = {
+		icon = Burn_Wooden_Wall
+		required_missions = { beyond_the_waves_kanata }
+		position = 9
+		trigger = {
+		 	lawrencia_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = { id = kanata_events.13 }
+			if = {
+				limit = {
+					NOT = {
+						tag = event_target:islamist_on_throne_et 
+					}
+				}
+				new_iceland_area  = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_empty = yes }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	cold_beyond_iceland = {
+		icon = mission_rb_cod_wars
+		required_missions = { the_maritime_reclimation }
+		position = 11
+		trigger = {
+		 	new_iceland_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "ancient_remanents"
+				duration = 9125
+			}
+		}
+	}
+}

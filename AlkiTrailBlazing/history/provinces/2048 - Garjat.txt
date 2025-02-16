@@ -1,0 +1,18 @@
+#2048 - Jeypore
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+add_core = W06
+owner = W06
+controller = W06
+add_core = U65
+culture = seattlain
+religion = collectivist
+capital = "Bremerton"
+trade_goods = fish #alternatively naval supplies, but puget fishing sounds nice
+hre = yes
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes

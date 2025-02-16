@@ -1,0 +1,19 @@
+government = republic
+add_government_reform = oligarchy_reform
+government_rank = 1
+primary_culture = bigsur
+religion = partisan
+technology_group = western
+capital = 1769	 #Salinas
+religious_school = progressive_party
+set_country_flag = bay_caucus
+
+1433.1.30 = {
+	monarch = {
+		name = "William"
+		dynasty = "Gabilan"
+		adm = 4
+		dip = 2
+		mil = 2
+	}
+}

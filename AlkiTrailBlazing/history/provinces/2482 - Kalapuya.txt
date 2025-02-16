@@ -1,0 +1,18 @@
+# No previous file for Kalapuya
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+add_core = Y88
+owner = Y88
+controller = Y88
+culture = highoregonean
+religion = partisan
+capital = "Canyon City"
+trade_goods = gold #theres still gold out there!
+hre = yes
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = U95

@@ -1,0 +1,17 @@
+# No previous file for Ohlone
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = U46 
+controller = U46
+add_core = U46
+culture = portugers
+religion = partisan
+capital = "Leiria" 
+trade_goods = cotton #Espanish Cotton
+hre = yes 
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

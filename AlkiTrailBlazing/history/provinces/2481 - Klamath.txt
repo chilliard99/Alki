@@ -1,0 +1,17 @@
+# No previous file for Klamath
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y38
+controller = Y38
+add_core = Y38
+culture = snake
+religion = partisan
+capital = "Monument"
+trade_goods = livestock #nothing going on here
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

@@ -1,0 +1,19 @@
+#1746 - Burgos
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y76		
+controller = Y76
+add_core = Y76
+culture = sacramentan
+religion = partisan
+hre = yes
+base_tax = 8
+base_production = 7
+trade_goods =  wine #conversion of the previous good which was grain
+base_manpower = 7
+capital = "Sacramento"
+is_city = yes
+fort_15th = yes
+center_of_trade = 2

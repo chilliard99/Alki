@@ -1,0 +1,121 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 158 157 255 }
+
+revolutionary_colors = { 3  0  3 }
+
+historical_idea_groups = {
+	defensive_ideas
+	religious_ideas
+	trade_ideas
+	economic_ideas
+	plutocracy_ideas
+	diplomatic_ideas
+	offensive_ideas
+	spy_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_longbow
+	gaelic_mercenary
+	gaelic_free_shooter
+	irish_charge
+	anglofrench_line
+	british_redcoat
+	british_hussar
+	british_square
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Francis #1" = 25
+	"Didier #1" = 25
+	"Afred #0" = 25
+	"Mark #0" = 20
+	"Agoston #0" = 20
+	"Steve #0" = 20
+	"Kay #0" = 20
+	"Sean #0" = 20
+	"André #0" = 20
+	"Walter #0" = 20
+	"Richard #0" = 15
+	"Robert #0" = 15
+	"Andy #0" = 10
+	"Oscar #0" = 10
+	"Ricky #0" = 10
+	"Leland #0" = 10
+	"Earl #0" = 10
+	"Ronald #0" = 10
+	"Arnold #0" = 10
+	"Gray #0" = 10
+	"Edmund #0" = 10
+	"Bob #0" = 5
+	"Nello #0" = 5
+ 
+	"Liam #0" = 0
+	"Oliver #0" = 0
+	"Benjamin #0" = 0
+	"James #0" = 0
+	"Noah #0" = 0
+	"William #0" = 0
+	"Henry #0" = 0
+	"Edward #0" = 0
+	"Ethan #0" = 0
+	"Eluah #0" = 0
+	"Alexander #0" = 0
+	"Samuel #0" = 0
+	"Mason #0" = 0
+	"Owen #0" = 0
+	"Daniel #0" = 0
+	"Wyatt #0" = 0
+	"Logan #0" = 0
+	"Lucas #0" = 0
+	"Jackson #0" = 0
+
+	"Kristen #1" = -1
+	"Heidi #1" = -1	
+	"Cathy #0" = -1
+	"Mia #0" = -1
+}
+
+leader_names = { 
+	Liam Oliver Benjamin James Noah William Henry Ethan Eluah Alexander Samuel Mason Owen Daniel Wyatt Logan Lucas Jackson David
+	Lincoln Michael Jacob Matthew Isaac Jack Luke Gabriel Caleb Carter Levi Hudson Hunter Sebastian Grayson Aiden Andrew Joseph 
+	Jayden Theodore Julian Jaxon John Asher Mateo Charles Isaiah
+}
+
+ship_names = {
+	Solano Guadalupe Coombs Patchett Benica Helena Silverado 
+	Calistoga Hennessey Cabernet Sauvignon Chardonnay Merlot
+	"Pinot Noir" "Sauvingnon Blanc" Syrah Zinfandel Barbera
+	Barbera "Cabernet Franc" Carignan Grenache Malbec Mourvèdre
+	Petite Sirah Petit Verdot Sangiovese Tannat "Chenin Blanc"
+	Colombard Gewürztraminer Marsanne Muscat Canelli Pinot blanc 
+	"Pinot Gris" Riesling Roussane Sémillon "Trousseau Gris" 
+	Viognier
+	
+	Francisco Cruz Celestia Jose Oak Costa Lewis
+	Galactica "Golden Gate" Vallejo Solano Lodi
+	Stanford Salinas Monterey Moro Atascadero Wasco
+	Bakersfield Porterville Seqouia Vegas Inyo Faro 
+	Guadiana Sonoma Mendocino Bragg Eureka Redwood Crecent Curry
+	Coos Lane Newport Tillamook Clatsop Wahkiakum Grays Clallam 
+	Olympus Olympia Tacoma Seattle Everett Bellingham Kitsap
+}
+
+army_names = {
+	"Vinary Army" "Army of Sacramento" "Army of Napa" "Army of Sonoma" 
+	"Army of the Bluffs" "Army of the Valley" "Army of Progress"
+}
+
+fleet_names = {
+	"Purple Squadron" "Mother of the Seas" "Progressive Squadron" 
+	"Liberty Navy" 
+}

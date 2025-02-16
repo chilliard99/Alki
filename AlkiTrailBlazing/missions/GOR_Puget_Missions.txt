@@ -1,0 +1,1315 @@
+###########################PUGET GENERIC MISSIONS###########################
+puget_general_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = U77
+	}
+	has_country_shield = yes
+		
+	consolidate_the_capital_puget = {
+		icon = seattle_gor
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = low_puget_area
+					NOT = { owned_by = ROOT }
+				}
+				province_id = 2063
+			}
+		}
+		trigger = {
+			capital = 2063
+			2063 = {
+				province_has_center_of_trade_of_level = 2
+			}	
+			low_puget_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_base_tax = 2
+			}
+			custom_tooltip = if_we_are_monarchy_puget
+			tooltip = {
+				add_ruler_modifier = {
+					name = "king_of_the_sound_puget"
+					duration = -1
+				}
+			}
+			custom_tooltip = if_we_are_republic_no_space_puget
+			tooltip = {
+				add_dip_power = 50
+				capital_scope = {
+					add_trade_modifier = {
+						who = ROOT
+						duration = 3650
+						power = 30
+						key = puget_monopolies
+					}
+				}
+			}
+		}
+	}
+	
+	old_roads_new_roads_puget = {
+		icon = union_baron_gor
+		required_missions = { consolidate_the_capital_puget }
+		position = 2
+		trigger = {
+			if = {
+				limit = {
+					government = monarchy
+				}
+				legitimacy = 100
+				prestige = 30
+				crown_land_share = 60
+			}
+			else = {
+				estate_loyalty = {
+					estate = estate_burghers
+					loyalty = 70
+				}
+				prestige = 30
+				republican_tradition = 90
+			}
+		}
+		effect = {
+			country_event = { id = puget_events.1 }
+		}
+	}
+}
+
+puget_general_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = U77
+	}
+	has_country_shield = yes
+	
+	salish_fleet_puget = {
+		icon = large_fleet_gor
+		required_missions = { consolidate_the_capital_puget }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2052
+				province_id = 2062
+				province_id = 2063
+			}
+		}
+		trigger = {
+			has_flagship = yes
+			navy_size = 25
+			2052 = {
+				OR = {
+					has_building = shipyard
+					has_building = grand_shipyard
+				}
+			}
+			2062 = {
+				OR = {
+					has_building = shipyard
+					has_building = grand_shipyard
+				}
+			}
+			2063 = {
+				OR = {
+					has_building = shipyard
+					has_building = grand_shipyard
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = gain_five_dip_power_for_each_ship
+			hidden_effect = {
+				set_variable = {            
+					which = ship_dip_values
+					value = 1
+				}
+				export_to_variable = {
+					which = ship_dip_values
+					value = navy_size
+					who = ROOT
+				}
+				while = {
+					limit = {
+						check_variable = {
+							which = ship_dip_values
+							who = ROOT
+							value = 1
+						}
+					}
+					add_dip_power = 5
+					subtract_variable = {
+						which = ship_dip_values
+						value = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+puget_general_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = U77
+	}
+	has_country_shield = yes
+	
+	olympic_recovery_puget = {
+		icon = peninsular_ambitions_gor
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = olympic_penninsula_area
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					province_id = 2052
+					NOT = { province_has_center_of_trade_of_level = 2 }
+				}
+			}
+		}
+		trigger = {
+			2052 = {
+				province_has_center_of_trade_of_level = 2
+			}
+			olympic_penninsula_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_navy_tradition = 10
+			willapa_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	the_freest_city_puget = {
+		icon = columbia_river_gor
+		required_missions = { olympic_recovery_puget }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2046
+				province_id = 2057 
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			2046 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2057 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = if_we_are_monarchy_no_space_puget
+			tooltip = {
+				add_legitimacy = 15
+				add_ruler_modifier = {
+					name = "gor_baron_of_willapa_puget"
+					duration = -1
+				}
+			}
+			custom_tooltip = if_we_are_republic_no_space_puget
+			tooltip = {
+				add_republican_tradition = 10
+				add_country_modifier = {
+					name = "gor_willapan_influence_puget"
+					duration = 3650
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						government = monarchy
+					}
+					add_legitimacy = 15
+					add_ruler_modifier = {
+						name = "gor_baron_of_willapa_puget"
+						duration = -1
+					}
+				}
+				else = {
+					add_republican_tradition = 10
+					add_country_modifier = {
+						name = "gor_willapan_influence_puget"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	
+	invewst_in_paper_industry_puget = {
+		icon = workshop_gor
+		required_missions = { }
+		position = 6
+		provinces_to_highlight = {
+			region = washington_region
+			trade_goods = paper
+			NOT = { has_building = workshop }
+			NOT = { has_building = counting_house }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = every_paper_prov_has_a_workshop_or_countinghouse
+				washington_region = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+					OR = {
+						NOT = { trade_goods = paper }
+						has_building = workshop
+						has_building = counting_house
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = every_paper_prov_in_wash
+			tooltip = {
+				add_base_production = 1
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						region = washington_region
+						trade_goods = paper
+					}
+					add_base_production = 1
+				}
+			}	
+		}
+	}
+	
+	university_of_washington_puget = {
+		icon = washington_university_gor
+		required_missions = { invewst_in_paper_industry_puget }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 2063 
+			NOT = { has_building = university }
+		}
+		trigger = {
+			2063 = {
+				has_building = university
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_completed_an_idea_group_puget
+				OR = {
+					has_completed_idea_group_of_category = {
+						adm_ideas = yes
+					}
+					has_completed_idea_group_of_category = {
+						dip_ideas = yes
+					}
+					has_completed_idea_group_of_category = {
+						mil_ideas = yes
+					}
+				}
+			}
+		}
+		effect = {
+			change_innovativeness = 3
+			define_advisor = {
+				type = philosopher
+				skill = 3
+				cost_multiplier = 0.5
+			}			
+		}
+	}
+}
+
+puget_general_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = U77
+	}
+	has_country_shield = yes
+	
+	challenge_helens_puget = {
+		icon = knight_by_river_gor
+		required_missions = { rainiers_beauty_puget the_freest_city_puget }
+		position = 3
+		provinces_to_highlight = {
+			area = middle_columbia_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			middle_columbia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			benton_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = if_helens_is_a_subjuect_we_will_become_elector
+			custom_tooltip = if_helens_is_not_a_subject_elector
+			tooltip = {
+				add_mil_power = 100
+				2068 = {
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						U56 = {
+							is_subject_of = ROOT
+							is_elector = yes
+						}
+					}
+					U56 = {
+						elector = no
+					}
+					elector = ROOT
+					emperor = {
+						country_event = { id = puget_events.4 }
+					}
+				}
+				else = {
+					add_mil_power = 100
+					2068 = {
+						add_base_tax = 1
+						add_base_production = 1
+						add_base_manpower = 1
+					}
+				}
+			}
+		}
+	}
+	
+	tri_cities_puget = {
+		icon = burning_orchard_gor
+		required_missions = { challenge_helens_puget }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = benton_area
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					province_id = 4501
+					NOT = { development = 15 }
+				}
+			}
+			
+		}
+		trigger = {
+			benton_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4501 = {
+				development = 15
+			}
+		}
+		effect = {
+			custom_tooltip = if_we_are_a_barony_for_each_prov_that_produces_wine
+			tooltip = {
+				add_legitimacy = 5
+			}
+			custom_tooltip = instead_every_wine_prov
+			tooltip = {
+				add_base_production = 1
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_reform = barony_reform
+					}
+					while = {
+						limit = {
+							any_owned_province = {
+								trade_goods = wine
+								NOT = { has_province_flag = already_give_legit_bonus_puget }
+							}
+						}
+						add_legitimacy = 5
+						random_owned_province = {
+							limit = {
+								trade_goods = wine
+								NOT = { has_province_flag = already_give_legit_bonus_puget }
+							}
+							set_province_flag = already_give_legit_bonus_puget
+						}
+					} 
+					every_owned_province = {
+						clr_province_flag = already_give_legit_bonus_puget
+					}
+				}
+				else = {
+					every_owned_province = {
+						limit = {
+							trade_goods = wine
+						}
+						add_base_production = 1
+					}
+				}
+			}
+		}
+	}
+	
+	defend_the_heartland_puget = {
+		icon = cascadian_coastal_wall_gor
+		required_missions = { invewst_in_paper_industry_puget }
+		position = 7
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = has_a_single_fort_in_high_puget
+				any_owned_province = {
+					has_fort_building_trigger = yes
+					area = high_puget_area
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_a_single_fort_in_low_puget
+				any_owned_province = {
+					has_fort_building_trigger = yes
+					area = low_puget_area
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_a_single_fort_in_olympic_penninsula
+				any_owned_province = {
+					has_fort_building_trigger = yes
+					area = olympic_penninsula_area
+				}
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			custom_tooltip = gain_fifteen_mil_power_for_each_fort_in_wash
+			tooltip = {
+				add_mil_power = 15
+			}
+			hidden_effect = {
+				while = {
+					limit = {
+						any_owned_province = {
+							has_fort_building_trigger = yes
+							region = washington_region
+							NOT = { has_province_flag = already_given_mil_power_puget }
+						}
+					}
+					add_mil_power = 15
+					random_owned_province = {
+						limit = {
+							has_fort_building_trigger = yes
+							region = washington_region
+							NOT = { has_province_flag = already_given_mil_power_puget }
+						}
+						set_province_flag = already_given_mil_power_puget
+					}
+				} 
+				every_owned_province = {
+					clr_province_flag = already_given_mil_power_puget
+				}
+			}
+		}
+	}
+	
+	puget_metro_puget = {
+		icon = dense_city_gor
+		required_missions = { defend_the_heartland_puget }
+		position = 8
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = has_a_high_dev_four_building_in_high_puget
+				any_owned_province = {
+					development = 20
+					num_of_buildings_in_province = 4
+					area = high_puget_area
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_a_high_dev_four_building_in_low_puget
+				any_owned_province = {
+					development = 20
+					num_of_buildings_in_province = 4
+					area = low_puget_area
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_a_high_dev_four_building_in_olympic_peninsula
+				any_owned_province = {
+					development = 20
+					num_of_buildings_in_province = 4
+					area = olympic_penninsula_area
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = every_province_in_high_low_olympic_areas 
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_the_puget_metro_puget"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = high_puget_area
+							area = low_puget_area
+							area = olympic_penninsula_area
+						}
+					}
+					add_province_modifier = {
+						name = "gor_the_puget_metro_puget"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+puget_general_missions_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = U77
+	}
+	has_country_shield = yes
+	
+	reign_in_the_north_puget = {
+		icon = pacif_northwest_coastal_gor
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			area = high_puget_area
+			OR = {
+				NOT = { owned_by = ROOT }
+				religion = collectivist
+			}
+		}
+		trigger = {
+			high_puget_area = {
+				type = all
+				religion = ROOT
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			washington_cascades_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_red_removal_puget"
+				duration = 3650
+			}
+			custom_tooltip = if_we_bellingham_is_not_pugetite
+			tooltip = {
+				2067 = {
+					change_culture = seattlain
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						2067 = {
+							NOT = { culture = seattlian }
+						}
+					}
+					2067 = {
+						change_culture = seattlain
+					}
+				}
+			}
+		}
+	}
+	
+	rainiers_beauty_puget = {
+		icon = cascadian_army_gor
+		required_missions = { reign_in_the_north_puget }
+		position = 2
+		provinces_to_highlight = {
+			area = washington_cascades_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			2073 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_three_cascade_provs_pug
+					washington_cascades_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			inland_empire_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			colville_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			middle_columbia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = if_we_are_monarchy_puget
+			tooltip = {
+				add_casus_belli = {
+					target = U56
+					type = cb_restore_personal_union
+					months = 240
+				}
+			}
+			custom_tooltip = if_we_are_republic_puget
+			tooltip = {
+				add_adm_power = 50
+				add_dip_power = 50
+				add_mil_power = 50
+				add_country_modifier = {
+					name = "gor_columbian_intentions_puget"
+					duration = 7300
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						government = monarchy
+					}
+					add_casus_belli = {
+						target = U56
+						type = cb_restore_personal_union
+						months = 240
+					}
+				}
+				else = {
+					add_adm_power = 50
+					add_dip_power = 50
+					add_mil_power = 50
+					add_country_modifier = {
+						name = "gor_columbian_intentions_puget"
+						duration = 7300
+					}
+				}
+			}
+		}
+	}
+	
+	silence_colville_puget = {
+		icon = cannon_fire_gor
+		required_missions = { rainiers_beauty_puget }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4513
+				AND = {
+					region = washington_region
+					owned_by = Y41
+				}
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			4513 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			custom_trigger_tooltip = {
+				tooltip = colville_owns_no_provs_in_wash
+				washington_cascades_area = {
+					type = all
+					NOT = { owned_by = Y41 }
+				}
+			}
+		}
+		effect = {
+			4513 = {
+				add_province_modifier = {
+					name = "gor_colville_alloys_puget"
+					duration = -1
+				}
+			}
+			add_country_modifier = {
+				name = "gor_colville_farms_puget"
+				duration = 7300
+			}
+		}
+	}
+	
+	theanite_exile_puget = {
+		icon = burning_theanite_wheel_gor
+		required_missions = { silence_colville_puget tri_cities_puget }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4516
+				AND = {
+					region = washington_region
+					owner = {
+						religion = theanite
+					}
+				}
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			4516 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			custom_trigger_tooltip = {
+				tooltip = no_theanite_nation_owns_land_in_wash
+				washington_region = {
+					type = all
+					NOT = { 
+						owner = {
+							religion = theanite
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = { id = puget_events.5 }
+		}
+	}
+}
+
+###########################PUGET BRANCHING MISSIONS###########################
+
+puget_branching_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = U77
+		NOT = { has_reform = barony_reform }
+		NOT = { has_country_modifier = modernized_rule_puget }
+	}
+	has_country_shield = yes
+	
+	unknown_one_puget = {
+		icon = mission_unknown_mission
+		required_missions = { old_roads_new_roads_puget }
+		position = 3
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_depending_on_reviving_the_barons_event
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_depending_on_reviving_the_barons_event
+		}
+	}
+	
+	unknown_two_puget = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_one_puget }
+		position = 4
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_depending_on_reviving_the_barons_event
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_depending_on_reviving_the_barons_event
+		}
+	}
+	
+}
+
+puget_branching_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = U77
+		NOT = { has_reform = barony_reform }
+		NOT = { has_country_modifier = modernized_rule_puget }
+	}
+	has_country_shield = yes
+	
+	unknown_four_puget = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_one_puget salish_fleet_puget }
+		position = 4
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_depending_on_reviving_the_barons_event
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_depending_on_reviving_the_barons_event
+		}
+	}
+	
+	unknown_five_puget = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_four_puget }
+		position = 5
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_depending_on_reviving_the_barons_event
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_depending_on_reviving_the_barons_event
+		}
+	}
+}
+
+###########################PUGET BARON MISSIONS###########################
+
+puget_branching_nonbaron_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = U77
+		has_country_modifier = modernized_rule_puget
+	}
+	has_country_shield = yes
+	
+	
+	rigerous_governance_puget = {
+		icon = senator_writing_gor
+		required_missions = { old_roads_new_roads_puget }
+		position = 3
+		trigger = {
+			has_completed_idea_group_of_category = {
+				adm_ideas = yes
+			}
+			total_development = 150
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = has_three_level_three_adivsors
+					has_adm_advisor_3 = yes
+					has_dip_advisor_3 = yes
+					has_mil_advisor_3 = yes
+				}
+				custom_trigger_tooltip = {
+					tooltip = ruler_with_five_in_any_spot
+					OR = {
+						adm = 5
+						dip = 5
+						mil = 5
+					}
+				}
+			}
+		}
+		effect = {
+			add_legitimacy = 20
+			add_republican_tradition = 10
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 15
+			}
+			add_country_modifier = {
+				name = "gor_glut_of_talent_puget"
+				duration = 5475
+			}
+		}
+	}
+	
+	independence_streak_puget = {
+		icon = union_meetup_gor
+		required_missions = { rigerous_governance_puget defend_the_masses_puget }
+		position = 4
+		trigger = {
+			OR = {
+				emperor = {
+					NOT = { total_development = ROOT }
+				}
+				AND = {
+					emperor = {
+						NOT = {
+							has_opinion = {
+								who = ROOT
+								value = 0
+							}
+						}
+					}
+					is_part_of_hre = no
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = if_we_are_monarchy_no_space_puget
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_presidential_chance_puget"
+					duration = -1
+				}
+			}
+			custom_tooltip = if_we_are_republic_puget_or_not_in_empire
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_better_alone_puget"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						government = monarchy
+					}
+					add_country_modifier = {
+						name = "gor_presidential_chance_puget"
+						duration = -1
+					}
+				}
+				else_if = {
+					limit = {
+						OR = {
+							monarchy = republic
+							is_part_of_hre = no
+						}
+					}
+					add_country_modifier = {
+						name = "gor_better_alone_puget"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+puget_branching_nonbaron_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = U77
+		has_country_modifier = modernized_rule_puget
+	}
+	has_country_shield = yes
+	
+	
+	defend_the_masses_puget = {
+		icon = horseback_knight_gor
+		required_missions = { old_roads_new_roads_puget }
+		position = 3
+		trigger = {
+			army_tradition = 50
+			army_size = 40
+			custom_trigger_tooltip = {
+				tooltip = won_a_war_against_gp
+				any_great_power = {
+					ROOT = {
+						has_won_war_against = {
+							who = PREV
+							max_years_since = 100
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			tooltip = {
+				add_army_tradition = 15
+				add_country_modifier = {
+					name = "gor_educated_for_victory_puget"
+					duration = 5475
+				}
+			}
+			custom_tooltip = larger_army_then_prez_pug
+			tooltip = {
+				add_army_tradition = 30
+				add_country_modifier = {
+					name = "gor_educated_for_victory_puget"
+					duration = 10950
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						emperor = {
+							NOT = { army_size = ROOT } 
+						}
+					}
+					add_army_tradition = 30
+					add_country_modifier = {
+						name = "gor_educated_for_victory_puget"
+						duration = 10950
+					}
+				}
+				else = {
+					add_army_tradition = 15
+					add_country_modifier = {
+						name = "gor_educated_for_victory_puget"
+						duration = 5475
+					}
+				}
+			}
+		}
+	}
+}
+
+###########################PUGET BARON MISSIONS###########################
+
+puget_branching_baron_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = U77
+		has_reform = barony_reform
+	}
+	has_country_shield = yes
+	
+	restoring_the_dachs_puget = {
+		icon = dach_baron_gor
+		required_missions = { old_roads_new_roads_puget }
+		position = 3
+		trigger = {
+			OR = {
+				dynasty = "Dach"
+				custom_trigger_tooltip = {
+					tooltip = monarch_with_six_adm_dip_or_mil
+					OR = {
+						adm = 6
+						dip = 6
+						mil = 6
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = have_one_fifty_dev_and_ninty_crownland
+					total_development = 150
+					crown_land_share = 90
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = if_our_dynasty_is_not_dach
+			tooltip = {
+				set_dynasty = "Dach"
+			}
+			custom_tooltip = as_long_as_we_have_dach_dynasty
+			add_country_modifier = {
+				name = "gor_the_magnanimous_dachs_baron"
+				duration = -1
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = { dynasty = "Dach" }
+					}
+					set_dynasty = "Dach"
+				}
+			}
+		}
+	}
+	
+	presidents_or_bust_puget = {
+		icon = elector_voting_gor
+		required_missions = { restoring_the_dachs_puget }
+		position = 4
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_have_bribed_every_elector
+				all_elector = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = bribed_elector_baron_gor
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = imper_auth_and_reasons_to_elect_from_dip
+			tooltip = {
+				add_ruler_modifier = {
+					name = "gor_pug_boost_charismatic_baron"
+					duration = 7300
+				}
+			}
+			custom_tooltip = imper_auth_and_reasons_to_elect_from_dip_two
+			tooltip = {
+				add_imperial_influence = 3
+				add_ruler_modifier = {
+					name = "gor_charismatic_baron"
+					duration = 7300
+				}
+			}
+		}
+	}
+}
+
+puget_branching_baron_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = U77
+		has_reform = barony_reform
+	}
+	has_country_shield = yes
+	
+	the_siren_league_puget = {
+		icon = siren_league_gor
+		required_missions = { restoring_the_dachs_puget salish_fleet_puget }
+		position = 4
+		trigger = {
+			monthly_income = 15
+			2063 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			2063 = {
+				add_province_modifier = {
+					name = "gor_the_siren_league_puget"
+					duration = -1
+				}
+			}
+			custom_tooltip = admin_baron_ability_new_benefits
+			tooltip = {
+				add_base_production = 1
+			}
+		}
+	}
+	
+	interfere_in_the_bay_trade_puget = {
+		icon = merchant_with_gold_gor
+		required_missions = { the_siren_league_puget }
+		position = 5
+		trigger = {
+			1856 = {
+				has_privateer_share_in_trade_node = {
+					who = ROOT
+					share = 0.1
+				}
+			}
+			868 = {
+				has_privateer_share_in_trade_node = {
+					who = ROOT
+					share = 0.1
+				}
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_three_level_two
+					all_owned_province = {
+						province_has_center_of_trade_of_level = 2
+					}
+				}
+				amount = 3
+			}
+			any_owned_province = {
+				province_has_center_of_trade_of_level = 3
+			}
+		}
+		effect = {
+			add_legitimacy = 25
+			1856 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 18250
+					power = 30
+					key = puget_monopolies
+				}
+			}
+			868 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 18250
+					power = 30
+					key = puget_monopolies
+				}
+			}
+		}
+	}
+}
+
+###########################BOTTOM PUGET MISSIONS###########################
+
+puget_general_missions_slot_four_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = U77
+	}
+	has_country_shield = yes
+	
+	puget_fisheries_puget = {
+		icon = river_ship_gor
+		required_missions = { invewst_in_paper_industry_puget }
+		position = 7
+		provinces_to_highlight = {
+			region = washington_region
+			trade_goods = fish
+		}
+		trigger = {
+			development_in_provinces = {
+				value = 35
+				region = washington_region
+				trade_goods = fish
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_the_sounds_fishermen_puget"
+				duration = -1
+			}
+		}
+	}
+}

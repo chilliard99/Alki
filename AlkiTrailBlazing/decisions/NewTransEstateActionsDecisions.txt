@@ -1,0 +1,486 @@
+country_decisions = {
+	anafed_grant_lorship = {
+		color = { 195 160 20 }
+		potential = {
+			has_country_flag = willa_get_manorial_expansion
+			has_estate = estate_nobles
+		}
+		allow = {
+			has_not_any_estate_disaster_active = yes
+			NOT = {
+				any_owned_province = {
+					has_province_modifier = gor_new_manor_rep
+				}
+			}
+			NOT = { overextension_percentage = 0 }
+		}
+		effect = {
+			add_patriarch_authority = 0.03
+			custom_tooltip = explain_anafed_grant_lorship
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_new_manor_rep"
+					duration = 3650
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						NOT = { 
+							is_core = ROOT
+						}
+					}
+					add_province_modifier = {
+						name = "gor_new_manor_rep"
+						duration = 3650
+					}
+				}
+			}
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	anafed_raise_peoples_levy = {
+		color = { 195 160 20 }
+		potential = {
+			has_country_flag = willa_get_levy_decision
+			has_estate = estate_nobles
+		}
+		allow = {
+			has_not_any_estate_disaster_active = yes
+			NOT = {
+				capital_scope = {
+					has_province_modifier = gor_recently_raised_levy_rep
+				}
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = "gor_recently_raised_levy_rep"
+					duration = 5475
+				}
+				if = {
+					limit = {
+						owner = {
+							total_development = 1000
+						}
+					}
+					add_unit_construction = {
+						type = infantry
+						amount = 20
+						speed = 0
+						cost = 0
+					}
+				}
+				else_if {
+					limit = {
+						owner = {
+							total_development = 500
+						}
+					}
+					add_unit_construction = {
+						type = infantry
+						amount = 15
+						speed = 0
+						cost = 0
+					}
+				}
+				else_if {
+					limit = {
+						owner = {
+							total_development = 250
+						}
+					}
+					add_unit_construction = {
+						type = infantry
+						amount = 10
+						speed = 0
+						cost = 0
+					}
+				}
+				else_if {
+					limit = {
+						owner = {
+							total_development = 100
+						}
+					}
+					add_unit_construction = {
+						type = infantry
+						amount = 7
+						speed = 0
+						cost = 0
+					}
+				}
+				else_if {
+					limit = {
+						owner = {
+							total_development = 50
+						}
+					}
+					add_unit_construction = {
+						type = infantry
+						amount = 5
+						speed = 0
+						cost = 0
+					}
+				}
+				else {
+					add_unit_construction = {
+						type = infantry
+						amount = 3
+						speed = 0
+						cost = 0
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	demrep_five_year_plan_development = {
+		color = { 195 160 20 }
+		potential = {
+			has_country_flag = can_make_five_year_plans_rep
+			has_estate = estate_burghers
+		}
+		allow = {
+			has_not_any_estate_disaster_active = yes
+			NOT = { has_country_modifier = gor_five_year_plan_development_rep }
+			NOT = { has_country_modifier = gor_five_year_plan_land_maint_rep }
+			NOT = { has_country_modifier = gor_five_year_plan_ship_stuff_rep }
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_five_year_plan_development_rep"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	demrep_five_year_plan_land_maint = {
+		color = { 195 160 20 }
+		potential = {
+			has_country_flag = can_make_five_year_plans_rep
+			has_estate = estate_burghers
+		}
+		allow = {
+			has_not_any_estate_disaster_active = yes
+			NOT = { has_country_modifier = gor_five_year_plan_development_rep }
+			NOT = { has_country_modifier = gor_five_year_plan_land_maint_rep }
+			NOT = { has_country_modifier = gor_five_year_plan_ship_stuff_rep }
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_five_year_plan_land_maint_rep"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	demrep_five_year_plan_ship_stuff = {
+		color = { 195 160 20 }
+		potential = {
+			has_country_flag = can_make_five_year_plans_rep
+			has_estate = estate_burghers
+		}
+		allow = {
+			has_not_any_estate_disaster_active = yes
+			NOT = { has_country_modifier = gor_five_year_plan_development_rep }
+			NOT = { has_country_modifier = gor_five_year_plan_land_maint_rep }
+			NOT = { has_country_modifier = gor_five_year_plan_ship_stuff_rep }
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_five_year_plan_ship_stuff_rep"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	demrep_liquidate_cheese_stocks_stuff = {
+		color = { 195 160 20 }
+		potential = {
+			has_country_flag = can_get_decision_for_livestock_monay
+			has_estate = estate_nobles
+		}
+		allow = {
+			NOT = { has_country_modifier = gor_market_recovery_astoria }
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_market_recovery_astoria"
+				duration = 3650
+			}
+			add_years_of_owned_provinces_production_income = {
+				years = 5
+				trigger = {
+					trade_goods = livestock
+				}
+				custom_tooltip = get_monay_from_livestock_decision
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	demrep_reorganize_pastures_stuff = {
+		color = { 195 160 20 }
+		potential = {
+			has_country_flag = can_get_decision_for_livestock_monay
+			has_estate = estate_nobles
+		}
+		allow = {
+			NOT = { has_country_modifier = gor_cheesemonger_unity_astoria }
+			if = {
+				limit = {
+					livestock = 50
+				}
+				adm_power = 500
+			}
+			else_if = {
+				limit = {
+					livestock = 30
+				}
+				adm_power = 300
+			}
+			else_if = {
+				limit = {
+					livestock = 20
+				}
+				adm_power = 200
+			}
+			else_if = {
+				limit = {
+					livestock = 15
+				}
+				adm_power = 175
+			}
+			else_if = {
+				limit = {
+					livestock = 10
+				}
+				adm_power = 150
+			}
+			else_if = {
+				limit = {
+					livestock = 5
+				}
+				adm_power = 100
+			}
+			else = {
+				adm_power = 50
+			}
+		}
+		effect = {
+			custom_tooltip = this_scales_depending_on_num_of_livestock
+			if = {
+				limit = {
+					livestock = 50
+				}
+				add_adm_power = -500
+			}
+			else_if = {
+				limit = {
+					livestock = 30
+				}
+				add_adm_power = -300
+			}
+			else_if = {
+				limit = {
+					livestock = 20
+				}
+				add_adm_power = -200
+			}
+			else_if = {
+				limit = {
+					livestock = 15
+				}
+				add_adm_power = -175
+			}
+			else_if = {
+				limit = {
+					livestock = 10
+				}
+				add_adm_power = -150
+			}
+			else_if = {
+				limit = {
+					livestock = 5
+				}
+				add_adm_power = -100
+			}
+			else = {
+				add_adm_power = -50
+			}
+			tooltip = {
+				add_base_tax = 1
+			}
+			add_country_modifier = {
+				name = "gor_fromage_favorites_astoria"
+				duration = 9125
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = livestock
+					}
+					add_base_tax = 1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	demand_winery_tribute_oregon = {
+		color = { 195 160 20 }
+		potential = {
+			has_country_flag = can_enact_demand_winery_tribute_oregon
+			has_estate = estate_burghers
+		}
+		allow = {
+			NOT = { has_country_modifier = gor_grape_shortage_oregon } 
+		}
+		effect = {
+			add_years_of_owned_provinces_production_income = {
+				years = 10
+				trigger = {
+					trade_goods = wine
+				}
+				custom_tooltip = monay_from_wine_oregon
+			}
+			add_country_modifier = {
+				name = "gor_grape_shortage_oregon"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	demand_pressure_local_vinters_oregon = {
+		color = { 195 160 20 }
+		potential = {
+			has_country_flag = can_enact_pressure_vinters_oregon
+			has_estate = estate_burghers
+		}
+		allow = {
+			NOT = { has_country_modifier = gor_exhausted_wineries_oregon } 
+			if = {
+				limit = {
+					mission_completed = winelords_oregon
+				}
+				dip_power = 50
+			}
+			else = {
+				dip_power = 100
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					mission_completed = winelords_oregon
+				}
+				add_dip_power = -50
+			}
+			else = {
+				add_dip_power = -100
+			}
+			add_country_modifier = {
+				name = "gor_exhausted_wineries_oregon"
+				duration = 3650
+			}
+			custom_tooltip = every_wine_prov_gains_the_following 
+			tooltip = {
+				if = {
+					limit = {
+						mission_completed = winelords_oregon
+					}
+					add_province_modifier = {
+						name = "gor_pressured_vinters_two_oregon"
+						duration = 1825
+					}
+				}
+				else = {
+					add_province_modifier = {
+						name = "gor_pressured_vinters_oregon"
+						duration = 1825
+					}
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = wine
+					}
+					if = {
+						limit = {
+							mission_completed = winelords_oregon
+						}
+						add_province_modifier = {
+							name = "gor_pressured_vinters_two_oregon"
+							duration = 1825
+						}
+					}
+					else = {
+						add_province_modifier = {
+							name = "gor_pressured_vinters_oregon"
+							duration = 1825
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	
+	enact_veteran_recall_oregon = {
+		color = { 195 160 20 }
+		potential = {
+			has_country_flag = unlocks_the_recall_veterans_highdesert
+			has_estate = estate_nobles
+		}
+		allow = {
+			NOT = { has_country_modifier = gor_a_nation_at_war_highdesert } 
+		}
+		effect = {
+			create_general = { tradition = 100 }
+			add_country_modifier = {
+				name = "gor_a_nation_at_war_highdesert"
+				duration = 1825
+			}
+			custom_tooltip = winning_a_battle_now_grantss_highdesert
+			tooltip = {
+				change_estate_land_share = {
+					estate = estate_nobles
+					share = 0.25
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

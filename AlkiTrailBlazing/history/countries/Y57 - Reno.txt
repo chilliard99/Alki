@@ -1,0 +1,42 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = silveritte
+religion = partisan
+technology_group = western
+capital = 1871	 #Reno
+elector = yes
+religious_school = traditionalist_party
+set_country_flag = conservative_caucus
+
+1441.4.20 = {
+	monarch = {
+		name = "Jaxon III"
+		dynasty = "Ash"
+		birth_date = 1424.1.22
+		adm = 3
+		dip = 2
+		mil = 1
+	}
+	queen = {
+		name = "Mary"            
+		dynasty = "Ash"        
+		birth_date = 1424.10.15         
+		death_date = 1500.1.1
+		adm = 1                 
+		dip = 2                
+		mil = 2                
+		female = yes                
+	}
+	heir = {
+		name = "Seth"
+		monarch_name = "Seth"
+		dynasty = "Ash"
+		birth_date = 1439.5.5
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}

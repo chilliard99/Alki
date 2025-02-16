@@ -1,0 +1,605 @@
+namespace = willamette_events
+####################Willamette EVENTS##########################
+country_event = { #Willamette Assistance
+	id = willamette_events.1
+	title = willamette_events.1.t
+	desc = willamette_events.1.d
+	picture = CONQUEST_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		primary_culture = oregonite
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = willamette_events.1.a #Our Thanks to Them!
+		add_treasury = 100
+	}
+}
+
+country_event = { #The Shadow War
+	id = willamette_events.2
+	title = willamette_events.2.t
+	desc = willamette_events.2.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		tag = Y96
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = willamette_events.2.a #We are at war!
+		if = {
+			limit = {
+				stability = -1
+			}
+			add_stability = -2
+		}
+		else_if = {
+			limit = { 
+				stability = -2
+			}
+			add_stability = -1
+			add_adm_power = -100
+		}
+		else = {
+			add_adm_power = -200
+		}
+		country_event = { 
+			id = willamette_events.3 
+			days = 50
+		}
+		custom_tooltip = at_the_end_of_this_event_chain_gain
+		tooltip = {
+			if = {
+				limit = {
+					stability = 3
+				}
+				add_adm_power = 100
+			}
+			else = {
+				add_stability = 1
+			}
+			remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+			custom_tooltip = disables_sons_of_oregon_fo_everyone
+		}
+	}
+	option = {
+		name = willamette_events.2.b #Welcome back the lost children
+		custom_tooltip = explain_unlocking_soo_estate_privs_willamette
+		set_country_flag = integrating_the_sons_of_oregon
+	}
+}
+
+country_event = { #Traitors In Office
+	id = willamette_events.3
+	title = willamette_events.3.t
+	desc = willamette_events.3.d
+	picture = CORRUPTION_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = Y96
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = willamette_events.3.a #Purge the Royal Court
+		trigger = {
+			has_advisor = yes
+		}
+		if = {
+			limit = {
+				employed_advisor = {
+					category = ADM 
+				}
+			}
+			remove_advisor_by_category = ADM
+		}
+		if = {
+			limit = {
+				employed_advisor = {
+					category = DIP 
+				}
+			}
+			remove_advisor_by_category = DIP
+		}
+		if = {
+			limit = {
+				employed_advisor = {
+					category = MIL 
+				}
+			}
+			remove_advisor_by_category = MIL
+		}
+		add_country_modifier = {
+			name = "gor_advisors_purged_willamette"
+			duration = 1825
+		}
+		country_event = { 
+			id = willamette_events.4 
+			days = 50
+		}
+	}
+	option = {
+		name = willamette_events.3.b #Remove the Generals
+		trigger = {
+			num_of_generals = 1
+		}
+		custom_tooltip = remove_all_generals
+		add_army_tradition = -10
+		add_country_modifier = {
+			name = "gor_generals_removed_willamette"
+			duration = 1825
+		}
+		country_event = { 
+			id = willamette_events.4 
+			days = 50
+		}
+		hidden_effect = {
+			while = {
+				limit = {
+					num_of_generals = 1
+				}
+				kill_leader = { type = general }
+			}
+		}
+	}
+	option = {
+		name = willamette_events.3.c #Question Our Subjects
+		trigger = {
+			num_of_subjects = 1
+		}
+		custom_tooltip = every_subject_gains
+		tooltip = {
+			add_liberty_desire = 10
+		}
+		add_country_modifier = {
+			name = "gor_questioning_subjects_willamette"
+			duration = 1825
+		}
+		country_event = { 
+			id = willamette_events.4 
+			days = 50
+		}
+		hidden_effect = {
+			every_subject_country = {
+				add_liberty_desire = 10
+			}
+		}
+	}
+	option = {
+		name = willamette_events.3.e #Clamp Down On The Church
+		random_owned_province = {
+			limit = {
+				has_estate = estate_church
+			}
+			partisan_rebels = 10
+		}
+		add_country_modifier = {
+			name = "gor_angered_clergy_willamette"
+			duration = 1825
+		}
+		country_event = { 
+			id = willamette_events.4 
+			days = 50
+		}
+	}
+	option = {
+		name = willamette_events.3.f #Clamp Down On The Nobility
+		random_owned_province = {
+			limit = {
+				has_estate = estate_church
+			}
+			noble_rebels = 10
+		}
+		add_country_modifier = {
+			name = "gor_angered_nobility_willamette"
+			duration = 1825
+		}
+		country_event = { 
+			id = willamette_events.4 
+			days = 50
+		}
+	}
+}
+
+country_event = { #Sons of Oregon Uprising
+	id = willamette_events.4
+	title = willamette_events.4.t
+	desc = willamette_events.4.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = Y96
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					NOT = { is_capital = yes }
+				}
+				save_event_target_as = first_place_rebels_gonna_spawn_willamette
+			}
+			random_owned_province = {
+				limit = {
+					NOT = { is_capital = yes }
+					NOT = { province_id = first_place_rebels_gonna_spawn_willamette }
+				}
+				save_event_target_as = second_place_rebels_gonna_spawn_willamette
+			}
+		}
+	}
+	
+	option = {
+		name = willamette_events.4.a #Crush them!
+		goto = first_place_rebels_gonna_spawn_willamette
+		event_target:first_place_rebels_gonna_spawn_willamette = {
+			spawn_rebels = {
+				type = oregonian_rebels
+				size = 3
+				win = yes
+			}
+		}
+		event_target:second_place_rebels_gonna_spawn_willamette = {
+			spawn_rebels = {
+				type = oregonian_rebels
+				size = 1
+				win = yes
+			}
+		}
+		country_event = { 
+			id = willamette_events.5 
+			days = 50
+		}	
+	}
+}
+
+country_event = { #Filicide
+	id = willamette_events.5
+	title = willamette_events.5.t
+	desc = willamette_events.5.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = Y96
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = willamette_events.5.a #Peace has been restored.
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 100
+		}
+		else = {
+			add_stability = 1
+		}
+		remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+		custom_tooltip = disables_sons_of_oregon_fo_everyone
+		hidden_effect = {
+			set_global_flag = disabled_sons_of_oregon
+			california_superregion = {
+				limit = {
+					has_province_modifier = gor_inspired_to_rebellion_genorg
+				}
+				remove_province_modifier = gor_inspired_to_rebellion_genorg
+				if = {
+					limit = {
+						has_rebel_faction = oregonian_rebels
+					}	
+					clear_rebels = yes
+				}
+			}
+			every_known_country = {
+				limit = {
+					has_country_modifier = gor_oregonian_freedom_fighters_genorg
+				}
+				remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+				country_event = { id = oregonianmisc_events.7 }
+			}
+		}
+	}
+}
+
+country_event = { #The Soft Coup
+	id = willamette_events.6
+	title = willamette_events.6.t
+	desc = willamette_events.6.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+	
+	trigger = {
+		tag = Y96
+		NOT = { has_global_flag = disabled_sons_of_oregon }
+		OR = {
+			has_estate_privilege = heir_to_the_republic_reform
+			has_estate_privilege = popular_message_reform
+			has_estate_privilege = rebel_soldiers_reform
+			has_estate_privilege = regal_oversight_reform
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 100
+		modifier = {
+			factor = 0.5
+			has_estate_privilege = heir_to_the_republic_reform
+		}
+		modifier = {
+			factor = 0.5
+			has_estate_privilege = popular_message_reform
+		}
+		modifier = {
+			factor = 0.5
+			has_estate_privilege = rebel_soldiers_reform
+		}
+		modifier = {
+			factor = 0.5
+			has_estate_privilege = regal_oversight_reform
+		}
+	}
+	
+	option = {
+		name = willamette_events.6.a #Freedom For Oregon!
+		custom_tooltip = remove_isnpired_to_rebellion_from_all
+		hidden_effect = {
+			every_owned_province = {
+				remove_province_modifier = gor_inspired_to_rebellion_genorg
+			}
+		}
+		if = {
+			limit = {
+				any_known_country = {
+					OR = {
+						tag = U86
+						tag = U87
+					}
+				}
+			}
+			random_known_country = {
+				limit = {
+					OR = {
+						tag = U86
+						tag = U87
+					}
+				}
+				switch_tag = THIS
+				inherit = ROOT
+			}
+		}
+		else = {
+			remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+			if = {
+				limit = {
+					NOT = { government = republic }
+				}
+				change_government = republic
+			}
+			change_tag = U86
+			add_government_reform = revolutionary_oregonian_republic_reform
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			swap_non_generic_missions = yes
+			if = {
+				limit = {
+					NOT = { has_global_flag = oregonian_incident_happened }
+					is_part_of_hre = yes
+				}
+				set_global_flag = oregonian_incident_happened
+				emperor = {
+					country_event = { id = oregonianmisc_events.1 }
+				}
+			}
+			custom_tooltip = every_nation_in_the_union_of_cali_gains_neg_two_hundo_wit_us
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					add_opinion = {
+						who = ROOT
+						modifier = nation_of_radicals_gor
+					}
+				}
+			}
+		}
+		kill_ruler = yes
+	}
+}
+
+
+country_event = { #Reperative Justice
+	id = willamette_events.7
+	title = willamette_events.7.t
+	desc = willamette_events.7.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = Y96
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = willamette_events.7.a #It is what we are owed.
+		add_treasury = 500
+		custom_tooltip = all_oregonians_will_gain_five_hunreded_ducats
+		tooltip = {
+			add_treasury = 500
+		}
+		emperor = {
+			country_event = { 
+				id = willamette_events.8 
+				days = 5
+			}
+		}
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					primary_culture = oregonite
+				}
+				country_event = { 
+					id = willamette_events.9 
+				}
+			}
+		}
+	}
+}
+
+
+country_event = { #Pleas From Oregon
+	id = willamette_events.8
+	title = willamette_events.8.t
+	desc = willamette_events.8.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = willamette_events.8.a #Fund Their Request Ourselves
+		add_treasury = -500
+	}
+	option = {
+		name = willamette_events.8.b #Let the Imperials Deal With It
+		add_imperial_influence = -10
+	}
+}
+
+
+country_event = { #Recovery Funds
+	id = willamette_events.9
+	title = willamette_events.9.t
+	desc = willamette_events.9.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		primary_culture = oregonite
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = willamette_events.9.a #My thanks to the President!
+		add_treasury = 500
+	}
+}
+
+country_event = { #Oregon Oversight
+	id = willamette_events.10
+	title = willamette_events.10.t
+	desc = willamette_events.10.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = willamette_events.10.a #Can't we spin this?
+		add_ruler_modifier = {
+			name = "gor_oregonian_oversight_willamette"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Party Politics
+	id = willamette_events.11
+	title = willamette_events.11.t
+	desc = willamette_events.11.d
+	picture = NOBLE_ESTATE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = Y96
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = willamette_events.11.a #The Progressive Path Is True.
+		add_country_modifier = {
+			name = "gor_the_presidential_party_willamette"
+			duration = -1
+		}
+	}
+	option = {
+		name = willamette_events.11.b #We Need Traditionalism.
+		add_country_modifier = {
+			name = "gor_underdog_representation_willamette"
+			duration = -1
+		}
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -150
+		}
+		set_religious_school = {
+			group = constitutionalist_group
+			school = traditionalist_party
+		}
+	}
+}

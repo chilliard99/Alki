@@ -1,0 +1,17 @@
+#1048 - Udskoye
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y51
+controller = Y51
+add_core = Y51
+culture = hulapalucian
+religion = partisan
+capital = "Miyoo Gasan"
+trade_goods = wool #grand canyon ranchers
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 3
+is_city = yes

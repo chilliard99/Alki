@@ -1,0 +1,17 @@
+#1851 - Coimbra
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y85
+controller = Y85
+add_core = Y85
+culture = redwood
+religion = partisan
+capital = "Denny"
+trade_goods = naval_supplies #lumber
+hre = yes
+base_tax = 1	
+base_production = 1
+base_manpower = 1
+is_city = yes

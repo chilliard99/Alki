@@ -1,0 +1,61 @@
+namespace = california_colonial_events
+####################LINCOLNITE EVENTS##########################
+province_event = { #Dachian Culture Spreads
+	id = california_colonial_events.1
+	title = california_colonial_events.1
+	desc = california_colonial_events.1
+	picture = COLONIZATION_eventPicture
+	
+	trigger = {
+		owner = {
+			is_colonial_nation = yes
+			overlord = {
+				culture_group = cascadian
+			}
+		}
+		NOT = { culture = chinese_cascadian }
+		OR = {
+			colonial_region = colonial_the_middle_kingdom
+			colonial_region = colonial_huanan
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 25
+	}
+	
+	option = { #Interesting
+		name = california_colonial_events.1.a
+		change_culture = chinese_cascadian
+	}
+}
+
+province_event = { #Haigui Culture Spreads
+	id = california_colonial_events.2
+	title = california_colonial_events.2
+	desc = california_colonial_events.2
+	picture = COLONIZATION_eventPicture
+	
+	trigger = {
+		owner = {
+			is_colonial_nation = yes
+			overlord = {
+				culture_group = californian
+			}
+		}
+		NOT = { culture = chinese_californian }
+		OR = {
+			colonial_region = colonial_the_middle_kingdom
+			colonial_region = colonial_huanan
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 25
+	}
+	
+	option = { #Interesting
+		name = california_colonial_events.2.a
+		change_culture = chinese_californian
+	}
+}

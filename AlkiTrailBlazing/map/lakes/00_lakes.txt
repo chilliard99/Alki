@@ -1,0 +1,42 @@
+
+#Mono Lake
+lake = {
+	triangle_strip = { 944 1500 938 1508 949 1501 940 1505 950 1509 949 1510 }
+	height = 30
+	#height = 6
+}
+
+#Pyramid Lake
+lake = {
+	triangle_strip = { 936 1540 935 1543 940 1540 936 1550 941 1546 940 1550 }
+	height = 28
+	#height = 6
+}
+
+#Lake Tahoe
+lake = {
+	triangle_strip = { 929 1520 927 1525 933 1517 933 1528 937 1523 }
+	height = 29
+	#height = 6
+}
+
+#Great Salt Lake
+lake = {
+	triangle_strip = { 1030 1574 1049 1587 1029 1554 1063 1576 1044 1545 1065 1556 }
+	height = 26
+	#height = 6
+}
+
+#Siling Lake
+lake = {
+	triangle_strip = { 4163 1170 4168 1187 4186 1165 4191 1182 }
+	height = 43
+	#height = 3
+}
+`
+#Qinghai Lake
+lake = {
+	triangle_strip = { 4354 1262 4357 1281 4371 1256 4377 1280 4385 1255 4388 1271 }
+	height = 33
+	#height = 3
+}

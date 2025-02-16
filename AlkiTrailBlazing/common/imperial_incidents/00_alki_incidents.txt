@@ -1,0 +1,70 @@
+# default options are 0-based
+# In console, can use imperial_incident [key] to immediately begin an incident
+incident_oregonian_independence = {
+	event = oregonianmisc_events.2
+	default_option = 1
+	
+	can_stop = {
+		always = no
+	}
+	
+	0 = { #Give Up The Whole Region
+		factor = 1
+		modifier = {
+			factor = 5
+			has_country_modifier = gor_oregonian_freedom_fighters_genorg
+		}
+	}
+	
+	1 = { #Self Determination for Oregon
+		factor = 1
+		modifier = {
+			factor = 5
+			NOT = { has_country_modifier = gor_oregonian_freedom_fighters_genorg }
+			capital_scope = {
+				region = oregon_region
+			}
+		}
+		modifier = {
+			factor = 5
+			NOT = { has_country_modifier = gor_oregonian_freedom_fighters_genorg }
+			religious_school = {
+				group = constitutionalist_group
+				school = progressive_party
+			}
+		}
+	}
+}
+
+incident_two_union_problem = {
+	event = oregonianmisc_events.12
+	default_option = 1
+	
+	can_stop = {
+		always = no
+	}
+	
+	0 = { #Reign Them In
+		factor = 1
+		modifier = {
+			factor = 5
+			is_emperor = yes
+		}
+	}
+	
+	1 = { #Let It Go
+		factor = 1
+		modifier = {
+			factor = 5
+			NOT = { total_development = 50 }
+		}
+		modifier = {
+			factor = 5
+			capital_scope = {
+				region = washington_region
+			}
+		}
+	}
+}
+
+

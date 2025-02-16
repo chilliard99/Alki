@@ -1,0 +1,33 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = ensenadan
+religion = partisan
+technology_group = western
+capital = 2390	 #San Felipe
+religious_school = traditionalist_party
+set_country_flag = conservative_caucus
+
+1412.5.12 = {
+	monarch = {
+		name = "Pedro III"
+		dynasty = "Felipe"
+		birth_date = 1412.5.12
+		adm = 2
+		dip = 1
+		mil = 1
+	}
+}
+1439.5.16 = {
+	heir = {
+		name = "Martin"
+		monarch_name = "Martin"
+		dynasty = "Felipe"
+		birth_date = 1439.5.16
+		death_date = 1483.8.30
+		claim = 95
+		adm = 0
+		dip = 1
+		mil = 1
+	}
+}

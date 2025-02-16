@@ -1,0 +1,19 @@
+government = republic
+add_government_reform = oligarchy_reform
+government_rank = 1
+primary_culture = joaquin
+religion = partisan
+technology_group = western
+capital = 1757	 #Modesto
+religious_school = progressive_party
+set_country_flag = progressive_caucus
+
+1440.1.13 = {
+	monarch = {
+		name = "Julio"
+		dynasty = "Modesto"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}

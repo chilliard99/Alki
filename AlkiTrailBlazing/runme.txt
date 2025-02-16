@@ -1,0 +1,15 @@
+oregon_region = {
+	limit = {
+		NOT = { owned_by = Y88 }
+	}
+	cede_province = Y88
+	add_core = Y88
+}
+
+washington_region = {
+	limit = {
+		NOT = { owned_by = Y88 }
+	}
+	cede_province = Y88
+	add_core = Y88
+}

@@ -1,0 +1,35 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = neofilipino
+religion = espiritismo  
+technology_group = indian 
+capital = 2910	#Samar
+unlock_cult = candomble_denom
+unlock_cult = anitism_denom
+unlock_cult = umbanda_denom
+set_country_flag = has_a_cult_unlocked
+ 
+1405.2.12 = {
+	monarch = {
+		name = "Eladio"
+		dynasty = "Daza"
+		birth_date = 1405.2.12
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1426.3.16 = {
+	heir = {
+		name = "Gabriel"
+		monarch_name = "Gabriel"
+		dynasty = "Daza"
+		birth_date = 1426.3.16
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 4
+	}
+}

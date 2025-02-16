@@ -1,0 +1,19 @@
+#1072 - Obdorsk
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y72
+controller = Y72
+add_core = Y72
+culture = joaquin
+religion = partisan
+capital = "Stockton"
+trade_goods = grain #Joaquin Farms
+hre = yes
+base_tax = 7
+base_production = 6
+base_manpower = 6
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

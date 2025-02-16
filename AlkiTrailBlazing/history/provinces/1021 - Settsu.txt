@@ -1,0 +1,19 @@
+#1021 - Settsu
+discovered_by = chinese
+owner = X29
+controller = X29
+add_core = X29
+culture = wajin
+religion = neoshinto
+capital = "Naniwa"
+trade_goods = chinaware #ancient pottery museum
+hre = no
+base_tax = 10
+base_manpower = 10
+base_production = 3
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman
+fort_15th = yes
+center_of_trade = 2
+add_province_triggered_modifier = shrine_of_nishinomiya

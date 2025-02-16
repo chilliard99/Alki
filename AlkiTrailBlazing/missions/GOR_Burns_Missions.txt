@@ -1,0 +1,683 @@
+###########################BURNS MISSIONS###########################
+burns_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y88
+	}
+	has_country_shield = yes
+	
+	strike_at_the_snakes_burns = {
+		icon = snake_noble_gor
+		required_missions = { consolidate_the_highdesert_burns }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2032
+				province_id = 2031 
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			2032 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2031 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			north_snake_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			add_army_tradition = 15
+			add_country_modifier = {
+				name = "gor_hard_fought_lessons_burns"
+				duration = 3650
+			}
+		}
+	}
+	
+	reach_the_columbia_burns = {
+		icon = columbia_river_gor
+		required_missions = { strike_at_the_snakes_burns }
+		position = 4
+		provinces_to_highlight = {
+			province_id = 2037 
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			2037 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			add_mercantilism = 3
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_imperial_riches_burns"
+					duration = 9125
+				}
+			}
+			custom_tooltip = if_we_own_all_provs_in_north_south_blue_org_burns
+			hidden_effect = {
+				if = {
+					limit = {
+						blue_oregon_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						south_snake_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						north_snake_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+					add_country_modifier = {
+						name = "gor_imperial_riches_burns"
+						duration = -1
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = "gor_imperial_riches_burns"
+						duration = 9125
+					}
+				}
+			}
+		}
+	}
+	
+	crooked_conquest_burns = {
+		icon = morrow_crook_gor
+		required_missions = { reach_the_columbia_burns }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2038
+				province_id = 2040
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			2038 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2040 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 10
+			}
+			add_ruler_modifier = {
+				name = "gor_boonielord_burns"
+				duration = -1
+			}
+		}
+	}
+}
+	
+burns_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y88
+	}
+	has_country_shield = yes
+	
+	defensive_forces_burns = {
+		icon = origination_army_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			manpower_percentage = 0.9
+			army_size_percentage = 0.9
+		}
+		effect = {
+			highdesert_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			create_general = { tradition = 50 }
+		}
+	}
+	
+	consolidate_the_highdesert_burns = {
+		icon = highdesert_gor
+		required_missions = { defensive_forces_burns }
+		position = 2
+		provinces_to_highlight = {
+			area = highdesert_area 
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+			NOT = { owned_by = Y47 }
+		}
+		trigger = {
+			highdesert_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					owned_by = Y47
+				}
+			}
+			development_in_provinces = {
+				value = 30
+				area = highdesert_area
+			}
+		}
+		effect = {
+			south_snake_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			blue_oregon_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = every_province_in_the_highdesert_gains_burns
+			tooltip = {
+				add_base_manpower = 1
+			}
+			hidden_effect = {
+				highdesert_area = {
+					add_base_manpower = 1
+				}
+			}
+		}
+	}
+	
+	greeting_the_utahns_burns = {
+		icon = trueheir_cannon_gor
+		required_missions = { consolidate_the_highdesert_burns }
+		position = 3
+		provinces_to_highlight = {
+			area = south_snake_area 
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			OR = {
+				calc_true_if = {
+					custom_trigger_tooltip = {
+						tooltip = own_two_provs_in_sout_snake_burns
+						south_snake_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+					amount = 2
+				}
+				custom_trigger_tooltip = {
+					tooltip = bordering_utah_burns
+					border_distance = {
+						who = Y32
+						distance = 0
+					}
+				}
+			}
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "gor_sacramental_defense_burns"
+				duration = 5475
+			}
+			custom_tooltip = if_we_own_every_province_in_south_snake_burns
+			tooltip = {
+				add_adm_power = 50
+				add_dip_power = 50
+				add_mil_power = 50
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						south_snake_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+					add_adm_power = 50
+					add_dip_power = 50
+					add_mil_power = 50
+				}
+			}
+		}
+	}
+	
+	deschutes_domination_burns = {
+		icon = trueheir_knight_gor
+		required_missions = { reach_the_columbia_burns }
+		position = 5
+		provinces_to_highlight = {
+			area = bend_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			bend_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			2063 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 3650
+					power = 20
+					key = downstream_influence_burns
+				}
+			}
+			add_country_modifier = {
+				name = "gor_veins_of_the_northwest_burns"
+				duration = 9125
+			}
+		}
+	}
+	
+	a_real_inland_empire_burns = {
+		icon = trueheir_chieftan_gor
+		required_missions = { deschutes_domination_burns crooked_conquest_burns }
+		position = 6
+		provinces_to_highlight = {
+			province_id = 4516
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			4516 = {
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			}
+		}
+		effect = {	
+			define_advisor = {
+				type = trader
+				skill = 3
+				cost_multiplier = 0.25
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_true_inland_empire_burns"
+					duration = -1
+				}
+			}
+			custom_tooltip = if_we_stil_have_veins_of_the_northwest_gain_instead
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_better_true_inland_empire_burns"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_modifier = gor_veins_of_the_northwest_burns
+					}
+					add_country_modifier = {
+						name = "gor_better_true_inland_empire_burns"
+						duration = -1
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = "gor_true_inland_empire_burns"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+burns_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y88
+	}
+	has_country_shield = yes
+	
+	religious_aptitude_burns = {
+		icon = trueheir_woman_praying_gor
+		required_missions = { consolidate_the_highdesert_burns paiute_tribes_burns }
+		position = 3
+		trigger = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = have_invited_a_progressive_representative
+					has_country_modifier = progressive_party_modifier
+				}
+				calc_true_if = {
+					custom_trigger_tooltip = {
+						tooltip = have_two_traditionalist_allies
+						all_ally = {
+							religious_school = {
+								group = constitutionalist_group
+								school = traditionalist_party
+							}
+						}
+					}
+					amount = 2
+				}
+			}
+			OR = {
+				temple = 3
+				cathedral = 3
+			}
+		}
+		effect = {	
+			country_event = { id = burns_events.1 }
+		}
+	}
+	
+	industrious_expansion_burns = {
+		icon = crane_gor
+		required_missions = { religious_aptitude_burns }
+		position = 4
+		trigger = {
+			OR = {
+				marketplace = 3
+				stock_exchange = 3
+				trade_depot = 3
+			}
+			OR = {
+				workshop = 3
+				counting_house = 3
+			}
+		}
+		effect = {	
+			custom_tooltip = every_province_in_highdesert_are_gains_burnss
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_highdesert_production_burns"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				highdesert_area = {
+					add_province_modifier = {
+						name = "gor_highdesert_production_burns"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+burns_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y88
+	}
+	has_country_shield = yes
+	
+	paiute_tribes_burns = {
+		icon = paiute_woman_gor
+		required_missions = { multicultured_state_burns }
+		position = 2
+		trigger = {
+			has_government_power = {
+				mechanic_type = gor_trueheir_confederacy
+				power_type = trueheir_band_unity
+				value = 10
+			}
+		}
+		effect = {
+			add_adm_power = 75
+			add_inflation = -1
+			define_advisor = {
+				type = master_of_mint
+				skill = 2
+				cost_multiplier = 0.75
+			}
+		}
+	}
+	
+	trueheir_networking_burns = {
+		icon = chieftans_meeting_gor
+		required_missions = { paiute_tribes_burns }
+		position = 3
+		provinces_to_highlight = {
+			owner = {
+				culture_group = western_true_heir 
+				NOT = { tag = ROOT } 
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = allies_wit_da_trueheir_culture_group_burns
+					all_ally = {
+						culture_group = western_true_heir
+					}
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			if = { 
+				limit = {
+					dip = 6
+				}
+				add_dip_power = 150
+			}
+			else = {
+				change_dip = 1
+			}
+			north_orria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = gain_ten_favors_wit_every_trueheir_ally
+			hidden_effect = {
+				every_ally = {
+					limit = {
+						culture_group = western_true_heir
+					}
+					ROOT = {
+						add_favors = {
+						   who = PREV
+						   amount = 10
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	the_mighty_ducks_burns = {
+		icon = duck_valley_duck_gor
+		required_missions = { trueheir_networking_burns religious_aptitude_burns }
+		position = 4
+		provinces_to_highlight = {
+			area = north_orria_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			OR = {
+				north_orria_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				AND = {
+					Y47 = {
+						alliance_with = ROOT
+						owes_favors = { 
+							who = ROOT
+							value = 50 
+						}
+					}
+				}
+				
+			}
+		}
+		effect = {
+			custom_tooltip = if_we_are_allied_with_duck_valley
+			tooltip = {
+				country_event = { id = burns_events.2 }
+			}
+			custom_tooltip = otherwiseee_burns
+			tooltip = {
+				add_inflation = -2
+				add_country_modifier = {
+					name = "gor_orrian_scarcity_burns"
+					duration = 7300
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						alliance_with = Y47
+					}
+					country_event = { id = burns_events.2 }
+				}
+				else = {
+					add_inflation = -2
+					add_country_modifier = {
+						name = "gor_orrian_scarcity_burns"
+						duration = 7300
+					}
+				}
+			}
+		}
+	}
+	
+	the_numu_path_burns = {
+		icon = trueheir_handshake_gor
+		required_missions = { the_mighty_ducks_burns }
+		position = 5
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = any_nation_supports_us_for_prez_burns
+				any_elector = {
+					preferred_emperor = ROOT
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = "FILL THIS IN LATER MY MAN"
+		}
+	}
+}
+
+burns_missions_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y88
+	}
+	has_country_shield = yes
+	
+	multicultured_state_burns = {
+		icon = calif_and_trueheir_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			accepted_culture = highoregonean
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_taxing_the_californians_burns"
+				duration = 3650
+			}
+			custom_tooltip = every_prov_with_high_oregonian_cult_gains
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_high_oregonian_acceptance_burns"
+					duration = 9125
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						culture = highoregonean
+					}
+					add_province_modifier = {
+						name = "gor_high_oregonian_acceptance_burns"
+						duration = 9125
+					}
+				}
+			}
+		}
+	}
+	
+	fate_of_the_oregonians_burns = {
+		icon = beaver_gor
+		required_missions = { multicultured_state_burns }
+		position = 2
+		provinces_to_highlight = {
+			culture = highoregonean
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provs_with_oregonian_burns
+					all_owned_province = {
+						culture = highoregonean
+					}
+				}
+				amount = 6
+			}
+			capital_scope = {
+				development = 20
+			}
+		}
+		effect = {
+			country_event = { id = burns_events.6 }
+		}
+	}
+	
+	golden_opportunity_burns = {
+		icon = gold_gor
+		required_missions = { the_mighty_ducks_burns }
+		position = 5
+		provinces_to_highlight = {
+			province_id = 2482
+		}
+		trigger = {
+			2482 = {
+				base_production = 7
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			2482 = {
+				add_province_modifier = {
+					name = "gor_golden_hills_of_oregon_burns"
+					duration = 9125
+				}
+			}
+		}
+	}
+}

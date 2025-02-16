@@ -1,0 +1,24 @@
+spriteTypes = {
+
+### GOR Monuments ###
+	
+	spriteType = {
+		name = "GFX_great_project_three_peasents_cathedral"
+		texturefile = "gfx//interface//monuments//three_peasents_cathedral.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_great_tahoma"
+		texturefile = "gfx//interface//monuments//great_tahoma.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_old_disappointment"
+		texturefile = "gfx//interface//monuments//old_disappointment.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_astoria_university"
+		texturefile = "gfx//interface//monuments//astoria_university.dds"
+	}
+}

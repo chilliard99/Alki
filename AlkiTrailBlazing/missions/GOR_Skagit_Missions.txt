@@ -1,0 +1,926 @@
+###########################SKAGIT MISSIONS###########################
+skagit_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = U59
+	}
+	has_country_shield = yes
+		
+	serving_the_suits_skagit = {
+		icon = elector_voting_gor
+		required_missions = { president_or_chief_skagit }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4501
+				province_id = 4513
+				province_id = 4516
+			}
+			NOT = { owned_by = ROOT }
+			NOT = { is_part_of_hre = yes }
+		}
+		trigger = {
+			4501 = {
+				is_part_of_hre = yes
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4513 = {
+				is_part_of_hre = yes
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4516 = {
+				is_part_of_hre = yes
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = gain_opinion_with_emperor_and_electors_skagit
+			tooltip = {
+				emperor = {
+					add_imperial_influence = 10
+				}
+			}
+			add_country_modifier = {
+				name = "presidential_assurance_skagit"
+				duration = 3650
+			}
+			custom_tooltip = if_we_are_lincolnite_culture
+			tooltip = {
+				4501 = {
+					change_culture = lincolnite
+				}
+				4513 = {
+					change_culture = lincolnite
+				}
+				4516 = {
+					change_culture = lincolnite
+				}
+			}
+			hidden_effect = {
+				emperor = {
+					add_opinion = {
+						who = ROOT
+						modifier = conquest_of_washington_emperor_skagit
+					}
+					country_event = { id = skagit_events.4 }
+				}
+				every_elector = {
+					add_opinion = {
+						who = ROOT
+						modifier = conquest_of_washington_elector_skagit
+					}
+				}
+				if = {
+					limit = {
+						primary_culture = lincolnite
+					}
+					4501 = {
+						change_culture = lincolnite
+					}
+					4513 = {
+						change_culture = lincolnite
+					}
+					4516 = {
+						change_culture = lincolnite
+					}
+				}
+			}
+		}
+	}
+	
+	the_founders_faith_skagit = {
+		icon = constitutionalist_pray_gor
+		required_missions = { serving_the_suits_skagit }
+		position = 3
+		provinces_to_highlight = {
+			region = washington_region
+			NOT = { religion = partisan }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provs_that_are_partisan_in_washington_and_owned_by_us
+					washington_region = {
+						type = all
+						religion = partisan
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 15
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "constitutional_washington_skagit"
+				duration = 18250
+			}
+			add_corruption = -2
+			add_yearly_manpower = 2
+		}
+	}
+	
+	striking_at_the_elector_skagit = {
+		icon = union_scrape_gor
+		required_missions = { land_of_lincoln_skagit }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2068
+				province_id = 2486
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			2068 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2486 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			willapa_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = {
+					stability = 3
+				}
+				add_adm_power = 150
+			}
+			else {
+				add_stability = 1
+			}
+			custom_tooltip = if_helens_is_our_subj_and_an_elector
+			tooltip = {
+				inherit = U56
+				add_dip_power = 150
+				custom_tooltip = make_us_an_elector
+				elector = ROOT
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						U56 = {
+							is_subject_of = ROOT
+							is_elector = yes
+						}
+					}
+					inherit = U56
+					add_dip_power = 150
+					elector = ROOT
+				}
+			}
+		}
+	}
+	
+	the_bay_of_willapa_skagit = {
+		icon = knight_by_river_gor
+		required_missions = { striking_at_the_elector_skagit }
+		position = 6
+		provinces_to_highlight = {
+			province_id = 2046
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			2046 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mercantilism = 3
+			2046 = {
+				add_unit_construction = {
+					type = heavy_ship
+					amount = 5
+					speed = 0.1
+					cost = 0
+				}
+				add_province_modifier = {
+					name = "willapa_management_skagit"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+skagit_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = U59
+	}
+	has_country_shield = yes
+	
+	president_or_chief_skagit = {
+		icon = prez_sitting_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			OR = {
+				calc_true_if = {
+					custom_trigger_tooltip = {
+						tooltip = have_two_allies_in_uoc
+						all_ally = {
+							is_part_of_hre = yes
+						}
+					}
+					amount = 2
+				}
+				custom_trigger_tooltip = {
+					tooltip = "Branching path to be added in future update"
+					always = no
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = if_we_complete_this_mission_while_two_uoc_allies
+			tooltip = {
+				if = {
+					limit = {
+						piety = 0
+					}
+					add_piety = 0.15
+					
+				}
+				capital_scope = {
+					add_province_modifier = {
+						name = "union_support_skagit"
+						duration = -1
+					}
+				}
+			}
+			custom_tooltip = else_do_other
+			tooltip = {
+				add_yearly_manpower = 1
+				define_advisor = {
+					type = recruitmaster
+					skill = 2
+					cost_multiplier = 0.75
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						calc_true_if = {
+							all_ally = {
+								is_part_of_hre = yes
+							}
+							amount = 2
+						}
+					}
+					set_country_flag = UOC_skagit_route
+					if = {
+						limit = {
+							piety = 0
+						}
+						add_piety = 0.05
+						
+					}
+					capital_scope = {
+						add_province_modifier = {
+							name = "union_support_skagit"
+							duration = -1
+						}
+					}
+				}
+				else = {
+					#CHANGE THIS FOR PLAINWALKER UPDATE WHEN YOU DO THAT
+				}
+			}
+		}
+	}
+	
+	encourage_migration_skagit = {
+		icon = caravan_gor
+		required_missions = { president_or_chief_skagit }
+		position = 2
+		trigger = {
+			development_in_provinces = {
+				value = 20
+				OR = {
+					province_id = 2484
+					province_id = 4507
+				}
+			}
+		}
+		effect = {
+			country_event = { id = skagit_events.1 }
+		}
+	}
+	
+	californication_skagit = {
+		icon = pioneer_peasant_gor
+		required_missions = { encourage_migration_skagit }
+		position = 3
+		trigger = {
+			any_owned_province = {
+				culture = lincolnite
+			}
+		}
+		effect = {
+			custom_tooltip = gain_lincolnite_culture_for_free
+			custom_tooltip = if_we_lincolnite_get_instead
+			tooltip = {
+				if = {
+					limit = {
+						dip = 6
+					}
+					add_dip_power = 150
+				}
+				else {
+					change_dip = 1
+				}
+				add_country_modifier = {
+					name = "pioneer_spirit_skagit"
+					duration = 7300
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						primary_culture = lincolnite
+					}
+					if = {
+						limit = {
+							dip = 6
+						}
+						add_dip_power = 150
+					}
+					else {
+						change_dip = 1
+					}
+					add_country_modifier = {
+						name = "pioneer_spirit_skagit"
+						duration = 7300
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = "lincolnite_acceptance_skagit"
+						hidden = yes
+						duration = -1
+					}
+					add_accepted_culture = lincolnite
+				}
+			}
+		}
+	}
+	
+	land_of_lincoln_skagit = {
+		icon = lincoln_flag_gor
+		required_missions = { the_founders_faith_skagit californication_skagit challenge_colville_skagit fields_of_plenty_skagit }
+		position = 4
+		trigger = {
+			tag = U76
+		}
+		effect = {
+			add_prestige = 15
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 10
+			}
+			add_ruler_modifier = {
+				name = "lord_of_lincoln_skagit"
+				duration = -1
+			}
+			high_puget_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			low_puget_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			middle_columbia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	channel_to_the_sea_skagit = {
+		icon = cascadian_coastal_wall_gor
+		required_missions = { land_of_lincoln_skagit }
+		position = 5
+		provinces_to_highlight = {
+			has_port = yes
+			region = washington_region
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			2067 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = four_ports_in_washington
+					washington_cascades_area = {
+						type = all
+						has_port = yes
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			add_sailors = 1000
+			define_advisor = {
+				type = naval_reformer
+				skill = 3
+				cost_multiplier = 0.5
+			}
+		}
+	}
+}
+
+skagit_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = U59
+	}
+	has_country_shield = yes
+	
+	
+	flowers_of_snohomish_skagit = {
+		icon = tulip_field_gor
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			province_id = 4507
+		}
+		trigger = {
+			4507 = {
+				country_or_non_sovereign_subject_holds = ROOT
+				base_manpower = 5
+				has_building = marketplace
+			}
+		}
+		effect = {
+			add_mercantilism = 3
+			4507 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 3650
+					power = 15
+					key = flowery_commerce_skagit
+				}
+			}
+		}
+	}
+	
+	tulip_mania_skagit = {
+		icon = tulip_dollar_gor
+		required_missions = { flowers_of_snohomish_skagit }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4507
+				province_id = 4516
+				province_id = 2063
+			}
+		}
+		trigger = {
+			stability = 2
+			4507 = {
+				development = 15
+			}
+			4516 = {
+				trade_share = {
+					country = ROOT
+					share = 30
+				}
+			}
+			2063 = {
+				trade_share = {
+					country = ROOT
+					share = 30
+				}
+			}
+			OR = {
+				full_idea_group = economic_ideas
+				full_idea_group = trade_ideas
+			}
+		}
+		effect = {
+			country_event = { id = skagit_events.5 }
+		}
+	}
+	
+	conquer_puget_cities_skagit = {
+		icon = seattle_gor
+		required_missions = { land_of_lincoln_skagit }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = low_puget_area
+				area = high_puget_area
+			}
+			development = 15
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = three_fifteen_dev_provs_high_low_puget
+					low_puget_area = {
+						type = all
+						development = 15
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					high_puget_area = {
+						type = all
+						development = 15
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			middle_columbia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = if_we_own_seattle_skag
+			tooltip = {
+				2063 = {
+					add_center_of_trade_level = 1
+				}
+			}
+			custom_tooltip = if_the_cot_is_three
+			tooltip = {
+				add_years_of_income = 3
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						2063 = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+					if = {
+						limit = {
+							2063 = {
+								province_has_center_of_trade_of_level = 3
+							}
+						}
+						add_years_of_income = 3
+					}
+					else = {
+						2063 = {
+							add_center_of_trade_level = 1
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	olympic_task_skagit = {
+		icon = knight_in_evergreen_forest_gor
+		required_missions = { conquer_puget_cities_skagit }
+		position = 6
+		provinces_to_highlight = {
+			area = olympic_penninsula_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			olympic_penninsula_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+			tooltip = {
+				add_country_modifier = {
+					name = "lessons_of_puget_skagit"
+					duration = 9125
+				}
+			}
+			custom_tooltip = if_we_own_all_of_puget_double_the_time_skag
+			hidden_effect = {
+				if = {
+					limit = {
+						olympic_penninsula_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						high_puget_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						low_puget_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+					add_country_modifier = {
+						name = "lessons_of_puget_skagit"
+						duration = 18250
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = "lessons_of_puget_skagit"
+						duration = 9125
+					}
+				}
+			}
+		}
+	}
+}
+
+skagit_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = U59
+	}
+	has_country_shield = yes
+	
+	gather_forces_skagit = {
+		icon = horseback_knight_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			army_size = 0.9
+			has_mil_advisor = yes
+		}
+		effect = {
+			custom_tooltip = gain_claims_on_all_wash_provs_not_in_UOC
+			add_country_modifier = {
+				name = "reclamation_desire_skagit"
+				duration = 7300
+			}
+			hidden_effect = {
+				washington_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_part_of_hre = yes }
+					}
+					add_permanent_claim = ROOT
+				}
+				
+			}
+		}
+	}
+	
+	challenge_colville_skagit = {
+		icon = burning_theanite_wheel_gor
+		required_missions = { gather_forces_skagit }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4513
+				owned_by = Y41
+			}
+			region = washington_region
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			total_development = Y41
+			4513 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 15
+			}
+			add_mil_power = 50
+			custom_tooltip = if_colville_does_not_exist
+			tooltip = {
+				if = {
+					limit = {
+						mil = 6
+					}
+					add_mil_power = 150
+				}
+				else = {
+					change_mil = 1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = { exists = Y41 }
+					}
+					if = {
+						limit = {
+							mil = 6
+						}
+						add_mil_power = 150
+					}
+					else = {
+						change_mil = 1
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+skagit_missions_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = U59
+	}
+	has_country_shield = yes
+	
+	into_the_cascades_skagit = {
+		icon = cascadian_army_gor
+		required_missions = { gather_forces_skagit }
+		position = 2
+		provinces_to_highlight = {
+			area = washington_cascades_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_four_provinces_in_wash_cascades
+					washington_cascades_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = every_mount_we_own_in_wash_gains
+			tooltip = {
+				add_base_manpower = 1
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_terrain = mountain
+						region = washington_region
+					}
+					add_base_manpower = 1
+				}
+			}
+		}
+	}
+	
+	fields_of_plenty_skagit = {
+		icon = yakama_valley_gor
+		required_missions = { into_the_cascades_skagit }
+		position = 3
+		provinces_to_highlight = {
+			region = washington_region
+			has_terrain = grasslands
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			4516 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = four_grassland_provs_in_washington
+					washington_region = {
+						type = all
+						has_terrain = grasslands
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 5
+			}
+		}
+		effect = {
+			add_mercantilism = 5
+			4516 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 3650
+					power = 25
+					key = fields_of_plenty_skagit
+				}
+				tooltip = {
+					add_center_of_trade_level = 1
+				}
+			}
+			custom_tooltip = if_spokane_cot_is_level_three
+			tooltip = {
+				4516 = {
+					add_base_production = 3
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						4516 = {
+							province_has_center_of_trade_of_level = 3
+						}	
+					}
+					4516 = {
+						add_base_production = 3
+					}
+				}
+				else = {
+					4516 = {
+						add_center_of_trade_level = 1
+					}	
+				}
+			}
+		}
+	}
+	
+	boost_inland_agriculture_skagit = {
+		icon = peasant_farming_gor
+		required_missions = { fields_of_plenty_skagit }
+		position = 4
+		provinces_to_highlight = {
+			region = washington_region
+			trade_goods = grain
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = four_grain_provs_in_wash_with_five_man
+					washington_region = {
+						type = all
+						trade_goods = grain
+						base_manpower = 5
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			add_years_of_owned_provinces_production_income = {
+				years = 10
+				trigger = {
+					OR = {
+						trade_goods = grain
+					}
+				}
+				custom_tooltip = income_from_grain_skag
+			}
+			custom_tooltip = every_grain_prov_owned_by_us_five_dev_wash
+			tooltip = {
+				add_province_modifier = {
+					name = "inland_agriculture_skagit"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						region = washington_region
+						trade_goods = grain
+						base_manpower = 5
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_province_modifier = {
+						name = "inland_agriculture_skagit"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}

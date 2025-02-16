@@ -1,0 +1,573 @@
+namespace = astoria_events
+####################ASTORIAN EVENTS##########################
+country_event = { #Tillamook Cooperative
+	id = astoria_events.1
+	title = astoria_events.1.t
+	desc = astoria_events.1.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = Y90
+			tag = U83
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = astoria_events.1.a #Side with the Workers
+		custom_tooltip = unlock_estate_privledges_for_cheesecoop
+		add_country_modifier = {
+			name = "gor_cheesemakers_cooperative_astoria"
+			duration = -1
+		}
+	}
+	option = {
+		name = astoria_events.1.b #Side with the Cheeselords
+		custom_tooltip = unlock_estate_privledge_for_cheeselords
+		add_country_modifier = {
+			name = "gor_cheeselords_appeased_astoria"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #The Heritage of Coboway
+	id = astoria_events.2
+	title = astoria_events.2.t
+	desc = astoria_events.2.d
+	picture = northamericagfx_COURT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = Y90
+			tag = U83
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = astoria_events.2.a #I Am Oregonian
+		set_dynasty = "Astor"
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 150
+		}
+		else = {
+			add_stability = 1
+		}
+		change_adm = 1
+		change_dip = 1
+		change_mil = 1
+		set_country_flag = we_get_non_pomo_astoria
+		swap_non_generic_missions = yes
+	}
+	option = {
+		name = astoria_events.2.b #I Am Pomo
+		add_stability = -5
+		change_primary_culture = pomo
+		set_ruler_culture = pomo
+		capital_scope = {
+			change_culture = pomo
+		}
+		change_adm = 3
+		change_dip = 3
+		change_mil = 3
+		swap_non_generic_missions = yes
+	}
+}
+
+country_event = { #Republican Legacy
+	id = astoria_events.3
+	title = astoria_events.3.t
+	desc = astoria_events.3.d
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = Y90
+			tag = U83
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = astoria_events.3.a #Freedom for Oregon!
+		custom_tooltip = remove_isnpired_to_rebellion_from_all
+		hidden_effect = {
+			every_owned_province = {
+				remove_province_modifier = gor_inspired_to_rebellion_genorg
+			}
+		}
+		if = {
+			limit = {
+				any_known_country = {
+					OR = {
+						tag = U86
+						tag = U87
+					}
+				}
+			}
+			random_known_country = {
+				limit = {
+					OR = {
+						tag = U86
+						tag = U87
+					}
+				}
+				switch_tag = THIS
+				inherit = ROOT
+			}
+		}
+		else = {
+			remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+			if = {
+				limit = {
+					NOT = { government = republic }
+				}
+				change_government = republic
+			}
+			change_tag = U86
+			add_government_reform = revolutionary_oregonian_republic_reform
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			swap_non_generic_missions = yes
+			if = {
+				limit = {
+					NOT = { has_global_flag = oregonian_incident_happened }
+					is_part_of_hre = yes
+				}
+				set_global_flag = oregonian_incident_happened
+				emperor = {
+					country_event = { id = oregonianmisc_events.1 }
+				}
+			}
+			custom_tooltip = every_nation_in_the_union_of_cali_gains_neg_two_hundo_wit_us
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					add_opinion = {
+						who = ROOT
+						modifier = nation_of_radicals_gor
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = astoria_events.3.b #That Dream is Long Gone
+		remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+		if = {
+			limit = {
+				adm = 6
+			}
+			add_adm_power = 150
+		}
+		else = {
+			change_adm = 1
+		}
+		if = {
+			limit = {
+				dip = 6
+			}
+			add_dip_power = 150
+		}
+		else = {
+			change_dip = 1
+		}
+		if = {
+			limit = {
+				mil = 6
+			}
+			add_mil_power = 150
+		}
+		else = {
+			change_mil = 1
+		}
+	}
+}
+
+country_event = { #Sons of Oregon Delt With
+	id = astoria_events.4
+	title = astoria_events.4.t
+	desc = astoria_events.4.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = astoria_events.4.a #A Glorious Day
+		add_imperial_influence = 10
+	}
+}
+
+country_event = { #Tribal Legacy
+	id = astoria_events.5
+	title = astoria_events.5.t
+	desc = astoria_events.5.d
+	picture = northamericagfx_DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = Y90
+			tag = U83
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = astoria_events.5.a #Embrace Confederation
+		if = {
+			limit = {
+				NOT = { government = monarchy }
+			}
+			change_government = monarchy
+		}
+		add_government_reform = trueheir_confederacy_reform
+	}
+	option = {
+		name = astoria_events.5.b #THIS DEPENDS ON POMO SHIT
+		custom_tooltip = "CHANGE THIS LATER ONCE WE COMPLETE POMO" 
+	}
+	option = {
+		name = astoria_events.5.c #We Are Fine
+		add_prestige = -5
+	}
+}
+
+country_event = { #Trueheir Unity
+	id = astoria_events.6
+	title = astoria_events.6.t
+	desc = astoria_events.6.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = Y90
+			tag = U83
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = astoria_events.6.a #Reach Out to Them
+		custom_tooltip = we_have_option_to_get_subjugation_cb_or_vassalize_them
+		Y95 = {
+			country_event = { 
+				id = astoria_events.6 
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { #Eastern Requests
+	id = astoria_events.7
+	title = astoria_events.7.t
+	desc = astoria_events.7.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = Y95
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = astoria_events.7.b #An Oregonian Confederacy!
+		tooltip = {
+			FROM = {
+				vassalize = ROOT
+			}
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = { 
+					id = astoria_events.8 
+					days = 5
+				}
+			}
+		}
+	}
+	option = {
+		name = astoria_events.7.b #Opression by our kin is still opression.
+		tooltip = {
+			FROM = {
+				add_casus_belli = {
+					target = ROOT
+					type = cb_vassalize_mission
+					months = 120
+				}
+			}
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = { 
+					id = astoria_events.9 
+					days = 5
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Warmsprings Response
+	id = astoria_events.8
+	title = astoria_events.8.t
+	desc = astoria_events.8.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = Y90
+			tag = U83
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = astoria_events.8.b #Welcome Home.
+		vassalize = FROM
+	}
+}
+
+country_event = { #Warmsprings Response
+	id = astoria_events.9
+	title = astoria_events.9.t
+	desc = astoria_events.9.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = Y90
+			tag = U83
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = astoria_events.9.b #They Will Pay.
+		add_casus_belli = {
+			target = FROM
+			type = cb_vassalize_mission
+			months = 120
+		}
+	}
+}
+
+
+country_event = { #House of Quitiquit 
+	id = astoria_events.10
+	title = astoria_events.10.t
+	desc = astoria_events.10.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = Y90
+			tag = U83
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = astoria_events.10.a #Reach Out to Them
+		custom_tooltip = we_have_option_to_get_subjugation_cb_or_vassalize_them_pomo
+		Y78 = {
+			country_event = { 
+				id = astoria_events.11 
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { #Brothers in the North
+	id = astoria_events.11
+	title = astoria_events.11.t
+	desc = astoria_events.11.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = Y78
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = astoria_events.11.b #An Oregonian Confederacy!
+		tooltip = {
+			FROM = {
+				vassalize = ROOT
+			}
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = { 
+					id = astoria_events.12 
+					days = 5
+				}
+			}
+		}
+	}
+	option = {
+		name = astoria_events.11.b #Opression by our kin is still opression.
+		tooltip = {
+			FROM = {
+				add_casus_belli = {
+					target = ROOT
+					type = cb_vassalize_mission
+					months = 120
+				}
+			}
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = { 
+					id = astoria_events.13 
+					days = 5
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Northern Response
+	id = astoria_events.12
+	title = astoria_events.12.t
+	desc = astoria_events.12.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = Y90
+			tag = U83
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = astoria_events.12.b #Welcome Home.
+		inherit = FROM
+	}
+}
+
+country_event = { #Northern Response
+	id = astoria_events.13
+	title = astoria_events.13.t
+	desc = astoria_events.13.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = Y90
+			tag = U83
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = astoria_events.13.b #They Will Pay.
+		add_casus_belli = {
+			target = FROM
+			type = cb_vassalize_mission
+			months = 120
+		}
+	}
+}
+
+country_event = { #An Astorian Electorate
+	id = astoria_events.14
+	title = astoria_events.14.t
+	desc = astoria_events.14.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = astoria_events.14.b #Interesting
+		add_prestige = 5
+	}
+}

@@ -1,0 +1,17 @@
+#1969 - Syghnak
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y95
+controller = Y95
+add_core = Y95
+culture = oregonite
+religion = partisan
+capital = "Camp Sherman"
+trade_goods = livestock #Black Butte Ranch
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+hre = yes
+is_city = yes

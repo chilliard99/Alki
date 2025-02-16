@@ -1,0 +1,426 @@
+namespace = oregon_events
+####################OREGON EVENTS##########################
+country_event = { #Setting Down Our Roots
+	id = oregon_events.1
+	title = oregon_events.1.t
+	desc = oregon_events.1.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = oregon_events.1.a #We Chose Portland
+		set_capital = 1218
+		1218 = {
+			add_province_modifier = {
+				name = "gor_republican_capital_oregon"
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = oregon_events.1.b #We Chose Salem
+		set_capital = 1223
+		1223 = {
+			add_province_modifier = {
+				name = "gor_historical_capital_oregon"
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = oregon_events.1.c #We Chose Astoria
+		set_capital = 1197
+		1197 = {
+			add_province_modifier = {
+				name = "gor_coastal_capital_oregon"
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = oregon_events.1.e #We Chose Eugene
+		set_capital = 1199
+		1199 = {
+			add_province_modifier = {
+				name = "gor_willamette_capital_oregon"
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = oregon_events.1.f #We Chose Bend
+		set_capital = 1974
+		1974 = {
+			add_province_modifier = {
+				name = "gor_deschutes_capital_oregon"
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = oregon_events.1.g #We Chose Morrow
+		set_capital = 2038
+		2038 = {
+			add_province_modifier = {
+				name = "gor_backland_capital_oregon"
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = oregon_events.1.h #We Chose Crook
+		set_capital = 2040
+		2040 = {
+			add_province_modifier = {
+				name = "gor_backland_capital_oregon"
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Viticultural Management
+	id = oregon_events.2
+	title = oregon_events.2.t
+	desc = oregon_events.2.d
+	picture = FARMING_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = oregon_events.2.a #Take it under our control
+		add_country_modifier = {
+			name = "gor_united_oregonian_viticulture_first_oregon"
+			duration = -1
+		}
+	}
+	option = {
+		name = oregon_events.2.b #Leave it to the burghers
+		custom_tooltip = unlock_da_cool_privledges_fo_oregon
+		set_country_flag = unlock_da_cool_privledges_fo_oregon_flag
+	}
+}
+
+
+country_event = { #A Northern Confederacy
+	id = oregon_events.3
+	title = oregon_events.3.t
+	desc = oregon_events.3.d
+	picture = DIPLOMACY_SIGNING_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = oregon_events.3.a #Send out the invitations!
+		custom_tooltip = every_nation_in_the_wash_reg_will_get_opportunity_to_join_us_ova_fifty_dev_will_become_vassals
+		change_tag = U89
+		if = {
+			limit = {
+				has_custom_ideas = no
+			}
+			country_event = { id = ideagroups.1 } #Swap Ideas
+		}
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					is_part_of_hre = yes
+					OR = {
+						primary_culture = columbian_washingtonian
+						primary_culture = seattlain
+						primary_culture = lincolnite
+					}
+				}
+				country_event = { id = oregon_events.4 }
+			}
+		}
+	}
+}
+
+country_event = { #A Northern Confederacy
+	id = oregon_events.4
+	title = oregon_events.4.t
+	desc = oregon_events.4.d
+	picture = DIPLOMACY_SIGNING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = oregon_events.4.a #A Grand Confederacy!
+		if = {
+			limit = {
+				total_development = 100
+			}
+			FROM = {
+				vassalize = ROOT
+			}
+		}
+		else = {
+			FROM = {
+				inherit = ROOT 
+			}
+		}
+		ai_chance = { 
+			factor = 99 
+			modifier = {
+				factor = 0
+				total_development = 100
+			}
+			modifier = {
+				factor = 0
+				is_rival = FROM
+			}
+		}
+	}
+	option = {
+		name = oregon_events.4.b #Count us out.
+		add_prestige = 5
+		ai_chance = { 
+			factor = 1 
+		}
+	}
+}
+
+country_event = { #Constitutional Concerns
+	id = oregon_events.5
+	title = oregon_events.5.t
+	desc = oregon_events.5.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = oregon_events.5.a #May Our Traditions Be Perserved Forever
+		add_country_modifier = {
+			name = "gor_constitutional_confederation_oregon"
+			duration = -1
+		}
+	}
+	option = {
+		name = oregon_events.5.b #We will not give up power!
+		add_absolutism = 10
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+	}
+}
+
+country_event = { #Oregonian Market Manipulation
+	id = oregon_events.6
+	title = oregon_events.6.t
+	desc = oregon_events.6.d
+	picture = BANKRUPTCY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = oregon_events.6.a #That Isn't Fair!
+		1856 = {
+			add_trade_modifier = {
+				who = ROOT
+				duration = 3650
+				power = -50
+				key = oregonian_market_manipulation
+			}
+		}
+	}
+}
+
+country_event = { #Redwood Integration
+	id = oregon_events.7
+	title = oregon_events.7.t
+	desc = oregon_events.7.d
+	picture = MILITARY_CAMP_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = oregon_events.7.a #With Open Arms!
+		add_army_professionalism = 0.05
+		add_army_tradition = 15
+		define_advisor = {
+			type = commandant
+			skill = 3
+			cost_multiplier = 0.25
+		}
+		add_country_modifier = {
+			name = "gor_redwood_soldiers_oregon"
+			duration = -1
+		}
+	}
+	option = {
+		name = oregon_events.7.b #This Is An Oregonian Army!
+		add_country_modifier = {
+			name = "gor_oregonian_only_army_oregon"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #The Espanish Tax
+	id = oregon_events.8
+	title = oregon_events.8.t
+	desc = oregon_events.8.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = oregon_events.8.a #Tax The Hell Out Of Em'
+		custom_tooltip = every_portuguese_cultured_prov_gains
+		tooltip = {
+			add_province_modifier = {
+				name = "gor_special_spanish_tax_oregon"
+				duration = 18250
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					culture = portugers
+				}
+				add_province_modifier = {
+					name = "gor_special_spanish_tax_oregon"
+					duration = 18250
+				}
+			}
+		}
+	}
+	option = {
+		name = oregon_events.8.b #They are our equals!
+		custom_tooltip = gain_portugese_culture_fo_free_kewl
+		hidden_effect = {
+			add_country_modifier = {
+				name = "gor_portuguese_equals_oregon"
+				hidden = yes
+				duration = -1
+			}
+			add_accepted_culture = portugers
+		}
+	}
+}
+
+
+
+
+country_event = { #Californian Vinters United
+	id = oregon_events.9
+	title = oregon_events.9.t
+	desc = oregon_events.9.d
+	picture = FARMING_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = oregon_events.9.a #This is what we've been building towards.
+		custom_tooltip = modify_our_modifiers_oregonn
+		add_country_modifier = {
+			name = "gor_united_oregonian_viticulture_fourth_oregon"
+			duration = -1
+		}
+		hidden_effect = {
+			remove_country_modifier = gor_united_oregonian_viticulture_third_oregon
+		}
+	}
+	option = {
+		name = oregon_events.9.b #The focus will be on Washington and Oregon!
+		custom_tooltip = all_wine_provs_we_own_in_liberty_will_become_grain_modify_measured_production_by
+		tooltip = {
+			add_province_modifier = {
+				name = "gor_measured_production_two_oregon"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					region = sunkissed_region
+					trade_goods = wine
+				}
+				change_trade_goods = grain
+			}
+			every_owned_province = {
+				limit = {
+					has_province_modifier = gor_measured_production_oregon
+					trade_goods = wine
+				}
+				add_province_modifier = {
+					name = "gor_measured_production_two_oregon"
+					duration = -1
+				}
+				remove_province_modifier = gor_measured_production_oregon
+			}
+		}
+	}
+}

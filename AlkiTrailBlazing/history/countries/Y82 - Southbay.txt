@@ -1,0 +1,45 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = franciscan
+religion = partisan
+technology_group = western
+capital = 868	 #San Francisco
+elector = yes
+religious_school = progressive_party
+set_country_flag = bay_caucus
+
+1428.3.13 = {
+	monarch = {
+		name = "Bill III"
+		dynasty = "Jobs"
+		birth_date = 1413.10.28
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+	queen = {
+		name = "Ada"            
+		dynasty = "Jobs"        
+		birth_date = 1422.12.10         
+		death_date = 1500.1.1
+		adm = 2                 
+		dip = 3                
+		mil = 3                
+		female = yes                
+	}
+}
+
+1428.4.15 = {
+	heir = {
+		name = "Jeff"
+		monarch_name = "Jeff II"
+		dynasty = "Jobs"
+		birth_date = 1428.4.15
+		death_date = 1500.1.1
+		claim = 25
+		adm = 2
+		dip = 4
+		mil = 5
+	}
+}

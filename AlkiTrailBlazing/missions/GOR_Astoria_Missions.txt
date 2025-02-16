@@ -1,0 +1,1492 @@
+###########################NORMAL ASTORIA MISSIONS###########################
+astoria_normal_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = Y90
+			tag = U83
+		}
+	}
+	has_country_shield = yes
+	
+	rebuild_clatsop_astoria = {
+		icon = rebuild_oregon_gor
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			province_id = 1197
+		}
+		trigger = {
+			1197 = {
+				NOT = { has_province_modifier = gor_redwood_destruction_oregongen }
+			}
+		}
+		effect = {
+			add_adm_power = 25
+			1197 = {
+				add_province_modifier = {
+					name = "gor_atorian_recovery_astoria"
+					duration = 3650
+				}
+			}
+		}
+	}
+	
+	cascadian_monument_astoria = {
+		icon = old_disappointment_gor
+		required_missions = { rebuild_clatsop_astoria }
+		position = 2
+		provinces_to_highlight = {
+			province_id = 1197
+		}
+		trigger = {
+			has_great_project = {
+				type = old_disappointment
+				tier = 1
+			}
+		}
+		effect = {
+			tooltip = {
+				add_prestige = 20
+				add_country_modifier = {
+					name = "gor_a_dissapointment_astoria"
+					duration = 5475
+				}
+			}
+			custom_tooltip = if_it_is_level_two_get
+			tooltip = {
+				add_prestige = 40
+				add_navy_tradition = 15
+				add_country_modifier = {
+					name = "gor_a_dissapointment_astoria"
+					duration = 10950
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_great_project = {
+							type = old_disappointment
+							tier = 2
+						}
+					}
+					add_prestige = 40
+					add_navy_tradition = 15
+					add_country_modifier = {
+						name = "gor_a_dissapointment_astoria"
+						duration = 10950
+					}
+				}
+				else = {
+					add_prestige = 20
+					add_country_modifier = {
+						name = "gor_a_dissapointment_astoria"
+						duration = 5475
+					}
+				}
+			}
+		}
+	}
+	
+	pacific_ambition_astoria = {
+		icon = tropical_island_gor
+		required_missions = { cascadian_monument_astoria curtailing_cheeselords_astoria }
+		position = 4
+		trigger = {
+			OR = {
+				has_idea = quest_for_the_new_world
+				has_institution = new_world_i
+			}
+		}
+		effect = {
+			custom_tooltip = if_we_have_quest_for_new_world_gain
+			tooltip = {
+				define_advisor = {
+					type = navigator
+					skill = 2
+					cost_multiplier = 0.5
+				}
+				add_country_modifier = {
+					name = "gor_pacific_ambition_astoria"
+					duration = 5475
+				}
+			}
+			custom_tooltip = if_we_dont_have_quest_new_world 
+			tooltip = {
+				create_explorer = { tradition = 50 }
+				add_country_modifier = {
+					name = "gor_whats_out_there_astoria"
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_idea = quest_for_the_new_world
+					}
+					add_country_modifier = {
+						name = "gor_pacific_ambition_astoria"
+						duration = 5475
+					}
+					define_advisor = {
+						type = navigator
+						skill = 2
+						cost_multiplier = 0.5
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = "gor_whats_out_there_astoria"
+						duration = 5475
+					}
+					create_explorer = { tradition = 50 }
+				}
+			}
+		}
+	}
+}
+
+astoria_normal_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = Y90
+			tag = U83
+		}
+	}
+	has_country_shield = yes
+	
+	milking_our_advantage_astoria = {
+		icon = milkmaid_gor
+		required_missions = { rebuild_clatsop_astoria }
+		position = 2
+		provinces_to_highlight = {
+			area = tillamook_area
+		}
+		trigger = {
+			development_in_provinces = {
+				value = 50
+				area = tillamook_area
+			}
+		}
+		effect = {
+			add_years_of_income = 2
+			1190 = {
+				add_province_modifier = {
+					name = "gor_dairy_dominance_astoria"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	curtailing_cheeselords_astoria = {
+		icon = cheese_gor
+		required_missions = { milking_our_advantage_astoria }
+		position = 3
+		trigger = {
+			crown_land_share = 60
+			stability = 2
+			monthly_income = 10
+		}
+		effect = {
+			country_event = { id = astoria_events.1 }
+		}
+	}
+	
+	tillamook_fleet_astoria = {
+		icon = large_fleet_gor
+		required_missions = { curtailing_cheeselords_astoria }
+		position = 4
+		trigger = {
+			OR = {
+				has_idea_group = maritime_ideas
+				naval_reformer = 3
+			}
+			has_naval_doctrine = any 
+			navy_size = 25
+			1197 = {
+				province_has_center_of_trade_of_level = 2
+			}
+		}
+		effect = {
+			tooltip = {	
+				1197 = {
+					add_center_of_trade_level = 1
+				}
+			}
+			add_navy_tradition = 15
+			add_mercantilism = 3
+			add_dip_power = 100
+			custom_tooltip = if_cot_in_clatsop_is_already_level_three
+			tooltip = {
+				1197 = {
+					add_trade_modifier = {
+						who = ROOT
+						duration = 3650
+						power = 15
+						key = tillamook_sails
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						1197 = {
+							province_has_center_of_trade_of_level = 3
+						}
+					}
+					1197 = {
+						add_trade_modifier = {
+							who = ROOT
+							duration = 3650
+							power = 15
+							key = tillamook_sails
+						}
+					}
+				}
+				else = {
+					add_center_of_trade_level = 1
+				}
+			}
+		}
+	}
+}
+
+astoria_normal_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = Y90
+			tag = U83
+		}
+	}
+	has_country_shield = yes
+	
+	train_new_generals_astoria = {
+		icon = knight_reading_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			num_of_generals = 1
+			manpower_percentage = 0.9
+		}
+		effect = {
+			tillamook_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_willamette_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			4491 = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = if_we_are_at_forcelimit_gain
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_enforced_integration_astoria"
+					duration = 3650
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						army_size_percentage = 1
+					}
+					add_country_modifier = {
+						name = "gor_enforced_integration_astoria"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	
+	coastal_unity_astoria = {
+		icon = northwest_soldiers_shaking_hands_gor
+		required_missions = { train_new_generals_astoria }
+		position = 2
+		provinces_to_highlight = {
+			area = tillamook_area 
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			tillamook_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			create_admiral = { tradition = 75 }
+			custom_tooltip = every_province_with_oregonian_culture_on_a_coast_gains
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_tillamook_unity_astoria"
+					duration = 9125
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_port = yes
+						culture = oregonite
+					}
+					add_province_modifier = {
+						name = "gor_tillamook_unity_astoria"
+						duration = 9125
+					}
+				}
+			}
+		}
+	}
+}
+
+astoria_normal_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = Y90
+			tag = U83
+		}
+	}
+	has_country_shield = yes
+	
+	ruins_of_portland_astoria = {
+		icon = ruins_of_portland_gor
+		required_missions = { train_new_generals_astoria }
+		position = 2
+		provinces_to_highlight = {
+			province_id = 1218
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			1218 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = if_portland_is_ruined_cut_price_in_half
+			set_country_flag = half_cost_restore_portland
+			add_years_of_income = 2
+			add_mil_power = 50
+			oregonian_cascades_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_willamette_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+astoria_normal_missions_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = Y90
+			tag = U83
+		}
+	}
+	has_country_shield = yes
+	
+	fist_of_the_pomo_astoria = {
+		icon = fist_of_pomo_gor
+		required_missions = {  }
+		position = 1
+		trigger = {
+			NOT = { has_ruler = "Elmer" }
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 35
+			}
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 35
+			}
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 35
+			}
+		}
+		effect = {
+			custom_tooltip = if_we_are_coboway_quitiquit_get
+			tooltip = {
+				country_event = { id = astoria_events.2 }
+			}
+			custom_tooltip = otherwise_get_astoria
+			tooltip = {
+				swap_non_generic_missions = yes 
+				add_ruler_modifier = {
+					name = "gor_oregonian_control_astoria"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_ruler = "Coboway"
+					}
+					country_event = { id = astoria_events.2 }
+				}
+				else = {
+					set_country_flag = we_get_non_pomo_astoria
+					swap_non_generic_missions = yes 
+					add_ruler_modifier = {
+						name = "gor_oregonian_control_astoria"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+###########################BRANCH ASTORIA MISSIONS###########################
+
+astoria_branch_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y90
+		NOT = { has_country_flag = we_get_non_pomo_astoria }
+		NOT = { primary_culture = pomo }
+	}
+	has_country_shield = yes
+	
+	branching_six_astoria = {
+		icon = mission_unknown_mission
+		required_missions = { branching_four_astoria }
+		position = 6
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = mission_branch_depends_on_fist_of_pomo_completion
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = mission_branch_depends_on_fist_of_pomo_completion
+		}
+	}
+}
+
+astoria_branch_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y90
+		NOT = { has_country_flag = we_get_non_pomo_astoria }
+		NOT = { primary_culture = pomo }
+	}
+	has_country_shield = yes
+	
+	branching_three_astoria = {
+		icon = mission_unknown_mission
+		required_missions = { ruins_of_portland_astoria }
+		position = 3
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = mission_branch_depends_on_fist_of_pomo_completion
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = mission_branch_depends_on_fist_of_pomo_completion
+		}
+	}
+	
+	branching_four_astoria = {
+		icon = mission_unknown_mission
+		required_missions = { branching_three_astoria branching_two_astoria }
+		position = 5
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = mission_branch_depends_on_fist_of_pomo_completion
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = mission_branch_depends_on_fist_of_pomo_completion
+		}
+	}
+	
+	branching_five_astoria = {
+		icon = mission_unknown_mission
+		required_missions = { branching_four_astoria }
+		position = 6
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = mission_branch_depends_on_fist_of_pomo_completion
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = mission_branch_depends_on_fist_of_pomo_completion
+		}
+	}
+}
+
+astoria_branch_missions_slot_four = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y90
+		NOT = { has_country_flag = we_get_non_pomo_astoria }
+		NOT = { primary_culture = pomo }
+	}
+	has_country_shield = yes
+	
+	branching_one_astoria = {
+		icon = mission_unknown_mission
+		required_missions = { fist_of_the_pomo_astoria ruins_of_portland_astoria }
+		position = 3
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = mission_branch_depends_on_fist_of_pomo_completion
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = mission_branch_depends_on_fist_of_pomo_completion
+		}
+	}
+	
+	branching_two_astoria = {
+		icon = mission_unknown_mission
+		required_missions = { branching_one_astoria }
+		position = 4
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = mission_branch_depends_on_fist_of_pomo_completion
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = mission_branch_depends_on_fist_of_pomo_completion
+		}
+	}
+	
+	branching_seven_astoria = {
+		icon = mission_unknown_mission
+		required_missions = { branching_four_astoria }
+		position = 6
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = mission_branch_depends_on_fist_of_pomo_completion
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = mission_branch_depends_on_fist_of_pomo_completion
+		}
+	}
+}
+
+###########################ASTORIA OREGONIAN MISSIONS###########################
+
+astoria_oregonian_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y90
+		has_country_flag = we_get_non_pomo_astoria
+	}
+	has_country_shield = yes
+	
+	crooks_and_morrows_astoria = {
+		icon = morrow_crook_gor
+		required_missions = { restored_glory_astoria }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2038
+				province_id = 2040
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			2038 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2040 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			2038 = {
+				add_base_manpower = 1
+			}
+			2040 = {
+				add_base_manpower = 1
+			}
+			add_army_tradition = 15
+			add_ruler_modifier = {
+				name = "gor_backland_lessons_astoria"
+				duration = -1
+			}
+		}
+	}
+}
+
+astoria_oregonian_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y90
+		has_country_flag = we_get_non_pomo_astoria
+	}
+	has_country_shield = yes
+	
+	claiming_warmsprings_astoria = {
+		icon = cascadian_army_gor
+		required_missions = { ruins_of_portland_astoria }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 1970
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			1970 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = gain_the_teino_culture_fo_free
+			hidden_effect = {
+				add_accepted_culture = tenino
+				add_country_modifier = {
+					name = "gor_warmsprings_acceptance_astoria"
+					hidden = yes
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	restored_glory_astoria = {
+		icon = willamette_gor
+		required_missions = { claiming_warmsprings_astoria }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				has_province_modifier = gor_redwood_destruction_oregongen
+				AND = {
+					OR = {
+						area = tillamook_area
+						area = lower_willamette_area
+						area = upper_willamette_area
+						area = oregonian_cascades_area
+					}
+					NOT = { owned_by = ROOT }
+				}
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = no_owned_province_has_redwood_destruction_oregon
+				NOT = {
+					any_owned_province = {
+						has_province_modifier = gor_redwood_destruction_oregongen
+					}
+				}
+			}
+			tillamook_area = {
+				type = all
+				owned_by = ROOT
+			}
+			lower_willamette_area = {
+				type = all
+				owned_by = ROOT
+			}
+			upper_willamette_area = {
+				type = all
+				owned_by = ROOT
+			}
+			oregonian_cascades_area = {
+				type = all
+				owned_by = ROOT
+			}
+			OR = {
+				workshop = 5
+				counting_house = 5
+			}
+			OR = {
+				marketplace = 5
+				stock_exchange = 5
+				trade_depot = 5
+			}
+		}
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 10
+			}
+			bend_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			morrow_crook_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = all_provs_in_upper_and_lower_willamette
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_willamette_vinyards_astoria"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				lower_willamette_area = {
+					add_province_modifier = {
+						name = "gor_willamette_vinyards_astoria"
+						duration = -1
+					}
+				}
+				upper_willamette_area = {
+					add_province_modifier = {
+						name = "gor_willamette_vinyards_astoria"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	
+	round_the_bend_astoria = {
+		icon = columbia_river_gor
+		required_missions = { restored_glory_astoria }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = bend_area
+					NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+				}
+				AND = {
+					province_id = 1974
+					NOT = { province_has_center_of_trade_of_level = 2 }
+				}
+			}
+		}
+		trigger = {
+			bend_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1974 = {
+				province_has_center_of_trade_of_level = 2
+			}
+		}
+		effect = {
+			add_mercantilism = 5
+			if = {
+				limit = {
+					mil = 6
+				}
+				add_mil_power = 150
+			}
+			else = {
+				change_mil = 1
+			}
+		}
+	}
+}
+
+astoria_oregonian_missions_slot_four = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y90
+		has_country_flag = we_get_non_pomo_astoria
+	}
+	has_country_shield = yes
+	
+	rivers_mouth_astoria = {
+		icon = knight_by_river_gor
+		required_missions = { fist_of_the_pomo_astoria ruins_of_portland_astoria }
+		position = 3
+		provinces_to_highlight = {
+			area = upper_willamette_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			total_development = 75
+			upper_willamette_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = if_we_are_astor_dynasty_get
+			tooltip = {
+				country_event = { id = astoria_events.3 }
+			}
+			custom_tooltip = instead_we_get_astoria
+			tooltip = {
+				if = {
+					limit = {
+						dip = 6
+					}
+					add_dip_power = 150
+				}
+				else = {
+					change_dip = 1
+				}
+				remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						dynasty = "Astor"
+					}
+					country_event = { id = astoria_events.3 }
+				}
+				else = {
+					if = {
+						limit = {
+							dip = 6
+						}
+						add_dip_power = 150
+					}
+					else = {
+						change_dip = 1
+					}
+					remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+				}
+			}
+		}
+	}
+	
+	succeed_willamette_astoria = {
+		icon = union_scrape_gor
+		required_missions = { rivers_mouth_astoria }
+		position = 4
+		provinces_to_highlight = {
+			area = lower_willamette_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			OR = {
+				lower_willamette_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				Y96 = {
+					is_elector = yes
+					is_subject_of = ROOT
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = if_willamette_is_out_subject_and_an_elector_we_get_them
+			custom_tooltip = otherwise_we_gain_atoria
+			tooltip = {
+				1199 = {
+					add_base_production = 2
+				}
+				add_years_of_owned_provinces_production_income = {
+					years = 10
+					trigger = {
+						trade_goods = wine
+					}
+					custom_tooltip = money_from_wine_astoria
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						Y96 = {
+							is_elector = yes
+							is_subject_of = ROOT
+						}
+					}
+					Y96 = {
+						elector = no
+					}
+					elector = ROOT
+					emperor = {
+						country_event = { id = astoria_events.14 }
+					}
+				}
+				else = {
+					1199 = {
+						add_base_production = 2
+					}
+					add_years_of_owned_provinces_production_income = {
+						years = 10
+						trigger = {
+							trade_goods = wine
+						}
+						custom_tooltip = money_from_wine_astoria
+					}
+				}
+			}
+		}
+	}
+	
+	crushing_republican_dreams_astoria = {
+		icon = king_subject_gor
+		required_missions = { restored_glory_astoria }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				owner = {
+					primary_culture = oregonite
+					capital_scope = {
+						region = oregon_region
+					}
+				}
+				region = oregon_region
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_are_the_only_nation_of_oregon_culture_wit_capital_in_oregon
+				NOT = {
+					any_known_country = {
+						primary_culture = oregonite
+						capital_scope = {
+							region = oregon_region
+						}
+					}
+				}
+			}
+			NOT = { unrest = 0 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_twenty_provs_in_oregon
+					oregon_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 20
+			}
+		}
+		effect = {
+			custom_tooltip = permanently_disable_sons_of_oregon
+			set_global_flag = disabled_sons_of_oregon
+			tooltip = {
+				emperor = {
+					add_imperial_influence = 15
+				}
+			}
+			custom_tooltip = if_we_are_an_elector_gain_astoria
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_oregons_representative_astoria"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						is_elector = yes
+					}
+					add_country_modifier = {
+						name = "gor_oregons_representative_astoria"
+						duration = -1
+					}
+				}
+				emperor = {
+					country_event = { id = astoria_events.4 }
+				}
+			}
+		}
+	}
+	
+}
+
+###########################ASTORIA OREGONIAN MISSIONS###########################
+
+astoria_pomo_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		primary_culture = pomo
+		OR = {
+			tag = Y90
+			tag = U83
+		}
+	}
+	has_country_shield = yes
+	
+	willapan_unity_astoria = {
+		icon = peninsular_ambitions_gor
+		required_missions = { juhula_mala_astoria }
+		position = 5
+		provinces_to_highlight = {
+			province_id = 2046
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			2046 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mercantilism = 3
+			olympic_penninsula_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_cascadian_runoff_astoria"
+				duration = 5475
+			}
+		}
+	}
+	
+	blue_majesty_astoria = {
+		icon = sun_ocean_gor
+		required_missions = { willapan_unity_astoria brothers_of_the_south_astoria }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = olympic_penninsula_area
+				area = willapa_area
+				area = tillamook_area
+				area = lower_willamette_area
+				area = upper_willamette_area
+				area = oregonian_cascades_area
+				area = josephine_area
+				area = redwood_area
+				area = trinity_area
+				area = ama_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			total_development = 250
+			num_of_cities = 30
+			OR = {
+				NOT = { hre_size = 1 }
+				emperor = {
+					NOT = { army_size = ROOT }
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_glory_of_the_pomo_astoria"
+				duration = -1
+			}
+			oregon_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			jefferson_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			washington_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+
+astoria_pomo_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		primary_culture = pomo
+		OR = {
+			tag = Y90
+			tag = U83
+		}
+	}
+	has_country_shield = yes
+	
+	warm_brotherhood_astoria = {
+		icon = trueheir_handshake_gor
+		required_missions = { ruins_of_portland_astoria }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 1970
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			OR = {
+				1970 = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				Y95 = {
+					has_opinion = {
+						who = ROOT
+						value = 175
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = if_warmsprings_has_onesevty_five_opinion_of_us
+			tooltip = {
+				country_event = { id = astoria_events.6 }
+			}
+			custom_tooltip = otherwise_we_get_astoria
+			tooltip = {
+				add_mil_power = 50
+				1970 = {
+					add_base_tax = 2
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						Y95 = {
+							has_opinion = {
+								who = ROOT
+								value = 175
+							}
+						}
+					}
+					country_event = { id = astoria_events.6 }
+				}
+				else = {
+					add_mil_power = 50
+					1970 = {
+						add_base_tax = 2
+					}
+				}
+			}
+		}
+	}
+	
+	juhula_mala_astoria = {
+		icon = astoria_pomo_flag_gor
+		required_missions = { warm_brotherhood_astoria pomoization_astoria }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = upper_willamette_area
+				area = lower_willamette_area
+				area = tillamook_area
+				area = oregonian_cascades_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			upper_willamette_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_willamette_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tillamook_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			oregonian_cascades_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			change_tag = U83
+			country_event = { id = ideagroups.1 }
+			willapa_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			josephine_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hidden_effect = {
+				complete_mission = juhula_mala_astoria #Needed for the tag switch
+			}
+		}
+	}
+	
+	coastdwellers_astoria = {
+		icon = cannon_fire_gor
+		required_missions = { juhula_mala_astoria }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = josephine_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			josephine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = Y78
+				}
+				country_event = { id = astoria_events.10 }
+			}
+			redwood_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			trinity_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	redwood_collapse_astoria = {
+		icon = redwood_tree_gor
+		required_missions = { coastdwellers_astoria }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1856
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			1856 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			add_country_modifier = {
+				name = "gor_redwood_knowledge_astoria"
+				duration = 9125
+			}
+		}
+	}
+	
+	brothers_of_the_south_astoria = {
+		icon = chieftans_meeting_gor
+		required_missions = { redwood_collapse_astoria fortunes_await_astoria }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1111
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			1111 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 20
+			}
+			add_ruler_modifier = {
+				name = "gor_family_donations_astoria"
+				duration = -1
+			}
+			custom_tooltip = every_pomo_province_gains
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_united_production_astoria"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						culture = pomo
+					}
+					add_province_modifier = {
+						name = "gor_united_production_astoria"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+astoria_pomo_missions_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		primary_culture = pomo
+		OR = {
+			tag = Y90
+			tag = U83
+		}
+	}
+	has_country_shield = yes
+	
+	pomoization_astoria = {
+		icon = sitting_trueheir_in_lodge_gor
+		required_missions = { fist_of_the_pomo_astoria }
+		position = 3
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_three_pomo_cultured_provs
+					all_owned_province = {
+						culture = pomo
+					}
+				}
+				amount = 3
+			}
+			capital_scope = {
+				culture = pomo
+			}
+		}
+		effect = {
+			remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+			capital_scope = {
+				add_permanent_province_modifier = {
+					name = "gor_true_heir_protections"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	trueheir_governance_astoria = {
+		icon = trueheir_elders_gor
+		required_missions = { pomoization_astoria }
+		position = 4
+		trigger = {
+			has_completed_idea_group_of_category = {
+				adm_ideas = yes
+			}
+			NOT = { is_lacking_institutions = yes }
+			OR = {
+				accepted_culture = oregonite
+				custom_trigger_tooltip = {
+					tooltip = own_no_oregonian_provinces
+					NOT = {
+						any_owned_province = {
+							culture = oregonite
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = { id = astoria_events.5 }
+		}
+	}
+	
+	fortunes_await_astoria = {
+		icon = trueheir_rider_cascades_gor
+		required_missions = { coastdwellers_astoria }
+		position = 6
+		provinces_to_highlight = {
+			area = trinity_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			trinity_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_years_of_owned_provinces_production_income = {
+				years = 15
+				trigger = {
+					trade_goods = tobacco
+				}
+				custom_tooltip = money_from_tobacco_astoria
+			}
+			custom_tooltip = every_prov_we_own_in_jeff_with_under_five_dev_gts
+			tooltip = {
+				add_base_manpower = 1
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						NOT = { development = 6 }
+						region = jefferson_region 
+					}
+					add_base_manpower = 1
+				}
+			}
+		}
+	}
+}

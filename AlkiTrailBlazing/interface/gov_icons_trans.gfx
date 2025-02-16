@@ -1,0 +1,430 @@
+	### Transposian Government Icons ###
+
+spriteTypes = {
+	
+	spriteType = {
+		name = "government_reform_democratic_republic_gor"
+		texturefile = "gfx//interface//government//gor//democratic_republic.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_collectivist_dictator_gor"
+		texturefile = "gfx//interface//government//gor//collectivist_dictator.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_union_meeting_gor"
+		texturefile = "gfx//interface//government//gor//union_meeting.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_party_politics_gor"
+		texturefile = "gfx//interface//government//gor//party_politics.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_marx_gor"
+		texturefile = "gfx//interface//government//gor//marx.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_anarcho_fued_gor"
+		texturefile = "gfx//interface//government//gor//anarcho_fued.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_collectivist_merchant_gor"
+		texturefile = "gfx//interface//government//gor//collectivist_merchant.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_noble_council_gor"
+		texturefile = "gfx//interface//government//gor//noble_council_collectivist.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_old_fella_gor"
+		texturefile = "gfx//interface//government//gor//old_fella.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_ballot_box_gor"
+		texturefile = "gfx//interface//government//gor//ballot_box.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_who_me_gor"
+		texturefile = "gfx//interface//government//gor//who_me.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_red_hammer_gor"
+		texturefile = "gfx//interface//government//gor//red_hammer.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_freedom_of_religion_gor"
+		texturefile = "gfx//interface//government//gor//freedom_of_religion.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_church_factory_gor"
+		texturefile = "gfx//interface//government//gor//church_factory.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_rose_on_paper_gor"
+		texturefile = "gfx//interface//government//gor//rose_on_paper.dds"
+	}
+	
+	
+	spriteType = {
+		name = "government_reform_red_queen_gor"
+		texturefile = "gfx//interface//government//gor//red_queen.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_raised_knight_gor"
+		texturefile = "gfx//interface//government//gor//raised_knight.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_crimson_grit_gor"
+		texturefile = "gfx//interface//government//gor//crimson_grit.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_huge_army_gor"
+		texturefile = "gfx//interface//government//gor//huge_army.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_burning_vinyard_gor"
+		texturefile = "gfx//interface//government//gor//burning_vinyard.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_red_skies_gor"
+		texturefile = "gfx//interface//government//gor//red_skies.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_peasant_army_gor"
+		texturefile = "gfx//interface//government//gor//peasant_army.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_fat_nobles_gor"
+		texturefile = "gfx//interface//government//gor//fat_nobles.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_worker_fist_gor"
+		texturefile = "gfx//interface//government//gor//worker_fist.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_federalism_gor"
+		texturefile = "gfx//interface//government//gor//federalism.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_border_fort_gor"
+		texturefile = "gfx//interface//government//gor//border_fort.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_senators_gor"
+		texturefile = "gfx//interface//government//gor//senators.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_picketing_peasants_gor"
+		texturefile = "gfx//interface//government//gor//picketing_peasants.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_grey_countryside_gor"
+		texturefile = "gfx//interface//government//gor//grey_countryside.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_test_taker_gor"
+		texturefile = "gfx//interface//government//gor//test_taker.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_politburo_gor"
+		texturefile = "gfx//interface//government//gor//politburo.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_popular_assembly_gor"
+		texturefile = "gfx//interface//government//gor//popular_assembly.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_congressional_debate_gor"
+		texturefile = "gfx//interface//government//gor//congressional_debate.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_market_chart_gor"
+		texturefile = "gfx//interface//government//gor//market_chart.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_command_economy_gor"
+		texturefile = "gfx//interface//government//gor//command_economy.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_hand_of_coins_gor"
+		texturefile = "gfx//interface//government//gor//hand_of_coins.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_happy_worker_gor"
+		texturefile = "gfx//interface//government//gor//happy_worker.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_lotta_money_gor"
+		texturefile = "gfx//interface//government//gor//lotta_money.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_lecuturing_noble_gor"
+		texturefile = "gfx//interface//government//gor//lecturing_noble.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_stinky_peasants_gor"
+		texturefile = "gfx//interface//government//gor//stinky_peasants.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_nobles_on_horse_gor"
+		texturefile = "gfx//interface//government//gor//nobles_on_horses.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_bearded_beuracrat_gor"
+		texturefile = "gfx//interface//government//gor//bearded_beuracrat.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_merchants_at_table_gor"
+		texturefile = "gfx//interface//government//gor//merchants_at_table.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_full_congress_gor"
+		texturefile = "gfx//interface//government//gor//full_congress.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_collectivist_prayer_gor"
+		texturefile = "gfx//interface//government//gor//collectivist_prayer.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_horse_in_the_forest_gor"
+		texturefile = "gfx//interface//government//gor//horse_in_forest.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_utopia_gor"
+		texturefile = "gfx//interface//government//gor//utopia.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_pompous_dude_gor"
+		texturefile = "gfx//interface//government//gor//pompous_dude.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_women_voting_gor"
+		texturefile = "gfx//interface//government//gor//women_voting.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_green_speech_gor"
+		texturefile = "gfx//interface//government//gor//green_speech.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_talking_to_president_gor"
+		texturefile = "gfx//interface//government//gor//talking_to_president.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_congressional_representation_gor"
+		texturefile = "gfx//interface//government//gor//congressional_representation.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_premodern_senator_gor"
+		texturefile = "gfx//interface//government//gor//premodern_senator.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_premodern_rally_gor"
+		texturefile = "gfx//interface//government//gor//premodern_rally.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_lottery_machine_gor"
+		texturefile = "gfx//interface//government//gor//lottery_machine.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_red_king_gor"
+		texturefile = "gfx//interface//government//gor//red_king.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_dictator_gor"
+		texturefile = "gfx//interface//government//gor//dictator.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_popular_congress_gor"
+		texturefile = "gfx//interface//government//gor//popular_congress.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_writing_constitution_gor"
+		texturefile = "gfx//interface//government//gor//writing_constitution.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_workers_shaking_hands_gor"
+		texturefile = "gfx//interface//government//gor//workers_shaking_hands.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_band_unity_frame"
+		texturefile = "gfx/interface/government_mechanics/band_unity/russian_modernization_frame.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+
+	progressbartype = {
+		name = "GFX_band_unity_power_bar"
+		color = { 1.0 0.0 0.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/government_mechanics/band_unity/russian_modernization_progress_bar.dds"
+		textureFile2 = "gfx/interface/government_mechanics/band_unity/russian_modernization_progress_bar_empty.dds"
+		size = { x = 267 y = 20 }
+		effectFile = "gfx/FX/progress.lua"
+	}
+	
+	spriteType = {
+		name = "government_reform_trueheir_chief_gor"
+		texturefile = "gfx//interface//government//gor//trueheir_chief.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_baron_gor"
+		texturefile = "gfx//interface//government//gor//baron.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_cascadian_republic_gor"
+		texturefile = "gfx//interface//government//gor//cascadian_republic.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_corporate_executive_gor"
+		texturefile = "gfx//interface//government//gor//corporate_executive.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_holy_conservatory_gor"
+		texturefile = "gfx//interface//government//gor//holy_conservatory.dds"
+	}
+	
+	progressbartype = {
+		name = "GFX_rev_org_repub_power_bar"
+		color = { 1.0 0.0 0.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/government_mechanics/rev_org_repub/rev_org_repub_progress_bar.dds"
+		textureFile2 = "gfx/interface/government_mechanics/rev_org_repub/rev_org_repub_progress_bar_empty.dds"
+		size = { x = 260 y = 20 }
+		effectFile = "gfx/FX/progress.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_rev_org_repub_upgrade"
+		texturefile = "gfx/interface/government_mechanics/rev_org_repub/rev_org_repub_increase_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	
+	spriteType = {
+		name = "GFX_rev_org_repub_frame"
+		texturefile = "gfx/interface/government_mechanics/rev_org_repub/rev_org_repub_frame.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	
+	spriteType = {
+		name = "GFX_listen_to_noble_connections_button"
+		texturefile = "gfx//interface//government_mechanics/republic_of_oregon/efficient_tax_farming_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_rely_upon_libertys_wisdom_button"
+		texturefile = "gfx//interface//government_mechanics/republic_of_oregon/land_acquisition_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_the_markets_guidance_button"
+		texturefile = "gfx//interface//government_mechanics/republic_of_oregon/lenient_taxation_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	
+	spriteType = {
+		name = "government_reform_rev_org_repub_gor"
+		texturefile = "gfx//interface//government//gor//rev_org_repub.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_rev_org_repub_gor"
+		texturefile = "gfx//interface//government//gor//rev_org_repub.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_normal_oregon_repub_gor"
+		texturefile = "gfx//interface//government//gor//normal_oregon_repub.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_three_star_kingdom_frame"
+		texturefile = "gfx/interface/government_mechanics/three_star_kingdom/three_star_kingdom_frame.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+
+	progressbartype = {
+		name = "GFX_three_star_kingdom_progressbar"
+		color = { 1.0 0.0 0.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/government_mechanics/three_star_kingdom/three_star_kingdom_progressbar.dds"
+		textureFile2 = "gfx/interface/government_mechanics/three_star_kingdom/three_star_kingdom_progressbar_frame.dds"
+		size = { x = 232 y = 20 }
+		effectFile = "gfx/FX/progress.lua"
+	}
+	
+	
+	spriteType = {
+		name = "government_reform_three_star_kingdom_gor"
+		texturefile = "gfx//interface//government//gor//three_star_kingdom.dds"
+	}
+	
+}	
+

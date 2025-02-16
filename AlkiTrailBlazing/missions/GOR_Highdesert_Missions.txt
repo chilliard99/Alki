@@ -1,0 +1,2127 @@
+###########################HIGHDESERT MISSIONS###########################
+highdesert_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = U90
+	}
+	has_country_shield = yes
+	
+	taming_the_desert_highdesert = {
+		icon = crane_gor
+		required_missions = { invest_in_the_highdesert_highdesert }
+		position = 2
+		provinces_to_highlight = {
+			area = highdesert_area
+		}
+		trigger = {
+			OR = {
+				full_idea_group = economic_ideas
+				full_idea_group = administrative_ideas
+				adm = 6
+			}
+			custom_trigger_tooltip = {
+				tooltip = there_is_a_tweny_dev_prov_in_highdesert
+				highdesert_area = {
+					development = 20
+				}
+			}
+		}
+		effect = {	
+			custom_tooltip = modify_highdesert_oases_to_now_be
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_highdesert_oases_two_highdesert"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				highdesert_area = {
+					if = {
+						limit = {
+							has_province_modifier = gor_highdesert_oases_highdesert
+						}
+						add_province_modifier = {
+							name = "gor_highdesert_oases_two_highdesert"
+							duration = -1
+						}
+						remove_province_modifier = gor_highdesert_oases_highdesert
+					}
+					else = {
+						add_province_modifier = {
+							name = "gor_highdesert_oases_two_betta_highdesert"
+							duration = -1
+						}
+						remove_province_modifier = gor_highdesert_oases_betta_highdesert
+					}
+				}
+			}
+		}
+	}
+	
+	orrian_caravans_highdesert = {
+		icon = caravan_gor
+		required_missions = { taming_the_desert_highdesert }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				region = oregon_region
+				region = jefferson_region
+			}
+			trade_goods = gold
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			gold = 3
+			gold_income = 10
+			custom_trigger_tooltip = {
+				tooltip = we_own_any_prov_in_north_orria_highdersert
+				north_orria_area = {
+					country_or_non_sovereign_subject_holds = ROOT 
+				}
+			}
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "gor_oregons_outback_highdesert"
+				duration = -1
+			}
+		}
+	}
+	
+	press_into_portland_highdesert = {
+		icon = ruins_of_portland_gor
+		required_missions = { cascadian_conquest_highdesert }
+		position = 8
+		provinces_to_highlight = {
+			area = upper_willamette_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			upper_willamette_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			tillamook_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			1218 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			custom_tooltip = every_prov_in_upper_willamette_area_gains
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_columbian_restoration_efforts_highdesert"
+					duration = 3650
+				}
+			}
+			hidden_effect = {
+				upper_willamette_area = {
+					add_province_modifier = {
+						name = "gor_columbian_restoration_efforts_highdesert"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	
+	redwood_restoration_highdesert = {
+		icon = redwood_tree_gor
+		required_missions = { greeting_the_waves_highdesert }
+		position = 10
+		provinces_to_highlight = {
+			has_province_modifier = gor_redwood_destruction_oregongen
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = there_are_no_redwood_destruction_provs_in_oreg
+				oregon_region = {
+					type = all
+					NOT = { has_province_modifier = gor_redwood_destruction_oregongen }
+				}
+			}
+		}
+		effect = {	
+			if = {
+				limit = {
+					adm = 6
+				}
+				add_adm_power = 150
+			}
+			else = {
+				change_adm = 1
+			}
+			add_ruler_modifier = {
+				name = "gor_the_restorer_highdesert"
+				duration = -1
+			}
+		}
+	}
+	
+	parched_presidency_highdesert = {
+		icon = prez_speech_industrial_gor
+		required_missions = { her_own_wings_highdesert }
+		position = 12
+		trigger = {
+			OR = {
+				NOT = { hre_size = 1 }
+				is_emperor = yes
+				government = republic
+			}
+		}
+		effect = {	
+			custom_tooltip = if_we_are_the_prez_gainn_highdesert
+			tooltip = {
+				add_ruler_modifier = {
+					name = "gor_arid_administration_highdesert"
+					duration = -1
+				}
+			}
+			custom_tooltip = otherwise_we_get_dis_highdesert
+			tooltip = {
+				if = {
+					limit = {
+						dip = 6
+					}
+					add_dip_power = 150
+				}
+				else = {
+					change_dip = 1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						is_emperor = yes
+					}
+					add_ruler_modifier = {
+						name = "gor_arid_administration_highdesert"
+						duration = -1
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							dip = 6
+						}
+						add_dip_power = 150
+					}
+					else = {
+						change_dip = 1
+					}
+				}
+			}
+		}
+	}
+	
+	lincolnite_centers_highdesert = {
+		icon = peasant_farming_gor
+		required_missions = { claim_the_columbia_highdesert }
+		position = 13
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4516
+				province_id = 4501
+				province_id = 4513
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			4516 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4513 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4501 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			if = {
+				limit = {
+					mil = 6
+				}
+				add_mil_power = 150
+			}
+			else = {
+				change_mil = 1
+			}
+			custom_tooltip = every_prov_that_produces_grain_in_wash_gain_highdesert
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_careful_columbian_irrigation_highdesert"
+					duration = 9125
+				}
+			}
+			hidden_effect = {
+				washington_region = {
+					limit = {
+						trade_goods = grain
+					}
+					add_province_modifier = {
+						name = "gor_careful_columbian_irrigation_highdesert"
+						duration = 9125
+					}
+				}
+			}
+		}
+	}
+}
+
+highdesert_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = U90
+	}
+	has_country_shield = yes
+	
+	invest_in_the_highdesert_highdesert = {
+		icon = highdesert_gor
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			area = highdesert_area
+		}
+		trigger = {
+			highdesert_area = {
+				type = all
+				owned_by = ROOT
+			}
+			development_in_provinces = {
+				area = highdesert_area
+				value = 35
+			}
+		}
+		effect = {	
+			custom_tooltip = every_prov_in_the_highdesert_area_gains
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_highdesert_oases_highdesert"
+					duration = -1
+				}
+			}
+			custom_tooltip = if_it_is_a_steppe_instead_gain
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_highdesert_oases_betta_highdesert"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				highdesert_area = {
+					if = {
+						limit = {
+							has_terrain = steppe
+						}
+						add_province_modifier = {
+							name = "gor_highdesert_oases_betta_highdesert"
+							duration = -1
+						}
+					}
+					else = {
+						add_province_modifier = {
+							name = "gor_highdesert_oases_highdesert"
+							duration = -1
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	zealous_work_highdesert = {
+		icon = constitutionalist_pray_gor
+		required_missions = { invest_in_the_highdesert_highdesert }
+		position = 2
+		provinces_to_highlight = {
+			area = highdesert_area
+		}
+		trigger = {
+			OR = {
+				temple = 5
+				cathedral = 5
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = have_three_temples_or_cathedrals_in_highdesert_area
+					highdesert_area = {
+						type = all
+						OR = {
+							has_building = temple
+							has_building = cathedral
+						}
+					}
+				}
+				amount = 3
+			}
+			OR = {
+				workshop = 5
+				counting_house = 5
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = have_three_stockexchangers_or_cathedrals_in_highdesert_area
+					highdesert_area = {
+						type = all
+						OR = {
+							has_building = counting_house
+							has_building = workshop
+						}
+					}
+				}
+				amount = 3
+			}
+		}
+		effect = {	
+			add_province_modifier = {
+				name = "gor_countryside_churches_highdesert"
+				duration = 9125
+			}
+			custom_tooltip = every_workshop_or_other_we_make_will_grant
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_zealous_work_highdesert"
+					duration = 3650
+				}
+			}
+		}
+	}
+	
+	hydration_innovations_highdesert = {
+		icon = farm_in_highdesert_gor
+		required_missions = { taming_the_desert_highdesert zealous_work_highdesert }
+		position = 3
+		trigger = {
+			innovativeness = 25
+			university = 5
+			NOT = { has_unembraced_institution = yes } 
+			has_completed_idea_group_of_category = {
+				adm_ideas = yes
+			}
+		}
+		effect = {	
+			add_ruler_modifier = {
+				name = "gor_knowledge_thirsty_highdesert"
+				duration = -1
+			}
+			define_advisor = {
+				type = philosopher
+				skill = 3
+				cost_multiplier = 0.25
+			}	
+		}
+	}
+	
+	oregons_outback_highdesert = {
+		icon = highdesert_city_gor
+		required_missions = { hydration_innovations_highdesert mechanized_wranglin_highdesert orrian_caravans_highdesert }
+		position = 3
+		provinces_to_highlight = {
+			area = highdesert_area
+		}
+		trigger = {
+			development_in_provinces = {
+				area = highdesert_area 
+				value = 100
+			}
+			is_great_power = yes
+		}
+		effect = {	
+			custom_tooltip = modify_oregonian_outback_to_now_be
+			add_country_modifier = {
+				name = "gor_oregons_outback_betta_highdesert"
+				duration = -1
+			}
+			hidden_effect = {
+				remove_country_modifier = gor_oregons_outback_highdesert
+			}
+		}
+	}
+	
+	follow_the_deschutes_highdesert = {
+		icon = knight_by_river_gor
+		required_missions = { consolidate_the_capital_highdesert }
+		position = 6
+		provinces_to_highlight = {
+			area = bend_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			bend_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			oregonian_cascades_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tooltip = {
+				1974 = {
+					add_center_of_trade_level = 1
+				}
+			}
+			custom_tooltip = if_center_of_trade_is_already_level_two_gain
+			tooltip = {
+				add_dip_power = 50
+				add_mercantilism = 3
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						1974 = {
+							NOT = { province_has_center_of_trade_of_level = 2 }
+						}
+					}
+					1974 = {
+						add_center_of_trade_level = 1
+					}
+				}
+				else = {
+					add_dip_power = 50
+					add_mercantilism = 3
+				}
+			}
+		}
+	}
+	
+	cascadian_conquest_highdesert = {
+		icon = medieval_soldiers_gor
+		required_missions = { follow_the_deschutes_highdesert highdeserts_end_highdesert }
+		position = 7
+		provinces_to_highlight = {
+			area = oregonian_cascades_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			oregonian_cascades_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provs_owned_in_org_by_highdesert_brug
+					oregon_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}	
+				}
+				amount = 15
+			}
+		}
+		effect = {	
+			upper_willamette_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_willamette_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			create_general = { tradition = 75 }
+			add_country_modifier = {
+				name = "gor_valley_raids_highdesert"
+				duration = 5475
+			}
+		}
+	}
+	
+	challenge_the_elector_highdesert = {
+		icon = king_subject_gor
+		required_missions = { cascadian_conquest_highdesert }
+		position = 8
+		provinces_to_highlight = {
+			province_id = 1199
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			1199 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			custom_tooltip = if_willamette_is_out_subject_and_an_elector_we_get_them
+			custom_tooltip = otherwise_we_gain_atoria
+			tooltip = {
+				add_adm_power = 50
+				add_mil_power = 50
+				add_dip_power = 50
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						Y96 = {
+							is_elector = yes
+							is_subject_of = ROOT
+						}
+					}
+					Y96 = {
+						elector = no
+					}
+					elector = ROOT
+				}
+				else = {
+					add_adm_power = 50
+					add_mil_power = 50
+					add_dip_power = 50
+				}
+			}
+		}
+	}
+	
+	greeting_the_waves_highdesert = {
+		icon = waves_gor
+		required_missions = { press_into_portland_highdesert challenge_the_elector_highdesert }
+		position = 9
+		provinces_to_highlight = {
+			area = tillamook_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			tillamook_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			1197 = {
+				add_unit_construction = {
+					type = galley
+					amount = 10
+					speed = 0.1
+					cost = 0
+				}
+			}
+			1190 = {
+				add_province_modifier = {
+					name = "gor_wrangler_milk_highdesert"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	reign_in_the_westerners_highdesert = {
+		icon = northwest_soldiers_shaking_hands_gor
+		required_missions = { greeting_the_waves_highdesert }
+		position = 10
+		provinces_to_highlight = {
+			region = oregon_region
+			culture = oregonite
+			OR = {
+				NOT = { owned_by = ROOT }
+				local_autonomy = 30
+				unrest = 2
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = every_prov_wit_org_in_org_auto_unrest_and_we_own_highdesert
+				oregon_region = {
+					type = all
+					owned_by = ROOT
+					NOT = { local_autonomy = 30 }
+					NOT = { unrest = 2 }
+				}
+			}
+		}
+		effect = {	
+			country_event = { id = highdesert_events.2 }
+		}
+	}
+	
+	her_own_wings_highdesert = {
+		icon = beaver_gor
+		required_missions = { reign_in_the_westerners_highdesert redwood_restoration_highdesert }
+		position = 11
+		provinces_to_highlight = {
+			region = oregon_region
+		}
+		trigger = {
+			development_in_provinces = {
+				region = oregon_region
+				value = 400
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					oregon_region = {
+						type = all
+						development = 30
+					}
+				}
+				amount = 5
+			}
+		}
+		effect = {	
+			washington_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			jefferson_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_she_flies_with_her_own_wings_highdesert"
+				duration = -1
+			}
+			custom_tooltip = if_we_are_the_prez_gain_highdesert
+			tooltip = {
+				add_imperial_influence = 25
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						is_emperor = yes
+					}
+					add_imperial_influence = 25
+				}
+			}
+		}
+	}
+	
+	claim_the_columbia_highdesert = {
+		icon = columbia_river_gor
+		required_missions = { her_own_wings_highdesert }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2046
+				province_id = 2057 
+				province_id = 1208 
+				province_id = 1197 
+				province_id = 2068
+				province_id = 1218 
+				province_id = 2069 
+				province_id = 1970
+				province_id = 4500
+				province_id = 1972
+				province_id = 2039
+				province_id = 2038
+				province_id = 2037
+				province_id = 4501
+				province_id = 2036
+				province_id = 4504 
+				province_id = 2056
+				province_id = 2035
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = own_all_provinces_along_the_columbia
+				2046 = { country_or_non_sovereign_subject_holds = ROOT }
+				2057 = { country_or_non_sovereign_subject_holds = ROOT }
+				1208 = { country_or_non_sovereign_subject_holds = ROOT }
+				1197 = { country_or_non_sovereign_subject_holds = ROOT }
+				2068 = { country_or_non_sovereign_subject_holds = ROOT }
+				1218 = { country_or_non_sovereign_subject_holds = ROOT }
+				2069 = { country_or_non_sovereign_subject_holds = ROOT }
+				1970 = { country_or_non_sovereign_subject_holds = ROOT }
+				4500 = { country_or_non_sovereign_subject_holds = ROOT }
+				1972 = { country_or_non_sovereign_subject_holds = ROOT }
+				2039 = { country_or_non_sovereign_subject_holds = ROOT }
+				2038 = { country_or_non_sovereign_subject_holds = ROOT }
+				2037 = { country_or_non_sovereign_subject_holds = ROOT }
+				4501 = { country_or_non_sovereign_subject_holds = ROOT }
+				2036 = { country_or_non_sovereign_subject_holds = ROOT }
+				4504 = { country_or_non_sovereign_subject_holds = ROOT }
+				2056 = { country_or_non_sovereign_subject_holds = ROOT }
+				2035 = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		effect = {	
+			add_mercantilism = 5
+			custom_tooltip = instantly_upgrade_all_COT_along_to_the_columbia_we_own_to_two
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						province_has_center_of_trade_of_level = 1
+						NOT = { province_has_center_of_trade_of_level = 2 }
+						OR = {
+							province_id = 2046
+							province_id = 2057 
+							province_id = 1208 
+							province_id = 1197 
+							province_id = 2068
+							province_id = 1218 
+							province_id = 2069 
+							province_id = 1970
+							province_id = 4500
+							province_id = 1972
+							province_id = 2039
+							province_id = 2038
+							province_id = 2037
+							province_id = 4501
+							province_id = 2036
+							province_id = 4504 
+							province_id = 2056
+							province_id = 2035
+						}
+					}
+					add_center_of_trade_level = 1
+				}
+			}
+		}
+	}
+	
+	silence_the_sound_highdesert = {
+		icon = knight_in_evergreen_forest_gor
+		required_missions = { claim_the_columbia_highdesert }
+		position = 13
+		provinces_to_highlight = {
+			OR = {
+				area = low_puget_area
+				area = high_puget_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			high_puget_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			low_puget_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			add_navy_tradition = 15
+			add_country_modifier = {
+				name = "gor_puget_sails_highdesert"
+				duration = 9125
+			}
+		}
+	}
+	
+	seat_of_the_presidents_highdesert = {
+		icon = golden_gate_gor
+		required_missions = { challenge_the_progressives_highdesert }
+		position = 15
+		provinces_to_highlight = {
+			province_id = 868
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			868 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			868 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 5475
+					power = 50
+					key = southbay_dominance
+				}
+			}	
+			add_country_modifier = {
+				name = "gor_well_of_all_markets_highdesert"
+				duration = 18250
+			}
+		}
+	}
+}
+
+highdesert_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = U90
+	}
+	has_country_shield = yes
+	
+	mechanized_wranglin_highdesert = {
+		icon = manufactory_inside_gor
+		required_missions = { zealous_work_highdesert }
+		position = 3
+		provinces_to_highlight = {
+			area = highdesert_area
+			NOT = { has_manufactory_trigger = yes }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = all_provs_in_highdesert_now_got_manufactories
+				highdesert_area = {
+					type = all
+					has_manufactory_trigger = yes
+				}
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = num_of_manufactories_highdesert
+					all_owned_province = {
+						has_manufactory_trigger = yes
+					}
+				}
+				amount = 20 
+			}
+		}
+		effect = {	
+			custom_tooltip = every_prov_in_the_highdesert_not_producing_gold_will_now_produce
+			hidden_effect = {
+				highdesert_area = {
+					limit = {
+						NOT = { trade_goods = gold } 
+					}
+					random_list = {
+						33 = {
+							change_trade_goods = paper
+						}
+						33 = {
+							change_trade_goods = glass
+						}
+						34 = {
+							change_trade_goods = cloth
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	consolidate_the_capital_highdesert = {
+		icon = highdesert_wrangler_gor
+		required_missions = { }
+		position = 5
+		provinces_to_highlight = {
+			area = highdesert_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			highdesert_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			capital_scope = {
+				add_base_tax = 2
+			}
+			morrow_crook_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			bend_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			blue_oregon_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	highdeserts_end_highdesert = {
+		icon = morrow_crook_gor
+		required_missions = { consolidate_the_capital_highdesert }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2038
+				province_id = 2040
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			2038 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2040 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 10
+			}
+			add_country_modifier = {
+				name = "gor_nobles_of_morrow_and_crook_highdesert"
+				duration = 3650
+			}
+		}
+	}
+	
+	wallop_walla_walla_highdesert = {
+		icon = exploding_castle_gor
+		required_missions = { oregon_blues_highdesert }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2035
+				province_id = 2037
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			2035 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2037 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			add_years_of_owned_provinces_production_income = {
+				years = 10
+				trigger = {
+					trade_goods = wine
+				}
+				custom_tooltip = from_wine_mah_god_highdesert
+			}
+			custom_tooltip = remove_echoite_cores_from_all_provs_we_own_highdesert
+			custom_tooltip = if_echo_does_note_exist_also_get_highdesert
+			tooltip = {
+				if = {
+					limit = {
+						stability = 3
+					}
+					add_adm_power = 150
+				}
+				else = {
+					add_stability = 1
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_core = Y38
+					}
+					remove_core = Y38
+				}
+				if = {
+					limit = {
+						NOT = { exists = Y38 }
+					}
+					if = {
+						limit = {
+							stability = 3
+						}
+						add_adm_power = 150
+					}
+					else = {
+						add_stability = 1
+					}
+				}
+			}
+		}
+	}
+	
+	the_shasta_line_highdesert = {
+		icon = knights_fighting_gor
+		required_missions = { her_own_wings_highdesert }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				area = goose_area
+				area = klamath_area
+				area = josephine_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_a_few_of_da_following_areas_highdesert
+					OR = {
+						goose_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT 
+						}
+						klamath_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT 
+						}
+						josephine_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT 
+						}
+					}
+				}
+				amount = 2
+			}
+		}
+		effect = {	
+			add_mil_power = 100
+			custom_tooltip = every_time_we_win_a_battle_in_a_mountain_prov_gain_highdesert
+			tooltip = {
+				add_mil_power = 10
+			}
+		}
+	}
+	
+	southern_cascades_highdesert = {
+		icon = cascadian_army_gor
+		required_missions = { the_shasta_line_highdesert }
+		position = 13
+		provinces_to_highlight = {
+			OR = {
+				area = shasta_area
+				area = redwood_area
+				area = trinity_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			shasta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+			OR = {
+				redwood_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT 
+				}
+				trinity_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT 
+				}
+			}
+		}
+		effect = {	
+			custom_tooltip = every_prov_we_own_in_shasta_org_and_wash_cascades_highdesert
+			tooltip = {
+				add_base_manpower = 2
+				add_province_modifier = {
+					name = "gor_lessons_of_shasta_highdesert"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				oregonian_cascades_area = {
+					add_base_manpower = 2
+					add_province_modifier = {
+						name = "gor_lessons_of_shasta_highdesert"
+						duration = -1
+					}
+				}
+				shasta_area = {
+					add_base_manpower = 2
+					add_province_modifier = {
+						name = "gor_lessons_of_shasta_highdesert"
+						duration = -1
+					}
+				}
+				washington_cascades_area = {
+					add_base_manpower = 2
+					add_province_modifier = {
+						name = "gor_lessons_of_shasta_highdesert"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	
+	challenge_the_progressives_highdesert = {
+		icon = lady_justice_gor
+		required_missions = { southern_cascades_highdesert }
+		position = 14
+		provinces_to_highlight = {
+			area = north_sierra_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = won_a_war_against_the_prez_in_last_tweny_fif_years
+					emperor = {
+						ROOT = {
+							has_won_war_against = {
+								who = PREV
+								max_years_since = 25
+							}
+						}
+					}	
+				}
+				north_sierra_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {	
+			sunkissed_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = if_we_the_prez_and_progressive_highdesert
+			tooltip = {
+				add_ruler_modifier = {
+					name = "gor_presidency_of_progress_highdesert"
+					duration = -1
+				}
+			}
+			custom_tooltip = if_we_the_prez_and_traditionalists_highdesert
+			tooltip = {
+				add_ruler_modifier = {
+					name = "gor_champion_of_conservatism_highdesert"
+					duration = -1
+				}
+			}
+			custom_tooltip = otherwissee_we_get_highdesert
+			tooltip = {
+				add_ruler_modifier = {
+					name = "gor_partisan_pacificist_highdesert"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						is_emperor = yes
+						religious_school = {
+							group = constitutionalist_group
+							school = progressive_party
+						}
+					}
+					add_ruler_modifier = {
+						name = "gor_presidency_of_progress_highdesert"
+						duration = -1
+					}
+				}
+				else_if = {
+					limit = {
+						is_emperor = yes
+						religious_school = {
+							group = constitutionalist_group
+							school = traditionalist_party
+						}
+					}
+					add_ruler_modifier = {
+						name = "gor_champion_of_conservatism_highdesert"
+						duration = -1
+					}
+				}
+				else = {
+					add_ruler_modifier = {
+						name = "gor_partisan_pacificist_highdesert"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	
+	claim_classical_cities_highdesert = {
+		icon = urban_carnage_gor
+		required_missions = { challenge_the_progressives_highdesert }
+		position = 15
+		provinces_to_highlight = {
+			region = sunkissed_region
+			development = 25
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provs_wit_over_tweny_five_dev_in_liberty_region
+					sunkissed_region = {
+						type = all
+						development = 25
+						country_or_non_sovereign_subject_holds = ROOT 
+					}
+				}
+				amount = 10
+			}
+		}
+		effect = {	
+			custom_tooltip = every_prov_wit_ova_tweny_five_in_liberty_gains
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_ideologically_open_highdesert"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				sunkissed_region = {
+					limit = {
+						development = 25
+					}
+					add_province_modifier = {
+						name = "gor_ideologically_open_highdesert"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+highdesert_missions_slot_fourt = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = U90
+	}
+	has_country_shield = yes
+	
+	integrate_the_wranglers_highdesert = {
+		icon = wrangler_knight_gor
+		required_missions = { formalized_military_highdesert  }
+		position = 2
+		trigger = {
+			crown_land_share = 70
+			num_of_cavalry = 25
+			has_completed_idea_group_of_category = {
+				mil_ideas = yes
+			}
+			OR = {
+				mil = 5
+				full_idea_group = aristocracy_ideas
+			}
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "gor_terror_of_the_west_highdesert"
+				duration = -1
+			}
+		}
+	}
+	
+	a_force_to_reckon_with_highdesert = {
+		icon = revolutionary_general_gor
+		required_missions = { integrate_the_wranglers_highdesert placate_the_new_money_highdesert }
+		position = 4
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_have_an_army_larger_dan_anyone_est_inwestern_highdesert
+				NOT = {
+					any_known_country = {
+						technology_group = western
+						army_size = ROOT
+					}
+				}
+			}
+		}
+		effect = {	
+			custom_tooltip = modify_terror_of_the_west_highdesert
+			add_country_modifier = {
+				name = "gor_terror_of_the_west_betta_highdesert"
+				duration = -1
+			}
+			hidden_effect = {
+				remove_country_modifier = gor_terror_of_the_west_highdesert
+			}
+		}
+	}
+	
+	oregon_blues_highdesert = {
+		icon = forest_fire_gor
+		required_missions = { consolidate_the_capital_highdesert }
+		position = 6
+		provinces_to_highlight = {
+			area = blue_oregon_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			blue_oregon_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			north_snake_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			south_snake_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			north_orria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_mil_power = 50
+			define_advisor = {
+				type = fortification_expert
+				skill = 3
+				cost_multiplier = 0.5
+			}	
+		}
+	}
+	
+	idaho_waterfalls_highdesert = {
+		icon = idaho_falls_gor
+		required_missions = { oregon_blues_highdesert }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				province_id = 872
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			872 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			add_ruler_modifier = {
+				name = "gor_awed_by_the_falls_highdesert"
+				duration = -1
+			}
+			custom_tooltip = if_we_defeated_utah_within_the_last_ten_years_highdesert
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_rising_above_the_utahns_highdesert"
+					duration = 7300
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_won_war_against = {
+							who = Y32
+							max_years_since = 10
+						}
+					}
+					add_country_modifier = {
+						name = "gor_rising_above_the_utahns_highdesert"
+						duration = 7300
+					}
+				}
+			}
+		}
+	}
+	
+	envy_of_the_willamette_highdesert = {
+		icon = bend_gor
+		required_missions = { idaho_waterfalls_highdesert wallop_walla_walla_highdesert golden_nevada_highdesert }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = blue_oregon_area
+				area = north_snake_area
+				area = south_snake_area
+				area = north_orria_area
+			}
+		}
+		trigger = {
+			development_in_provinces = {
+				OR = {
+					area = blue_oregon_area
+					area = north_snake_area
+					area = south_snake_area
+					area = north_orria_area
+				}
+				value = 100
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provs_in_those_areas_wit_manufactories_highdesert
+					blue_oregon_area = {
+						type = all
+						has_manufactory_trigger = yes
+					}
+					north_snake_area = {
+						type = all
+						has_manufactory_trigger = yes
+					}
+					south_snake_area = {
+						type = all
+						has_manufactory_trigger = yes
+					}
+					north_orria_area = {
+						type = all
+						has_manufactory_trigger = yes
+					}
+				}
+				amount = 10
+			}
+		}
+		effect = {	
+			idaho_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = every_prov_in_those_areas_gains_highdesert
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_froniter_migration_highdesert"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	cross_the_snake_highdesert = {
+		icon = idaho_ruins_gor
+		required_missions = { envy_of_the_willamette_highdesert }
+		position = 9
+		provinces_to_highlight = {
+			province_id = 1933
+		}
+		trigger = {
+			1933 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+		}
+		effect = {	
+			1933 = {
+				add_base_tax = 2
+				change_religion = ROOT
+				change_culture = ROOT
+			}
+		}
+	}
+	
+	cities_of_the_south_highdesert = {
+		icon = burning_theanite_wheel_gor
+		required_missions = { cross_the_snake_highdesert prepare_idaho_campaign_highdesert }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1879
+				province_id = 712
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			1879 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			712 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			custom_tooltip = every_prov_in_idaho_wit_ova_fifteen_dev_bcomes_our_cult_and_relig_instantly
+		}
+	}
+	
+	waste_washoe_highdesert = {
+		icon = black_rock_gor
+		required_missions = { her_own_wings_highdesert }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1871
+				province_id = 1966
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			1871 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+			1966 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+		}
+		effect = {	
+			add_corruption = -2
+			add_yearly_manpower = 2
+			nevada_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_traditionalist_strongholds_highdesert"
+				duration = 10950
+			}
+		}
+	}
+	
+	chase_the_espanish_highdesert = {
+		icon = industrial_soldier_river_gor
+		required_missions = { waste_washoe_highdesert }
+		position = 13
+		provinces_to_highlight = {
+			OR = {
+				area = upper_espanish_area
+				area = new_galicia_area
+				area = lower_espanish_area
+				area = west_beira_area
+				area = lisboa_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_tree_of_da_following_areas_highdesert
+					OR = {
+						upper_espanish_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						new_galicia_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						lower_espanish_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						west_beira_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						lisboa_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+				}
+				amount = 3
+			}
+		}
+		effect = {	
+			4483 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 3650
+					power = 30
+					key = highdesert_caravans_highdesert
+				}
+			}
+			custom_tooltip = every_cot_in_dese_areas_gains_highdesert
+			tooltip = {
+				add_base_production = 2
+				add_province_modifier = {
+					name = "gor_highdesert_caravan_connections_highdesert"
+					duration = 10950
+				}
+			}
+			hidden_effect = {
+				upper_espanish_area = {
+					limit = {
+						province_has_center_of_trade_of_level = 1
+					}
+					add_base_production = 2
+					add_province_modifier = {
+						name = "gor_highdesert_caravan_connections_highdesert"
+						duration = 10950
+					}
+				}
+				new_galicia_area = {
+					limit = {
+						province_has_center_of_trade_of_level = 1
+					}
+					add_base_production = 2
+					add_province_modifier = {
+						name = "gor_highdesert_caravan_connections_highdesert"
+						duration = 10950
+					}
+				}
+				lower_espanish_area = {
+					limit = {
+						province_has_center_of_trade_of_level = 1
+					}
+					add_base_production = 2
+					add_province_modifier = {
+						name = "gor_highdesert_caravan_connections_highdesert"
+						duration = 10950
+					}
+				}
+				west_beira_area = {
+					limit = {
+						province_has_center_of_trade_of_level = 1
+					}
+					add_base_production = 2
+					add_province_modifier = {
+						name = "gor_highdesert_caravan_connections_highdesert"
+						duration = 10950
+					}
+				}
+				lisboa_area = {
+					limit = {
+						province_has_center_of_trade_of_level = 1
+					}
+					add_base_production = 2
+					add_province_modifier = {
+						name = "gor_highdesert_caravan_connections_highdesert"
+						duration = 10950
+					}
+				}
+			}
+		}
+	}
+	
+	consolidate_liberty_highdesert = {
+		icon = california_flag_gor
+		required_missions = { challenge_the_progressives_highdesert }
+		position = 15
+		provinces_to_highlight = {
+			region = sunkissed_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provs_in_da_liberty_region_highdesert
+					sunkissed_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT 
+					}
+				}
+				amount = 30
+			}
+		}
+		effect = {	
+			custom_tooltip = convert_all_our_claims_in_liberty_into_cores_highdesert
+			hidden_effect = {
+				sunkissed_region = {
+					limit = {
+						is_claim = ROOT
+					}
+					remove_claim = ROOT
+					add_core = ROOT
+				}
+			}
+		}
+	}
+}
+
+
+highdesert_missions_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = U90
+	}
+	has_country_shield = yes
+	
+	formalized_military_highdesert = {
+		icon = knight_reading_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			has_mil_advisor_2 = yes
+			army_size = 20
+			num_of_generals = 1
+		}
+		effect = {	
+			add_ruler_modifier = {
+				name = "gor_tactician_education_highdesert"
+				duration = -1
+			}
+		}
+	}
+	
+	invest_in_recruiting_centers_highdesert = {
+		icon = army_training_camp_gor
+		required_missions = { formalized_military_highdesert }
+		position = 2
+		trigger = {
+			OR = {
+				barracks = 15
+				training_fields = 15
+			}
+			OR = {
+				regimental_camp = 15
+				conscription_center = 15
+			}
+		}
+		effect = {	
+			country_event = { id = highdesert_events.1 }
+		}
+	}
+	
+	placate_the_new_money_highdesert = {
+		icon = corporate_executive_gor
+		required_missions = { invest_in_recruiting_centers_highdesert }
+		position = 3
+		trigger = {
+			army_size = 50
+			if = {
+				limit = {
+					has_country_modifier = gor_service_titles_highdesert
+				}
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 50
+				}
+			}
+			else = {
+				has_commanding_three_star = yes
+			}
+		}
+		effect = {	
+			custom_tooltip = if_we_have_adopted_service_titles_unlock_some_estate_privs
+			custom_tooltip = otherrwise_we_get_highdesert
+			tooltip = {
+				add_mil_power = 50
+				define_advisor = {
+					type = commandant
+					skill = 3
+					cost_multiplier = 0.5
+				}	
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_modifier = gor_service_titles_highdesert
+					}
+					add_mil_power = 50
+					define_advisor = {
+						type = commandant
+						skill = 3
+						cost_multiplier = 0.5
+					}	
+				}
+			}
+		}
+	}
+	
+	golden_nevada_highdesert = {
+		icon = gold_gor
+		required_missions = { oregon_blues_highdesert }
+		position = 7
+		provinces_to_highlight = {
+			area = north_orria_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			north_orria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			4496 = {
+				add_base_production = 2
+				add_province_modifier = {
+					name = "gor_eased_elko_expansion_highdesert"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	prepare_idaho_campaign_highdesert = {
+		icon = invasion_planning_gor
+		required_missions = { envy_of_the_willamette_highdesert }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = bluejack_area
+				area = nez_perce_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			nez_perce_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+			bluejack_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+		}
+		effect = {	
+			add_province_modifier = {
+				name = "gor_idaho_beautification_efforts_highdesert"
+				duration = 7300
+			}
+		}
+	}
+	
+	unite_the_north_plains_highdesert = {
+		icon = farm_fire_gor
+		required_missions = { prepare_idaho_campaign_highdesert }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = clark_lewis_area
+				area = glacier_area
+				area = flathead_area
+				area = helena_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_tree_of_da_following_areas_idahoflavor_highdesert
+					OR = {
+						clark_lewis_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						glacier_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						flathead_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						helena_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+				}
+				amount = 3
+			}
+		}
+		effect = {	
+			add_mil_power = 100
+			if = {
+				limit = {
+					mil = 6
+				}
+				add_mil_power = 150
+			}
+			else = {
+				change_mil = 1
+			}
+			define_advisor = {
+				type = grand_captain
+				skill = 3
+				cost_multiplier = 0.25
+			}	
+		}
+	}
+	
+	perpetual_plains_highdesert = {
+		icon = army_idaho_gor
+		required_missions = { unite_the_north_plains_highdesert cities_of_the_south_highdesert }
+		position = 11
+		provinces_to_highlight = {
+			region = idaho_region
+			OR = {
+				NOT = { owned_by = ROOT }
+				local_autonomy = 30
+				unrest = 2
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = every_prov_in_idaho_we_own_and_has_below_thirty_autonomy_and_two_unrest
+				idaho_region = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { local_autonomy = 30 }
+					NOT = { unrest = 2 }
+				}
+			}
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "gor_the_eastern_wranglers_highdesert"
+				duration = -1
+			}
+		}
+	}
+	
+	a_lower_desert_highdesert = {
+		icon = lake_mono_gor
+		required_missions = { waste_washoe_highdesert }
+		position = 13
+		provinces_to_highlight = {
+			OR = {
+				area = mono_area
+				area = tahoe_area
+				area = walker_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			mono_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tahoe_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			walker_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			custom_tooltip = every_province_in_the_mono_tahoan_and_walker_area_gain
+			tooltip = {
+				if = {
+					limit = {
+						mission_completed = taming_the_desert_highdesert
+					}
+					add_province_modifier = {
+						name = "gor_highdesert_oases_two_highdesert"
+						duration = -1
+					}
+				}
+				else = {
+					add_province_modifier = {
+						name = "gor_highdesert_oases_highdesert"
+						duration = -1
+					}
+				}
+			}
+			hidden_effect = {
+				mono_area = {
+					if = {
+						limit = {
+							mission_completed = taming_the_desert_highdesert
+						}
+						add_province_modifier = {
+							name = "gor_highdesert_oases_two_highdesert"
+							duration = -1
+						}
+					}
+					else = {
+						add_province_modifier = {
+							name = "gor_highdesert_oases_highdesert"
+							duration = -1
+						}
+					}
+				}
+				tahoe_area = {
+					if = {
+						limit = {
+							mission_completed = taming_the_desert_highdesert
+						}
+						add_province_modifier = {
+							name = "gor_highdesert_oases_two_highdesert"
+							duration = -1
+						}
+					}
+					else = {
+						add_province_modifier = {
+							name = "gor_highdesert_oases_highdesert"
+							duration = -1
+						}
+					}
+				}
+				walker_area = {
+					if = {
+						limit = {
+							mission_completed = taming_the_desert_highdesert
+						}
+						add_province_modifier = {
+							name = "gor_highdesert_oases_two_highdesert"
+							duration = -1
+						}
+					}
+					else = {
+						add_province_modifier = {
+							name = "gor_highdesert_oases_highdesert"
+							duration = -1
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	assess_angeles_highdesert = {
+		icon = large_ship_gor
+		required_missions = { chase_the_espanish_highdesert a_lower_desert_highdesert }
+		position = 13
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						area = mouth_of_the_espanish_area
+						area = guadiana_area
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				province_id = 4636
+			}
+		}
+		trigger = {
+			mouth_of_the_espanish_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			guadiana_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4636 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {	
+			add_mercantilism = 10
+			add_country_modifier = {
+				name = "gor_baron_of_the_bay_highdesert"
+				duration = -1
+			}
+		}
+	}
+}

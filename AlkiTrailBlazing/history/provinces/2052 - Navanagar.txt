@@ -1,0 +1,19 @@
+#2052 - Navanagar
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = U55
+controller = U55
+add_core = U55
+culture = seattlain
+religion = partisan
+capital = "Olympia"
+trade_goods = fish #salmon fishing 
+hre = yes
+base_tax = 3
+base_production = 3
+base_manpower = 3
+is_city = yes
+center_of_trade = 1
+fort_15th = yes

@@ -1,0 +1,14 @@
+#272 Lithuania
+discovered_by = north_american
+capital = "Vilna"
+is_city = no
+culture = neolithuanian
+religion = paganry
+trade_goods = unknown
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+native_size = 2
+native_ferocity = 8
+native_hostileness = 4

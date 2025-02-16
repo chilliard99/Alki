@@ -1,0 +1,34 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = mulegean
+religion = partisan
+technology_group = western
+capital = 2405	 #Mulege
+religious_school = progressive_party
+set_country_flag = baja_independence_caucus
+
+1411.5.12 = {
+	monarch = {
+		name = "Josefina III"
+		dynasty = "Ignacio"
+		birth_date = 1411.5.12
+		adm = 2
+		dip = 3
+		mil = 3
+		female = yes
+	}
+}
+1429.5.16 = {
+	heir = {
+		name = "Roberto"
+		monarch_name = "Roberto"
+		dynasty = "Ignacio"
+		birth_date = 1429.5.16
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 1
+		mil = 1
+	}
+}

@@ -1,0 +1,859 @@
+###########################SONS OF OREGON MISSIONS###########################
+sons_of_oregon_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = U86
+	}
+	has_country_shield = yes
+	
+	the_noble_volunteers_sonsorg = {
+		icon = medieval_soldiers_gor
+		required_missions = { allies_abroad_sonsorg }
+		position = 3
+		trigger = {
+			current_income_balance = 0 
+			grown_by_development = 25
+			any_ally = {
+				owes_favors = {
+					who = ROOT
+					value = 25
+				}
+			}
+		}
+		effect = {	
+			add_years_of_income = 2
+			add_yearly_manpower = 2
+			custom_tooltip = unlocks_the_decision_call_on_foreign_volunteers
+		}
+	}
+}
+
+sons_of_oregon_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = U86
+	}
+	has_country_shield = yes
+	
+	allies_abroad_sonsorg = {
+		icon = northwest_soldiers_shaking_hands_gor
+		required_missions = { restore_order_sonsorg }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				owner = {
+					tag = W06
+				}
+				owner = {
+					tag = Y32
+				}
+			}
+		}
+		trigger = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = alaska_got_100_opinion_wit_us
+					W06 = {
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = utah_got_100_opinion_wit_us
+					Y32 = {
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = we_are_allied_to_any_great_power
+					any_ally = {
+						is_great_power = yes
+					}
+				}
+			}
+		}
+		effect = {	
+			custom_tooltip = if_we_have_one_hundo_wit_alaska_sonsorg
+			tooltip = {
+				country_event = { id = sonsorg_events.1 }
+			}
+			custom_tooltip = if_we_have_one_hundo_wit_utah_sonsorg
+			tooltip = {
+				country_event = { id = sonsorg_events.5 }
+			}
+			custom_tooltip = otherwise_we_get_sonsorg
+			tooltip = {
+				add_ruler_modifier = {
+					name = "gor_glory_to_the_republic_sonsorg"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						W06 = {
+							has_opinion = {
+								who = Y32
+								value = 100
+							}
+						}
+					}
+					country_event = { id = sonsorg_events.1 }
+				}
+				else_if = {
+					limit = {
+						Y32 = {
+							has_opinion = {
+								who = W06
+								value = 100
+							}
+						}
+					}
+					country_event = { id = sonsorg_events.5 }
+				}
+				else = {
+					add_ruler_modifier = {
+						name = "gor_glory_to_the_republic_sonsorg"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	
+	work_around_the_embargo_sonsorg = {
+		icon = ducats_gor
+		required_missions = { allies_abroad_sonsorg }
+		position = 3
+		provinces_to_highlight = {
+			region = oregon_region 
+			province_has_center_of_trade_of_level = 1
+			NOT = { owned_by = ROOT } 
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provs_with_cents_of_trade_sonsorg
+					all_owned_province = {
+						province_has_center_of_trade_of_level = 1
+					}
+				}
+				amount = 3
+			}
+			has_center_of_trade_of_level = 2
+		}
+		effect = {	
+			add_mercantilism = 3
+			add_estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 10
+			}
+			custom_tooltip = remove_the_embargo_modifier_and_replace_them_with
+			2063 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = -1
+					power = -50
+					key = union_embargo_better_sonsorg
+				}
+			}
+			4516 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = -1
+					power = -50
+					key = union_embargo_better_sonsorg
+				}
+			}
+			1856 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = -1
+					power = -50
+					key = union_embargo_better_sonsorg
+				}
+			}
+			hidden_effect = {
+				2063 = {
+					remove_trade_modifier = {
+						who = ROOT
+						key = union_embargo_sonsorg
+					}
+				}
+				4516 = {
+					remove_trade_modifier = {
+						who = ROOT
+						key = union_embargo_sonsorg
+					}
+				}
+				1856 = {
+					remove_trade_modifier = {
+						who = ROOT
+						key = union_embargo_sonsorg
+					}
+				}
+			}
+		}
+	}
+	
+	wartime_goverannce_sonsorg = {
+		icon = union_meetup_gor
+		required_missions = { work_around_the_embargo_sonsorg collect_key_cities_sonsorg }
+		position = 4
+		trigger = {
+			has_government_power = {
+				mechanic_type = rev_org_repub_mechanic
+				power_type = revolutionary_vigor
+				value = 90
+			}
+			republican_tradition = 90
+		}
+		effect = {	
+			custom_tooltip = we_will_no_longer_collapse_when_reaching_zero_rev
+			add_country_modifier = {
+				name = "gor_dictators_protection_sonsorg"
+				duration = -1
+			}
+		}
+	}
+}
+
+sons_of_oregon_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = U86
+	}
+	has_country_shield = yes
+	
+	restore_order_sonsorg = {
+		icon = lady_justice_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			stability = 1
+		}
+		effect = {	
+			if = {
+				limit = {
+					stability = 3
+				}
+				add_adm_power = 150
+			}
+			else = {
+				add_stability = 1
+			}
+			capital_scope = {
+				area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			add_country_modifier = {
+				name = "gor_glory_to_the_republic_sonsorg"
+				duration = 3650
+			}
+		}
+	}
+	
+	prepare_republican_capital_sonsorg = {
+		icon = medieval_willamette_gor
+		required_missions = { restore_order_sonsorg }
+		position = 2
+		provinces_to_highlight = {
+			is_capital_of = ROOT
+		}
+		trigger = {
+			capital_scope = {
+				area_for_scope_province = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {	
+			custom_tooltip = gain_perm_claims_on_all_org_cultured_provs_in_org_sonsorg
+			custom_tooltip = every_prov_owned_wit_redwood_dest_sonsorg
+			tooltip = {
+				add_treasury = 200
+			}
+			hidden_effect = {
+				oregon_region = {
+					limit = {
+						primary_culture = oregonite
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				while = {
+					limit = {
+						any_owned_province = {
+							has_province_modifier = gor_redwood_destruction_oregongen
+							NOT = { has_province_flag = already_given_redwood_dest_bonus_willamette }
+						}
+					}
+					add_treasury = 200
+					random_owned_province = {
+						limit = {
+							has_province_modifier = gor_redwood_destruction_oregongen
+							NOT = { has_province_flag = already_given_redwood_dest_bonus_willamette }
+						}
+						set_province_flag = already_given_redwood_dest_bonus_willamette
+					}
+				} 
+				every_owned_province = {
+					clr_province_flag = already_given_redwood_dest_bonus_willamette
+				}
+			}
+		}
+	}
+	
+	collect_key_cities_sonsorg = {
+		icon = exploding_castle_gor
+		required_missions = { prepare_republican_capital_sonsorg }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1197
+				province_id = 1199
+				province_id = 1223
+				province_id = 1218
+				province_id = 1974
+				province_id = 2038
+				province_id = 2040
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_some_cities_sons_org
+					1197 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					1199 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					1223 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					1218 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					1974 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					2038 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					2040 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 2
+			}
+		}
+		effect = {	
+			country_event = { id = sonsorg_events.9 }
+		}
+	}
+	
+	consolidate_core_areas_sonsorg = {
+		icon = knights_fighting_gor
+		required_missions = { collect_key_cities_sonsorg }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = tillamook_area
+				area = upper_willamette_area
+				area = lower_willamette_area
+				area = oregonian_cascades_area
+				area = morrow_crook_area
+				area = bend_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_some_core_areas_sons_org
+					OR = {
+						tillamook_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						upper_willamette_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						lower_willamette_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						oregonian_cascades_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						morrow_crook_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						bend_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+				}
+				amount = 3
+			}
+		}
+		effect = {	
+			custom_tooltip = every_province_that_is_a_core_remaining_cult_cum_core_sonsorg
+			hidden_effect = {
+				oregon_region = {
+					limit = {
+						is_permanent_claim = ROOT
+					}
+					remove_claim = ROOT
+					add_core = ROOT
+				}
+			}
+		}
+	}
+}
+
+sons_of_oregon_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = U86
+	}
+	has_country_shield = yes
+	
+	be_my_eyes_and_ears_sonsorg = {
+		icon = gossip_gor
+		required_missions = { restore_order_sonsorg }
+		position = 2
+		trigger = {
+			OR = {
+				has_idea_group = espionage_ideas
+				has_idea = covert_tactics_sons_of_oregon
+				calc_true_if = {
+					custom_trigger_tooltip = {
+						tooltip = have_tweny_five_two_countries_in_oregon
+						any_known_country = {
+							primary_culture = oregonite
+							ROOT = {
+								has_spy_network_in = {
+									who = PREV
+									value = 25
+								} 
+							}
+						}
+					}
+					amount = 2
+				}
+			}
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "gor_quite_folk_sonsorg"
+				duration = 3650
+			}
+			custom_tooltip = countries_wit_freedom_fight_get_rebel_events
+			set_global_flag = get_sons_of_oregon_uprisings_bad
+		}
+	}
+	
+	a_little_tomfoolery_sonsorg = {
+		icon = a_little_trolling_gor
+		required_missions = { be_my_eyes_and_ears_sonsorg prepare_republican_capital_sonsorg }
+		position = 3
+		trigger = {
+			has_spy_network_in = {
+				who = emperor
+				value = 50
+			}
+		}
+		effect = {	
+			country_event = { id = sonsorg_events.11 }
+		}
+	}
+}
+
+sons_of_oregon_missions_branch_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = U86
+		NOT = { has_global_flag = too_much_trolling_oregon }
+	}
+	has_country_shield = yes
+	
+	protecting_oregon_sonsorg = {
+		icon = knight_by_river_gor
+		required_missions = { a_little_tomfoolery_sonsorg }
+		position = 4
+		trigger = {
+			army_size = 20
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = we_have_a_subject_of_oregonian_culture_sonsorg
+					any_subject_country = {
+						primary_culture = oregonite
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = we_have_an_ally_of_orgonian_culture_sonsorg
+					any_ally = {
+						primary_culture = oregonite
+					}
+				}
+			}
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "gor_brotherly_recognition_sonsorg"
+				duration = 3650
+			}
+			custom_tooltip = every_nation_with_oregonian_primary_culture_removes_negative_hundo
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						primary_culture = oregonite
+					}
+					remove_opinion = {
+						who = ROOT
+						modifier = nation_of_radicals_gor
+					}
+				}
+			}
+		}
+	}
+	
+	the_republic_of_oregon_two_sonsorg = {
+		icon = beaver_gor
+		required_missions = { building_bridges_sonsorg consolidate_core_areas_sonsorg }
+		position = 6
+		provinces_to_highlight = {
+			region = oregon_region
+			NOT = { owned_by = ROOT } 
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provs_in_org_owned_by_us_kewl
+					oregon_region = {
+						type = all
+						owned_by = ROOT
+					}
+				}
+				amount = 20
+			}
+		}
+		effect = {	
+			set_in_empire = no
+			custom_tooltip = we_can_now_form_the_republic_of_oregon
+			custom_tooltip = remove_union_embrago_modifiers
+			set_country_flag = can_form_sons_of_org_since_mission_complete
+			add_ruler_modifier = {
+				name = "gor_the_peoples_voice_sonsorg"
+				duration = 18250
+			}
+			hidden_effect = {
+				2063 = {
+					remove_trade_modifier = {
+						who = ROOT
+						key = union_embargo_sonsorg
+					}
+					remove_trade_modifier = {
+						who = ROOT
+						key = union_embargo_better_sonsorg
+					}
+				}
+				4516 = {
+					remove_trade_modifier = {
+						who = ROOT
+						key = union_embargo_sonsorg
+					}
+					remove_trade_modifier = {
+						who = ROOT
+						key = union_embargo_better_sonsorg
+					}
+				}
+				1856 = {
+					remove_trade_modifier = {
+						who = ROOT
+						key = union_embargo_sonsorg
+					}
+					remove_trade_modifier = {
+						who = ROOT
+						key = union_embargo_better_sonsorg
+					}
+				}
+			}
+		}
+	}
+}
+
+sons_of_oregon_missions_branch_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = U86
+		NOT = { has_global_flag = too_much_trolling_oregon }
+	}
+	has_country_shield = yes
+	
+	as_it_was_sonsorg = {
+		icon = crane_gor
+		required_missions = { a_little_tomfoolery_sonsorg }
+		position = 4
+		provinces_to_highlight = {
+			has_province_modifier = gor_redwood_destruction_oregongen
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = no_prov_has_redwood_destruction_sonsorg
+				oregon_region = [
+					type = all
+					NOT = { has_province_modifier = gor_redwood_destruction_oregongen }
+				}	
+			}
+		}
+		effect = {	
+			tooltip = {
+				add_adm_power = 50
+				add_dip_power = 50
+				add_mil_power = 50
+			}
+			add_ruler_modifier = {
+				name = "gor_the_restorer_sonsorg"
+				duration = -1
+			}
+			custom_tooltip = if_we_own_portland_salem_and_eugene_gain
+			tooltip = {
+				add_adm_power = 100
+				add_dip_power = 100
+				add_mil_power = 100
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						owns_core_province = 1218
+						owns_core_province = 1223
+						owns_core_province = 1199
+					}
+					add_adm_power = 100
+					add_dip_power = 100
+					add_mil_power = 100
+				}
+				else = {
+					add_adm_power = 50
+					add_dip_power = 50
+					add_mil_power = 50
+				}
+			}	
+		}
+	}
+	
+	building_bridges_sonsorg = {
+		icon = modern_negotiation_gor
+		required_missions = { as_it_was_sonsorg protecting_oregon_sonsorg }
+		position = 5
+		trigger = {
+			diplomatic_reputation = 0
+			OR = {
+				statesman = 2
+				diplomat = 2
+			}
+			has_completed_idea_group_of_category = {
+				dip_ideas = yes
+			}
+		}
+		effect = {	
+			if = {
+				limit = {
+					dip = 6
+				}
+				add_dip_power = 300
+			}
+			else_if = {
+				limit = {
+					dip = 5
+				}
+				add_dip_power = 150
+				change_dip = 1
+			}
+			else = {
+				change_dip = 2
+			}
+			custom_tooltip = remove_negative_opinion_from_the_rest_of_nations_sonsorg
+			hidden_effect = {
+				every_known_country = {
+					remove_opinion = {
+						who = ROOT
+						modifier = nation_of_radicals_gor
+					}
+				}
+			}
+		}
+	}
+}
+
+sons_of_oregon_missions_lock_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = U86
+		has_global_flag = too_much_trolling_oregon
+	}
+	has_country_shield = yes
+	
+	locked_miss_three_sonsorg = {
+		icon = mission_locked_mission
+		required_missions = { a_little_tomfoolery_sonsorg }
+		position = 4
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = this_mission_was_locked_after_killing_the_president
+				always = no
+			}
+		}
+		effect = {	
+			custom_tooltip = this_mission_was_locked_after_killing_the_president
+		}
+	}
+	
+	the_republic_of_oregon_sonsorg = {
+		icon = beaver_gor
+		required_missions = { locked_miss_two_sonsorg consolidate_core_areas_sonsorg }
+		position = 6
+		provinces_to_highlight = {
+			region = oregon_region
+			NOT = { owned_by = ROOT } 
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provs_in_org_owned_by_us_kewl
+					oregon_region = {
+						type = all
+						owned_by = ROOT
+					}
+				}
+				amount = 20
+			}
+		}
+		effect = {	
+			set_in_empire = no
+			custom_tooltip = we_can_now_form_the_republic_of_oregon
+			custom_tooltip = remove_union_embrago_modifiers
+			set_country_flag = can_form_sons_of_org_since_mission_complete
+			add_ruler_modifier = {
+				name = "gor_the_peoples_voice_sonsorg"
+				duration = 18250
+			}
+			hidden_effect = {
+				2063 = {
+					remove_trade_modifier = {
+						who = ROOT
+						key = union_embargo_sonsorg
+					}
+				}
+				4516 = {
+					remove_trade_modifier = {
+						who = ROOT
+						key = union_embargo_sonsorg
+					}
+				}
+				1856 = {
+					remove_trade_modifier = {
+						who = ROOT
+						key = union_embargo_sonsorg
+					}
+				}
+				2063 = {
+					remove_trade_modifier = {
+						who = ROOT
+						key = union_embargo_better_sonsorg
+					}
+				}
+				4516 = {
+					remove_trade_modifier = {
+						who = ROOT
+						key = union_embargo_better_sonsorg
+					}
+				}
+				1856 = {
+					remove_trade_modifier = {
+						who = ROOT
+						key = union_embargo_better_sonsorg
+					}
+				}
+			}
+		}
+	}
+}
+
+sons_of_oregon_missions_lock_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = U86
+		has_global_flag = too_much_trolling_oregon
+	}
+	has_country_shield = yes
+	
+	locked_miss_one_sonsorg = {
+		icon = mission_locked_mission
+		required_missions = { a_little_tomfoolery_sonsorg }
+		position = 4
+		provinces_to_highlight = {
+			has_province_modifier = gor_redwood_destruction_oregongen
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = this_mission_was_locked_after_killing_the_president
+				always = no
+			}
+		}
+		effect = {	
+			custom_tooltip = this_mission_was_locked_after_killing_the_president
+		}
+	}
+	
+	locked_miss_two_sonsorg = {
+		icon = mission_locked_mission
+		required_missions = { locked_miss_one_sonsorg locked_miss_three_sonsorg }
+		position = 5
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = this_mission_was_locked_after_killing_the_president
+				always = no
+			}
+		}
+		effect = {	
+			custom_tooltip = this_mission_was_locked_after_killing_the_president
+		}
+	}
+}

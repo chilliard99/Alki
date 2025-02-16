@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = trueheir_confederacy_reform
+government_rank = 1
+primary_culture = yakama
+religion = partisan
+technology_group = western
+capital = 2486	 #Yakama
+religious_school = traditionalist_party
+
+1444.10.7 = {
+	monarch = {
+		name = "Ned"
+		dynasty = "Wallahee"
+		birth_date = 1429.3.9
+		adm = 4
+		dip = 3
+		mil = 4
+	}
+}

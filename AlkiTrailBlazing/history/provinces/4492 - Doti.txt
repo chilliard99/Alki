@@ -1,0 +1,17 @@
+#1931 - East Frisia
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y96
+controller = Y96
+add_core = Y96
+culture = oregonite
+religion = partisan
+capital = "Roseburg"
+trade_goods = wine #alternatively lumber, but its all willamette vinyards
+hre = yes
+#Untouched by Redwood Crusade
+base_tax = 2
+base_production = 2
+base_manpower = 1

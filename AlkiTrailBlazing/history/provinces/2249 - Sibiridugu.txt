@@ -1,0 +1,17 @@
+# No previous file for Sibiridugu
+discovered_by = western
+discovered_by = eastern
+owner = W08
+controller = W08
+add_core = W08
+is_city = yes
+culture = haidan 
+religion = collectivist
+capital = "Bamako"
+trade_goods = fish #fishing industry
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 4
+fort_15th = yes
+center_of_trade = 1

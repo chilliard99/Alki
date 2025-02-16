@@ -1,0 +1,16 @@
+#1014 - Bungo
+discovered_by = chinese
+owner = X40
+controller = X40
+add_core = X40
+culture = kyushuan_g
+religion = neoshinto
+capital = "Funai"
+trade_goods = livestock #Milk
+hre = no
+base_tax = 4 
+base_production = 2
+base_manpower = 3
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman

@@ -1,0 +1,18 @@
+# No previous file for Choinumni
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = U41
+controller = U41
+add_core = U41
+culture = franciscan
+religion = partisan
+capital = "Hollywood"
+trade_goods = fish #they make a lot of fish
+hre = yes
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes
+center_of_trade = 1

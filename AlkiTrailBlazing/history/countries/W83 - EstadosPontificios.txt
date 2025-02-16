@@ -1,0 +1,34 @@
+government = theocracy
+add_government_reform = tepeyac_papacy_reform_otr
+government_rank = 2
+primary_culture = chilango
+religion = catholico
+technology_group = muslim
+capital = 2998	#Ciudad de Mexico
+add_army_professionalism = 0.05
+
+1388.5.6 = {
+	monarch = {
+		name = "Diego IX"
+		dynasty = "Tepeyac"
+		birth_date = 1388.5.6
+		adm = 3
+		dip = 2
+		mil = 4
+	}
+}
+
+add_country_modifier = {
+	name = "current_papal_authority_tick_otrep"
+	duration = -1
+}
+
+every_known_country = {
+	limit = {
+		religion = catholico
+	}
+	add_opinion = {
+		who = ROOT
+		modifier = tepeyac_papacy_otr
+	}
+}

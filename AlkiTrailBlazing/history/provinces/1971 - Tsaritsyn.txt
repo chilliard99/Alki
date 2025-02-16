@@ -1,0 +1,17 @@
+#1971 - Tsaritsyn
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y80
+controller = Y80
+add_core = Y80
+culture = redwood
+religion = partisan
+hre = yes
+base_tax = 2 
+base_production = 2
+trade_goods = grain #Farming on the rogue river
+base_manpower = 2
+capital = "Brookings"
+is_city = yes

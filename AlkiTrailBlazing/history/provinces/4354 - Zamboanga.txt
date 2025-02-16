@@ -1,0 +1,14 @@
+#4354 - Zamboanga
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neofilipino
+religion = espiritismo
+capital = "Zamboanga"
+trade_goods = copper #apparently theres copper here
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 1
+is_city = yes

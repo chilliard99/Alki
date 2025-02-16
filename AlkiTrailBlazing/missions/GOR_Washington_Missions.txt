@@ -1,0 +1,3397 @@
+###########################WASHINGTON GENERIC MISSIONS###########################
+washington_generic_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+	}
+	has_country_shield = yes
+	
+	cross_juan_de_fuca_washington = {
+		icon = large_fleet_gor
+		required_missions = { collectivist_defense_washington }
+		position = 2
+		provinces_to_highlight = {
+			area = vancouver_isle_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			vancouver_isle_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_navy_tradition = 15
+			custom_tooltip = every_alaskan_core_on_vanc_isle
+			tooltip = {
+				remove_core = W06
+			}
+			custom_tooltip = every_collectivist_province_in_vancouver_isle
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_conversion_by_the_sword_washington"
+					duration = 9125
+				}
+			}
+			hidden_effect = {
+				vancouver_isle_area = {
+					limit = {
+						is_core = W06
+					}
+					remove_core = W06
+				}
+				vancouver_isle_area = {
+					limit = {
+						religion = collectivist
+					}
+					add_province_modifier = {
+						name = "gor_conversion_by_the_sword_washington"
+						duration = 9125
+					}
+				}
+			}
+		}
+	}
+	
+	strike_at_haida_washington = {
+		icon = burning_ships_gor
+		required_missions = { cross_juan_de_fuca_washington }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = haida_area
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					region = arborea_region
+					owned_by = W06
+				}
+			}
+		}
+		trigger = {
+			haida_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			custom_trigger_tooltip = {
+				tooltip = alaska_owns_no_provs_in_arborea
+				arborea_region = {
+					type = all
+					NOT = { owned_by = W06 }
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = all_provs_cored_by_alaska_in_arborea
+			tooltip = {
+				remove_core = W06
+			}
+			custom_tooltip = every_coastal_prov_in_arborea
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_arborean_market_control_washington"
+					duration = 3650
+				}
+			}
+			hidden_effect = {
+				arborea_region = {
+					limit = {
+						is_core = W06
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					remove_core = W06
+				}
+				arborea_region = {
+					limit = {
+						has_port = yes
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_province_modifier = {
+						name = "gor_arborean_market_control_washington"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	
+	sunset_whispers_washington = {
+		icon = sun_ocean_gor
+		required_missions = { }
+		position = 6
+		trigger = {
+			is_institution_enabled = new_world_i
+			OR = {
+				num_of_heavy_ship = 15
+				has_idea = quest_for_the_new_world
+			}
+		}
+		effect = {
+			create_explorer = { tradition = 50 }
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_follow_the_setting_sun_washington"
+					duration = 3650
+				}
+			}
+			custom_tooltip = if_we_dont_have_questneworld_instead
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_follow_the_setting_sun_colo_vers_washington"
+					duration = 3650
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_idea = quest_for_the_new_world
+					}
+					add_country_modifier = {
+						name = "gor_follow_the_setting_sun_washington"
+						duration = 3650
+					}
+				}	
+				else = {
+					add_country_modifier = {
+						name = "gor_follow_the_setting_sun_colo_vers_washington"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	
+	place_to_call_our_own_washington = {
+		icon = korea_gor
+		required_missions = { sunset_whispers_washington }
+		position = 7
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = discover_any_prov_in_north_south_korea
+				OR = {
+					north_korean_area = {
+						has_discovered = ROOT
+					}
+					south_korean_area = {
+						has_discovered = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = get_permanent_claims_on_any_provs_nonkoreans
+			tooltip = {
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = if_there_are_no_nonkoreans
+			tooltip = {
+				735 = {
+					add_colonysize = 1000
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						north_korean_area = {
+							type = all
+							is_empty = yes
+						}
+						south_korean_area = {
+							type = all
+							is_empty = yes
+						}
+					}
+					735 = {
+						add_colonysize = 1000
+					}
+				}
+				else = {
+					north_korean_area = {
+						limit = {
+							NOT = { is_empty = yes }
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+						}
+						add_permanent_claim = ROOT
+					}
+					south_korean_area = {
+						limit = {
+							NOT = { is_empty = yes }
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+							NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+	
+	dachia_washington = {
+		icon = pioneer_gor
+		required_missions = { place_to_call_our_own_washington }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = north_korean_area
+				area = south_korean_area
+			}
+			has_discovered = ROOT
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				OR = {
+					area = north_korean_area
+					area = south_korean_area
+				}				
+				value = 10 
+			}
+		}
+		effect = {
+			add_prestige = 15
+			custom_tooltip = changes_our_colony_to_dachia
+			tooltip = {
+				random_subject_country = {
+					limit = {
+						is_colonial_nation_of = ROOT
+						any_core_province = {
+							OR = {
+								area = north_korean_area
+								area = south_korean_area
+							}
+						}
+					}
+					change_tag = U79
+				}
+			}
+			hidden_effect = {
+				random_subject_country = {
+					limit = {
+						is_colonial_nation_of = ROOT
+						any_core_province = {
+							OR = {
+								area = north_korean_area
+								area = south_korean_area
+							}
+						}
+					}
+					change_tag = U79
+					swap_free_idea_group = yes
+				}
+				U79 = {
+					if = {
+						limit = {
+							any_owned_province = {
+								province_id = 735
+							}
+						}
+						set_capital = 735
+					}
+				}
+			}
+		}
+	}
+	
+	offshore_manufactoring_washington = {
+		icon = colonial_farm_gor
+		required_missions = { interpacific_trade_washington }
+		position = 10
+		trigger = {
+			U79 = {
+				calc_true_if = {
+					custom_trigger_tooltip = {
+						tooltip = dachia_has_eight_manufactories
+						all_owned_province = {
+							has_manufactory_trigger = yes
+						}
+					}
+					amount = 8
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = for_each_province_dachia_owns_with_a_manufactory_gain
+			tooltip = {
+				add_years_of_income = 0.25
+			}
+			custom_tooltip = each_province_dachia_owns_with_a_manufactory
+			tooltip = {
+				add_base_production = 1
+			}
+			hidden_effect = {
+				while = {
+					limit = {
+						U79 = {
+							any_owned_province = {
+								has_manufactory_trigger = yes
+								NOT = { has_province_flag = already_given_flag_for_dachia_manuf }
+							}
+						}
+					}
+					add_years_of_income = 0.25
+					U79 = {
+						random_owned_province = {
+							limit = {
+								has_manufactory_trigger = yes
+								NOT = { has_province_flag = already_given_flag_for_dachia_manuf }
+							}
+							add_base_production = 1
+							set_province_flag = already_given_flag_for_dachia_manuf
+						}
+					}
+				} 
+				U79 = {
+					every_owned_province = {
+						clr_province_flag = already_given_flag_for_dachia_manuf
+					}
+				}
+			}
+		}
+	}
+	
+	forever_under_our_grasp_washington = {
+		icon = modern_negotiation_gor
+		required_missions = {squash_rebellion_washington offshore_manufactoring_washington }
+		position = 13
+		trigger = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = we_are_allied_to_dachia_and_not_their_overlord_and_they_are_gp
+					NOT = { overlord_of = U79 }
+					alliance_with = U79
+					U79 = {
+						is_great_power = yes
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = dachia_has_the_most_development_out_of_any_colony_in_zhongguo
+					overlord_of = U79
+					NOT = {
+						any_known_country = {
+							total_development = U79
+							capital_scope = {
+								colonial_region = colonial_the_middle_kingdom
+							}
+							is_colonial_nation = yes
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = if_dachia_is_our_colony
+			tooltip = {
+				U79 = {
+					add_country_modifier = {
+						name = "gor_colonial_integration_washington"
+						duration = -1
+					}
+				}
+				add_country_modifier = {
+					name = "gor_worldwide_commerce_washington"
+					duration = -1
+				}
+			}
+			custom_tooltip = if_dachia_is_not_our_colony
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_new_world_philsophies_washington"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						overlord_of = U79
+					}
+					U79 = {
+						add_country_modifier = {
+							name = "gor_colonial_integration_washington"
+							duration = -1
+						}
+					}
+					add_country_modifier = {
+						name = "gor_worldwide_commerce_washington"
+						duration = -1
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = "gor_new_world_philsophies_washington"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+washington_generic_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+	}
+	has_country_shield = yes
+		
+	collectivist_defense_washington = {
+		icon = evil_marx_gor
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					region = washington_region
+					religion = collectivist
+				}
+				AND = {
+					OR = {
+						area = washington_cascades_area
+						area = high_puget_area
+						area = colville_area
+					}
+					NOT = { owned_by = ROOT }
+				}
+			}
+		}
+		trigger = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = there_are_no_collectivist_provinces_in_washington
+					washington_region = {
+						type = all
+						NOT = { religion = collectivist }
+					}
+				}
+				full_idea_group = humanist_ideas
+			}
+			washington_cascades_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			high_puget_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			colville_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			vancouver_isle_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			fraser_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			salish_coast_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_marx_no_more_washington"
+				duration = 5475
+			}
+		}
+	}
+	
+	the_other_vancouver_washington = {
+		icon = vancouver_bc_gor
+		required_missions = { collectivist_defense_washington }
+		position = 2
+		provinces_to_highlight = {
+			province_id = 2238
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			2238 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			arborea_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_cascadian_ambition_washington"
+				duration = 7300
+			}
+		}
+	}
+	
+	greatbear_coasts_washington = {
+		icon = forest_fire_gor
+		required_missions = { the_other_vancouver_washington strike_at_haida_washington }
+		position = 4
+		provinces_to_highlight = {
+			region = arborea_region
+			has_port = yes
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = own_all_coastal_provs_in_arborea
+				arborea_region = {
+					type = all
+					OR = {
+						NOT = { has_port = yes }
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			union_promenade_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			grand_jueau_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			anchorage_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = upgrade_every_coastal_cot_in_arborea
+			tooltip = {
+				add_dip_power = 100
+			}
+			hidden_effect = {
+				arborea_region = {
+					limit = {
+						province_has_center_of_trade_of_level = 1
+					}
+					if = {
+						limit = {
+							province_has_center_of_trade_of_level = 3
+						}
+						owner = {
+							add_dip_power = 100
+						}
+					}
+					else = {
+						add_center_of_trade_level = 1
+					}
+				}
+			}
+		}
+	}
+	
+	sweetest_revenge_washington = {
+		icon = collectivist_subjugation_gor
+		required_missions = { greatbear_coasts_washington }
+		position = 5
+		provinces_to_highlight = {
+			province_id = 2304
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			OR = {
+				NOT = { exists = W06 }
+				2304 = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			alaska_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = if_we_or_subj_owns_anchorage
+			tooltip = {
+				2304 = {
+					change_religion = ROOT
+					change_culture = ROOT
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+					add_province_modifier = {
+						name = "gor_northern_capital_washington"
+						duration = -1
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						2304 = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+					2304 = {
+						change_religion = ROOT
+						change_culture = ROOT
+						add_base_tax = 1
+						add_base_production = 1
+						add_base_manpower = 1
+						add_province_modifier = {
+							name = "gor_northern_capital_washington"
+							duration = -1
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	island_expeditions_washington = {
+		icon = tropical_island_gor
+		required_missions = { sunset_whispers_washington }
+		position = 7
+		provinces_to_highlight = {
+			region = new_oceania_region
+			has_discovered = ROOT
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = three_provs_in_oceania_washington
+					new_oceania_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			1240 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 5475
+					power = 50
+					key = oceanic_dominence_washington
+				}
+			}
+			new_oceania_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_empty = yes }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	interpacific_trade_washington = {
+		icon = merchant_with_gold_gor
+		required_missions = { island_expeditions_washington dachia_washington }
+		position = 9
+		provinces_to_highlight = {
+			province_id = 1240
+			province_id = 1374
+		}
+		trigger = {
+			1240 = { 
+				trade_share = {
+					country = ROOT
+					share = 25
+				}
+			}
+			1374 = { 
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			}
+		}
+		effect = {
+			735 = {
+				add_center_of_trade_level = 1
+			}
+			add_country_modifier = {
+				name = "gor_interpacific_trade_washington"
+				duration = 5475
+			}
+			U79 = {
+				add_country_modifier = {
+					name = "gor_economically_interlinked_washington"
+					duration = 5475
+				}
+			}
+			custom_tooltip = if_we_have_the_barony_reform_get_this
+			tooltip = {
+				add_ruler_modifier = {
+					name = "gor_pug_steer_boost_charismatic_baron"
+					duration = 7300
+				}
+			}
+		}
+	}
+	
+	strong_colonial_presence_washington = {
+		icon = governor_gor
+		required_missions = { interpacific_trade_washington }
+		position = 10
+		provinces_to_highlight = {
+			owned_by = U79
+		}
+		trigger = {
+			U79 = {
+				total_development = 75
+			}
+			north_korean_area = {
+				type = all
+				owned_by = U79
+			}
+			south_korean_area = {
+				type = all
+				owned_by = U79
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}	
+			U79 = {
+				capital_scope = {
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}	
+			}
+			custom_tooltip = occassionally_get_events_to_boost_dachian_development
+			tooltip = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+		}
+	}
+	
+	protect_korean_interests_washington = {
+		icon = colonial_navy_gor
+		required_missions = { strong_colonial_presence_washington }
+		position = 11
+		trigger = {
+			U79 = {
+				army_size = 20
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_a_single_fort_in_north_korea
+				any_owned_province = {
+					has_fort_building_trigger = yes
+					area = north_korean_area
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_a_single_fort_in_south_korea
+				any_owned_province = {
+					has_fort_building_trigger = yes
+					area = south_korean_area
+				}
+			}
+		}
+		effect = {
+			U79 = {
+				add_country_modifier = {
+					name = "gor_colonial_guard_washington"
+					duration = -1
+				}
+			}
+			custom_tooltip = if_we_are_cascadian
+			tooltip = {
+				U79 = {
+					change_primary_culture = chinese_cascadian
+					set_ruler_culture = chinese_cascadian
+				}
+			}
+			custom_tooltip = every_dachian_province_gets_culture_changed
+			hidden_effect = {
+				U79 = {
+					every_owned_province = {
+						change_culture = chinese_cascadian
+					}
+				}
+			}
+		}
+	}
+	
+	squash_rebellion_washington = {
+		icon = colonial_rebellion_gor
+		required_missions = { protect_korean_interests_washington }
+		position = 12
+		trigger = {
+			is_institution_enabled = enlightenment
+			OR = {
+				NOT = { overlord_of = U79 }
+				AND = {
+					U79 = {
+						NOT = { liberty_desire = 10 }
+						total_development = 200
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = if_dachia_is_our_colony
+			tooltip = {
+				add_dip_power = 150
+				U79 = {
+					add_country_modifier = {
+						name = "gor_pioneer_mentality_washington"
+						duration = -1
+					}
+				}
+			}
+			custom_tooltip = if_dachia_is_not_our_colony
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_letting_go_washington"
+					duration = -1
+				}
+				U79 = {
+					add_opinion = {
+						who = ROOT
+						modifier = benevolent_overlord_washington_gor
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = { overlord_of = U79 }
+					}
+					add_dip_power = 150
+					U79 = {
+						add_country_modifier = {
+							name = "gor_pioneer_mentality_washington"
+							duration = -1
+						}
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = "gor_letting_go_washington"
+						duration = -1
+					}
+					U79 = {
+						add_opinion = {
+							who = ROOT
+							modifier = benevolent_overlord_washington_gor
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+washington_generic_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+	}
+	has_country_shield = yes
+	
+	crusing_up_the_river_fraser_washington = {
+		icon = river_ship_gor
+		required_missions = { collectivist_defense_washington }
+		position = 2
+		provinces_to_highlight = {
+			area = fraser_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_three_provinces_in_fraser_that_are_partisan_or_have_zero_unrest
+					fraser_area = {
+						type = all
+						OR = {
+							religion = partisan
+							unrest = 0
+						}
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			add_mercantilism = 3
+			2188 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 3650
+					power = 30
+					key = down_from_the_fraser_washington
+				}
+			}
+		}
+	}
+	
+	among_the_fir_washington = {
+		icon = peninsular_ambitions_gor
+		required_missions = { crusing_up_the_river_fraser_washington }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = kamloops_area
+				area = prince_george_area
+				area = engles_valley_area
+				area = coldstream_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_ten_across_kamloops_pg_coldstream_and_engles_valley
+					kamloops_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					prince_george_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					engles_valley_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					coldstream_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 10
+			}
+		}
+		effect = {
+			custom_tooltip = every_nonconstitutionalist_province_in_arborea
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_the_founders_beauty_washington"
+					duration = 7300
+				}
+			}
+			hidden_effect = {
+				arborea_region = {
+					limit = {
+						NOT = {
+							religion_group = constitutionalist_group
+						}
+					}
+					add_province_modifier = {
+						name = "gor_the_founders_beauty_washington"
+						duration = 7300
+					}
+				}
+			}
+		}
+	}
+	
+	cascadian_promise_washington = {
+		icon = cascadia_gor
+		required_missions = { greatbear_coasts_washington among_the_fir_washington }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				region = washington_region
+				region = arborea_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			washington_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			arborea_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = { id = washington_events.1 }
+		}
+	}
+}
+
+washington_generic_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+	}
+	has_country_shield = yes
+	
+	
+	blaze_across_the_plains_washington = {
+		icon = cannon_fire_gor
+		required_missions = { secure_eastern_foothold_washington }
+		position = 3
+		provinces_to_highlight = {
+			region = idaho_region
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provinces_owned_n_idaho
+					idaho_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 30
+			}
+		}
+		effect = {
+			custom_tooltip = if_we_are_monarchy_no_space_puget
+			tooltip = {
+				add_legitimacy = 20
+				add_ruler_modifier = {
+					name = "gor_lord_of_idaho_washington"
+					duration = -1
+				}
+			}
+			custom_tooltip = if_we_are_republic_no_space_puget
+			tooltip = {	
+				add_country_modifier = {
+					name = "gor_democratizing_the_mystics_washington"
+					duration = 7300
+				}
+				add_yearly_manpower = 2
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						government = monarchy
+					}
+					add_legitimacy = 20
+					add_ruler_modifier = {
+						name = "gor_lord_of_idaho_washington"
+						duration = -1
+					}
+				}
+				else = {
+					add_yearly_manpower = 2
+					add_country_modifier = {
+						name = "gor_democratizing_the_mystics_washington"
+						duration = 7300
+					}
+				}
+			}
+		}
+	}
+	
+	the_conviction_question_washington = {
+		icon = union_baron_gor
+		required_missions = { }
+		position = 5
+		trigger = {
+			OR = {
+				calc_true_if = {
+					custom_trigger_tooltip = {
+						tooltip = five_electors_support_us_for_prez
+						all_elector = {
+							preferred_emperor = ROOT
+						}
+					}
+					amount = 5
+				}
+				government = republic
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_union_politics_washington"
+				duration = 7300
+			}
+			set_country_flag = washington_mission_change
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+washington_generic_missions_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+	}
+	has_country_shield = yes
+	
+	prepare_idaho_offensive_washington = {
+		icon = drummer_gor
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = inland_empire_area
+					NOT = { owned_by = ROOT } 
+				}
+				AND = {
+					province_id = 4516
+					has_fort_building_trigger = yes
+				}
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			4516 = {
+				has_fort_building_trigger = yes
+			}
+			inland_empire_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_spokane_complex_recruits_washington"
+				duration = 3650
+			}
+			flathead_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			nez_perce_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	secure_eastern_foothold_washington = {
+		icon = idaho_ruins_gor
+		required_missions = { prepare_idaho_offensive_washington }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = flathead_area
+				area = nez_perce_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provs_owned_in_fraser_n_nez_perce
+					fraser_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					nez_perce_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 6
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_flathead_conversions_washington"
+				duration = 9125
+			}
+			idaho_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	seize_vital_cities_washington = {
+		icon = idaho_falls_gor
+		required_missions = { secure_eastern_foothold_washington }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1962
+				province_id = 1933
+				province_id = 1879
+				province_id = 1954
+				province_id = 1956
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			1962 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1933 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1879 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1954 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1956 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = helena_nezperce_flathead_boise_and_idaho_falls_gain_if_not_partisan
+			tooltip = {
+				add_base_manpower = 1
+				custom_tooltip = change_religion_to_root
+			}
+			hidden_effect = {
+				1962 = {
+					change_religion = ROOT
+					add_base_production = 1
+				}
+				1933 = {
+					change_religion = ROOT
+					add_base_production = 1
+				}
+				1879 = {
+					change_religion = ROOT
+					add_base_production = 1
+				}
+				1954 = {
+					change_religion = ROOT
+					add_base_production = 1
+				}
+				1956 = {
+					change_religion = ROOT
+					add_base_production = 1
+				}
+			}
+		}
+	}
+	
+	founders_land_washington = {
+		icon = burning_theanite_wheel_gor
+		required_missions = { seize_vital_cities_washington blaze_across_the_plains_washington }
+		position = 4
+		provinces_to_highlight = {
+			if = {
+				limit = {
+					owner = {
+						full_idea_group = humanist_ideas
+					}
+				}
+				region = idaho_region
+				unrest = 1
+			}
+			else = {
+				region = idaho_region
+				religion = theanite
+			}
+		}
+		trigger = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = there_are_no_theanite_provs_in_idaho
+					idaho_region = {
+						type = all
+						NOT = { religion = theanite }
+					}
+				}
+				AND = {
+					full_idea_group = humanist_ideas
+					custom_trigger_tooltip = {
+						tooltip = there_are_no_provs_in_idaho_with_unrest
+						idaho_region = {
+							type = all
+							NOT = { unrest = 1 }
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_mil_power = 50
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 25
+			}
+			add_country_modifier = {
+				name = "gor_armies_of_idaho_washington"
+				duration = -1
+			}
+		}
+	}
+}
+
+###########################WASHINGTON BRANCHING MISSIONS###########################
+
+washington_branch_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+		NOT = { has_country_flag = washington_mission_change }
+	}
+	has_country_shield = yes
+	
+	branch_five_washington = {
+		icon = mission_unknown_mission
+		required_missions = { branch_one_washington }
+		position = 7
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = branches_depending_on_how_you_complete_convictques
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = branches_depending_on_how_you_complete_convictques
+		}
+	}
+	
+	branch_six_washington = {
+		icon = mission_unknown_mission
+		required_missions = { branch_five_washington branch_two_washington branch_four_washington }
+		position = 9
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = branches_depending_on_how_you_complete_convictques
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = branches_depending_on_how_you_complete_convictques
+		}
+	}
+}
+
+washington_branch_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+		NOT = { has_country_flag = washington_mission_change }
+	}
+	has_country_shield = yes
+	
+	branch_one_washington = {
+		icon = mission_unknown_mission
+		required_missions = { the_conviction_question_washington }
+		position = 6
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = branches_depending_on_how_you_complete_convictques
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = branches_depending_on_how_you_complete_convictques
+		}
+	}
+	
+	
+	branch_two_washington = {
+		icon = mission_unknown_mission
+		required_missions = { branch_one_washington }
+		position = 8
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = branches_depending_on_how_you_complete_convictques
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = branches_depending_on_how_you_complete_convictques
+		}
+	}
+}
+
+washington_branch_missions_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+		NOT = { has_country_flag = washington_mission_change }
+	}
+	has_country_shield = yes
+	
+	branch_three_washington = {
+		icon = mission_unknown_mission
+		required_missions = { branch_one_washington }
+		position = 7
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = branches_depending_on_how_you_complete_convictques
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = branches_depending_on_how_you_complete_convictques
+		}
+	}
+	
+	
+	branch_four_washington = {
+		icon = mission_unknown_mission
+		required_missions = { branch_three_washington }
+		position = 8
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = branches_depending_on_how_you_complete_convictques
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = branches_depending_on_how_you_complete_convictques
+		}
+	}
+}
+
+###########################WASHINGTON UNION MISSIONS###########################
+
+washington_union_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+		has_country_flag = washington_mission_change
+		NOT = { government = republic }
+	}
+	has_country_shield = yes
+	
+	legislative_agenda_washington = {
+		icon = talking_to_prez_gor
+		required_missions = { presidential_office_washington }
+		position = 7
+		trigger = {
+			imperial_influence = 50
+			hre_reform_passed = emperor_perpetual_diet
+		}
+		effect = {
+			custom_tooltip = gain_the_following_for_each_prov_we_own_over_ten_dev
+			tooltip = {
+				add_imperial_influence = 1
+			}
+			hidden_effect = {
+				while = {
+					limit = {
+						any_owned_province = {
+							development = 10
+							NOT = { has_province_flag = already_given_flag_for_authority }
+						}
+					}
+					add_imperial_influence = 1
+					random_owned_province = {
+						limit = {
+							development = 10
+							NOT = { has_province_flag = already_given_flag_for_authority }
+						}
+						set_province_flag = already_given_flag_for_authority
+					}
+				} 
+				U79 = {
+					every_owned_province = {
+						clr_province_flag = already_given_flag_for_authority
+					}
+				}
+			}
+		}
+	}
+	
+	supreme_president_washington = {
+		icon = dach_baron_gor
+		required_missions = { legislative_agenda_washington a_californian_union_washington snuff_out_the_reformation_washington }
+		position = 9
+		trigger = {
+			religious_unity = 1
+			is_emperor = yes
+			is_great_power = yes
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_supreme_president_washington"
+				duration = -1
+			}
+		}
+	}
+}
+
+washington_union_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+		has_country_flag = washington_mission_change
+		NOT = { government = republic }
+	}
+	has_country_shield = yes
+	
+	presidential_office_washington = {
+		icon = prez_sitting_gor
+		required_missions = { the_conviction_question_washington }
+		position = 6
+		trigger = {
+			is_emperor = yes
+			hre_reform_passed = reichsreform
+		}
+		effect = {
+			add_imperial_influence = 5
+			add_country_modifier = {
+				name = "gor_presidential_pride_washington"
+				duration = 5475
+			}
+		}
+	}
+	
+	
+	a_californian_union_washington = {
+		icon = union_meetup_gor
+		required_missions = { presidential_office_washington }
+		position = 8
+		trigger = {
+			NOT = { num_of_foreign_hre_provinces = 1 }
+		}
+		effect = {
+			add_dip_power = 50
+			define_advisor = {
+				type = statesman
+				skill = 5
+				cost_multiplier = 0.25
+			}			
+			custom_tooltip = if_it_is_age_of_absolutism
+			tooltip = {
+				add_absolutism = 10
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						OR = {
+							current_age = age_of_absolutism
+							current_age = age_of_revolutions
+						}
+					}
+					add_absolutism = 10
+				}
+			}
+		}
+	}
+}
+
+washington_union_missions_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+		has_country_flag = washington_mission_change
+		NOT = { government = republic }
+	}
+	has_country_shield = yes
+	
+	south_heresey_washington = {
+		icon = imp_gor
+		required_missions = { presidential_office_washington }
+		position = 7
+		trigger = {
+			OR = {
+				is_religion_enabled = despotic
+				is_religion_enabled = anarchist
+				is_year = 1600
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_crushing_the_reformers_washington"
+				duration = 18250
+			}
+		}
+	}
+	
+	
+	snuff_out_the_reformation_washington = {
+		icon = constitutionalist_pray_gor
+		required_missions = { south_heresey_washington }
+		position = 8
+		provinces_to_highlight = {
+			owner = {
+				NOT = { religion = ROOT }
+				is_part_of_hre = yes
+			}
+		}
+		trigger = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = "FILL THIS IN LATER WHEN REFORMATION HAPPENS"
+					always = no
+				}
+				custom_trigger_tooltip = {
+					tooltip = there_are_no_heretics_in_uoc
+					all_known_country = {
+						OR = {
+							NOT = { is_part_of_hre = yes }
+							religion = ROOT
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					stability = 3
+				}
+				add_adm_power = 150
+			}
+			else = {
+				add_stability = 1
+			}
+			add_imperial_influence = 10
+			add_prestige = 25
+			custom_tooltip = all_nonpartisan_provinces_in_uoc_get
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_restoring_normalcy_washington"
+					duration = 18250
+				}
+			}
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					every_owned_province = {
+						limit = {
+							is_part_of_hre = yes
+							NOT = { religion = ROOT }
+						}
+						add_province_modifier = {
+							name = "gor_restoring_normalcy_washington"
+							duration = 18250
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+###########################WASHINGTON REPUBLIC MISSIONS###########################
+
+washington_republic_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+		has_country_flag = washington_mission_change
+		government = republic
+	}
+	has_country_shield = yes
+	
+	constitutional_republicanism_washington = {
+		icon = senator_writing_gor
+		required_missions = { the_conviction_question_washington }
+		position = 6
+		trigger = {
+			republican_tradition = 95
+			OR = {
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 70
+				}
+				has_parliament = yes
+			}
+		}
+		effect = {
+			change_government_reform_progress = 150
+			add_country_modifier = {
+				name = "gor_spreading_republican_values_washington"
+				duration = 5475
+			}
+		}
+	}
+	
+	strong_judiciary_washington = {
+		icon = judges_gor
+		required_missions = { constitutional_republicanism_washington }
+		position = 7
+		trigger = {
+			OR = {
+				courthouse = 15
+				town_hall = 15
+			}
+			capital_scope = {
+				development = 35
+			}
+		}
+		effect = {
+			custom_tooltip = every_province_wit_townfallcourthouse_gain_base_tax
+			tooltip = {
+				add_base_tax = 1
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							has_building = courthouse
+							has_building = town_hall
+						}
+					}
+					add_base_tax = 1
+				}
+			}
+		}
+	}
+}
+
+washington_republic_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+		has_country_flag = washington_mission_change
+		government = republic
+	}
+	has_country_shield = yes
+	
+	invisible_hand_washington = {
+		icon = leaning_merchant_gor
+		required_missions = { the_conviction_question_washington }
+		position = 6
+		trigger = {
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 70
+			}
+			crown_land_share = 75
+		}
+		effect = {
+			custom_tooltip = unlocks_market_reform_privledge_washington
+		}
+	}
+	
+	
+	cascadian_republic_washington = {
+		icon = cascadian_president_gor
+		required_missions = { invisible_hand_washington }
+		position = 7
+		trigger = {
+			tag = U80
+			culture_group = cascadian
+		}
+		effect = {
+			set_country_flag = allowed_to_be_cascadian_republic
+			add_government_reform = cascadian_republic_reform
+			custom_tooltip = if_we_are_a_democratic_republic_instead
+			tooltip = {
+				add_prestige = 15
+				add_republican_tradition = 15
+				change_government_reform_progress = 100
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_reform = democratic_republic_reform
+					}
+					add_prestige = 15
+					add_republican_tradition = 15
+					change_government_reform_progress = 100
+				}
+			}
+		}
+	}
+	
+	peoples_choice_washington = {
+		icon = women_voting_gor
+		required_missions = { cascadian_republic_washington strong_judiciary_washington }
+		position = 8
+		trigger = {
+			is_great_power = yes
+			custom_trigger_tooltip = {
+				tooltip = is_most_powerful_republic_on_american_continent
+				NOT = {
+					any_country = {
+						capital_scope = {
+							continent = america
+						}
+						government = republic
+						total_development = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = { id = washington_events.7 }
+		}
+	}
+}
+
+###########################WASHINGTON BOTTOM BITCH MISSIONS###########################
+
+washington_bottom_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+	}
+	has_country_shield = yes
+	
+	
+	brave_columbia_washington = {
+		icon = columbia_river_gor
+		required_missions = { }
+		position = 15
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2046
+				province_id = 2057 
+				province_id = 1208 
+				province_id = 1197 
+				province_id = 2068
+				province_id = 1218 
+				province_id = 2069 
+				province_id = 1970
+				province_id = 4500
+				province_id = 1972
+				province_id = 2039
+				province_id = 2038
+				province_id = 2037
+				province_id = 4501
+				province_id = 2036
+				province_id = 4504 
+				province_id = 2056
+				province_id = 2035
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = own_all_provinces_along_the_columbia
+				2046 = { country_or_non_sovereign_subject_holds = ROOT }
+				2057 = { country_or_non_sovereign_subject_holds = ROOT }
+				1208 = { country_or_non_sovereign_subject_holds = ROOT }
+				1197 = { country_or_non_sovereign_subject_holds = ROOT }
+				2068 = { country_or_non_sovereign_subject_holds = ROOT }
+				1218 = { country_or_non_sovereign_subject_holds = ROOT }
+				2069 = { country_or_non_sovereign_subject_holds = ROOT }
+				1970 = { country_or_non_sovereign_subject_holds = ROOT }
+				4500 = { country_or_non_sovereign_subject_holds = ROOT }
+				1972 = { country_or_non_sovereign_subject_holds = ROOT }
+				2039 = { country_or_non_sovereign_subject_holds = ROOT }
+				2038 = { country_or_non_sovereign_subject_holds = ROOT }
+				2037 = { country_or_non_sovereign_subject_holds = ROOT }
+				4501 = { country_or_non_sovereign_subject_holds = ROOT }
+				2036 = { country_or_non_sovereign_subject_holds = ROOT }
+				4504 = { country_or_non_sovereign_subject_holds = ROOT }
+				2056 = { country_or_non_sovereign_subject_holds = ROOT }
+				2035 = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		effect = {
+			custom_tooltip = all_provinces_along_columbia_river
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_natures_engine_washington"
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							province_id = 2046
+							province_id = 2057 
+							province_id = 1208 
+							province_id = 1197 
+							province_id = 2068
+							province_id = 1218 
+							province_id = 2069 
+							province_id = 1970
+							province_id = 4500
+							province_id = 1972
+							province_id = 2039
+							province_id = 2038
+							province_id = 2037
+							province_id = 4501
+							province_id = 2036
+							province_id = 4504 
+							province_id = 2056
+							province_id = 2035
+						}
+					}
+					add_province_modifier = {
+						name = "gor_natures_engine_washington"
+						duration = 5475
+					}
+				}
+			}
+		}
+	}
+	
+	purple_fields_washington = {
+		icon = yakama_valley_gor
+		required_missions = { brave_columbia_washington }
+		position = 16
+		provinces_to_highlight = {
+			region = washington_region
+			trade_goods = wine
+			NOT = { development = 10 }
+			NOT = { has_manufactory_trigger = yes }
+			NOT = { has_building = marketplace }
+			NOT = { has_building = stock_exchange }
+			NOT = { has_building = trade_depot }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = all_wine_provs_in_wash_have_marketplace_type_manufactory_ten_dev
+				washington_region = {
+					type = all
+					OR = {
+						AND = {
+							development = 10
+							has_manufactory_trigger = yes
+							OR = {
+								has_building = marketplace
+								has_building = stock_exchange
+								has_building = trade_depot
+							}
+						}
+						NOT = { trade_goods = wine }
+					}
+				}
+			}
+		}
+		effect = {
+			add_mercantilism = 5
+			tooltip = {
+				add_years_of_owned_provinces_production_income = {
+					years = 25
+					trigger = {
+						trade_goods = wine
+					}
+					custom_tooltip = get_income_from_wine_washington
+				}
+			}
+			custom_tooltip = if_we_are_trading_in_wine_wash
+			tooltip = {
+				add_years_of_owned_provinces_production_income = {
+					years = 50
+					trigger = {
+						trade_goods = wine
+					}
+					custom_tooltip = get_income_from_wine_washington
+				}
+				add_country_modifier = {
+					name = "gor_viticultural_victory_washington"
+					duration = 1825
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						production_leader = {
+							trade_goods = wine
+						}
+					}
+					add_years_of_owned_provinces_production_income = {
+						years = 50
+						trigger = {
+							trade_goods = wine
+						}
+						custom_tooltip = get_income_from_wine_washington
+					}
+					add_country_modifier = {
+						name = "gor_viticultural_victory_washington"
+						duration = 1825
+					}
+				}
+				else = {
+					add_years_of_owned_provinces_production_income = {
+						years = 25
+						trigger = {
+							trade_goods = wine
+						}
+						custom_tooltip = get_income_from_wine_washington
+					}
+				}
+			}
+		}
+	}
+
+	beautify_rainier_washington = {
+		icon = tahoma_gor
+		required_missions = { purple_fields_washington }
+		position = 17
+		provinces_to_highlight = {
+			province_id = 2073
+		}
+		trigger = {
+			has_great_project = {
+				type = great_tahoma
+				tier = 3
+			}
+		}
+		effect = {
+			2073 = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+			2486 = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+			custom_tooltip = if_we_complete_while_yakaman_is_accepted
+			tooltip = {
+				add_army_tradition = 15
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						accepted_culture = yakama
+					}
+					add_army_tradition = 15
+				}
+			}
+		}
+	}
+	
+	washington_guard_washington = {
+		icon = knight_by_river_gor
+		required_missions = { }
+		position = 19
+		trigger = {
+			has_commanding_three_star = yes
+			army_size = 75
+		}
+		effect = {
+			add_army_tradition = 15
+			custom_tooltip = hiring_a_mil_advisor_grants
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_advising_tactician_washington"
+					duration = 1825
+				}
+			}
+			custom_tooltip = if_we_are_a_barony
+			tooltip = {
+				add_legitimacy = 25
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_reform = barony_reform
+					}
+					add_legitimacy = 25
+				}
+			}
+		}
+	}
+	
+	yakama_wisdom_washington = {
+		icon = origination_army_gor
+		required_missions = { washington_guard_washington }
+		position = 20
+		trigger = {
+			has_completed_idea_group_of_category = {
+				mil_ideas = yes
+			}
+			innovativeness = 50
+			army_tradition = 50
+			accepted_culture = yakama
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_piitliyawila_washington"
+				duration = -1
+			}
+		}
+	}
+}
+
+washington_bottom_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+	}
+	has_country_shield = yes
+	
+	lincolnite_farming_washington = {
+		icon = peasant_farming_gor
+		required_missions = { }
+		position = 15
+		provinces_to_highlight = {
+			region = washington_region
+			trade_goods = grain
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = own_all_grain_provs_in_washington
+				washington_region = {
+					type = all
+					OR = {
+						owned_by = ROOT
+						NOT = { trade_goods = grain }
+					}
+				}
+			}
+			any_owned_province = {
+				culture = lincolnite
+			}
+		}
+		effect = {
+			custom_tooltip = double_frequency_of_lincolnite_evnets_and_give_plus_two_manpower
+			tooltip = {
+				add_base_manpower = 2
+			}
+			custom_tooltip = all_current_lincolnite_provs_gain
+			tooltip = {
+				add_base_manpower = 1
+			}
+			hidden_effect = {
+				set_country_flag = get_lincolnite_at_double_rate
+				set_country_flag = get_lincolnite_at_two_base_manpower
+				every_owned_province = {
+					limit = {
+						region = washington_region
+						culture = lincolnite
+					}
+					add_base_manpower = 1
+				}
+			}
+		}
+	}
+	
+	molten_empire_washington = {
+		icon = metal_workers_gor
+		required_missions = { lincolnite_farming_washington }
+		position = 16
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4513
+				province_id = 4516
+			}
+		}
+		trigger = {
+			4513 = {
+				development = 20
+				has_manufactory_trigger = yes
+			}
+			4516 = {
+				development = 20
+				has_manufactory_trigger = yes
+				province_has_center_of_trade_of_level = 3
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_spokane_complex_washington"
+				duration = -1
+			}
+		}
+	}
+	
+	smokey_skies_washington = {
+		icon = holding_coal_gor
+		required_missions = { molten_empire_washington purple_fields_washington puget_industry_washington }
+		position = 17
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2067
+				province_id = 2053
+			}
+			NOT = { has_building = furnace }
+		}
+		trigger = {
+			2067 = {
+				has_building = furnace
+			}
+			2053 = {
+				has_building = furnace
+			}
+		}
+		effect = {
+			2067 = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+			2053 = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+			capital_scope = {
+				add_province_modifier = {
+					name = "gor_industrial_metropolis_washington"
+					duration = -1
+				}
+			}
+			custom_tooltip = unlocks_washington_industrial_decisions
+		}
+	}
+	
+	pacific_industry_washington = {
+		icon = industrial_revolution_gor
+		required_missions = { smokey_skies_washington }
+		position = 18
+		trigger = {
+			has_institution = industrialization
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = have_thirty_manufactories
+					all_owned_province = {
+						has_manufactory_trigger = yes
+					}
+				}
+				amount = 30
+			}
+			custom_trigger_tooltip = {
+				tooltip = build_the_washington_railroad_tt
+				has_global_flag = built_washington_railroad
+			}
+			custom_trigger_tooltip = {
+				tooltip = build_the_inland_blastworks_tt
+				has_global_flag = built_inland_blastworks
+			}
+		}
+		effect = {
+			custom_tooltip = every_province_in_washington_region_gets
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_pacific_industry_washington"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				washington_region = {
+					add_province_modifier = {
+						name = "gor_pacific_industry_washington"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	
+	citizen_defense_washington = {
+		icon = army_training_camp_gor
+		required_missions = { washington_guard_washington }
+		position = 20
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = has_mil_advisor_of_level_five
+				OR = {
+					army_organiser = 5
+					army_reformer = 5
+					commandant = 5
+					grand_captain = 5
+					recruitmaster = 5
+					fortification_expert = 5
+					quartermaster = 5
+				}
+			}
+			OR = {
+				regimental_camp = 15
+				conscription_center = 15
+			}
+		}
+		effect = {
+			custom_tooltip = the_first_time_we_build_a_training_center_in_a_prov_get
+			tooltip = {
+				add_mil_power = 5
+				add_legitimacy = 2
+				add_republican_tradition = 0.5
+			}
+		}
+	}
+}
+
+washington_bottom_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+	}
+	has_country_shield = yes
+	
+	follow_the_willamette_washington = {
+		icon = willamette_gor
+		required_missions = { cutting_arteries_washington }
+		position = 12
+		provinces_to_highlight = {
+			area = lower_willamette_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			lower_willamette_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			development_in_provinces = {
+				value = 75
+				OR = {
+					area = upper_willamette_area
+					area = lower_willamette_area
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = "FILL THIS IN AFTER WE FINISH OREGON"
+		}
+	}
+	
+	oregonian_heartland_washington = {
+		icon = oregon_waterfall_gor
+		required_missions = { follow_the_willamette_washington }
+		position = 14
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = ten_manufactories_in_regon_washington
+					oregon_region = {
+						type = all
+						has_manufactory_trigger = yes
+					}
+				}
+				amount = 10
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = five_over_fifteen_dev_provs_washington
+					oregon_region = {
+						type = all
+						development = 15
+					}
+				}
+				amount = 5
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = two_cot_in_oregon_provs_washington
+					oregon_region = {
+						type = all
+						province_has_center_of_trade_of_level = 2
+					}
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			custom_tooltip = gain_oregonian_culture_fo_free
+			custom_tooltip = every_province_with_oregonian_culture_gains
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_wrangling_oregon_washington"
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						culture = oregonite
+					}
+					add_province_modifier = {
+						name = "gor_wrangling_oregon_washington"
+						duration = 5475
+					}
+				}
+				add_country_modifier = {
+					name = "gor_free_oregonian_culture_washington"
+					hidden = yes
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	puget_industry_washington = {
+		icon = dense_city_gor
+		required_missions = { }
+		position = 16
+		provinces_to_highlight = {
+			OR = {
+				area = high_puget_area
+				area = low_puget_area
+				area = olympic_penninsula_area
+			}
+			NOT = { has_manufactory_trigger = yes }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = have_ten_manufactories_washington_puget
+					high_puget_area = {
+						type = all
+						has_manufactory_trigger = yes
+					}
+					low_puget_area = {
+						type = all
+						has_manufactory_trigger = yes
+					}
+					olympic_penninsula_area = {
+						type = all
+						has_manufactory_trigger = yes
+					}
+				}
+				amount = 10
+			}
+		}
+		effect = {
+			custom_tooltip = any_manufactory_prov_with_high_low_puget_olympia
+			tooltip = {
+				add_base_production = 1
+			}
+			custom_tooltip = if_we_do_not_have_printing_press_yet_also_get
+			tooltip = {
+				add_institution_embracement = {
+					which = printing_press
+					value = 100
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = high_puget_area
+							area = low_puget_area
+							area = olympic_penninsula_area
+						}
+						has_manufactory_trigger = yes
+					}
+					add_base_production = 1
+					if = {
+						limit = {
+							is_institution_enabled = printing_press
+						}
+						add_institution_embracement = {
+							which = printing_press
+							value = 100
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	exotic_goods_washington = {
+		icon = tulip_field_gor
+		required_missions = { puget_industry_washington }
+		position = 17
+		provinces_to_highlight = {
+			OR = {
+				province_id = 873
+				province_id = 4507
+			}
+			NOT = { development = 20 }
+		}
+		trigger = {
+			OR = {
+				873 = {
+					development = 20
+				}
+				4507 = {
+					development = 20
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = if_hoh_has_a_development_of_twenty
+			tooltip = {
+				873 = {
+					remove_province_modifier = gor_hoh_rainforest
+				}
+				add_mil_power = 150
+			}
+			custom_tooltip = if_snohomish_has_a_development_of_twenty
+			tooltip = {
+				add_years_of_income = 2
+				add_dip_power = 100
+			}
+			custom_tooltip = if_both_have_twenty_wash_get_both
+			hidden_effect = {
+				if = {
+					limit = {
+						873 = {
+							development = 20
+						}
+					}
+					873 = {
+						remove_province_modifier = gor_hoh_rainforest
+					}
+					add_mil_power = 150
+				}
+				if = {
+					limit = {
+						4507 = {
+							development = 20
+						}
+					}
+					add_years_of_income = 2
+					add_dip_power = 100
+				}
+			}
+		}
+	}
+	
+	california_nightmare_washington = {
+		icon = kneeling_soldier_gor
+		required_missions = { a_grand_enterance_washington }
+		position = 21
+		trigger = {
+			OR = {
+				NOT = { hre_size = 1 }
+				custom_trigger_tooltip = {
+					tooltip = we_are_president_and_there_are_less_than_ten_princes
+					NOT = { hre_size = 10 }
+					is_emperor = yes
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = if_UOC_does_not_exist
+			tooltip = {
+				add_imperial_influence = 50
+				add_country_modifier = {
+					name = "gor_vassaled_counties_washington"
+					duration = -1
+				}
+			}
+			custom_tooltip = otherwise_we_will_gain
+			tooltip = {
+				
+				add_country_modifier = {
+					name = "gor_union_inheritor_washington"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+washington_bottom_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+	}
+	has_country_shield = yes
+
+	an_oregon_campaign_washington = {
+		icon = industrial_soldiers_gor
+		required_missions = { }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = middle_columbia_area
+				area = willapa_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			army_size_percentage = 0.9
+			middle_columbia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			willapa_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			create_general = { tradition = 50 }
+			oregon_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	cutting_arteries_washington = {
+		icon = union_scrape_gor
+		required_missions = { an_oregon_campaign_washington }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				area = upper_willamette_area
+				area = bend_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			upper_willamette_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			bend_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mercantilism = 3
+			define_advisor = {
+				type = trader
+				skill = 3
+				cost_multiplier = 0.75
+			}	
+			custom_tooltip = if_you_have_econ_or_trade_not_completed_either
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_commercial_inspiration_washington"
+					duration = 3650
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						OR = {
+							has_idea_group = economic_ideas
+							has_idea_group = trade_ideas
+						}
+						NOT = { full_idea_group = economic_ideas }
+						NOT = { full_idea_group = trade_ideas }
+					}
+					add_country_modifier = {
+						name = "gor_commercial_inspiration_washington"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	
+	snakey_warfare_washington = {
+		icon = snake_noble_gor
+		required_missions = { cascadian_completion_washington }
+		position = 13
+		provinces_to_highlight = {
+			OR = {
+				area = north_snake_area
+				area = blue_oregon_area
+				area = south_snake_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_three_provs_in_northsnake_southsnake_blueoregon
+					north_snake_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					blue_oregon_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					south_snake_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 5
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			create_general = { tradition = 75 }
+		}
+	}
+	
+	the_high_desert_washington = {
+		icon = highdesert_gor
+		required_missions = { snakey_warfare_washington }
+		position = 14
+		provinces_to_highlight = {
+			province_id = 1983
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			1983 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mil_power = 100
+			define_advisor = {
+				type = commandant
+				skill = 3
+				cost_multiplier = 0.75
+			}	
+			custom_tooltip = if_we_own_all_of_highdesert
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_nullified_treaties_washington"
+					duration = 7300
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						highdesert_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+					add_country_modifier = {
+						name = "gor_nullified_treaties_washington"
+						duration = 7300
+					}
+				}
+			}
+		}
+	}
+	
+	integrate_jefferson_washington = {
+		icon = elector_voting_gor
+		required_missions = { cripple_reno_washington }
+		position = 19
+		provinces_to_highlight = {
+			region = jefferson_region
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			1169 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1844 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1966 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1850 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provs_owned_in_jefferson
+					jefferson_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 35
+			}
+		}
+		effect = {
+			sunkissed_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = if_uoc_exists_and_we_arent_president
+			tooltip = {
+				emperor = {
+					if = {
+						limit = {
+							stability = -1
+						}
+						add_stability = -2
+					}
+					else_if = {
+						limit = {
+							stability = -2
+						}
+						add_stability = -1
+						add_adm_power = -100
+					}
+					else = {
+						add_adm_power = -200
+					}
+					add_country_modifier = {
+						name = "gor_humiliated_by_washington_washington"
+						duration = 7300
+					}
+				}
+			}
+			custom_tooltip = if_uoc_exists_and_we_are_president
+			tooltip = {
+				add_imperial_influence = 50
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						hre_size = 1
+						is_emperor = yes
+					}
+					add_imperial_influence = 50
+				}
+				else_if = {
+					limit = {
+						hre_size = 1
+						NOT = { is_emperor = yes }
+					}
+					emperor = {
+						if = {
+							limit = {
+								stability = -1
+							}
+							add_stability = -2
+						}
+						else_if = {
+							limit = {
+								stability = -2
+							}
+							add_stability = -1
+							add_adm_power = -100
+						}
+						else = {
+							add_adm_power = -200
+						}
+						add_country_modifier = {
+							name = "gor_humiliated_by_washington_washington"
+							duration = 7300
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	a_grand_enterance_washington = {
+		icon = wine_gor
+		required_missions = { integrate_jefferson_washington }
+		position = 20
+		provinces_to_highlight = {
+			province_id = 1742
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			1742 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			1742 = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+			add_years_of_owned_provinces_production_income = {
+				years = 25
+				trigger = {
+					trade_goods = wine
+				}
+				custom_tooltip = get_income_from_wine_washington
+			}
+			custom_tooltip = every_wine_province_we_own_washington
+			tooltip = {
+				add_base_production = 2
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = wine
+					}
+					add_base_production = 2
+				}
+			}
+		}
+	}
+	
+	jewel_of_california_washington = {
+		icon = golden_gate_gor
+		required_missions = { a_grand_enterance_washington }
+		position = 21
+		provinces_to_highlight = {
+			province_id = 868
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			868 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = for_each_cot_we_own_gain_washington
+			tooltip = {
+				add_mercantilism = 1
+			}
+			custom_tooltip = if_we_are_at_hundo_mercantilism_get_instead
+			tooltip = {
+				add_dip_power = 10
+			}
+			hidden_effect = {
+				while = {
+					limit = {
+						any_owned_province = {
+							has_manufactory_trigger = yes
+							NOT = { has_province_flag = given_flag_for_jewel_of_california_washington }
+						}
+					}
+					if = {
+						limit = {
+							mercantilism = 100
+						}
+						add_dip_power = 10
+					}
+					else = {
+						add_mercantilism = 1
+					}
+					random_owned_province = {
+						limit = {
+							has_manufactory_trigger = yes
+							NOT = { has_province_flag = given_flag_for_jewel_of_california_washington }
+						}
+						add_base_production = 1
+						set_province_flag = given_flag_for_jewel_of_california_washington
+					}
+				} 
+				every_owned_province = {
+					clr_province_flag = given_flag_for_jewel_of_california_washington
+				}
+			}
+		}
+	}
+}
+
+washington_bottom_missions_slot_four = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+	}
+	has_country_shield = yes
+	
+	coastal_cheesemongers_washington = {
+		icon = cheese_gor
+		required_missions = { an_oregon_campaign_washington }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = tillamook_area
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					province_id = 1197
+					NOT = { province_has_center_of_trade_of_level = 2 }
+				}
+			}
+		}
+		trigger = {
+			1197 = {
+				province_has_center_of_trade_of_level = 2
+			}
+			tillamook_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			create_admiral = { tradition = 50 }
+			1197 = {
+				add_province_modifier = {
+					name = "gor_cheesy_seamen_washington"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	cascadian_completion_washington = {
+		icon = cascadian_army_gor
+		required_missions = { cutting_arteries_washington }
+		position = 12
+		provinces_to_highlight = {
+			area = oregonian_cascades_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			oregonian_cascades_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = every_mountain_terrain_prov_in_wash_and_oregon
+			tooltip = {
+				add_base_manpower = 1
+			}
+			custom_tooltip = if_we_have_defensive_ideas_get_instead
+			tooltip = {
+				add_base_manpower = 2
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = washington_region
+							region = oregon_region
+						}
+						has_terrain = mountain
+					}
+					if = {
+						limit = {
+							has_idea_group = defensive_ideas
+						}
+						add_base_manpower = 2
+					}
+					else = {
+						add_base_manpower = 1
+					}
+				}
+			}
+		}
+	}
+	
+	the_boonies_washington = {
+		icon = lone_house_gor
+		required_missions = { cascadian_completion_washington }
+		position = 13
+		provinces_to_highlight = {
+			area = morrow_crook_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			morrow_crook_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mil_power = 50
+			custom_tooltip = every_province_in_morrow_crook_wasington
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_connecting_the_outskirts_washington"
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						area = morrow_crook_area
+					}
+					add_province_modifier = {
+						name = "gor_connecting_the_outskirts_washington"
+						duration = 5475
+					}
+				}
+			}
+		}
+	}
+	
+	brothers_of_the_north_washington = {
+		icon = northwest_soldiers_shaking_hands_gor
+		required_missions = { the_high_desert_washington oregonian_heartland_washington the_boonies_washington }
+		position = 15
+		provinces_to_highlight = {
+			region = oregon_region
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_thirtyfive_provs_in_oregon_washington
+					oregon_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 35
+			}
+		}
+		effect = {
+			country_event = { id = washington_events.8 }
+			jefferson_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	the_wilds_of_jefferson_washington = {
+		icon = redwood_tree_gor
+		required_missions = { brothers_of_the_north_washington }
+		position = 17
+		provinces_to_highlight = {
+			OR = {
+				area = josephine_area
+				area = klamath_area
+				area = goose_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_ten_provs_across_josephine_goos_klamath
+					josephine_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					klamath_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					goose_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 10
+			}
+		}
+		effect = {
+			army_tradition = 15
+			add_mil_power = 100
+			add_country_modifier = {
+				name = "gor_redwood_legacy_washington"
+				duration = 18250
+			}
+		}
+	}
+	
+	cripple_reno_washington = {
+		icon = exploding_castle_gor
+		required_missions = { the_wilds_of_jefferson_washington }
+		position = 18
+		provinces_to_highlight = {
+			OR = {
+				area = black_rock_area
+				area = washoe_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			black_rock_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			washoe_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			nevada_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_silencing_the_traditionalists_washington"
+				duration = -1
+			}
+		}
+	}
+	
+	a_political_manuever_washington = {
+		icon = political_ralley_gor
+		required_missions = { cripple_reno_washington }
+		position = 19
+		provinces_to_highlight = {
+			region = nevada_region
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provs_owned_in_nevada_wash
+					nevada_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 20
+			}
+		}
+		effect = {
+			country_event = { id = washington_events.9 }
+		}
+	}
+	
+	land_of_liberty_washington = {
+		icon = california_flag_gor
+		required_missions = { a_grand_enterance_washington }
+		position = 21
+		provinces_to_highlight = {
+			region = sunkissed_region
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provs_owned_in_liberty_region
+					sunkissed_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 40
+			}
+		}
+		effect = {
+			custom_tooltip = if_we_have_positive_piety_washington
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_empowered_by_manpow_liberty_washington"
+					duration = -1
+				}
+			}
+			custom_tooltip = if_we_dont_have_at_least_piety_washington
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_empowered_by_corrupt_liberty_washington"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						piety = 0
+					}	
+					add_country_modifier = {
+						name = "gor_empowered_by_manpow_liberty_washington"
+						duration = -1
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = "gor_empowered_by_corrupt_liberty_washington"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}

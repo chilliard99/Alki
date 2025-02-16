@@ -1,0 +1,18 @@
+#328 - Sinope
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = muslim
+discovered_by = ottoman
+owner = X87
+controller = X87
+add_core = X87
+culture = industrial_heartlander
+religion = islam
+capital = "Sinop"
+trade_goods = silk #Ann arbor Buckeye Silk
+hre = no
+base_tax = 5
+base_production = 4
+base_manpower = 5
+is_city = yes
+discovered_by = western

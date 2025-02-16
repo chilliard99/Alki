@@ -1,0 +1,97 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 233 59 59 }
+
+revolutionary_colors = { 6 2 0 }
+
+historical_idea_groups = {
+	defensive_ideas
+	religious_ideas
+	trade_ideas
+	economic_ideas
+	plutocracy_ideas
+	diplomatic_ideas
+	offensive_ideas
+	spy_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_longbow
+	gaelic_mercenary
+	gaelic_free_shooter
+	irish_charge
+	anglofrench_line
+	british_redcoat
+	british_hussar
+	british_square
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Henrique #1" = 25
+	"Pêro #1" = 25
+	"Duarte #0" = 25
+	"Estêvão #0" = 20
+	"Inácio #0" = 20
+	"Kaúlza #0" = 15
+	"Venceslau #0" = 15
+	"Júlio #0" = 10
+	"Bruno #0" = 10
+	"Abel #0" = 10
+	"Richard #0" = 5
+	"Jorge #0" = 5
+ 
+	"Pedro #0" = 0
+	"Miguel #0" = 0
+	"Ricardo #0" = 0
+	"Diogo #0" = 0
+	"Goncalo #0" = 0
+	"Rui #0" = 0
+	"Luis #0" = 0
+	"Alexandre #0" = 0
+	"Francisco #0" = 0
+	"Paulo #0" = 0
+	"Antonio #0" = 0
+	"Afonso #0" = 0
+	"Tiago #0" = 0
+	"Dylan #0" = 0
+	"Rafael #0" = 0
+	"Denis #0" = 0
+	"Mauricio #0" = 0
+	"Lenz #0" = 0
+	"Farham #0" = 0
+
+	"Sara #0" = -1
+	"Cláudia #0" = -1	
+	"Maria #0" = -1
+	"Rosa #0" = -1
+}
+
+leader_names = { 
+	Liam Oliver Benjamin James Noah William Henry Ethan Eluah Alexander Samuel Mason Owen Daniel Wyatt Logan Lucas Jackson David
+	Lincoln Michael Jacob Matthew Isaac Jack Luke Gabriel Caleb Carter Levi Hudson Hunter Sebastian Grayson Aiden Andrew Joseph 
+	Jayden Theodore Julian Jaxon John Asher Mateo Charles Isaiah
+}
+
+ship_names = {
+	Amarante Baião Felgueiras Gondomar Lousada Maia Canaveses Matosinhos Ferreira Paredes Penafiel 
+	Tirso Trofa Conde Valongo Gaia Baldaia Caminha Magellan Coelho Cubas Azevedo Croft Soares Warre 
+	Heart Gomes Pereira Bonfim Paranhos Ramalde Campanhã 
+	
+	Francisco Cruz Celestia Jose Oak Costa Lewis
+	Galactica "Golden Gate" Vallejo Solano Lodi
+	Stanford Salinas Monterey Moro Atascadero Wasco
+	Bakersfield Porterville Seqouia Vegas Inyo Faro 
+	Guadiana Sonoma Mendocino Bragg Eureka Redwood Crecent Curry
+	Coos Lane Newport Tillamook Clatsop Wahkiakum Grays Clallam 
+	Olympus Olympia Tacoma Seattle Everett Bellingham Kitsap
+	
+}
+

@@ -1,0 +1,399 @@
+namespace = deschutes_events
+####################DESCHUTES EVENTS##########################
+country_event = { #Selection Of A New King
+	id = deschutes_events.1
+	title = deschutes_events.1.t
+	desc = deschutes_events.1.desc
+	picture = ELECTION_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = three_star_kingdom_reform
+		NOT = { is_subject_of_type = personal_union }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { #Select A High Oregonian
+		name = deschutes_events.1.a
+		if = {
+			limit = {
+				mission_completed = yellow_star_deschutes
+			}
+			define_ruler = {
+				change_dip = 2
+				change_adm = 3
+				change_mil = 2
+				culture = highoregonean
+			}
+			add_ruler_modifier = {
+				name = "gor_high_oregonian_rule_betta_deschutes"
+				duration = -1
+			}
+		}
+		else = {
+			define_ruler = {
+				change_adm = 1
+				culture = highoregonean
+			}
+			add_ruler_modifier = {
+				name = "gor_high_oregonian_rule_deschutes"
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				mission_completed = beaver_builders_deschutes
+			}
+			custom_tooltip = add_to_all_provs_in_oregonian_region_deschutes
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_high_oregonian_oversight_deschutes"
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				oregon_region = {
+					add_province_modifier = {
+						name = "gor_high_oregonian_oversight_deschutes"
+						duration = 5475
+					}
+				}
+			}
+		}
+	}
+	option = { #Select A Snake
+		name = deschutes_events.1.b
+		trigger = {
+			has_country_flag = get_kewl_snake_rulers_deschutes
+		}
+		define_ruler = {
+			change_adm = 1
+			culture = shake
+		}
+		add_ruler_modifier = {
+			name = "gor_snake_rule_deschutes"
+			duration = -1
+		}
+	}
+	option = { #Select A Oregonian
+		name = deschutes_events.1.c
+		if = {
+			limit = {
+				mission_completed = green_star_deschutes
+			}
+			define_ruler = {
+				change_dip = 3
+				change_adm = 2
+				change_mil = 2
+				culture = oregonite
+			}
+			add_ruler_modifier = {
+				name = "gor_oregonian_rule_betta_deschutes"
+				duration = -1
+			}
+		}
+		else = {
+			define_ruler = {
+				change_dip = 1
+				culture = oregonite
+			}
+			add_ruler_modifier = {
+				name = "gor_oregonian_rule_deschutes"
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				mission_completed = beaver_builders_deschutes
+			}
+			custom_tooltip = add_to_all_provs_in_oregonian_region_deschutes
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_oregonian_oversight_deschutes"
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				oregon_region = {
+					add_province_modifier = {
+						name = "gor_oregonian_oversight_deschutes"
+						duration = 5475
+					}
+				}
+			}
+		}
+	}
+	option = { #Select A Jeffersonian
+		name = deschutes_events.1.e
+		if = {
+			limit = {
+				mission_completed = blue_star_deschutes
+			}
+			define_ruler = {
+				change_dip = 2
+				change_adm = 2
+				change_mil = 3
+				culture = shastan
+			}
+			add_ruler_modifier = {
+				name = "gor_jeffersonian_rule_betta_deschutes"
+				duration = -1
+			}
+		}
+		else = {
+			define_ruler = {
+				change_mil = 1
+				culture = shastan
+			}
+			add_ruler_modifier = {
+				name = "gor_jeffersonian_rule_deschutes"
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				mission_completed = jeffersonian_paradise_deschutes
+			}
+			custom_tooltip = add_to_all_provs_in_jeff_region_deschutes
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_jeffersonian_oversight_deschutes"
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				jefferson_region = {
+					add_province_modifier = {
+						name = "gor_jeffersonian_oversight_deschutes"
+						duration = 5475
+					}
+				}
+			}
+		}
+	}
+	option = { #Select A Redwood
+		name = deschutes_events.1.f
+		trigger = {
+			has_country_flag = get_kewl_jeff_rulers_deschutes
+		}
+		define_ruler = {
+			change_mil = 1
+			culture = redwood
+		}
+		add_ruler_modifier = {
+			name = "or_redwood_rule_deschutes"
+			duration = -1
+		}
+	}
+	
+}
+
+country_event = { #The Repitle's Reputation
+	id = deschutes_events.2
+	title = deschutes_events.2.t
+	desc = deschutes_events.2.desc
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { #Lump Them In With The High Oregonians
+		name = deschutes_events.2.a
+		add_government_power = { 
+			mechanic_type = three_star_kingdom_mechanic
+			power_type = factional_power
+			value = -25
+		}
+		custom_tooltip = convert_all_snake_cultured_nations_and_provs_to_high_oregonian
+		hidden_effect = {
+			every_country = {
+				limit = {
+					primary_culture = snake
+				}
+				change_primary_culture = highoregonean
+			}
+			every_province = {
+				limit = {
+					culture = snake
+				}
+				change_culture = highoregonean
+			}
+		}
+	}
+	option = { #Add Another Star!
+		name = deschutes_events.2.b
+		add_government_power = { 
+			mechanic_type = three_star_kingdom_mechanic
+			power_type = factional_power
+			value = 25
+		}
+		custom_tooltip = get_new_snake_rulers_deschutes
+		tooltip = {
+			add_ruler_modifier = {
+				name = "gor_snake_rule_deschutes"
+				duration = -1
+			}
+		}
+		set_country_flag = get_kewl_snake_rulers_deschutes
+	}
+}
+
+country_event = { #The Odd Ones Out
+	id = deschutes_events.3
+	title = deschutes_events.3.t
+	desc = deschutes_events.3.desc
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { #Lump Them In With The Jeffersonians
+		name = deschutes_events.3.a
+		add_government_power = { 
+			mechanic_type = three_star_kingdom_mechanic
+			power_type = factional_power
+			value = -25
+		}
+		custom_tooltip = convert_all_redwood_cultured_nations_and_provs_to_jeff
+		hidden_effect = {
+			every_country = {
+				limit = {
+					primary_culture = redwood
+				}
+				change_primary_culture = shastan
+			}
+			every_province = {
+				limit = {
+					culture = redwood
+				}
+				change_culture = shastan
+			}
+		}
+	}
+	option = { #Add Another Star!
+		name = deschutes_events.3.b
+		add_government_power = { 
+			mechanic_type = three_star_kingdom_mechanic
+			power_type = factional_power
+			value = 25
+		}
+		custom_tooltip = get_new_redwood_rulers_deschutes
+		tooltip = {
+			add_ruler_modifier = {
+				name = "gor_snake_rule_deschutes"
+				duration = -1
+			}
+		}
+		set_country_flag = get_kewl_jeff_rulers_deschutes
+	}
+}
+
+
+country_event = { #Strategic Southern Ports
+	id = deschutes_events.4
+	title = deschutes_events.4.t
+	desc = deschutes_events.4.desc
+	picture = MERCHANTS_TALKING_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { #Let the Pomos Be Pomo.
+		name = deschutes_events.4.a
+		871 = {
+			add_province_modifier = {
+				name = "gor_pomo_traders_deschutes"
+				duration = -1
+			}
+			if = {
+				limit = {
+					province_has_center_of_trade_of_level = 1
+				}
+				center_of_trade = 2
+			}
+			else = {
+				add_center_of_trade_level = 1
+			}
+		}
+	}
+	option = { #They Will Join California
+		name = deschutes_events.4.b
+		871 = {
+			add_trade_node_income = 10 
+			change_culture = ROOT
+		}
+	}
+}
+
+country_event = { #Venturing Beyond The Rivers
+	id = deschutes_events.5
+	title = deschutes_events.5.t
+	desc = deschutes_events.5.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { #We Will Stay With The Deschutes
+		name = deschutes_events.5.a
+		add_country_modifier = {
+			name = "gor_californian_perfection_deschutes"
+			duration = -1
+		}
+	}
+	option = { #West Coast Domination Is Our Destiny
+		name = deschutes_events.5.b
+		washington_region = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		sunkissed_region = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		nevada_region = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}

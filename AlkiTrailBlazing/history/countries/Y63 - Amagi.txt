@@ -1,0 +1,21 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+primary_culture = stanislaus
+religion = partisan
+technology_group = western
+capital = 1861 #Paradise
+religious_school = freedonian_party
+set_country_flag = progressive_caucus
+
+1417.7.10 = {
+	monarch = {
+		name = "Love"
+		dynasty = "Supreme"
+		birth_date = 1399.3.1
+		female = yes
+		adm = 4
+		dip = 6
+		mil = 1
+	}
+}

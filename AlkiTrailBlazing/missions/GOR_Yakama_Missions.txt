@@ -1,0 +1,1422 @@
+###########################YAKAMA MISSIONS###########################
+yakama_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y97
+	}
+	has_country_shield = yes
+	
+	rally_the_tribes_yakama = {
+		icon = trueheir_elders_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 60
+			}
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 60
+			}
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 60
+			}
+		}
+		effect = {
+			add_government_power = {
+				mechanic_type = gor_trueheir_confederacy
+				power_type = trueheir_band_unity
+				value = 5
+			}
+			custom_tooltip = unlocks_the_new_estate_interaction
+		}
+	}
+	
+	find_trueheir_allies_yakama = {
+		icon = trueheir_handshake_gor
+		required_missions = { rally_the_tribes_yakama }
+		position = 2
+		trigger = {
+			any_ally = {
+				culture_group = western_true_heir
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_true_heir_alliance_yakama"
+				duration = 5475
+			}
+			if = {
+				limit = {
+					2486 = {
+						culture_group = western_true_heir
+					}
+				}
+				2486 = {
+					add_permanent_province_modifier = {
+						name = "gor_cemented_identity_yakama"
+						duration = -1
+					}
+				}
+			}
+			custom_tooltip = a_random_trueheir_ally_will_get
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_true_heir_alliance_yakama"
+					duration = 5475
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							culture_group = western_true_heir
+						}
+					}
+					capital_scope = {
+						add_permanent_province_modifier = {
+							name = "gor_cemented_identity_yakama"
+							duration = -1
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				random_ally = {
+					limit = {
+						culture_group = western_true_heir
+					}
+					country_event = { id = yakama_events.1 }
+				}
+			}
+		}
+	}
+	
+	the_origination_army_yakama = {
+		icon = origination_army_gor
+		required_missions = { find_trueheir_allies_yakama }
+		position = 3
+		trigger = {
+			army_size = 30
+			treasury = 1000
+			dip_power = 100
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = have_two_trueheir_allies
+					all_ally = {
+						culture_group = western_true_heir
+					}
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			country_event = { id = yakama_events.2 }
+		}
+	}
+	
+	tribal_representation_yakama = {
+		icon = trueheir_chieftan_gor
+		required_missions = { the_origination_army_yakama cultural_survival_yakama }
+		position = 4
+		trigger = {
+			OR = {
+				emperor = {
+					culture_group = western_true_heir
+				}
+				any_elector = {
+					culture_group = western_true_heir
+				}
+			}
+		}
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 15
+			}
+			add_prestige = 25
+			add_government_power = {
+				mechanic_type = gor_trueheir_confederacy
+				power_type = trueheir_band_unity
+				value = 5
+			} 
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_trueheir_in_power_yakama"
+					duration = 5475
+				}
+			}
+			custom_tooltip = if_we_are_the_emperor_or_elector
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_trueheir_in_power_yakama"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						OR = {
+							is_emperor = yes
+							is_elector = yes
+						}
+					}
+					add_country_modifier = {
+						name = "gor_trueheir_in_power_yakama"
+						duration = -1
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = "gor_trueheir_in_power_yakama"
+						duration = 5475
+					}
+				}
+			}
+		}
+	}
+	
+	ruins_of_idaho_yakama = {
+		icon = idaho_ruins_gor
+		required_missions = { theanite_disgrace_yakama }
+		position = 8
+		provinces_to_highlight = {
+			region = idaho_region
+			OR = {
+				is_permanent_claim = ROOT
+				is_claim = ROOT
+				is_core = ROOT
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = owned_provinces_in_idaho_yakama
+					idaho_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 10
+			}
+		}
+		effect = {
+			add_yearly_manpower = 3
+			capital_scope = {
+				add_base_manpower = 2
+			}
+			add_country_modifier = {
+				name = "gor_starchy_soldiers_yakama"
+				duration = 9125
+			}
+			idaho_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	
+	heirs_of_the_alampam_yakama = {
+		icon = idaho_falls_gor
+		required_missions = { ruins_of_idaho_yakama }
+		position = 9
+		provinces_to_highlight = {
+			region = idaho_region
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = owned_provinces_in_idaho_yakama
+					idaho_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 40
+			}
+			1933 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1879 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1956 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1954 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					primary_culture = yakama 
+				}
+				country_event = { id = yakama_events.9 }
+			}	
+			metropolitan_shoshone_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			new_asturias_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			greathorn_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			cody_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+yakama_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y97
+	}
+	has_country_shield = yes
+
+	cultural_survival_yakama = {
+		icon = sitting_trueheir_in_lodge_gor
+		required_missions = { find_trueheir_allies_yakama }
+		position = 3
+		trigger = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = "THIS IS NOT DONE, PLEASE COME BACK TO IT ONCE TRUEHEIR INCIDENT IS DONE"
+					always = no
+				}
+				is_year = 1600
+			}	
+		}
+		effect = {
+			define_advisor = {
+				type = diplomat
+				skill = 3
+				cost_multiplier = 0.5
+			}
+			custom_tooltip = modify_trueheir_capit_thing_yakama
+			tooltip = {
+				if = {
+					limit = {
+						2486 = {
+							culture_group = western_true_heir
+						}
+					}
+					2486 = {
+						add_permanent_province_modifier = {
+							name = "gor_cemented_identity_better_yakama"
+							duration = -1
+						}
+					}
+				}
+			}
+			custom_tooltip = "THERE IS EXTRA STUFF HERE TOO DUMMY"
+			hidden_effect = {
+				if = {
+					limit = {
+						2486 = {
+							culture_group = western_true_heir
+						}
+					}
+					remove_province_modifier = gor_cemented_identity_yakama
+					2486 = {
+						add_permanent_province_modifier = {
+							name = "gor_cemented_identity_better_yakama"
+							duration = -1
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	preserving_tahoma_yakama = {
+		icon = tahoma_gor
+		required_missions = { cultural_survival_yakama }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 2073
+		}
+		trigger = {
+			has_great_project = {
+				type = great_tahoma
+				tier = 3
+			}
+		}
+		effect = {
+			add_army_tradition = 20
+			add_army_professionalism = 0.1
+			if = {
+				limit = {
+					stability = 3
+				}
+				add_adm_power = 150
+			}
+			else {
+				add_stability = 1
+			}
+			add_country_modifier = {
+				name = "gor_tahoman_wisdom_yakama"
+				duration = -1
+			}
+		}
+	}
+	
+	crush_the_echoites_yakama = {
+		icon = snake_noble_gor
+		required_missions = { ready_the_soldiers_yakama }
+		position = 6
+		provinces_to_highlight = {
+			area = benton_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			benton_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			inland_empire_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = if_echo_exists_yak
+			tooltip = {
+				if = {
+					limit = {
+						stability = 3
+					}
+					add_adm_power = 150
+				}
+				else = {
+					add_stability = 1
+				}
+				Y38 = {
+					if = {
+						limit = {
+							stability = -2
+						}
+						add_stability = -1
+					}
+					else = {
+						add_adm_power = -150
+					}
+				}
+			}
+			custom_tooltip = if_they_dont_exist_yak
+			tooltip = {
+				if = {
+					limit = {
+						stability = 3
+					}
+					add_adm_power = 150
+				}
+				else = {
+					add_stability = 1
+				}
+				add_prestige = 15
+				add_power_projection = {
+					type = mission_rewards_power_projection
+					amount = 15
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						exists = Y38
+					}
+					if = {
+						limit = {
+							stability = 3
+						}
+						add_adm_power = 150
+					}
+					else = {
+						add_stability = 1
+					}
+					Y38 = {
+						country_event = { id = yakama_events.8 }
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							stability = 3
+						}
+						add_adm_power = 150
+					}
+					else = {
+						add_stability = 1
+					}
+					add_prestige = 15
+					add_power_projection = {
+						type = mission_rewards_power_projection
+						amount = 15
+					}
+				}
+			}
+		}
+	}
+	
+	theanite_disgrace_yakama = {
+		icon = burning_theanite_wheel_gor
+		required_missions = { crush_the_echoites_yakama mountain_warefare_yakama }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					owner = {
+						religion = theanite
+					}
+					region = washington_region
+				}
+				province_id = 4513
+				province_id = 4516
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			4513 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4516 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			custom_trigger_tooltip = {
+				tooltip = no_theanite_nation_owns_land_in_wash
+				washington_region = {
+					type = all
+					NOT = {
+						owner = {
+							religion = theanite
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = remove_all_cores_of_collville_and_flathead_in_owned_province
+			add_country_modifier = {
+				name = "gor_converting_the_mystics_yakama"
+				duration = 9125
+			}
+			flathead_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			nez_perce_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			glacier_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			clark_lewis_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			fraser_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			engles_valley_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							is_core = Y40
+							is_core = Y41
+						}
+					}
+					remove_core = Y40
+					remove_core = Y41
+				}
+			}
+		}
+	}
+	
+	running_up_the_river_fraser_yakama = {
+		icon = trueheir_cannon_gor
+		required_missions = { theanite_disgrace_yakama }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2245
+				province_id = 2262
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			2245 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2262 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			add_province_modifier = {
+				name = "gor_lessons_of_fraser_yakama"
+				duration = 5475
+			}
+		}
+	}
+}
+
+yakama_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y97
+	}
+	has_country_shield = yes
+	
+	assemble_tribal_council_yakama = {
+		icon = trueheir_council_gor
+		required_missions = { valley_of_plenty_yakama }
+		position = 2
+		trigger = {
+			AND = {
+				has_adm_advisor = yes
+				has_dip_advisor = yes
+				has_mil_advisor = yes
+			}
+			OR = {
+				has_adm_advisor_3 = yes
+				has_dip_advisor_3 = yes
+				has_mil_advisor_3 = yes
+			}
+			has_government_power = {
+				mechanic_type = gor_trueheir_confederacy
+				power_type = trueheir_band_unity
+				value = 50
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_fresh_tribal_council_yakama"
+				duration = 3650
+			}
+			custom_tooltip = hiring_an_advisor_grants_band_unity
+		}
+	}
+	
+	yakima_innovation_yakama = {
+		icon = trueheir_scientist_gor
+		required_missions = { assemble_tribal_council_yakama }
+		position = 3
+		trigger = {
+			has_completed_idea_group_of_category = {
+				adm_ideas = yes
+			}
+			NOT = {
+				any_neighbor_country = {
+					tech_difference = 1
+				}
+			}
+			is_lacking_institutions = no
+		}
+		effect = {
+			change_innovativeness = 5
+			custom_tooltip = unlocks_new_elder_estate_interaction
+		}
+	}
+	
+	niniish_university_yakama = {
+		icon = niniish_university_gor
+		required_missions = { yakima_innovation_yakama }
+		position = 4
+		trigger = {
+			owns_core_province = 2486
+			2486 = {
+				primary_culture = yakama
+				has_building = university
+			}
+			innovativeness = 50
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_niniish_university_yakama"
+				duration = -1
+			}
+			custom_tooltip = we_will_recieve_trueheir_scholar_events
+		}
+	}
+	
+	ready_the_soldiers_yakama = {
+		icon = yakama_knight_gor
+		required_missions = { }
+		position = 5
+		trigger = {
+			army_size_percentage = 0.9
+			num_of_generals = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_willing_soldiers_yakama"
+				duration = 5475
+			}
+			washington_cascades_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			benton_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	mountain_warefare_yakama = {
+		icon = trueheir_rider_cascades_gor
+		required_missions = { ready_the_soldiers_yakama }
+		position = 6
+		provinces_to_highlight = {
+			area = washington_cascades_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_three_provs_in_cascades_area
+					washington_cascades_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			colville_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = every_province_with_a_fort_gets
+			tooltip = {
+				add_base_manpower = 1
+				add_province_modifier = {
+					name = "gor_cascadian_defenses_yakama"
+					duration = 18250
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_fort_building_trigger = yes
+					}
+					add_base_manpower = 1
+					add_province_modifier = {
+						name = "gor_cascadian_defenses_yakama"
+						duration = 18250
+					}
+				}
+			}
+		}
+	}
+	
+	under_eagles_wings_yakama = {
+		icon = eagle_rainier_gor
+		required_missions = { heirs_of_the_alampam_yakama running_up_the_river_fraser_yakama washington_reclaimed_yakama riverlords_yakama }
+		position = 10
+		trigger = {
+			army_size = 100
+			is_great_power = yes
+		}
+		effect = {
+			override_country_name = WAAW_YAKAMA
+			add_country_modifier = {
+				name = "gor_wawa_yakama_yakama"
+				duration = -1
+			}
+			oregon_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			arborea_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+yakama_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y97
+	}
+	has_country_shield = yes
+	
+	valley_of_plenty_yakama = {
+		icon = yakama_valley_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			development_in_provinces = {
+				value = 30
+				OR = {
+					province_id = 2073
+					province_id = 2486
+					province_id = 4500
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = those_three_provs_get
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_waste_not_yakama"
+					duration = 3650
+				}
+				add_province_modifier = {
+					name = "gor_valley_of_plenty_yakama"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	veneration_of_the_founder_yakama = {
+		icon = trueheir_woman_praying_gor
+		required_missions = { valley_of_plenty_yakama }
+		position = 2
+		trigger = {
+			OR = {
+				temple = 5
+				cathedral = 5
+			}
+			OR = {
+				piety = 0.75
+				NOT = { piety = -0.75 }
+			}
+		}
+		effect = {
+			custom_tooltip = for_each_temple_or_cathedral_gain
+			tooltip = {
+				add_yearly_manpower = 0.25
+				add_corruption = -0.25
+			}
+			hidden_effect = {
+				while = {
+					limit = {
+						any_owned_province = {
+							OR = {
+								has_building = temple
+								has_building = cathedral
+							}
+							NOT = { has_province_flag = already_given_temple_cath_bonus }
+						}
+					}
+					add_yearly_manpower = 0.25
+					add_corruption = -0.25
+					random_owned_province = {
+						limit = {
+							OR = {
+								has_building = temple
+								has_building = cathedral
+							}
+							NOT = { has_province_flag = already_given_temple_cath_bonus }
+						}
+						set_province_flag = already_given_temple_cath_bonus
+					}
+				} 
+				every_owned_province = {
+					clr_province_flag = already_given_temple_cath_bonus
+				}
+			}
+		}
+	}
+	
+	plan_union_conquest_yakama = {
+		icon = trueheir_plan_gor
+		required_missions = { ready_the_soldiers_yakama }
+		position = 6
+		trigger = {
+			army_size = 20
+			emperor = {
+				has_opinion = {
+					who = ROOT
+					value = 50
+				}
+			}
+			years_of_income = 2
+		}
+		effect = {
+			willapa_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			bend_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			middle_columbia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_challenging_the_counts_yakama"
+				duration = 3650
+			}
+		}
+	}
+	
+	follow_the_columbia_yakama = {
+		icon = columbia_river_gor
+		required_missions = { plan_union_conquest_yakama }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 2068
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			2068 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			low_puget_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			olympic_penninsula_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			2068 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 3650
+					power = 15
+					key = vancoouver_trade_yak
+				}
+			}
+			custom_tooltip = every_province_along_columbia_gets
+			tooltip = {
+				add_base_production = 1
+			}
+			hidden_effect = {
+				every_owned_province = {
+					if = {
+						limit = {
+							OR = {
+								province_id = 2046
+								province_id = 2057 
+								province_id = 1208 
+								province_id = 1197 
+								province_id = 2068
+								province_id = 1218 
+								province_id = 2069 
+								province_id = 1970
+								province_id = 4500
+								province_id = 1972
+								province_id = 2039
+								province_id = 2038
+								province_id = 2037
+								province_id = 4501
+								province_id = 2036
+								province_id = 4504 
+								province_id = 2056
+								province_id = 2035
+							}
+						}
+						add_base_production = 1
+					}
+				}
+			}
+		}
+	}
+	
+	to_the_shore_yakama = {
+		icon = cascadian_coastal_wall_gor
+		required_missions = { follow_the_columbia_yakama }
+		position = 8
+		provinces_to_highlight = {
+			region = washington_region
+			has_port = yes
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			2046 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			num_of_ports = 2
+		}
+		effect = {
+			2046 = {
+				add_unit_construction = {
+					type = galley
+					amount = 10
+					speed = 0.1
+					cost = 0
+				}
+			}
+			custom_tooltip = if_we_own_five_ports
+			tooltip = {
+				add_navy_tradition = 15
+				define_advisor = {
+					type = naval_reformer
+					skill = 3
+					cost_multiplier = 0.25
+				}
+			}
+		}
+	}
+	
+	washington_reclaimed_yakama = {
+		icon = cannon_fire_gor
+		required_missions = { to_the_shore_yakama }
+		position = 8
+		provinces_to_highlight = {
+			region = washington_region
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = owned_provinces_in_washington_yakama
+					washington_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 30
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 30
+			}
+			add_country_modifier = {
+				name = "gor_yakaman_revival_yakama"
+				duration = -1
+			}
+		}
+	}
+}
+
+yakama_missions_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y97
+	}
+	has_country_shield = yes
+	
+	create_vintage_system_yakama = {
+		icon = wine_gor
+		required_missions = { valley_of_plenty_yakama }
+		position = 2
+		trigger = {
+			treasury = 1000
+			workshop = 5
+			marketplace = 5
+		}
+		effect = {
+			custom_tooltip = enables_the_vintage_events_every_five_years
+			country_event = { id = yakama_events.4 }
+		}
+	}
+	
+	perfect_production_yakama = {
+		icon = aging_wine_gor
+		required_missions = { create_vintage_system_yakama }
+		position = 3
+		provinces_to_highlight = {
+			owned_by = ROOT
+			trade_goods = wine
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = every_win_prov_has_a_manufactory
+				all_owned_province = { 
+					OR = {
+						has_manufactory_trigger = yes
+						NOT = { trade_goods = wine }
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = double_gains_from_vintage_events
+			custom_tooltip = every_wine_prov_with_manufactory_gets
+			tooltip = {
+				add_base_production = 1
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = wine
+						has_manufactory_trigger = yes
+					}
+					add_base_production = 1
+				}
+			}
+		}
+	}
+	
+	smarter_not_harder_yakama = {
+		icon = wine_science_gor
+		required_missions = { perfect_production_yakama niniish_university_yakama }
+		position = 5
+		trigger = {
+			innovativeness = 75
+			AND = {
+				has_adm_advisor_3 = yes
+				has_dip_advisor_3 = yes
+				has_mil_advisor_3 = yes
+			}
+			monthly_income = 50
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_checmical_aging_yakama"
+				duration = -1
+			}
+			custom_tooltip = holding_vintage_takes_half_as_much_time
+		}
+	}
+	
+	riverside_combat_yakama = {
+		icon = trueheir_knight_gor
+		required_missions = { plan_union_conquest_yakama }
+		position = 7
+		provinces_to_highlight = {
+			region = oregon_region
+			OR = {
+				is_core = ROOT
+				is_permanent_claim = ROOT
+				is_claim = ROOT
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = owned_provinces_in_oregon_yakama
+					oregon_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			custom_tooltip = if_we_have_challenge_counts_extend_it
+			custom_tooltip = if_we_dont_yak
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_challenging_the_counts_yakama"
+					duration = 5475
+				}
+			}
+			oregonian_cascades_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			morrow_crook_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_modifier = gor_challenging_the_counts_yakama
+					}
+					add_country_modifier = {
+						name = "gor_challenging_the_counts_yakama"
+						duration = 9125
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = "gor_challenging_the_counts_yakama"
+						duration = 5475
+					}
+				}
+			}
+		}
+	}
+	
+	family_business_yakama = {
+		icon = chieftans_meeting_gor
+		required_missions = { riverside_combat_yakama }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = morrow_crook_area
+				province_id = 1970
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			morrow_crook_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1970 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = if_warmsprings_is_tenino
+			tooltip = {
+				1970 = {
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+				custom_tooltip = accept_the_tenino_culture_fo_free
+			}
+			upper_willamette_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tillamook_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_willamette_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			north_snake_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hidden_effect = {
+				add_country_modifier = {
+					name = "gor_family_business_yakama"
+					duration = -1
+					hidden = yes
+				}
+				add_accepted_culture = tenino
+			}
+		}
+	}
+	
+	riverlords_yakama = {
+		icon = river_ship_gor
+		required_missions = { family_business_yakama to_the_shore_yakama }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2046
+				province_id = 2057 
+				province_id = 1208 
+				province_id = 1197 
+				province_id = 2068
+				province_id = 1218 
+				province_id = 2069 
+				province_id = 1970
+				province_id = 4500
+				province_id = 1972
+				province_id = 2039
+				province_id = 2038
+				province_id = 2037
+				province_id = 4501
+				province_id = 2036
+				province_id = 4504 
+				province_id = 2056
+				province_id = 2035
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = own_all_provinces_along_the_columbia
+				2046 = { country_or_non_sovereign_subject_holds = ROOT }
+				2057 = { country_or_non_sovereign_subject_holds = ROOT }
+				1208 = { country_or_non_sovereign_subject_holds = ROOT }
+				1197 = { country_or_non_sovereign_subject_holds = ROOT }
+				2068 = { country_or_non_sovereign_subject_holds = ROOT }
+				1218 = { country_or_non_sovereign_subject_holds = ROOT }
+				2069 = { country_or_non_sovereign_subject_holds = ROOT }
+				1970 = { country_or_non_sovereign_subject_holds = ROOT }
+				4500 = { country_or_non_sovereign_subject_holds = ROOT }
+				1972 = { country_or_non_sovereign_subject_holds = ROOT }
+				2039 = { country_or_non_sovereign_subject_holds = ROOT }
+				2038 = { country_or_non_sovereign_subject_holds = ROOT }
+				2037 = { country_or_non_sovereign_subject_holds = ROOT }
+				4501 = { country_or_non_sovereign_subject_holds = ROOT }
+				2036 = { country_or_non_sovereign_subject_holds = ROOT }
+				4504 = { country_or_non_sovereign_subject_holds = ROOT }
+				2056 = { country_or_non_sovereign_subject_holds = ROOT }
+				2035 = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					dip = 6
+				}
+				add_dip_power = 200
+			}
+			else = {
+				change_dip = 1
+			}
+			custom_tooltip = every_province_along_columbia_gets
+			tooltip = {
+				add_base_production = 2
+				add_province_modifier = {
+					name = "gor_united_columbia_yakama"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							province_id = 2046
+							province_id = 2057 
+							province_id = 1208 
+							province_id = 1197 
+							province_id = 2068
+							province_id = 1218 
+							province_id = 2069 
+							province_id = 1970
+							province_id = 4500
+							province_id = 1972
+							province_id = 2039
+							province_id = 2038
+							province_id = 2037
+							province_id = 4501
+							province_id = 2036
+							province_id = 4504 
+							province_id = 2056
+							province_id = 2035
+						}
+					}
+					add_province_modifier = {
+						name = "gor_united_columbia_yakama"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}

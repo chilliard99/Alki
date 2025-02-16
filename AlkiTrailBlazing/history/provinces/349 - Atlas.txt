@@ -1,0 +1,18 @@
+#349 - Figuig
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = X91
+controller = X91
+add_core = X91
+culture = thracian
+religion = islam
+capital = "Figuig"
+trade_goods = fish #Transposian Fisheries
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 3
+is_city = yes
+discovered_by = western

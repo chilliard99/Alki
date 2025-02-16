@@ -1,0 +1,18 @@
+#2064 - Shekhawati
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+add_core = W06
+owner = W06
+controller = W06
+add_core = U60
+culture = seattlain
+religion = collectivist
+capital = "Everett"
+trade_goods = paper #more paper production along puget
+hre = yes
+base_tax = 4
+base_production = 4
+base_manpower = 4
+is_city = yes

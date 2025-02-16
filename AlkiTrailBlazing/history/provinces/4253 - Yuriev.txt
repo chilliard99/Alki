@@ -1,0 +1,16 @@
+#4253 - Pereyaslavl-Zalesskiy & Yuriev-Polskiy
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V69
+controller = V69
+add_core = V69
+culture = antioqueno
+religion = catholico
+hre = no
+base_tax = 3
+base_production = 3
+trade_goods = coffee #axis 
+base_manpower = 2
+capital = "Yuriev"
+is_city = yes

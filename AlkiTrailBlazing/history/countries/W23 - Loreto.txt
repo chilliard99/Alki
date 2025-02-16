@@ -1,0 +1,33 @@
+government = republic
+add_government_reform = free_city
+government_rank = 1
+primary_culture = comundian
+religion = partisan
+technology_group = western
+capital = 2409	 #Loreto
+religious_school = progressive_party
+set_country_flag = baja_independence_caucus
+
+1399.5.12 = {
+	monarch = {
+		name = "Alejandro II"
+		dynasty = "Loreto"
+		birth_date = 1399.5.12
+		adm = 1
+		dip = 2
+		mil = 1
+	}
+}
+1422.5.16 = {
+	heir = {
+		name = "Jesus"
+		monarch_name = "Jesus IV"
+		dynasty = "Loreto"
+		birth_date = 1422.5.16
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}

@@ -1,0 +1,15 @@
+#233 - Cornwall
+discovered_by = north_american
+capital = "Falmouth"
+culture = neobritish
+religion = paganry
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = unknown
+base_manpower = 1
+capital = "Penryn"
+is_city = no
+native_size = 5
+native_ferocity = 2
+native_hostileness = 4

@@ -1,0 +1,205 @@
+namespace = lincolnite_events
+####################LINCOLNITE EVENTS##########################
+country_event = { #Emergence of the Lincolnite Culture
+	id = lincolnite_events.1
+	title = lincolnite_events.1.t
+	desc = lincolnite_events.1.d
+	picture = COLONIZATION_eventPicture
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		NOT = { tag = Y38 }
+		if = {
+			limit = {
+				NOT = { tag = U59 }
+			}
+			culture_group = sunkissed
+			any_owned_province = {
+				region = washington_region
+				religion = theanite
+				culture_group = western_plainwalkers_group
+			}
+		}
+		else = {
+			has_country_flag = will_get_lincolnite_spawn
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 25
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_global_flag = lincolnite_culture_spawned
+			if = {
+				limit = {
+					NOT = { tag = U59 }
+				}
+				random_owned_province = {
+					limit = {
+						region = washington_region
+						religion = theanite
+						culture_group = western_plainwalkers_group
+					}
+					save_event_target_as = dawn_of_lincolnite_culture
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = lincolnite_events.1.a #Interesting
+		event_target:dawn_of_lincolnite_culture = {
+			change_culture = lincolnite
+			add_proper_lincolnite_core = yes
+			add_province_modifier = {
+				name = "gor_lincoln_new_prov_lin"
+				duration = 18250
+			}
+		}
+		ai_chance = { 
+			factor = 90
+			modifier = {
+				factor = 0
+				tag = U59
+			}
+		} 
+	}
+	
+	option = {
+		name = lincolnite_events.1.b #That sounds like me!
+		trigger = {
+			tag = U59
+		}
+		capital_scope = {
+			change_culture = lincolnite
+			add_province_modifier = {
+				name = "gor_lincoln_new_prov_lin"
+				duration = 18250
+			}
+		}
+		change_primary_culture = lincolnite
+		set_ruler_culture = lincolnite
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 100
+				tag = U59
+			}
+		} 
+	}
+}
+
+province_event = { #Lincolnite Culture Spreads
+	id = lincolnite_events.2
+	title = lincolnite_events.2.t
+	desc = lincolnite_events.2.d
+	picture = COLONIZATION_eventPicture
+	
+	trigger = {
+		has_global_flag = lincolnite_culture_spawned
+		region = washington_region
+		culture_group = western_plainwalkers_group
+		NOT = { culture = lincolnite }
+		owner = {
+			culture_group = sunkissed
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 25
+		
+		modifier = {
+			factor = 0.5
+			owner = {
+				has_country_flag = get_lincolnite_at_double_rate
+			}
+		}
+	}
+	
+	option = {
+		name = lincolnite_events.2.a
+		change_culture = lincolnite
+		add_proper_lincolnite_core = yes
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = dev_from_lincolnite_cult
+				}
+			}
+			add_base_production = 1
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = get_lincolnite_at_two_base_manpower
+				}
+			}
+			add_base_manpower = 2
+		}
+	}
+}
+
+country_event = { #Debug Event Chain (Do not fire)
+	id = lincolnite_events.3
+	title = lincolnite_events.3.t
+	desc = lincolnite_events.3.d
+	picture = HRE_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { has_global_flag = disabled_wild_wasteland }
+		has_reform = free_city
+		culture_group = western_plainwalkers_group
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		name = lincolnite_events.3.a #Look into it
+		custom_tooltip = this_is_available_to_us_due_to_wild_wasteland
+		country_event = { 
+			id = lincolnite_events.4
+			days = 365
+		}
+	}
+	option = {
+		name = lincolnite_events.3.b #Too much work
+		custom_tooltip = this_is_available_to_us_due_to_wild_wasteland
+		add_prestige = 5
+	}
+}
+
+country_event = { #Debug Event Chain (Do not fire)
+	id = lincolnite_events.4
+	title = lincolnite_events.4.t
+	desc = lincolnite_events.4.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { has_global_flag = disabled_wild_wasteland }
+		government_reform = free_city
+		culture_group = western_plainwalkers_group
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		name = lincolnite_events.4.a #Very Strange
+		custom_tooltip = this_is_available_to_us_due_to_wild_wasteland
+		capital_scope = {
+			change_culture = goldbugger
+		}
+		change_primary_culture = goldbugger
+		change_tag = Y89
+		swap_free_idea_group = yes
+	}
+}

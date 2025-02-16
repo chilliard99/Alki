@@ -1,0 +1,16 @@
+# - Araxas
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neobrazilian
+religion = espiritismo
+capital = "Araxas"
+trade_goods = spices #nutmeg
+hre = no
+fort_15th = yes
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes
+center_of_trade = 1

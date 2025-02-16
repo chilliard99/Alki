@@ -1,0 +1,18 @@
+#1970 - Syghnak
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y95
+controller = Y95
+add_core = Y95
+culture = tenino
+religion = partisan
+capital = "Warm Springs"
+trade_goods = grain #In Hood River, fruit farms
+base_tax = 2
+base_production = 2
+base_manpower = 2
+hre = yes
+is_city = yes
+fort_15th = yes

@@ -1,0 +1,18 @@
+#2067 - Gorwar
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y38
+controller = Y38
+add_core = Y38
+add_core = U71
+culture = colville
+religion = theanite
+capital = "Ephrata"
+trade_goods = grain #they make hay out here
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 3
+is_city = yes

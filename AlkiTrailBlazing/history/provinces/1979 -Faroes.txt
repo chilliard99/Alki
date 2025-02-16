@@ -1,0 +1,14 @@
+#1979 - Färöarna
+discovered_by = north_american
+culture = neobritish
+religion = paganry
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+trade_goods = unknown
+capital = "Torshavn"
+is_city = no
+native_size = 5
+native_ferocity = 2
+native_hostileness = 4

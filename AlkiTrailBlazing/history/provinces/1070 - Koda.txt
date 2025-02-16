@@ -1,0 +1,17 @@
+#1070 - Koda
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y57
+controller = Y57
+add_core = Y57
+culture = silveritte
+religion = partisan
+capital = "North Lake Tahoe"
+trade_goods = fish #Large fishing village
+hre = yes
+base_tax = 3
+base_production = 3
+base_manpower = 3
+is_city = yes

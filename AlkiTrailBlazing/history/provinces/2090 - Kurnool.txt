@@ -1,0 +1,15 @@
+#2090 - Kurnool, Srisailam
+discovered_by = eastern
+discovered_by = western
+owner = Y22
+controller = Y22
+add_core = Y22
+culture = assiniboine
+religion = theanite
+capital = "Srisailam"
+trade_goods = grain #brick and flour, so flour means grain (im really big brained)
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes

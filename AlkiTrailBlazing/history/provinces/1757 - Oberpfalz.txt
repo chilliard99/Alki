@@ -1,0 +1,17 @@
+#1757 - Oberpfalz
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = U36
+controller = U36
+add_core = U36
+culture = joaquin
+religion = partisan
+base_tax = 6
+base_production = 6
+trade_goods = grain #joaquin farms
+base_manpower = 5
+capital	= "Modesto" 
+is_city = yes
+hre = yes

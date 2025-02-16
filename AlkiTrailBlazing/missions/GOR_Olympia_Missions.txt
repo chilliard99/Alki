@@ -1,0 +1,486 @@
+###########################OLYMPIA MISSIONS###########################
+olympia_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = U55
+	}
+	has_country_shield = yes
+	
+	great_oly_olympia = {
+		icon = pacif_northwest_coastal_gor
+		required_missions = {  }
+		position = 2
+		provinces_to_highlight = {
+			province_id = 2052
+		}
+		trigger = {
+			num_of_light_ship = 10
+			2052 = {
+				development = 12
+				trade_share = {
+					country = ROOT
+					share = 15
+				}
+			}
+		}
+		effect = {
+			2052 = {
+				add_province_modifier = {
+					name = "gor_great_oly"
+					duration = -1
+				}
+			}
+			custom_tooltip = if_classicalism_has_spawned
+			hidden_effect = {
+				limit = {
+					is_institution_enabled = renaissance
+				}
+				add_next_institution_embracement = 25
+			}
+		}
+	}
+	
+	gateway_to_the_north_olympia = {
+		icon = knight_in_evergreen_forest_gor
+		required_missions = { great_oly_olympia olympic_reunion_olympia }
+		position = 2
+		provinces_to_highlight = {
+			area = olympic_penninsula_area
+		}
+		trigger = {
+			development_in_provinces = {
+				value = 40
+				area = olympic_penninsula_area
+			}
+			2052 = {
+				province_has_center_of_trade_of_level = 2
+			}
+			navy_size = W06
+		}
+		effect = {
+			country_event = { id = olympia_events.2 }
+		}
+	}
+}
+
+olympia_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = U55
+	}
+	has_country_shield = yes
+	
+	
+	peninsular_ambitions_olympia = {
+		icon = peninsular_ambitions_gor
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			owned_by = W06
+			region = washington_region
+			NOT = {
+				is_claim = ROOT
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = have_a_claim_on_all_alaska
+				washington_region = {
+					type = all
+					OR = {
+						NOT = {
+							owned_by = W06
+						}
+						AND = {
+							owned_by = W06
+							is_claim = ROOT
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = convert_every_province_we_got_claim_to_core
+			add_mil_power = 50
+			hidden_effect = {
+				washington_region = {
+					limit = {
+						is_claim = ROOT
+					}
+					remove_claim = ROOT
+					add_core = ROOT
+				}
+			}
+		}
+	}
+	
+	olympic_reunion_olympia = {
+		icon = northwest_soldiers_shaking_hands_gor
+		required_missions = { peninsular_ambitions_olympia }
+		position = 2
+		provinces_to_highlight = {
+			area = olympic_penninsula_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			olympic_penninsula_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			2046 = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 15
+			2052 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 3650
+					power = 15
+					key = olympic_oars_gor
+				}
+			}
+			custom_tooltip = if_alask_exists
+			tooltip = {
+				add_prestige = -15
+				2052 = {
+					add_trade_modifier = {
+						who = W06
+						duration = 3650
+						power = -15
+						key = olympic_oars_gor
+					}
+				}
+			}
+			hidden_effect = { #Notification event that causes the event
+				if = {
+					limit = {
+						exists = W06
+					}
+					W06 = {
+						country_event = { id = olympia_events.1 }
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+olympia_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = U55
+	}
+	has_country_shield = yes
+	
+	rebuilding_strength_olympia = {
+		icon = lotta_soldiers_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			army_size_percentage = 0.9
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_revived_olympic_guard_oly"
+				duration = 5475
+			}
+			2062 = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			2063 = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			2071 = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	traitor_of_tacoma_olympia = {
+		icon = cannon_fire_gor
+		required_missions = { rebuilding_strength_olympia }
+		position = 2
+		provinces_to_highlight = {
+			province_id = 2062
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			OR = {
+				2062 = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				NOT = { exists = U58 }
+			}
+		}
+		effect = {
+			add_yearly_manpower = 2
+			custom_tooltip = if_we_own_tacoma
+			tooltip = {
+				2062 = {
+					add_base_tax = 2
+					add_unit_construction = {
+						type = light_ship
+						amount = 5
+						speed = 0.1
+						cost = 0
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						owns = 2062
+					}
+				}
+				2062 = {
+					add_base_tax = 2
+					add_unit_construction = {
+						type = light_ship
+						amount = 5
+						speed = 0.1
+						cost = 0
+					}
+				}
+			}
+		}
+	}
+	
+	routing_the_reds_olympia = {
+		icon = surrender_flag_gor
+		required_missions = { traitor_of_tacoma_olympia prize_of_cascadia_olympia olympic_reunion_olympia }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = olympic_penninsula_area
+				area = low_puget_area
+				area = high_puget_area
+			}
+			owned_by = W06
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = alaska_owns_none
+				olympic_penninsula_area = {
+					type = all
+					NOT = {
+						owned_by = W06
+					}
+				}
+				low_puget_area = {
+					type = all
+					NOT = {
+						owned_by = W06
+					}
+				}
+				high_puget_area = {
+					type = all
+					NOT = {
+						owned_by = W06
+					}
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+			add_country_modifier = {
+				name = "communist_destruction_oly"
+				duration = 27375
+			}
+			custom_tooltip = remove_all_alaskan_cores
+			hidden_effect = {
+				olympic_penninsula_area = {
+					limit = {
+						is_core = W06
+					}
+					remove_core = W06
+				}
+				low_puget_area = {
+					limit = {
+						is_core = W06
+					}
+					remove_core = W06
+				}
+				high_puget_area = {
+					limit = {
+						is_core = W06
+					}
+					remove_core = W06
+				}
+			}
+		}
+	}
+}
+
+olympia_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = U55
+	}
+	has_country_shield = yes
+	
+	
+	prize_of_cascadia_olympia = {
+		icon = seattle_gor
+		required_missions = { rebuilding_strength_olympia }
+		position = 2
+		provinces_to_highlight = {
+			province_id = 2063
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			2063 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			low_puget_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			high_puget_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			2063 = {
+				add_base_manpower = 2
+			}
+			custom_tooltip = if_seattle_isnt_partisan
+			hidden_effect = {
+				2063 = {
+					limit = {
+						NOT = { religion = ROOT }
+					}
+					change_religion = partisan
+				}
+			}
+		}
+	}
+}
+
+olympia_missions_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = U55
+	}
+	has_country_shield = yes
+	
+	
+	currying_favor_olympia = {
+		icon = union_meetup_gor
+		required_missions = {  }
+		position = 1
+		trigger = {
+			emperor = {
+				has_opinion = {
+					who = ROOT
+					value = 100
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = gain_10_with_every_elector
+			custom_tooltip = if_we_allied_to_emp_we_get
+			tooltip = {
+				add_dip_power = 50
+				emperor = {
+					add_imperial_influence = 2
+				}
+			}
+			hidden_effect = {
+				every_elector = {
+					add_opinion = {
+						who = ROOT
+						modifier = gor_olympian_networking
+					}
+				}
+				if = {
+					limit = {
+						any_ally = {
+							is_emperor = yes
+						}
+					}
+					add_dip_power = 50
+					emperor = {
+						country_event = { id = olympia_events.3 }
+					}
+				}
+			}
+		}
+	}
+	
+	northern_classicalism_olympia = {
+		icon = northern_classicalist_artist_gor
+		required_missions = {  }
+		position = 3
+		trigger = {
+			has_institution = renaissance
+			prestige = 30
+		}
+		effect = {
+			add_adm_power = 50
+			define_advisor = {
+				type = artist
+				skill = 2
+				cost_multiplier = 0.75
+			}
+		}
+	}
+	
+	upstaging_the_competition_olympia = {
+		icon = californian_theatre_gor
+		required_missions = { northern_classicalism_olympia }
+		position = 4
+		trigger = {
+			NOT = {
+				any_neighbor_country = {
+					tech_difference = 1
+				} 
+			}
+			prestige = 75
+			has_completed_idea_group_of_category = { adm_ideas = yes } 
+		}
+		effect = {
+			country_event = { id = olympia_events.4 }
+		}
+	}
+}

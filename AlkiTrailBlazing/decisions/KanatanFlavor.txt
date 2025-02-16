@@ -1,0 +1,22 @@
+country_decisions = {
+
+	exploit_mandate = {
+		major = yes
+		potential = {
+			tag = event_target:islamist_on_throne_et 
+		}
+		allow = {
+			imperial_mandate = 50
+		}
+		effect = {
+			add_mandate = -50
+			add_adm_power = 150
+			add_dip_power = 150
+			add_mil_power = 150
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		ai_importance = 0
+	}
+}

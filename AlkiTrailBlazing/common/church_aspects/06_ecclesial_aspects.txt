@@ -1,0 +1,163 @@
+elevate_denomination_ecclesial = {
+	sprite = "elevate_denomination_ecclesial"
+	cost = 100
+	trigger = {
+		NOT = {
+			legitimacy_equivalent = 100
+		}
+	}
+	effect = {
+		add_legitimacy = 10
+		add_horde_unity = 10
+		add_devotion = 10
+		add_meritocracy = 10
+		add_republican_tradition = 5
+	}
+	ai_will_do = {
+		factor = 2
+		modifier = {
+			factor = 0
+			legitimacy_equivalent = 100
+		}
+		modifier = {
+			factor = 0.25
+			legitimacy_equivalent = 75
+		}
+	}
+}
+
+grand_quorum_procession = {
+	sprite = "grand_quorum_procession"
+	cost = 100
+	trigger = {
+		NOT = {
+			has_country_modifier = grand_quorum_procession_ecclesial
+		}
+	}
+	effect = {
+		custom_tooltip = grand_quorum_procession_ecclesial.tt
+		hidden_effect = {
+			add_country_modifier = {
+				name = "grand_quorum_procession_ecclesial"
+				duration = 3650
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 0.5
+		modifier = {
+			factor = 5
+			unrest = 2
+		}
+	}
+}
+
+encourage_frontiersmen = {
+	sprite = "encourage_frontiersmen"
+	cost = 100
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = any_province_is_a_colony.tt
+			num_of_colonies = 1
+		}
+	}
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					num_of_colonies = 1
+				}
+			}
+			custom_tooltip = random_colony_gains_settlers.tt
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					is_colony = yes
+				}
+				add_colonysize = 250
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 10
+			num_of_colonies = 1
+		}
+	}
+}
+
+evoke_spritual_guidance = {
+	sprite = "evoke_spritual_guidance"
+	cost = 100
+	trigger = {
+		NOT = {
+			has_country_modifier = evoked_spritual_guidance
+		}
+	}
+	effect = {
+		custom_tooltip = evoked_spritual_guidance.tt 
+		hidden_effect = {
+			add_country_modifier = {
+				name = "evoked_spritual_guidance"
+				duration = 3650
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 0.5
+		modifier = {
+			factor = 2
+			NOT = {
+				religious_unity = 0.7
+			}
+		}
+	}
+}
+
+tap_into_tithes = {
+	sprite = "tap_into_tithes"
+	cost = 100
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = not_has_tapping_into_tithes.tt
+			NOT = {
+				OR = {
+					has_country_modifier = tapping_into_tithes_small
+					has_country_modifier = tapping_into_tithes_big
+				}
+			}
+		}
+	}
+	effect = {
+		if = {
+			limit = {
+				monthly_income = 10
+			}
+			custom_tooltip = tapping_into_tithes_big.tt
+			hidden_effect = {
+				add_country_modifier = {
+					name = "tapping_into_tithes_big"
+					duration = 3650
+				}
+			}
+		}
+		else = {
+			custom_tooltip = tapping_into_tithes_small.tt
+			hidden_effect = {
+				add_country_modifier = {
+					name = "tapping_into_tithes_small"
+					duration = 3650
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 2
+		modifier = {
+			factor = 0.5
+			treasury = 1000
+		}
+	}
+}

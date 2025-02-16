@@ -1,0 +1,176 @@
+namespace = puget_events
+####################Puget EVENTS##########################
+country_event = { #Reviving the Barons
+	id = puget_events.1
+	title = puget_events.1.t
+	desc = puget_events.1.d
+	picture = NOBLE_ESTATE_DEMANDS_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U77
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = puget_events.1.a #I will rule!
+		if = {
+			limit = {
+				NOT = {
+					government = monarchy
+				}
+			}
+			change_government = monarchy
+		}
+		set_country_flag = allowed_to_be_barony
+		add_government_reform = barony_reform
+		swap_non_generic_missions = yes
+	}
+	option = {
+		name = puget_events.1.b #Those were dark times.
+		add_country_modifier = {
+			name = "modernized_rule_puget"
+			duration = -1
+		}
+		swap_non_generic_missions = yes
+	}
+}
+
+country_event = { #Loss of Dach Title
+	id = puget_events.2
+	title = puget_events.2.t
+	desc = puget_events.2.d
+	picture = DEATH_OF_HEIR_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = U77
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = puget_events.2.a #Damn!
+		custom_tooltip = we_can_restore_it_with_decision
+		remove_country_modifier = gor_the_magnanimous_dachs_baron
+	}
+}
+
+country_event = { #Greased Palms
+	id = puget_events.3
+	title = puget_events.3.t
+	desc = puget_events.3.d
+	picture = CORRUPTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		is_part_of_hre = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = puget_events.3.a #They are pretty great!
+		add_years_of_income = 1
+		add_opinion = {
+			who = FROM
+			modifier = bribed_elector_baron_gor
+		}
+	}
+}
+
+country_event = { #A Puget Electorate
+	id = puget_events.4
+	title = puget_events.4.t
+	desc = puget_events.4.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = puget_events.4.a #Interesting...
+		add_prestige = 5
+	}
+}
+
+country_event = { #The Indie System
+	id = puget_events.5
+	title = puget_events.5.t
+	desc = puget_events.5.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = U77
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = puget_events.5.a #A Perfect Solution!
+		custom_tooltip = explain_indie_system_puget
+		tooltip = {
+			add_province_modifier = {
+				name = "gor_indie_system_puget"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					religion = theanite
+					region = washington_region
+				}
+				add_province_modifier = {
+					name = "gor_indie_system_puget"
+					duration = -1
+				}
+			}
+		}
+	}
+	option = {
+		name = puget_events.5.b #Useless
+		add_country_modifier = {
+			name = "gor_snuffing_out_the_mystics_puget"
+			duration = 9125
+		}
+	}
+}
+
+province_event = { #Local Chiefs Convert
+	id = puget_events.6
+	title = puget_events.6
+	desc = puget_events.6
+	picture = PRAYING_eventPicture
+	
+	trigger = {
+		has_province_modifier = gor_indie_system_puget
+	}
+	
+	mean_time_to_happen = {
+		years = 25
+	}
+	
+	option = { #Thank the Founder!
+		name = puget_events.6.a
+		change_religion = partisan
+		remove_province_modifier = gor_indie_system_puget
+	}
+}

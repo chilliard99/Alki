@@ -1,0 +1,17 @@
+#1823 - Stung Treng
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = U39
+controller = U39
+add_core = U39
+culture = joaquin
+religion = partisan
+capital = "Hanford"
+trade_goods = livestock #They make milk
+hre = yes
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

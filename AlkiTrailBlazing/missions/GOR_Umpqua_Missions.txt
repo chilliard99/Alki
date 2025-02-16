@@ -1,0 +1,460 @@
+###########################UMPQUA MISSIONS###########################
+umpqua_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y94
+	}
+	has_country_shield = yes
+	
+	dismantle_republican_threat_umpqua = {
+		icon = dagger_gor
+		required_missions = { balance_the_scales_umpqua }
+		position = 4
+		trigger = {
+			stability = 2
+			crown_land_share = 50
+		}
+		effect = {
+			remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+			add_country_modifier = {
+				name = "gor_regalist_grip_umpqua"
+				duration = -1
+			}
+		}
+	}
+}
+
+umpqua_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y94
+	}
+	has_country_shield = yes
+	
+	traditionalist_allies_umpqua = {
+		icon = judges_gor
+		required_missions = { inspire_the_soldiers_umpqua }
+		position = 2
+		trigger = {
+			OR = {
+				alliance_with = Y57
+				calc_true_if = {
+					custom_trigger_tooltip = {
+						tooltip = is_part_of_the_traditionalist_party
+						all_ally = {
+							religious_school = {
+								group = constitutionalist_group
+								school = traditionalist_party
+							}
+						}
+					}
+					amount = 2
+				}
+			}
+		}
+		effect = {
+			add_piety = 0.25
+			custom_tooltip = all_traditionalist_allies_gain
+			tooltip = {
+				add_favors = {
+				   who = ROOT
+				   amount = 10
+				}
+			}
+			hidden_effect = {
+				every_ally = {
+					limit = {
+						religious_school = {
+							group = constitutionalist_group
+							school = traditionalist_party
+						}
+					}
+					add_favors = {
+					   who = ROOT
+					   amount = 10
+					}
+				}
+			}
+		}
+	}
+	
+	balance_the_scales_umpqua = {
+		icon = lady_justice_gor
+		required_missions = { traditionalist_allies_umpqua united_cascades_umpqua }
+		position = 3
+		trigger = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = there_are_no_electors_of_oregonian_culture
+					NOT = {
+						any_elector = {
+							primary_culture = oregonite
+						}
+					}
+				}
+				Y96 = {
+					is_subject_of = ROOT
+					is_elector = yes
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = if_willamette_is_our_subject_and_an_elector_we_become_elector
+			custom_tooltip = if_not_this_happens_umpqua
+			tooltip = {
+				country_event = { id = umpqua_events.1 }
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						Y96 = {
+							is_subject_of = ROOT
+						}
+					}
+					Y96 = {
+						elector = no
+					}
+					elector = yes
+				}
+				else = {
+					country_event = { id = umpqua_events.1 }
+				}
+			}
+		}
+	}
+	
+	regalist_networking_umpqua = {
+		icon = talking_to_prez_gor
+		required_missions = { balance_the_scales_umpqua }
+		position = 4
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = electors_support_umpqua_for_prez
+					all_elector = {
+						preferred_emperor = ROOT
+					}
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			country_event = { id = umpqua_events.6 }
+		}
+	}
+}
+
+umpqua_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y94
+	}
+	has_country_shield = yes
+	
+	inspire_the_soldiers_umpqua = {
+		icon = cool_knight_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			num_of_generals = 1
+			army_size_percentage = 0.9
+		}
+		effect = {
+			oregonian_cascades_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_ready_to_serve_umpqua"
+				duration = 3650
+			}
+		}
+	}
+	
+	united_cascades_umpqua = {
+		icon = cascadian_army_gor
+		required_missions = { inspire_the_soldiers_umpqua }
+		position = 2
+		provinces_to_highlight = {
+			area = oregonian_cascades_area 
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			oregonian_cascades_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_casus_belli = {
+				target = Y96
+				type = cb_restore_personal_union
+				months = 240
+			}
+			upper_willamette_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_willamette_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	casting_out_the_savages_umpqua = {
+		icon = ruins_of_portland_gor
+		required_missions = { united_cascades_umpqua }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 1218 
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			1218 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = cut_the_cost_of_restore_portland_in_half
+			set_country_flag = half_cost_restore_portland
+			add_treasury = 500
+			1218 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			tillamook_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	astorian_arrival_umpqua = {
+		icon = old_disappointment_gor
+		required_missions = { casting_out_the_savages_umpqua republican_hotbeds_umpqua }
+		position = 4
+		provinces_to_highlight = {
+			area = tillamook_area 
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			tillamook_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			1197 = {
+				add_unit_construction = {
+					type = light_ship
+					amount = 5
+					speed = 0.1
+					cost = 0
+				}
+				add_trade_modifier = {
+					who = ROOT
+					duration = 3650
+					power = 15
+					key = jewel_of_columbia_umpqua
+				}
+				add_province_modifier = {
+					name = "gor_dissapointing_restoration_umpqua"
+					duration = 3650
+				}
+			}
+		}
+	}
+}
+
+umpqua_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y94
+	}
+	has_country_shield = yes
+	
+	republican_hotbeds_umpqua = {
+		icon = medieval_willamette_gor
+		required_missions = { united_cascades_umpqua }
+		position = 3
+		provinces_to_highlight = {
+			area = lower_willamette_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			lower_willamette_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					stability = 3
+				}
+				add_adm_power = 150
+			}
+			else = {
+				add_stability = 1
+			}
+			add_country_modifier = {
+				name = "gor_purging_republican_influence_umpqua"
+				duration = 12775 #I aint neva used 35 years
+			}
+		}
+	}
+	
+	conservative_oregon_umpqua = {
+		icon = beaver_king_gor
+		required_missions = { astorian_arrival_umpqua oregonian_outskirts_umpqua }
+		position = 5
+		provinces_to_highlight = {
+			region = oregon_region 
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = num_of_oregonian_provs_umpqua
+					oregon_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 18
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					dip = 6
+				}
+				add_dip_power = 300
+			}
+			else_if = {
+				limit = {
+					dip = 5
+				}
+				change_dip = 1
+				add_dip_power = 150
+			}
+			else = {
+				change_dip = 2
+			}
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 15
+			}
+			add_ruler_modifier = {
+				name = "gor_king_of_oregon_umpqua"
+				duration = -1 
+			}
+		}
+	}
+}
+
+umpqua_missions_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y94
+	}
+	has_country_shield = yes
+	
+	deschutes_dreams_umpqua = {
+		icon = river_ship_gor
+		required_missions = { united_cascades_umpqua }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 1974
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			1974 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mercantilism = 2
+			morrow_crook_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			1974 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 3650
+					power = 10
+					key = imperial_deschutes_umpqua
+				}
+			}
+		}
+	}
+	
+	oregonian_outskirts_umpqua = {
+		icon = morrow_crook_gor
+		required_missions = { deschutes_dreams_umpqua }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2038
+				province_id = 2040
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			2038 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2040 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			2038 = {
+				add_base_tax = 2
+				add_province_modifier = {
+					name = "gor_land_of_equals_umpqua"
+					duration = 10950 
+				}
+			}
+			2040 = {
+				add_base_tax = 2
+				add_province_modifier = {
+					name = "gor_land_of_equals_umpqua"
+					duration = 10950 
+				}
+			}
+		}
+	}
+}

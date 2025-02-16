@@ -1,0 +1,19 @@
+#1189 - Shangwe
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = U48
+controller = U48
+add_core = U48
+culture = portugers
+religion = partisan
+capital = "Porto"
+is_city = yes
+base_manpower = 7
+trade_goods = wine #Porto Wine
+hre = yes
+base_tax = 7
+base_production = 6
+fort_15th = yes
+center_of_trade = 2

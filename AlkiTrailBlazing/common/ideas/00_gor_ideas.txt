@@ -1,0 +1,1870 @@
+# Do not change tags in here without changing every other reference to them.
+# Do not change tags in here without changing every other reference to them.
+# If adding new groups or ideas, make sure they are unique.
+
+### Nation specific idea groups
+
+
+###########NATIONAL GOR IDEAS##################
+
+olympia_ideas = {
+	start = {
+	 	defensiveness = 0.15
+		global_sailors_modifier = 0.2
+	}
+	
+	bonus = {
+	 	idea_cost = -0.1
+	}
+
+	trigger = {
+		tag = U55
+	}
+	free = yes
+	
+	hand_of_the_president_olympia = {
+	 	diplomats = 1
+	}
+	red_legacy_olympia = {
+	 	global_missionary_strength = 0.01
+	}
+	unite_the_penninsula_olympia = {
+	 	land_morale = 0.1
+	}
+	hoh_olympia = {
+	 	hostile_attrition = 1
+	}
+	evergreen_remains_olympia = {
+	 	trade_efficiency = 0.1
+	}
+	disrupting_the_strike_olympia = {
+	 	privateer_efficiency = 0.15
+		light_ship_cost = -0.1
+	}
+	mavis_and_sons_olympia = {
+	 	prestige = 1
+	}
+}
+
+tacoma_red_ideas = {
+	start = {
+	 	build_cost = -0.1
+		land_morale = 0.10
+	}
+	
+	bonus = {
+	 	land_forcelimit_modifier = 0.2
+	}
+
+	trigger = {
+		tag = U58
+	}
+	free = yes
+	
+	destiny_millers_tacoma = {
+	 	global_institution_spread = 0.1
+	}
+	the_peoples_populism_tacoma = {
+	 	monthly_piety = -0.001
+		tolerance_own = 1
+	}
+	strike_proof_harbors_tacoma = {
+	 	global_own_trade_power = 0.15
+	}
+	common_defense_tacoma = {
+	 	improve_relation_modifier = 0.15
+	}
+	crimson_grit_tacoma = {
+	 	mercenary_discipline = 0.025
+		mercenary_cost = -0.10
+	}
+	peoples_republic_tacoma = {
+	 	global_unrest = -1
+	}
+	red_washington_tacoma = {
+	 	core_creation = -0.1
+	}
+}
+
+tacoma_blue_ideas = {
+	start = {
+	 	build_cost = -0.1
+		land_morale = 0.10
+	}
+	
+	bonus = {
+	 	land_forcelimit_modifier = 0.2
+	}
+
+	trigger = {
+		tag = U75
+	}
+	free = yes
+	
+	destiny_millers_tacoma = {
+	 	global_institution_spread = 0.1
+	}
+	the_peoples_populism_tacoma = {
+	 	monthly_piety = -0.1
+		tolerance_own = 1
+	}
+	strike_proof_harbors_tacoma = {
+	 	global_own_trade_power = 0.15
+	}
+	common_defense_tacoma = {
+	 	improve_relation_modifier = 0.15
+	}
+	crimson_grit_tacoma = {
+	 	mercenary_discipline = 0.025
+		mercenary_cost = -0.10
+	}
+	tactful_betrayers_tacoma = {
+	 	diplomats = 1
+		spy_offence = 0.1
+	}
+	removing_the_red_taint_tacoma = {
+	 	core_creation = -0.1
+	}
+}
+
+willapa_ideas = {
+	start = {
+	 	global_own_trade_power = 0.2
+		trade_range_modifier = 0.15
+	}
+	
+	bonus = {
+		merchants = 1
+	}
+
+	trigger = {
+		tag = U57
+	}
+	free = yes
+	
+	coastal_democracy_willapa = {
+	 	republican_tradition = 0.3
+	}
+	willapan_docks_willapa = {
+	 	naval_forcelimit_modifier = 0.2
+	}
+	slow_adopters_willapa = {
+	 	global_own_trade_power = 0.1
+	}
+	russian_legacy_willapa = {
+	 	num_accepted_cultures = 1
+	}
+	the_columbian_collective_willapa = {
+		global_institution_spread = 0.15
+	}
+	convenient_existance_willapa = {
+	 	improve_relation_modifier = 0.1
+	}
+	talented_freinds_willapa = {
+		mercenary_discipline = 0.05
+	}
+}
+
+helens_ideas = {
+	start = {
+	 	diplomatic_annexation_cost = -0.15
+	 	manpower_recovery_speed = 0.15
+	}
+	
+	bonus = {
+		leader_land_shock = 1
+	}
+
+	trigger = {
+		tag = U56
+	}
+	free = yes
+	
+	wide_family_trees_helens = {
+		vassal_forcelimit_bonus = 1
+	}
+	voice_of_washington_helens = {
+	 	diplomatic_reputation = 1
+	}
+	redwood_retirees_helens = {
+	  	army_tradition = 0.5
+	}
+	washington_paper_helens = {
+	 	build_cost = -0.1
+		build_time = -0.1
+	}
+	tampering_in_oregon_helens = {
+	 	ae_impact = -0.1
+	}
+	guild_cartels_helens = {
+		production_efficiency = 0.1
+	}
+	fort_vancouver_helens = {
+		stability_cost_modifier = -0.1
+	}
+}
+
+yakama_ideas = {
+	start = {
+		land_morale = 0.10
+	 	stability_cost_modifier = -0.1
+	}
+	
+	bonus = {
+		mil_tech_cost_modifier = -0.1
+	}
+
+	trigger = {
+		tag = Y97
+	}
+	free = yes
+	
+	beauty_of_rainier_yakama = {
+	 	great_project_upgrade_cost = -0.1
+		build_cost = -0.1
+	}
+	chairman_authority_yakama = {
+		legitimacy = 1
+		vassal_income = 0.2
+	}
+	piitliyawila_yakama = {
+	 	global_manpower_modifier = 0.15
+	}
+	yakima_chardonnay_yakama = {
+	 	global_trade_goods_size_modifier = 0.1
+	}
+	shyakla_yakama = {
+	 	fire_damage = 0.10
+	}
+	sahaptin_yakama = {
+		diplomats = 1
+	}
+	band_unity_yakama = {
+		years_of_nationalism = -5
+	}
+}
+
+seattle_ideas = {
+	start = {
+		navy_tradition = 1
+	 	infantry_cost = -0.10
+	}
+	
+	bonus = {
+		ship_durability = 0.05
+	}
+
+	trigger = {
+		tag = Y42
+	}
+	free = yes
+	
+	capital_of_washington_seattle = {
+	 	adm_tech_cost_modifier = -0.1
+	}
+	old_evergreen_seattle = {
+		trade_efficiency = 0.1
+	}
+	alaskan_solidarity_seattle = {
+	  	reduced_liberty_desire = 10
+	}
+	national_goodwill_seattle = {
+	 	diplomatic_reputation = 1
+	}
+	dach_legacy_seattle = {
+	 	republican_tradition = 0.3
+	}
+	strikers_seattle = {
+	 	embargo_efficiency = 0.1
+	}
+	muckers_seattle = {
+	 	prestige_decay = -0.01
+	}
+}
+
+skagit_ideas = {
+	start = {
+		global_missionary_strength = 0.01
+		num_accepted_cultures = 1
+	}
+	
+	bonus = {
+		land_morale = 0.1
+	}
+
+	trigger = {
+		tag = U59
+	}
+	free = yes
+	
+	bolstered_authenticity_skagit = {
+	 	republican_tradition = 0.3
+	}
+	council_of_the_snohomish_skagit = {
+	 	advisor_pool = 1
+	}
+	theanite_talent_sink_skagit = {
+		free_land_leader_pool = 1
+	}
+	the_consitutions_embrace_skagit = {
+	 	war_exhaustion_cost = -0.10
+	}
+	union_powwows_skagit = {
+		diplomats = 1
+	}
+	claim_throne_of_idaho_skagit = {
+		core_creation = -0.1
+	}
+	skagit_valley_tulips_skagit = {
+	 	global_trade_goods_size_modifier = 0.1
+	}
+}
+
+
+chinook_wink_ideas = {
+	start = {
+		development_cost = -0.1
+		diplomats = 1
+	}
+
+	bonus = {
+		free_policy = 1
+	}
+	
+	trigger = {
+		OR = {
+			tag = Y89
+		}
+	}
+	free = yes
+	
+	chinook_criers_in_all_towns = {
+		diplomatic_upkeep = 2
+	}
+	chinook_college_of_town_criers = {
+		monarch_diplomatic_power = 1
+		innovativeness_gain = 0.5
+	}
+	chinook_espionage = {
+		spy_offence = 1
+		global_spy_defence = 1
+	}
+	chinook_cry_to_the_heavens_so_the_dead_may_hear = {
+		power_projection_from_insults = 1
+	}
+	chinook_international_crier_tax = {
+		global_tax_modifier = 0.1
+	}
+	chinook_for_whom_the_bell_tolls = {
+		rebel_support_efficiency = 1
+	}
+	chinook_council_of_criers = {
+		all_power_cost = -0.05
+		envoy_travel_time = -0.2
+	}
+}
+
+
+lincolnite_ideas = {
+	start = {
+		land_forcelimit_modifier = 0.2
+		inflation_reduction = 0.1
+	}
+
+	bonus = {
+		legitimacy = 1
+	}
+	
+	trigger = {
+		tag = U76
+	}
+	free = yes
+	
+	lincolnite_inland_empire = {
+		development_cost = -0.1
+	}
+	lincolnite_spokane_complex = {
+		infantry_cost = -0.1
+	}
+	lincolnite_columbia_farming = {
+		global_manpower_modifier = 0.15
+	}
+	lincolnite_the_indie_system = {
+		global_tax_modifier = 0.1
+		tolerance_heathen = 1
+	}
+	lincolnite_lincolnite_captains = {
+		leader_land_shock = 1
+	}
+	lincolnite_call_to_arms = {
+		land_morale = 0.1
+	}
+	lincolnite_freedom_fighters = {
+		global_unrest = -1
+	}
+}
+
+puget_ideas = {
+	start = {
+		naval_morale = 0.15
+		trade_efficiency = 0.1
+	}
+
+	bonus = {
+		ship_durability = 0.05
+	}
+	
+	trigger = {
+		tag = U77
+	}
+	free = yes
+	
+	puget_defend_the_sound = {
+		discipline = 0.05
+	}
+	puget_baronic_ambition = {
+		legitimacy = 1
+	}
+	puget_industrial_heartland = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	puget_cascadian_birthplace = {
+		num_accepted_cultures = 1
+	}
+	puget_eastern_campaigns = {
+		land_morale = 0.1
+	}
+	puget_land_reclamation = {
+		development_cost = -0.1
+	}
+	puget_northern_classicalism = {
+		global_institution_spread = 0.1
+	}
+}
+
+
+washington_ideas = {
+	start = {
+		land_morale = 0.15
+		global_ship_cost = -0.1
+	}
+
+	bonus = {
+		ship_durability = 0.1
+	}
+	
+	trigger = {
+		OR = {
+			tag = U78
+			tag = U91
+		}
+	}
+	free = yes
+	
+	washington_the_siren_league = {
+		global_foreign_trade_power = 0.1
+	}
+	washington_a_northern_presidency = {
+		diplomatic_reputation = 2
+	}
+	washington_cascadian_ambition = {
+		core_creation = -0.15
+	}
+	washington_worlds_press = {
+		technology_cost = -0.05
+		global_institution_spread = 0.05
+	}
+	washington_diverse_military = {
+		fire_damage = 0.10
+	}
+	washington_founders_protection = {
+		missionaries = 1
+	}
+	washington_californian_industrialization = {
+		build_cost = -0.15
+	}
+}
+
+dachia_ideas = {
+	start = {
+		discipline = 0.05
+		global_colonial_growth = 15
+	}
+
+	bonus = {
+		land_forcelimit_modifier = 0.2
+	}
+	
+	trigger = {
+		tag = U79
+	}
+	free = yes
+	
+	dachia_chinese_entry = {
+		global_own_trade_power = 0.1
+	}
+	dachia_hangang = {
+		development_cost = -0.15
+	}
+	dachia_manufacturing_hub = {
+		production_efficiency = 0.15
+	}
+	dachia_californian_legacy = {
+		diplomatic_upkeep = 1
+	}
+	dachia_glory_in_freedom = {
+		land_morale = 0.1
+	}
+	dachia_formidable_namesake = {
+		republican_tradition = 0.3
+	}
+	dachia_maritime_outlook = {
+		global_ship_cost = -0.1
+	}
+}
+
+cascadia_ideas = {
+	start = {
+		land_morale = 0.15
+		trade_efficiency = 0.15
+	}
+
+	bonus = {
+		ship_durability = 0.1
+	}
+	
+	trigger = {
+		tag = U80
+	}
+	free = yes
+	
+	cascadia_a_beautiful_revolution = {
+		discipline = 0.05
+	}
+	cascadia_academic_culture = {
+		technology_cost = -0.05
+		advisor_cost = -0.1
+	}
+	cascadia_revolutionary_guard = {
+		fire_damage = 0.10
+	}
+	cascadia_monarchist_crusade = {
+		core_creation = -0.2
+	}
+	cascadia_pacific_industry = {
+		development_cost = -0.15
+	}
+	cascadia_republican_league = {
+		diplomatic_reputation = 2
+	}
+	cascadia_rights_of_the_citizen = {
+		global_unrest = -2
+	}
+}
+
+red_washington_ideas = {
+	start = {
+		ae_impact = -0.15
+		tolerance_own = 2
+	}
+
+	bonus = {
+		core_creation = -0.15
+	}
+	
+	trigger = {
+		tag = U81
+	}
+	free = yes
+	
+	red_washington_fight_for_freedom = {
+		land_morale = 0.1
+	}
+	red_washington_workers_rights = {
+		global_unrest = -2
+	}
+	red_washington_little_red_books = {
+		missionary_strength = 0.01
+		global_institution_spread = 0.1
+	}
+	red_washington_wealth_redistribution = {
+		global_tax_modifier = 0.1
+		burghers_loyalty_modifier = 0.05
+	}
+	red_washington_mutual_aid = {
+		global_own_trade_power = 0.1
+	}
+	red_washington_the_auditors = {
+		missionaries = 1
+	}
+	red_washington_nobility_in_labor = {
+		production_efficiency = 0.15
+	}
+}
+
+red_california_ideas = {
+	start = {
+		ae_impact = -0.15
+		governing_capacity_modifier = 0.1
+	}
+
+	bonus = {
+		production_efficiency = 0.2
+	}
+	
+	trigger = {
+		tag = U82
+	}
+	free = yes
+	
+	red_california_collectivist_representative = {
+		diplomatic_reputation = 1
+		diplomatic_upkeep = 1
+	}
+	red_california_union_inheritance = {
+		core_creation = -0.15
+	}
+	red_california_privilege_education = {
+		idea_cost = -0.1
+		burghers_loyalty_modifier = 0.05
+	}
+	red_california_red_sun = {
+		siege_ability = 0.10
+	}
+	red_california_egalitarian_society = {
+		global_unrest = -2
+	}
+	red_california_crimson_hats = {
+		missionaries = 1
+		global_missionary_strength = 0.01
+	}
+	red_california_utopia_pursuit = {
+		land_morale = 0.15
+	}
+}
+
+astoria_ideas = {
+	start = {
+		light_ship_power = 0.15
+		stability_cost_modifier = -0.1
+	}
+
+	bonus = {
+		trade_efficiency = 0.1
+	}
+	
+	trigger = {
+		tag = Y90
+	}
+	free = yes
+	
+	home_of_the_astors_astoria = {
+		diplomats = 1
+	}
+	old_disappointment_astoria = {
+		naval_maintenance_modifier = -0.1
+	}
+	cheeselords_astoria = {
+		global_tax_modifier = 0.1
+		nobles_loyalty_modifier = 0.05
+	}
+	fist_of_the_pomo_astoria = {
+		legitimacy = 1
+	}
+	dominate_tillamook_astoria = {
+		land_morale = 0.1
+	}
+	snuff_out_republicanism_astoria = {
+		years_of_nationalism = -5
+	}
+	classical_legacy_astoria = {
+		global_colonial_growth = 15
+	}
+}
+
+astoria_pomo_ideas = {
+	start = {
+		land_morale = 0.1
+		stability_cost_modifier = -0.1
+	}
+
+	bonus = {
+		discipline = 0.05
+	}
+	
+	trigger = {
+		tag = U83
+	}
+	free = yes
+	
+	ja_system_astoria_pomo = {
+		state_maintenance_modifier = -0.15
+	}
+	pan_pomo_alliance_astoria_pomo = {
+		diplomatic_upkeep = 1
+	}
+	northern_dialect_astoria_pomo = {
+		num_accepted_cultures = 1
+	}
+	coastliners_astoria_pomo = {
+		global_sailors_modifier = 0.2
+	}
+	yakaman_rivals_astoria_pomo = {
+		leader_land_shock = 1
+	}
+	oregonian_refuge_astoria_pomo = {
+		diplomats = 1
+	}
+	pacific_conquest_astoria_pomo = {
+		ae_impact = -0.1
+	}
+}
+
+coos_ideas = {
+	start = {
+		development_cost = -0.1
+		trade_steering = 0.2
+	}
+
+	bonus = {
+		merchants = 1
+	}
+	
+	trigger = {
+		tag = Y91
+	}
+	free = yes
+	
+	freedom_lovers_coos = {
+		global_unrest = -1
+	}
+	in_pursuit_of_wealth_coos = {
+		global_ship_trade_power = 0.2
+	}
+	redwood_allies_coos = {
+		discipline = 0.05
+	}
+	sandy_dunes_coos = {
+		hostile_attrition = 1
+	}
+	fortify_coos_bay_coos = {
+		defensiveness = 0.2
+	}
+	red_berries_coos = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	those_lost_children_coos = {
+		republican_tradition = 0.3
+	}
+}
+
+willamette_ideas = {
+	start = {
+		discipline = 0.05
+		stability_cost_modifier = -0.1
+	}
+
+	bonus = {
+		adm_tech_cost_modifier = -0.1
+	}
+	
+	trigger = {
+		tag = Y96
+	}
+	free = yes
+	
+	willamette_wines_willamette = {
+		production_efficiency = 0.1
+	}
+	house_of_duck_willamette = {
+		heir_chance = 0.5
+	}
+	left_standing_willamette = {
+		war_exhaustion = -0.02
+	}
+	cobblers_company_willamette = {
+		development_cost = -0.1
+	}
+	representing_oregon_willamette = {
+		diplomatic_reputation = 1
+	}
+	revolutionaries_in_government_willamette = {
+		burghers_loyalty_modifier = 0.05
+	}
+	unite_the_river_willamette = {
+		cavalry_power = 0.10
+	}
+}
+
+portland_ideas = {
+	start = {
+		global_institution_spread = 0.1
+		manpower_recovery_speed = 0.1
+	}
+
+	bonus = {
+		discipline = 0.05
+	}
+	
+	trigger = {
+		tag = Y92
+	}
+	free = yes
+	
+	the_founders_mission_portland = {
+		land_morale = 0.1
+	}
+	heretic_pyres_portland = {
+		global_missionary_strength = 0.01
+	}
+	barbaric_methods_portland = {
+		army_tradition_decay = -0.01
+	}
+	protect_nature_portland = {
+		hostile_attrition = 1
+	}
+	civilizations_weeds_portland = {
+		production_efficiency = 0.1
+	}
+	natures_guidance_portland = {
+		devotion = 1
+	}
+	bane_of_man_portland = {
+		core_creation = -0.15
+	}
+}
+
+salem_ideas = {
+	start = {
+		merc_maintenance_modifier = -0.15
+		religious_unity = 0.2
+	}
+
+	bonus = {
+		idea_cost = -0.1
+	}
+	
+	trigger = {
+		tag = U50
+	}
+	free = yes
+	
+	oregons_home_salem = {
+		development_cost = -0.1
+	}
+	free_elections_salem = {
+		global_unrest = -1
+	}
+	presidential_support_salem = {
+		global_tax_modifier = 0.1
+	}
+	rebuild_salem_salem = {
+		build_cost = -0.1
+	}
+	capture_the_traitors_salem = {
+		discipline = 0.05
+	}
+	beacon_of_hope_salem = {
+		diplomatic_reputation = 1
+	}
+	willamettes_protection_salem = {
+		global_garrison_growth = 0.2
+	}
+}
+
+umpqua_ideas = {
+	start = {
+		diplomatic_reputation = 1
+		global_unrest = -1
+	}
+
+	bonus = {
+		monthly_piety = 0.001
+	}
+	
+	trigger = {
+		tag = Y94
+	}
+	free = yes
+	
+	cascadian_protection_umpqua = {
+		defensiveness = 0.15
+	}
+	southern_alliance_umpqua = {
+		diplomatic_upkeep = 1
+	}
+	traditionalist_stronghold_umpqua = {
+		nobles_loyalty_modifier = 0.05
+	}
+	hazeldell_lumberjacks_umpqua = {
+		build_time = -0.1
+	}
+	bachelors_shadow_umpqua = {
+		discipline = 0.05
+	}
+	willamette_ambitions_umpqua = {
+		infantry_power = 0.1
+	}
+	river_umpqua_umpqua = {
+		prestige = 1
+	}
+}
+
+warmsprings_ideas = {
+	start = {
+		advisor_pool = 1
+		global_tax_modifier = 0.1
+	}
+
+	bonus = {
+		development_cost = -0.1
+	}
+	
+	trigger = {
+		tag = Y95
+	}
+	free = yes
+	
+	republican_defense_warmsprings = {
+		land_morale = 0.1
+	}
+	confederated_tribes_warmsprings = {
+		legitimacy = 1
+		trueheir_band_unity_gain_modifier = 0.1
+	}
+	cascadian_protection_warmsprings = {
+		defensiveness = 0.25
+	}
+	calls_for_unity_warmsprings = {
+		diplomats = 1
+	}
+	founders_dance_warmsprings = {
+		tolerance_own = 1
+	}
+	hood_agriculture_warmsprings = {
+		global_manpower_modifier = 0.15
+	}
+	aspire_to_humility_warmsprings = {
+		stability_cost_modifier = -0.1
+	}
+}
+
+bend_ideas = {
+	start = {
+		land_morale = 0.1
+		global_own_trade_power = 0.1
+	}
+
+	bonus = {
+		merchants = 1
+	}
+	
+	trigger = {
+		tag = U51
+	}
+	free = yes
+	
+	river_trade_bend = {
+		trade_efficiency = 0.1
+	}
+	wavering_allegiances_bend = {
+		diplomatic_upkeep = 1
+	}
+	glory_robbed_bend = {
+		prestige = 1
+	}
+	union_sweetheart_bend = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	young_brian_bend = {
+		legitimacy = 1
+	}
+	eastern_capital_bend = {
+		development_cost = -0.1
+	}
+	deschutes_dream_bend = {
+		core_creation = -0.1
+	}
+}
+
+deschutes_ideas = {
+	start = {
+		core_creation = -0.1
+		trade_efficiency = 0.1
+	}
+
+	bonus = {
+		legitimacy = 1
+	}
+	
+	trigger = {
+		tag = U84
+	}
+	free = yes
+	
+	river_rivals_deschutes = {
+		merchants = 1
+	}
+	plentiful_irrigation_deschutes = {
+		land_forcelimit_modifier = 0.2
+	}
+	woodworkers_fury_deschutes = {
+		land_morale = 0.1
+	}
+	duke_of_lakeview_deschutes = {
+		heir_chance = 0.5
+	}
+	three_starred_flag_deschutes = {
+		num_accepted_cultures = 2
+	}
+	union_outcasts_deschutes = {
+		diplomatic_reputation = 1
+		diplomatic_upkeep = 1
+	}
+	coralling_the_wilds_deschutes = {
+		development_cost = -0.1
+	}
+}
+
+morrow_ideas = {
+	start = {
+		global_tax_modifier = 0.1
+		stability_cost_modifier = -0.1
+	}
+
+	bonus = {
+		diplomats = 1
+	}
+	
+	trigger = {
+		tag = U54
+	}
+	free = yes
+	
+	not_quite_far_enough_morrow = {
+		nobles_loyalty_modifier = 0.05
+	}
+	wheat_wisdom_morrow = {
+		idea_cost = -0.1
+	}
+	port_morrow_morrow = {
+		caravan_power = 0.2
+	}
+	heppners_old_job_morrow = {
+		global_unrest = -1
+	}
+	staying_alive_morrow = {
+		harsh_treatment_cost = -0.15
+	}
+	boonie_unity_morrow = {
+		vassal_income = 0.2
+	}
+	counter_support_morrow = {
+		legitimacy = 1
+	}
+}
+
+prine_ideas = {
+	start = {
+		land_morale = 0.1
+		diplomatic_reputation = 1
+	}
+
+	bonus = {
+		diplomats = 1
+	}
+	
+	trigger = {
+		tag = U53
+	}
+	free = yes
+	
+	long_live_the_crooks_prine = {
+		republican_tradition = 0.3
+	}
+	ochoco_prine = {
+		build_cost = -0.1
+	}
+	rockhounds_prine = {
+		production_efficiency = 0.1
+	}
+	ancient_relics_prine = {
+		prestige = 1 
+	}
+	oligarchy_hoards_prine = {
+		global_tax_modifier = 0.1
+	}
+	jeffersonian_connections_prine = {
+		discipline = 0.05
+	}
+	boonie_brotherhood_prine = {
+		vassal_forcelimit_bonus = 1
+	}
+}
+
+morrow_crook_ideas = {
+	start = {
+		land_morale = 0.1
+		global_tax_modifier = 0.1
+	}
+
+	bonus = {
+		discipline = 0.05
+	}
+	
+	trigger = {
+		tag = U85
+	}
+	free = yes
+	
+	wealth_before_power_morrow_crook = {
+		nobles_loyalty_modifier = 0.05
+		nobles_influence_modifier = 0.05
+	}
+	lord_of_the_east_morrow_crook = {
+		vassal_forcelimit_bonus = 1
+		vassal_income = 0.2
+	}
+	blank_slate_morrow_crook = {
+		build_cost = -0.1
+	}
+	john_day_morrow_crook = {
+		production_efficiency = 0.1
+	}
+	imperial_domination_morrow_crook = {
+		global_own_trade_power = 0.1
+	}
+	union_influence_morrow_crook = {
+		diplomats = 1
+	}
+	western_march_morrow_crook = {
+		unjustified_demands = -0.2
+	}
+}
+
+burns_ideas = {
+	start = {
+		improve_relation_modifier = 0.3
+		cavalry_cost = -0.1
+	}
+
+	bonus = {
+		cavalry_power = 0.15
+	}
+	
+	trigger = {
+		tag = Y88
+	}
+	free = yes
+	
+	the_mighty_paiute_burns = {
+		land_forcelimit_modifier = 0.2
+	}
+	numu_burns = {
+		spy_offence = 0.2
+	}
+	dreams_of_unity_burns = {
+		diplomatic_upkeep = 1
+	}
+	tubodu_works_burns = {
+		embracement_cost = -0.15
+	}
+	highdesert_wrangling_burns = {
+		land_attrition = -0.10
+		burghers_loyalty_modifier = 0.05
+	}
+	protecting_our_heritage_burns = {
+		land_morale = 0.1
+	}
+	trueheir_representation_burns = {
+		reasons_to_elect = 5
+	}
+}
+
+duck_valley_ideas = {
+	start = {
+		army_tradition_from_battle = 0.5
+		global_manpower_modifier = 0.1
+	}
+
+	bonus = {
+		gold_depletion_chance_modifier = -0.2
+	}
+	
+	trigger = {
+		tag = Y47
+	}
+	free = yes
+	
+	utahn_defense_duck_valley = {
+		defensiveness = 0.2
+	}
+	a_love_of_wealth_duck_valley = {
+		trade_efficiency = 0.1
+	}
+	brotherhood_ambivalence_duck_valley = {
+		prestige = 1
+	}
+	silver_clay_duck_valley = {
+		inflation_reduction = 0.1
+	}
+	red_pottery_duck_valley = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	diversification_duck_valley = {
+		num_accepted_cultures = 1
+	}
+	orrian_ambition_duck_valley = {
+		ae_impact = -0.1
+	}
+}
+
+
+
+sons_of_oregon_ideas = {
+	start = {
+		land_morale = 0.1
+		defensiveness = 0.2
+	}
+
+	bonus = {
+		stability_cost_modifier = -0.1
+	}
+	
+	trigger = {
+		tag = U86
+	}
+	free = yes
+	
+	wartime_dictator_sons_of_oregon = {
+		global_unrest = -1
+	}
+	covert_tactics_sons_of_oregon = {
+		spy_offence = 0.2
+	}
+	legacy_of_the_republic_sons_of_oregon = {
+		ae_impact = -0.1
+	}
+	support_from_abroad_sons_of_oregon = {
+		diplomats = 1
+	}
+	trailblazer_support_sons_of_oregon = {
+		merc_maintenance_modifier = -0.15
+	}
+	redwood_defense_sons_of_oregon = {
+		shock_damage = 0.10
+	}
+	pillage_economy_sons_of_oregon = {
+		loot_amount = 0.2
+	}
+}
+
+republic_of_oregon_ideas = {
+	start = {
+		discipline = 0.05
+		global_unrest = -2
+	}
+
+	bonus = {
+		diplomats = 1
+	}
+	
+	trigger = {
+		tag = U87
+	}
+	free = yes
+	
+	legacy_of_the_revolution_republic_of_oregon = {
+		republican_tradition = 0.3
+	}
+	national_representation_republic_of_oregon = {
+		years_of_nationalism = -5
+	}
+	oregonian_patchwork_republic_of_oregon = {
+		culture_conversion_cost = -0.15
+	}
+	liberator_of_the_west_republic_of_oregon = {
+		ae_impact = -0.15
+	}
+	egalitarian_taxation_republic_of_oregon = {
+		global_tax_modifier = 0.15
+	}
+	land_of_scholars_republic_of_oregon = {
+		idea_cost = -0.1
+	}
+	columbian_commerce_republic_of_oregon = {
+		global_own_trade_power = 0.1
+		light_ship_cost = -0.1
+	}
+}
+
+northwest_republic_ideas = {
+	start = {
+		ae_impact = -0.15
+		global_tax_modifier = 0.15
+	}
+
+	bonus = {
+		free_adm_policy = 1
+	}
+	
+	trigger = {
+		tag = U88
+	}
+	free = yes
+	
+	cutting_edge_northwest_republic = {
+		discipline = 0.05
+	}
+	citizen_governance_northwest_republic = {
+		republican_tradition = 0.3
+		years_of_nationalism = -2.5
+	}
+	glory_of_the_columbia_northwest_republic = {
+		merchants = 1
+		trade_efficiency = 0.05
+	}
+	pacifying_the_pacific_northwest_republic = {
+		core_creation = -0.15
+	}
+	eastern_contacts_northwest_republic = {
+		diplomats = 1
+		diplomatic_upkeep = 1
+	}
+	rule_of_law_northwest_republic = {
+		global_unrest = -2
+	}
+	students_of_enlightenment_northwest_republic = {
+		idea_cost = -0.1
+		development_cost = -0.1
+	}
+}
+
+oregon_ideas = {
+	start = {
+		idea_cost = -0.1
+		global_tax_modifier = 0.15
+	}
+
+	bonus = {
+		improve_relation_modifier = 0.2
+	}
+	
+	trigger = {
+		tag = W44
+	}
+	free = yes
+	
+	brothers_reunited_oregon = {
+		global_unrest = -1
+		war_exhaustion = -0.02
+	}
+	columbian_arms_oregon = {
+		shock_damage = 0.1
+	}
+	the_river_oregon_oregon = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	a_seat_at_the_table_oregon = {
+		diplomatic_upkeep = 1
+		imperial_authority = 0.1
+	}
+	the_beaver_battalion_oregon = {
+		discipline = 0.05
+	}
+	redwood_revenge_oregon = {
+		leader_land_shock = 1
+	}
+	legacy_of_the_republic_oregon = {
+		republican_tradition = 0.3
+		legitimacy = 1
+	}
+}
+
+north_cali_confed_ideas = {
+	start = {
+		global_tax_modifier = 0.15
+		land_morale = 0.15
+	}
+
+	bonus = {
+		discipline = 0.05
+	}
+	
+	trigger = {
+		tag = U89
+	}
+	free = yes
+	
+	northwest_innovation_north_cali_confed = {
+		institution_spread_from_true_faith = 0.1
+		idea_cost = -0.1
+	}
+	to_rival_the_south_north_cali_confed = {
+		development_cost = -0.1
+		build_cost = -0.1
+	}
+	the_pacific_legion_north_cali_confed = {
+		shock_damage = 0.1
+	}
+	a_dual_presidency_north_cali_confed = {
+		diplomats = 1
+		imperial_authority = 0.1
+	}
+	lincolnite_campaign_north_cali_confed = {
+		core_creation = -0.15
+	}
+	cascadian_shipbuilding_north_cali_confed = {
+		ship_durability = 0.05
+	}
+	evergreen_factories_north_cali_confed = {
+		global_trade_goods_size_modifier = 0.1
+	}
+}
+
+highdesert_ideas = {
+	start = {
+		hostile_attrition = 1
+		manpower_recovery_speed = 0.2
+	}
+
+	bonus = {
+		adm_tech_cost_modifier = -0.1
+	}
+	
+	trigger = {
+		tag = U90
+	}
+	free = yes
+	
+	our_arid_abode_highdesert = {
+		land_attrition = -0.1
+		global_supply_limit_modifier = 0.15
+	}
+	frontier_growth_highdesert = {
+		culture_conversion_cost = -0.1
+	}
+	deschutes_caravans_highdesert = {
+		caravan_power = 0.2
+	}
+	wrangler_dragoons_highdesert = {
+		cavalry_power = 0.15
+	}
+	service_titles_highdesert = {
+		land_forcelimit_modifier = 0.15
+		nobles_loyalty_modifier = 0.05
+	}
+	march_to_the_coast_highdesert = {
+		unjustified_demands = -0.15
+	}
+	anarchist_defense_highdesert = {
+		global_missionary_strength = 0.01
+	}
+}
+
+
+redwood_order_ideas = {
+	start = {
+		army_tradition = 0.5
+		build_cost = -0.1
+	}
+
+	bonus = {
+		discipline = 0.05
+	}
+	
+	trigger = {
+		tag = Y80
+	}
+	free = yes
+	
+	redwood_brutality_redwood_order = {
+		global_unrest = -1
+	}
+	authority_of_the_justicar_redwood_order = {
+		ae_impact = -0.1
+	}
+	coastal_aristocracy_redwood_order = {
+		nobles_loyalty_modifier = 0.1
+	}
+	founders_fervor_redwood_order = {
+		land_morale = 0.15
+	}
+	a_martial_people_redwood_order = {
+		global_manpower_modifier = 0.2
+	}
+	smoke_and_smiths_redwood_order = {
+		mil_tech_cost_modifier = -0.1
+	}
+	redwood_companies_redwood_order = {
+		trade_steering = 0.2
+	}
+}
+
+redwood_ideas = {
+	start = {
+		army_tradition = 0.5
+		cav_to_inf_ratio = 0.25
+	}
+
+	bonus = {
+		max_absolutism = 10
+	}
+	
+	trigger = {
+		OR = {
+			tag = A01
+			tag = A08
+		}
+	}
+	free = yes
+	
+	aristocratic_training_redwood = {
+		cavalry_power = 0.2
+	}
+	a_thousand_hoofbeats_redwood = {
+		land_forcelimit_modifier = 0.2
+	}
+	volunteer_cavalrymen_redwood = {
+		cavalry_cost = -0.15
+	}
+	reunification_reminders_redwood = {
+		army_tradition_decay = -0.01
+	}
+	guarded_minds_and_souls_redwood = {
+		technology_cost = -0.05
+	}
+	chivalric_code_redwood = {
+		diplomatic_reputation = 1
+	}
+	most_noble_of_them_all_redwood = {
+		nobles_loyalty_modifier = 0.05
+	}
+}
+
+redwood_republic_ideas = {
+	start = {
+		republican_tradition = 0.3
+		manpower_recovery_speed = 0.2 
+	}
+
+	bonus = {
+		free_dip_policy = 1
+	}
+	
+	trigger = {
+		OR = {
+			tag = A04
+			tag = A07
+		}
+	}
+	free = yes
+	
+	a_sailors_state_redwood_republic = {
+		naval_forcelimit_modifier = 0.25
+	}
+	reignite_the_slave_trade_redwood_republic = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	legacy_of_dolson_redwood_republic = {
+		prestige_decay = -0.01
+	}
+	pursuers_redwood_republic = {
+		discipline = 0.05
+	}
+	crescent_fire_cannons_redwood_republic = {
+		siege_blockade_progress = 1
+	}
+	open_the_markets_redwood_republic = {
+		trade_efficiency = 0.1
+	}
+	redwood_hulls_redwood_republic = {
+		global_ship_cost = -0.1
+	}
+}
+
+redwood_judiciary_ideas = {
+	start = {
+		discipline = 0.05
+		devotion = 1
+	}
+
+	bonus = {
+		governing_capacity_modifier = 0.1
+	}
+	
+	trigger = {
+		OR = {
+			tag = A06
+			tag = A00
+		}
+	}
+	free = yes
+	
+	mission_of_the_justicar_redwood_judiciary = {
+		ae_impact = -0.1
+	}
+	constitutional_teachings_redwood_judiciary = {
+		idea_cost = -0.1
+	}
+	war_for_liberty_redwood_judiciary = {
+		land_morale = 0.15
+	}
+	choke_heretic_snakes_redwood_judiciary = {
+		missionaries = 1
+		tolerance_own = 1
+	}
+	interrogate_intellectuals_redwood_judiciary = {
+		advisor_cost = -0.1
+	}
+	the_founders_chosen_people_redwood_judiciary = {
+		core_creation = -0.15
+	}
+	dissolve_party_borders_redwood_judiciary = {
+		global_missionary_strength = 0.02
+	}
+}
+
+jeffersonian_order_ideas = {
+	start = {
+		land_forcelimit_modifier = 0.15
+		hostile_attrition = 1
+	}
+
+	bonus = {
+		stability_cost_modifier = -0.1
+	}
+	
+	trigger = {
+		OR = {
+			tag = A02
+			tag = A03
+		}
+	}
+	free = yes
+	
+	independence_fund_jeffersonian_order = {
+		global_tax_modifier = 0.05
+		war_taxes_cost_modifier = -0.25
+	}
+	oppressed_no_longer_jeffersonian_order = {
+		global_unrest = -1
+	}
+	fight_for_survival_jeffersonian_order = {
+		manpower_recovery_speed = 0.1
+	}
+	hoarded_weapons_jeffersonian_order = {
+		land_maintenance_modifier = -0.05
+	}
+	the_long_haul_jeffersonian_order = {
+		war_exhaustion = -0.02
+	}
+	common_mans_revolution_jeffersonian_order = {
+		burghers_loyalty_modifier = 0.05
+	}
+	a_sympathetic_cause_jeffersonian_order = {
+		global_manpower_modifier = 0.1
+	}
+}
+
+middle_californian_ideas = {
+	start = {
+		diplomats = 1
+		discipline = 0.05
+	}
+
+	bonus = {
+		imperial_authority_value = 0.1
+	}
+	
+	trigger = {
+		OR = {
+			tag = A09
+			tag = A05
+		}
+	}
+	free = yes
+	
+	the_yerka_cabinet_middle_californian = {
+		leader_land_shock = 1
+	}
+	unified_with_grace_middle_californian = {
+		diplomatic_reputation = 2
+	}
+	californian_city_building_middle_californian = {
+		development_cost_modifier = -0.1
+	}
+	a_fresh_new_image_middle_californian = {
+		diplomatic_upkeep = 1
+		dip_tech_cost_modifier = 0.05
+	}
+	presidential_hopeful_middle_californian = {
+		reasons_to_elect = 5
+	}
+	manufacturing_revolution_middle_californian = {
+		production_efficiency = 0.1
+	}
+	join_pacific_community_middle_californian = {
+		global_sailors_modifier = 0.25
+	}
+}
+
+###########GROUP GOR IDEAS##################
+
+washington_minor_ideas = {
+	start = {
+	 	light_ship_cost = -0.15
+		manpower_recovery_speed = 0.10
+	}
+	
+	bonus = {
+		stability_cost_modifier = -0.1
+	}
+
+	trigger = {
+		OR = {
+			primary_culture = lincolnite
+			primary_culture = columbian_washingtonian
+			primary_culture = seattlain
+		}
+	}
+	free = yes
+	
+	kittitas_wall_washington_minor = {
+	  	garrison_size = 0.2
+	}
+	puget_pulp_washington_minor = {
+	 	dip_tech_cost_modifier = -0.1
+	}
+	inland_empire_washington_minor = {
+		leader_land_manuever = 1
+	}
+	washington_vintage_washington_minor = {
+	 	global_trade_goods_size_modifier = 0.1
+	}
+	religious_apathy_washington_minor = {
+		tolerance_heathen = 1
+	}
+	cascadian_revolution_washington_minor = {
+	 	culture_conversion_cost = -0.1
+	}
+	ideologically_picky_washington_minor = {
+	 	global_unrest = -1
+	}
+}
+
+oregon_minor_ideas = {
+	start = {
+	 	heir_chance = 0.33
+		trade_efficiency = 0.1
+	}
+	
+	bonus = {
+		diplomatic_upkeep = 1
+	}
+
+	trigger = {
+		primary_culture = oregonite
+	}
+	free = yes
+	
+	disillusioned_classicalism_oregon_minor = {
+		idea_cost = -0.05
+	}
+	pity_politics_oregon_minor = {
+	 	diplomatic_reputation = 1
+	}
+	veterans_of_the_willamette_oregon_minor = {
+		discipline = 0.025
+	}
+	sons_of_oregon_oregon_minor = {
+	 	global_unrest = -1
+	}
+	columbian_river_fleets_oregon_minor = {
+		naval_morale = 0.1
+	}
+	recovery_age_oregon_minor = {
+	 	stability_cost_modifier = -0.1
+	}
+	her_own_wings_oregon_minor = {
+	 	prestige = 1
+	}
+}
+
+high_oregonian_minor_ideas = {
+	start = {
+	 	caravan_power = 0.1
+		inflation_reduction = 0.05
+	}
+	
+	bonus = {
+		movement_speed = 0.1
+	}
+
+	trigger = {
+		primary_culture = highoregonean
+	}
+	free = yes
+	
+	oregons_outback_high_oregon_minor = {
+		land_attrition = -0.1
+	}
+	defense_of_the_steppe_high_oregon_minor = {
+	 	land_forcelimit_modifier = 0.1
+	}
+	survival_of_the_fittest_high_oregon_minor = {
+		hostile_attrition = 1
+	}
+	oasis_builders_high_oregon_minor = {
+	 	development_cost = -0.1
+	}
+	the_wranglers_high_oregon_minor = {
+		cav_to_inf_ratio = 0.15
+	}
+	citadel_of_burns_high_oregon_minor = {
+	 	defensiveness = 0.1
+	}
+	heretic_haters_high_oregon_minor = {
+	 	tolerance_own = 1
+	}
+}
+
+snake_minor_ideas = {
+	start = {
+	 	nobles_loyalty_modifier = 0.05
+		core_creation = -0.1
+	}
+	
+	bonus = {
+		global_own_trade_power = 0.1
+	}
+
+	trigger = {
+		primary_culture = snake
+	}
+	free = yes
+	
+	the_pauper_armies_snake_minor = {
+		reinforce_speed = 0.1
+	}
+	eastern_riches_snake_minor = {
+	 	global_tax_modifier = 0.1
+	}
+	theanite_acceptance_snake_minor = {
+		religious_unity = 0.15
+	}
+	long_term_contracts_snake_minor = {
+	 	merc_maintenance_modifier = -0.1
+	}
+	a_learned_population_snake_minor = {
+		advisor_pool = 1
+	}
+	well_paid_defenders_snake_minor = {
+	 	mercenary_discipline = 0.05
+	}
+	retirees_paradise_snake_minor = {
+	 	army_tradition = 0.5
+	}
+}
+
+

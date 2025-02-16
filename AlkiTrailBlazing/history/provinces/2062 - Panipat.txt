@@ -1,0 +1,17 @@
+#2062 - Panipat
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = U58
+controller = U58
+add_core = U58
+culture = seattlain
+religion = partisan
+capital = "Tacoma"
+trade_goods = paper #pulp and paper
+hre = yes
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

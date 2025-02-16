@@ -1,0 +1,539 @@
+###########################WARMSPRINGS MISSIONS###########################
+warmsprings_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y95
+	}
+	has_country_shield = yes
+	
+	founders_grace_warmsprings = {
+		icon = trueheir_woman_praying_gor
+		required_missions = { columbian_unity_warmsprings }
+		position = 2
+		trigger = {
+			OR = {
+				temple = 3
+				cathedral = 3
+			}
+			OR = {
+				piety = 0.25
+				NOT = {
+					piety = -0.25
+				}
+			}
+		}
+		effect = {
+			add_corruption = -0.5
+			add_yearly_manpower = 1
+			add_country_modifier = {
+				name = "gor_founders_grace_warmsprings"
+				duration = 3650
+			}
+		}
+	}
+	
+	alternative_beliefs_warmsprings = {
+		icon = trueheir_chieftan_gor
+		required_missions = { founders_grace_warmsprings }
+		position = 3
+		trigger = {
+			OR = {
+				religion = anarchist
+				religion = despotic
+				is_year = 1600
+			}
+		}
+		effect = {
+			custom_tooltip = if_we_are_anarchist_warmsprings
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_trueheir_mob_warmsprings"
+					duration = -1
+				}
+			}
+			custom_tooltip = if_we_are_despotic_warmsprings
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_the_chairmans_grip_warmsprings"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						religion = anarchist
+					}
+					add_country_modifier = {
+						name = "gor_trueheir_mob_warmsprings"
+						duration = -1
+					}
+				}
+				else_if = {
+					limit = {
+						religion = despotic
+					}
+					add_country_modifier = {
+						name = "gor_the_chairmans_grip_warmsprings"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+warmsprings_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y95
+	}
+	has_country_shield = yes
+	
+	columbian_unity_warmsprings = {
+		icon = columbia_river_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			OR = {
+				alliance_with = Y97
+				num_of_allies = 3
+			}
+		}
+		effect = {
+			add_government_power = {
+				mechanic_type = gor_trueheir_confederacy
+				power_type = trueheir_band_unity
+				value = 10
+			}
+			define_advisor = {
+				type = diplomat
+				skill = 1
+				cost_multiplier = 0.5
+			}
+			custom_tooltip = if_we_are_allied_with_yakama_we_gain_favors
+			tooltip = {
+				add_favors = {
+				   who = Y97
+				   amount = 10
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						alliance_with = Y97
+					}
+					add_favors = {
+					   who = Y97
+					   amount = 10
+					}
+				}
+			}
+		}
+	}
+	
+	domestic_focus_warmsprings = {
+		icon = sitting_trueheir_in_lodge_gor
+		required_missions = { columbian_unity_warmsprings }
+		position = 2
+		provinces_to_highlight = {
+			province_id = 1970
+		}
+		trigger = {
+			1970 = {
+				development = 10
+			}
+		}
+		effect = {
+			add_dip_power = 50
+			1970 = {
+				add_province_modifier = {
+					name = "gor_springs_of_life_warmsprings"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	trueheir_urbanization_warmsprings = {
+		icon = warmsprings_gor
+		required_missions = { domestic_focus_warmsprings }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 1970
+		}
+		trigger = {
+			1970 = {
+				num_of_buildings_in_province = 6
+				base_manpower = 6
+			}
+		}
+		effect = {
+			custom_tooltip = occasionally_get_the_event_truehier_metropolis
+			country_event = { id = warmsprings_events.1 }
+		}
+	}
+	
+	cashing_out_cascadia_warmsprings = {
+		icon = gold_gor
+		required_missions = { trueheir_urbanization_warmsprings }
+		position = 4
+		provinces_to_highlight = {
+			province_id = 2063
+		}
+		trigger = {
+			1970 = {
+				has_manufactory_trigger = yes
+			}
+			2063 = { 
+				trade_share = {
+					country = Y95
+					share = 25
+				}
+			}
+		}
+		effect = {
+			1970 = {
+				add_center_of_trade_level = 1
+			}
+			custom_tooltip = modify_the_warmsprings_modifier_to_now_give
+			tooltip = {
+				1970 = {
+					add_province_modifier = {
+						name = "gor_springs_of_life_better_warmsprings"
+						duration = -1
+					}
+				}
+			}
+			hidden_effect = {
+				1970 = {
+					remove_province_modifier = gor_springs_of_life_warmsprings
+					add_province_modifier = {
+						name = "gor_springs_of_life_better_warmsprings"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+warmsprings_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y95
+	}
+	has_country_shield = yes
+	
+	defensive_alliances_warmsprings = {
+		icon = chieftans_meeting_gor
+		required_missions = { columbian_unity_warmsprings }
+		position = 2
+		provinces_to_highlight = {
+			owner = {
+				alliance_with = ROOT
+				NOT = { 
+					owes_favors = { 
+						who = ROOT 
+						value = 30 
+					}
+				}
+			}
+		}
+		trigger = {
+			OR = {
+				has_idea_group = influence_ideas
+				has_idea_group = diplomatic_ideas
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = allies_we_have_thiry_favors_with_warmsprings
+					all_ally = {
+						owes_favors = { 
+							who = ROOT 
+							value = 30 
+						}
+					}
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					dip = 6
+				}
+				add_dip_power = 300
+			}
+			else_if = {
+				limit = {
+					dip = 5
+				}
+				add_dip_power = 150
+				change_dip = 1
+			}
+			else = {
+				change_dip = 2
+			}
+			add_country_modifier = {
+				name = "gor_diplomat_network_warmsprings"
+				duration = -1
+			}
+		}
+	}
+	
+	heritage_questions_warmsprings = {
+		icon = trueheir_elders_gor
+		required_missions = { defensive_alliances_warmsprings trueheir_urbanization_warmsprings }
+		position = 4
+		provinces_to_highlight = {
+			area = oregonian_cascades_area
+		}
+		trigger = {
+			has_completed_idea_group_of_category = {
+				adm_ideas = yes
+			}
+			development_in_provinces = {
+				value = 50
+				area = oregonian_cascades_area
+			}
+		}
+		effect = {
+			country_event = { id = warmsprings_events.2 }
+		}
+	}
+	
+	capital_of_oregon_warmsprings = {
+		icon = medieval_willamette_gor
+		required_missions = { cashing_out_cascadia_warmsprings heritage_questions_warmsprings }
+		position = 5
+		provinces_to_highlight = {
+			province_id = 1970
+		}
+		trigger = { 
+			1970 = {
+				development = 50
+			}
+			custom_trigger_tooltip = {
+				tooltip = warmsprings_is_the_most_devved_prov_in_oregon
+				oregon_region = {
+					type = all
+					OR = {
+						province_id = 1970
+						NOT = {
+							higher_development_than = 1970
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = trueheir_metropolis_event_happens_twice_as_often
+			add_country_modifier = {
+				name = "gor_host_of_the_unions_desires_warmsprings"
+				duration = -1
+			}
+		}
+	}
+}
+
+warmsprings_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y95
+	}
+	has_country_shield = yes
+	
+	yakaman_commitment_warmsprings = {
+		icon = trueheir_handshake_gor
+		required_missions = { drums_of_war_warmsprings columbian_unity_warmsprings }
+		position = 2
+		provinces_to_highlight = {
+			province_id = 2486
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			2486 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mil_power = 25
+			add_army_tradition = 15
+			custom_tooltip = if_we_have_yakama_as_a_subject_instantly_annex_them
+			hidden_effect = {
+				if = {
+					limit = {
+						Y97 = {
+							is_subject_of = ROOT
+						}
+					}
+					inherit = Y97
+				}
+			}
+		}
+	}
+	
+	river_of_the_west_warmsprings = {
+		icon = river_dam_gor
+		required_missions = { wyeast_range_warmsprings }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 1218
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			1218 = {
+				country_or_non_sovereign_subject_holds = ROOT
+				NOT = {
+					has_province_modifier = gor_redwood_destruction_oregongen
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					stability = 3
+				}
+				add_adm_power = 150
+			}
+			else = {
+				add_stability = 1
+			}
+			country_event = { id = warmsprings_events.3 }
+		}
+	}
+}
+
+warmsprings_missions_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y95
+	}
+	has_country_shield = yes
+	
+	
+	drums_of_war_warmsprings = {
+		icon = origination_army_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			num_of_generals = 1
+			manpower_percentage = 0.95
+		}
+		effect = {
+			middle_columbia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			oregonian_cascades_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = if_we_are_at_one_hundo_forcelimit_warmsprings
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_preparred_conquest_warmsprings"
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						army_size_percentage = 1
+					}
+					add_country_modifier = {
+						name = "gor_preparred_conquest_warmsprings"
+						duration = 5475
+					}
+				}
+			}
+		}
+	}
+	
+	wyeast_range_warmsprings = {
+		icon = trueheir_rider_cascades_gor
+		required_missions = { drums_of_war_warmsprings }
+		position = 2
+		provinces_to_highlight = {
+			area = oregonian_cascades_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			oregonian_cascades_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			upper_willamette_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			bend_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_yearly_manpower = 1.5
+			1970 = {
+				add_base_manpower = 2
+			}
+		}
+	}
+	
+	river_of_the_east_warmsprings = {
+		icon = trueheir_knight_gor
+		required_missions = { wyeast_range_warmsprings }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 1974
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			1974 = {
+				country_or_non_sovereign_subject_holds = ROOT
+				province_has_center_of_trade_of_level = 2
+			}
+		}
+		effect = {
+			custom_tooltip = every_prov_in_bend_area_gains_warmsprings
+			tooltip = {
+				add_base_production = 2
+				add_province_modifier = {
+					name = "gor_deschutes_domination_warmsprings"
+					duration = 9125
+				}
+			}
+			hidden_effect = {
+				bend_area = {
+					add_province_modifier = {
+						name = "gor_deschutes_domination_warmsprings"
+						duration = 9125
+					}
+				}
+			}
+		}
+	}
+}

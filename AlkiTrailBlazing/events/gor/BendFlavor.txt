@@ -1,0 +1,232 @@
+namespace = bend_events
+####################BEND EVENTS##########################
+country_event = { #Three Star League
+	id = bend_events.1
+	title = bend_events.1.t
+	desc = bend_events.1.d
+	picture = MERCHANTS_TALKING_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = U51
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = formed_three_star_league
+		}
+	}
+	
+	option = {
+		name = bend_events.1.a #We Prosper Together
+		custom_tooltip = we_and_all_of_our_allies_in_places_gain_bend
+		tooltip = {
+			add_legitimacy = -10
+			add_republican_tradition = -5
+			4516 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 18250
+					power = 15
+					key = three_star_league
+				}
+			}
+			1856 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 18250
+					power = 15
+					key = three_star_league
+				}
+			}
+		}
+		hidden_effect = {
+			add_legitimacy = -10
+			add_republican_tradition = -5
+			4516 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 18250
+					power = 15
+					key = three_star_league
+				}
+			}
+			1856 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 18250
+					power = 15
+					key = three_star_league
+				}
+			}
+			every_ally = {
+				limit = {
+					capital_scope = {
+						OR = {
+							trade_company_region = jefferson_trade_company
+							trade_company_region = inland_empire_trade_company
+						}
+					}
+				}
+				set_country_flag = part_of_three_star_league #hehe
+				country_event = { id = bend_events.2 }
+			}
+		}
+	}
+}
+
+country_event = { #Three Star Invitation
+	id = bend_events.2
+	title = bend_events.2.t
+	desc = bend_events.2.d
+	picture = MERCHANTS_TALKING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		alliance_with = U51
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = bend_events.2.a #Our Thanks To [From.GetName]
+		add_legitimacy = -10
+		add_republican_tradition = -5
+		4516 = {
+			add_trade_modifier = {
+				who = ROOT
+				duration = 18250
+				power = 15
+				key = three_star_league
+			}
+		}
+		1856 = {
+			add_trade_modifier = {
+				who = ROOT
+				duration = 18250
+				power = 15
+				key = three_star_league
+			}
+		}
+	}
+}
+
+country_event = { #Promises, Promises
+	id = bend_events.3
+	title = bend_events.3.t
+	desc = bend_events.3.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U51
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = bend_events.3.a #Let It Go
+		klamath_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		goose_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		2027 = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		add_country_modifier = {
+			name = "gor_oregonian_ambition_bend"
+			duration = -1
+		}
+		custom_tooltip = move_us_on_the_path_to_form_oregon
+		set_country_flag = oregon_path_bend
+		swap_non_generic_missions = yes
+	}
+	option = {
+		name = bend_events.3.b #It Was Promised!
+		remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+		upper_willamette_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		lower_willamette_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		add_country_modifier = {
+			name = "gor_deschutes_dreams_bend"
+			duration = -1
+		}
+		custom_tooltip = move_us_on_the_path_to_form_deschutes
+		set_country_flag = deschutes_path_bend
+	 	swap_non_generic_missions = yes
+	}
+}
+
+country_event = { #Lakeview Directive
+	id = bend_events.4
+	title = bend_events.4.t
+	desc = bend_events.4.d
+	picture = CITY_VIEW_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U51
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = bend_events.4.a #We Will Move.
+		set_capital = 4493
+		4493 = {
+			add_base_tax = 2
+			add_base_production = 2
+			add_base_manpower = 2
+		}
+	}
+	option = {
+		name = bend_events.4.b #[Root.Capital.GetName] is our home!
+		if = {
+			limit = {
+				adm = 6
+			}
+			add_adm_power = 150
+		}
+		else = {
+			change_adm = 1
+		}
+	}
+}

@@ -1,0 +1,2348 @@
+###########################OREGON MISSIONS###########################
+oregon_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = W44
+	}
+	has_country_shield = yes
+	
+	capital_question_oregon = {
+		icon = medieval_willamette_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = any_prov_in_org_has_thiry_or_more_development
+				oregon_region = {
+					development = 30
+				}
+			}
+		}
+		effect = {	
+			country_event = { id = oregon_events.1 } 
+		}
+	}
+	
+	promote_willamette_vinyards_oregon = {
+		icon = willamette_vinyards_gor
+		required_missions = { capital_question_oregon }
+		position = 2
+		provinces_to_highlight = {
+			trade_goods = wine
+			region = oregon_region
+			NOT = { has_production_building_trigger = yes }
+		}
+		trigger = {
+			development_in_provinces = {
+				value = 45
+				trade_goods = wine
+				region = oregon_region  
+			}
+			custom_trigger_tooltip = {
+				tooltip = every_wine_prov_in_org_has_a_workshop_oregon
+				oregon_region = {
+					type = all
+					OR = {
+						NOT = { trade_goods = wine }
+						has_production_building_trigger = yes
+					}
+				}
+			}
+		}
+		effect = {	
+			country_event = { id = oregon_events.2 } 
+		}
+	}
+	
+	purple_estates_oregon = {
+		icon = wine_gor
+		required_missions = { promote_willamette_vinyards_oregon }
+		position = 3
+		provinces_to_highlight = {
+			trade_goods = wine
+			region = oregon_region
+			OR = {
+				NOT = { base_production = 7 }
+				NOT = { has_manufactory_trigger = yes } 
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = every_wine_prov_in_org_got_seven_baseprod_and_a_manufactor
+				oregon_region = {
+					type = all
+					OR = {
+						NOT = { trade_goods = wine }
+						AND = {
+							has_manufactory_trigger = yes
+							base_production = 7
+						}
+					}
+				}
+			}
+		}
+		effect = {	
+			custom_tooltip = if_we_left_wine_prod_to_the_burghers_gain_oregon
+			tooltip = {
+				custom_tooltip = unlocks_the_supercharge_wine_production_estate_privledge
+			}
+			custom_tooltip = otherwise_modify_our_modifiers_oregon
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_united_oregonian_viticulture_second_oregon"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = unlock_da_cool_privledges_fo_oregon_flag }
+					}
+					remove_country_modifier = gor_united_oregonian_viticulture_first_oregon
+					add_country_modifier = {
+						name = "gor_united_oregonian_viticulture_second_oregon"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	
+	winelords_oregon = {
+		icon = wine_enjoyer_gor
+		required_missions = { purple_estates_oregon }
+		position = 4
+		provinces_to_highlight = {
+			trade_goods = wine
+			superregion = california_superregion
+		}
+		trigger = {
+			trading_bonus = {
+				trade_goods = wine
+				value = yes
+			}
+		}
+		effect = {	
+			custom_tooltip = if_we_left_wine_prod_to_the_burghers_gain_oregon
+			custom_tooltip = supercharge_decision_costs_half_as_much_and_now_gives
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_pressured_vinters_two_oregon"
+					duration = 1825
+				}
+			}
+			custom_tooltip = otherwise_modify_our_modifiers_oregon_no_gap
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_united_oregonian_viticulture_third_oregon"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = unlock_da_cool_privledges_fo_oregon_flag }
+					}
+					remove_country_modifier = gor_united_oregonian_viticulture_second_oregon
+					add_country_modifier = {
+						name = "gor_united_oregonian_viticulture_third_oregon"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	
+	united_columbian_vinyards_oregon = {
+		icon = aging_wine_gor
+		required_missions = { portlands_sister_oregon winelords_oregon }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				region = washington_region
+				region = oregon_region
+			}
+			trade_goods = wine
+			OR = {
+				NOT = { development = 15 }
+				NOT = { has_manufactory_trigger = yes }
+			}			
+		}
+		trigger = {
+			production_leader = {
+				trade_goods = wine
+			}
+			custom_trigger_tooltip = {
+				tooltip = all_wine_provs_in_wash_and_org_got_fifteen_dev_owned_by_us_and_manufactory
+				washington_region = {
+					type = all
+					OR = {
+						NOT = { trade_goods = wine } 
+						AND = {
+							has_manufactory_trigger = yes
+							country_or_non_sovereign_subject_holds = ROOT
+							development = 15
+						}
+					}
+				}
+				oregon_region = {
+					type = all
+					OR = {
+						NOT = { trade_goods = wine } 
+						AND = {
+							has_manufactory_trigger = yes
+							country_or_non_sovereign_subject_holds = ROOT
+							development = 15
+						}
+					}
+				}
+			}
+		}
+		effect = {	
+			custom_tooltip = if_we_left_wine_prod_to_the_burghers_gain_oregon
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_columbian_wine_cartels_oregon"
+					duration = -1
+				}
+			}
+			custom_tooltip = otherwise_gain_all_this_shit_oregon
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_measured_production_oregon"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = unlock_da_cool_privledges_fo_oregon_flag
+					}
+					add_country_modifier = {
+						name = "gor_columbian_wine_cartels_oregon"
+						duration = -1
+					}
+				}
+				else = {
+					oregon_region = {
+						limit = {
+							trade_goods = wine
+						}
+						add_province_modifier = {
+							name = "gor_measured_production_oregon"
+							duration = -1
+						}
+					}
+					washington_region = {
+						limit = {
+							trade_goods = wine
+						}
+						add_province_modifier = {
+							name = "gor_measured_production_oregon"
+							duration = -1
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	the_march_east_oregon = {
+		icon = industrial_soldiers_urban_gor
+		required_missions = { union_washington_oregon }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = washington_cascades_area
+				area = benton_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			OR = {
+				benton_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				washington_cascades_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {	
+			custom_tooltip = if_lincolnite_culture_has_spawned_accept_it_fo_free_oregon
+			custom_tooltip = if_it_aint_oregon
+			tooltip = {
+				country_event = { id = lincolnite_events.1 }
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_global_flag = lincolnite_culture_spawned
+					}
+					add_accepted_culture = lincolnite
+					add_country_modifier = {
+						name = "gor_lincolnite_acceptance_oregon"
+						hidden = yes
+						duration = -1
+					}
+				}
+				else = {
+					country_event = { id = lincolnite_events.1 }
+				}
+			}
+		}
+	}
+	
+	founding_an_inland_empire_oregon = {
+		icon = spokane_gor
+		required_missions = { the_march_east_oregon }
+		position = 10
+		provinces_to_highlight = {
+			province_id = 4516
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			4516 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			add_ruler_modifier = {
+				name = "gor_lord_of_washington_oregon"
+				duration = -1
+			}
+		}
+	}
+	
+	reign_in_the_north_oregon = {
+		icon = northwest_soldiers_shaking_hands_gor
+		required_missions = { founding_an_inland_empire_oregon }
+		position = 11
+		provinces_to_highlight = {
+			region = washington_region 
+			OR = {
+				NOT = { owned_by = ROOT }
+				local_autonomy = 30
+				unrest = 2
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = every_province_of_the_washington_region_that_we_own_aut_and_unrest
+				washington_region = {
+					type = all
+					owned_by = ROOT
+					NOT = { local_autonomy = 30 }
+					NOT = { unrest = 2 }
+				}
+			}
+		}
+		effect = {	
+			if = {
+				limit = {
+					dip = 6
+				}
+				add_dip_power = 300
+			}
+			else_if = {
+				limit = {
+					dip = 5
+				}
+				change_dip = 1
+				add_dip_power = 150
+			}
+			else = {
+				change_dip = 2
+			}
+			custom_tooltip = every_province_in_washington_wit_ova_ten_dev_that_is_not_our_relig_converts
+			hidden_effect = {
+				washington_region = {
+					limit = {
+						development = 10
+					}
+					change_religion = ROOT
+				}
+			}
+		}
+	}
+	
+	laws_of_the_land_oregon = {
+		icon = prez_sitting_gor
+		required_missions = { reign_in_the_north_oregon }
+		position = 12
+		trigger = {
+			OR = {
+				courthouse = 15
+				town_hall = 15
+			}
+			OR = {
+				adm = 5
+				full_idea_group = administrative_ideas
+			}
+		}
+		effect = {	
+			country_event = { id = oregon_events.5 }
+		}
+	}
+	
+	northwest_metropolis_oregon = {
+		icon = industrial_revolution_gor
+		required_missions = { laws_of_the_land_oregon confederacys_breadbasket_oregon }
+		position = 13
+		trigger = {
+			capital_scope = {
+				development = 50
+			}
+			development_in_provinces = {
+				region = oregon_region
+				value = 400
+			}
+			development_in_provinces = {
+				region = washington_region
+				value = 400
+			}
+		}
+		effect = {
+			custom_tooltip = modify_inland_empire_to_be_now_oregon
+			add_country_modifier = {
+				name = "gor_inland_empire_two_oregon"
+				duration = -1
+			}
+			hidden_effect = {
+				remove_country_modifier = gor_inland_empire_one_oregon
+			}
+		}
+	}
+	
+	steam_and_steel_oregon = {
+		icon = metal_workers_gor
+		required_missions = { northwest_metropolis_oregon }
+		position = 14
+		provinces_to_highlight = {
+			OR = {
+				is_institution_origin = manufactories
+				is_institution_origin = enlightenment
+				is_institution_origin = industrialization
+				is_institution_origin = renaissance
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = own_the_institution_origin_of_either_enlightenment_manufactories_industrialization_or_renaissance
+				any_owned_province = {
+					OR = {
+						is_institution_origin = manufactories
+						is_institution_origin = enlightenment
+						is_institution_origin = industrialization
+						is_institution_origin = renaissance
+					}
+				}
+			}
+			furnace = 2
+		}
+		effect = {
+			custom_tooltip = four_provinces_that_dont_produce_coal_will_begin_to_now
+			custom_tooltip = if_industial_have_spawned_but_we_aint_embraced_also_gain_oregon
+			tooltip = {
+				add_institution_embracement = {
+					which = industrialization
+					value = 100
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					which = rand_provs_to_make_coal
+					value = 4
+				}
+				while = {
+					limit = {
+						check_variable = {
+							which = rand_provs_to_make_coal
+							value = 1
+						}
+					}
+					random_owned_province = {
+						limit = {
+							NOT = { trade_goods = coal }
+							NOT = { trade_goods = gold }
+						}
+						change_trade_goods = coal
+					}
+					subtract_variable = {
+						which = rand_provs_to_make_coal
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_institution = industrialization }
+						is_institution_enabled = industrialization
+					}
+					every_owned_province = {
+						limit = {
+							development = 30
+						}
+						add_institution_embracement = {
+							which = industrialization
+							value = 100
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+oregon_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = W44
+	}
+	has_country_shield = yes
+	
+	found_conscription_centers_oregon = {
+		icon = army_training_camp_gor
+		required_missions = { capital_question_oregon }
+		position = 2
+		trigger = {
+			has_completed_idea_group_of_category = {
+				mil_ideas = yes
+			}
+			OR = {
+				barracks = 5
+				training_fields = 5
+			}
+			OR = {
+				regimental_camp = 5
+				conscription_center = 5
+			}
+		}
+		effect = {	
+			custom_tooltip = every_time_we_build_a_conscription_center_gain_oregon
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_volunteer_patriotism_one_oregon"
+					duration = 365
+				}
+			}
+			custom_tooltip = this_can_be_stacked_up_to_five_times_to_gain_oregon
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_volunteer_patriotism_five_oregon"
+					duration = 365
+				}
+			}	
+		}
+	}
+	
+	columbias_tributaries_oregon = {
+		icon = willamette_gor
+		required_missions = { found_conscription_centers_oregon }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = upper_willamette_area
+				area = lower_willamette_area
+			}
+		}
+		trigger = {
+			development_in_provinces = {
+				value = 55
+				area = upper_willamette_area
+			}
+			development_in_provinces = {
+				value = 55
+				area = lower_willamette_area
+			}
+		}
+		effect = {	
+			custom_tooltip = ever_prov_in_the_upper_and_lower_willamette_gain
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_willamette_industry_oregon"
+					duration = -1
+				}
+			}
+			custom_tooltip = if_our_cap_is_in_these_areas_it_gains
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_capital_ofwillamette_industry_oregon"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				upper_willamette_area = {
+					if = {
+						limit = {
+							is_capital_of = ROOT
+						}
+						add_province_modifier = {
+							name = "gor_capital_ofwillamette_industry_oregon"
+							duration = -1
+						}
+					}
+					else = {
+						add_province_modifier = {
+							name = "gor_willamette_industry_oregon"
+							duration = -1
+						}
+					}
+				}
+				lower_willamette_area = {
+					if = {
+						limit = {
+							is_capital_of = ROOT
+						}
+						add_province_modifier = {
+							name = "gor_capital_ofwillamette_industry_oregon"
+							duration = -1
+						}
+					}
+					else = {
+						add_province_modifier = {
+							name = "gor_willamette_industry_oregon"
+							duration = -1
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	north_californian_confederation_oregon = {
+		icon = north_confed_gor
+		required_missions = { united_oregons_oregon columbias_tributaries_oregon }
+		position = 5
+		provinces_to_highlight = {
+			region = washington_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			OR = {
+				calc_true_if = {
+					custom_trigger_tooltip = {
+						tooltip = provinces_in_the_washintonregion_we_own_oregon
+						washington_region = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+					amount = 10
+				}
+				calc_true_if = {
+					custom_trigger_tooltip = {
+						tooltip = allies_wit_either_pugetite_lincolnite_or_columbian_culture_oregon
+						all_ally = {
+							OR = {
+								primary_culture = columbian_washingtonian
+								primary_culture = seattlain
+								primary_culture = lincolnite
+							}
+						}
+					}
+					amount = 2
+				}
+				custom_trigger_tooltip = {
+					tooltip = we_have_a_subject_of_lincolnite_coluimbian_or_pugetite_culture_wit_three_cities_oregon
+					any_subject_country = {
+						OR = {
+							primary_culture = columbian_washingtonian
+							primary_culture = seattlain
+							primary_culture = lincolnite
+						}
+						num_of_cities = 3
+					}
+				}
+			}
+		}
+		effect = {	
+			middle_columbia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			willapa_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			country_event = { id = oregon_events.3 }
+		}
+	}
+	
+	portlands_sister_oregon = {
+		icon = vancouver_bc_gor
+		required_missions = { north_californian_confederation_oregon }
+		position = 6
+		provinces_to_highlight = {
+			area = middle_columbia_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			middle_columbia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			2068 = {
+				add_province_modifier = {
+					name = "gor_sister_cities_of_columbia_oregon"
+					duration = 9125
+				}
+			}
+			tooltip = {
+				1218 = {
+				add_province_modifier = {
+						name = "gor_sister_cities_of_columbia_oregon"
+						duration = 9125
+					}
+				}
+			}
+			custom_tooltip = if_portland_is_our_capital_make_the_mod_perm_in_prov_oregon
+			hidden_effect = {
+				if = {
+					limit = {
+						1218 = {
+							is_capital_of = ROOT
+						}
+					}
+					1218 = {
+						add_province_modifier = {
+							name = "gor_sister_cities_of_columbia_oregon"
+							duration = -1
+						}
+					}
+				}
+				else = {
+					1218 = {
+						add_province_modifier = {
+							name = "gor_sister_cities_of_columbia_oregon"
+							duration = 9125
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	pugtite_unification_oregon = {
+		icon = burning_ships_gor
+		required_missions = { portlands_sister_oregon opposite_of_dissapointment_oregon }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2063
+				province_id = 2064
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			2063 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2064 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			add_navy_tradition = 10
+			washington_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_pugetite_ports_oregon"
+				duration = 9125
+			}
+		}
+	}
+	
+	union_washington_oregon = {
+		icon = dach_baron_gor 
+		required_missions = { pugtite_unification_oregon reach_juan_de_fuca_oregon }
+		position = 8
+		provinces_to_highlight = {
+			region = washington_region
+			is_part_of_hre = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = own_all_provs_in_the_uoc_and_in_wash
+				washington_region = {
+					type = all
+					OR = {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { is_part_of_hre = yes } 
+					}
+				}
+			}
+		}
+		effect = {	
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 15
+			}
+			custom_tooltip = remove_all_alaskan_cores_from_washington_provs
+			hidden_effect = {
+				washington_region = {
+					limit = {
+						is_core = W06
+					}
+					remove_core = W06
+				}
+			}
+		}
+	}
+	
+	washingtons_industry_oregon = {
+		icon = evergreen_factory_gor
+		required_missions = { founding_an_inland_empire_oregon }
+		position = 11
+		provinces_to_highlight = {
+			region = washington_region 
+			NOT = { has_manufactory_trigger = yes }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provs_with_manufactories_in_washington_oregon
+					washington_region = {
+						type = all
+						has_manufactory_trigger = yes
+					}
+				}
+				amount = 20
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provs_wit_ova_thirty_dev_in_washington_oregon
+					washington_region = {
+						type = all
+						development = 30
+					}
+				}
+				amount = 3
+			}
+		}
+		effect = {	
+			custom_tooltip = every_prov_wit_over_thiry_dev_in_was_will_gain_oregon
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_capitals_of_the_confederacy_oregon"
+					duration = -1
+				}
+			}
+			custom_tooltip = if_manus_have_spawned_but_we_aint_embraced_also_gain_oregon
+			tooltip = {
+				add_institution_embracement = {
+					which = manufactories
+					value = 100
+				}
+			}
+			hidden_effect = {
+				washington_region = {
+					limit = {
+						development = 30
+					}
+					add_province_modifier = {
+						name = "gor_capitals_of_the_confederacy_oregon"
+						duration = -1
+					}
+					if = {
+						limit = {
+							NOT = { has_institution = manufactories }
+							is_institution_enabled = manufactories
+						}
+						add_institution_embracement = {
+							which = manufactories
+							value = 100
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	confederacys_breadbasket_oregon = {
+		icon = peasant_farming_gor
+		required_missions = { washingtons_industry_oregon }
+		position = 12
+		provinces_to_highlight = {
+			province_id = 4516
+		}
+		trigger = {
+			4516 = {
+				province_has_center_of_trade_of_level = 2
+				is_strongest_trade_power = ROOT
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = we_own_four_cots_of_level_two_in_inland_empire
+					inland_empire_trade_company = {
+						type = all
+						province_has_center_of_trade_of_level = 2
+					}
+				}
+				amount = 4
+			}
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "gor_inland_empire_one_oregon"
+				duration = -1
+			}
+		}
+	}
+	
+	surround_the_sierras_oregon = {
+		icon = cascadian_army_gor
+		required_missions = { capital_of_all_californias_oregon }
+		position = 14
+		provinces_to_highlight = {
+			area = south_sierra_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			south_sierra_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			custom_tooltip = every_gold_province_in_liberty_gains_oregon
+			tooltip = {
+				add_base_production = 1
+				add_country_modifier = {
+					name = "gor_motherlode_mines_oregon"
+					duration = 9125
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = gold
+						region = sunkissed_region
+					}
+					add_base_production = 1
+					add_country_modifier = {
+						name = "gor_motherlode_mines_oregon"
+						duration = 9125
+					}
+				}
+			}
+		}
+	}
+}
+
+oregon_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = W44
+	}
+	has_country_shield = yes
+	
+	echoing_concerns_oregon = {
+		icon = snake_noble_gor
+		required_missions = { consolidate_the_west_oregon }
+		position = 2
+		provinces_to_highlight = {
+			province_id = 2037
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			2037 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			tooltip = {
+				add_years_of_income = 1
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 5
+				}
+			}
+			custom_tooltip = if_we_own_all_provs_in_north_snake_gain_oregon
+			tooltip = {
+				add_years_of_income = 2
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 10
+				}	
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						north_snake_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+					add_years_of_income = 2
+					add_estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 10
+					}	
+				}
+				else = {
+					add_years_of_income = 1
+					add_estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 5
+					}
+				}
+			}
+		}
+	}
+	
+	united_oregons_oregon = {
+		icon = beaver_gor
+		required_missions = { land_of_gold_and_blood_oregon a_frontier_capital_oregon echoing_concerns_oregon }
+		position = 4
+		provinces_to_highlight = {
+			region = oregon_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			oregon_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			if = {
+				limit = {
+					adm = 6
+				}
+				add_adm_power = 300
+			}
+			else_if = {
+				limit = {
+					adm = 5
+				}
+				change_adm = 1
+				add_adm_power = 150
+			}
+			else = {
+				change_adm = 2
+			}
+			jefferson_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	opposite_of_dissapointment_oregon = {
+		icon = large_ship_gor
+		required_missions = { north_californian_confederation_oregon }
+		position = 6
+		provinces_to_highlight = {
+			province_id = 1197
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			1197 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			add_navy_tradition = 10
+			define_advisor = {
+				type = naval_reformer
+				skill = 3
+				cost_multiplier = 0.5
+			}
+			low_puget_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			high_puget_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			olympic_penninsula_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	reach_juan_de_fuca_oregon = {
+		icon = waves_gor
+		required_missions = { opposite_of_dissapointment_oregon }
+		position = 7
+		provinces_to_highlight = {
+			area = olympic_penninsula_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			olympic_penninsula_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "gor_communist_purge_oregon"
+				duration = 9125
+			}
+		}
+	}
+	
+	klamaths_and_cascades_oregon = {
+		icon = klamath_gor
+		required_missions = { breach_the_redwoods_oregon }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = shasta_area
+				area = trinity_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			shasta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			trinity_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			custom_tooltip = every_mountain_prov_we_own_or_build_in_future_gains
+			tooltip = {
+				add_base_manpower = 2
+				add_province_modifier = {
+					name = "gor_cascadian_defenses_oregon"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_terrain = mountain
+						has_fort_building_trigger = yes
+					}
+					set_province_flag = cascadian_fort_already_built_oregon
+					add_base_manpower = 2
+					add_province_modifier = {
+						name = "gor_cascadian_defenses_oregon"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	
+	presidential_river_oregon = {
+		icon = industrial_soldier_river_gor
+		required_missions = { klamaths_and_cascades_oregon }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1844
+				area = middle_sacramento_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			1844 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provs_we_own_in_middle_sacramento_king
+					middle_sacramento_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 2
+			}
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "gor_sacramentan_agriculture_oregon"
+				duration = 3650
+			}
+		}
+	}
+	
+	reach_the_south_bay_oregon = {
+		icon = burning_orchard_gor
+		required_missions = { consolidate_jefferson_oregon }
+		position = 12
+		provinces_to_highlight = {
+			area = lower_sacramento_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			lower_sacramento_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			custom_tooltip = if_we_completed_united_columbian_vinyards_and_did_not_give_burgher_control
+			tooltip = {
+				country_event = { id = oregon_events.9 }
+			}
+			custom_tooltip = otherwise_wee_get_oregon
+			tooltip = {
+				add_adm_power = 100
+				add_years_of_owned_provinces_production_income = {
+					years = 10
+					trigger = {
+						trade_goods = wine
+					}
+					custom_tooltip = monay_from_wine_oregon
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = unlock_da_cool_privledges_fo_oregon_flag }
+						mission_completed = united_columbian_vinyards_oregon
+					}
+					country_event = { id = oregon_events.9 }
+				}
+				else = {
+					add_adm_power = 100
+					add_years_of_owned_provinces_production_income = {
+						years = 10
+						trigger = {
+							trade_goods = wine
+						}
+						custom_tooltip = monay_from_wine_oregon
+					}
+				}
+			}
+		}
+	}
+	
+	capital_of_all_californias_oregon = {
+		icon = golden_gate_gor
+		required_missions = { reach_the_south_bay_oregon }
+		position = 13
+		provinces_to_highlight = {
+			province_id = 868
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			868 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			add_prestige = 25
+			add_legitimacy = 25
+			add_republican_tradition = 15
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_ruler_modifier = {
+				name = "gor_franciscan_successor_oregon"
+				duration = -1
+			}
+		}
+	}
+	
+	press_into_the_joaquin_oregon = {
+		icon = shining_city_gor
+		required_missions = { capital_of_all_californias_oregon }
+		position = 14
+		provinces_to_highlight = {
+			OR = {
+				area = big_sur_area
+				area = salinas_area
+				area = upper_joaquin_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			upper_joaquin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			OR = {
+				salinas_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				big_sur_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "gor_cities_of_the_pious_oregon"
+				duration = 18250
+			}
+			custom_tooltip = if_we_are_at_positive_piety_gain_oregon
+			tooltip = {
+				add_piety = 1
+			}
+			custom_tooltip = otherwise_we_gain_some_dies_piety_oregon
+			tooltip = {
+				add_piety = -1
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						piety = 0
+					}
+					add_piety = 1
+				}
+				else = {
+					add_piety = -1
+				}
+			}
+		}
+	}
+	
+	unify_liberty_oregon = {
+		icon = lotta_cannons_gor
+		required_missions = { surround_the_sierras_oregon press_into_the_joaquin_oregon }
+		position = 15
+		provinces_to_highlight = {
+			region = sunkissed_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			calc_true_if = {
+				sunkissed_region = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				amount = 35
+			}
+		}
+		effect = {	
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_libertys_guidance_oregon"
+					duration = -1
+				}
+			}
+			custom_tooltip = if_we_are_a_republic_get_instead_oregon
+			tooltip = {
+				add_absolutism = 10
+				add_adm_power = 100
+				add_dip_power = 100
+				add_mil_power = 100
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = { government = monarchy }
+					}
+					add_absolutism = 10
+					add_adm_power = 100
+					add_dip_power = 100
+					add_mil_power = 100
+				}
+				else = {
+					add_country_modifier = {
+						name = "gor_libertys_guidance_oregon"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+oregon_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = W44
+	}
+	has_country_shield = yes
+	
+	consolidate_the_west_oregon = {
+		icon = cool_knight_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			NOT = { overextension_percentage = 0.05 } 
+			num_of_cities = 20
+		}
+		effect = {	
+			oregon_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 15
+			add_ruler_modifier = {
+				name = "gor_unifyer_of_oregon_oregon"
+				duration = -1
+			}
+		}
+	}
+	
+	blue_oregons_oregon = {
+		icon = knights_fighting_gor
+		required_missions = { consolidate_the_west_oregon }
+		position = 2
+		provinces_to_highlight = {
+			area = blue_oregon_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			blue_oregon_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			custom_tooltip = for_each_for_prov_we_own_in_org_gain_oregon
+			tooltip = {
+				add_mil_power = 15
+			}
+			custom_tooltip = if_we_have_mil_ideas_instead_gain_oregon
+			tooltip = {
+				add_mil_power = 25
+			}
+			hidden_effect = {
+				while = {
+					limit = {
+						any_owned_province = {
+							has_fort_building_trigger = yes
+							region = oregon_region
+							NOT = { has_province_flag = already_given_army_trad_oregon_redwash }
+						}
+					}
+					if = {
+						limit = {
+							has_idea_group = defensive_ideas
+						}
+						add_mil_power = 25
+					}
+					else = {
+						add_mil_power = 15
+					}
+					random_owned_province = {
+						limit = {
+							has_fort_building_trigger = yes
+							region = oregon_region
+							NOT = { has_province_flag = already_given_army_trad_oregon_redwash }
+						}
+						set_province_flag = already_given_army_trad_oregon_redwash
+					}
+				}
+				every_owned_province = {
+					clr_province_flag = already_given_army_trad_oregon_redwash
+				}
+			}
+		}
+	}
+	
+	a_frontier_capital_oregon = {
+		icon = idaho_falls_gor
+		required_missions = { blue_oregons_oregon }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 872
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			872 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			872 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+				change_religion = ROOT
+				change_culture = ROOT
+				add_province_modifier = {
+					name = "gor_western_capital_oregon"
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	strike_at_medford_oregon = {
+		icon = farm_fire_gor
+		required_missions = { clean_out_cascadia_oregon united_oregons_oregon }
+		position = 5
+		provinces_to_highlight = {
+			province_id = 2477
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			2477 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			create_general = { tradition = 90 }
+			add_country_modifier = {
+				name = "gor_redwood_campaign_preparations_oregon"
+				duration = 5475
+			}
+		}
+	}
+	
+	breach_the_redwoods_oregon = {
+		icon = redwood_tree_gor
+		required_missions = { strike_at_medford_oregon }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1856 
+				area = josephine_area
+				area = goose_area
+				area = klamath_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			OR = {
+				klamath_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				josephine_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				goose_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			1856 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			country_event = { id = oregon_events.7 }
+		}
+	}
+	
+	loose_ends_oregon = {
+		icon = lone_house_gor
+		required_missions = { klamaths_and_cascades_oregon }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = ama_area
+				area = north_sierra_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			OR = {
+				ama_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				north_sierra_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {	
+			custom_tooltip = if_we_own_all_provs_in_north_sierra_oregon
+			tooltip = {
+				1070 = {
+					add_trade_modifier = {
+						who = ROOT
+						duration = 7300
+						power = 30
+						key = sierran_monopoly_oregon
+					}
+				}
+			}
+			custom_tooltip = if_we_own_all_provs_in_ama_sierra_oregon
+			tooltip = {
+				define_advisor = {
+					type = treasurer
+					culture = pomo
+					skill = 3
+					cost_multiplier = 0.1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = [
+						north_sierra_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+					1070 = {
+						add_trade_modifier = {
+							who = ROOT
+							duration = 7300
+							power = 30
+							key = sierran_monopoly_oregon
+						}
+					}
+				}
+				if = {
+					limit = [
+						ama_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+					define_advisor = {
+						type = treasurer
+						culture = pomo
+						skill = 3
+						cost_multiplier = 0.1
+					}
+				}
+			}
+		}
+	}
+	
+	consolidate_jefferson_oregon = {
+		icon = exploding_castle_gor
+		required_missions = { loose_ends_oregon presidential_river_oregon revel_in_reno_oregon }
+		position = 11
+		provinces_to_highlight = {
+			region = jefferson_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_fourty_fif_provs_in_jefferson_oregon
+					jefferson_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 40
+			}
+		}
+		effect = {	
+			custom_tooltip = each_time_we_hire_a_general_oregon
+			tooltip = {
+				add_army_tradition = 2.5
+			}
+			sunkissed_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	stamp_out_the_scarabs_oregon = {
+		icon = desert_dragoon_gor
+		required_missions = { consolidate_jefferson_oregon }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				area = upper_espanish_area
+				area = new_galicia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			OR = {
+				upper_espanish_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				new_galicia_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {	
+			custom_tooltip = all_provinces_in_the_sacramental_group_gain
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_converting_the_utahns_oregon"
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						religion_group = sacramental_group
+					}
+					add_province_modifier = {
+						name = "gor_converting_the_utahns_oregon"
+						duration = 5475
+					}
+				}
+			}
+		}
+	}
+	
+	portuguese_problems_oregon = {
+		icon = revolutionary_general_gor
+		required_missions = { stamp_out_the_scarabs_oregon }
+		position = 13
+		provinces_to_highlight = {
+			OR = {
+				area = east_beira_area
+				area = west_beira_area
+				province_id = 1136
+				province_id = 1143
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			east_beira_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_beira_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			OR = {
+				1136 = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				1143 = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {	
+			country_event = { id = oregon_events.8 }
+		}
+	}
+}
+
+
+oregon_missions_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = W44
+	}
+	has_country_shield = yes
+	
+	inducting_the_wranglers_oregon = {
+		icon = highdesert_wrangler_gor
+		required_missions = { consolidate_the_west_oregon }
+		position = 2
+		provinces_to_highlight = {
+			area = highdesert_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			if = {
+				limit = {
+					exists = U90
+				}
+				OR = {
+					highdesert_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					alliance_with = U90
+				}	
+			}
+			else = {
+				highdesert_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {	
+			if = {
+				limit = {
+					exists = U90
+				}
+				custom_tooltip = if_we_are_allied_with_highdesert_they_not_an_ai_and_have_more_dev
+				tooltip = {
+					inherit = U90
+				}
+				custom_tooltip = otherwise_we_gain_oregon_steen
+				tooltip = {
+					1978 = {
+						add_base_production = 2
+						add_province_modifier = {
+							name = "gor_steens_goldrush_oregon"
+							duration = 3650
+						}
+					}
+				}
+			}
+			else = {
+				tooltip = {
+					1978 = {
+						add_base_production = 2
+						add_province_modifier = {
+							name = "gor_steens_goldrush_oregon"
+							duration = 3650
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						exists = U90
+						total_development = U90
+						alliance_with = U90
+						U90 = {
+							ai = yes
+						}
+					}
+					inherit = U90
+				}
+				else = {
+					1978 = {
+						add_base_production = 2
+						add_province_modifier = {
+							name = "gor_steens_goldrush_oregon"
+							duration = 3650
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	land_of_gold_and_blood_oregon = {
+		icon = gold_gor
+		required_missions = { inducting_the_wranglers_oregon }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = north_orria_area
+					NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+				}
+				AND = {
+					province_id = 4495
+					NOT = { base_production = 6 }
+				}
+			}
+		}
+		trigger = {
+			north_orria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4495 = {
+				base_production = 6
+			}
+		}
+		effect = {	
+			add_inflation = -2
+			add_country_modifier = {
+				name = "gor_tapered_gold_supply_oregon"
+				duration = 3650
+			}
+		}
+	}
+	
+	clean_out_cascadia_oregon = {
+		icon = merchant_with_gold_gor
+		required_missions = { }
+		position = 4
+		provinces_to_highlight = {
+			province_id = 2063
+		}
+		trigger = {
+			2063 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {	
+			4516 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 7300
+					power = 15
+					key = cascadian_runoff_oregon
+				}
+			}
+			2304 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 7300
+					power = 15
+					key = cascadian_runoff_oregon
+				}
+			}
+			1856 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 7300
+					power = 15
+					key = cascadian_runoff_oregon
+				}
+			}
+		}
+	}
+	
+	promote_river_commerce_oregon = {
+		icon = river_ship_gor
+		required_missions = { clean_out_cascadia_oregon }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1974
+				province_id = 1999
+				province_id = 1218
+				province_id = 1197
+			}
+			NOT = { province_has_center_of_trade_of_level = 2 }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_own_any_cot_of_level_three_in_cascadia_node
+				cascadian_trade_company = {
+					country_or_non_sovereign_subject_holds = ROOT 
+					province_has_center_of_trade_of_level = 3
+				}
+			}
+			1974 = {
+				province_has_center_of_trade_of_level = 2
+			}
+			1999 = {
+				province_has_center_of_trade_of_level = 2
+			}
+			1218 = {
+				province_has_center_of_trade_of_level = 2
+			}
+			1197 = {
+				province_has_center_of_trade_of_level = 2
+			}
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "gor_northwest_market_manipulator_oregon"
+				duration = -1
+			}
+		}
+	}
+	
+	enter_jeffersonian_market_oregon = {
+		icon = merchant_board_gor
+		required_missions = { promote_river_commerce_oregon strike_at_medford_oregon }
+		position = 6
+		provinces_to_highlight = {
+			province_id = 1856
+		}
+		trigger = {
+			1856 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {	
+			custom_tooltip = modifier_northewest_market_manipulated_by_oregon
+			add_country_modifier = {
+				name = "gor_northwest_market_manipulator_two_oregon"
+				duration = -1
+			}
+			custom_tooltip = every_other_nation_wit_caps_in_jefferson_ndoe_oregon
+			tooltip = {
+				1856 = {
+					add_trade_modifier = {
+						who = ROOT
+						duration = 3650
+						power = -50
+						key = oregonian_market_manipulation
+					}
+				}
+			}
+			hidden_effect = {
+				remove_country_modifier = gor_northwest_market_manipulator_oregon
+				every_known_country = {
+					limit = {
+						capital_scope = {
+							trade_company_region = jefferson_trade_company
+						}
+					}
+					country_event = { id = oregon_events.6 }
+				}
+			}
+		}
+	}
+	
+	wading_into_the_pacific_oregon = {
+		icon = old_disappointment_gor
+		required_missions = { enter_jeffersonian_market_oregon }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 1197
+		}
+		trigger = {
+			navy_size = 100
+			has_great_project = {
+				type = old_disappointment
+				tier = 3
+			}
+		}
+		effect = {	
+			custom_tooltip = modifier_northewest_market_manipulated_by_oregon
+			add_country_modifier = {
+				name = "gor_northwest_market_manipulator_three_oregon"
+				duration = -1
+			}
+			hidden_effect = {
+				remove_country_modifier = gor_northwest_market_manipulator_two_oregon
+			}
+		}
+	}
+	
+	lowdesert_oregon = {
+		icon = black_rock_gor
+		required_missions = { breach_the_redwoods_oregon }
+		position = 9
+		provinces_to_highlight = {
+			area = black_rock_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			black_rock_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "gor_black_rock_resistance_oregon"
+				duration = 12045
+			}
+			custom_tooltip = every_prov_in_da_black_rock_area_gains
+			tooltip = {
+				change_culture = highoregonean
+			}
+			hidden_effect = {
+				black_rock_area = {
+					change_culture = highoregonean
+				}
+			}
+		}
+	}
+	
+	revel_in_reno_oregon = {
+		icon = urban_carnage_gor
+		required_missions = { lowdesert_oregon }
+		position = 10
+		provinces_to_highlight = {
+			province_id = 1871
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			1871 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			nevada_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = if_we_aint_the_president_oregon
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_lets_elect_a_beaver_oregon"
+					duration = 14600
+				}
+			}
+			custom_tooltip = if_we_progressive_gain_oregon
+			tooltip = {
+				add_imperial_influence = 25
+			}
+			custom_tooltip = if_we_traditionalist_oregon
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_conservative_return_oregon"
+					duration = 14600
+				}
+			}
+			custom_tooltip = if_we_are_a_republic_oregon
+			tooltip = {
+				add_republican_tradition = 15
+				add_adm_power = 50
+				add_dip_power = 50
+				add_mil_power = 50
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = { government = monarchy }
+					}
+					add_republican_tradition = 15
+					add_adm_power = 50
+					add_dip_power = 50
+					add_mil_power = 50
+				}
+				else_if = {
+					limit = {
+						NOT = { is_emperor = yes } 
+					}
+					add_country_modifier = {
+						name = "gor_lets_elect_a_beaver_oregon"
+						duration = 14600
+					}
+				}
+				else_if = {
+					limit = {
+						religious_school = {
+							group = constitutionalist_group
+							school = traditionalist_party
+						}
+					}
+					add_country_modifier = {
+						name = "gor_conservative_return_oregon"
+						duration = 14600
+					}
+				}
+				else = {
+					add_imperial_influence = 25
+				}
+			}
+		}
+	}
+	
+	nevadan_oases_oregon = {
+		icon = lake_mono_gor
+		required_missions = { consolidate_jefferson_oregon }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1075
+				province_id = 1073
+				province_id = 1061
+				province_id = 1076
+				province_id = 1068
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			1075 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1073 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1061 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1076 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1068 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			custom_tooltip = if_we_still_have_that_supply_limit_modifier_make_it_permanent_oregonm
+			custom_tooltip = otherwise_we_getsome_of_this_oregon
+			tooltip = {
+				if = {
+					limit = {
+						mil = 6
+					}
+					add_mil_power = 150
+				}
+				else = {
+					change_mil = 1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_modifier = gor_black_rock_resistance_oregon
+					}
+					add_country_modifier = {
+						name = "gor_black_rock_resistance_oregon"
+						duration = -1
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							mil = 6
+						}
+						add_mil_power = 150
+					}
+					else = {
+						change_mil = 1
+					}
+				}
+			}
+		}
+	}
+	
+	vanquishing_vegas_oregon = {
+		icon = roulette_gor
+		required_missions = { portuguese_problems_oregon nevadan_oases_oregon }
+		position = 14
+		provinces_to_highlight = {
+			province_id = 1058
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			1058 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			if = {
+				limit = {
+					mouth_of_the_espanish_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					guadiana_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				tooltip = {
+					add_years_of_income = 10
+				}
+			}
+			else_if = {
+				limit = {
+					mouth_of_the_espanish_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				custom_tooltip = seventy_five_percent_chance_of_getting_ten_years_of_income_explain_oregon
+				tooltip = {
+					add_years_of_income = 10
+				}
+				custom_tooltip = fifty_can_be_increased_by_owning_guadiana_oregon
+			}
+			else_if = {
+				limit = {
+					guadiana_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				custom_tooltip = seventy_five_percent_chance_of_getting_ten_years_of_income_explain_oregon
+				tooltip = {
+					add_years_of_income = 10
+				}
+				custom_tooltip = fifty_can_be_increased_by_owning_mouth_of_the_espanish_oregon
+			}
+			else = {
+				custom_tooltip = fifty_percent_chance_of_getting_ten_years_of_income_explain_oregon
+				tooltip = {
+					add_years_of_income = 10
+				}
+				custom_tooltip = fifty_can_be_increased_by_owning_guadiana_oregon
+				custom_tooltip = fifty_can_be_increased_by_owning_mouth_of_the_espanish_oregon
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						mouth_of_the_espanish_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						guadiana_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+					add_years_of_income = 10
+				}
+				else_if = {
+					limit = {
+						OR = {
+							mouth_of_the_espanish_area = {
+								type = all
+								country_or_non_sovereign_subject_holds = ROOT
+							}
+							guadiana_area = {
+								type = all
+								country_or_non_sovereign_subject_holds = ROOT
+							}
+						}
+					}
+					random = {
+						chance = 75
+						add_years_of_income = 10
+					}
+				}
+				else = {
+					random = {
+						chance = 50
+						add_years_of_income = 10
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+#627 - Blambangan
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = Y27
+controller = Y27
+add_core = Y27
+culture = etrokan
+religion = sacramental
+capital = "Blambangan"
+trade_goods = glass #Uncompahgre Glass
+hre = no
+base_tax = 5
+base_production = 6
+base_manpower = 6
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

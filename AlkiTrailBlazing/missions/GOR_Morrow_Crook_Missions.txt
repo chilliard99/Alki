@@ -1,0 +1,721 @@
+###########################MORROW-CROOK MISSIONS###########################
+morrow_crook_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U53
+			tag = U54 
+			tag = U85
+		}
+	}
+	has_country_shield = yes
+	
+	
+	spirit_of_liberty_morrow_crook = {
+		icon = constitutionalist_pray_gor
+		required_missions = { joining_the_network_morrow_crook }
+		position = 5
+		trigger = {
+			OR = {
+				temple = 5
+				cathedral = 5
+			}
+		}
+		effect = {
+			custom_tooltip = if_we_have_positive_liberalism_morrow_crook
+			tooltip = {
+				add_piety = 0.25
+			}
+			custom_tooltip = otherwise_we_gain_brug_morrow_crook
+			tooltip = {
+				add_piety = -0.25
+			}
+			custom_tooltip = every_province_with_a_church_gains
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_specially_taxed_tithes_morrow_crook"
+					duration = 3650
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						piety = 0
+					}
+					add_piety = 0.25
+				}
+				else = {
+					add_piety = -0.25
+				}
+				every_owned_province = {
+					limit = {
+						OR = {
+							has_building = temple
+							has_building = cathedral
+						}
+					}
+					add_province_modifier = {
+						name = "gor_specially_taxed_tithes_morrow_crook"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	
+	to_rival_the_west_morrow_crook = {
+		icon = prineville_gor
+		required_missions = { spirit_of_liberty_morrow_crook modern_outlook_morrow_crook }
+		position = 5
+		provinces_to_highlight = {
+			area = morrow_crook_area
+		}
+		trigger = {
+			development_in_provinces = {
+				value = 50
+				area = morrow_crook_area
+			}
+			OR = {
+				2038 = {
+					development = 20
+				}
+				2040 = {
+					development = 20
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_rival_of_the_west_morrow_crook"
+				duration = -1
+			}
+			custom_tooltip = every_province_in_morrow_crook_gains_wit_tweny_dev
+			tooltip = {
+				change_trade_goods = cloth
+			}
+			hidden_effect = {
+				morrow_crook_area = {
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+						development = 20
+					}
+					change_trade_goods = cloth
+				}
+			}
+		}
+	}
+}
+
+morrow_crook_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U53
+			tag = U54 
+			tag = U85
+		}
+	}
+	has_country_shield = yes
+	
+	old_money_connections_morrow_crook = {
+		icon = fat_prez_gor
+		required_missions = { of_crooks_and_morrows_morrow_crook }
+		position = 2
+		provinces_to_highlight = {
+			is_capital_of = Y38
+		}
+		trigger = {
+			OR = {
+				alliance_with = Y38
+				num_of_allies = 3
+			}
+		}
+		effect = {
+			custom_tooltip = if_we_are_allied_with_echo_and_a_monarchy_morrow_crook
+			tooltip = {
+				add_casus_belli = {
+					target = Y38
+					type = cb_restore_personal_union
+					months = 240
+				}
+			}
+			custom_tooltip = otherwise_we_gain_morrow_crook
+			tooltip = {
+				add_dip_power = 50
+				define_advisor = {
+					type = diplomat
+					skill = 1
+					cost_multiplier = 0.5
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						government = monarchy
+						alliance_with = Y38
+					}
+					add_casus_belli = {
+						target = Y38
+						type = cb_restore_personal_union
+						months = 240
+					}
+				}
+				else = {
+					add_dip_power = 50
+					define_advisor = {
+						type = diplomat
+						skill = 1
+						cost_multiplier = 0.5
+					}
+				}
+			}
+		}
+	}
+	
+	joining_the_network_morrow_crook = {
+		icon = talking_to_prez_gor
+		required_missions = { old_money_connections_morrow_crook }
+		position = 4
+		provinces_to_highlight = {
+			is_capital_of = Y38
+		}
+		trigger = {
+			grown_by_development = 30
+			custom_trigger_tooltip = {
+				tooltip = allied_with_a_traditionalist_partied_nation_morrow_crook
+				any_ally = {
+					religious_school = {
+						group = constitutionalist_group
+						school = traditionalist_party
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = { id = morrow_crook_events.1 }
+		}
+	}
+	
+	modern_outlook_morrow_crook = {
+		icon = telescope_looker_gor
+		required_missions = { joining_the_network_morrow_crook }
+		position = 5
+		trigger = {
+			has_any_active_incomplete_idea_group_of_category = {
+				adm_ideas = yes
+			}
+			has_institution = renaissance
+		}
+		effect = {
+			tooltip = {
+				capital_scope = {
+					add_province_modifier = {
+						name = "gor_artful_capital_morrow_crook"
+						duration = -1
+					}
+				}
+			}
+			custom_tooltip = every_other_prov_in_morrow_crook_gains
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_classical_development_morrow_crook"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				morrow_crook_area = {
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_province_modifier = {
+						name = "gor_classical_development_morrow_crook"
+						duration = -1
+					}
+				}
+				capital_scope = {
+					remove_province_modifier = gor_classical_development_morrow_crook
+					add_province_modifier = {
+						name = "gor_artful_capital_morrow_crook"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+morrow_crook_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U53
+			tag = U54 
+			tag = U85
+		}
+	}
+	has_country_shield = yes
+	
+	of_crooks_and_morrows_morrow_crook = {
+		icon = cool_knight_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			army_size_percentage = 1
+		}
+		effect = {
+			morrow_crook_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_war_prepared_morrow_crook"
+					duration = 3650
+				}
+			}
+			if = {
+				limit = {
+					tag = U53
+				}
+				custom_tooltip = if_we_have_a_larger_army_than_crook
+			}
+			else = {
+				custom_tooltip = if_we_have_a_larger_army_than_morrow
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_war_prepared_better_morrow_crook"
+					duration = 3650
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						OR = {
+							AND = {
+								tag = U53 
+								army_size = U54
+							}
+							AND = {
+								tag = U54
+								army_size = U53
+							}
+						}
+					}
+					add_country_modifier = {
+						name = "gor_war_prepared_better_morrow_crook"
+						duration = 3650
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = "gor_war_prepared_morrow_crook"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	
+	boonie_bash_morrow_crook = {
+		icon = knights_fighting_gor
+		required_missions = { of_crooks_and_morrows_morrow_crook }
+		position = 2
+		provinces_to_highlight = {
+			if = {
+				limit = {
+					ROOT = {
+						tag = U54
+					}
+				}
+				province_id = 2040
+			}
+			else = {
+				province_id = 2038
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			if = {
+				limit = {
+					tag = U54
+				}
+				2040 = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			else = {
+				2038 = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			add_mil_power = 50
+			capital_scope = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			if = {
+				limit = {
+					tag = U53
+				}
+				custom_tooltip = if_crook_doesnt_exist_remove_all_their_cores_from_oreg
+			}
+			else = {
+				custom_tooltip = if_morrow_doesnt_exist_remove_all_their_cores_from_oreg
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						tag = U53 
+						NOT = { exists = U54 }
+					}
+					oregon_region = {
+						remove_core = U54
+					}
+				}
+				else_if = {
+					limit = {
+						tag = U54
+						NOT = { exists = U53 }
+					}
+					oregon_region = {
+						remove_core = U53
+					}
+				}
+			}
+		}
+	}
+	
+	brothers_united_morrow_crook = {
+		icon = clover_badger_gor
+		required_missions = { old_money_connections_morrow_crook boonie_bash_morrow_crook revitalize_east_oregon_morrow_crook }
+		position = 3
+		trigger = {
+			tag = U85
+		}
+		effect = {
+			bend_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = if_we_are_led_by_josh_heppner
+			tooltip = {
+				country_event = { id = morrow_crook_events.2 }
+			}
+			custom_tooltip = otherwise_we_gain_brugggg_morrow_crook #i am going crazy
+			tooltip = {
+				remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_ruler = "Josh"
+						dynasty = "Heppner"
+					}
+					country_event = { id = morrow_crook_events.2 }
+				}
+				else = {
+					remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+				}
+			}
+		}
+	}
+	
+	westward_march_morrow_crook = {
+		icon = medieval_soldiers_gor
+		required_missions = { brothers_united_morrow_crook }
+		position = 4
+		provinces_to_highlight = {
+			province_id = 1974
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			1974 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			2063 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 3650
+					power = 15
+					key = columbian_entrace_morrow_crook
+				}
+			}
+			oregonian_cascades_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	willamettes_wall_morrow_crook = {
+		icon = cascadian_army_gor
+		required_missions = { westward_march_morrow_crook }
+		position = 5
+		provinces_to_highlight = {
+			area = oregonian_cascades_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			oregonian_cascades_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			lower_willamette_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_willamette_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = every_fort_prov_we_own_gains
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_cascadian_wall_morrow_crook"
+					duration = 18250
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_fort_building_trigger = yes
+					}
+					add_province_modifier = {
+						name = "gor_cascadian_wall_morrow_crook"
+						duration = 18250
+					}
+				}
+			}
+		}
+	}
+	
+	crushing_the_cavemen_morrow_crook = {
+		icon = caveman_gor
+		required_missions = { willamettes_wall_morrow_crook }
+		position = 6
+		provinces_to_highlight = {
+			province_id = 1218
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			1218 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			tillamook_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = if_we_do_not_own_salem_morrow_crook
+			tooltip = {
+				country_event = { id = morrow_crook_events.4 }
+			}
+			custom_tooltip = otherwise_we_get_morrow_crooker
+			tooltip = {
+				custom_tooltip = cut_the_cost_of_restore_portland_in_half
+				set_country_flag = half_cost_restore_portland
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						1223 = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						NOT = { exists = U50 }
+					}
+					country_event = { id = morrow_crook_events.4 }
+				}
+				else = {
+					custom_tooltip = cut_the_cost_of_restore_portland_in_half
+					set_country_flag = half_cost_restore_portland
+				}
+			}
+		}
+	}
+	
+	astorian_ambition_morrow_crook = {
+		icon = northwest_soldiers_shaking_hands_gor
+		required_missions = { crushing_the_cavemen_morrow_crook elector_issues_morrow_crook }
+		position = 7
+		provinces_to_highlight = {
+			area = tillamook_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			tillamook_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			1197 = {
+				add_unit_construction = {
+					type = heavy_ship
+					amount = 5
+					speed = 0.1
+					cost = 0
+				}
+			}
+			add_country_modifier = {
+				name = "gor_unity_from_the_east_morrow_crook"
+				duration = 18250
+			}
+		}
+	}
+}
+
+morrow_crook_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U53
+			tag = U54 
+			tag = U85
+		}
+	}
+	has_country_shield = yes
+	
+	revitalize_east_oregon_morrow_crook = {
+		icon = morrow_crook_gor
+		required_missions = { of_crooks_and_morrows_morrow_crook }
+		position = 2
+		provinces_to_highlight = {
+			area = morrow_crook_area
+		}
+		trigger = {
+			development_in_provinces = {
+				value = 25
+				area = morrow_crook_area
+			}
+		}
+		effect = {
+			custom_tooltip = every_province_in_morrow_crook_area_gains
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_boonie_builders_morrow_crook"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				morrow_crook_area = {
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_province_modifier = {
+						name = "gor_boonie_builders_morrow_crook"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	
+	a_rich_mans_land_morrow_crook = {
+		icon = corporate_executive_gor
+		required_missions = { brothers_united_morrow_crook }
+		position = 4
+		trigger = {
+			crown_land_share = 50
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 50
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					adm = 6
+				}
+				add_adm_power = 150
+			}
+			else = {
+				change_adm = 1
+			}
+			custom_tooltip = unlock_estate_privledge_noble_liberation_which_grants
+		}
+	}
+	
+	elector_issues_morrow_crook = {
+		icon = medieval_willamette_gor
+		required_missions = { willamettes_wall_morrow_crook }
+		position = 6
+		provinces_to_highlight = {
+			area = lower_willamette_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			lower_willamette_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = if_willamette_is_our_subject_anda_elector_get_swapper
+			custom_tooltip = otherwise_we_get_some_crooker
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_wannabe_elector_morrow_crook"
+					duration = 12775
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						Y96 = {
+							is_subject_of = ROOT
+						}
+					}
+					Y96 = {
+						elector = no
+					}
+					elector = yes
+				}
+				else = {
+					add_country_modifier = {
+						name = "gor_wannabe_elector_morrow_crook"
+						duration = 12775
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,18 @@
+#595 - Perak
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = Y25
+controller = Y25
+add_core = Y25
+culture = etrokan
+religion = sacramental
+capital = "Perak"
+trade_goods = livestock #copied from base italy
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

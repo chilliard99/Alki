@@ -1,0 +1,3528 @@
+###########################TACOMA MISSIONS###########################
+tacoma_missions_slot_two_basic = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U58
+			tag = U81
+			tag = U82
+		}
+	}
+	has_country_shield = yes
+	
+	caught_between_giants_tacoma = {
+		icon = king_subject_gor
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			is_capital_of = W06
+		}
+		trigger = {
+			OR = {
+				W06 = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+				emperor = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = if_alaska_has_100
+			tooltip = {
+				change_religion = collectivist
+				olympic_penninsula_area = {
+					limit = {
+						NOT = { owned_by = W06 }
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			custom_tooltip = if_emperor_has_100
+			tooltip = {
+				add_prestige = 10
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						W06 = {
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+					}
+					change_religion = collectivist
+					olympic_penninsula_area = {
+						limit = {
+							NOT = { owned_by = W06 }
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+					set_country_flag = red_tacoma_path
+				}
+				else { 
+					add_prestige = 10
+					set_country_flag = blue_tacoma_path
+				}
+				swap_non_generic_missions = yes
+			}
+		}
+	}
+}
+
+tacoma_missions_slot_one_branch = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U58
+			tag = U81
+			tag = U82
+		}
+		NOT = { has_country_flag = red_tacoma_path }
+		NOT = { has_country_flag = blue_tacoma_path }
+	}
+	has_country_shield = yes
+	
+	unknown_three_tacoma = {
+		icon = mission_unknown_mission
+		required_missions = { caught_between_giants_tacoma }
+		position = 2
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_depending_on_how_we_complete_caught_between_giants
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_depending_on_how_we_complete_caught_between_giants
+		}
+	}
+	
+	unknown_six_tacoma = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_two_tacoma }
+		position = 4
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_depending_on_how_we_complete_caught_between_giants
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_depending_on_how_we_complete_caught_between_giants
+		}
+	}
+	
+	unknown_ten_tacoma = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_six_tacoma }
+		position = 5
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_depending_on_how_we_complete_caught_between_giants
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_depending_on_how_we_complete_caught_between_giants
+		}
+	}
+	
+	unknown_eleven_tacoma = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_ten_tacoma }
+		position = 6
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_depending_on_how_we_complete_caught_between_giants
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_depending_on_how_we_complete_caught_between_giants
+		}
+	}
+}
+
+tacoma_missions_slot_two_branch = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U58
+			tag = U81
+			tag = U82
+		}
+		NOT = { has_country_flag = red_tacoma_path }
+		NOT = { has_country_flag = blue_tacoma_path }
+	}
+	has_country_shield = yes
+	
+	unknown_one_tacoma = {
+		icon = mission_unknown_mission
+		required_missions = { caught_between_giants_tacoma }
+		position = 2
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_depending_on_how_we_complete_caught_between_giants
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_depending_on_how_we_complete_caught_between_giants
+		}
+	}
+	
+	unknown_two_tacoma = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_one_tacoma unknown_three_tacoma }
+		position = 3
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_depending_on_how_we_complete_caught_between_giants
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_depending_on_how_we_complete_caught_between_giants
+		}
+	}
+	
+	unknown_four_tacoma = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_two_tacoma }
+		position = 3
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_depending_on_how_we_complete_caught_between_giants
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_depending_on_how_we_complete_caught_between_giants
+		}
+	}
+}
+
+tacoma_missions_slot_three_branch = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U58
+			tag = U81
+			tag = U82
+		}
+		NOT = { has_country_flag = red_tacoma_path }
+		NOT = { has_country_flag = blue_tacoma_path }
+	}
+	has_country_shield = yes
+	
+	unknown_seven_tacoma = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_two_tacoma }
+		position = 4
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_depending_on_how_we_complete_caught_between_giants
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_depending_on_how_we_complete_caught_between_giants
+		}
+	}
+	
+	unknown_eight_tacoma = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_seven_tacoma unknown_four_tacoma }
+		position = 5
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_depending_on_how_we_complete_caught_between_giants
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_depending_on_how_we_complete_caught_between_giants
+		}
+	}
+	
+	unknown_nine_tacoma = {
+		icon = mission_unknown_mission
+		required_missions = { unknown_eight_tacoma }
+		position = 6
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_will_unlock_this_depending_on_how_we_complete_caught_between_giants
+				always = no
+			}
+		}
+		effect = {
+			custom_tooltip = we_will_unlock_this_depending_on_how_we_complete_caught_between_giants
+		}
+	}
+}
+
+
+tacoma_missions_slot_four_basic = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = U58
+	}
+	has_country_shield = yes
+	
+	claiming_cascadian_trade_tacoma = {
+		icon = cascadian_coastal_wall_gor
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			is_capital_of = ROOT
+		}
+		trigger = {
+			1557 = {
+				trade_share = {
+					country = ROOT
+					share = 15
+				}
+			}
+		}
+		effect = {
+			add_mercantilism = 5
+			add_dip_power = 50
+			define_advisor = {
+				type = trader
+				skill = 2
+				cost_multiplier = 0.75
+			}
+		}
+	}
+	
+	dominate_salish_sea_tacoma = {
+		icon = merchant_with_gold_gor
+		required_missions = { claiming_cascadian_trade_tacoma }
+		position = 2
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = have_more_ships_than_anyone_who_got_cap_tacoma
+				NOT = {
+					any_known_country = {
+						capital_scope = {
+							trade_company_region = cascadian_trade_company
+						}	
+						navy_size = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_salish_sea_dominance_tac"
+				duration = 9125
+			}
+			2063 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 3650
+					power = 10
+					key = downstream_trickles_tac
+				}
+			}
+			
+			custom_tooltip = if_we_got_larger_navy_than_alaska
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_salish_sea_dominance_better_tac"
+					duration = 9125
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						navy_size = W06
+					}
+					add_country_modifier = {
+						name = "gor_salish_sea_dominance_better_tac"
+						duration = 9125
+					}
+				}
+			}
+		}
+	}
+}
+
+tacoma_missions_slot_five_basic = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = U58
+	}
+	has_country_shield = yes
+	
+	deepening_our_faith_tacoma = {
+		icon = rose_on_paper_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			if = {
+				limit = {
+					religion = collectivist
+				}
+				custom_trigger_tooltip = {
+					tooltip = have_a_commune_in_any_state
+					any_owned_province = {
+						has_state_patriach = yes
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = has_any_icon
+					OR = {
+						current_icon = icon_michael
+						current_icon = icon_eleusa
+						current_icon = icon_pancreator
+						current_icon = icon_nicholas
+						current_icon = icon_climacus
+					}
+				}
+			}
+			else { 
+				OR = {
+					NOT = { piety = -0.5 }
+					piety = 0.5
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_pious_observer_tac"
+				duration = 5475
+			}
+			custom_tooltip = if_we_complete_while_collecvitist_tac
+			custom_tooltip = if_we_complete_while_partisan_tac
+			tooltip = {
+				add_yearly_manpower = 1
+				add_corruption = -1
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						religion = collectivist
+					}
+					add_patriarch_authority = 0.05
+				}
+				else {
+					add_yearly_manpower = 1
+					add_corruption = -1
+				}
+			}
+		}	
+	}
+	
+}
+
+###########################BLUE TACOMA MISSIONS###########################
+
+tacoma_missions_slot_one_blue = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U58
+			tag = U81
+			tag = U82
+		}
+		has_country_flag = blue_tacoma_path
+	}
+	has_country_shield = yes
+	
+	streamlining_government_tacoma = {
+		icon = union_meetup_gor
+		required_missions = { caught_between_giants_tacoma }
+		position = 2
+		trigger = {
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 70
+			}
+			OR = {
+				estate_influence = {
+					estate = estate_burghers
+					influence = 50
+				}
+				NOT = {
+					estate_influence = {
+						estate = estate_burghers
+						influence = 20
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = if_proletariet_influence_is_high
+			tooltip = {
+				change_government_reform_progress = 50
+				add_country_modifier = {
+					name = "gor_a_strong_proletariat_tac"
+					duration = 3650
+				}
+			}
+			custom_tooltip = if_proletariet_influence_is_low
+			tooltip = {
+				change_government = monarchy
+				change_tag = U75
+				country_event = { id = ideagroups.1 }
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						estate_influence = {
+							estate = estate_burghers
+							influence = 50
+						}
+					}
+					change_government_reform_progress = 50
+					add_country_modifier = {
+						name = "gor_a_strong_proletariat_tac"
+						duration = 3650
+					}
+				}
+				else {
+					change_government = monarchy
+					change_tag = U75
+					country_event = { id = ideagroups.1 }
+				}
+			}
+		}
+	}
+}
+
+tacoma_missions_slot_two_blue = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U58
+			tag = U81
+			tag = U82
+		}
+		has_country_flag = blue_tacoma_path
+	}
+	has_country_shield = yes
+	
+	
+	leverage_alaskan_opinion_tacoma = {
+		icon = snake_noble_gor
+		required_missions = { caught_between_giants_tacoma }
+		position = 2
+		provinces_to_highlight = {
+			is_capital_of = W06
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			dip_power = 100
+			treasury = 100
+			OR = {
+				has_spy_network_in = {
+					who = W06
+					value = 25
+				}
+				NOT = { exists = W06 }
+			}
+			
+		}
+		effect = {
+			custom_tooltip = if_alaska_exists
+			tooltip = {
+				country_event = { id = tacoma_events.11 }
+			}
+			custom_tooltip = if_alaska_doesnt_exist
+			tooltip = {
+				add_power_projection = {
+					type = mission_rewards_power_projection
+					amount = 10
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						exists = W06
+					}
+					country_event = { id = tacoma_events.11 }
+				}
+				else {
+					add_power_projection = {
+						type = mission_rewards_power_projection
+						amount = 10
+					}
+				}
+			}
+		}
+	}
+	
+	striking_at_the_reds_tacoma = {
+		icon = knight_in_evergreen_forest_gor
+		required_missions = { leverage_alaskan_opinion_tacoma streamlining_government_tacoma }
+		position = 3
+		provinces_to_highlight = {
+			is_capital_of = W06
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			grown_by_development = 20
+			OR = {
+				has_won_war_against = {
+					who = W06
+					max_years_since = 100
+				}
+				NOT = { exists = W06 }
+			}
+		}
+		effect = {
+			custom_tooltip = if_alaska_exists
+			tooltip = {
+				emperor = {
+					add_imperial_influence = 10
+				}
+				add_country_modifier = {
+					name = "gor_terror_of_communists_tac"
+					duration = 7300
+				}
+			}
+			custom_tooltip = if_alaska_doesnt_exist
+			tooltip = {
+				add_adm_power = 10
+				add_dip_power = 10
+				add_mil_power = 10
+			}
+			olympic_penninsula_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			high_puget_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			low_puget_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						exists = W06
+					}
+					emperor = {
+						country_event = { id = tacoma_events.14 }
+					}
+					add_country_modifier = {
+						name = "gor_terror_of_communists_tac"
+						duration = 7300
+					}
+				}
+				else {
+					add_adm_power = 10
+					add_dip_power = 10
+					add_mil_power = 10
+				}
+			}
+		}
+	}
+	
+	emerald_shores_tacoma = {
+		icon = northwest_soldiers_shaking_hands_gor
+		required_missions = { striking_at_the_reds_tacoma }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = low_puget_area
+				area = high_puget_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_five_provinces_in_high_and_low_puget
+					all_owned_province = {
+						OR = {
+							area = high_puget_area
+							area = low_puget_area
+						}
+					}
+				}
+				amount = 5
+			}
+		}
+		effect = {
+			add_navy_tradition = 15
+			if = {
+				limit = {
+					capital_scope = {
+						has_port = yes
+					}
+				}
+				capital_scope = {
+					add_unit_construction = {
+						type = heavy_ship
+						amount = 5
+						speed = 0.1
+						cost = 0
+					}
+				}
+			}
+		}
+	}
+}
+
+tacoma_missions_slot_three_blue = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U58
+			tag = U81
+			tag = U82
+		}
+		has_country_flag = blue_tacoma_path
+	}
+	has_country_shield = yes
+	
+	olympic_task_tacoma = {
+		icon = peninsular_ambitions_gor
+		required_missions = { striking_at_the_reds_tacoma }
+		position = 4
+		provinces_to_highlight = {
+			area = olympic_penninsula_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			olympic_penninsula_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			2052 = {
+				add_base_production = 1
+				add_mil_power = 100
+			}
+			custom_tooltip = if_we_have_olympia_vassal
+			tooltip = {
+				inherit = U55
+				add_dip_power = 100
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						any_subject_country = {
+							tag = U55
+						}
+					}
+					inherit = U55
+					add_dip_power = 100
+				}
+			}
+		}
+	}
+	
+}
+
+###########################RED TACOMA MISSIONS###########################
+
+tacoma_missions_slot_one_red = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U58
+			tag = U81
+			tag = U82
+		}
+		has_country_flag = red_tacoma_path
+	}
+	has_country_shield = yes
+	
+	red_revival_tacoma = {
+		icon = collectivist_pride_gor
+		required_missions = { caught_between_giants_tacoma }
+		position = 2
+		trigger = {
+			capital_scope = {
+				religion = collectivist
+			}
+		}
+		effect = {
+			add_patriarch_authority = 0.05
+			2062 = {
+				add_base_production = 1
+			}
+			define_advisor = {
+				type = inquisitor
+				skill = 2
+				cost_multiplier = 0.75
+			}
+		}
+	}
+	
+	gateway_of_columbia_tacoma = {
+		icon = knight_by_river_gor
+		required_missions = { union_buster_tacoma }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = willapa_area
+				area = olympic_penninsula_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			willapa_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					country_or_non_sovereign_subject_holds = W06
+				}
+			}
+			olympic_penninsula_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					country_or_non_sovereign_subject_holds = W06
+				}
+			}
+		}
+		effect = {
+			add_mercantilism = 3
+			add_dip_power = 50
+			benton_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			middle_columbia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = if_we_have_a_center_of_trade_in_cap
+			tooltip = {
+				capital_scope = {
+					add_center_of_trade_level = 1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						capital_scope = {
+							has_center_of_trade_of_level = 3
+						}
+					}
+					add_dip_power = 200
+				}
+				else_if = {
+					limit = {
+						capital_scope = {
+							has_center_of_trade_of_level = 1
+						}
+					}
+					add_center_of_trade_level = 1
+				}
+			}
+		}
+	}
+	
+	electoral_ompression_tacoma = {
+		icon = union_scrape_gor
+		required_missions = { gateway_of_columbia_tacoma }
+		position = 5
+		provinces_to_highlight = {
+			region = washington_region
+			is_part_of_hre = yes
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = own_all_uoc_provs_in_washington_owned_by_us_or_alaska
+				washington_region = {
+					type = all
+					OR = {
+						NOT = { is_part_of_hre = yes }
+						country_or_non_sovereign_subject_holds = ROOT
+						country_or_non_sovereign_subject_holds = W06
+					}
+				}
+			}
+		}
+		effect = {
+			add_prestige = 15
+			add_mil_power = 25
+			add_country_modifier = {
+				name = "gor_washington_whole_tac"
+				duration = 9125
+			}
+			custom_tooltip = if_helens_is_our_subject_and_elector_and_emperor_opinion
+			tooltip = {
+				inherit = U56
+				add_dip_power = 100
+			}
+			custom_tooltip = if_they_exist_alaska_will_get
+			tooltip = {
+				W06 = {
+					if = {
+						limit = {
+							dip = 6
+						}
+						add_dip_power = 500
+					}
+					else {
+						change_dip = 1
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						any_subject_country = {
+							tag = U56
+						}
+						emperor = {
+							has_opinion = {
+								who = ROOT
+								value = 150
+							}
+						}
+					}
+					inherit = U56
+					add_dip_power = 100
+				}
+				if = {
+					limit = {
+						exists = W06
+					}
+					W06 = {
+						country_event = { id = tacoma_events.7 }
+					}
+				}
+			}
+		}
+	}
+	
+	kicking_out_the_traitors_tacoma = {
+		icon = snake_noble_gor
+		required_missions = { electoral_ompression_tacoma }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4501
+				owned_by = Y38
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			4501 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			custom_trigger_tooltip = {
+				tooltip = echo_owns_no_provinces_in_the_washington_region
+				washington_region = {
+					type = all
+					NOT = { owned_by = Y38 }
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_echo_amendment_appealed_tac"
+				duration = 10950
+			}
+			custom_tooltip = emperor_will_gain_the_following
+			emperor = {
+				tooltip = {
+					add_imperial_influence = 10
+				}
+			}
+			hidden_effect = {
+				emperor = {
+					country_event = { id = tacoma_events.10 }
+				}
+			}
+		}
+	}
+}
+
+tacoma_missions_slot_two_red = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U58
+			tag = U81
+			tag = U82
+		}
+		has_country_flag = red_tacoma_path
+	}
+	has_country_shield = yes
+	
+	liberting_olympia_tacoma = {
+		icon = peninsular_ambitions_gor
+		required_missions = { caught_between_giants_tacoma }
+		position = 2
+		provinces_to_highlight = {
+			area = olympic_penninsula_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			olympic_penninsula_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					country_or_non_sovereign_subject_holds = W06
+				}
+			}
+		}
+		effect = {
+			add_mil_power = 50
+			2062 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 3650
+					power = 15
+					key = red_olympia
+				}
+			}
+			custom_tooltip = if_we_own_olympia_tac
+			tooltip = {
+				2052 = {
+					add_unit_construction = {
+						type = light_ship
+						amount = 5
+						speed = 0.1
+						cost = 0
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						owns_core_province = 2052
+					}
+					2052 = {
+						add_unit_construction = {
+							type = light_ship
+							amount = 5
+							speed = 0.1
+							cost = 0
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	union_buster_tacoma = {
+		icon = lotta_soldiers_gor
+		required_missions = { liberting_olympia_tacoma red_revival_tacoma }
+		position = 3
+		trigger = {
+			grown_by_development = 25
+			prestige = 25
+			patriarch_authority = 0.1
+			religious_unity = 1
+		}
+		effect = {
+			country_event = { id = tacoma_events.1 }
+			willapa_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	heart_of_washington_tacoma = {
+		icon = seattle_gor
+		required_missions = { union_buster_tacoma }
+		position = 4
+		provinces_to_highlight = {
+			area = low_puget_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			low_puget_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_great_project = {
+				type = three_peasents_cathedral
+				tier = 1
+			}
+		}
+		effect = {
+			add_treasury = 250
+			2063 = {
+				add_province_modifier = {
+					name = "gor_creative_inspiration_tac"
+					duration = 5475
+				}
+			}
+			custom_tooltip = if_seattle_is_our_capital
+			tooltip = {
+				2063 = {
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+			}
+			
+			custom_tooltip = if_they_exist_alaska_will_get
+			tooltip = {
+				W06 = {
+					add_adm_power = 100
+					add_stability = 1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						exists = W06
+					}
+					W06 = {
+						country_event = { id = tacoma_events.6 }
+					}
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							province_id = 2063
+						}
+					}
+					2063 = {
+						add_base_tax = 1
+						add_base_production = 1
+						add_base_manpower = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+tacoma_missions_slot_two_red = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U58
+			tag = U81
+			tag = U82
+		}
+		has_country_flag = red_tacoma_path
+	}
+	has_country_shield = yes
+	
+	consolidate_the_border_tacoma = {
+		icon = large_fleet_gor
+		required_missions = { union_buster_tacoma }
+		position = 4
+		provinces_to_highlight = {
+			area = high_puget_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			high_puget_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = collectivist
+			}
+		}
+		effect = {
+			add_patriarch_authority = 0.05
+			add_country_modifier = {
+				name = "gor_communal_zeal_tac"
+				duration = 3650
+			}
+			inland_empire_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			colville_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			washington_cascades_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	challenge_the_mystics_tacoma = {
+		icon = burning_theanite_wheel_gor
+		required_missions = { consolidate_the_border_tacoma }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = washington_cascades_area
+				area = colville_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			total_development = Y41
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_six_provinces_in_colville_and_cascades
+					all_owned_province = {
+						OR = {
+							area = washington_cascades_area
+							area = colville_area
+						}
+					}
+				}
+				amount = 6
+			}
+		}
+		effect = {
+			custom_tooltip = if_lincolnite_has_spawned_tac
+			custom_tooltip = if_it_hasnt_tac
+			tooltip = {
+				country_event = { id = lincolnite_events.1 }
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_global_flag = lincolnite_culture_spawned
+					}
+					set_country_flag = get_lincolnite_at_double_rate
+				}
+				else {
+					country_event = { id = lincolnite_events.1 }
+				}
+			}
+		}
+	}
+	
+	crush_inland_empire_tacoma = {
+		icon = cannon_fire_gor
+		required_missions = { challenge_the_mystics_tacoma }
+		position = 6
+		provinces_to_highlight = {
+			religion = theanite
+			region = washington_region
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = there_are_no_theanite_provs_in_wash
+				washington_region = {
+					type = all
+					NOT = {
+						religion = theanite
+					}
+				}
+			}
+			4516 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_patriarch_authority = 0.1
+			add_country_modifier = {
+				name = "gor_fervor_of_lincoln_tac"
+				duration = -1
+			}
+			4516 = {
+				change_culture = lincolnite
+				add_base_production = 2
+			}
+			custom_tooltip = all_lincolnite_provs_will_gain_one_base
+			set_country_flag = dev_from_lincolnite_cult
+			custom_tooltip = if_they_exist_alaska_will_get
+			tooltip = {
+				W06 = {
+					add_patriarch_authority = 0.15
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						exists = W06
+					}
+					W06 = {
+						country_event = { id = tacoma_events.8 }
+					}
+				}
+			}
+		}
+	}
+}
+
+###########################RED WASHINGTON MISSIONS###########################
+
+red_washington_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U81
+			tag = U82
+		}
+	}
+	has_country_shield = yes
+	
+	crashing_waves_tacoma = {
+		icon = waves_gor
+		required_missions = {  the_red_banner_waves_tacoma }
+		position = 8
+		provinces_to_highlight = {
+			region = oregon_region
+			has_port = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = owns_all_coastal_provs_in_oregion
+				oregon_region = {
+					type = all
+					OR = {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { has_port = yes }
+					}
+				}
+			}
+		}
+		effect = {
+			1197 = {
+				add_base_production = 2
+			}
+			2063 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 3650
+					power = 35
+					key = cascadian_domiantion_red_wash
+				}
+			}
+			custom_tooltip = if_we_are_most_powerful_in_cascadia_redwash
+			tooltip = {
+				add_mercantilism = 3
+				add_dip_power = 50
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						2063 = {
+							is_strongest_trade_power = ROOT
+						}
+					}
+					add_mercantilism = 3
+					add_dip_power = 50
+				}
+			}
+		}
+	}
+	
+	strike_at_the_interior_tacoma = {
+		icon = highdesert_gor
+		required_missions = {  crashing_waves_tacoma }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = blue_oregon_area
+				area = highdesert_area
+				area = south_snake_area
+				area = north_orria_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_ten_across_all_those_provs_redwash
+					blue_oregon_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					highdesert_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					south_snake_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					north_orria_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 10
+			}
+		}
+		effect = {
+			add_mil_power = 50
+			custom_tooltip = for_each_fort_we_own_in_oregon_gain
+			tooltip = {
+				add_army_tradition = 2
+			}
+			hidden_effect = {
+				while = {
+					limit = {
+						any_owned_province = {
+							has_fort_building_trigger = yes
+							region = oregon_region
+							NOT = { has_province_flag = already_given_army_trad_oregon_redwash }
+						}
+					}
+					add_army_tradition = 2
+					random_owned_province = {
+						limit = {
+							has_fort_building_trigger = yes
+							region = oregon_region
+							NOT = { has_province_flag = already_given_army_trad_oregon_redwash }
+						}
+						set_province_flag = already_given_army_trad_oregon_redwash
+					}
+				}
+				every_owned_province = {
+					clr_province_flag = already_given_army_trad_oregon_redwash
+				}
+			}			
+		}
+	}
+	
+	klamath_tacoma = {
+		icon = redwood_tree_gor
+		required_missions = { taming_the_beaver_tacoma }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				area = klamath_area
+				area = goose_area
+				area = josephine_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			klamath_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			goose_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			josephine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}			
+		}
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 15
+			}
+			define_advisor = {
+				type = army_organiser
+				skill = 3
+				cost_multiplier = 0.5
+			}
+		}
+	}
+	
+	natural_monuments_tacoma = {
+		icon = cascadian_army_gor
+		required_missions = { klamath_tacoma }
+		position = 14
+		provinces_to_highlight = {
+			region = jefferson_region
+			has_terrain = mountain
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_ten_mountain_provs_in_jefferson
+					jefferson_region = {
+						type = all
+						has_terrain = mountain
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 10
+			}	
+		}
+		effect = {
+			lower_sacramento_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = every_naval_supply_prov_in_jefferson_gets
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_shastan_supplier_redwash"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						region = jefferson_region
+						has_terrain = mountain
+					}
+					add_province_modifier = {
+						name = "gor_shastan_supplier_redwash"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	
+	charing_into_sacramento_tacoma = {
+		icon = burning_orchard_gor
+		required_missions = { natural_monuments_tacoma }
+		position = 15
+		provinces_to_highlight = {
+			OR = {
+				area = upper_sacramento_area
+				area = middle_sacramento_area
+				area = lower_sacramento_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			1746 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_five_provs_in_sacramento_areas
+					upper_sacramento_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					middle_sacramento_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					lower_sacramento_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 5
+			}	
+		}
+		effect = {
+			sunkissed_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_liberating_the_libertarians_redwash"
+				duration = 9125
+			}
+		}
+	}
+	
+	constitutional_cities_tacoma = {
+		icon = premodern_california_city_gor
+		required_missions = { charing_into_sacramento_tacoma }
+		position = 16
+		provinces_to_highlight = {
+			OR = {
+				province_id = 868
+				province_id = 1834
+				province_id = 1817
+				province_id = 1072
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			868 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1834 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1817 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1072 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_absolutism = 15
+			change_government_reform_progress = 100
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 15
+			}
+			868 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = -1
+					power = 25
+					key = southbay_organization
+				}
+			}
+		}
+	}
+	
+	guiding_the_workers_tacoma = {
+		icon = factory_workers_gor
+		required_missions = { red_setting_sun_tacoma }
+		position = 18
+		provinces_to_highlight = {
+			OR = {
+				region = washington_region
+				region = oregon_region
+				region = jefferson_region
+				region = sunkissed_region
+				region = nevada_region
+			}			
+			NOT = { religion = ROOT }
+		}
+		trigger = {
+			NOT = { great_power_rank = 2 }
+			custom_trigger_tooltip = {
+				tooltip = all_provs_in_wash_ore_jeff_lib_nev_collectivist_redwash
+				washington_region = {
+					type = all
+					religion = ROOT
+				}
+				oregon_region = {
+					type = all
+					religion = ROOT
+				}
+				jefferson_region = {
+					type = all
+					religion = ROOT
+				}
+				sunkissed_region = {
+					type = all
+					religion = ROOT
+				}
+				nevada_region = {
+					type = all
+					religion = ROOT
+				}
+			}
+		}
+		effect = {
+			override_country_name = PACIFIC_COLLECTIVE
+			add_country_modifier = {
+				name = "gor_the_pacific_collective_redwash"
+				duration = -1
+			}
+			set_global_flag = international_disabled
+			custom_tooltip = instantly_annex_all_collectivist_nations_not_gp_or_human
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						religion = ROOT
+						NOT = { is_great_power = yes }
+						ai = yes 
+					}
+					FROM = {
+						inherit = PREV
+					}
+				}
+			}
+		}
+	}
+	
+	a_beautiful_republic_tacoma = {
+		icon = rose_on_paper_gor
+		required_missions = { guiding_the_workers_tacoma }
+		position = 19
+		trigger = {
+			total_development = 5000
+			is_hegemon = yes
+			has_reform = democratic_republic_reform
+			custom_trigger_tooltip = {
+				tooltip = completed_final_set_of_democratic_republic_reform
+				OR = {
+					has_reform = demrep_auth_anarcho_fued_reform
+					has_reform = demrep_an_absolute_state_reform
+					has_reform = demrep_decentralized_rule_reform
+					has_reform = demrep_responsible_guidance_reform
+					has_reform = demrep_workers_of_the_world_reform
+				}
+			}
+		}
+		effect = {
+			set_country_flag = get_grand_democratic_republic_reform
+			add_government_reform = grand_democratic_republic_reform
+		}
+	}
+}
+
+red_washington_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U81
+			tag = U82
+		}
+	}
+	has_country_shield = yes
+	
+	the_red_banner_waves_tacoma = {
+		icon = red_flag_waves_gor
+		required_missions = { kicking_out_the_traitors_tacoma crush_inland_empire_tacoma }
+		position = 7
+		provinces_to_highlight = {
+			region = washington_region
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			washington_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			oregon_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = every_prov_in_washington_that_is_not_collectivist
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_red_banner_raised_redwash"
+					duration = 5475
+				}
+			}
+			custom_tooltip = for_every_prov_in_wash_thats_collectivist
+			tooltip = {
+				add_patriarch_authority = 0.005
+			}
+			hidden_effect = {
+				washington_region = {
+					limit = {
+						NOT = { religion = ROOT }
+						owned_by = ROOT
+					}
+					add_province_modifier = {
+						name = "gor_red_banner_raised_redwash"
+						duration = 5475
+					}
+				}
+				while = {
+					limit = {
+						any_owned_province = {
+							religion = ROOT
+							region = washington_region
+							NOT = { has_province_flag = already_give_flag_for_wash_solid }
+						}
+					}
+					add_patriarch_authority = 0.005
+					random_owned_province = {
+						limit = {
+							has_manufactory_trigger = yes
+							NOT = { has_province_flag = already_give_flag_for_wash_solid }
+						}
+						add_base_production = 1
+						set_province_flag = already_give_flag_for_wash_solid
+					}
+				} 
+			}
+		}
+	}
+	
+	claim_the_willamette_tacoma = {
+		icon = willamette_gor
+		required_missions = { the_red_banner_waves_tacoma }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1218
+				province_id = 1223
+				province_id = 1199
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			1218 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1223 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1199 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = "COME BACK FOR THIS ONCE OREGON IS FINISHED"
+		}
+	}
+	
+	our_river_tacoma = {
+		icon = columbia_river_gor
+		required_missions = { crashing_waves_tacoma claim_the_willamette_tacoma }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2046
+				province_id = 2057 
+				province_id = 1208 
+				province_id = 1197 
+				province_id = 2068
+				province_id = 1218 
+				province_id = 2069 
+				province_id = 1970
+				province_id = 4500
+				province_id = 1972
+				province_id = 2039
+				province_id = 2038
+				province_id = 2037
+				province_id = 4501
+				province_id = 2036
+				province_id = 4504 
+				province_id = 2056
+				province_id = 2035
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = own_all_provinces_along_the_columbia
+				2046 = { country_or_non_sovereign_subject_holds = ROOT }
+				2057 = { country_or_non_sovereign_subject_holds = ROOT }
+				1208 = { country_or_non_sovereign_subject_holds = ROOT }
+				1197 = { country_or_non_sovereign_subject_holds = ROOT }
+				2068 = { country_or_non_sovereign_subject_holds = ROOT }
+				1218 = { country_or_non_sovereign_subject_holds = ROOT }
+				2069 = { country_or_non_sovereign_subject_holds = ROOT }
+				1970 = { country_or_non_sovereign_subject_holds = ROOT }
+				4500 = { country_or_non_sovereign_subject_holds = ROOT }
+				1972 = { country_or_non_sovereign_subject_holds = ROOT }
+				2039 = { country_or_non_sovereign_subject_holds = ROOT }
+				2038 = { country_or_non_sovereign_subject_holds = ROOT }
+				2037 = { country_or_non_sovereign_subject_holds = ROOT }
+				4501 = { country_or_non_sovereign_subject_holds = ROOT }
+				2036 = { country_or_non_sovereign_subject_holds = ROOT }
+				4504 = { country_or_non_sovereign_subject_holds = ROOT }
+				2056 = { country_or_non_sovereign_subject_holds = ROOT }
+				2035 = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		effect = {
+			custom_tooltip = every_prov_along_columbia_over_ten_dev_and_partisan_change_relig
+			custom_tooltip = spirit_of_piety_will_grant_inquisitor_redwash
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							province_id = 2046
+							province_id = 2057 
+							province_id = 1208 
+							province_id = 1197 
+							province_id = 2068
+							province_id = 1218 
+							province_id = 2069 
+							province_id = 1970
+							province_id = 4500
+							province_id = 1972
+							province_id = 2039
+							province_id = 2038
+							province_id = 2037
+							province_id = 4501
+							province_id = 2036
+							province_id = 4504 
+							province_id = 2056
+							province_id = 2035
+						}
+					}
+					change_religion = ROOT
+				}
+			}
+		}
+	}
+	
+	taming_the_beaver_tacoma = {
+		icon = beaver_gor
+		required_missions = { strike_at_the_interior_tacoma our_river_tacoma }
+		position = 11
+		provinces_to_highlight = {
+			region = oregon_region
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_thiry_five_provs_in_oregon_redwash
+					oregon_region = {
+						type = all
+						owned_by = ROOT
+					}
+				}
+				amount = 35
+			}
+		}
+		effect = {
+			add_absolutism = 10
+			add_country_modifier = {
+				name = "gor_red_oregon_redwash"
+				duration = -1
+			}
+			jefferson_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			nevada_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	old_oppressors_tacoma = {
+		icon = dach_baron_gor
+		required_missions = { taming_the_beaver_tacoma }
+		position = 12
+		provinces_to_highlight = {
+			region = nevada_region
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			1083 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = we_own_ten_nevada_provs_redwash
+					nevada_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 10
+			}
+			custom_trigger_tooltip = {
+				tooltip = utah_owns_no_provs_in_nevada_redwash
+				nevada_region = {
+					type = all
+					NOT = { owned_by = Y32 }
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					stability = 3
+				}
+				add_adm_power = 150
+			}
+			else = {
+				add_stability = 1
+			}
+			custom_tooltip = every_sacramental_province_we_own_in_nevada_redwash
+			custom_tooltip = every_province_with_a_utahn_core_in_nevada_redwash
+			tooltip = {
+				remove_core = Y32
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						religion_group = sacramental_group
+					}
+					change_religion = ROOT
+				}
+				nevada_region = {
+					limit = {
+						is_core = Y32
+					}
+					remove_core = Y32
+				}
+			}
+		}
+	}
+	
+	spread_the_good_word_tacoma = {
+		icon = red_praying_gor
+		required_missions = { old_oppressors_tacoma }
+		position = 13
+		trigger = {
+			has_global_modifier_value = {
+				which = global_missionary_strength
+				value = 0.1
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = there_are_one_hundred_collectivist_provinces_in_california
+					california_superregion = {
+						type = all
+						religion = ROOT
+					}
+				}
+				amount = 100
+			}
+		}
+		effect = {
+			country_event = { id = tacoma_events.24 }
+		}
+	}
+	
+	lower_jefferson_tacoma = {
+		icon = exploding_castle_gor
+		required_missions = { spread_the_good_word_tacoma natural_monuments_tacoma traditionalist_heartland_tacoma }
+		position = 15
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1966
+				province_id = 1871
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			1966 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1871 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = { id = tacoma_events.20 }
+		}
+	}
+	
+	red_setting_sun_tacoma = {
+		icon = red_setting_sun_gor
+		required_missions = { lower_jefferson_tacoma gamblers_falacy_tacoma constitutional_cities_tacoma }
+		position = 17
+		trigger = {
+			tag = U82
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_red_setting_sun_redwash"
+				duration = -1
+			}
+			utah_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			idaho_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	mystical_conclusions_tacoma = {
+		icon = idaho_ruins_gor
+		required_missions = { red_setting_sun_tacoma }
+		position = 18
+		provinces_to_highlight = {
+			region = idaho_region 
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_fourty_provs_in_idaho
+					idaho_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 40
+			}
+		}
+		effect = {
+			create_general = { tradition = 100 }
+			roosevelt_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			dakota_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_lessons_of_idaho_redwash"
+				duration = -1
+			}
+			custom_tooltip = if_we_own_all_of_arborea_and_alaska
+			tooltip = {
+				nunavut_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				kiikiwaahk_region = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			custom_tooltip = every_time_we_hire_a_general
+			tooltip = {
+				add_yearly_manpower = 1
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						arborea_region = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						alaska_region = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	broken_chains_tacoma = {
+		icon = chain_gor
+		required_missions = { reviving_the_eagle_tacoma a_beautiful_republic_tacoma }
+		position = 20
+		provinces_to_highlight = {
+			OR = {
+				region = italia_region
+				region = utah_region
+				region = roosevelt_region
+				region = dakota_region
+			}
+			NOT = { religion = ROOT }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = all_provs_in_italia_are_collectivist
+				italia_region = {
+					type = all
+					religion = ROOT
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = all_provs_in_italia_are_utah
+				utah_region = {
+					type = all
+					religion = ROOT
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = all_provs_in_italia_are_roosevelt
+				roosevelt_region = {
+					type = all
+					religion = ROOT
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = all_provs_in_italia_are_dakota
+				dakota_region = {
+					type = all
+					religion = ROOT
+				}
+			}
+		}
+		effect = {
+			country_event = { id = tacoma_events.23 }
+			custom_tooltip = empower_pacific_collective_to
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_the_pacific_collective_better_redwash"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				remove_country_modifier = gor_the_pacific_collective_better_redwash
+				add_country_modifier = {
+					name = "gor_the_pacific_collective_better_redwash"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+red_washington_missions_slot_four = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U81
+			tag = U82
+		}
+	}
+	has_country_shield = yes
+	
+	collectivist_organization_tacoma = {
+		icon = union_meeting_gor
+		required_missions = { the_red_banner_waves_tacoma }
+		position = 8
+		provinces_to_highlight = {
+			region = washington_region
+			NOT = { has_state_patriach = yes }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = all_of_wash_is_in_a_commune
+				washington_region = {
+					type = all
+					has_state_patriach = yes
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = spirit_of_piety_now_grants
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_national_spirit_of_piety_boost_redwash"
+					duration = 7300
+				}
+			}
+			custom_tooltip = if_we_are_not_a_democratic_republic_red_wash
+			tooltip = {
+				change_government_reform_progress = 50
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = { has_reform = democratic_republic_reform }
+						NOT = { has_reform = grand_democratic_republic_reform }
+					}
+					change_government_reform_progress = 50
+				}
+			}
+		}
+	}
+	
+	natures_engine_tacoma = {
+		icon = water_wheel_gor
+		required_missions = { prepare_industry_tacoma our_river_tacoma }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2046
+				province_id = 2057 
+				province_id = 1208 
+				province_id = 1197 
+				province_id = 2068
+				province_id = 1218 
+				province_id = 2069 
+				province_id = 1970
+				province_id = 4500
+				province_id = 1972
+				province_id = 2039
+				province_id = 2038
+				province_id = 2037
+				province_id = 4501
+				province_id = 2036
+				province_id = 4504 
+				province_id = 2056
+				province_id = 2035
+			}
+			OR = {
+				NOT = { development = 15 }
+			}
+			if = {
+				limit = {
+					province_has_center_of_trade_of_level = 1
+				}
+				NOT = { province_has_center_of_trade_of_level = 2 }
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = all_provs_along_the_columbia_river_have_ten_dev
+				all_owned_province = {
+					OR = {
+						NOT = { 
+							OR = {
+								province_id = 2046
+								province_id = 2057 
+								province_id = 1208 
+								province_id = 1197 
+								province_id = 2068
+								province_id = 1218 
+								province_id = 2069 
+								province_id = 1970
+								province_id = 4500
+								province_id = 1972
+								province_id = 2039
+								province_id = 2038
+								province_id = 2037
+								province_id = 4501
+								province_id = 2036
+								province_id = 4504 
+								province_id = 2056
+								province_id = 2035
+							}
+						}
+						development = 15
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = all_cot_along_columbia_river_level_two
+				all_owned_province = {
+					OR = {
+						NOT = { 
+							OR = {
+								province_id = 2046
+								province_id = 2057 
+								province_id = 1208 
+								province_id = 1197 
+								province_id = 2068
+								province_id = 1218 
+								province_id = 2069 
+								province_id = 1970
+								province_id = 4500
+								province_id = 1972
+								province_id = 2039
+								province_id = 2038
+								province_id = 2037
+								province_id = 4501
+								province_id = 2036
+								province_id = 4504 
+								province_id = 2056
+								province_id = 2035
+							}
+						}
+						NOT = {
+							province_has_center_of_trade_of_level = 1
+						}
+						province_has_center_of_trade_of_level = 2
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = every_prov_we_own_along_the_columbia_river_gets
+			tooltip = {
+				add_base_production = 1
+				add_province_modifier = {
+					name = "gor_nature_engine_redwash"
+					duration = 7300
+				}
+			}
+			custom_tooltip = if_the_prov_is_in_a_commune_redwash
+			tooltip = {
+				add_base_production = 2
+				add_province_modifier = {
+					name = "gor_nature_better_engine_redwash"
+					duration = 7300
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						province_id = 2046
+						province_id = 2057 
+						province_id = 1208 
+						province_id = 1197 
+						province_id = 2068
+						province_id = 1218 
+						province_id = 2069 
+						province_id = 1970
+						province_id = 4500
+						province_id = 1972
+						province_id = 2039
+						province_id = 2038
+						province_id = 2037
+						province_id = 4501
+						province_id = 2036
+						province_id = 4504 
+						province_id = 2056
+						province_id = 2035
+					}
+					if = {
+						limit = {
+							has_state_patriach = yes
+						}
+						add_base_production = 2
+						add_province_modifier = {
+							name = "gor_nature_better_engine_redwash"
+							duration = 7300
+						}
+					}
+					else = {
+						add_base_production = 1
+						add_province_modifier = {
+							name = "gor_nature_engine_redwash"
+							duration = 7300
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	southern_march_tacoma = {
+		icon = industrial_soldiers_gor
+		required_missions = { old_oppressors_tacoma }
+		position = 13
+		provinces_to_highlight = {
+			OR = {
+				area = lower_espanish_area
+				area = upper_espanish_area
+				province_id = 723
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			lower_espanish_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_espanish_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			723 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					dip = 6
+				}
+				add_dip_power = 300
+			}
+			else_if = {
+				limit = {
+					dip = 5
+				}
+				add_dip_power = 150
+				change_dip = 1
+			}
+			else = {
+				change_dip = 2
+			}
+			create_general = { tradition = 100 }
+			add_republican_tradition = 20
+		}
+	}
+	
+	traditionalist_heartland_tacoma = {
+		icon = judges_gor
+		required_missions = { southern_march_tacoma }
+		position = 14
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1061
+				province_id = 1070
+				province_id = 1073
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			1061 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1070 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1073 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = every_provionce_we_own_in_nevada
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_espanish_runoff_redwash"
+					duration = 3650
+				}
+			}
+			custom_tooltip = if_no_traditionalists_or_union_no_existy 
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_death_of_regalism_redwash"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				nevada_region = {
+					limit = {
+						owned_by = ROOT
+					}
+					add_province_modifier = {
+						name = "gor_espanish_runoff_redwash"
+						duration = 3650
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_known_country = {
+								religious_school = {
+									group = constitutionalist_group
+									school = traditionalist_party
+								}
+							}
+						}
+					}
+					add_country_modifier = {
+						name = "gor_death_of_regalism_redwash"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	
+	gamblers_falacy_tacoma = {
+		icon = roulette_gor
+		required_missions = { traditionalist_heartland_tacoma shiny_rocks_tacoma }
+		position = 16
+		provinces_to_highlight = {
+			province_id = 1058
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			1058 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_years_of_income = 3
+			add_country_modifier = {
+				name = "gor_marxian_angeles_redwash"
+				duration = -1
+			}
+		}
+	}
+	
+	american_collapse_tacoma = {
+		icon = constitutionalist_pray_gor
+		required_missions = { red_setting_sun_tacoma }
+		position = 18
+		provinces_to_highlight = {
+			province_id = 706 
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			706 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = { id = tacoma_events.22 }
+			italia_region = {
+				type = all
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	reviving_the_eagle_tacoma = {
+		icon = american_seal_gor
+		required_missions = { mystical_conclusions_tacoma american_collapse_tacoma }
+		position = 19
+		provinces_to_highlight = {
+			region = italia_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			607 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provinces_owned_by_california_in_italy
+					italia_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 40
+			}
+		}
+		effect = {
+			607 = {
+				add_base_tax = 3
+				add_base_production = 3
+				add_base_manpower = 3
+			}
+			custom_tooltip = using_spirit_of_piety_will_now_grant_redwashtwo
+			tooltip = {
+				add_adm_power = 100
+				add_country_modifier = {
+					name = "gor_national_spirit_of_piety_boost_two_redwash"
+					duration = 7300
+				}
+			}
+		}
+	}
+}
+
+red_washington_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U81
+			tag = U82
+		}
+	}
+	has_country_shield = yes
+	
+	universal_education_tacoma = {
+		icon = washington_university_gor
+		required_missions = { class_consciousness_tacoma }
+		position = 2
+		trigger = {
+			innovativeness = 50
+			university = 10
+			has_adm_advisor_3 = yes
+			has_dip_advisor_3 = yes
+			has_mil_advisor_3 = yes
+		}
+		effect = {
+			define_advisor = {
+				type = philosopher
+				skill = 3
+				cost_multiplier = 0.75
+			}
+			custom_tooltip = get_the_following_when_hiring_admin_advisor
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_crimson_education_red_wash"
+					duration = 3650
+				}
+			}
+		}
+	}
+	
+	national_innovators_tacoma = {
+		icon = wine_science_gor
+		required_missions = { universal_education_tacoma }
+		position = 3
+		trigger = {
+			NOT = { is_lacking_institutions = yes }
+			custom_trigger_tooltip = {
+				tooltip = own_any_institution_origin_province
+				any_owned_province = {
+					OR = {
+						is_institution_origin = feudalism
+						is_institution_origin = new_world_i
+						is_institution_origin = global_trade
+						is_institution_origin = manufactories
+						is_institution_origin = enlightenment
+						is_institution_origin = industrialization
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_widespread_first_innovation_wash"
+				duration = 3650
+			}
+			custom_tooltip = if_we_have_fifteen_unis_redwash
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_widespread_second_innovation_wash"
+					duration = 3650
+				}
+			}
+			custom_tooltip = if_we_have_twnyfif_unis_redwash
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_widespread_third_innovation_wash"
+					duration = 3650
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						university = 25
+					}
+					add_country_modifier = {
+						name = "gor_widespread_third_innovation_wash"
+						duration = 3650
+					}
+				}
+				else_if = {
+					limit = {
+						university = 15
+					}
+					add_country_modifier = {
+						name = "gor_widespread_second_innovation_wash"
+						duration = 3650
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = "gor_widespread_first_innovation_wash"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	
+	original_solidarity_tacoma = {
+		icon = trueheir_chieftan_gor
+		required_missions = { yakaman_laborers_tacoma }
+		position = 7
+		trigger = {
+			is_great_power = yes
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_two_trueheir_provs_with_fifteen_dev
+					all_owned_province = {
+						development = 15
+						culture_group = western_true_heir
+					}
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			country_event = { id = tacoma_events.16 }
+		}
+	}
+	
+	prepare_industry_tacoma = {
+		icon = workshop_gor
+		required_missions = { collectivist_organization_tacoma }
+		position = 9
+		trigger = {
+			OR = {
+				marketplace = 10
+				stock_exchange = 10
+				trade_depot = 10
+			}
+			OR = {
+				workshop = 10
+				counting_house = 10
+			}
+		}
+		effect = {
+			add_years_of_owned_provinces_production_income = {
+				years = 5
+				trigger = {
+					region = washington_region
+				}
+				custom_tooltip = from_provs_in_wash_redwash
+			}
+			add_country_modifier = {
+				name = "gor_build_ready_redwash"
+				duration = 3650
+			}
+		}
+	}
+	
+	millers_union_tacoma = {
+		icon = bunch_of_lands_gor
+		required_missions = { prepare_industry_tacoma }
+		position = 10
+		provinces_to_highlight = {
+			region = washington_region
+			trade_goods = paper
+			OR = {
+				NOT = { development = 15 }
+				NOT = { has_manufactory_trigger = yes }
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = all_provs_in_wash_got_ten_dev_and_manufactory_paper_redwash
+				washington_region = {
+					type = all
+					OR = {
+						NOT = { trade_goods = paper }
+						AND = {
+							development = 15
+							has_manufactory_trigger = yes
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			tooltip = {
+				country_event = { id = tacoma_events.18 }
+			}
+			custom_tooltip = if_we_are_not_a_democratic_republic_wit_space_red_wash 
+			tooltip = {
+				years_of_income = 2
+				add_adm_power = 50
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						OR = {
+							has_reform = democratic_republic_reform
+							has_reform = grand_democratic_republic_reform
+						}
+					}
+					country_event = { id = tacoma_events.18 }
+				}
+				else = {
+					years_of_income = 2
+					add_adm_power = 50
+				}
+			}
+		}
+	}
+	public_works_tacoma = {
+		icon = river_dam_gor
+		required_missions = { natures_engine_tacoma millers_union_tacoma a_well_fed_populace_tacoma }
+		position = 11
+		trigger = {
+			has_great_project = {
+				type = three_peasents_cathedral
+				tier = 3
+			}
+			development_in_provinces = {
+				value = 500
+				region = washington_region
+			}
+		}
+		effect = {
+			custom_tooltip = unlock_the_two_public_projects_redwash
+			add_country_modifier = {
+				name = "gor_utopian_mission_redwash"
+				duration = -1
+			}
+		}
+	}
+	
+	black_diamond_tacoma = {
+		icon = holding_coal_gor
+		required_missions = { public_works_tacoma }
+		position = 12
+		trigger = {
+			coal = 2
+		}
+		effect = {
+			custom_tooltip = every_province_with_a_furnace_gets
+			tooltip = {
+				add_base_production = 3
+			}
+			custom_tooltip = if_we_have_not_embraced_in_cap_embrace
+			tooltip = {
+				capital_scope = {
+					add_institution_embracement = {
+						which = industrialization
+						value = 100
+					}
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_building = furnace
+					}
+					add_base_production = 3
+				}
+				if = {
+					limit = {
+						is_institution_enabled = industrialization
+						NOT = { has_institution = industrialization }
+					}
+					capital_scope = {
+						add_institution_embracement = {
+							which = industrialization
+							value = 100
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	portuguese_solidarity_tacoma = {
+		icon = talking_to_prez_gor
+		required_missions = { southern_march_tacoma }
+		position = 14
+		provinces_to_highlight = {
+			OR = {
+				area = new_alentejo_area
+				area = lisboa_area
+				area = east_beira_area
+				area = west_beira_area
+				area = new_galicia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_fifteen_acrosS_portugese_areas
+					new_alentejo_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					lisboa_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					east_beira_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					west_beira_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					new_galicia_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 15
+			}
+		}
+		effect = {
+			define_advisor = {
+				type = diplomat
+				culture = portugers
+				skill = 5
+				cost_multiplier = 0.25
+			}
+			add_country_modifier = {
+				name = "gor_portuguese_overlord_redwash"
+				duration = 7300
+			}
+			add_absolutism = 15
+		}
+	}
+	
+	shiny_rocks_tacoma = {
+		icon = gold_gor
+		required_missions = { portuguese_solidarity_tacoma }
+		position = 15
+		provinces_to_highlight = {
+			region = nevada_region
+			OR = {
+				AND = {
+					trade_goods = gold
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				NOT = { religion = ROOT }
+			}
+			
+		}
+		trigger = {
+			4483 = {
+				is_strongest_trade_power = ROOT
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = there_are_thirty_collectivist_provs_in_nevada
+					nevada_region = {
+						type = all
+						religion = collectivist
+					}
+				}
+				amount = 30
+			}
+			custom_trigger_tooltip = {
+				tooltip = we_own_all_gold_in_nevada_redwash
+				nevada_region = {
+					type = all
+					OR = {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { trade_goods = gold }
+					}
+				}
+			}
+		}
+		effect = {
+			add_inflation = -10
+			add_country_modifier = {
+				name = "gor_artificial_rarity_redwash"
+				duration = -1
+			}
+		}
+	}
+	
+	guevaria_tacoma = {
+		icon = pioneer_gor
+		required_missions = { claim_pacific_islands_tacoma }
+		position = 18
+		provinces_to_highlight = {
+			OR = {
+				area = new_north_island_area
+				area = new_south_island_area
+			}
+			has_discovered = ROOT
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provinces_in_northsouth_island_are_redwash
+					new_north_island_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					new_south_island_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 5
+			}
+		}
+		effect = {
+			1697 = { 
+				add_trade_modifier = {
+					who = ROOT
+					duration = 3650
+					power = 35
+					key = guevaria_influence_redwash
+				}
+			}
+			custom_tooltip = every_province_we_own_in_north_and_south_island
+			tooltip = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = new_north_island_area
+							area = new_south_island_area
+						}
+					}
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+			}
+		}
+	}
+}
+
+red_washington_missions_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = U81
+			tag = U82
+		}
+	}
+	has_country_shield = yes
+	
+	
+	class_consciousness_tacoma = {
+		icon = political_ralley_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			has_reform = democratic_republic_reform
+			has_institution = printing_press
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 70
+			}
+		}
+		effect = {
+			custom_tooltip = spirit_of_information_classcon_boost
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_spirit_of_innov_boost_one_red_wash"
+					duration = 7300
+				}
+			}
+		}
+	}
+	
+	direct_representation_tacoma = {
+		icon = union_meetup_gor
+		required_missions = { class_consciousness_tacoma }
+		position = 2
+		trigger = {
+			NOT = { unrest = 0 }
+			OR = {
+				courthouse = 15
+				town_hall = 15
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			custom_tooltip = occasionally_gets_event_which_cores_random_prov_redwash
+		}
+	}
+	
+	prospering_democracy_tacoma = {
+		icon = modern_negotiation_gor
+		required_missions = { direct_representation_tacoma national_innovators_tacoma }
+		position = 4
+		trigger = {
+			has_reform = democratic_republic_reform
+			custom_trigger_tooltip = {
+				tooltip = completed_seperation_of_pow_redwash
+				OR = {
+					has_reform = demrep_intelligence_checks_reform
+					has_reform = demrep_politburo_reform
+					has_reform = demrep_popular_assembly_reform
+					has_reform = demrep_supreme_congress_reform
+				}
+			}	
+			washington_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			custom_trigger_tooltip = {
+				tooltip = all_of_washington_is_prospering
+				washington_region = {
+					type = all
+					is_prosperous = yes
+				}
+			}	
+		}
+		effect = {
+			custom_tooltip = empower_spirit_of_innovation_part_two
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_spirit_of_innov_boost_two_red_wash"
+					duration = 7300
+				}
+			}
+			custom_tooltip = if_we_are_at_max_innovativeness_get
+			tooltip = {
+				add_adm_power = 50
+				add_dip_power = 50
+				add_mil_power = 50
+			}
+		}
+	}
+	
+	yakaman_laborers_tacoma = {
+		icon = trueheir_elders_gor
+		required_missions = { }
+		position = 6
+		trigger = {
+			accepted_culture = yakama	
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_mamachatpam_comrades_red_wash"
+				duration = -1
+			}
+			custom_tooltip = first_time_hire_adivsor_trueheir_gain
+			tooltip = {
+				if = {
+					limit = {
+						dip = 6
+					}
+					add_dip_power = 150
+				}
+				else = {
+					change_dip = 1
+				}
+			}
+		}
+	}
+	
+	appreciating_tahoma_tacoma = {
+		icon = tahoma_gor
+		required_missions = { yakaman_laborers_tacoma }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 2073
+		}
+		trigger = {
+			has_great_project = {
+				type = great_tahoma
+				tier = 3
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			custom_tooltip = if_we_complete_this_while_three_peasant_is_lev_three
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_monumentally_inclined_wash"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_great_project = {
+							type = three_peasents_cathedral
+							tier = 3
+						}
+					}
+					add_country_modifier = {
+						name = "gor_monumentally_inclined_wash"
+						duration = -1
+					}
+				}	
+			}
+		}
+	}
+	
+	trueheir_liberation_tacoma = {
+		icon = trueheir_handshake_gor
+		required_missions = { appreciating_tahoma_tacoma original_solidarity_tacoma }
+		position = 8
+		provinces_to_highlight = {
+			culture_group = western_true_heir
+			NOT = { religion = collectivist }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = every_westtrueheir_prov_is_collectivist
+				california_superregion = {
+					type = all
+					OR = {
+						NOT = { culture_group = western_true_heir }
+						religion = collectivist
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = every_trueheir_province_we_own
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_trueheir_solidarity_redwash"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						culture_group = western_true_heir
+					}
+					add_province_modifier = {
+						name = "gor_trueheir_solidarity_redwash"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	
+	a_well_fed_populace_tacoma = {
+		icon = peasant_farming_gor
+		required_missions = { prepare_industry_tacoma }
+		position = 10
+		provinces_to_highlight = {
+			region = washington_region
+			trade_goods = grain
+			OR = {
+				NOT = { base_manpower = 5 }
+				NOT = { has_building = workshop }
+				NOT = { has_building = counting_house }
+			}
+		}
+		trigger = {
+			manpower = 30
+			custom_trigger_tooltip = {
+				tooltip = all_grain_prov_in_wash_have_five_base_man_and_a_workshop
+				washington_region = {
+					type = all
+					OR = {
+						NOT = { trade_goods = grain }
+						AND = {
+							base_manpower = 5
+							OR = {
+								has_building = workshop
+								has_building = counting_house
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = every_province_in_low_puget_gains_redwash
+			tooltip = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+				add_province_modifier = {
+					name = "gor_well_fed_workers_redwash"
+					duration = 12775
+				}
+			}
+			custom_tooltip = if_we_have_quanitity_ideas_redwash
+			tooltip = {
+				if = {
+					limit = {
+						mil = 6
+					}
+					add_mil_power = 150
+				}
+				else = {
+					change_mil = 1
+				}
+			}
+			hidden_effect = {
+				low_puget_area = {
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+					add_province_modifier = {
+						name = "gor_well_fed_workers_redwash"
+						duration = 12775
+					}
+				}
+				if = {
+					limit = {
+						has_idea_group = quantity_ideas
+					}
+					if = {
+						limit = {
+							mil = 6
+						}
+						add_mil_power = 150
+					}
+					else = {
+						change_mil = 1
+					}
+				}
+			}
+		}
+	}
+	
+	a_different_revolution_tacoma = {
+		icon = industrial_revolution_gor
+		required_missions = { public_works_tacoma }
+		position = 12
+		trigger = {
+			has_institution = industrialization
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = we_own_thiry_manufactories_wash
+					all_owned_province = {
+						has_manufactory_trigger = yes
+					}
+				}
+				amount = 30
+			}
+		}
+		effect = {
+			custom_tooltip = unlocks_washington_industrial_decisions
+			custom_tooltip = spirit_of_labor_now_gives_this_redwash
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_national_spirit_of_labor_boosted_demo_rep"
+					duration = 7300
+				}
+			}
+		}
+	}
+	
+	overseas_escape_tacoma = {
+		icon = sun_ocean_gor
+		required_missions = { }
+		position = 16
+		trigger = {
+			OR = {
+				W06 = {
+					has_idea = quest_for_the_new_world
+				}
+				has_idea = quest_for_the_new_world
+			}
+		}
+		effect = {
+			create_explorer = { tradition = 75 }
+			custom_tooltip = if_we_both_have_quest_for_the_new_world
+			tooltip = {
+				define_advisor = {
+					type = navigator
+					skill = 2
+					cost_multiplier = 0.75
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						W06 = {
+							has_idea = quest_for_the_new_world
+						}
+						has_idea = quest_for_the_new_world
+					}
+					define_advisor = {
+						type = navigator
+						skill = 2
+						cost_multiplier = 0.75
+					}
+				}
+			}
+		}
+	}
+	
+	claim_pacific_islands_tacoma = {
+		icon = tropical_island_gor
+		required_missions = { overseas_escape_tacoma }
+		position = 17
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = three_provs_in_oceania_washington
+					new_oceania_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_oceanic_settlement_redwash"
+				duration = 7300
+			}
+			custom_tooltip = any_center_of_trade_we_own_in_oceania
+			tooltip = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						region = new_oceania_region
+						province_has_center_of_trade_of_level = 1
+					}
+					add_base_tax = 2
+					add_base_production = 2
+					add_base_manpower = 2
+				}
+			}
+		}
+	}
+	
+	pacific_domination_tacoma = {
+		icon = large_fleet_gor
+		required_missions = { claim_pacific_islands_tacoma }
+		position = 18
+		trigger = {
+			1697 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_lessons_of_the_pacific_redash"
+				duration = -1
+			}
+		}
+	}
+}

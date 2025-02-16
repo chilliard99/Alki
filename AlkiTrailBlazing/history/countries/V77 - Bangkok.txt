@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = newthai
+religion = yanantin  
+technology_group = indian 
+capital = 2945	#Bangkok
+
+1426.3.28 = {
+	monarch = {
+		name = "Rama III"
+		dynasty = "de Bangkok"
+		birth_date = 1426.3.28
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}

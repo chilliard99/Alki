@@ -1,0 +1,2515 @@
+################################WASHINGTON MODIFIERS########################################
+
+#Olympia
+
+gor_hoh_rainforest = {
+	local_development_cost = 0.5
+	local_defender_dice_roll_bonus = 1
+	local_attacker_dice_roll_bonus = -1
+} 
+
+gor_great_oly = {
+	trade_goods_size_modifier = 0.15
+} 
+
+gor_homeland_doctrine_oly = {
+	trade_goods_size_modifier = 0.15
+	local_development_cost = -0.1
+} 
+
+gor_cascadian_doctrine_oly = {
+	trade_efficiency = 0.1
+} 
+
+gor_revived_olympic_guard_oly = {
+	land_morale = 0.05
+} 
+
+communist_destruction_oly = {
+	land_morale = 0.1
+	prestige = 1
+} 
+
+#Tacoma
+
+gor_salish_sea_dominance_tac = {
+	global_trade_goods_size_modifier = 0.15
+} 
+
+gor_salish_sea_dominance_better_tac = {
+	global_trade_goods_size_modifier = 0.15
+	colonists = 1
+	range = 0.25
+} 
+
+gor_pious_observer_tac = {
+	tolerance_own = 1
+	missionaries = 1
+} 
+
+gor_relinquished_territory_tac = {
+	diplomatic_reputation = 1
+} 
+
+gor_spurrned_vigor_tac = {
+	land_morale = 0.1
+	land_maintenance_modifier = -0.1
+} 
+
+gor_creative_inspiration_tac = {
+	local_great_project_upgrade_cost = -0.1
+} 
+
+gor_communal_zeal_tac = {
+	land_morale = 0.15
+} 
+
+gor_victory_in_lincoln_tac = {
+	land_morale = 0.1
+} 
+
+gor_lincoln_new_prov_lin = {
+	local_culture_conversion_cost = 0.5
+	local_missionary_maintenance_cost = -0.25
+	local_missionary_strength = 0.01
+} 
+
+gor_fervor_of_lincoln_tac = {
+	missionary_maintenance_cost = -0.1
+} 
+
+gor_washington_whole_tac = {
+	stability_cost_modifier = -0.2
+} 
+ 	
+gor_echo_amendment_appealed_tac = {
+	diplomatic_reputation = 2
+} 
+
+gor_national_spirit_of_piety_demo_rep = {
+	missionaries = 1
+} 
+
+gor_national_spirit_of_labor_demo_rep = {
+	production_efficiency = 0.1
+} 
+
+gor_national_spirit_of_innovation_demo_rep = {
+	idea_cost = -0.05
+} 
+
+gor_new_manor_rep = {
+	local_unrest = 3
+	local_core_creation = -0.1
+	local_missionary_strength = 0.02
+	local_tax_modifier = 0.1
+} 
+
+gor_abolition_of_churches_rep = {
+	local_tax_modifier = -0.4
+	local_production_efficiency = 0.4
+	local_development_cost = -0.05
+} 
+
+gor_abolition_of_cathedrals_rep = {
+	local_tax_modifier = -0.6
+	local_missionary_strength = -0.03
+	local_production_efficiency = 0.8
+	local_development_cost = -0.1
+} 
+
+gor_recently_raised_levy_rep = {
+	local_manpower_modifier = -0.5
+} 
+
+gor_five_year_plan_development_rep = {
+	development_cost = -0.1
+} 
+
+gor_five_year_plan_land_maint_rep = {
+	land_maintenance = -0.1
+} 
+
+gor_five_year_plan_ship_stuff_rep = {
+	naval_maintenance = -0.1
+	build_cost = -0.1
+} 
+
+gor_a_strong_proletariat_tac = {
+	production_efficiency = 0.15
+} 
+
+gor_tacoman_tampering_tac = {
+	local_unrest = 10
+} 
+
+
+gor_terror_of_communists_tac = {
+	global_missionary_strength = 0.01
+	land_morale = 0.1
+} 
+
+#Helens
+
+gor_presidential_support_helens = {
+	diplomatic_reputation = 1
+} 
+
+gor_presidential_support_strong_helens = {
+	diplomatic_reputation = 1
+	diplomats = 1
+} 
+
+gor_union_commerce_helens = {
+	trade_efficiency = 0.1
+} 
+
+gor_union_subjugation_helens = {
+	vassal_forcelimit_bonus = 0.25
+	vassal_income = 0.25
+} 
+
+gor_union_subjugation_better_helens = {
+	vassal_forcelimit_bonus = 0.5
+	vassal_income = 0.5
+} 
+
+gor_presidential_campaign_helens = {
+	diplomatic_reputation = 2
+} 
+
+gor_presedential_preparations_helens = {
+	vassal_forcelimit_bonus = 1
+	vassal_income = 1
+} 
+
+gor_yakaman_dedication_helens = {
+	global_trade_goods_size_modifier = 0.15
+	development_cost = -0.1
+} 
+
+gor_unearthing_ruins_helens = {
+	local_great_project_upgrade_cost = -0.1
+} 
+
+gor_columbian_excellency_helens = {
+	local_development_cost = -0.1
+	local_build_cost = -0.1
+	local_build_time = -0.25
+} 
+
+gor_lincoln_foodstuffs_helens = {
+	manpower_recovery_speed = 0.1
+} 
+
+gor_responsible_mining_helens = {
+	inflation_reduction = 0.1
+} 
+
+gor_satisfied_traders_helens = {
+	burghers_loyalty_modifier = 0.25
+} 
+
+gor_columbia_river_fleet_helens = {
+	global_ship_trade_power = 0.2
+} 
+
+gor_washingtonian_liberators_helens = {
+	land_morale = 0.1
+} 
+
+gor_offensive_foresight_helens = {
+	siege_ability = 0.1
+} 
+
+gor_retunring_home_helens = {
+	local_missionary_maintenance_cost = -0.5
+	local_missionary_strength = 0.02
+	local_core_creation = -0.5
+} 
+
+gor_defender_of_washington_helens = {
+	accept_vassalization_reasons = 15
+} 
+
+gor_bane_of_communists_helens = {
+	global_missionary_strength = 0.01
+} 
+
+#Yakama
+
+gor_true_heir_protections = {
+	local_culture_conversion_cost = 2.5
+	local_culture_conversion_time = 1 
+} 
+
+
+gor_cemented_identity_yakama = {
+	local_culture_conversion_cost = 0.25
+} 
+
+gor_true_heir_alliance_yakama = {
+	diplomatic_reputation = 2
+} 
+
+gor_cemented_identity_better_yakama = {
+	local_culture_conversion_cost = 0.5
+} 
+
+gor_trueheir_in_power_yakama = {
+	land_morale = 0.1
+} 
+
+gor_tahoman_wisdom_yakama = {
+	drill_gain_modifier = 0.5
+} 
+
+gor_waste_not_yakama = {
+	local_build_cost = -0.5
+} 
+
+gor_valley_of_plenty_yakama = {
+ 	trade_goods_size_modifier = 0.25
+} 
+
+gor_fresh_tribal_council_yakama = {
+ 	trueheir_band_unity_gain_modifier = 0.15
+} 
+
+gor_niniish_university_yakama = {
+ 	idea_cost = -0.1
+} 
+
+gor_checmical_aging_yakama = {
+ 	global_trade_goods_size_modifier = 0.1
+} 
+
+gor_willing_soldiers_yakama = {
+	land_maintenance_modifier = -0.15
+} 
+
+gor_cascadian_defenses_yakama = {
+	local_defensiveness = 0.33
+	garrison_growth = 0.15
+} 
+
+gor_converting_the_mystics_yakama = {
+	global_missionary_strength = 0.02
+	monthly_piety_accelerator = 0.001
+} 
+
+gor_starchy_soldiers_yakama = {
+	manpower_recovery_speed = 0.15
+} 
+
+gor_correcting_mistakes_yakama = {
+	local_culture_conversion_cost = -0.75
+} 
+
+gor_forgiving_the_plainwalkers_yakama = {
+	num_accepted_cultures = 2
+} 
+
+gor_lessons_of_fraser_yakama = {
+ 	army_tradition_decay = -0.01
+} 
+
+gor_challenging_the_counts_yakama = {
+ 	land_morale = 0.15
+} 
+
+gor_yakaman_revival_yakama = {
+ 	prestige_decay = -0.01
+} 
+
+gor_family_business_yakama = {
+ 	num_accepted_cultures = 1
+} 
+
+gor_united_columbia_yakama = {
+ 	local_development_cost = -0.25
+	trade_goods_size_modifier = 0.25
+} 
+
+gor_wawa_yakama_yakama = {
+ 	infantry_power = 0.15
+} 
+
+#Skagit
+
+union_support_skagit = {
+ 	local_development_cost = -0.1
+} 
+
+pioneer_spirit_skagit = {
+ 	culture_conversion_cost = -0.15
+	global_missionary_strength = 0.02
+} 
+
+lincolnite_acceptance_skagit = {
+ 	num_accepted_cultures = 1
+} 
+
+presidential_assurance_skagit = {
+ 	diplomatic_reputation = 2
+	core_creation = -0.15
+} 
+
+constitutional_washington_skagit = {
+ 	monthly_piety_accelerator = 0.001
+} 
+
+reclamation_desire_skagit = {
+ 	land_morale = 0.15
+} 
+
+inland_agriculture_skagit = {
+	local_manpower_modifier = 0.5
+	local_development_cost = -0.25
+} 
+
+lord_of_lincoln_skagit = {
+	core_creation = -0.15
+} 
+
+willapa_management_skagit = {
+	province_trade_power_modifier = 0.25
+} 
+
+lessons_of_puget_skagit = {
+	army_tradition_decay = -0.01
+} 
+
+#Puget
+
+king_of_the_sound_puget = {
+ 	land_morale = 0.1
+} 
+
+modernized_rule_puget = {
+ 	idea_cost = -0.05
+} 
+
+gor_charismatic_baron = {
+ 	diplomatic_reputation = 1
+} 
+
+gor_the_magnanimous_dachs_baron = {
+ 	legitimacy = 1
+} 
+
+gor_pug_boost_charismatic_baron = {
+ 	diplomatic_reputation = 1
+	reasons_to_elect = 10
+}
+
+gor_the_siren_league_puget = {
+	trade_goods_size_modifier = 0.25
+	trade_goods_size = 1
+}
+
+gor_glut_of_talent_puget = {
+	advisor_cost = -0.15
+}
+
+gor_educated_for_victory_puget = {
+	army_tradition_decay = -0.01
+}
+
+gor_baron_of_willapa_puget = {
+	trade_efficiency = 0.1
+}
+
+gor_willapan_influence_puget = {
+	trade_efficiency = 0.2
+}
+
+gor_red_removal_puget = {
+ 	monthly_piety_accelerator = 0.001
+} 
+
+gor_columbian_intentions_puget = {
+ 	core_creation = -0.15
+} 
+
+gor_colville_alloys_puget = {
+ 	local_build_cost = -0.25
+} 
+
+gor_colville_farms_puget = {
+ 	land_maintenance_modifier = -0.05
+}
+
+gor_indie_system_puget = {
+ 	local_tax_modifier = 1
+	local_missionary_maintenance_cost = 1
+	local_missionary_strength = -0.1
+}
+
+gor_snuffing_out_the_mystics_puget = {
+ 	global_missionary_strength = 0.02
+}
+
+gor_the_sounds_fishermen_puget = {
+ 	sailors_recovery_speed = 0.1
+}
+
+gor_the_puget_metro_puget = {
+ 	local_development_cost = -0.1
+	local_build_cost = -0.1
+}
+
+gor_presidential_chance_puget = {
+ 	reasons_to_elect = 10
+}
+
+gor_better_alone_puget = {
+ 	diplomatic_reputation = 1
+}
+
+#Washington
+
+gor_marx_no_more_washington = {
+ 	monthly_piety_accelerator = 0.002
+} 
+
+gor_conversion_by_the_sword_washington = {
+ 	local_missionary_maintenance_cost = -0.75
+} 
+
+gor_cascadian_ambition_washington = {
+ 	core_creation = -0.1
+} 
+
+gor_arborean_market_control_washington = {
+ 	local_build_cost = -0.1
+	local_build_time = -0.1
+	local_sailors_modifier = 0.5
+} 
+
+gor_the_founders_beauty_washington = {
+ 	local_missionary_maintenance_cost = -0.5
+	local_missionary_strength = 0.03
+} 
+
+gor_northern_capital_washington = {
+ 	local_production_efficiency = 0.5
+	local_build_cost = -0.25
+	local_build_time = -0.25
+} 
+
+gor_spokane_complex_recruits_washington = {
+ 	land_maintenance_modifier = -0.1
+} 
+
+gor_flathead_conversions_washington = {
+ 	missionaries = 1
+} 
+
+gor_lord_of_idaho_washington = {
+ 	culture_conversion_cost = -0.1
+	culture_conversion_time = -0.1
+} 
+
+gor_democratizing_the_mystics_washington = {
+ 	republican_tradition = 0.3
+} 
+
+gor_armies_of_idaho_washington = {
+ 	land_forcelimit_modifier = 0.1
+} 
+
+gor_follow_the_setting_sun_washington = {
+	range = 0.25
+} 
+
+gor_follow_the_setting_sun_colo_vers_washington = {
+	colonists = 1
+} 
+
+gor_interpacific_trade_washington = {
+	global_tariffs = 0.25
+} 
+
+gor_economically_interlinked_washington = {
+	liberty_desire = -15
+} 
+
+gor_colonial_guard_washington = {
+	land_forcelimit_modifier = 0.15
+	defensiveness = 0.1
+} 
+
+gor_pioneer_mentality_washington = {
+	development_cost = -0.15
+} 
+
+gor_letting_go_washington = {
+	stability_cost_modifier = -0.1
+	prestige_decay = -0.01
+} 
+
+gor_colonial_integration_washington = {
+	liberty_desire = -25
+} 
+
+gor_worldwide_commerce_washington = {
+ 	trade_steering = 0.1
+} 
+
+gor_new_world_philsophies_washington = {
+	dip_tech_cost_modifier = -0.1
+}  
+
+gor_pug_double_boost_charismatic_baron = {
+ 	diplomatic_reputation = 1
+	trade_steering = 0.1
+	reasons_to_elect = 10
+}
+
+gor_pug_steer_boost_charismatic_baron = {
+ 	diplomatic_reputation = 1
+	trade_steering = 0.1
+}
+
+gor_union_politics_washington = {
+ 	diplomats = 1
+}
+
+gor_presidential_pride_washington = {
+ 	land_morale = 0.1
+}
+
+gor_crushing_the_reformers_washington = {
+	global_missionary_strength = 0.01
+	missionary_maintenance_cost = -0.33
+}
+
+gor_restoring_normalcy_washington = {
+	local_missionary_strength = 0.05
+	local_missionary_maintenance_cost = -0.75
+}
+
+gor_supreme_president_washington = {
+	imperial_authority = 0.1
+}
+
+gor_spreading_republican_values_washington = {
+	core_creation = -0.1
+}
+
+gor_torch_of_liberty_washington = {
+	max_absolutism = -20
+	all_power_cost = -0.05
+}
+
+gor_reserved_democracy_washington = {
+	republican_tradition = 0.3
+}
+
+gor_natures_engine_washington = {
+	local_build_cost = -0.25
+}
+
+gor_viticultural_victory_washington = {
+	global_trade_goods_size_modifier = 0.5
+}
+
+gor_spokane_complex_washington = {
+	infantry_cost = -0.1
+}
+
+gor_industrial_metropolis_washington = {
+	local_development_cost = -0.25
+}
+
+gor_washington_railroad_washington = {
+	local_development_cost = -0.25
+	local_friendly_movement_speed = 2
+}
+
+gor_inland_blastworks_washington = {
+	local_development_cost = -0.5
+	trade_goods_size_modifier = 0.5
+	trade_goods_size = 2
+}
+
+gor_pacific_industry_washington = {
+	local_development_cost = -0.25
+	trade_goods_size_modifier = 0.25
+}
+
+gor_commercial_inspiration_washington = {
+	idea_cost = -0.15
+}
+
+gor_cheesy_seamen_washington = {
+	local_ship_repair = 0.2
+ 	local_ship_cost = -0.2
+ 	local_sailors_modifier = 0.1
+}
+
+gor_connecting_the_outskirts_washington = {
+	local_tax_modifier = 0.15
+}
+
+gor_wrangling_oregon_washington = {
+	local_unrest = -10
+}
+
+gor_free_oregonian_culture_washington = {
+	num_accepted_cultures = 1
+}
+
+gor_nullified_treaties_washington = {
+	global_tax_modifier = 0.15
+}
+
+gor_homeland_focus_washington = {
+	max_absolutism = 10
+	yearly_absolutism = 0.1
+}
+
+gor_republican_oregonian_integration_washington = {
+	governing_capacity = 100
+	free_mil_policy = 1
+}
+
+gor_monarchy_oregonian_integration_washington = {
+	governing_capacity = 100
+ 	free_dip_policy = 1
+}
+
+gor_redwood_legacy_washington = {
+	army_tradition_decay = -0.01
+}
+
+gor_silencing_the_traditionalists_washington = {
+	monthly_piety_accelerator = 0.001
+}
+
+gor_humiliated_by_washington_washington = {
+	diplomatic_reputation = -2
+}
+
+gor_union_inheritor_washington = {
+	diplomats = 1
+	diplomatic_upkeep = 2
+}
+
+gor_vassaled_counties_washington = {
+	imperial_authority_value = 0.5
+}
+
+gor_empowered_by_corrupt_liberty_washington = {
+	yearly_corruption = -0.1
+}
+
+gor_empowered_by_manpow_liberty_washington = {
+	global_manpower_modifier = 0.10
+}
+
+gor_advising_tactician_washington = {
+	army_tradition_decay = -0.01
+}
+
+gor_piitliyawila_washington = {
+	fire_damage = 0.1
+}
+
+debug_elect_me = {
+	reasons_to_elect = 10000
+}
+
+#Red Washington
+
+gor_spirit_of_innov_boost_one_red_wash = {
+	idea_cost = -0.05
+	technology_cost = -0.05
+}
+
+gor_crimson_education_red_wash = {
+	global_missionary_strength = 0.01
+}
+
+gor_widespread_first_innovation_wash = {
+	technology_cost = -0.1
+}
+
+gor_widespread_second_innovation_wash = {
+	technology_cost = -0.2
+}
+
+gor_widespread_third_innovation_wash = {
+	technology_cost = -0.25
+}
+
+gor_spirit_of_innov_boost_two_red_wash = {
+	idea_cost = -0.1
+	technology_cost = -0.1
+}
+
+gor_mamachatpam_comrades_red_wash = {
+	num_accepted_cultures = 1
+}
+
+gor_monumentally_inclined_redwash = {
+	great_project_upgrade_time = -0.1 
+}
+
+gor_trueheir_solidarity_redwash = {
+	local_production_efficiency = 0.5
+	local_development_cost = -0.25
+}
+
+gor_oceanic_settlement_redwash = {
+	global_colonial_growth = 15
+}
+
+gor_lessons_of_the_pacific_redash = {
+	trade_company_investment_cost = -0.15
+}
+
+gor_red_banner_raised_redwash = {
+	local_missionary_strength = 0.05
+}
+
+gor_national_spirit_of_piety_boost_redwash = {
+	missionaries = 1
+	global_missionary_strength = 0.01
+} 
+
+gor_build_ready_redwash = {
+	build_cost = -0.15
+} 
+
+gor_nationalized_millers_union_redwash = {
+	max_absolutism = 5
+} 
+
+gor_nature_engine_redwash = {
+	local_development_cost = -0.15
+	local_build_cost = -0.15
+} 
+
+gor_nature_better_engine_redwash = {
+	local_development_cost = -0.2
+	local_build_cost = -0.2
+} 
+
+gor_well_fed_workers_redwash = {
+	local_manpower_modifier = 0.25
+} 
+
+gor_utopian_mission_redwash = {
+	development_cost = -0.1
+} 
+
+gor_the_vancouver_dam_redwash = {
+	development_cost = -0.1
+} 
+
+gor_national_spirit_of_labor_boosted_demo_rep = {
+	production_efficiency = 0.2
+} 
+
+gor_red_oregon_redwash = {
+	max_absolutism = 5
+} 
+
+gor_shastan_supplier_redwash = {
+	naval_forcelimit = 1
+} 
+
+gor_liberating_the_libertarians_redwash = {
+	ae_impact = -0.25
+	core_creation = -0.25
+} 
+
+gor_pan_californian_union_redwash = {
+	diplomatic_upkeep = 2
+}
+
+gor_death_of_regalism_redwash = {
+	diplomatic_reputation = 1
+}  
+
+gor_espanish_runoff_redwash = {
+	trade_goods_size_modifier = 0.25
+}  
+
+gor_portuguese_overlord_redwash = {
+	max_absolutism = 15
+}  
+
+gor_artificial_rarity_redwash = {
+	inflation_action_cost = -0.25
+}  
+
+gor_marxian_angeles_redwash = {
+	merchants = 1
+}  
+
+gor_red_setting_sun_redwash = {
+	core_creation = -0.1
+	ae_impact = -0.1
+}  
+
+gor_lessons_of_idaho_redwash = {
+	leader_land_manuever = 1
+}  
+
+gor_the_pacific_collective_redwash = {
+	all_power_cost = -0.05
+}  
+
+gor_national_spirit_of_piety_boost_two_redwash = {
+	missionaries = 1
+	global_missionary_strength = 0.01
+	core_creation = -0.15
+} 
+
+gor_the_pacific_collective_better_redwash = {
+	all_power_cost = -0.1
+}  
+
+#Oregon General
+
+gor_redwood_destruction_oregongen = {
+	local_monthly_devastation = 0.5
+	local_development_cost = 1
+	local_unrest = -2
+}
+
+gor_oregonian_freedom_fighters_genorg = {
+	diplomatic_reputation = 1
+	global_unrest = 2
+}
+
+gor_inspired_to_rebellion_genorg = {
+	local_unrest = 5
+	local_development_cost = 0.1
+}
+
+#Astoria
+
+gor_atorian_recovery_astoria = {
+	local_great_project_upgrade_cost = -0.25
+	local_development_cost = -0.25
+	local_monthly_devastation = -0.1
+}
+
+gor_a_dissapointment_astoria = {
+	prestige_decay = -0.01
+	sailors_recovery_speed = 0.15
+}
+
+gor_dairy_dominance_astoria = {
+	trade_goods_size = 2
+}
+
+gor_cheesemakers_cooperative_astoria = {
+	burghers_influence_modifier = 0.1
+	burghers_loyalty_modifier = 0.05
+}
+
+gor_cheeselords_appeased_astoria = {
+	nobles_influence_modifier = 0.1
+	nobles_loyalty_modifier = 0.05
+}
+
+gor_market_recovery_astoria = {
+	production_efficiency = 0.05
+}
+
+gor_fromage_favorites_astoria = {
+	development_cost = -0.05
+	nobles_loyalty_modifier = -0.05
+}
+
+gor_whats_out_there_astoria = {
+	range = 0.5
+}
+
+gor_pacific_ambition_astoria = {
+	colonists = 1
+}
+
+gor_enforced_integration_astoria = {
+	core_creation = -0.1
+}
+
+gor_tillamook_unity_astoria = {
+	local_production_efficiency = 0.25
+}
+
+gor_oregonian_control_astoria = {
+	legitimacy = 1
+}
+
+gor_warmsprings_acceptance_astoria = {
+	num_accepted_cultures = 1
+}
+
+gor_willamette_vinyards_astoria = {
+	trade_goods_size = 2
+	province_trade_power_modifier = 0.15
+}
+
+gor_backland_lessons_astoria = {
+	army_tradition_decay = -0.01
+}
+
+gor_oregons_representative_astoria = {
+	reasons_to_elect = 10
+}
+
+gor_redwood_knowledge_astoria = {
+	army_tradition_decay = -0.01
+}
+
+gor_united_production_astoria = {
+	local_development_cost = -0.1
+	local_production_efficiency = 0.1
+}
+
+gor_family_donations_astoria = {
+	global_tax_modifier = 0.2
+}
+
+gor_cascadian_runoff_astoria = {
+	global_foreign_trade_power = 0.15
+}
+
+gor_glory_of_the_pomo_astoria = {
+	land_morale = 0.1
+}
+
+#Coos
+
+gor_board_expansion_coos = {
+	republican_tradition = 0.3
+}
+
+gor_spreading_the_founders_prosperity_coos = {
+	monthly_piety = -0.001
+}
+
+gor_gospel_of_greed_coos = {
+	local_production_efficiency = 0.15
+}
+
+gor_controlled_market_coos = {
+	global_tax_modifier = 0.05
+}
+
+gor_unburdned_market_coos = {
+	global_tax_modifier = -0.1
+	trade_efficiency = 0.15
+}
+
+gor_wild_market_coos = {
+	global_tax_modifier = -0.2
+	trade_efficiency = 0.25
+}
+
+gor_victory_of_the_market_coos = {
+	merchants = 1
+}
+
+gor_long_term_contracts_coos = {
+	mercenary_cost = -0.1
+}
+
+gor_exceeding_projections_coos = {
+	land_morale = 0.1
+}
+
+gor_cheesy_investments_coos = {
+	trade_goods_size = 0.5
+	trade_value_modifier = 0.25
+}
+
+gor_springtime_earnings_coos = {
+	trade_goods_size_modifier = 0.5
+}
+
+#Willamette
+
+gor_recovery_fund_willamette = {
+	global_tax_modifier = 0.1
+}
+
+gor_umpquan_subjugation_willamette = {
+	diplomatic_upkeep = 1
+}
+
+gor_industry_restored_willamette = {
+	local_prosperity_growth = 0.15
+	trade_goods_size_modifier = 0.15
+}
+
+gor_advisors_purged_willamette = {
+	advisor_pool = -1
+	advisor_cost = 0.25
+}
+
+gor_generals_removed_willamette = {
+	leader_cost = 0.5
+	discipline = -0.05
+}
+
+gor_questioning_subjects_willamette = {
+	vassal_forcelimit_bonus = -0.5
+	vassal_income = -0.25
+}
+
+gor_angered_nobility_willamette = {
+	nobles_loyalty_modifier = -0.2
+	global_tax_modifier = -0.2
+}
+
+gor_angered_clergy_willamette = {
+	church_loyalty_modifier = -0.2
+	tolerance_own = -2
+}
+
+gor_oregonian_oversight_willamette = {
+	reasons_to_elect = -10
+}
+
+gor_union_assitance_willamette = {
+	global_tax_income = 24
+}
+
+gor_a_presidential_campaign_willamette = {
+	legitimacy = 1
+	accept_vassalization_reasons = 10
+}
+
+gor_the_presidential_party_willamette = {
+	reasons_to_elect = 10
+}
+
+gor_underdog_representation_willamette = {
+	reasons_to_elect = 15
+}
+
+gor_northern_hope_willamette = {
+	diplomats = 1
+	diplomatic_reputation = 2
+	imperial_authority_value = 0.05
+}
+
+gor_go_ducks_willamette = {
+	diplomatic_annexation_cost = -0.1
+	diplomatic_upkeep = 3
+	vassal_income = 0.1
+}
+
+gor_capital_of_oregon_reclaimed_willamette = {
+	ae_impact = -0.1
+}
+
+gor_wisdom_of_elmer_willamette = {
+	discipline = 0.05
+}
+
+gor_the_mallards_willamette = {
+	recover_navy_morale_speed = 0.15
+}
+
+gor_crooked_rich_willamette = {
+	nobles_loyalty_modifier = 0.05
+	prestige_decay = -0.01
+}
+
+gor_lord_of_all_oregons_willamette = {
+	diplomatic_reputation = 2
+}
+
+#Portland
+
+gor_conservative_vigor_portland = {
+	land_morale = 0.15
+}
+
+gor_natures_vanguard_portland = {
+	max_absolutism = 10
+}
+
+gor_conservative_vigor_upgrade_portland = {
+	land_morale = 0.15
+	max_absolutism = 20
+}
+
+gor_uncivilized_warfare_portland = {
+	diplomatic_reputation = -1
+	ae_impact = 0.1
+}
+
+gor_uncivilized_warfare_upgraded_portland = {
+	diplomatic_reputation = -1
+	ae_impact = 0.1
+	max_absolutism = 20
+}
+
+gor_disorganized_resistance_portland = {
+	local_unrest = -5
+	local_years_of_nationalism = -5
+}
+
+gor_enshrined_laws_of_nature_portland = {
+ 	naturalists_fervor_gain_modifier = 0.15
+} 
+
+gor_slash_and_burn_portland = {
+ 	land_morale = 0.15
+	discipline = 0.05
+	global_unrest = -2
+} 
+
+gor_climate_crusade_portland = {
+ 	fire_damage = 0.1
+} 
+
+gor_green_passion_portland = {
+ 	land_morale = 0.1
+} 
+
+gor_full_of_awe_portland = {
+ 	local_unrest = -5
+} 
+
+gor_natural_fear_portland = {
+ 	land_morale = -0.1
+} 
+
+gor_shoalwater_wisdom_portland = {
+ 	navy_tradition_decay = -0.01
+} 
+
+gor_pugettite_sails_portland = {
+ 	ship_durability = 0.05
+} 
+
+gor_washington_whole_portland = {
+ 	land_forcelimit_modifier = 0.15
+} 
+
+gor_truehier_taxation_portland = {
+ 	global_tax_modifier = 0.15
+} 
+
+gor_oregonian_campaign_portland = {
+ 	land_morale = 0.1
+} 
+
+gor_oregonian_campaign_better_portland = {
+ 	land_morale = 0.2
+} 
+
+gor_orrian_ores_portland = {
+ 	inflation_reduction = 0.1
+} 
+
+gor_espanish_tax_farm_portland = {
+ 	global_tax_modifier = 0.15
+} 
+
+gor_redwood_arms_portland = {
+ 	army_tradition = 0.5
+} 
+
+gor_crushing_the_traditionalists_portland = {
+ 	monthly_piety_accelerator = 0.001
+} 
+
+gor_shastan_talent_portland = {
+ 	advisor_cost = -0.15
+} 
+
+gor_redwood_arms_upgraded_portland = {
+ 	army_tradition = 1
+} 
+
+gor_return_to_monke_portland = {
+ 	production_efficiency = 0.25
+	global_tax_modifier = 0.25
+} 
+
+#Umpqua
+
+gor_ready_to_serve_umpqua = {
+ 	manpower_recovery_speed = 0.1
+} 
+
+gor_oregonian_ignorance_umpqua = {
+ 	reasons_to_elect = -15
+} 
+
+gor_rank_and_file_umpqua = {
+ 	diplomatic_reputation = 1
+} 
+
+gor_challenging_reno_umpqua = {
+	reasons_to_elect = 5
+} 
+
+gor_legacy_of_reno_umpqua = {
+ 	diplomatic_reputation = 1
+	reasons_to_elect = 5
+} 
+
+gor_regalist_grip_umpqua = {
+ 	unjustified_demands = -0.05
+} 
+
+gor_purging_republican_influence_umpqua = {
+ 	global_unrest = -2
+}
+
+gor_dissapointing_restoration_umpqua = {
+ 	local_great_project_upgrade_cost = -0.25
+}  
+
+gor_land_of_equals_umpqua = {
+ 	trade_goods_size_modifier = 0.25
+	local_development_cost = -0.15
+}  
+
+gor_king_of_oregon_umpqua = {
+ 	global_unrest = -1
+	global_autonomy = -0.05
+}  
+
+#Warmsprings
+
+gor_springs_of_life_warmsprings = {
+ 	local_development_cost = -0.1
+}  
+
+gor_springs_of_life_better_warmsprings = {
+	local_development_cost = -0.1
+ 	trade_goods_size_modifier = 0.25
+	trade_goods_size = 1
+}  
+
+gor_founders_grace_warmsprings = {
+	yearly_corruption = -0.05
+	manpower_recovery_speed = 0.1
+}  
+
+gor_trueheir_mob_warmsprings = {
+	land_forcelimit_modifier = 0.1
+	monthly_piety = -0.0025
+}  
+
+gor_the_chairmans_grip_warmsprings = {
+	land_morale = 0.1
+	monthly_piety = 0.0025
+}  
+
+gor_diplomat_network_warmsprings = {
+	diplomats = 1
+}  
+
+gor_wanaytt_warmsprings = {
+	trueheir_band_unity_gain_modifier = 0.15
+} 
+
+gor_host_of_the_unions_desires_warmsprings = {
+	development_cost = -0.15
+	diplomatic_reputation = 1
+} 
+
+gor_preparred_conquest_warmsprings = {
+	ae_impact = -0.1
+} 
+
+gor_deschutes_domination_warmsprings = {
+	trade_value_modifier = 0.25
+} 
+
+#Bend
+
+gor_wise_investor_bend = {
+	trade_efficiency = 0.15
+} 
+
+gor_smart_production_bend = {
+	trade_goods_size = 1.5
+}
+
+gor_bringer_of_the_goods_bend = {
+	global_trade_goods_size_modifier = 0.1
+}
+
+gor_drowning_in_wealth_bend = {
+	trade_efficiency = 0.15
+}
+
+gor_birth_of_oregonian_classicalism_bend = {
+	embracement_cost = -0.15
+}
+
+gor_purveyor_of_the_arts_bend = {
+	legitimacy = 1
+	republican_tradition = 0.3
+}
+
+gor_masterpieces_of_oregon_bend = {
+	prestige_decay = -0.01
+}
+
+gor_union_sweetheart_bend = {
+	trade_goods_size = 1.5
+}
+
+gor_eager_soldiery_bend = {
+	manpower_recovery_speed = 0.1
+}
+
+gor_tenino_acceptance_bend = {
+	num_accepted_cultures = 1
+}
+
+gor_taxing_the_boonies_bend = {
+	global_tax_modifier = 0.15
+}
+
+gor_deschutes_dreams_bend = {
+	global_unrest = -1
+}
+
+gor_oregonian_ambition_bend = {
+	diplomatic_reputation = 1
+}
+
+gor_bendy_oregon_bend = {
+	land_morale = 0.1
+	global_unrest = -1
+}
+
+#Morrow-Crook
+
+gor_war_prepared_morrow_crook = {
+	land_morale = 0.05
+	manpower_recovery_speed = 0.1
+}
+
+gor_war_prepared_better_morrow_crook = {
+	land_morale = 0.1
+	manpower_recovery_speed = 0.15
+}
+
+gor_traditional_dedication_morrow_crook = {
+	nobles_loyalty_modifier = 0.05
+	global_tax_modifier = 0.05
+}
+
+gor_progressive_aformations_morrow_crook = {
+	burghers_loyalty_modifier = 0.05
+	improve_relation_modifier = 0.1
+}
+
+gor_classical_development_morrow_crook = {
+	local_development_cost = -0.1
+	local_institution_spread = 0.1
+}
+
+gor_artful_capital_morrow_crook = {
+	local_development_cost = -0.2
+	local_institution_spread = 0.2
+}
+
+gor_specially_taxed_tithes_morrow_crook = {
+	local_tax_modifier = 0.4
+}
+
+gor_rival_of_the_west_morrow_crook = {
+	development_cost = -0.1
+	global_tax_modifier = 0.1
+}
+
+gor_boonie_builders_morrow_crook = {
+	local_build_cost = -0.1
+}
+
+gor_cascadian_wall_morrow_crook = {
+	garrison_growth = 0.25
+	local_defensiveness = 0.25
+}
+
+gor_wannabe_elector_morrow_crook = {
+	diplomatic_reputation = 2
+	diplomats = 1
+}
+
+gor_unity_from_the_east_morrow_crook = {
+	global_tax_modifier = 0.1
+	army_tradition = 0.5
+}
+
+#Burns
+
+gor_sacramental_defense_burns = {
+	ae_impact = -0.1
+	land_morale = 0.1
+}
+
+gor_hard_fought_lessons_burns = {
+	army_tradition_decay = -0.01
+}
+
+gor_imperial_riches_burns = {
+	trade_efficiency = 0.1
+}
+
+gor_boonielord_burns = {
+	global_tax_modifier = 0.15
+}
+
+gor_veins_of_the_northwest_burns = {
+	caravan_power = 0.15
+}
+
+gor_true_inland_empire_burns = {
+	merchants = 1
+}
+	
+gor_better_true_inland_empire_burns = {
+	merchants = 1
+	caravan_power = 0.15
+}
+
+gor_neturality_guarentee_burns = {
+	diplomatic_reputation = 1
+}
+
+gor_highdesert_production_burns = {
+	local_production_efficiency = 0.15
+	local_development_cost = -0.1
+}
+
+gor_taxing_the_californians_burns = {
+	global_tax_modifier = 0.15
+}
+
+gor_high_oregonian_acceptance_burns = {
+	local_unrest = -5
+	local_autonomy = -0.05
+}
+
+gor_paiute_oversight_burns = {
+	yearly_corruption = -0.05
+	global_unrest = -1
+}
+
+gor_orrian_scarcity_burns = {
+	inflation_reduction = 0.1
+}
+
+gor_golden_hills_of_oregon_burns = {
+	local_gold_depletion_chance_modifier = -0.25
+	local_development_cost = -0.1
+}
+
+gor_paiute_reservation_burns = {
+	local_culture_conversion_cost = 3
+	local_culture_conversion_time = 2
+}
+
+gor_trueheir_vigor_burns = {
+	local_culture_conversion_cost = 0.5
+	enemy_core_creation = 0.5
+}
+
+#Sons of Oregon
+
+gor_glory_to_the_republic_sonsorg = {
+	monthly_revolutionary_vigor = 0.1
+}
+
+gor_alaskan_support_sonsorg = {
+	global_tax_income = 24
+	global_manpower = 2
+	land_forcelimit = 10
+}
+
+gor_utahn_support_sonsorg = {
+	global_tax_income = 24
+	global_manpower = 2
+	land_forcelimit = 10
+}
+
+gor_freinds_in_high_place_sonsorg = {
+	diplomatic_reputation = 1
+}
+
+gor_foreign_revolutionaries_sonsorg = {
+	land_morale = 0.1
+}
+
+gor_dictators_protection_sonsorg = {
+	monthly_revolutionary_vigor = 0.05
+}
+
+gor_quite_folk_sonsorg = {
+	spy_offence = 0.15
+	diplomats = 1
+}
+
+gor_californian_tragedy_sonsorg = {
+	imperial_authority = -0.15
+}
+
+gor_brotherly_recognition_sonsorg = {
+	improve_relation_modifier = 0.1
+}
+
+gor_the_restorer_sonsorg = {
+	development_cost = -0.1
+	build_cost = -0.1
+}
+
+gor_the_peoples_voice_sonsorg = {
+	global_unrest = -1
+	stability_cost_modifier = -0.1
+	republican_tradition = 0.3
+}
+
+#Republic Of Oregon
+
+gor_libertys_wisdom_sonsorg = {
+	church_loyalty_modifier = 0.1
+	church_influence_modifier = 0.1
+	republican_tradition = -0.3
+	country_admin_power = 1
+	yearly_corruption = 0.1
+}
+
+gor_markets_guidance_sonsorg = {
+	burghers_loyalty_modifier = 0.1
+	burghers_influence_modifier = 0.1
+	republican_tradition = -0.3
+	country_diplomatic_power = 1
+	yearly_corruption = 0.1
+}
+
+gor_noble_connections_sonsorg = {
+	nobles_loyalty_modifier = 0.1
+	nobles_influence_modifier = 0.1
+	republican_tradition = -0.3
+	country_military_power = 1
+	yearly_corruption = 0.1
+}
+
+gor_educated_society_sonsorg = {
+	advisor_cost = -0.15
+	advisor_pool = 1
+}
+
+gor_oregonian_golden_age_sonsorg = {
+	local_prosperity_growth = 0.2
+}
+
+gor_republican_spillover_sonsorg = {
+	global_unrest = 3
+}
+
+gor_dictators_guard_sonsorg = {
+	war_taxes_cost_modifier = -0.5
+	manpower_in_own_culture_provinces = 0.25
+	army_tradition_decay = -0.005
+}
+
+gor_long_live_the_dictator_sonsorg = {
+	monthly_revolutionary_vigor = 0.25
+	global_unrest = -1
+	global_autonomy = -0.05
+}
+
+gor_the_beaver_rises_sonsorg = {
+	max_absolutism = 15
+}
+
+gor_californian_educated_sonsorg = {
+	technology_cost = -0.05
+	global_institution_spread = 0.1
+}
+
+gor_californian_educated_better_sonsorg = {
+	technology_cost = -0.1
+	global_institution_spread = 0.2
+}
+
+gor_modernist_hotspots_sonsorg = {
+	local_build_cost = -0.1
+	local_institution_spread = 0.1
+}
+
+gor_beaver_productivity_sonsorg = {
+	build_cost = -0.25
+}
+
+gor_the_pacific_giant_sonsorg = {
+	merchants = 1
+}
+
+gor_capital_of_the_northwest_sonsorg = {
+	local_prosperity_growth = 0.15
+	local_development_cost = -0.2
+	local_production_efficiency = 0.2
+	province_trade_power_modifier = 0.25 
+}
+
+gor_the_pacific_giant_wide_sonsorg = {
+	merchants = 1
+	global_foreign_trade_power = 0.15
+	trade_steering = 0.15
+}
+
+gor_the_pacific_giant_dom_sonsorg = {
+	merchants = 1
+	global_own_trade_power = 0.10
+	trade_efficiency = 0.1
+}
+
+gor_the_green_scarves_sonsorg = {
+	spy_offence = 0.15
+	global_spy_defence = 0.1
+}
+
+gor_free_of_oregon_sonsorg = {
+	imperial_authority_value = 0.1
+}
+
+gor_progressive_gridlock_sonsorg = {
+	imperial_authority = -0.1
+}
+
+gor_conservative_gridlock_sonsorg = {
+	imperial_authority_value = -0.05
+}
+
+gor_union_of_oregon_sonsorg = {
+	diplomatic_upkeep = 2
+	accept_vassalization_reasons = 10
+}
+
+gor_pacifican_ambitions_sonsorg = {
+	core_creation = -0.1
+	global_autonomy = -0.05
+}
+
+gor_a_united_california_sonsorg = {
+	years_of_nationalism = -5
+}
+
+gor_northwest_pride_sonsorg = {
+	culture_conversion_cost = -0.1
+	culture_conversion_time = -0.1
+}
+
+gor_past_morrow_crook_sonsorg = {
+	ae_impact = -0.1
+	land_morale = 0.1
+}
+
+gor_taking_back_whats_owed_sonsorg = {
+	global_tax_modifier = 0.1
+}
+
+gor_oregon_united_sonsorg = {
+	prestige_decay = -0.01
+}
+
+gor_snakey_riches_sonsorg = {
+	global_tax_modifier = 0.2
+}
+
+gor_legacy_of_the_wranglers_sonsorg = {
+	army_tradition = 1
+}
+
+gor_trashing_the_traditionalists_sonsorg = {
+	monthly_piety = -0.0025
+}
+
+gor_lower_oregonian_integration_sonsorg = {
+	local_culture_conversion_cost = -0.15
+}
+
+gor_redwood_revenge_sonsorg = {
+	land_morale = 0.1
+}
+
+gor_extrodinary_mercy_sonsorg = {
+	diplomatic_reputation = 1
+}
+
+gor_jeffersonian_capital_sonsorg = {
+	local_tax_modifier = 0.25
+}
+
+gor_redwood_tactics_sonsorg = {
+	army_tradition = 0.5
+	army_tradition_decay = -0.005
+}
+
+gor_commercially_defended_sonsorg = {
+	local_defensiveness = 0.25
+	local_garrison_size = 0.25
+	province_trade_power_modifier = 0.1
+}
+
+gor_republican_washington_sonsorg = {
+	liberty_desire = -150
+	land_morale = 0.1
+	global_tax_income = 24
+}
+
+gor_columbian_manufactoring_sonsorg = {
+	local_development_cost = -0.1
+	trade_goods_size_modifier = 0.25
+	local_center_of_trade_upgrade_cost = -0.33
+}
+
+gor_liberation_of_washington_sonsorg = {
+	naval_morale = 0.1
+	allowed_marine_fraction = 0.1
+}
+
+gor_the_idaho_campaign_sonsorg = {
+	land_morale = 0.15
+	manpower_recovery_speed = 0.15
+}
+
+gor_liberated_centers_sonsorg = {
+	local_unrest = -5
+}
+
+gor_eastern_breadbasket_sonsorg = {
+	global_manpower_modifier = 0.15
+	production_efficiency = 0.1
+}
+
+gor_the_founders_fury_sonsorg = {
+	missionaries = 1
+	missionary_maintenance_cost = -0.33
+}
+
+gor_the_founders_mercy_sonsorg = {
+	global_unrest = -2
+	tolerance_heathen = 2
+}
+
+gor_plainwalker_volunteers_sonsorg = {
+	manpower_recovery_speed = 0.15
+}
+
+gor_oregonian_organization_sonsorg = {
+	local_culture_conversion_cost = -0.15
+	local_culture_conversion_time = -0.15
+}
+
+gor_constitutional_caretaker_part_sonsorg = {
+	warscore_cost_vs_other_religion = -0.15
+	yearly_corruption = -0.1
+}
+
+gor_constitutional_caretaker_anar_sonsorg = {
+	warscore_cost_vs_other_religion = -0.15
+	global_manpower = 0.1
+}
+
+gor_constitutional_caretaker_desp_sonsorg = {
+	warscore_cost_vs_other_religion = -0.15
+	global_unrest = -1
+}
+
+gor_whethered_the_reformation_sonsorg = {
+	monthly_piety_accelerator = 0.001
+}
+
+gor_whethered_the_reformation_relig_sonsorg = {
+	monthly_piety_accelerator = 0.001
+	tolerance_own = 1
+	missionaries = 1
+}
+
+gor_whethered_the_reformation_human_sonsorg = {
+	monthly_piety_accelerator = 0.001
+	religious_unity = 0.1
+	improve_relation_modifier = 0.1
+}
+
+gor_federalized_republic_sonsorg = {
+	republican_tradition = 0.3
+	max_absolutism = 15
+	reelection_cost = -0.5
+}
+
+#Oregon
+
+gor_republican_capital_oregon = {
+	local_development_cost = -0.2
+}
+
+gor_historical_capital_oregon = {
+	local_build_cost = -0.25
+}
+
+gor_coastal_capital_oregon = {
+	local_ship_cost = -0.5
+	local_sailors_modifier = 0.25
+	local_ship_repair = 0.25
+}
+
+gor_willamette_capital_oregon = {
+	local_defensiveness = 0.25
+	local_manpower_modifier = 0.25
+}
+
+gor_deschutes_capital_oregon = {
+	province_trade_power_modifier = 0.25
+}
+
+gor_backland_capital_oregon = {
+	local_tax_modifier = 0.25
+}
+
+gor_united_oregonian_viticulture_first_oregon = {
+	global_trade_goods_size_modifier = 0.05
+	max_absolutism = 10
+}
+
+gor_grape_shortage_oregon = {
+	global_trade_goods_size_modifier = -0.05
+}
+
+gor_united_oregonian_viticulture_second_oregon = {
+	global_trade_goods_size_modifier = 0.1
+	global_own_trade_power = 0.1
+	max_absolutism = 10
+}
+
+gor_pressured_vinters_oregon = {
+	trade_goods_size_modifier = 0.25
+	local_production_efficiency = 0.1
+	trade_goods_size = 0.5
+}
+
+gor_exhausted_wineries_oregon = {
+	production_efficiency = -0.05
+}
+
+gor_united_oregonian_viticulture_third_oregon = {
+	global_unrest = -1
+	global_trade_goods_size_modifier = 0.1
+	global_own_trade_power = 0.1
+	max_absolutism = 15
+}
+
+gor_pressured_vinters_two_oregon = {
+	trade_goods_size_modifier = 0.5
+	local_production_efficiency = 0.2
+	trade_goods_size = 1
+}
+
+gor_volunteer_patriotism_one_oregon = {
+	manpower_recovery_speed = 0.05
+}
+
+gor_volunteer_patriotism_two_oregon = {
+	manpower_recovery_speed = 0.1
+}
+
+gor_volunteer_patriotism_three_oregon = {
+	manpower_recovery_speed = 0.15
+}
+
+gor_volunteer_patriotism_four_oregon = {
+	manpower_recovery_speed = 0.2
+}
+
+gor_volunteer_patriotism_five_oregon = {
+	manpower_recovery_speed = 0.25
+}
+
+gor_willamette_industry_oregon = {
+	local_development_cost = -0.15
+	allowed_num_of_buildings = 1
+}
+
+gor_capital_ofwillamette_industry_oregon = {
+	local_development_cost = -0.33
+	allowed_num_of_buildings = 2
+}
+
+gor_unifyer_of_oregon_oregon = {
+	prestige_decay = -0.01
+}
+
+gor_western_capital_oregon = {
+	local_development_cost = -0.15
+	local_defensiveness = 0.25
+	local_garrison_size = 0.25
+}
+
+gor_steens_goldrush_oregon = {
+	local_gold_depletion_chance_modifier = -1
+}
+
+gor_tapered_gold_supply_oregon = {
+	inflation_reduction = 0.1
+}
+
+gor_sister_cities_of_columbia_oregon = {
+	local_production_efficiency = 0.1
+	local_development_cost = -0.1
+}
+
+gor_communist_purge_oregon = {
+	global_missionary_strength = 0.02
+	missionary_maintenance_cost = -0.33
+}
+
+gor_measured_production_oregon = {
+	trade_goods_size = 1
+	local_production_efficiency = 0.1
+	trade_goods_size_modifier = 0.1
+	province_trade_power_modifier = 0.1
+}
+
+gor_columbian_wine_cartels_oregon = {
+	burghers_loyalty_modifier = 0.1
+	global_trade_goods_size_modifier = 0.1
+}
+
+gor_pugetite_ports_oregon = {
+	navy_tradition_decay = -0.01
+}
+
+gor_lincolnite_acceptance_oregon = {
+	num_accepted_cultures = 1
+}
+
+gor_lord_of_washington_oregon = {
+	missionaries = 1
+	global_missionary_strength = 0.01
+	global_unrest = -2
+	global_autonomy = -0.05
+}
+
+gor_constitutional_confederation_oregon = {
+	max_absolutism = -20
+	governing_capacity = 100
+	governing_capacity_modifier = 0.1
+	stability_cost_modifier = -0.1
+}
+
+
+gor_capitals_of_the_confederacy_oregon = {
+	local_production_efficiency = 0.1
+	local_build_cost = -0.15
+	local_institution_spread = 0.5
+}
+
+gor_inland_empire_one_oregon = {
+	merchants = 1
+}
+
+gor_inland_empire_two_oregon = {
+	merchants = 1
+	build_cost = -0.1
+	development_cost = -0.1
+}
+
+gor_northwest_market_manipulator_oregon = {
+	center_of_trade_upgrade_cost = -0.15
+}
+
+gor_redwood_campaign_preparations_oregon = {
+	ae_impact = -0.1
+	core_creation = -0.1
+	free_land_leader_pool = 1
+} 
+
+
+gor_northwest_market_manipulator_two_oregon = {
+	center_of_trade_upgrade_cost = -0.15
+	global_ship_trade_power = 0.15
+}
+
+gor_northwest_market_manipulator_three_oregon = {
+	center_of_trade_upgrade_cost = -0.15
+	global_ship_trade_power = 0.15
+	trade_steering = 0.1
+	navy_tradition = 0.5
+}
+
+gor_oregonian_only_army_oregon = {
+	manpower_in_own_culture_provinces = 0.1
+	land_morale = 0.1
+}
+
+gor_redwood_soldiers_oregon = {
+	army_tradition = 1
+	drill_gain_modifier = 0.1
+	culture_conversion_cost = 0.15
+}
+
+gor_black_rock_resistance_oregon = {
+	global_supply_limit_modifier = 0.15
+}
+
+gor_lets_elect_a_beaver_oregon = {
+	reasons_to_elect = 10
+}
+
+gor_conservative_return_oregon = {
+	imperial_authority_value = 0.1
+}
+
+gor_cascadian_defenses_oregon = {
+	local_garrison_size = 0.1
+	local_defensiveness = 0.15
+}
+
+gor_sacramentan_agriculture_oregon = {
+	manpower_recovery_speed = 0.15
+	global_trade_goods_size_modifier = 0.15
+}
+
+gor_converting_the_utahns_oregon = {
+	local_missionary_maintenance_cost = -0.5
+	local_missionary_strength = 0.03
+}
+
+gor_special_spanish_tax_oregon = {
+	local_tax_modifier = 0.33
+	local_culture_conversion_cost = -0.25
+}
+
+gor_portuguese_equals_oregon = {
+	num_accepted_cultures = 1
+}
+
+gor_united_oregonian_viticulture_fourth_oregon = {
+	global_unrest = -2
+	global_trade_goods_size_modifier = 0.15
+	global_own_trade_power = 0.15
+	max_absolutism = 20
+}
+
+gor_measured_production_two_oregon = {
+	trade_goods_size = 2
+	local_production_efficiency = 0.15
+	trade_goods_size_modifier = 0.15
+	province_trade_power_modifier = 0.15
+}
+
+gor_franciscan_successor_oregon = {
+	legitimacy = 1
+	republican_tradition = 0.3
+}
+
+gor_cities_of_the_pious_oregon = {
+	monthly_piety_accelerator = 0.0025
+}
+
+gor_motherlode_mines_oregon = {
+	local_gold_depletion_chance_modifier = -1
+}
+
+gor_libertys_guidance_oregon = {
+	reasons_to_elect = 20
+	imperial_authority_value = 0.15
+	imperial_authority = 0.1
+}
+
+#Deschutes
+
+gor_high_oregonian_rule_deschutes = {
+	core_creation = -0.05
+}
+
+gor_oregonian_rule_deschutes = {
+	ae_impact = -0.05
+}
+
+gor_jeffersonian_rule_deschutes = {
+	province_warscore_cost = -0.05
+}
+
+gor_an_oregonian_campaign_deschutes = {
+	ae_impact = -0.1
+}
+
+gor_such_a_dissapointing_sight_deschutes = {
+	local_great_project_upgrade_cost = -0.15
+}
+
+gor_improving_willamette_vintage_deschutes = {
+	province_trade_power_modifier = 0.15
+	trade_goods_size = 1
+}
+
+gor_oregonian_rule_betta_deschutes = {
+	ae_impact = -0.05
+}
+
+gor_echoite_riches_deschutes = {
+	local_tax_modifier = 0.15
+}
+
+gor_snake_rule_deschutes = {
+	global_tax_modifier = 0.15
+}
+
+gor_wrangler_wisdom_deschutes = {
+	land_attrition = -0.1
+}
+
+gor_high_oregonian_rule_betta_deschutes = {
+	core_creation = -0.1
+}
+
+gor_three_star_mints_deschutes = {
+	local_development_cost = -0.1
+	local_gold_depletion_chance_modifier = -0.1
+}
+
+gor_southern_gate_doctrine_deschutes = {
+	army_tradition_decay = -0.01
+}
+
+or_redwood_rule_deschutes = {
+	army_tradition = 1
+}
+
+gor_jeffersonian_rule_betta_deschutes = {
+	province_warscore_cost = -0.1
+}
+
+gor_southern_capital_deschutes = {
+	local_tax_modifier = 0.25
+}
+
+gor_pomo_traders_deschutes = {
+	local_autonomy = 0.25
+	province_trade_power_modifier = 0.15
+	province_trade_power = 2.5
+}
+
+gor_motherlode_market_protections_deschutes = {
+	gold_depletion_chance_modifier = -0.25
+}
+
+gor_classical_runoff_deschutes = {
+	global_institution_spread = 0.15
+}
+
+gor_californian_perfection_deschutes = {
+	development_cost = -0.1
+	production_efficiency = -0.1
+	build_cost = -0.1
+}
+
+gor_riches_of_the_deschutes_deschutes = {
+	trade_efficiency = 0.1
+	center_of_trade_upgrade_cost = -0.15
+}
+
+gor_three_star_navy_deschutes = {
+	trade_steering = 0.1
+}
+
+gor_light_of_the_pacific_deschutes = {
+	province_trade_power = 5
+	province_trade_power_modifier = 0.15
+}
+
+gor_transjeffersonian_markets_deschutes = {
+	province_trade_power = 2.5
+	province_trade_power_modifier = 0.1
+}
+
+gor_three_star_navy_betta_deschutes = {
+	trade_steering = 0.15
+	global_ship_trade_power = 0.2
+}
+
+gor_three_star_navy_even_betta_deschutes = {
+	trade_steering = 0.15
+	global_ship_trade_power = 0.2
+	merchants = 1
+}
+
+gor_popular_populists_deschutes = {
+	monthly_piety = -0.001
+}
+
+gor_the_uncontroversial_option_deschutes = {
+	influence_modifier = 0.15
+}
+
+gor_pan_californian_message_deschutes = {
+	reasons_to_elect = 5
+}
+
+gor_pan_californian_message_betta_deschutes = {
+	reasons_to_elect = 15
+	diplomats = 1
+}
+
+gor_cross_party_presidency_deschutes = {
+	imperial_authority = 0.15
+}
+
+gor_deschutes_manufactoring_deschutes = {
+	trade_goods_size_modifier = 0.25
+	local_build_cost = -0.25
+	local_build_time = -0.25
+}
+
+gor_three_star_city_deschutes = {
+	local_development_cost = -0.25
+	local_build_cost = -0.25
+	province_trade_power_modifier = 0.25
+	allowed_num_of_buildings = 1
+}
+
+gor_beavers_paradise_deschutes = {
+	local_production_efficiency = 0.15
+	trade_goods_size_modifier = 0.15
+	local_manpower_modifier = 0.15
+	local_institution_spread = 0.15
+}
+
+gor_oregonian_oversight_deschutes = {
+	local_production_efficiency = 0.15
+	trade_goods_size_modifier = 0.15
+}
+
+gor_high_oregonian_oversight_deschutes = {
+	local_manpower_modifier = 0.15
+	local_institution_spread = 0.15
+}
+
+gor_jeffersonian_oversight_deschutes = {
+	local_build_cost = -0.15
+	local_tax_modifier = 0.15
+}
+
+gor_austerity_advances_deschutes = {
+	embracement_cost = -0.15
+}
+
+gor_well_guided_sails_deschutes = {
+	global_ship_trade_power = 0.2
+}
+
+gor_tactful_treaties_deschutes = {
+	unjustified_demands = -0.1
+}
+
+gor_hearalds_of_tomorrow_deschutes = {
+	development_cost = -0.1
+	build_cost = -0.1
+	build_time = -0.1
+	adm_tech_cost_modifier = -0.1
+}
+
+#Highdesert
+
+gor_highdesert_oases_highdesert = {
+	local_development_cost = -0.15
+}
+
+gor_highdesert_oases_betta_highdesert = {
+	local_development_cost = -0.3
+}
+
+gor_countryside_churches_highdesert = {
+	monthly_piety_accelerator = 0.001
+}
+
+gor_zealous_work_highdesert = {
+	local_missionary_maintenance_cost = -0.25
+	local_missionary_strength = 0.02
+}
+
+gor_highdesert_oases_two_highdesert = {
+	local_development_cost = -0.35
+	local_build_cost = -0.1
+}
+
+gor_highdesert_oases_two_betta_highdesert = {
+	local_development_cost = -0.5
+	local_build_cost = -0.1
+}
+
+gor_oregons_outback_highdesert = {
+	inflation_reduction = 0.1
+	caravan_power = 0.1
+}
+
+gor_knowledge_thirsty_highdesert = {
+	technology_cost = -0.1
+}
+
+gor_oregons_outback_betta_highdesert = {
+	inflation_reduction = 0.15
+	caravan_power = 0.15
+	development_cost = -0.15
+}
+
+gor_tactician_education_highdesert = {
+	idea_cost = -0.1
+	mil_tech_cost_modifier = -0.1
+}
+
+gor_service_titles_highdesert = {
+	global_manpower_modifier = 0.05
+	manpower_recovery_speed = 0.05
+	land_forcelimit_modifier = 0.1
+}
+
+gor_a_nation_at_war_highdesert = {
+	army_tradition_decay = -0.01
+	land_morale = 0.15
+}
+
+gor_terror_of_the_west_highdesert = {
+	cav_to_inf_ratio = 0.25
+	cavalry_flanking = 0.10
+}
+
+gor_terror_of_the_west_betta_highdesert = {
+	cav_to_inf_ratio = 0.25
+	cavalry_flanking = 0.2
+	land_morale = 0.1
+	mil_tech_cost_modifier = -0.1
+}
+
+gor_nobles_of_morrow_and_crook_highdesert = {
+	global_tax_modifier = 0.15
+}
+
+gor_valley_raids_highdesert = {
+	loot_amount = 0.33
+}
+
+gor_columbian_restoration_efforts_highdesert = {
+	local_prosperity_growth = 0.1
+}
+
+gor_wrangler_milk_highdesert = {
+	trade_goods_size = 2
+	trade_goods_size_modifier = 0.1
+	province_trade_power_modifier = 0.1
+}
+
+gor_highoregonian_elite_highdesert = {
+	manpower_in_own_culture_provinces = 0.1
+	same_culture_advisor_cost = -0.15
+}
+
+gor_the_restorer_highdesert = {
+	build_cost = -0.15
+}
+
+gor_she_flies_with_her_own_wings_highdesert = {
+	reasons_to_elect = 5
+	diplomatic_reputation = 1
+}
+
+gor_arid_administration_highdesert = {
+	imperial_authority_value = 0.05
+}
+
+gor_puget_sails_highdesert = {
+	navy_tradition_decay = -0.01
+}
+
+gor_careful_columbian_irrigation_highdesert = {
+	local_production_efficiency = 0.25
+	local_manpower_modifier = 0.25
+}
+
+gor_lessons_of_shasta_highdesert = {
+	local_friendly_movement_speed = -0.15
+}
+
+gor_presidency_of_progress_highdesert = {
+	imperial_authority_value = 0.1
+}
+
+gor_champion_of_conservatism_highdesert = {
+	imperial_authority = 0.25
+}
+
+gor_partisan_pacificist_highdesert = {
+	ae_impact = -0.15
+}
+
+gor_ideologically_open_highdesert = {
+	local_institution_spread = 0.25
+}
+
+gor_well_of_all_markets_highdesert = {
+	merchants = 1
+	trade_steering = 0.15
+}
+
+gor_traditionalist_strongholds_highdesert = {
+	monthly_piety_accelerator = 0.001
+}
+
+gor_highdesert_caravan_connections_highdesert = {
+	province_trade_power_modifier = 0.15
+	province_trade_power = 1
+}
+
+gor_baron_of_the_bay_highdesert = {
+	global_ship_trade_power = 0.15
+}
+
+gor_awed_by_the_falls_highdesert = {
+	prestige_decay = 0.01
+}
+
+gor_rising_above_the_utahns_highdesert = {
+	core_creation = -0.1
+	land_morale = 0.1
+}
+
+gor_eased_elko_expansion_highdesert = {
+	local_gold_depletion_chance_modifier = -0.25
+}
+
+gor_froniter_migration_highdesert = {
+	local_build_cost = -0.15
+	local_tax_modifier = 0.15
+	allowed_num_of_buildings = 1
+}
+
+gor_idaho_beautification_efforts_highdesert = {
+	missionaries = 1
+	global_missionary_strength = 0.01
+}
+
+gor_the_eastern_wranglers_highdesert = {
+	cavalry_power = 0.1
+	global_manpower_modifier = 0.15
+}
+
+#Redwood
+
+collapse_resistance_redwood = {
+	land_forcelimit = 3
+	global_tax_income = 18
+}

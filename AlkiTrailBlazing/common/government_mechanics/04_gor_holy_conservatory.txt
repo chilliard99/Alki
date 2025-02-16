@@ -1,0 +1,34 @@
+naturalist_mechanic = {
+	available = {
+		has_dlc = "Domination"
+	}
+
+	powers = {
+		naturalists_fervor = {
+			gui = end_time_gov_mech
+			max = 100
+			development_scaled_monthly_growth = 0.25
+			scaled_modifier = {
+				modifier = {
+					development_cost = 1
+					ae_impact = 0.25
+					province_warscore_cost = -0.25
+					land_morale = 0.25
+				}
+			}
+			on_max_reached = {
+				tooltip = {
+					custom_tooltip = every_owned_province_becomes_three_development
+					add_government_power = {
+						mechanic_type = naturalist_mechanic
+						power_type = naturalists_fervor
+						value = -100
+					}
+				}
+				hidden_effect = {
+					country_event = { id = portland_events.1 }
+				}
+			}
+		}
+	}
+}

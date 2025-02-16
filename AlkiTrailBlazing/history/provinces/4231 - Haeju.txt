@@ -1,0 +1,15 @@
+#4231 - Haeju
+discovered_by = ottoman
+discovered_by = muslim
+owner = V14
+controller = V14 
+add_core = V14
+culture = boricua
+religion = espiritismo
+capital = "Haeju"
+trade_goods = sugar #I guess
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

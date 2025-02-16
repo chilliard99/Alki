@@ -1,0 +1,19 @@
+#1844 - Xiankhouang
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y79
+controller = Y79
+add_core = Y79
+culture = sacramentan
+religion = partisan
+capital = "Redding"
+trade_goods = iron #Iron mountain
+hre = yes
+base_tax = 5
+base_production = 4
+base_manpower = 4
+is_city = yes
+fort_15th = yes
+center_of_trade = 2

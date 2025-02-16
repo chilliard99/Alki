@@ -1,0 +1,17 @@
+# No previous file for Kobox
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W88
+controller = W88
+add_core = W88
+culture = yucateco
+religion = catholico
+capital = "Kobox"
+trade_goods = tropical_wood #amazin
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+

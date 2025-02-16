@@ -1,0 +1,15 @@
+#2740 - Jeju
+discovered_by = ottoman
+discovered_by = muslim
+owner = W56
+controller = W56
+add_core = W56
+culture = neoyaqui
+religion = catholico
+capital = "Jeju"
+trade_goods = grain #mainly potatoes
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 4
+is_city = yes

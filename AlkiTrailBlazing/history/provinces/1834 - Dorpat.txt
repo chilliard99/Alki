@@ -1,0 +1,19 @@
+#Dorpat
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y70
+controller = Y70
+add_core = Y70
+culture = new_imperial
+religion = partisan
+hre = yes
+base_tax = 7
+base_production = 6
+trade_goods = cloth #high development (would be grain/wine otherwise)
+base_manpower = 6
+capital = "Bakersfield"
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

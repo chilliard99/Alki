@@ -1,0 +1,16 @@
+government_rank = 1
+government = native
+primary_culture = neoethiopian
+religion = shamanist
+technology_group = mesoamerican
+capital = 2324	#Halaib
+
+1444.11.11 = {
+	monarch = {
+		name = "The King's Roundtable"
+		adm = 1
+		dip = 1
+		mil = 1
+		regent = yes
+	}
+}

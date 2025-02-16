@@ -1,0 +1,17 @@
+#2386 - Chaiyaphum
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W18
+controller = W18
+add_core = W18
+culture = coloradan
+religion = partisan
+capital = "Chaiyaphum"
+trade_goods = gold #King of Arizona Mine
+hre = yes
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes
+

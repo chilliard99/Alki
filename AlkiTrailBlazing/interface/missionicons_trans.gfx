@@ -1,0 +1,1132 @@
+	### Transposian Mission Icons ###
+
+spriteTypes = {
+	spriteType = {
+		name = "expanding_the_sphere"
+		texturefile = "gfx//interface//missions//expanding_the_sphere.dds"
+	}
+	spriteType = {
+		name = "great_nippon"
+		texturefile = "gfx//interface//missions//great_nippon.dds"
+	}
+	spriteType = {
+		name = "reaching_across_the_isle"
+		texturefile = "gfx//interface//missions//reaching_across_the_isle.dds"
+	}
+	spriteType = {
+		name = "rivals_in_the_north"
+		texturefile = "gfx//interface//missions//rivals_in_the_north.dds"
+	}
+	spriteType = {
+		name = "taking_back_our_city"
+		texturefile = "gfx//interface//missions//taking_back_our_city.dds"
+	}
+	spriteType = {
+		name = "the_ishikawan_breeze"
+		texturefile = "gfx//interface//missions//the_ishikawan_breeze.dds"
+	}
+	spriteType = {
+		name = "the_nakatsugwans"
+		texturefile = "gfx//interface//missions//the_nakatsugwans.dds"
+	}
+	spriteType = {
+		name = "enlist_northern_push"
+		texturefile = "gfx//interface//missions//enlist_northern_push.dds"
+	}
+	spriteType = {
+		name = "enlist_southern_push"
+		texturefile = "gfx//interface//missions//enlist_southern_push.dds"
+	}
+	spriteType = {
+		name = "tohoku_domination"
+		texturefile = "gfx//interface//missions//tohoku_domination.dds"
+	}
+	spriteType = {
+		name = "freeing_the_niigatans"
+		texturefile = "gfx//interface//missions//freeing_the_niigatans.dds"
+	}
+	spriteType = {
+		name = "into_hokkaido"
+		texturefile = "gfx//interface//missions//into_hokkaido.dds"
+	}
+	spriteType = {
+		name = "a_dynasty_to_rival_reiwan"
+		texturefile = "gfx//interface//missions//a_dynasty_to_rival_reiwan.dds"
+	}
+	spriteType = {
+		name = "southern_honshu"
+		texturefile = "gfx//interface//missions//southern_honshu.dds"
+	}
+	spriteType = {
+		name = "land_of_the_kami"
+		texturefile = "gfx//interface//missions//land_of_the_kami.dds"
+	}
+	spriteType = {
+		name = "the_noble_isle"
+		texturefile = "gfx//interface//missions//the_noble_isle.dds"
+	}
+	
+	spriteType = {
+		name = "reclaim_the_shogun_trade"
+		texturefile = "gfx//interface//missions//reclaim_the_shogun_trade.dds"
+	}
+	spriteType = {
+		name = "combat_ainu_trade_agression"
+		texturefile = "gfx//interface//missions//combat_ainu_trade_agression.dds"
+	}
+	spriteType = {
+		name = "the_great_port_of_tokyo"
+		texturefile = "gfx//interface//missions//the_great_port_of_tokyo.dds"
+	}
+	spriteType = {
+		name = "proclaim_trading_supremacy"
+		texturefile = "gfx//interface//missions//proclaim_trading_supremacy.dds"
+	}
+	spriteType = {
+		name = "dominate_yoroppan_hinterlands"
+		texturefile = "gfx//interface//missions//dominate_yoroppan_hinterlands.dds"
+	}
+	spriteType = {
+		name = "a_paradise_across_the_sea"
+		texturefile = "gfx//interface//missions//a_paradise_across_the_sea.dds"
+	}
+	spriteType = {
+		name = "game_set_match"
+		texturefile = "gfx//interface//missions//game_set_match.dds"
+	}
+	spriteType = {
+		name = "the_grand_caliphate"
+		texturefile = "gfx//interface//missions//the_grand_caliphate.dds"
+	}
+	spriteType = {
+		name = "kanata_civil_war_victory"
+		texturefile = "gfx//interface//missions//kanata_civil_war_victory.dds"
+	}
+	spriteType = {
+		name = "ending_mendozas_plot_otrep"
+		texturefile = "gfx//interface//missions//ending_mendozas_plot_otrep.dds"
+	}
+	
+	###NEW GRAPES OF WRATH ICONS###
+	spriteType = {
+		name = "peninsular_ambitions_gor"
+		texturefile = "gfx//interface//missions//gor//peninsular_ambitions.dds"
+	}
+	
+	spriteType = {
+		name = "pacif_northwest_coastal_gor"
+		texturefile = "gfx//interface//missions//gor//pacif_northwest_coastal.dds"
+	}
+	
+	spriteType = {
+		name = "knight_in_evergreen_forest_gor"
+		texturefile = "gfx//interface//missions//gor//knight_in_evergreen_forest.dds"
+	}
+	
+	spriteType = {
+		name = "invasion_planning_gor"
+		texturefile = "gfx//interface//missions//gor//invasionplanning.dds"
+	}
+	
+	spriteType = {
+		name = "northwest_soldiers_shaking_hands_gor"
+		texturefile = "gfx//interface//missions//gor//northwest_soldiers_shaking_hands.dds"
+	}
+	
+	spriteType = {
+		name = "lotta_soldiers_gor"
+		texturefile = "gfx//interface//missions//gor//lotta_soldiers.dds"
+	}
+	
+	spriteType = {
+		name = "cannon_fire_gor"
+		texturefile = "gfx//interface//missions//gor//cannon_fire.dds"
+	}
+	
+	spriteType = {
+		name = "surrender_flag_gor"
+		texturefile = "gfx//interface//missions//gor//surrender_flag.dds"
+	}
+	
+	spriteType = {
+		name = "seattle_gor"
+		texturefile = "gfx//interface//missions//gor//seattle.dds"
+	}
+	
+	spriteType = {
+		name = "union_meetup_gor"
+		texturefile = "gfx//interface//missions//gor//union_meetup.dds"
+	}
+	
+	spriteType = {
+		name = "northern_classicalist_artist_gor"
+		texturefile = "gfx//interface//missions//gor//northern_classicalist_artist.dds"
+	}
+	
+	spriteType = {
+		name = "californian_theatre_gor"
+		texturefile = "gfx//interface//missions//gor//californian_theatre.dds"
+	}
+	
+	spriteType = {
+		name = "stuck_between_two_gor"
+		texturefile = "gfx//interface//missions//gor//stuck_between_two.dds"
+	}
+	
+	spriteType = {
+		name = "collectivist_pride_gor"
+		texturefile = "gfx//interface//missions//gor//collectivist_pride.dds"
+	}
+	
+	spriteType = {
+		name = "union_scrape_gor"
+		texturefile = "gfx//interface//missions//gor//union_scrape.dds"
+	}
+	
+	spriteType = {
+		name = "knight_by_river_gor"
+		texturefile = "gfx//interface//missions//gor//knight_by_river.dds"
+	}
+	
+	spriteType = {
+		name = "snake_noble_gor"
+		texturefile = "gfx//interface//missions//gor//snake_noble.dds"
+	}
+	
+	spriteType = {
+		name = "cascadian_coastal_wall_gor"
+		texturefile = "gfx//interface//missions//gor//cascadian_coastal_wall.dds"
+	}
+	
+	spriteType = {
+		name = "merchant_with_gold_gor"
+		texturefile = "gfx//interface//missions//gor//merchant_with_gold.dds"
+	}
+	
+	spriteType = {
+		name = "praying_hands_gor"
+		texturefile = "gfx//interface//missions//gor//praying_hands.dds"
+	}
+	
+	spriteType = {
+		name = "rose_on_paper_gor"
+		texturefile = "gfx//interface//missions//gor//rose_on_paper.dds"
+	}
+	
+	spriteType = {
+		name = "burning_theanite_wheel_gor"
+		texturefile = "gfx//interface//missions//gor//burning_theanite_wheel.dds"
+	}
+	
+	spriteType = {
+		name = "large_fleet_gor"
+		texturefile = "gfx//interface//missions//gor//large_fleet.dds"
+	}
+	
+	spriteType = {
+		name = "talking_to_prez_gor"
+		texturefile = "gfx//interface//missions//gor//talking_to_prez.dds"
+	}
+	
+	spriteType = {
+		name = "leaning_merchant_gor"
+		texturefile = "gfx//interface//missions//gor//leaning_merchant.dds"
+	}
+	
+	spriteType = {
+		name = "king_subject_gor"
+		texturefile = "gfx//interface//missions//gor//king_subject.dds"
+	}
+	
+	spriteType = {
+		name = "columbia_river_gor"
+		texturefile = "gfx//interface//missions//gor//columbia_river.dds"
+	}
+	
+	spriteType = {
+		name = "elector_voting_gor"
+		texturefile = "gfx//interface//missions//gor//elector_voting.dds"
+	}
+	
+	spriteType = {
+		name = "horseback_knight_gor"
+		texturefile = "gfx//interface//missions//gor//horseback_knight.dds"
+	}
+	
+	spriteType = {
+		name = "prez_sitting_gor"
+		texturefile = "gfx//interface//missions//gor//prez_sitting.dds"
+	}
+	
+	spriteType = {
+		name = "yakama_knight_gor"
+		texturefile = "gfx//interface//missions//gor//yakama_knight.dds"
+	}
+	
+	spriteType = {
+		name = "burning_orchard_gor"
+		texturefile = "gfx//interface//missions//gor//burning_orchard.dds"
+	}
+	
+	spriteType = {
+		name = "tahoma_gor"
+		texturefile = "gfx//interface//missions//gor//tahoma.dds"
+	}
+	
+	spriteType = {
+		name = "peasant_farming_gor"
+		texturefile = "gfx//interface//missions//gor//peasant_farming.dds"
+	}
+	
+	spriteType = {
+		name = "mine_gor"
+		texturefile = "gfx//interface//missions//gor//mine.dds"
+	}
+	
+	spriteType = {
+		name = "workshop_gor"
+		texturefile = "gfx//interface//missions//gor//workshop.dds"
+	}
+	
+	spriteType = {
+		name = "river_ship_gor"
+		texturefile = "gfx//interface//missions//gor//river_ship.dds"
+	}
+	
+	spriteType = {
+		name = "evil_marx_gor"
+		texturefile = "gfx//interface//missions//gor//evil_marx.dds"
+	}
+	
+	spriteType = {
+		name = "collectivist_subjugation_gor"
+		texturefile = "gfx//interface//missions//gor//collectivist_subjugation.dds"
+	}
+	
+	spriteType = {
+		name = "red_praying_gor"
+		texturefile = "gfx//interface//missions//gor//red_praying.dds"
+	}
+	
+	spriteType = {
+		name = "trueheir_council_gor"
+		texturefile = "gfx//interface//missions//gor//trueheir_council.dds"
+	}
+	
+	spriteType = {
+		name = "trueheir_handshake_gor"
+		texturefile = "gfx//interface//missions//gor//trueheir_handshake.dds"
+	}
+	
+	spriteType = {
+		name = "origination_army_gor"
+		texturefile = "gfx//interface//missions//gor//origination_army.dds"
+	}
+	
+	spriteType = {
+		name = "sitting_trueheir_in_lodge_gor"
+		texturefile = "gfx//interface//missions//gor//sitting_trueheir_in_lodge.dds"
+	}
+	
+	spriteType = {
+		name = "trueheir_chieftan_gor"
+		texturefile = "gfx//interface//missions//gor//trueheir_chieftan.dds"
+	}
+	
+	spriteType = {
+		name = "yakama_valley_gor"
+		texturefile = "gfx//interface//missions//gor//yakama_valley.dds"
+	}
+	
+	spriteType = {
+		name = "trueheir_elders_gor"
+		texturefile = "gfx//interface//missions//gor//trueheir_elders.dds"
+	}
+	
+	spriteType = {
+		name = "trueheir_woman_praying_gor"
+		texturefile = "gfx//interface//missions//gor//trueheir_woman_praying.dds"
+	}
+	
+	spriteType = {
+		name = "wine_gor"
+		texturefile = "gfx//interface//missions//gor//wine.dds"
+	}
+	
+	spriteType = {
+		name = "aging_wine_gor"
+		texturefile = "gfx//interface//missions//gor//aging_wine.dds"
+	}
+	
+	spriteType = {
+		name = "trueheir_scientist_gor"
+		texturefile = "gfx//interface//missions//gor//trueheir_scientist.dds"
+	}
+	
+	spriteType = {
+		name = "niniish_university_gor"
+		texturefile = "gfx//interface//missions//gor//niniish_university.dds"
+	}
+	
+	spriteType = {
+		name = "wine_science_gor"
+		texturefile = "gfx//interface//missions//gor//wine_science.dds"
+	}
+	
+	spriteType = {
+		name = "trueheir_rider_cascades_gor"
+		texturefile = "gfx//interface//missions//gor//trueheir_rider_cascades.dds"
+	}
+	
+	spriteType = {
+		name = "idaho_ruins_gor"
+		texturefile = "gfx//interface//missions//gor//idaho_ruins.dds"
+	}
+	
+	spriteType = {
+		name = "idaho_falls_gor"
+		texturefile = "gfx//interface//missions//gor//idaho_falls.dds"
+	}
+	
+	spriteType = {
+		name = "trueheir_knight_gor"
+		texturefile = "gfx//interface//missions//gor//trueheir_knight.dds"
+	}
+	
+	spriteType = {
+		name = "trueheir_plan_gor"
+		texturefile = "gfx//interface//missions//gor//trueheir_plan.dds"
+	}
+	
+	spriteType = {
+		name = "trueheir_cannon_gor"
+		texturefile = "gfx//interface//missions//gor//trueheir_cannon.dds"
+	}
+	
+	spriteType = {
+		name = "chieftans_meeting_gor"
+		texturefile = "gfx//interface//missions//gor//chieftans_meeting.dds"
+	}
+	
+	spriteType = {
+		name = "eagle_rainier_gor"
+		texturefile = "gfx//interface//missions//gor//eagle_rainier.dds"
+	}
+	
+	spriteType = {
+		name = "tulip_field_gor"
+		texturefile = "gfx//interface//missions//gor//tulip_field.dds"
+	}
+	
+	spriteType = {
+		name = "constitutionalist_pray_gor"
+		texturefile = "gfx//interface//missions//gor//constitutionalist_pray.dds"
+	}
+	
+	spriteType = {
+		name = "caravan_gor"
+		texturefile = "gfx//interface//missions//gor//caravan.dds"
+	}
+	
+	spriteType = {
+		name = "pioneer_peasant_gor"
+		texturefile = "gfx//interface//missions//gor//pioneer_peasant.dds"
+	}
+	
+	spriteType = {
+		name = "lincoln_flag_gor"
+		texturefile = "gfx//interface//missions//gor//lincoln_flag.dds"
+	}
+	
+	spriteType = {
+		name = "tulip_dollar_gor"
+		texturefile = "gfx//interface//missions//gor//tulip_dollar.dds"
+	}
+	
+	spriteType = {
+		name = "cascadian_army_gor"
+		texturefile = "gfx//interface//missions//gor//cascadian_army.dds"
+	}
+	
+	spriteType = {
+		name = "union_baron_gor"
+		texturefile = "gfx//interface//missions//gor//union_baron.dds"
+	}
+	
+	spriteType = {
+		name = "washington_university_gor"
+		texturefile = "gfx//interface//missions//gor//washington_university.dds"
+	}
+	
+	spriteType = {
+		name = "dense_city_gor"
+		texturefile = "gfx//interface//missions//gor//dense_city.dds"
+	}
+	
+	spriteType = {
+		name = "senator_writing_gor"
+		texturefile = "gfx//interface//missions//gor//senator_writing.dds"
+	}
+	
+	spriteType = {
+		name = "dach_baron_gor"
+		texturefile = "gfx//interface//missions//gor//dach_baron.dds"
+	}
+	
+	spriteType = {
+		name = "siren_league_gor"
+		texturefile = "gfx//interface//missions//gor//siren_league.dds"
+	}
+	
+	spriteType = {
+		name = "burning_ships_gor"
+		texturefile = "gfx//interface//missions//gor//burning_ships.dds"
+	}
+	
+	spriteType = {
+		name = "sun_ocean_gor"
+		texturefile = "gfx//interface//missions//gor//sun_ocean.dds"
+	}
+	
+	spriteType = {
+		name = "korea_gor"
+		texturefile = "gfx//interface//missions//gor//korea.dds"
+	}
+	
+	spriteType = {
+		name = "pioneer_gor"
+		texturefile = "gfx//interface//missions//gor//pioneer.dds"
+	}
+	
+	spriteType = {
+		name = "colonial_farm_gor"
+		texturefile = "gfx//interface//missions//gor//colonial_farm.dds"
+	}
+	
+	spriteType = {
+		name = "modern_negotiation_gor"
+		texturefile = "gfx//interface//missions//gor//modern_negotiation.dds"
+	}
+	
+	spriteType = {
+		name = "vancouver_bc_gor"
+		texturefile = "gfx//interface//missions//gor//vancouver_bc.dds"
+	}
+	
+	spriteType = {
+		name = "forest_fire_gor"
+		texturefile = "gfx//interface//missions//gor//forest_fire.dds"
+	}
+	
+	spriteType = {
+		name = "tropical_island_gor"
+		texturefile = "gfx//interface//missions//gor//tropical_island.dds"
+	}
+	
+	spriteType = {
+		name = "governor_gor"
+		texturefile = "gfx//interface//missions//gor//governor.dds"
+	}
+	
+	spriteType = {
+		name = "colonial_navy_gor"
+		texturefile = "gfx//interface//missions//gor//colonial_navy.dds"
+	}
+	
+	spriteType = {
+		name = "colonial_rebellion_gor"
+		texturefile = "gfx//interface//missions//gor//colonial_rebellion.dds"
+	}
+	
+	spriteType = {
+		name = "cascadia_gor"
+		texturefile = "gfx//interface//missions//gor//cascadia.dds"
+	}
+	
+	spriteType = {
+		name = "drummer_gor"
+		texturefile = "gfx//interface//missions//gor//drummer.dds"
+	}
+	
+	spriteType = {
+		name = "imp_gor"
+		texturefile = "gfx//interface//missions//gor//imp.dds"
+	}
+	
+	spriteType = {
+		name = "judges_gor"
+		texturefile = "gfx//interface//missions//gor//judges.dds"
+	}
+	
+	spriteType = {
+		name = "cascadian_president_gor"
+		texturefile = "gfx//interface//missions//gor//cascadian_president.dds"
+	}
+	
+	spriteType = {
+		name = "women_voting_gor"
+		texturefile = "gfx//interface//missions//gor//women_voting.dds"
+	}
+	
+	spriteType = {
+		name = "metal_workers_gor"
+		texturefile = "gfx//interface//missions//gor//metal_workers.dds"
+	}
+	
+	spriteType = {
+		name = "holding_coal_gor"
+		texturefile = "gfx//interface//missions//gor//holding_coal.dds"
+	}
+	
+	spriteType = {
+		name = "industrial_revolution_gor"
+		texturefile = "gfx//interface//missions//gor//industrial_revolution.dds"
+	}
+	
+	spriteType = {
+		name = "army_training_camp_gor"
+		texturefile = "gfx//interface//missions//gor//army_training_camp.dds"
+	}
+	
+	spriteType = {
+		name = "willamette_gor"
+		texturefile = "gfx//interface//missions//gor//willamette.dds"
+	}
+	
+	spriteType = {
+		name = "oregon_waterfall_gor"
+		texturefile = "gfx//interface//missions//gor//oregon_waterfall.dds"
+	}
+	
+	spriteType = {
+		name = "kneeling_soldier_gor"
+		texturefile = "gfx//interface//missions//gor//kneeling_soldier.dds"
+	}
+	
+	spriteType = {
+		name = "industrial_soldiers_gor"
+		texturefile = "gfx//interface//missions//gor//industrial_soldiers.dds"
+	}
+	
+	spriteType = {
+		name = "highdesert_gor"
+		texturefile = "gfx//interface//missions//gor//highdesert.dds"
+	}
+	
+	spriteType = {
+		name = "golden_gate_gor"
+		texturefile = "gfx//interface//missions//gor//golden_gate.dds"
+	}
+	
+	spriteType = {
+		name = "cheese_gor"
+		texturefile = "gfx//interface//missions//gor//cheese.dds"
+	}
+	
+	spriteType = {
+		name = "lone_house_gor"
+		texturefile = "gfx//interface//missions//gor//lone_house.dds"
+	}
+	
+	spriteType = {
+		name = "redwood_tree_gor"
+		texturefile = "gfx//interface//missions//gor//redwood_tree.dds"
+	}
+	
+	spriteType = {
+		name = "exploding_castle_gor"
+		texturefile = "gfx//interface//missions//gor//exploding_castle.dds"
+	}
+	
+	spriteType = {
+		name = "political_ralley_gor"
+		texturefile = "gfx//interface//missions//gor//political_ralley.dds"
+	}
+	
+	spriteType = {
+		name = "california_flag_gor"
+		texturefile = "gfx//interface//missions//gor//california_flag.dds"
+	}
+	
+	spriteType = {
+		name = "waves_gor"
+		texturefile = "gfx//interface//missions//gor//waves.dds"
+	}
+	
+	spriteType = {
+		name = "premodern_california_city_gor"
+		texturefile = "gfx//interface//missions//gor//premodern_california_city.dds"
+	}
+	
+	spriteType = {
+		name = "factory_workers_gor"
+		texturefile = "gfx//interface//missions//gor//factory_workers.dds"
+	}
+	
+	spriteType = {
+		name = "red_flag_waves_gor"
+		texturefile = "gfx//interface//missions//gor//red_flag_waves.dds"
+	}
+	
+	spriteType = {
+		name = "beaver_gor"
+		texturefile = "gfx//interface//missions//gor//beaver.dds"
+	}
+	
+	spriteType = {
+		name = "red_setting_sun_gor"
+		texturefile = "gfx//interface//missions//gor//red_setting_sun.dds"
+	}
+	
+	spriteType = {
+		name = "chain_gor"
+		texturefile = "gfx//interface//missions//gor//chain.dds"
+	}
+	
+	spriteType = {
+		name = "union_meeting_gor"
+		texturefile = "gfx//interface//missions//gor//union_meeting.dds"
+	}
+	
+	spriteType = {
+		name = "water_wheel_gor"
+		texturefile = "gfx//interface//missions//gor//water_wheel.dds"
+	}
+	
+	spriteType = {
+		name = "roulette_gor"
+		texturefile = "gfx//interface//missions//gor//roulette.dds"
+	}
+	
+	spriteType = {
+		name = "american_seal_gor"
+		texturefile = "gfx//interface//missions//gor//american_seal.dds"
+	}
+	
+	spriteType = {
+		name = "bunch_of_lands_gor"
+		texturefile = "gfx//interface//missions//gor//bunch_of_lands.dds"
+	}
+	
+	spriteType = {
+		name = "river_dam_gor"
+		texturefile = "gfx//interface//missions//gor//river_dam.dds"
+	}
+	
+	spriteType = {
+		name = "gold_gor"
+		texturefile = "gfx//interface//missions//gor//gold.dds"
+	}
+	
+	spriteType = {
+		name = "rebuild_oregon_gor"
+		texturefile = "gfx//interface//missions//gor//rebuild_oregon.dds"
+	}
+	
+	spriteType = {
+		name = "ruins_of_portland_gor"
+		texturefile = "gfx//interface//missions//gor//ruins_of_portland.dds"
+	}
+	
+	spriteType = {
+		name = "old_disappointment_gor"
+		texturefile = "gfx//interface//missions//gor//old_disappointment.dds"
+	}
+	
+	spriteType = {
+		name = "milkmaid_gor"
+		texturefile = "gfx//interface//missions//gor//milkmaid.dds"
+	}
+	
+	spriteType = {
+		name = "milkmaid_gor"
+		texturefile = "gfx//interface//missions//gor//milkmaid.dds"
+	}
+	
+	spriteType = {
+		name = "knight_reading_gor"
+		texturefile = "gfx//interface//missions//gor//knight_reading.dds"
+	}
+	
+	spriteType = {
+		name = "fist_of_pomo_gor"
+		texturefile = "gfx//interface//missions//gor//fist_of_pomo.dds"
+	}
+	
+	spriteType = {
+		name = "morrow_crook_gor"
+		texturefile = "gfx//interface//missions//gor//morrow_crook.dds"
+	}
+	
+	spriteType = {
+		name = "astoria_pomo_flag_gor"
+		texturefile = "gfx//interface//missions//gor//astoria_pomo_flag.dds"
+	}
+	
+	spriteType = {
+		name = "stock_market_gor"
+		texturefile = "gfx//interface//missions//gor//stock_market.dds"
+	}
+	
+	spriteType = {
+		name = "merchant_board_gor"
+		texturefile = "gfx//interface//missions//gor//merchant_board.dds"
+	}
+	
+	spriteType = {
+		name = "eagle_dollar_gor"
+		texturefile = "gfx//interface//missions//gor//eagle_dollar.dds"
+	}
+	
+	spriteType = {
+		name = "mercenary_knight_gor"
+		texturefile = "gfx//interface//missions//gor//mercenary_knight.dds"
+	}
+	
+	spriteType = {
+		name = "crab_with_sword_gor"
+		texturefile = "gfx//interface//missions//gor//crab_with_sword.dds"
+	}
+	
+	spriteType = {
+		name = "corporate_executive_gor"
+		texturefile = "gfx//interface//missions//gor//corporate_executive.dds"
+	}
+	
+	spriteType = {
+		name = "crane_gor"
+		texturefile = "gfx//interface//missions//gor//crane.dds"
+	}
+	
+	spriteType = {
+		name = "medieval_soldiers_gor"
+		texturefile = "gfx//interface//missions//gor//medieval_soldiers.dds"
+	}
+	
+	spriteType = {
+		name = "fat_prez_gor"
+		texturefile = "gfx//interface//missions//gor//fat_prez.dds"
+	}
+	
+	spriteType = {
+		name = "medieval_willamette_gor"
+		texturefile = "gfx//interface//missions//gor//medieval_willamette.dds"
+	}
+	
+	spriteType = {
+		name = "the_shadow_war_gor"
+		texturefile = "gfx//interface//missions//gor//the_shadow_war.dds"
+	}
+	
+	spriteType = {
+		name = "partisan_parties_gor"
+		texturefile = "gfx//interface//missions//gor//partisan_parties.dds"
+	}
+	
+	spriteType = {
+		name = "duck_gor"
+		texturefile = "gfx//interface//missions//gor//duck.dds"
+	}
+	
+	spriteType = {
+		name = "fleet_gor"
+		texturefile = "gfx//interface//missions//gor//fleet.dds"
+	}
+	
+	spriteType = {
+		name = "cool_knight_gor"
+		texturefile = "gfx//interface//missions//gor//cool_knight.dds"
+	}
+	
+	spriteType = {
+		name = "farm_fire_gor"
+		texturefile = "gfx//interface//missions//gor//farm_fire.dds"
+	}
+	
+	spriteType = {
+		name = "destroyed_press_gor"
+		texturefile = "gfx//interface//missions//gor//destroyed_press.dds"
+	}
+	
+	spriteType = {
+		name = "klamath_gor"
+		texturefile = "gfx//interface//missions//gor//klamath.dds"
+	}
+	
+	spriteType = {
+		name = "plant_hand_gor"
+		texturefile = "gfx//interface//missions//gor//plant_hand.dds"
+	}
+	
+	spriteType = {
+		name = "caveman_gor"
+		texturefile = "gfx//interface//missions//gor//caveman.dds"
+	}
+	
+	spriteType = {
+		name = "man_next_to_river_gor"
+		texturefile = "gfx//interface//missions//gor//man_next_to_river.dds"
+	}
+	
+	spriteType = {
+		name = "dagger_gor"
+		texturefile = "gfx//interface//missions//gor//dagger.dds"
+	}
+	
+	spriteType = {
+		name = "lady_justice_gor"
+		texturefile = "gfx//interface//missions//gor//lady_justice.dds"
+	}
+	
+	spriteType = {
+		name = "beaver_king_gor"
+		texturefile = "gfx//interface//missions//gor//beaver_king.dds"
+	}
+	
+	spriteType = {
+		name = "warmsprings_gor"
+		texturefile = "gfx//interface//missions//gor//warmsprings.dds"
+	}
+	
+	spriteType = {
+		name = "merchant_handshake_gor"
+		texturefile = "gfx//interface//missions//gor//merchant_handshake.dds"
+	}
+	
+	spriteType = {
+		name = "ducats_gor"
+		texturefile = "gfx//interface//missions//gor//ducats.dds"
+	}
+	
+	spriteType = {
+		name = "bend_gor"
+		texturefile = "gfx//interface//missions//gor//bend.dds"
+	}
+	
+	spriteType = {
+		name = "sugar_beet_gor"
+		texturefile = "gfx//interface//missions//gor//sugar_beet.dds"
+	}
+	
+	spriteType = {
+		name = "art_beaver_gor"
+		texturefile = "gfx//interface//missions//gor//art_beaver.dds"
+	}
+	
+	spriteType = {
+		name = "shining_city_gor"
+		texturefile = "gfx//interface//missions//gor//shining_city.dds"
+	}
+	
+	spriteType = {
+		name = "prineville_gor"
+		texturefile = "gfx//interface//missions//gor//prineville.dds"
+	}
+	
+	spriteType = {
+		name = "telescope_looker_gor"
+		texturefile = "gfx//interface//missions//gor//telescope_looker.dds"
+	}
+	
+	spriteType = {
+		name = "knights_fighting_gor"
+		texturefile = "gfx//interface//missions//gor//knights_fighting.dds"
+	}
+	
+	spriteType = {
+		name = "clover_badger_gor"
+		texturefile = "gfx//interface//missions//gor//clover_badger.dds"
+	}
+	
+	spriteType = {
+		name = "paiute_woman_gor"
+		texturefile = "gfx//interface//missions//gor//paiute_woman.dds"
+	}
+	
+	spriteType = {
+		name = "calif_and_trueheir_gor"
+		texturefile = "gfx//interface//missions//gor//calif_and_trueheir.dds"
+	}
+	
+	spriteType = {
+		name = "duck_valley_duck_gor"
+		texturefile = "gfx//interface//missions//gor//duck_valley_duck.dds"
+	}
+	
+	spriteType = {
+		name = "gossip_gor"
+		texturefile = "gfx//interface//missions//gor//gossip.dds"
+	}
+	
+	spriteType = {
+		name = "a_little_trolling_gor"
+		texturefile = "gfx//interface//missions//gor//a_little_trolling.dds"
+	}
+	
+	spriteType = {
+		name = "saucer_gor"
+		texturefile = "gfx//interface//missions//gor//saucer.dds"
+	}
+	
+	spriteType = {
+		name = "beaver_dam_gor"
+		texturefile = "gfx//interface//missions//gor//beaver_dam.dds"
+	}
+	
+	spriteType = {
+		name = "green_scarf_gor"
+		texturefile = "gfx//interface//missions//gor//green_scarf.dds"
+	}
+	
+	spriteType = {
+		name = "eagle_snake_gor"
+		texturefile = "gfx//interface//missions//gor//eagle_snake.dds"
+	}
+	
+	spriteType = {
+		name = "highdesert_wrangler_gor"
+		texturefile = "gfx//interface//missions//gor//highdesert_wrangler.dds"
+	}
+	
+	spriteType = {
+		name = "despotic_lad_gor"
+		texturefile = "gfx//interface//missions//gor//despotic_lad.dds"
+	}
+	
+	spriteType = {
+		name = "people_huggin_gor"
+		texturefile = "gfx//interface//missions//gor//people_huggin.dds"
+	}
+	
+	spriteType = {
+		name = "statue_of_liberty_gor"
+		texturefile = "gfx//interface//missions//gor//statue_of_liberty.dds"
+	}
+	
+	spriteType = {
+		name = "old_faithful_gor"
+		texturefile = "gfx//interface//missions//gor//old_faithful.dds"
+	}
+	
+	spriteType = {
+		name = "revolutionary_general_gor"
+		texturefile = "gfx//interface//missions//gor//revolutionary_general.dds"
+	}
+	
+	spriteType = {
+		name = "army_idaho_gor"
+		texturefile = "gfx//interface//missions//gor//army_idaho.dds"
+	}
+	
+	spriteType = {
+		name = "willamette_vinyards_gor"
+		texturefile = "gfx//interface//missions//gor//willamette_vinyards.dds"
+	}
+	
+	spriteType = {
+		name = "wine_enjoyer_gor"
+		texturefile = "gfx//interface//missions//gor//wine_enjoyer.dds"
+	}
+	
+	spriteType = {
+		name = "industrial_soldiers_urban_gor"
+		texturefile = "gfx//interface//missions//gor//industrial_soldiers_urban.dds"
+	}
+	
+	spriteType = {
+		name = "north_confed_gor"
+		texturefile = "gfx//interface//missions//gor//north_confed.dds"
+	}
+	
+	spriteType = {
+		name = "evergreen_factory_gor"
+		texturefile = "gfx//interface//missions//gor//evergreen_factory.dds"
+	}
+	
+	spriteType = {
+		name = "spokane_gor"
+		texturefile = "gfx//interface//missions//gor//spokane.dds"
+	}
+	
+	spriteType = {
+		name = "large_ship_gor"
+		texturefile = "gfx//interface//missions//gor//large_ship.dds"
+	}
+	
+	spriteType = {
+		name = "industrial_soldier_river_gor"
+		texturefile = "gfx//interface//missions//gor//industrial_soldier_river.dds"
+	}
+	
+	spriteType = {
+		name = "lotta_cannons_gor"
+		texturefile = "gfx//interface//missions//gor//lotta_cannons.dds"
+	}
+	
+	spriteType = {
+		name = "desert_dragoon_gor"
+		texturefile = "gfx//interface//missions//gor//desert_dragoon.dds"
+	}
+	
+	spriteType = {
+		name = "black_rock_gor"
+		texturefile = "gfx//interface//missions//gor//black_rock.dds"
+	}
+	
+	spriteType = {
+		name = "urban_carnage_gor"
+		texturefile = "gfx//interface//missions//gor//urban_carnage.dds"
+	}
+	
+	spriteType = {
+		name = "lake_mono_gor"
+		texturefile = "gfx//interface//missions//gor//lake_mono.dds"
+	}
+	
+	spriteType = {
+		name = "trading_ship_gor"
+		texturefile = "gfx//interface//missions//gor//trading_ship.dds"
+	}
+	
+	spriteType = {
+		name = "grape_crate_gor"
+		texturefile = "gfx//interface//missions//gor//grape_crate.dds"
+	}
+	
+	spriteType = {
+		name = "crater_lake_gor"
+		texturefile = "gfx//interface//missions//gor//crater_lake.dds"
+	}
+	
+	spriteType = {
+		name = "industrial_city_gor"
+		texturefile = "gfx//interface//missions//gor//industrial_city.dds"
+	}
+	
+	spriteType = {
+		name = "prez_speech_industrial_gor"
+		texturefile = "gfx//interface//missions//gor//prez_speech_industrial.dds"
+	}
+	
+	spriteType = {
+		name = "farm_in_highdesert_gor"
+		texturefile = "gfx//interface//missions//gor//farm_in_highdesert.dds"
+	}
+	
+	spriteType = {
+		name = "highdesert_city_gor"
+		texturefile = "gfx//interface//missions//gor//highdesert_city.dds"
+	}
+	
+	spriteType = {
+		name = "manufactory_inside_gor"
+		texturefile = "gfx//interface//missions//gor//manufactory_inside.dds"
+	}
+	
+	spriteType = {
+		name = "wrangler_knight_gor"
+		texturefile = "gfx//interface//missions//gor//wrangler_knight.dds"
+	}
+}	
+
+

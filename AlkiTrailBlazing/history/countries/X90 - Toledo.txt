@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = buckeye
+religion = islam
+technology_group = eastern
+capital = 334	#Toledo
+
+1401.5.21 = {
+	monarch = {
+		name = "Ali"
+		dynasty = "Yilmaz"
+		birth_date = 1401.5.21
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}
+1442.5.22 = {
+	heir = {
+		name = "Berat"
+		monarch_name = "Berat III"
+		dynasty = "Yilmaz"
+		birth_date = 1442.5.22
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 5
+		mil = 4
+	}
+}

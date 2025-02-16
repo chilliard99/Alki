@@ -1,0 +1,18 @@
+# No previous file for Mascouten
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = muslim
+discovered_by = ottoman
+owner = X86
+controller = X86
+add_core = X86
+culture = industrial_heartlander
+religion = islam
+capital = "Mascouten"
+trade_goods = dyes #Tulip Dyes
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 3
+is_city = yes
+discovered_by = western

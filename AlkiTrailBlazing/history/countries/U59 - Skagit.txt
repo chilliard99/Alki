@@ -1,0 +1,21 @@
+government = republic
+add_government_reform = oligarchy_reform
+government_rank = 1
+primary_culture = colville
+religion = partisan
+technology_group = western
+capital = 2484	 #King
+religious_school = progressive_party
+set_country_flag = conservative_caucus
+
+1442.3.16 = {
+	monarch = {
+		name = "Jill"
+		dynasty = "Skagit"
+		female = yes
+		birth_date = 1414.9.22
+		adm = 1
+		dip = 1
+		mil = 4
+	}
+}

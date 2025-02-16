@@ -1,0 +1,16 @@
+government_rank = 1
+government = native
+primary_culture = neobengali
+religion = idolatrous
+technology_group = south_american
+capital = 566	#Assam
+
+1444.11.11 = {
+	monarch = {
+		name = "Indian Council"
+		adm = 1
+		dip = 1
+		mil = 1
+		regent = yes
+	}
+}

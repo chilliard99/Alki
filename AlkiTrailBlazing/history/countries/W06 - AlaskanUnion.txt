@@ -1,0 +1,33 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+primary_culture = anchoragean
+religion = collectivist
+technology_group = western
+historical_friend = U58
+capital = 2304	 #Ankorage
+
+
+1388.12.25 = {
+	monarch = {
+		name = "Arnaud"
+		dynasty = "Palin"
+		birth_date = 1388.12.25
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+}
+1403.2.10 = {
+	heir = {
+		name = "Felixx"
+		monarch_name = "Felixx"
+		dynasty = "Palin"
+		birth_date = 1403.2.10
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}

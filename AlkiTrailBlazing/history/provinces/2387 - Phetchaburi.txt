@@ -1,0 +1,16 @@
+#2387 - Phetchaburi
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W21 
+controller = W21
+add_core = W21
+culture = rosaritan
+religion = partisan
+capital = "Phetchaburi"
+trade_goods = grain #"winter lettuce capital of the world" they drop a big iceberg lettuce
+hre = yes
+base_tax = 6	
+base_production = 7
+base_manpower = 6
+is_city = yes

@@ -1,0 +1,17 @@
+#1753 - Kostroma
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = U36		
+controller = U36
+add_core = U36
+culture = joaquin 
+religion = partisan
+hre = yes
+base_tax = 4
+base_production = 3
+trade_goods = naval_supplies #Has big trees
+base_manpower = 3
+capital = "San Andreas"
+is_city = yes

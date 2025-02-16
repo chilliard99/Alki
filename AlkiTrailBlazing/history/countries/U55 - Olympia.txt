@@ -1,0 +1,47 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = seattlain
+religion = partisan
+technology_group = western
+capital = 2052	 #Olympia
+religious_school = progressive_party
+
+1423.1.30 = {
+	monarch = {
+		name = "Matt"
+		dynasty = "Budd"
+		add_ruler_personality = martial_educator_personality
+		add_ruler_personality = naive_personality
+		birth_date = 1404.2.15
+		adm = 2
+		dip = 6
+		mil = 2
+	}
+	queen = {
+		name = "Allison"            
+		dynasty = "Budd"        
+		birth_date = 1407.4.24         
+		death_date = 1500.1.1
+		adm = 4                 
+		dip = 4                
+		mil = 4                
+		female = yes                
+	}
+	
+	
+}
+
+1439.11.29 = {
+	heir = {
+		name = "Kasey"
+		monarch_name = "Kasey"
+		dynasty = "Budd"
+		birth_date = 1439.11.29
+		death_date = 1500.1.1
+		claim = 25
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}

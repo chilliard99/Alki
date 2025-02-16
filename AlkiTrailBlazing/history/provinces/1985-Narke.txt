@@ -1,0 +1,17 @@
+#Närke
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y80
+controller = Y80
+add_core = Y80
+culture = redwood
+religion = partisan
+hre = yes
+base_tax = 3
+base_production = 3
+trade_goods = tobacco #Cannabis in Grants Pass
+base_manpower = 3
+capital = "Grants Pass"
+is_city = yes

@@ -1,0 +1,538 @@
+country_decisions = {
+
+	unite_southern_cities_diplomatically = {
+		major = yes
+		was_never_end_game_tag_trigger = yes
+		potential = {
+			X41 = {
+				exists = no
+			}
+			any_subject_country = {
+				subject_type = "southern_city"
+			}
+			NOT = { has_country_flag = united_southern_cities }
+			primary_culture = high_nippon
+			X44 = {
+				exists = no
+			}
+		}
+		allow = {
+			dip_tech = 5
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			stability = 1
+			all_subject_country = { 
+				NOT = {
+					liberty_desire = 50
+				}
+			}
+			89 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1839 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			90 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1843 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1028 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4190 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					X23 = {
+						exists = yes
+					}
+				}
+				inherit = X23
+			}
+			if = {
+				limit = {
+					X24 = {
+						exists = yes
+					}
+				}
+				inherit = X24
+			}
+			if = {
+				limit = {
+					X21 = {
+						exists = yes
+					}
+				}
+				inherit = X21
+			}
+			if = {
+				limit = {
+					X25 = {
+						exists = yes
+					}
+				}
+				inherit = X25
+			}
+			if = {
+				limit = {
+					X26 = {
+						exists = yes
+					}
+				}
+				inherit = X26
+			}
+			set_country_flag = united_southern_cities
+			change_tag = X41
+			add_prestige = 25
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			every_province = {
+				limit = {
+					culture = high_nippon
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = X41
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			swap_non_generic_missions = yes
+		}
+	}
+	unite_southern_cities_militarily = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = united_southern_cities }
+			X41 = {
+				exists = no
+			}
+			X44 = {
+				exists = no
+			}
+			primary_culture = high_nippon
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4190	# Chiba
+				province_id = 1028	# Tokyo
+				province_id = 1843	# Saitama
+				province_id = 90	# Yokohama
+				province_id = 1839	# Shinzouka
+				province_id = 89	# Hamamatsu
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			NOT = { exists = X41 }
+			owns_core_province = 4190	# Chiba
+			owns_core_province = 1028	# Tokyo
+			owns_core_province = 1843	# Saitama
+			owns_core_province = 90	# Yokohama
+			owns_core_province = 1839	# Shinzouka
+			owns_core_province = 89	# Hamamatsu
+		}
+		effect = {
+			change_tag = X41
+			every_province = {
+				limit = {
+					culture = high_nippon
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = X41
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = united_southern_cities
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			swap_non_generic_missions = yes
+		}
+	}
+	form_kyushu = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_kyushu }
+			X42 = {
+				exists = no
+			}
+			primary_culture = kyushuan_g
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1818	# Fukuoka
+				province_id = 51	# Kitakyushu
+				province_id = 4181	# Kumamtot
+				province_id = 41	# Nobeaka
+				province_id = 1012	# Kagoshima
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			NOT = { exists = X42 }
+			owns_core_province = 1818	# Fukuoka
+			owns_core_province = 51	# Kitakyushu
+			owns_core_province = 4181	# Kumamtot
+			owns_core_province = 41	# Nobeaka
+			owns_core_province = 1012	# Kagoshima
+		}
+		effect = {
+			change_tag = X42
+			every_province = {
+				limit = {
+					culture = kyushuan_g
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = X41
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_kyushu
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_tohoku = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_tohoku }
+			X43 = {
+				exists = no
+			}
+			OR = {
+				primary_culture = niigatan
+				primary_culture = hokkaidan
+				primary_culture = sendai
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1027	# Ibaraki
+				province_id = 1024	# Niigata
+				province_id = 112	# Sendai
+				province_id = 1025	# Yamagata
+				province_id = 113	# Miyagi
+				province_id = 4131	# Iwate
+				province_id = 118	# Aomori
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			NOT = { exists = X43 }
+			owns_core_province = 1027	# Ibaraki
+			owns_core_province = 1024	# Niigata
+			owns_core_province = 112	# Sendai
+			owns_core_province = 1025	# Yamagata
+			owns_core_province = 113	# Miyagi
+			owns_core_province = 4131	# Iwate
+			owns_core_province = 118	# Aomori
+		}
+		effect = {
+			change_tag = X43
+			every_province = {
+				limit = {
+					OR = {
+						primary_culture = niigatan
+						primary_culture = hokkaidan
+						primary_culture = sendai
+					}
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = X43
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_tohoku
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	reform_nippon = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = reformed_nippon }
+			X44 = {
+				exists = no
+			}
+			capital_scope = {
+				region = nippon_area
+				is_core = ROOT
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4190	# Chiba
+				province_id = 1028	# Tokyo
+				province_id = 1843	# Saitama
+				province_id = 90	# Yokohama
+				province_id = 1839	# Shinzouka
+				province_id = 89	# Hamamatsu
+				province_id = 88	# Nagoya
+				province_id = 101	# Nakatsugwa
+				province_id = 1837	# Ishikawa
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			NOT = { exists = X44 }
+			owns_core_province = 4190	# Chiba
+			owns_core_province = 1028	# Tokyo
+			owns_core_province = 1843	# Saitama
+			owns_core_province = 90	# Yokohama
+			owns_core_province = 1839	# Shinzouka
+			owns_core_province = 89	# Hamamatsu
+			owns_core_province = 88	# Nagoya
+			owns_core_province = 101	# Nakatsugwa
+			owns_core_province = 1837	# Ishikawa
+		}
+		effect = {
+			change_tag = X44
+			nippon_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = X44
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = reformed_nippon
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	unite_the_isles = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = united_the_isles }
+			X45 = {
+				exists = no
+			}
+			owns_core_province = 1028	# Tokyo
+			religion_group = japanese_group
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1028	# Tokyo
+				province_id = 105	# Nagoya
+				province_id = 1837	# Ishikawa
+				province_id = 1024	# Niigata
+				province_id = 112	# Sendai
+				province_id = 1847	# Sapporo
+				province_id = 118	# Aomori
+				province_id = 1021	# Osaka
+				province_id = 1825	# Hiroshima
+				province_id = 4186	# Matsuyama
+				province_id = 42	# Shimoshima
+				province_id = 2536	# Miami
+				province_id = 19	# Orlando
+				province_id = 25	# Jacksonville
+				province_id = 923	# Pensacola	
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 10
+			is_at_war = no
+			NOT = { exists = X45 }
+			owns_core_province = 1028	# Tokyo
+			owns_core_province = 105	# Nagoya
+			owns_core_province = 1837	# Ishikawa
+			owns_core_province = 1024	# Niigata
+			owns_core_province = 112	# Sendai
+			owns_core_province = 1847	# Sapporo
+			owns_core_province = 118	# Aomori
+			owns_core_province = 1021	# Osaka
+			owns_core_province = 1825	# Hiroshima
+			owns_core_province = 4186	# Matsuyama
+			owns_core_province = 42	# Shimoshima
+			owns_core_province = 2536	# Miami
+			owns_core_province = 19	# Orlando
+			owns_core_province = 25	# Jacksonville
+			owns_core_province = 923	# Pensacola
+		}
+		effect = {
+			change_tag = X45
+			japanese_superregion = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = X45
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 50
+			set_country_flag = united_the_isles
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+		}
+		if = {
+			limit = {
+				NOT = { government_rank = 3 }
+			}
+			set_government_rank = 3
+		}
+	}
+	unite_florida_north = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = unite_florida_north }
+			X46 = {
+				exists = no
+			}
+			OR = {
+				culture_group = misr_group
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 25	# Jacksonville
+				province_id = 29	# Tallahassee
+				province_id = 923	# Pensacola
+				province_id = 19	# Orlando
+				province_id = 16	# Tampa
+				province_id = 14	# St.Lucie
+				province_id = 2536	# Miami
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 2
+			is_at_war = no
+			NOT = { exists = X46 }
+			owns_core_province = 25	# Jacksonville
+			owns_core_province = 29	# Tallahassee
+			owns_core_province = 923	# Pensacola
+			owns_core_province = 19	# Orlando
+			owns_core_province = 16	# Tampa
+			owns_core_province = 14	# St.Lucie
+			owns_core_province = 2536	# Miami
+		}
+		effect = {
+			change_tag = X46
+			florida_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = X46
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = unite_florida_north
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+}

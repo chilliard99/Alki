@@ -1,0 +1,298 @@
+namespace = redwood_events
+####################REDWQOOD EVENTS##########################
+country_event = { #Strongman Of Jefferson
+	id = redwood_events.1
+	title = redwood_events.1.t
+	desc = redwood_events.1.d
+	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = Y80
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = redwood_events.1.a #Worrying
+		custom_tooltip = explain_redwood_collapse_redwood_gor
+		add_prestige = -5
+		hidden_effect = {
+			every_neighbor_country = {
+				limit = {
+					is_part_of_hre = yes
+				}
+				country_event = { id = redwood_events.2 }
+			}
+			country_event = {
+				id = redwood_events.3
+				days = 30
+			}
+		}
+	}
+}
+
+country_event = { #Strongman Of Jefferson
+	id = redwood_events.2
+	title = redwood_events.2.t
+	desc = redwood_events.2.d
+	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = Y80
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = redwood_events.2.a #Worrying
+		custom_tooltip = explain_redwood_collapse_neighbor_redwood_gor
+	}
+}
+
+country_event = { #Coastal Heroine
+	id = redwood_events.3
+	title = redwood_events.3.t
+	desc = redwood_events.3.d
+	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = Y80
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = redwood_events.3.a #We are inspired by her deeds.
+		custom_tooltip = explain_knight_redwood_path_redwood_gor
+		hidden_effect = {
+			country_event = {
+				id = redwood_events.4
+				days = 30
+			}
+		}
+	}
+}
+
+country_event = { #The Monied Interests
+	id = redwood_events.4
+	title = redwood_events.4.t
+	desc = redwood_events.4.d
+	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = Y80
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = redwood_events.4.a #Redwoods above all!
+		custom_tooltip = explain_redwood_republic_path_redwood_gor
+		hidden_effect = {
+			country_event = {
+				id = redwood_events.5
+				days = 30
+			}
+		}
+	}
+}
+
+country_event = { #King Of Kooks 
+	id = redwood_events.5
+	title = redwood_events.5.t
+	desc = redwood_events.5.d
+	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = Y80
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = redwood_events.5.a #They certainly have conviction.
+		custom_tooltip = explain_redwood_judiciary_path_redwood_gor
+		hidden_effect = {
+			country_event = {
+				id = redwood_events.6
+				days = 30
+			}
+		}
+	}
+}
+
+country_event = { #Yeomen Questions  
+	id = redwood_events.6
+	title = redwood_events.6.t
+	desc = redwood_events.6.d
+	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = Y80
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = redwood_events.6.a #Primitive and sour folk.
+		custom_tooltip = explain_redwood_jefferson_path_redwood_gor
+		hidden_effect = {
+			country_event = {
+				id = redwood_events.7
+				days = 30
+			}
+		}
+	}
+}
+
+country_event = { #Calling The Bluffs  
+	id = redwood_events.7
+	title = redwood_events.7.t
+	desc = redwood_events.7.d
+	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = Y80
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_country_flag = completed_the_final_introduction_event_redwood
+	}
+	
+	option = {
+		name = redwood_events.7.a #We will not become presidential puppets!
+		custom_tooltip = explain_redwood_presidential_path_redwood_gor
+	}
+}
+
+country_event = { #Rogue Crisis  
+	id = redwood_events.8
+	title = redwood_events.8.t
+	desc = redwood_events.8.d
+	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = Y80
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		define_ruler = {
+			name = "Redwood Emergency Council"
+			adm = 0
+			dip = 0
+			mil = 0
+			regency = yes
+		}
+		set_country_flag = dolson_died_early_redwood
+	}
+	
+	option = {
+		name = redwood_events.8.a #Horror!
+		custom_tooltip = upon_completing_event_chain_redwood_collapse_will_happen_redwood_gor
+		tooltip = {
+			define_ruler = {
+				name = "Redwood Emergency Council"
+				adm = 0
+				dip = 0
+				mil = 0
+				regency = yes
+			}
+		}
+	}
+}
+
+country_event = { #Redwood Collapse  
+	id = redwood_events.9
+	title = redwood_events.9.t
+	desc = redwood_events.9.d
+	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		tag = Y80
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			do_redwood_collapse_default = yes
+		}
+	}
+	
+	option = {
+		name = redwood_events.9.a #We side with the Order!
+		custom_tooltip = explain_civil_war_and_victory_for_knights_redwood_gor
+		trigger = {
+			exists = A01
+		}
+		switch_tag = A04
+	}
+	option = {
+		name = redwood_events.9.b #We side with the Republicans!
+		trigger = {
+			exists = A04
+		}
+		custom_tooltip = explain_civil_war_and_victory_for_republicans_redwood_gor
+		switch_tag = A04
+	}
+	option = {
+		name = redwood_events.9.c #We side with the Justicars!
+		trigger = {
+			exists = A00
+		}
+		custom_tooltip = explain_civil_war_and_victory_for_justicar_redwood_gor
+		switch_tag = A00
+	}
+	option = {
+		name = redwood_events.9.d #We side with the Jeffersonians!
+		trigger = {
+			exists = A09
+		}
+		custom_tooltip = explain_civil_war_and_victory_for_jeffersonians_redwood_gor
+		switch_tag = A09
+	}
+	option = {
+		name = redwood_events.9.e #We side with the President!
+		custom_tooltip = explain_civil_war_and_victory_for_president_redwood_gor
+	}
+}

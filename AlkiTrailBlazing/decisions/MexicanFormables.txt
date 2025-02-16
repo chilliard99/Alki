@@ -1,0 +1,1387 @@
+country_decisions = {
+	form_africa = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_africa }
+			V19 = {
+				exists = no
+			}
+			capital_scope = {
+				superregion = spanish_africa_superregion
+			}
+			NOT = { 
+				tag = W49 
+				tag = W48 
+			}
+			culture_group = africano
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2419	# Phoenix
+				province_id = 2476	# San Diego
+				province_id = 2414	# La Paz
+				province_id = 2422	# Tuscon
+				province_id = 2703	# Hermosillo
+				province_id = 2714	# Chihuahua
+				province_id = 2495	# Albuquerque
+				province_id = 2460	# El Paso
+				province_id = 2473	# San Antonio
+				province_id = 2685	# Houston
+				province_id = 2675	# Austin
+				province_id = 2449	# Amarillo
+				province_id = 893	# New Orleans
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 10
+			is_at_war = no
+			owns_core_province = 2419	# Phoenix
+			owns_core_province = 2476	# San Diego
+			owns_core_province = 2414	# La Paz
+			owns_core_province = 2422	# Tuscon
+			owns_core_province = 2703	# Hermosillo
+			owns_core_province = 2714	# Chihuahua
+			owns_core_province = 2495	# Albuquerque
+			owns_core_province = 2460	# El Paso
+			owns_core_province = 2473	# San Antonio
+			owns_core_province = 2685	# Houston
+			owns_core_province = 2675	# Austin
+			owns_core_province = 2449	# Amarillo
+			owns_core_province = 893	# New Orleans
+		}
+		effect = {
+			change_tag = V19
+			spanish_africa_superregion = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_africa
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+		}
+	}
+	form_antilles = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_antilles }
+			V20 = {
+				exists = no
+			}
+			capital_scope = {
+				OR = { 
+					region = west_caribbean_region
+					region = east_caribbean_region
+				}
+			}
+			government_rank = 2
+			OR = {
+				culture_group = hispaniolan
+				culture_group = antillian
+				culture_group = cubano
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 484	# Havana
+				province_id = 486	# Bayamo
+				province_id = 4152	# Kingston
+				province_id = 4130	# Grand Bahama
+				province_id = 4618	# Port-Au-Prince
+				province_id = 4219	# Santo Domingo
+				province_id = 4229	# Santiago Corazon
+				province_id = 492	# San Juan
+				province_id = 496	# Guadeloupe
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 10
+			is_at_war = no
+			owns_core_province = 484	# Havana
+			owns_core_province = 486	# Bayamo
+			owns_core_province = 4152	# Kingston
+			owns_core_province = 4130	# Grand Bahama
+			owns_core_province = 4618	# Port-Au-Prince
+			owns_core_province = 4219	# Santo Domingo
+			owns_core_province = 4229	# Santiago Corazon
+			owns_core_province = 492	# San Juan
+			owns_core_province = 496	# Guadeloupe
+		}
+		effect = {
+			change_tag = V20
+			west_caribbean_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_caribbean_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_antilles
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+		}
+	}
+	form_baja_menor = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_baja_menor }
+			V21 = {
+				exists = no
+			}
+			capital_scope = {
+				OR = { 
+					area = cabos_area
+					area = comondu_area
+					area = loreto_area
+					area = mulege_area
+				}
+			}
+			culture_group = bajan
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2414	# La Paz
+				province_id = 866	# Cabos San Lucas
+				province_id = 2409	# Loreto
+				province_id = 2398	# Guerro Negro
+				province_id = 2405	# Maria Magdalena
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 2414	# La Paz
+			owns_core_province = 866	# Cabos San Lucas
+			owns_core_province = 2409	# Loreto
+			owns_core_province = 2398	# Guerro Negro
+			owns_core_province = 2405	# Maria Magdalena
+		}
+		effect = {
+			change_tag = V21
+			cabos_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			comondu_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			loreto_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			mulege_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_baja_menor
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_baja = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_baja }
+			V22 = {
+				exists = no
+			}
+			capital_scope = {
+				region = baja_region
+			}
+			culture_group = bajan
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2414	# La Paz
+				province_id = 866	# Cabos San Lucas
+				province_id = 2409	# Loreto
+				province_id = 2398	# Guerro Negro
+				province_id = 2405	# Maria Magdalena
+				province_id = 2394	# Bahia De Los Angeles
+				province_id = 2389	# Ensenada	
+				province_id = 2388	# Mexicali
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 10
+			is_at_war = no
+			owns_core_province = 2414	# La Paz
+			owns_core_province = 866	# Cabos San Lucas
+			owns_core_province = 2409	# Loreto
+			owns_core_province = 2398	# Guerro Negro
+			owns_core_province = 2405	# Maria Magdalena
+			owns_core_province = 2394	# Bahia De Los Angeles
+			owns_core_province = 2389	# Ensenada
+			owns_core_province = 2388	# Mexicali
+		}
+		effect = {
+			change_tag = V22
+			baja_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_baja
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_bajio = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_bajio }
+			V23 = {
+				exists = no
+			}
+			capital_scope = {
+				region = bajio_region
+			}
+			culture_group = bajio
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2979	# San Luis de Potosi
+				province_id = 2982	# Sierra Gorda
+				province_id = 4573	# Santiago de Queretaro
+				province_id = 2621	# Leon
+				province_id = 2952	# Aguascalientes
+				province_id = 4579	# Guadalajara
+				province_id = 2957	# Tepic	
+				province_id = 2657	# Colima
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 10
+			is_at_war = no
+			owns_core_province = 2979	# San Luis de Potosi
+			owns_core_province = 2982	# Sierra Gorda
+			owns_core_province = 4573	# Santiago de Queretaro
+			owns_core_province = 2621	# Leon
+			owns_core_province = 2952	# Aguascalientes
+			owns_core_province = 4579	# Guadalajara
+			owns_core_province = 2957	# Tepic
+			owns_core_province = 2657	# Colima
+		}
+		effect = {
+			change_tag = V23
+			bajio_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_bajio
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_ciboa = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_ciboa }
+			V24 = {
+				exists = no
+			}
+			primary_culture = cibao
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4229	# Santiago Corazon
+				province_id = 4223	# La Vega
+				province_id = 2659	# Puerto Plata
+				province_id = 4621	# Samana
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 4229	# Santiago Corazon
+			owns_core_province = 4223	# La Vega
+			owns_core_province = 2659	# Puerto Plata
+			owns_core_province = 4621	# Samana
+		}
+		effect = {
+			change_tag = V24
+			cibao_sur_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_ciboa
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_coahuila = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_coahuila }
+			V25 = {
+				exists = no
+			}
+			primary_culture = zaragozan
+		}
+		provinces_to_highlight = {
+			culture = zaragozan
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			num_of_cities = 7
+			owns_core_province = 2758	# Torreon
+		}
+		effect = {
+			change_tag = V25
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_coahuila
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_durango = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_durango }
+			V26 = {
+				exists = no
+			}
+			capital_scope = {
+				NOT = {
+					OR = {
+						area = sinaloa_norte_area
+						area = sinaloa_sur_area
+					}
+				}
+			}
+			primary_culture = durangan
+		}
+		provinces_to_highlight = {
+			culture = durangan
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			num_of_cities = 9
+			owns_core_province = 2747	# Durango
+		}
+		effect = {
+			change_tag = V26
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_durango
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_guadalupe = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_guadalupe }
+			V27 = {
+				exists = no
+			}
+			capital_scope = {
+				region = anahuac_region
+			}
+			culture_group = anahuac
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4039	# Juchitan
+				province_id = 2647	# Veracruz
+				province_id = 2629	# Oaxaca
+				province_id = 2648	# Acapulco
+				province_id = 2990	# Coatzacoalcos
+				province_id = 3002	# Puebla
+				province_id = 2987	# Poza Rica	
+				province_id = 4021	# Zihuatanejo
+				province_id = 2998	# Ciudad de Mexico	
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 10
+			is_at_war = no
+			owns_core_province = 4039	# Juchitan
+			owns_core_province = 2647	# Veracruz
+			owns_core_province = 2629	# Oaxaca
+			owns_core_province = 2648	# Acapulco
+			owns_core_province = 2990	# Coatzacoalcos
+			owns_core_province = 3002	# Puebla
+			owns_core_province = 2987	# Poza Rica	
+			owns_core_province = 4021	# Zihuatanejo
+			owns_core_province = 2998	# Ciudad de Mexico	
+		}
+		effect = {
+			change_tag = V27
+			anahuac_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_guadalupe
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+		}
+	}
+	form_guatemala = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_guatemala }
+			V28 = {
+				exists = no
+			}
+			primary_culture = guatean
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4089	# Ciudad de Guatemala
+				province_id = 4587	# Quetzaltenago
+				province_id = 4085	# Puerto Barrios
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 4089	# Ciudad de Guatemala
+			owns_core_province = 4587	# Quetzaltenago
+			owns_core_province = 4085	# Puerto Barrios
+		}
+		effect = {
+			change_tag = V28
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_guatemala
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_haiti = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_haiti }
+			V29 = {
+				exists = no
+			}
+			primary_culture = haitian
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4214	# Jacmel
+				province_id = 488	# Les Cayes
+				province_id = 4618	# Port-Au-Prince
+				province_id = 489	# Port-de-Paix
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 4214	# Jacmel
+			owns_core_province = 488	# Les Cayes
+			owns_core_province = 4618	# Port-Au-Prince
+			owns_core_province = 489	# Port-de-Paix
+		}
+		effect = {
+			change_tag = V29
+			gonave_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			artibonite_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			massif_du_nord_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_haiti
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_hispaniola = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_hispaniola }
+			V30 = {
+				exists = no
+			}
+			government_rank = 2
+			culture_group = hispaniolan
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4214	# Jacmel
+				province_id = 488	# Les Cayes
+				province_id = 4618	# Port-Au-Prince
+				province_id = 489	# Port-de-Paix
+				province_id = 4229	# Santiago Corazon
+				province_id = 4223	# La Vega
+				province_id = 2659	# Puerto Plata
+				province_id = 4621	# Samana
+				province_id = 4219	# Santo Domingo
+				province_id = 2658	# Maguana
+				province_id = 4220	# Higuey
+				province_id = 4217	# Barahona
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 4214	# Jacmel
+			owns_core_province = 488	# Les Cayes
+			owns_core_province = 4618	# Port-Au-Prince
+			owns_core_province = 489	# Port-de-Paix
+			owns_core_province = 4229	# Santiago Corazon
+			owns_core_province = 4223	# La Vega
+			owns_core_province = 2659	# Puerto Plata
+			owns_core_province = 4621	# Samana
+			owns_core_province = 4219	# Santo Domingo
+			owns_core_province = 2658	# Maguana
+			owns_core_province = 4220	# Higuey
+			owns_core_province = 4217	# Barahona
+		}
+		effect = {
+			change_tag = V30
+			gonave_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			artibonite_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			massif_du_nord_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			enriquillo_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			gran_ozama_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			cibao_norte_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			cibao_sur_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_hispaniola
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+		}
+	}
+	form_honduras = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_honduras }
+			V31 = {
+				exists = no
+			}
+			primary_culture = catracho
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2637	# San Pedro Sula
+				province_id = 2640	# Tegucigalpa
+				province_id = 4094	# Toaca
+				province_id = 4093	# Danli
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 2637	# San Pedro Sula
+			owns_core_province = 2640	# Tegucigalpa
+			owns_core_province = 4094	# Toaca
+			owns_core_province = 4093	# Danli
+		}
+		effect = {
+			change_tag = V31
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_honduras
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_isthmo = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_isthmo }
+			V32 = {
+				exists = no
+			}
+			culture_group = ismitho
+			capital_scope = {
+				region = isthmo_region
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2637	# San Pedro Sula
+				province_id = 2640	# Tegucigalpa
+				province_id = 4101	# San Salvador
+				province_id = 4107	# Managua
+				province_id = 4110	# Liberia
+				province_id = 4114	# Chepe
+				province_id = 4122	# David
+				province_id = 4128	# Ciudad de Panama
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 10
+			is_at_war = no
+			owns_core_province = 2637	# San Pedro Sula
+			owns_core_province = 2640	# Tegucigalpa
+			owns_core_province = 4101	# San Salvador
+			owns_core_province = 4107	# Managua
+			owns_core_province = 4110	# Liberia
+			owns_core_province = 4114	# Chepe
+			owns_core_province = 4122	# David
+			owns_core_province = 4128	# Ciudad de Panama
+		}
+		effect = {
+			change_tag = V32
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			isthmo_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+			set_country_flag = formed_isthmo
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_louisiana = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_louisiana }
+			V33 = {
+				exists = no
+			}
+			culture_group = louisian
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2516	# Lafayette
+				province_id = 2692	# Alexandria
+				province_id = 2530	# Biloxi
+				province_id = 893	# New Orleans
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 2516	# Lafayette
+			owns_core_province = 2692	# Alexandria
+			owns_core_province = 2530	# Biloxi
+			owns_core_province = 893	# New Orleans
+		}
+		effect = {
+			change_tag = V33
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			piney_woods_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			cajun_country_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			new_orleans_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			new_mississippi_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+			set_country_flag = formed_louisiana
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			if = {
+				limit = {
+					has_country_tag = get_annexed_by_texas
+					ai = yes
+				}
+				random_known_country = {
+					limit = {
+						has_country_flag = one_annexing_louisiana_texas
+					}
+					inherit = ROOT
+				}
+			}
+		}
+	}
+	form_neomaya = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_neomaya }
+			V34 = {
+				exists = no
+			}
+			OR = {
+				primary_culture = yucateco
+				primary_culture = rivieran
+				primary_culture = campechan
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4063	# Campeche
+				province_id = 2651	# Merida
+				province_id = 4068	# Cancun
+				province_id = 4074	# Chetmal
+				province_id = 4067	# Valladolid
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 4063	# Campeche
+			owns_core_province = 2651	# Merida
+			owns_core_province = 4068	# Cancun
+			owns_core_province = 4074	# Chetmal
+			owns_core_province = 4067	# Valladolid
+		}
+		effect = {
+			change_tag = V34
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_neomaya
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_santo_domingo = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_santo_domingo }
+			V36 = {
+				exists = no
+			}
+			primary_culture = dominican
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4219	# Santo Domingo
+				province_id = 2658	# Maguana
+				province_id = 4220	# Higuey
+				province_id = 4217	# Barahona
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			owns_core_province = 4219	# Santo Domingo
+			owns_core_province = 2658	# Maguana
+			owns_core_province = 4220	# Higuey
+			owns_core_province = 4217	# Barahona
+		}
+		effect = {
+			change_tag = V36
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_santo_domingo
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_sinaloa = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_sinaloa }
+			V37 = {
+				exists = no
+			}
+			capital_scope = {
+				OR = {
+					area = sinaloa_norte_area
+					area = sinaloa_sur_area
+				}
+			}
+			primary_culture = durangan
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = sinaloa_sur_area
+				area = sinaloa_norte_area
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			sinaloa_sur_area = {
+				type = all
+				owned_by = ROOT
+			}
+			sinaloa_norte_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			change_tag = V37
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_sinaloa
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_tamaulipas = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_tamaulipas }
+			V38 = {
+				exists = no
+			}
+			primary_culture = tamper
+		}
+		provinces_to_highlight = {
+			culture = tamper
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 5
+			is_at_war = no
+			num_of_cities = 9
+		}
+		effect = {
+			change_tag = V38
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			set_country_flag = formed_tamaulipas
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+		}
+	}
+	form_yucatan = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_yucatan }
+			V39 = {
+				exists = no
+			}
+			OR = { #I can't be asked to change the culture group localization so fuck it we're doing this
+				primary_culture = campechan
+				primary_culture = tabasqueno
+				primary_culture = chiapan
+				primary_culture = zapatistan
+				primary_culture = guatean
+				primary_culture = baymen
+				primary_culture = yucateco
+				primary_culture = rivieran
+			}
+			capital_scope = {
+				region = new_yucatan_region
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4089	# Ciudad de Guatemala
+				province_id = 4085	# Puerto Barrios
+				province_id = 843	# Belize
+				province_id = 4061	# Ciudad del Carmen
+				province_id = 4074	# Chetumal
+				province_id = 4063	# Campeche
+				province_id = 2651	# Merida
+				province_id = 4068	# Cancun
+			}
+			OR = {
+				NOT = { is_core = ROOT }
+				NOT = { owned_by = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 10
+			is_at_war = no
+			owns_core_province = 4089	# Ciudad de Guatemala
+			owns_core_province = 4085	# Puerto Barrios
+			owns_core_province = 843	# Belize
+			owns_core_province = 4061	# Ciudad del Carmen
+			owns_core_province = 4074	# Chetumal
+			owns_core_province = 4063	# Campeche
+			owns_core_province = 2651	# Merida
+			owns_core_province = 4068	# Cancun
+		}
+		effect = {
+			change_tag = V39
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			new_yucatan_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+			set_country_flag = formed_yucatan
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+		}
+	}
+	form_empresia = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_empresia }
+			OR = { 
+				primary_culture = durangan
+				primary_culture = zaragozan
+				primary_culture = tamper
+			}
+			V40 = {
+				exists = no
+			}
+			capital_scope = {
+				region = empresia_region
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2776	# Monterrey
+				province_id = 2619	# Saltillo
+				province_id = 2791	# Tampico
+				province_id = 2758	# Torreon
+				province_id = 2747	# Durango
+				province_id = 2720	# Mazatlan
+				province_id = 4606	# Monclava
+			}
+			OR = {
+				NOT = { is_core = ROOT }
+				NOT = { owned_by = ROOT }
+			}
+		}
+		allow = {
+			NOT = {
+				any_subject_country = { 
+					is_subject_of_type = empresa
+				}
+			}
+			adm_tech = 10
+			is_at_war = no
+			owns_core_province = 2776	# Monterrey
+			owns_core_province = 2619	# Saltillo
+			owns_core_province = 2791	# Tampico
+			owns_core_province = 2758	# Torreon
+			owns_core_province = 2747	# Durango
+			owns_core_province = 2720	# Mazatlan
+			owns_core_province = 4606	# Monclava
+		}
+		effect = {
+			change_tag = V40
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			empresia_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+			set_country_flag = formed_empresia
+			ai_will_do = {
+				factor = 1
+			}
+			ai_importance = 400
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+		}
+	}
+}

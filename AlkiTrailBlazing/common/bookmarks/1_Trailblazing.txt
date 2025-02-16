@@ -1,0 +1,18 @@
+bookmark = {
+	name = "TRAILBLAZING"
+	desc = "TRAILBLAZING_DESC"
+	date = 1444.11.11
+	
+	center = 1199
+	default = yes
+	
+	country = Y96
+	country = U55
+	country = U56
+	country = Y97
+	country = U51
+	country = Y90
+	country = U58
+	
+	easy_country = Y96
+}

@@ -1,0 +1,18 @@
+#2409 - Bahmut
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W23
+controller = W23
+add_core = W23
+culture = comundian
+religion = partisan
+hre = yes
+fort_15th = yes
+base_tax = 6
+base_production = 6
+trade_goods = fish #more fishin
+base_manpower = 4
+capital = "Bahmut"
+is_city = yes
+center_of_trade = 1

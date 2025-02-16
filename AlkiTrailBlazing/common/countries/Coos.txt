@@ -1,0 +1,98 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 190 69 71 }
+
+revolutionary_colors = { 14 9 3 }
+
+historical_idea_groups = {
+	defensive_ideas
+	religious_ideas
+	trade_ideas
+	economic_ideas
+	plutocracy_ideas
+	diplomatic_ideas
+	offensive_ideas
+	spy_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_longbow
+	gaelic_mercenary
+	gaelic_free_shooter
+	irish_charge
+	anglofrench_line
+	british_redcoat
+	british_hussar
+	british_square
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Jackson #2" = 25
+	"Mel #0" = 25
+	"Rich #0" = 25
+	"Buddy #0" = 20
+	"Mark #0" = 20
+	"Aaron #0" = 15
+	"Armin #0" = 15
+	"Steve #0" = 10
+	"Gerald #0" = 10
+	"George #0" = 10
+	"Jeff #0" = 5
+	"Joe #0" = 5
+ 
+	"Liam #0" = 0
+	"Oliver #0" = 0
+	"Benjamin #0" = 0
+	"James #0" = 0
+	"Noah #0" = 0
+	"William #0" = 0
+	"Henry #0" = 0
+	"Edward #0" = 0
+	"Ethan #0" = 0
+	"Eluah #0" = 0
+	"Alexander #0" = 0
+	"Samuel #0" = 0
+	"Mason #0" = 0
+	"Owen #0" = 0
+	"Daniel #0" = 0
+	"Wyatt #0" = 0
+	"Logan #0" = 0
+	"Lucas #0" = 0
+
+	"Sheila #0" = -1
+	"Claire #0" = -1	
+	"Adelaide #0" = -1
+	"Francesca #0" = -1
+}
+
+leader_names = { 
+	Coos Duck Overton Leslie Umpqua Putnam Astor Crook Heppner Addy Bates Burrell Cleary Dutton Ellsbury Franzen Green Groening Herbert Hoover 
+	McGowan Morse Palahniuk Reed Wilkens Walton Drexler Petrovic Sabonis Pippen Lillard Shoaway Cabrillo Thompson McLoughlin Kotek Brown Kitzhaber
+	Kulongoski Roberts Goldschmidt Atiyeh Straub McCall Hatfield Holmes Smith Patterson mcKay Hall Snell Sprague Maretin Meier Hood Willamette
+	Malheur Harney Douglas 
+}
+
+ship_names = {
+	Douglas Curry Bnadon Oregon Siskiyou Siuslaw Bandon Coos Coquille Lakeside
+	Myrtle Powers Barview "Bunker Hill" Glasgow Saunders Allegany Arago "Beaver Hill"
+	Bridge Broadbent Charleston Cooston Dellwood Dora Fairview Gaylord Gravelford 
+	"Green Acres" Hauser "Laurel Grove" Leneve Libby McKinley Millington Norway 
+	Prosper Randolph Remote Riverton Sitkum Sumner Tenmile 
+	
+	Francisco Cruz Celestia Jose Oak Costa Lewis
+	Galactica "Golden Gate" Vallejo Solano Lodi
+	Stanford Salinas Monterey Moro Atascadero Wasco
+	Bakersfield Porterville Seqouia Vegas Inyo Faro 
+	Guadiana Sonoma Mendocino Bragg Eureka Redwood Crecent Curry
+	Coos Lane Newport Tillamook Clatsop Wahkiakum Grays Clallam 
+	Olympus Olympia Tacoma Seattle Everett Bellingham Kitsap
+	
+}

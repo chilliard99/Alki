@@ -1,0 +1,18 @@
+#590 - Moulmein
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = Y24
+controller = Y24
+add_core = Y24
+culture = etrokan
+religion = sacramental
+capital = "Martaban"
+trade_goods = cloth #copied from base italy
+hre = no
+base_tax = 3 
+base_production = 3
+base_manpower = 2
+is_city = yes

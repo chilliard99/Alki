@@ -1,0 +1,16 @@
+# 78 - Mainz
+discovered_by = chinese
+add_core = X32
+controller = X32
+owner = X32
+capital = "Mainz"
+culture = chugokan
+religion = neoshinto
+trade_goods = copper #Otani, Daiho, Sannan
+base_tax = 4 
+base_production = 4
+base_manpower = 3
+is_city = yes
+hre = no
+discovered_by = eastern
+discovered_by = ottoman

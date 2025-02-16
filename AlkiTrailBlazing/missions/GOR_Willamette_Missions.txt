@@ -1,0 +1,858 @@
+###########################WILLAMETTE MISSIONS###########################
+willamette_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y96
+	}
+	has_country_shield = yes
+	
+	eugene_restoration_willamette = {
+		icon = crane_gor
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			province_id = 1199
+		}
+		trigger = {
+			1199 = {
+				owned_by = ROOT
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+				NOT = { has_province_modifier = gor_redwood_destruction_oregongen }
+			}
+		}
+		effect = {
+			add_treasury = 100
+			custom_tooltip = every_other_nation_with_oregonian_cult_gains
+			tooltip = {
+				add_treasury = 100
+			}
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						primary_culture = oregonite
+					}
+					country_event = { id = willamette_events.1 }
+				}
+			}
+		}
+	}
+	
+	solance_in_the_founder_willamette = {
+		icon = constitutionalist_pray_gor
+		required_missions = { eugene_restoration_willamette }
+		position = 2
+		provinces_to_highlight = {
+			has_province_modifier = gor_redwood_destruction_oregongen
+			country_or_non_sovereign_subject_holds = ROOT
+			NOT = { has_building = temple }
+			NOT = { has_building = cathedral }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = every_prov_we_own_with_redust_has_a_temple_or_cathedral
+				all_owned_province = {
+					OR = {
+						NOT = { has_province_modifier = gor_redwood_destruction_oregongen }
+						has_building = temple
+						has_building = cathedral
+					}
+				}
+			}
+			OR = {
+				temple = 5
+				cathedral = 5
+			}
+			OR = {
+				piety = 0.1
+				NOT = { piety = -0.1 }
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					stability = 3
+				}
+				add_adm_power = 100
+			}
+			else = {
+				add_stability = 1
+			}
+			custom_tooltip = for_each_prov_we_own_with_redwood_destruction_gain
+			tooltip = {
+				add_treasury = 200
+			}
+			hidden_effect = {
+				while = {
+					limit = {
+						any_owned_province = {
+							has_province_modifier = gor_redwood_destruction_oregongen
+							NOT = { has_province_flag = already_given_redwood_dest_bonus_willamette }
+						}
+					}
+					add_treasury = 200
+					random_owned_province = {
+						limit = {
+							has_province_modifier = gor_redwood_destruction_oregongen
+							NOT = { has_province_flag = already_given_redwood_dest_bonus_willamette }
+						}
+						set_province_flag = already_given_redwood_dest_bonus_willamette
+					}
+				} 
+				every_owned_province = {
+					clr_province_flag = already_given_redwood_dest_bonus_willamette
+				}
+			}
+		}
+	}
+	
+	aftermath_assistance_willamette = {
+		icon = rebuild_oregon_gor
+		required_missions = { bolster_the_capital_willamette solance_in_the_founder_willamette }
+		position = 4
+		trigger = {
+			emperor = {
+				OR = {
+					alliance_with = ROOT
+					is_rival = ROOT
+				}
+			}
+			imperial_influence = 50
+			diplomatic_reputation = 0
+			grown_by_development = 30
+		}
+		effect = {
+			custom_tooltip = if_we_are_allied_to_the_prez_willamette
+			tooltip = {
+				country_event = { id = willamette_events.7 }
+			}
+			custom_tooltip = if_not_we_get_willamette
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_union_assitance_willamette"
+					duration = 5475
+				}
+				emperor = {
+					add_ruler_modifier = {
+						name = "gor_oregonian_oversight_willamette"
+						duration = -1
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						emperor = {
+							alliance_with = ROOT
+						}
+					}
+					country_event = { id = willamette_events.7 }
+				}
+				else = {
+					add_country_modifier = {
+						name = "gor_union_assitance_willamette"
+						duration = 5475
+					}
+					emperor = {
+						country_event = { id = willamette_events.10 }
+					}
+				}
+			}
+		}
+	}
+	
+	presidential_chances_willamette = {
+		icon = prez_sitting_gor
+		required_missions = { aftermath_assistance_willamette }
+		position = 5
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = electors_support_willamette_for_prez
+					all_elector = {
+						preferred_emperor = ROOT
+					}
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			remove_country_modifier = annexers_legacy
+			add_country_modifier = {
+				name = "gor_a_presidential_campaign_willamette"
+				duration = 3650
+			}
+		}
+	}
+	
+	northern_might_willamette = {
+		icon = medieval_soldiers_gor
+		required_missions = { presidential_chances_willamette }
+		position = 6
+		trigger = {
+			emperor = {
+				OR = {
+					NOT = { total_development = ROOT }
+					NOT = { monthly_income = ROOT }
+					NOT = { army_size = ROOT }
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = if_our_dev_is_more_than_prez_willamette
+			tooltip = {
+				if = {
+					limit = {
+						adm = 6
+					}
+					add_adm_power = 150
+				}
+				else = {
+					change_adm = 1
+				}
+			}
+			custom_tooltip = if_our_income_is_more_than_prez_willamette
+			tooltip = {
+				if = {
+					limit = {
+						dip = 6
+					}
+					add_dip_power = 150
+				}
+				else = {
+					change_dip = 1
+				}
+			}
+			custom_tooltip = if_our_army_is_more_than_prez_willamette
+			tooltip = {
+				if = {
+					limit = {
+						mil = 6
+					}
+					add_mil_power = 150
+				}
+				else = {
+					change_mil = 1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						emperor = {
+							NOT = { total_development = ROOT }
+						}
+					}
+					if = {
+						limit = {
+							adm = 6
+						}
+						add_adm_power = 150
+					}
+					else = {
+						change_adm = 1
+					}
+				}
+				if = {
+					limit = {
+						emperor = {
+							NOT = { monthly_income = ROOT }
+						}
+					}
+					if = {
+						limit = {
+							dip = 6
+						}
+						add_dip_power = 150
+					}
+					else = {
+						change_dip = 1
+					}
+				}
+				if = {
+					limit = {
+						emperor = {
+							NOT = { army_size = ROOT }
+						}
+					}
+					if = {
+						limit = {
+							mil = 6
+						}
+						add_mil_power = 150
+					}
+					else = {
+						change_mil = 1
+					}
+				}
+			}
+		}
+	}
+	
+	highest_office_willamette = {
+		icon = fat_prez_gor
+		required_missions = { northern_might_willamette picking_sides_willamette }
+		position = 7
+		trigger = {
+			total_development = 150
+			crown_land_share = 50
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = electors_support_willamette_for_prez
+					all_elector = {
+						preferred_emperor = ROOT
+					}
+				}
+				amount = 5
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "gor_northern_hope_willamette"
+				duration = -1
+			}
+			custom_tooltip = if_we_iz_prez_willamette
+			tooltip = {
+				add_imperial_influence = 15
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						is_emperor = yes
+					}
+					add_imperial_influence = 15
+				}	
+			}
+		}
+	}
+}
+
+willamette_missions_slot_three = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y96
+	}
+	has_country_shield = yes
+	
+	bolster_the_capital_willamette = {
+		icon = medieval_willamette_gor
+		required_missions = { backyard_traditionalists_willamette }
+		position = 3
+		provinces_to_highlight = {
+			area = lower_willamette_area
+		}
+		trigger = {
+			development_in_provinces = {
+				value = 45
+				area = lower_willamette_area
+			}
+		}
+		effect = {
+			custom_tooltip = every_prov_in_the_lower_willamette_gain
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_industry_restored_willamette"
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				lower_willamette_area = {
+					add_province_modifier = {
+						name = "gor_industry_restored_willamette"
+						duration = 5475
+					}
+				}
+			}
+		}
+	}
+	
+	the_shadow_war_willamette = {
+		icon = the_shadow_war_gor
+		required_missions = { bolster_the_capital_willamette }
+		position = 4
+		provinces_to_highlight = {
+			culture = oregonite
+			unrest = 0
+			owned_by = ROOT
+		}
+		trigger = {
+			stability = 3
+			1199 = {
+				is_prosperous = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = all_oregonian_provs_we_own_have_below_zero_unrest
+				all_owned_province = {
+					OR = {
+						NOT = { culture = oregonite }
+						NOT = { unrest = 0 }
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = { id = willamette_events.2 }
+		}
+	}
+	
+	picking_sides_willamette = {
+		icon = partisan_parties_gor
+		required_missions = { presidential_chances_willamette }
+		position = 6
+		trigger = {
+			OR = {
+				piety = 0.75
+				NOT = { piety = -0.75 }
+			}
+			OR = {
+				has_country_modifier = traditionalist_party_modifier
+				has_country_modifier = progressive_party_modifier
+			}
+		}
+		effect = {
+			country_event = { id = willamette_events.11 }
+		}
+	}
+}
+
+
+willamette_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y96
+	}
+	has_country_shield = yes
+	
+	united_we_recover_willamette = {
+		icon = northwest_soldiers_shaking_hands_gor
+		required_missions = {  }
+		position = 1
+		trigger = {
+			OR = {
+				calc_true_if = {
+					custom_trigger_tooltip = {
+						tooltip = two_oregonian_cultured_allioes
+						all_ally = {
+							primary_culture = oregonite
+						}
+					}
+					amount = 2
+				}
+				emperor = {
+					alliance_with = ROOT
+				}
+			}
+		}
+		effect = {
+			add_years_of_income = 1
+			lower_willamette_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_recovery_fund_willamette"
+				duration = 3650
+			}
+		}
+	}
+	
+	backyard_traditionalists_willamette = {
+		icon = exploding_castle_gor
+		required_missions = { united_we_recover_willamette }
+		position = 2
+		provinces_to_highlight = {
+			area = lower_willamette_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			lower_willamette_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			upper_willamette_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tillamook_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = if_umpqua_is_our_subject_gain
+			tooltip = {
+				add_dip_power = 100
+				add_country_modifier = {
+					name = "gor_umpquan_subjugation_willamette"
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						Y94 = {
+							is_subject_of = ROOT
+						}
+					}
+					add_dip_power = 100
+					add_country_modifier = {
+						name = "gor_umpquan_subjugation_willamette"
+						duration = 5475
+					}
+				}
+			}
+		}
+	}
+	
+	duck_dynasty_willamette = {
+		icon = duck_gor
+		required_missions = { backyard_traditionalists_willamette }
+		position = 3
+		trigger = {
+			num_of_royal_marriages = 3
+			OR = {
+				has_idea_group = influence_ideas
+				has_idea_group = diplomatic_ideas
+			}
+			OR = {
+				dip = 5
+				advisor = statesman
+			}
+		}
+		effect = {
+			custom_tooltip = gain_a_subjugation_cb_on_all_oregonian_cultured_nations
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						primary_culture = oregonite
+					}
+					reverse_add_casus_belli = {
+						type = cb_vassalize_mission
+						months = 300
+						target = ROOT
+					}
+				}
+			}
+		}
+	}
+	
+	just_do_it_willamette = {
+		icon = king_subject_gor
+		required_missions = { duck_dynasty_willamette the_shadow_war_willamette }
+		position = 5
+		trigger = {
+			NOT = { has_country_modifier = gor_oregonian_freedom_fighters_genorg }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = subjects_that_are_oregoniate_willamette
+					all_subject_country = {
+						primary_culture = oregonite
+					}
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_go_ducks_willamette"
+				duration = 18250
+			}
+			custom_tooltip = modify_requirements_to_form_oregon_and_annex_all_on_form
+		}
+	}
+	
+	unionized_oregon_willamette = {
+		icon = beaver_gor
+		required_missions = { just_do_it_willamette outer_counties_willamette }
+		position = 7
+		provinces_to_highlight = {
+			culture = oregonite
+			region = oregon_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = we_own_all_provs_with_oregonite_cult_in_oregon_willamette
+				oregon_region = {
+					type = all
+					OR = {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { culture = oregonite }
+					}
+				}
+			}	
+		}
+		effect = {
+			custom_tooltip = we_will_no_longer_need_ten_tech_to_form_oregon
+			if = {
+				limit = {
+					adm = 6
+				}
+				add_adm_power = 150
+			}
+			else = {
+				change_adm = 1
+			}
+			add_ruler_modifier = {
+				name = "gor_lord_of_all_oregons_willamette"
+				duration = -1
+			}
+		}
+	}
+}
+
+willamette_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y96
+	}
+	has_country_shield = yes
+	
+	picking_up_portland_willamette = {
+		icon = ruins_of_portland_gor
+		required_missions = { backyard_traditionalists_willamette }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 1218
+		}
+		trigger = {
+			1218 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				NOT = { devastation = 1 } 
+			}
+		}
+		effect = {
+			custom_tooltip = cut_the_cost_of_restore_portland_in_half
+			set_country_flag = half_cost_restore_portland
+			tillamook_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			oregonian_cascades_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_capital_of_oregon_reclaimed_willamette"
+				duration = 5475
+			}
+		}
+	}
+	
+	realm_of_the_astors_willamette = {
+		icon = fist_of_pomo_gor
+		required_missions = { picking_up_portland_willamette }
+		position = 4
+		provinces_to_highlight = {
+			area = tillamook_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			tillamook_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			1197 = {
+				add_unit_construction = {
+					type = light_ship
+					amount = 5
+					speed = 0.1
+					cost = 0
+				}
+			}
+			add_mercantilism = 3
+			custom_tooltip = if_astoria_is_our_vassal_and_their_dynasty_is_quitiquit
+			tooltip = {
+				add_ruler_modifier = {
+					name = "gor_wisdom_of_elmer_willamette"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						Y90 = {
+							dynasty = "Quitiquit"
+						}
+					}
+					add_ruler_modifier = {
+						name = "gor_wisdom_of_elmer_willamette"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	
+	the_mallards_willamette = {
+		icon = fleet_gor
+		required_missions = { realm_of_the_astors_willamette }
+		position = 5
+		trigger = {
+			num_of_light_ship = 10
+			num_of_heavy_ship = 10
+			navy_tradition = 20
+			OR = {
+				has_idea_group = maritime_ideas
+				naval_reformer = 3
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_the_mallards_willamette"
+				duration = -1
+			}
+		}
+	}
+}
+
+willamette_missions_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y96
+	}
+	has_country_shield = yes
+	
+	natural_barriers_willamette = {
+		icon = cascadian_army_gor
+		required_missions = { picking_up_portland_willamette }
+		position = 4
+		provinces_to_highlight = {
+			area = oregonian_cascades_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			oregonian_cascades_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 15
+			create_general = { tradition = 75 }
+			bend_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	deschutes_protocol_willamette = {
+		icon = oregon_waterfall_gor
+		required_missions = { natural_barriers_willamette }
+		position = 5
+		provinces_to_highlight = {
+			province_id = 1974
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			1974 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			4516 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 3650
+					power = 15
+					key = columbian_exit_willamette
+				}
+			}
+			morrow_crook_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tooltip = {
+				1974 = {
+					add_center_of_trade_level = 1
+				}
+			}
+			custom_tooltip = if_the_cot_in_bend_is_level_three_willamette
+			tooltip = {
+				1974 = {
+					add_base_production = 3
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						1974 = {
+							province_has_center_of_trade_of_level = 3
+						}
+					}
+					add_base_production = 3
+				}
+				else = {
+					add_center_of_trade_level = 1
+				}
+			}
+		}
+	}
+	
+	outer_counties_willamette = {
+		icon = morrow_crook_gor
+		required_missions = { deschutes_protocol_willamette }
+		position = 6
+		provinces_to_highlight = {
+			area = morrow_crook_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			morrow_crook_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 20
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 15
+			}
+			add_ruler_modifier = {
+				name = "gor_crooked_rich_willamette"
+				duration = -1
+			}
+		}
+	}
+}
+
+
+	

@@ -1,0 +1,20 @@
+government = theocracy
+add_government_reform = redwood_order_reform
+government_rank = 1
+primary_culture = redwood
+religion = partisan
+technology_group = western
+capital = 1856	 #Crescent City
+religious_school = progressive_party
+set_country_flag = redwood_theocracy_prevention 
+
+1433.1.30 = {
+	monarch = {
+		name = "Dolson"
+		dynasty = "Rogue"
+		birth_date = 1403.5.15
+		adm = 5
+		dip = 5
+		mil = 5
+	}
+}

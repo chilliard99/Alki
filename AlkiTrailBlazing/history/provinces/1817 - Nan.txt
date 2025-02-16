@@ -1,0 +1,19 @@
+#1817 - Nan
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y65
+controller = Y65
+add_core = Y65
+culture = joaquin
+religion = partisan
+capital = "Fresno"
+trade_goods = paper #Just what it makes now
+hre = yes
+base_tax = 7
+base_production = 7
+base_manpower = 7
+is_city = yes
+fort_15th = yes
+center_of_trade = 2

@@ -1,0 +1,937 @@
+namespace = tacoma_events
+####################TACOMAN EVENTS##########################
+country_event = { #Asking for a Lot
+	id = tacoma_events.1
+	title = tacoma_events.1.t
+	desc = tacoma_events.1.d
+	picture = BURGHER_ESTATE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U58
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.1.a #Pretty Please?
+		custom_tooltip = explain_what_we_are_asking_of_alaska
+		tooltip = {
+			W06 = {
+				add_country_modifier = {
+					name = "gor_relinquished_territory_tac"
+					duration = -1
+				}
+			}
+		}
+		hidden_effect = {
+			W06 = {
+				country_event = { 
+					id = tacoma_events.2
+					days = 5
+				}
+			}
+		}
+	}
+}
+
+country_event = { #A Southern Request
+	id = tacoma_events.2
+	title = tacoma_events.2.t
+	desc = tacoma_events.2.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W06
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.2.a #They better be worth it
+		custom_tooltip = explain_what_we_get_by_accepting
+		add_country_modifier = {
+			name = "gor_relinquished_territory_tac"
+			duration = -1
+		}
+		tooltip = {
+			emperor = {
+				add_imperial_influence = 5
+			}
+		}
+		hidden_effect = {
+			U58 = {
+				country_event = { 
+					id = tacoma_events.3
+					days = 5
+				}
+			}
+			emperor = {
+				country_event = { 
+					id = tacoma_events.5
+					days = 5
+				}
+			}
+		}
+		ai_chance = { 
+			factor = 99 
+			modifier = {
+				factor = 0
+				NOT = { total_development = 250 }
+			}
+		}
+	}
+	option = {
+		name = tacoma_events.2.b #No Handouts
+		hidden_effect = {
+			U58 = {
+				country_event = { 
+					id = tacoma_events.4
+					days = 5
+				}
+			}
+		}
+		ai_chance = { 
+			factor = 1 
+		}
+	}
+}
+
+country_event = { #Hands Off
+	id = tacoma_events.3
+	title = tacoma_events.3.t
+	desc = tacoma_events.3.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U58
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.3.a #We will not let them down.
+		custom_tooltip = alaska_transfers_everything
+		hidden_effect = {
+			W06 = {
+				every_owned_province = {
+					limit = {
+						region = washington_region
+					}
+					cede_province = ROOT
+				}
+			}
+		}
+		high_puget_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		low_puget_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		olympic_peninsula_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}
+
+country_event = { #Dealing with Rejection
+	id = tacoma_events.4
+	title = tacoma_events.4.t
+	desc = tacoma_events.4.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U58
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.4.a #We will do what must be done.
+		add_country_modifier = {
+			name = "gor_spurrned_vigor_tac"
+			duration = 7300
+		}
+		high_puget_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		low_puget_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+		olympic_peninsula_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}
+
+country_event = { #Alaskan Retreat?
+	id = tacoma_events.5
+	title = tacoma_events.5.t
+	desc = tacoma_events.5.d
+	picture = CONQUEST_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.5.a #We will closely watch these developments.
+		add_imperial_influence = 5
+	}
+}
+
+country_event = { #The Three Peasant's Cathedral
+	id = tacoma_events.6
+	title = tacoma_events.6.t
+	desc = tacoma_events.6.d
+	picture = ST_PETERS_CHURCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W06
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.6.a #I shall see it one day.
+		add_adm_power = 100
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+	}
+}
+
+country_event = { #Victories in Washington
+	id = tacoma_events.7
+	title = tacoma_events.7.t
+	desc = tacoma_events.7.d
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W06
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.7.a #Wonderful!
+		if = {
+			limit = {
+				dip = 6
+			}
+			add_dip_power = 500
+		}
+		else {
+			change_dip = 1
+		}
+	}
+}
+
+country_event = { #Communes Down South
+	id = tacoma_events.8
+	title = tacoma_events.8.t
+	desc = tacoma_events.8.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W06
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.8.a #Solidarity Forever!
+		add_patriarch_authority = 0.15
+	}
+}
+
+#This is not a real event country_event = { #Union Red
+#	id = tacoma_events.9
+#	title = tacoma_events.9.t
+#	desc = tacoma_events.9.d
+#	picture = RELIGION_eventPicture
+#	is_triggered_only = yes
+#	fire_only_once = yes
+#	
+#	trigger = {
+#		tag = W06
+#	}
+#	
+#	mean_time_to_happen = {
+#		days = 1
+#	}
+#	
+#	option = {
+#		name = tacoma_events.9.a #Bravo!
+#		if = {
+#			limit = {
+#				dip = 6
+#			}
+#			add_dip_power = 500
+#		}
+#		else {
+#			change_dip = 1
+#		}
+#	}
+#}
+
+country_event = { #Echo chased out of Washington
+	id = tacoma_events.10
+	title = tacoma_events.10.t
+	desc = tacoma_events.10.d
+	picture = LAND_MILITARY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.10.a #My thanks to the Reds.
+		add_imperial_influence = 10
+	}
+}
+
+country_event = { #Yearning for Freedom
+	id = tacoma_events.11
+	title = tacoma_events.11.t
+	desc = tacoma_events.11.d
+	picture = BATTLE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U58
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.11.a #Pull some strings
+		custom_tooltip = explain_what_will_happen_tac_yearn
+		tooltip = {
+			add_province_modifier = {
+				name = "gor_tacoman_tampering_tac"
+				duration = 7300
+			}
+			add_nationalism = 10
+		}
+		add_treasury = -100
+		add_dip_power = -100
+		add_spy_network_in = {
+			who = W06
+			value = -50
+		}
+		remove_historical_friend = W06
+		hidden_effect = {
+			W06 = {
+				country_event = { id = tacoma_events.12 }
+			}
+		}
+	}
+	option = {
+		name = tacoma_events.11.b #We cannot afford to do it.
+		add_prestige = 15
+	}
+}
+
+country_event = { #Whispers down south
+	id = tacoma_events.12
+	title = tacoma_events.12.t
+	desc = tacoma_events.12.d
+	picture = ANGRY_MOB_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W06
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.12.a #I don't like the sound of that
+		custom_tooltip = every_prov_in_areas_get_unrest
+		remove_historical_friend = U58
+		tooltip = {
+			add_province_modifier = {
+				name = "gor_tacoman_tampering_tac"
+				duration = 7300
+			}
+			add_nationalism = 10
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					region = washington_region
+				}
+				add_province_modifier = {
+					name = "gor_tacoman_tampering_tac"
+					duration = 7300
+				}
+				add_nationalism = 10
+			}
+			country_event = { 
+				id = tacoma_events.13
+				days = 3650
+			}
+		}
+	}
+}
+
+country_event = { #Washington Rebellion
+	id = tacoma_events.13
+	title = tacoma_events.13.t
+	desc = tacoma_events.13.d
+	picture = ANGRY_MOB_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W06
+		any_owned_province = {
+			has_province_modifier = gor_tacoman_tampering_tac
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_province_modifier = gor_tacoman_tampering_tac
+				}
+				save_event_target_as = first_alaska_washing_rev_prov
+			}
+			if = {
+				limit = {
+					any_owned_province = {
+						has_province_modifier = gor_tacoman_tampering_tac
+						NOT = { province_id = event_target:first_alaska_washing_rev_prov }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						has_province_modifier = gor_tacoman_tampering_tac
+						NOT = { province_id = event_target:first_alaska_washing_rev_prov }
+					}
+				}
+				save_event_target_as = second_alaska_washing_rev_prov
+			}
+		}
+	}
+	
+	option = {
+		name = tacoma_events.13.a #Horror!
+		event_target:first_alaska_washing_rev_prov = {
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 2
+			}
+		}
+		event_target:second_alaska_washing_rev_prov = {
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 2
+			}
+		}
+	}
+}
+
+country_event = { #Alaskan Disgrace
+	id = tacoma_events.14
+	title = tacoma_events.14.t
+	desc = tacoma_events.14.d
+	picture = ANGRY_MOB_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.14.a #Wonderful!
+		add_imperial_influence = 10
+	}
+}
+
+####################RED WASHINGTON EVENTS##########################
+
+country_event = { #Grievances Addressed
+	id = tacoma_events.15
+	title = tacoma_events.15.t
+	desc = tacoma_events.15.d
+	picture = BURGHER_ESTATE_eventPicture
+	
+	trigger = {
+		mission_completed = direct_representation_tacoma
+		overextension_percentage = 0.05
+		any_owned_province = {
+			NOT = { is_core = ROOT }
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					NOT = { is_core = ROOT } 
+				}
+				save_event_target_as = place_where_you_gonna_get_core_redwash
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 10
+	}
+	
+	option = {
+		name = tacoma_events.15.a #Wonderful!
+		add_adm_power = 50
+		event_target:place_where_you_gonna_get_core_redwash = {
+			add_core = ROOT
+		}
+	}
+}
+
+country_event = { #Indigenous Solidarity
+	id = tacoma_events.16
+	title = tacoma_events.16.t
+	desc = tacoma_events.16.d
+	picture = northamericagfx_ADVISOR_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			tag = U81
+			tag = U82
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.16.a #Let us see what they say
+		custom_tooltip = let_us_hope_that_they_join_us
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					culture_group = western_true_heir
+				}
+				country_event = { id = tacoma_events.17 }
+			}
+		}
+	}
+}
+
+country_event = { #"Liberation"
+	id = tacoma_events.17
+	title = tacoma_events.17.t
+	desc = tacoma_events.17.d
+	picture = northamericagfx_WESTERNISATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		culture_group = western_true_heir
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.17.a #Solidarity forever!
+		change_religion = collectivist
+		capital_scope = {
+			change_religion = collectivist
+		}
+		FROM = {
+			vassalize = ROOT
+		}
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0.5
+				total_development = 50
+			}
+			modifier = {
+				factor = 0
+				total_development = 100
+			}
+			modifier = {
+				factor = 0
+				total_development = ROOT
+			}
+		}
+	}
+	option = {
+		name = tacoma_events.17.b #Not a chance.
+		add_prestige = 15
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 100
+		}
+		else = {
+			add_stability = 1
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+country_event = { #The Miller's Union
+	id = tacoma_events.18
+	title = tacoma_events.18.t
+	desc = tacoma_events.18.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			tag = U81
+			tag = U82
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.18.a #Integrate them into the state
+		add_country_modifier = {
+			name = "gor_nationalized_millers_union_redwash"
+			duration = -1
+		}
+	}
+	option = {
+		name = tacoma_events.18.b #Let them remain independent
+		custom_tooltip = doubles_ductas_from_spirit_of_labor
+		set_country_flag = double_income_from_spiritlabor
+	}
+}
+
+country_event = { #Red Rebellion
+	id = tacoma_events.19
+	title = tacoma_events.19.t
+	desc = tacoma_events.19.d
+	picture = ANGRY_MOB_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.19.a #Crush them.
+		capital_scope = {
+			spawn_rebels = {
+				type = collectivist_rebels
+				size = 3
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = tacoma_events.19.b #Solidarity Forever!
+		change_religion = collectivist
+		hidden_effect = {
+			add_prestige = 100
+		}
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0.5
+				total_development = 100
+			}
+			modifier = {
+				factor = 0
+				is_great_power = yes
+			}
+		}
+	}
+}
+
+country_event = { #Mercy in Capitulation
+	id = tacoma_events.20
+	title = tacoma_events.20.t
+	desc = tacoma_events.20.d
+	picture = CONQUEST_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			tag = U81
+			tag = U82
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.20.a #Extend our hand.
+		add_country_modifier = {
+			name = "gor_pan_californian_union_redwash"
+			duration = -1
+		}
+		custom_tooltip = every_californian_nation_will_have_opportunity_to_become_vassal_or_integrated
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					culture_group = sunkissed
+					religion = collectivist
+				}
+				country_event = { id = tacoma_events.21 }
+			}
+		}
+	}
+}
+
+country_event = { #Red Letter 
+	id = tacoma_events.21
+	title = tacoma_events.21.t
+	desc = tacoma_events.21.d
+	picture = CONQUEST_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.21.a #One Union Grand.
+		if = {
+			limit = {
+				total_development = 50
+			}
+			FROM = {
+				vassalize = ROOT
+			}
+		}
+		else = {
+			FROM = {
+				inherit = ROOT
+			}
+		}
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0.5
+				total_development = 50
+			}
+			modifier = {
+				factor = 0
+				total_development = 100
+			}
+			modifier = {
+				factor = 0
+				total_development = ROOT
+			}
+		}
+	}
+	option = {
+		name = tacoma_events.21.a #Never!
+		add_prestige = 10
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+country_event = { #Picking Up the Fallen
+	id = tacoma_events.22
+	title = tacoma_events.22.t
+	desc = tacoma_events.22.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			tag = U81
+			tag = U82
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.22.a #Send out the letters!
+		custom_tooltip = explain_that_every_nation_in_the_sacramental_group_will_get
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					NOT = { religion = ROOT }
+					religion_group = sacramental_group
+				}
+				country_event = { id = tacoma_events.19 }
+			}
+		}
+	}
+}
+
+country_event = { #Global Revolution
+	id = tacoma_events.23
+	title = tacoma_events.23.t
+	desc = tacoma_events.23.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			tag = U81
+			tag = U82
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.23.a #Send out the letters!
+		custom_tooltip = every_province_in_the_world_will_get_revolt
+		hidden_effect = {
+			every_country = {
+				limit = {
+					NOT = { religion = ROOT }
+				}
+				country_event = { id = tacoma_events.19 }
+			}
+		}
+	}
+}
+
+country_event = { #California's Downtrodden
+	id = tacoma_events.24
+	title = tacoma_events.24.t
+	desc = tacoma_events.24.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			tag = U81
+			tag = U82
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = tacoma_events.24.a #Send out the letters!
+		custom_tooltip = explain_that_every_californian_cultured_nat_is_getting_collectivist
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					NOT = { religion = ROOT }
+					culture_group = sunkissed
+				}
+				country_event = { id = tacoma_events.19 }
+			}
+		}
+	}
+}

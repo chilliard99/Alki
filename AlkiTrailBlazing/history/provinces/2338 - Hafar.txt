@@ -1,0 +1,17 @@
+#2338 - Hafar
+discovered_by = western
+discovered_by = eastern 
+owner = W09
+controller = W09
+add_core = W09
+culture = northern_salishan
+religion = collectivist
+capital = "Hafar"
+trade_goods = grain #farmin
+hre = no
+base_tax = 5
+base_production = 4
+base_manpower = 4
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

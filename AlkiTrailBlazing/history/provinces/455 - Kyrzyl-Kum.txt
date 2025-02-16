@@ -1,0 +1,18 @@
+#455 - Kyrzyl-Kum
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = X96
+controller = X96
+add_core = X96
+culture = royal_iowan
+religion = islam
+capital = "Kyzyl Kum"
+trade_goods = grain #more corn
+hre = no
+base_tax = 6
+base_production = 6
+base_manpower = 5
+is_city = yes
+discovered_by = western

@@ -1,0 +1,16 @@
+# No previous file for Olancho
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V03
+controller = V03
+add_core = V03
+culture = catracho
+religion = catholico
+capital = "Olancho"
+trade_goods = livestock #Mantequilla Crema
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

@@ -1,0 +1,8 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = redwood 
+religion = partisan
+technology_group = western
+capital = 1857	 #Yreka
+religious_school = progressive_party

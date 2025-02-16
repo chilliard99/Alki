@@ -1,0 +1,16 @@
+#2997 - Pomorskie
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W83
+controller = W83
+add_core = W83
+capital = "Tuchel"
+culture = chilango
+religion = catholico
+trade_goods = grain #also cool handiworks
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

@@ -1,0 +1,18 @@
+# No previous file for Yazoo
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = X91
+controller = X91
+add_core = X91
+culture = thracian
+religion = islam
+capital = "Yazoo"
+trade_goods = wine #protropos 
+hre = no
+base_tax = 5
+base_production = 6
+base_manpower = 6
+is_city = yes
+discovered_by = western

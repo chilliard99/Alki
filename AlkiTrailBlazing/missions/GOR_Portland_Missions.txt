@@ -1,0 +1,1301 @@
+###########################PORTLAND MISSIONS###########################
+portland_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y92
+	}
+	has_country_shield = yes
+	
+	threatening_presence_portland = {
+		icon = cool_knight_gor
+		required_missions = { preemptive_destruction_portland }
+		position = 3
+		trigger = {
+			is_great_power = yes
+			custom_trigger_tooltip = {
+				tooltip = rival_is_in_coalition_against_us
+				any_rival_country = {
+					coalition_target = ROOT
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = wartime_naturalization_gives_seige_ability_now_gives
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_disorganized_resistance_portland"
+					duration = 3650
+				}
+			}
+		}
+	}
+	
+	shoalwater_estuary_portland = {
+		icon = river_dam_gor
+		required_missions = { nearshore_portland }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 2046
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			2046 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_navy_tradition = 15
+			add_country_modifier = {
+				name = "gor_shoalwater_wisdom_portland"
+				duration = 5475
+			}
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+			2046 = {
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1
+			}
+		}
+	}
+	
+	crumbling_puget_portland = {
+		icon = ruins_of_portland_gor
+		required_missions = { shoalwater_estuary_portland columbian_front_portland }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2052
+				province_id = 2062
+				province_id = 2063
+				province_id = 2064
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			2052 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2062 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2063 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2064 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			washington_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_pugettite_sails_portland"
+				duration = -1
+			}
+			if = {
+				limit = {
+					adm = 6
+				}
+				add_adm_power = 150
+			}
+			else = {
+				change_adm = 1
+			}
+			if = {
+				limit = {
+					dip = 6
+				}
+				add_dip_power = 150
+			}
+			else = {
+				change_dip = 1
+			}
+			if = {
+				limit = {
+					mil = 6
+				}
+				add_mil_power = 150
+			}
+			else = {
+				change_mil = 1
+			}
+			custom_tooltip = each_of_these_cities_will_gain
+			tooltip = {
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1
+			}
+			hidden_effect = {
+				2052 = {
+					add_base_tax = -1
+					add_base_production = -1
+					add_base_manpower = -1
+				}
+				2062 = {
+					add_base_tax = -1
+					add_base_production = -1
+					add_base_manpower = -1
+				}
+				2063 = {
+					add_base_tax = -1
+					add_base_production = -1
+					add_base_manpower = -1
+				}
+				2064 = {
+					add_base_tax = -1
+					add_base_production = -1
+					add_base_manpower = -1
+				}
+			}
+		}
+	}
+	
+	liberating_washington_portland = {
+		icon = cannon_fire_gor
+		required_missions = { crumbling_puget_portland }
+		position = 8
+		provinces_to_highlight = {
+			region = washington_region
+			OR = {
+				NOT = { owned_by = ROOT } 
+				NOT = { development = 6 }
+			}
+		}
+		trigger = {
+			washington_region = {
+				type = all
+				owned_by = ROOT
+			}
+			custom_trigger_tooltip = {
+				tooltip = there_are_no_provs_in_wash_over_six_dev
+				washington_region = {
+					type = all
+					NOT = { development = 6 }
+				}
+			}
+		}
+		effect = {
+			arborea_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_washington_whole_portland"
+				duration = -1
+			}
+		}
+	}
+}
+
+portland_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y92
+	}
+	has_country_shield = yes
+	
+	conservation_efforts_portland = {
+		icon = peninsular_ambitions_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			crown_land_share = 50
+			OR = {
+				has_any_active_incomplete_idea_group_of_category = {
+					adm_ideas = yes
+				}
+				has_completed_idea_group_of_category = {
+					adm_ideas = yes
+				}
+			}
+		}
+		effect = {
+			remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+			custom_tooltip = unlock_the_naturalize_cities_decision_portland
+			tooltip = {
+				custom_tooltip = every_provinces_loses_one_dev_of_a_random_category
+				add_adm_power = 100
+				add_dip_power = 100
+				add_mil_power = 100
+				add_country_modifier = {
+					name = "gor_conservative_vigor_portland"
+					duration = 3650
+				}
+			}
+		}
+	}
+	
+	preemptive_destruction_portland = {
+		icon = forest_fire_gor
+		required_missions = { conservation_efforts_portland }
+		position = 2
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = won_a_war_against_gp
+				any_great_power = {
+					ROOT = {
+						has_won_war_against = {
+							who = PREV
+							max_years_since = 100
+						}
+					}
+				}
+			}
+			OR = {
+				has_government_power = {
+					mechanic_type = naturalist_mechanic
+					power_type = naturalists_fervor
+					value = 25
+				}
+				custom_trigger_tooltip = {
+					tooltip = completed_one_cylce_of_naturalization_portland
+					has_country_flag = completed_one_cycle_of_naturalization
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = unlock_the_preemptive_destruction_decision_which_gives
+			tooltip = {
+				custom_tooltip = every_province_we_own_but_dont_occupy_we_gain_a_core_on_plus_rid_dev
+				custom_tooltip = every_neighbor_country_gains_twenyfif_aggressive_expansion
+				add_country_modifier = {
+					name = "gor_uncivilized_warfare_portland"
+					duration = 3650
+				}
+			}
+		}
+	}
+	
+	steady_as_a_stone_portland = {
+		icon = dach_baron_gor
+		required_missions = { preemptive_destruction_portland }
+		position = 3
+		trigger = {
+			absolutism = 50
+			crown_land_share = 90
+			has_adm_advisor_3 = yes
+			has_dip_advisor_3 = yes
+			has_mil_advisor_3 = yes
+		}
+		effect = {
+			country_event = { id = portland_events.2 }
+		}
+	}
+	
+	slash_and_burn_portland = {
+		icon = farm_fire_gor
+		required_missions = { steady_as_a_stone_portland threatening_presence_portland laws_of_nature_portland }
+		position = 3
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = completed_one_cylce_of_naturalization_portland
+				has_country_flag = completed_one_cycle_of_naturalization
+			}
+			NOT = { great_power_rank = 2 }
+			has_estate_privilege = manufactoring_and_its_consequences_privledge
+			has_estate_privilege = overthrow_industry_privledge
+			has_estate_privilege = natural_advancements_privledge
+			
+		}
+		effect = {
+			custom_tooltip = whenever_we_reach_one_hundred_gov_prog_we_now_gain_portland
+			tooltip = {
+				change_adm = 6
+				change_dip = 6
+				change_mil = 6
+				add_country_modifier = {
+					name = "gor_slash_and_burn_portland"
+					duration = 9125
+				}
+			}
+		}
+	}
+	
+	nearshore_portland = {
+		icon = waves_gor
+		required_missions = { natures_wardens_portland }
+		position = 6
+		provinces_to_highlight = {
+			area = tillamook_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			tillamook_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			1197 = {
+				add_unit_construction = {
+					type = heavy_ship
+					amount = 5
+					speed = 0.1
+					cost = 0
+				}
+				add_unit_construction = {
+					type = galley
+					amount = 5
+					speed = 0.1
+					cost = 0
+				}
+			}
+			willapa_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			middle_columbia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = " "
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+			1197 = {
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1
+			}
+		}	
+	}
+	
+	columbian_front_portland = {
+		icon = columbia_river_gor
+		required_missions = { nearshore_portland }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 2068
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			2068 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			low_puget_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			high_puget_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = every_washington_nation_gains_debuff
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_natural_fear_portland"
+					duration = 9125
+				}
+			}
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						capital_scope = {
+							region = washington_region
+						}
+					}
+					country_event = { id = portland_events.3 }
+				}
+			}
+		}
+	}
+	
+	rush_past_shasta_portland = {
+		icon = exploding_castle_gor
+		required_missions = { redwood_revenge_portland }
+		position = 11
+		provinces_to_highlight = {
+			province_id = 1844
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			1844 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 25
+			define_advisor = {
+				type = commandant
+				skill = 3
+				cost_multiplier = 0.5
+			}
+			add_country_modifier = {
+				name = "gor_shastan_talent_portland"
+				duration = 9125
+			}
+		}
+	}
+}
+
+
+portland_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y92
+	}
+	has_country_shield = yes
+	
+	luddite_core_portland = {
+		icon = destroyed_press_gor
+		required_missions = { conservation_efforts_portland }
+		position = 2
+		trigger = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = no_owned_province_has_a_building
+					NOT = {
+						any_owned_province = {
+							num_of_buildings_in_province = 1
+						}
+					}
+				}
+				full_idea_group = economic_ideas
+			}
+		}
+		effect = {
+			custom_tooltip = naturalize_cities_now_gives_portland
+			tooltip = {
+				add_years_of_income = 5
+				custom_tooltip = remove_all_buildings_from_the_province
+			}
+		}
+	}
+	
+	laws_of_nature_portland = {
+		icon = judges_gor
+		required_missions = { luddite_core_portland }
+		position = 3
+		trigger = {
+			innovativeness = 50
+			stability = 3
+			OR = {
+				adm = 5
+				dip = 5
+				mil = 5
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_enshrined_laws_of_nature_portland"
+				duration = -1
+			}
+			custom_tooltip = unlocks_the_three_portland_estate_privledges
+		}
+	}
+	
+	natures_wardens_portland = {
+		icon = knight_by_river_gor
+		required_missions = { }
+		position = 5
+		trigger = {
+			num_of_generals = 1
+			army_size_percentage = 0.9
+		}
+		effect = {
+			lower_willamette_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tillamook_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_willamette_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = " "
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+			if = {
+				limit = {
+					ai = no
+				}
+				1218 = {
+					add_base_tax = -1
+					add_base_production = -1
+					add_base_manpower = -1
+				}
+			}
+		}	
+	}
+	
+	willamettes_beauty_portland = {
+		icon = willamette_gor
+		required_missions = { natures_wardens_portland }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1199
+				province_id = 1204
+				province_id = 1223
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			1199 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1204 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1223 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			klamath_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			josephine_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			oregonian_cascades_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = every_prov_in_willamette_gets_beeg_unrest
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_full_of_awe_portland"
+					duration = 3650
+				}
+			}
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			1199 = {
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = lower_willamette_area
+							area = upper_willamette_area
+						}
+					}
+					add_province_modifier = {
+						name = "gor_full_of_awe_portland"
+						duration = 3650
+					}
+				}
+			}
+		}	
+	}
+	
+	redwood_revenge_portland = {
+		icon = redwood_tree_gor
+		required_missions = { willamettes_beauty_portland }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = klamath_area
+				area = josephine_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			klamath_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			josephine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			OR = {
+				has_government_power = {
+					mechanic_type = naturalist_mechanic
+					power_type = naturalists_fervor
+					value = 50
+				}
+				custom_trigger_tooltip = {
+					tooltip = completed_one_cylce_of_naturalization_portland
+					has_country_flag = completed_one_cycle_of_naturalization
+				}
+			}
+		}
+		effect = {
+			jefferson_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_redwood_arms_portland"
+				duration = -1
+			}
+			2477 = {
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+			}
+		}
+	}
+	
+	traditionalist_strongholds_portland = {
+		icon = modern_negotiation_gor
+		required_missions = { redwood_revenge_portland }
+		position = 11
+		provinces_to_highlight = {
+			province_id = 1871
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			1871 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			change_government_reform_progress = 100
+			add_government_power = {
+				mechanic_type = naturalist_mechanic
+				power_type = naturalists_fervor
+				value = 5
+			}
+			add_country_modifier = {
+				name = "gor_crushing_the_traditionalists_portland"
+				duration = 7300
+			}
+			add_adm_power = 150
+			add_dip_power = 150
+			add_mil_power = 150
+			1871 = {
+				add_base_tax = -3
+				add_base_production = -3
+				add_base_manpower = -3
+			}
+		}
+	}
+	
+	klamaths_return_portland = {
+		icon = klamath_gor
+		required_missions = { traditionalist_strongholds_portland rush_past_shasta_portland }
+		position = 12
+		provinces_to_highlight = {
+			region = jefferson_region
+			OR = {
+				NOT = { owned_by = ROOT } 
+				NOT = { development = 6 }
+			}
+		}
+		trigger = {
+			jefferson_region = {
+				type = all
+				owned_by = ROOT
+			}
+			custom_trigger_tooltip = {
+				tooltip = there_are_no_provs_in_jeff_over_six_dev
+				jefferson_region = {
+					type = all
+					NOT = { development = 6 }
+				}
+			}
+		}
+		effect = {
+			sunkissed_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = {
+					mil = 6
+				}
+				add_mil_power = 300
+			}
+			else_if = {
+				limit = {
+					mil = 5
+				}
+				change_mil = 1
+				add_mil_power = 150
+			}
+			else = {
+				change_mil = 2
+			}
+			custom_tooltip = upgrade_out_redwood_bonus_to_portland
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_redwood_arms_upgraded_portland"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+portland_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y92
+	}
+	has_country_shield = yes
+	
+	green_thumbs_portland = {
+		icon = plant_hand_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			army_size = 25
+			OR = {
+				has_any_active_incomplete_idea_group_of_category = {
+					mil_ideas = yes
+				}
+				has_completed_idea_group_of_category = {
+					mil_ideas = yes
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = hiring_a_mil_adivosr_now_grants_portland
+			tooltip = {
+				add_government_power = {
+					mechanic_type = naturalist_mechanic
+					power_type = naturalists_fervor
+					value = 1
+				}
+			}
+		}
+	}
+	
+	climate_crusaders_portland = {
+		icon = industrial_soldiers_gor
+		required_missions = { green_thumbs_portland }
+		position = 2
+		trigger = {
+			land_morale = 7
+			army_tradition = 90
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_climate_crusade_portland"
+				duration = -1
+			}
+		}
+	}
+	
+	mountain_mama_portland = {
+		icon = cascadian_army_gor
+		required_missions = { willamettes_beauty_portland }
+		position = 7
+		provinces_to_highlight = {
+			area = oregonian_cascades_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			oregonian_cascades_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_years_of_income = 3
+			oregon_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "gor_truehier_taxation_portland"
+				duration = 3650
+			}
+			custom_tooltip = every_prov_in_oregonian_cascades_removes_all_buildings
+			hidden_effect = {
+				oregonian_cascades_area = {
+					remove_all_buildings = yes
+				}
+			}
+		}
+	}
+	
+	highdesert_gateway_portland = {
+		icon = highdesert_gor
+		required_missions = { mountain_mama_portland }
+		position = 8
+		provinces_to_highlight = {
+			province_id = 1974
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			1974 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_oregonian_campaign_portland"
+					duration = 3650
+				}
+			}
+			custom_tooltip = if_we_own_eighteen_provs_in_oregon
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_oregonian_campaign_better_portland"
+					duration = 7300
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						calc_true_if = {
+							oregon_region = {
+								type = all
+								country_or_non_sovereign_subject_holds = ROOT
+							}
+							amount = 18
+						}
+					}
+					add_country_modifier = {
+						name = "gor_oregonian_campaign_better_portland"
+						duration = 7300
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = "gor_oregonian_campaign_portland"
+						duration = 3650
+					}
+				}
+				
+			}
+		}
+	}
+	
+	snake_in_the_grass_portland = {
+		icon = snake_noble_gor
+		required_missions = { highdesert_gateway_portland }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2038
+				province_id = 2040
+				province_id = 2037
+				province_id = 2031
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			2038 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2040 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2037 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2031 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			create_general = { tradition = 75 }
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 15
+			}
+		}
+	}
+	
+	espanish_eradication_portland = {
+		icon = lone_house_gor
+		required_missions = { back_to_the_beavers_portland }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				area = mouth_of_the_espanish_area
+				area = upper_espanish_area
+				area = lower_espanish_area
+				area = lisboa_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			mouth_of_the_espanish_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_espanish_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_espanish_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lisboa_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = every_portugese_prov_becomes_one_we_get_portland
+			tooltip = {
+				add_army_tradition = 5
+			}
+			custom_tooltip = each_other_one_we_get_past_hundo_portland
+			tooltip = {
+				add_mil_power = 25
+			}
+			hidden_effect = {
+				while = {
+					limit = {
+						any_owned_province = {
+							primary_culture = portugers
+							NOT = { has_province_flag = already_set_dev_and_given_stuff_portugal }
+						}
+					}
+					if = {
+						limit = {
+							army_tradition = 100
+						}
+						add_mil_power = 25
+					}
+					else = {
+						add_army_tradition = 5
+					}
+					random_owned_province = {
+						limit = {
+							primary_culture = portugers
+							NOT = { has_province_flag = already_set_dev_and_given_stuff_portugal }
+						}
+						set_province_flag = already_set_dev_and_given_stuff_portugal
+					}
+				} 
+				every_owned_province = {
+					clr_province_flag = already_set_dev_and_given_stuff_portugal
+				}
+			}
+		}
+	}
+	
+	crushing_liberty_portland = {
+		icon = premodern_california_city_gor
+		required_missions = { klamaths_return_portland nature_born_portland }
+		position = 13
+		provinces_to_highlight = {
+			region = sunkissed_region
+			OR = {
+				NOT = { owned_by = ROOT } 
+				NOT = { development = 6 }
+			}
+		}
+		trigger = {
+			sunkissed_region = {
+				type = all
+				owned_by = ROOT
+			}
+			custom_trigger_tooltip = {
+				tooltip = there_are_no_provs_in_lib_over_six_dev
+				sunkissed_region = {
+					type = all
+					NOT = { development = 6 }
+				}
+			}
+		}
+		effect = {
+			country_event = { id = portland_events.4 }
+		}
+	}
+}
+
+portland_missions_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y92
+	}
+	has_country_shield = yes
+	
+	clubs_not_guns_portland = {
+		icon = caveman_gor
+		required_missions = { green_thumbs_portland }
+		position = 2
+		trigger = {
+			is_lacking_institutions = yes
+			has_mil_advisor_3 = yes
+			has_completed_idea_group_of_category = {
+				mil_ideas = yes
+			}
+		}
+		effect = {
+			custom_tooltip = hiring_a_general_grants_portland
+			tooltip = {
+				add_government_power = {
+					mechanic_type = naturalist_mechanic
+					power_type = naturalists_fervor
+					value = 1
+				}
+				add_country_modifier = {
+					name = "gor_green_passion_portland"
+					duration = 3650
+				}
+			}
+		}
+	}
+	
+	daughter_of_babylon_portland = {
+		icon = man_next_to_river_gor
+		required_missions = { clubs_not_guns_portland }
+		position = 3
+		trigger = {
+			OR = {
+				is_hegemon_of_type = military_hegemon
+				AND = {
+					land_morale = 10
+					army_size = 1000
+					has_global_modifier_value = {
+						which = discipline
+						value = 0.2
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = every_battle_we_win_now_gives
+			tooltip = {
+				add_adm_power = 10
+				add_dip_power = 10
+				add_mil_power = 10
+				add_government_power = {
+					mechanic_type = naturalist_mechanic
+					power_type = naturalists_fervor
+					value = 0.5
+				}
+			}
+		}
+	}
+	
+	outer_oregons_portland = {
+		icon = gold_gor
+		required_missions = { highdesert_gateway_portland }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = south_snake_area
+				area = north_orria_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			OR = {
+				south_snake_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				north_orria_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_orrian_ores_portland"
+				duration = -1
+			}
+		}
+	}
+	
+	back_to_the_beavers_portland = {
+		icon = beaver_gor
+		required_missions = { outer_oregons_portland snake_in_the_grass_portland }
+		position = 10
+		provinces_to_highlight = {
+			region = oregon_region
+			OR = {
+				NOT = { owned_by = ROOT } 
+				NOT = { development = 6 }
+			}
+		}
+		trigger = {
+			oregon_region = {
+				type = all
+				owned_by = ROOT
+			}
+			custom_trigger_tooltip = {
+				tooltip = there_are_no_provs_in_oreg_over_six_dev
+				oregon_region = {
+					type = all
+					NOT = { development = 6 }
+				}
+			}
+		}
+		effect = {
+			override_country_name = ECOTOPIA_OREGON
+			add_prestige = 50
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 25
+			}
+			nevada_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	desert_civilization_portland = {
+		icon = talking_to_prez_gor
+		required_missions = { back_to_the_beavers_portland }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1073
+				province_id = 1061
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+		}
+		trigger = {
+			1073 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1061 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_inflation = -10
+			if = {
+				limit = {
+					adm = 6
+				}
+				add_adm_power = 300
+			}
+			else_if = {
+				limit = {
+					adm = 5
+				}
+				change_adm = 1
+				add_adm_power = 150
+			}
+			else = {
+				change_adm = 2
+			}
+			define_advisor = {
+				type = diplomat
+				skill = 3
+				cost_multiplier = 0.5
+			}
+		}
+	}
+	
+	nature_born_portland = {
+		icon = morrow_crook_gor
+		required_missions = { desert_civilization_portland espanish_eradication_portland }
+		position = 12
+		provinces_to_highlight = {
+			region = nevada_region
+			OR = {
+				NOT = { owned_by = ROOT } 
+				NOT = { development = 6 }
+			}
+		}
+		trigger = {
+			nevada_region = {
+				type = all
+				owned_by = ROOT
+			}
+			custom_trigger_tooltip = {
+				tooltip = there_are_no_provs_in_nevada_over_six_dev
+				nevada_region = {
+					type = all
+					NOT = { development = 6 }
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_espanish_tax_farm_portland"
+				duration = -1
+			}
+		}
+	}
+}

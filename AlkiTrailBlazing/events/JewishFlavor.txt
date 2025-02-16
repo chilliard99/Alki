@@ -1,0 +1,1884 @@
+namespace = jewish_events
+####################JEWISH HOLY SITE EVENTS##########################
+country_event = { #Conquered Jewish Holy Site
+	id = jewish_events.1
+	title = jewish_events.1.t
+	desc = jewish_events.1.d
+	picture = SIEGE_eventPicture
+	
+	trigger = {
+		OR = {
+			965 = {
+				has_province_flag = taken_by_jewish
+				owned_by = ROOT
+			}
+			947 = {
+				has_province_flag = taken_by_jewish
+				owned_by = ROOT
+			}
+			172 = {
+				has_province_flag = taken_by_jewish
+				owned_by = ROOT
+			}	
+			178 = {
+				has_province_flag = taken_by_jewish
+				owned_by = ROOT
+			}
+			203 = {
+				has_province_flag = taken_by_jewish
+				owned_by = ROOT
+			}
+		}
+		NOT = {
+			religion = new_jewish
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					OR = {
+						province_id = 965
+						province_id = 947
+						province_id = 172
+						province_id = 178
+						province_id = 203
+					}
+					owned_by = ROOT
+					has_province_flag = taken_by_jewish
+				}
+				save_event_target_as = holy_site_lost_jewish
+			}
+		}
+	}
+	
+	option = {
+		name = jewish_events.1.a #Perfect!
+		if = {
+			limit = {
+				event_target:holy_site_lost_jewish = {
+					province_id = 965
+				}
+			}
+			add_country_modifier = {
+				name = "warden_of_manhatten_nonjewish"
+				duration = 1825
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:holy_site_lost_jewish = {
+					province_id = 947
+				}
+			}
+			add_country_modifier = {
+				name = "warden_of_cleveland_nonjewish"
+				duration = 1825
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:holy_site_lost_jewish = {
+					province_id = 172
+				}
+			}
+			add_country_modifier = {
+				name = "warden_of_washington_nonjewish"
+				duration = 1825
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:holy_site_lost_jewish = {
+					province_id = 178
+				}
+			}
+			add_country_modifier = {
+				name = "warden_of_philadelphia_nonjewish"
+				duration = 1825
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:holy_site_lost_jewish = {
+					province_id = 203
+				}
+			}
+			add_country_modifier = {
+				name = "warden_of_buffalo_nonjewish"
+				duration = 1825
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					religion = new_jewish
+				}
+				country_event = { id = jewish_events.2 }
+			}
+		}
+	}
+	
+	after = {
+		event_target:holy_site_lost_jewish = {
+			clr_province_flag = taken_by_jewish
+		}
+	}
+}
+
+country_event = { #Loss of Holy Site
+	id = jewish_events.2
+	title = jewish_events.2.t
+	desc = jewish_events.2.d
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = jewish_events.2.a #Horror!
+		if = {
+			limit = {
+					stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100
+		}
+		
+		if = {
+			limit = {
+				has_country_modifier = warden_of_canaan_jewish
+			}
+			remove_country_modifier = warden_of_canaan_jewish
+		}
+	}
+}
+
+country_event = { #Reconquest of [holysite]
+	id = jewish_events.3
+	title = jewish_events.3.t
+	desc = jewish_events.3.d
+	picture = FORT_eventPicture
+	
+	trigger = {
+		religion = new_jewish 
+		OR = {
+			965 = {
+				owned_by = ROOT
+				NOT = {
+					has_province_flag = taken_by_jewish
+				}
+			}
+			947 = {
+				owned_by = ROOT
+				NOT = {
+					has_province_flag = taken_by_jewish
+				}
+			}
+			172 = {
+				owned_by = ROOT
+				NOT = {
+					has_province_flag = taken_by_jewish
+				}
+			}	
+			178 = {
+				owned_by = ROOT
+				NOT = {
+					has_province_flag = taken_by_jewish
+				}
+			}
+			203 = {
+				owned_by = ROOT
+				NOT = {
+					has_province_flag = taken_by_jewish
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					OR = {
+						province_id = 965
+						province_id = 947
+						province_id = 172
+						province_id = 178
+						province_id = 203
+					}
+					owned_by = ROOT
+					NOT = {
+						has_province_flag = taken_by_jewish
+					}
+				}
+				save_event_target_as = holy_site_regained_jewish
+			}
+		}
+	}
+	
+	option = {
+		name = jewish_events.3.a #Perfect!
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					religion = new_jewish
+					NOT = {
+						tag = ROOT
+					}
+				}
+				country_event = { id = jewish_events.4 }
+			}
+		}
+	}
+	
+	after = {
+		event_target:holy_site_regained_jewish = {
+			set_province_flag = taken_by_jewish
+		}
+	}
+}
+
+country_event = { #Reconquest of Holy Site
+	id = jewish_events.4
+	title = jewish_events.4.t
+	desc = jewish_events.4.d
+	picture = FORT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = jewish_events.4.a #Horror!
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+	}
+}
+
+country_event = { #Warden of Canaan
+	id = jewish_events.5
+	title = jewish_events.5.t
+	desc = jewish_events.5.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		religion = new_jewish
+		owns = 965
+		owns = 947
+		owns = 172
+		owns = 178
+		owns = 203
+		NOT = {
+			has_country_modifier = warden_of_canaan_jewish
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = jewish_events.5.a #United, once again
+		add_country_modifier = {
+			name = "warden_of_canaan_jewish"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Growth of [HolySite] **PULSE**
+	id = jewish_events.6
+	title = jewish_events.6.t
+	desc = jewish_events.6.d
+	picture = CITY_VIEW_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		OR = {
+			owns = 965
+			owns = 947
+			owns = 172
+			owns = 178
+			owns = 203
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					OR = {
+						province_id = 965
+						province_id = 947
+						province_id = 172
+						province_id = 178
+						province_id = 203
+					}
+				}
+				save_event_target_as = jewish_holy_site_to_grow
+			}
+			random_list = { 
+				33 = {
+					set_country_flag = adm_dev_get
+				}
+				33 = {
+					set_country_flag = dip_dev_get
+				}
+				34 = {
+					set_country_flag = mil_dev_get
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = jewish_events.6.a #We must invest in [holysite]
+		event_target:jewish_holy_site_to_grow = {
+			random_list = {
+				if = {
+					limit = {
+						has_country_flag = adm_dev_get
+					}	
+					add_base_tax = 1
+				}
+				else_if = {
+					limit = {
+						has_country_flag = dip_dev_get
+					}
+					add_base_production = 1
+				}
+				else = { 
+					add_base_manpower = 1
+				}
+			}
+		}
+	}
+	option = {
+		name = jewish_events.6.b #We must expand our administration
+		add_adm_power = 30
+		add_dip_power = 30
+		add_mil_power = 30
+	}
+	
+	after = {
+		clr_country_flag = adm_dev_get
+		clr_country_flag = dip_dev_get
+		clr_country_flag = mil_dev_get
+	}
+}
+
+country_event = { #Pirates of Manhatten **PULSE**
+	id = jewish_events.7
+	title = jewish_events.7.t
+	desc = jewish_events.7.d
+	picture = SHIP_SAILING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		owns = 965
+		NOT = {
+			has_country_flag = gotten_pirates_of_manhatten_event
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.7.a #We would never stoop to such a low!
+		965 = {
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+			add_province_modifier = {
+				name = "anti_piracy_measures_manhatten"
+				duration = -1
+			}
+		}	
+	}
+	option = {
+		name = jewish_events.7.b #Do I get a hat?
+		add_country_modifier = {
+			name = "pirates_of_manhatten"
+			duration = -1
+		}
+	}
+	
+	after = {
+		set_country_flag = gotten_pirates_of_manhatten_event
+	}
+}
+
+country_event = { #City That Never Sleeps **PULSE**
+	id = jewish_events.8
+	title = jewish_events.8.t
+	desc = jewish_events.8.d
+	picture = CITY_VIEW_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		owns = 965
+		965 = {
+			NOT = {
+				OR = {
+					has_province_modifier = manhatten_working_jewish
+					has_province_modifier = manhatten_making_bread_jewish
+					has_province_modifier = manhatten_hustling_jewish
+					has_province_modifier = manhatten_grind_jewish
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.8.a #Just Working
+		965 = {
+			add_province_modifier = {
+				name = "manhatten_working_jewish"
+				duration = 3650
+			}
+		}	
+	}
+	option = {
+		name = jewish_events.8.b #Just Making Bread
+		965 = {
+			add_province_modifier = {
+				name = "manhatten_making_bread_jewish"
+				duration = 3650
+			}
+		}	
+	}
+	option = {
+		name = jewish_events.8.c #Just Hustling
+		965 = {
+			add_province_modifier = {
+				name = "manhatten_hustling_jewish"
+				duration = 3650
+			}
+		}	
+	}
+	option = {
+		name = jewish_events.8.e #Just Grinding
+		965 = {
+			add_province_modifier = {
+				name = "manhatten_grind_jewish"
+				duration = 3650
+			}
+		}	
+	}
+	
+}
+
+country_event = { #Holy Trade **PULSE**
+	id = jewish_events.9
+	title = jewish_events.9.t
+	desc = jewish_events.9.d
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		owns = 947
+		NOT = {
+			has_country_modifier = holy_trade_jewish
+		}
+		NOT = {
+			OR = {
+				interior_lakes_trade_company = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				interior_lakes_trade_company = {
+					type = all
+					religion = new_jewish
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {	
+		hidden_effect = {
+			random_province = {
+				limit = {
+					trade_company_region = interior_lakes_trade_company
+					NOT = {
+						owned_by = ROOT
+						religion = new_jewish
+					}
+				}
+				save_event_target_as = random_jewish_province_to_convert
+			}
+		}
+	}
+
+	option = {
+		name = jewish_events.9.a #The pious spread
+		add_country_modifier = {
+			name = "holy_trade_jewish"
+			duration = 3650
+		}
+		custom_tooltip = owner_will_get_jewish_rebs_or_convert
+		event_target:random_jewish_province_to_convert = {
+			owner = {
+				country_event = { id = jewish_events.10 }
+			}
+		}
+	}
+}
+
+country_event = { #Jewish Traders
+	id = jewish_events.10
+	title = jewish_events.10.t
+	desc = jewish_events.10.d
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			religion = new_jewish
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.10.a #Heathens!
+		event_target:random_jewish_province_to_convert = {
+			spawn_rebels = {
+				type = new_jewish_rebels
+				size = 1
+			}
+		}
+	}
+	option = {
+		name = jewish_events.10.b #Let them be.
+		event_target:random_jewish_province_to_convert = {
+			change_religion = new_jewish
+		}
+	}
+}
+
+country_event = { #Rebuilding Washington **PULSE**
+	id = jewish_events.11
+	title = jewish_events.11.t
+	desc = jewish_events.11.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		owns = 172
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.11.a #Washington will be great once again.
+		add_adm_power = -40
+		add_dip_power = -40
+		add_mil_power = -40
+		172 = {
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+	}
+	option = {
+		name = jewish_events.11.b #The pious spread
+		add_prestige = 5
+	}
+}
+
+country_event = { #Diversity of Thought **PULSE**
+	id = jewish_events.12
+	title = jewish_events.12.t
+	desc = jewish_events.12.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		owns = 172
+		is_lacking_institutions = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.12.a #Washington will be great once again.
+		add_province_modifier = {
+			name = "diversity_of_thought_washington"
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #City of Liberty **PULSE**
+	id = jewish_events.13
+	title = jewish_events.13.t
+	desc = jewish_events.13.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		owns = 178
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.13.a #We promote liberty
+		add_legitimacy = 10
+		add_horde_unity = 10
+		add_devotion = 10
+		add_meritocracy = 10
+		add_republican_tradition = 5
+	}
+	option = {
+		name = jewish_events.13.b #The people promote liberty
+		add_adm_power = 25
+		add_dip_power = 25
+		add_mil_power = 25
+	}
+}
+
+country_event = { #University Culture **PULSE**
+	id = jewish_events.14
+	title = jewish_events.14.t
+	desc = jewish_events.14.d
+	picture = UNIVERSITY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		owns = 178
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.14.a #Promote Progress
+		add_country_modifier = {
+			name = "culture_of_progress"
+			duration = 3650
+		}
+	}
+	option = {
+		name = jewish_events.14.b #Promote Analysis
+		add_country_modifier = {
+			name = "culture_of_analysis"
+			duration = 3650
+		}
+	}
+	option = {
+		name = jewish_events.14.c #Promote Reflection
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+	}
+}
+
+country_event = { #Buffalo Glasses **PULSE**
+	id = jewish_events.15
+	title = jewish_events.15.t
+	desc = jewish_events.15.d
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		owns = 203
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.15.a #Sell it to the masses
+		add_years_of_income = 1
+	}
+	option = {
+		name = jewish_events.15.b #Give it to the artists
+		add_prestige = 25
+	}
+}
+
+country_event = { #Holy Cities Shattered
+	id = jewish_events.16
+	title = jewish_events.16.t
+	desc = jewish_events.16.d
+	picture = RELIGIOUS_WARS_eventPicture
+	
+	trigger = {
+		religion = new_jewish
+		OR = {
+			owns = 965
+			owns = 947
+			owns = 172
+			owns = 178
+			owns = 203
+		}
+		NOT = {
+			has_country_flag = attempt_to_claim_the_holy_sites
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = jewish_events.16.a #We are the true heirs
+		965 = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+				NOT = { is_claim = ROOT }
+				NOT = { is_empty = yes }
+			}
+			add_claim = ROOT
+		}
+		947 = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+				NOT = { is_claim = ROOT }
+				NOT = { is_empty = yes }
+			}
+			add_claim = ROOT
+		}
+		172 = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+				NOT = { is_claim = ROOT }
+				NOT = { is_empty = yes }
+			}
+			add_claim = ROOT
+		}
+		178 = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+				NOT = { is_claim = ROOT }
+				NOT = { is_empty = yes }
+			}
+			add_claim = ROOT
+		}
+		203 = {
+			limit = {
+				NOT = { is_core = ROOT }
+				NOT = { is_permanent_claim = ROOT }
+				NOT = { is_claim = ROOT }
+				NOT = { is_empty = yes }
+			}
+			add_claim = ROOT
+		}
+	}
+	
+	after = {
+		set_country_flag = attempt_to_claim_the_holy_sites
+	}
+}
+
+country_event = { #Laurentian Navy **PULSE**
+	id = jewish_events.17
+	title = jewish_events.17.t
+	desc = jewish_events.17.d
+	picture = HARBOUR_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		owns = 203
+		navy_size_percentage = 0.25
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.17.a #We must focus on recruitment
+		add_country_modifier = {
+			name = "laurentian_sailors_jewish"
+			duration = 1825
+		}
+	}
+	option = {
+		name = jewish_events.17.b #We must focus on our craftsmenship
+		add_country_modifier = {
+			name = "laurentian_durability_jewish"
+			duration = 1825
+		}
+	}
+	option = {
+		name = jewish_events.17.c #We must focus on our morale
+		add_country_modifier = {
+			name = "laurentian_morale_jewish"
+			duration = 1825
+		}
+	}
+}
+
+####################JEWISH MINORITY EVENTS##########################
+
+country_event = { #Jewish population of [holycity] **PULSE**
+	id = jewish_events.18
+	title = jewish_events.18.t
+	desc = jewish_events.18.d
+	picture = CITY_VIEW_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			owns = 965
+			owns = 947
+			owns = 172
+			owns = 178
+			owns = 203
+		}
+		NOT = {
+			religion = new_jewish
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					OR = {
+						province_id = 965
+						province_id = 947
+						province_id = 172
+						province_id = 178
+						province_id = 203
+					}
+				}
+				save_event_target_as = jewish_prov_for_grow_pop
+			}
+		}
+	}
+
+	option = {
+		name = jewish_events.18.a #Let them grow
+		event_target:jewish_prov_for_grow_pop = {
+			add_province_modifier = {
+				name = "thriving_jewish_population"
+				duration = 1825
+			}
+			random_list = {
+				50 = {
+					if = {
+						limit = {
+							religion = new_jewish
+						}
+						add_province_modifier = {
+							name = "entrenched_jewish_presence"
+							duration = 1825
+						}
+					}
+					else = {
+						change_religion = new_jewish
+					}
+					
+				}
+				50 = {
+					add_base_tax = 1
+				}
+			}
+		}
+	}
+	option = {
+		name = jewish_events.18.b #Stop their spread
+		event_target:jewish_prov_for_grow_pop = {
+			add_province_modifier = {
+				name = "supressing_jewish_populace"
+				duration = 1825
+			}
+		}
+	}
+}
+
+country_event = { #Jews face perseuction **PULSE**
+	id = jewish_events.19
+	title = jewish_events.19.t
+	desc = jewish_events.19.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		calc_true_if = {
+			all_owned_province = {
+				religion = new_jewish
+			}
+			amount = 3
+		}
+		NOT = {
+			has_idea_group = humanist_ideas
+			OR = {
+				religion = new_jewish
+				has_country_modifier = supporting_jewish_minority
+			}
+		}
+		any_owned_province = {
+			religion = new_jewish
+			NOT = {
+				has_province_modifier = jewish_minority_perseucted
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.19.a #We will protect them!
+		add_country_modifier = {
+			name = "supporting_jewish_minority"
+			duration = 9125
+		}
+	}
+	option = {
+		name = jewish_events.19.b #It is not our matter
+		custom_tooltip = all_jewish_provinces_face_persecution
+		tooltip = {
+			add_province_modifier = {
+				name = "jewish_minority_perseucted"
+				duration = 9125
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					religion = new_jewish
+				}
+				add_province_modifier = {
+					name = "jewish_minority_perseucted"
+					duration = 9125
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Jews flee perseuction **PULSE**
+	id = jewish_events.20
+	title = jewish_events.20.t
+	desc = jewish_events.20.d
+	picture = WOUNDED_SOLDIERS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		any_owned_province = {
+			religion = new_jewish
+			has_province_modifier = jewish_minority_perseucted
+			any_neighbor_province = {
+				owner = {
+					NOT = {
+						tag = ROOT
+					}
+				}	
+			}
+		}
+		NOT = {
+			religion = new_jewish
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = new_jewish 
+					has_province_modifier = jewish_minority_perseucted
+					any_neighbor_province = {
+						owner = {
+							NOT = {
+								tag = ROOT
+							}
+						}	
+					}
+				}
+				save_event_target_as = starting_prov_flee_jewish
+				random_neighbor_province = {
+					limit = {
+						owner = {
+							NOT = {
+								tag = ROOT
+							}
+						}	
+					}
+					save_event_target_as = place_where_jews_are_fleeing_to
+				}
+			}
+		}
+	}
+
+	option = {
+		name = jewish_events.20.a #Good Riddence
+		custom_tooltip = jews_will_flee_to
+		event_target:starting_prov_flee_jewish = {
+			change_religion = ROOT
+		}
+		event_target:place_where_jews_are_fleeing_to = {
+			owner = {
+				country_event = { id = jewish_events.21 }
+			}
+		}
+	}
+}
+
+country_event = { #Jews arrive in our nation
+	id = jewish_events.21
+	title = jewish_events.21.t
+	desc = jewish_events.21.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.21.a #Welcome them!
+		event_target:place_where_jews_are_fleeing_to = {
+			change_religion = new_jewish
+		}
+	}
+	option = {
+		name = jewish_events.21.b #Crush them!
+		event_target:place_where_jews_are_fleeing_to = {
+			spawn_rebels = {
+				type = new_jewish_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+country_event = { #Rabbi Offers Assistance **PULSE**
+	id = jewish_events.22
+	title = jewish_events.22.t
+	desc = jewish_events.22.d
+	picture = ADVISOR_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		any_owned_province = {
+			religion = new_jewish 
+			NOT = {
+				has_province_modifier = talented_local_rabbi
+			}
+		}
+		NOT = {
+			religion = new_jewish
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = new_jewish
+					NOT = {
+						has_province_modifier = talented_local_rabbi
+					}
+				}
+				save_event_target_as = province_for_the_advisor_jewish
+			}
+		}
+	}
+
+	option = {
+		name = jewish_events.22.a #A wonderful addition to our administration
+		define_advisor = {
+			type = theologian
+			skill = 3
+			discount = yes
+			religion = new_jewish
+		}
+	}
+	option = {
+		name = jewish_events.22.a #They would better serve their community.
+		event_target:province_for_the_advisor_jewish = {
+			add_province_modifier = {
+				name = "talented_local_rabbi"
+				duration = 3650
+			}
+		}
+	}
+}
+
+####################JEWISH MISC EVENTS##########################
+
+country_event = { #Memories of Canaan **PULSE**
+	id = jewish_events.23
+	title = jewish_events.23.t
+	desc = jewish_events.23.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		capital_scope = {
+			region = new_cannan_region
+		}
+		NOT = {
+			OR = {
+				tag = Y08
+				has_country_modifier = memories_of_canaan_jewish_mod
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.23.a #We will be united once again!
+		add_country_modifier = {
+			name = "memories_of_canaan_jewish_mod"
+			duration = 3650
+		}
+	}
+	option = {
+		name = jewish_events.23.a #It is long gone
+		add_mil_power = 75
+	}
+}
+
+country_event = { #Discovery of Isreal
+	id = jewish_events.24
+	title = jewish_events.24.t
+	desc = jewish_events.24.d
+	picture = SHIP_SAILING_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		religion = new_jewish
+		364 = {
+			has_discovered = ROOT
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.24.a #Facinating
+		add_prestige = 50
+	}
+}
+
+country_event = { #Sacramental Relations **PULSE**
+	id = jewish_events.25
+	title = jewish_events.25.t
+	desc = jewish_events.25.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		any_neighbor_country = {
+			religion_group = sacramental_group
+		}
+		NOT = {
+			OR = {
+				has_country_flag = perm_sacra_ten_relations
+				has_country_modifier = diplomatic_embarassment_jewish
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_neighbor_country = {
+				limit = {
+					religion_group = sacramental_group
+				}
+				save_event_target_as = sacramental_nation_to_reach_out_to
+			}
+		}
+	}
+
+	option = {
+		name = jewish_events.25.a #We should reach out
+		custom_tooltip = could_get_perma_plus_ten_with_Scras
+		event_target:sacramental_nation_to_reach_out_to = {
+			country_event = { id = jewish_events.26 }
+		}
+	}
+	option = {
+		name = jewish_events.25.b #Heathens! All of them!
+		add_prestige = 25
+	}
+}
+
+country_event = { #Invitation From [from]
+	id = jewish_events.26
+	title = jewish_events.26.t
+	desc = jewish_events.26.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.26.a #Abrahamic Brothers
+		add_opinion = {
+			who = FROM
+			modifier = alliance_of_abraham_jewish
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = alliance_of_abraham_jewish
+			}
+			country_event = { 
+				id = jewish_events.27
+				days = 2
+			}
+		}
+	}
+	option = {
+		name = jewish_events.26.b #Heathens!
+		add_opinion = {
+			who = FROM
+			modifier = rejected_interfaith_dialouge_jewish
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = rejected_interfaith_dialouge_jewish
+			}
+			country_event = { 
+				id = jewish_events.28 
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = { #Sacramental Brethren
+	id = jewish_events.27
+	title = jewish_events.27.t
+	desc = jewish_events.27.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.27.a #Wonderous!
+		custom_tooltip = perma_plus_ten_opinion_with_all_sacramental_nations
+		hidden_effect = {
+			set_country_flag = perm_sacra_ten_relations
+			every_known_country = {
+				limit = {
+					religion_group = sacramental_group 
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = sacramental_brethren
+				}
+				ROOT = {
+					add_opinion = {
+						who = PREV
+						modifier = sacramental_brethren
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Sacramental Rejection
+	id = jewish_events.28
+	title = jewish_events.28.t
+	desc = jewish_events.28.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.28.a #Damn them!
+		add_country_modifier = {
+			name = "diplomatic_embarassment_jewish"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #The Tolerant Faith **PULSE**
+	id = jewish_events.29
+	title = jewish_events.29.t
+	desc = jewish_events.29.d
+	picture = RELIGION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		any_owned_province = {
+			NOT = {
+				religion = new_jewish
+			}
+		}
+		NOT = {
+			has_country_modifier = the_tolerant_faith_jewish
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.29.a #We should reach out
+		add_country_modifier = {
+			name = "the_tolerant_faith_jewish"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Beth din **PULSE**
+	id = jewish_events.30
+	title = jewish_events.30.t
+	desc = jewish_events.30.d
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		NOT = {
+			has_country_modifier = the_tolerant_faith_jewish
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.30.a #Replace them
+		add_country_modifier = {
+			name = "replacing_beth_din"
+			duration = 3650
+		}
+		add_adm_power = 15
+		add_dip_power = 15
+		add_mil_power = 15
+	}
+	option = {
+		name = jewish_events.30.b #keep them
+		add_legitimacy = -10
+		add_horde_unity = -10
+		add_devotion = -10
+		add_meritocracy = -10
+		add_republican_tradition = -5
+	}
+}
+
+country_event = { #Sect Tensions **PULSE**
+	id = jewish_events.31
+	title = jewish_events.31.t
+	desc = jewish_events.31.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		NOT = {
+			OR = {
+				has_country_modifier = sided_with_the_progressives
+				has_country_modifier = sided_with_the_orthodox
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.31.a #We Side with the Orthodox
+		add_country_modifier = {
+			name = "sided_with_the_progressives"
+			duration = 3650
+		}
+	}
+	option = {
+		name = jewish_events.31.b #We Side with the Reformists
+		add_country_modifier = {
+			name = "sided_with_the_orthodox"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Shtiebel Gone Wild **PULSE**
+	id = jewish_events.32
+	title = jewish_events.32.t
+	desc = jewish_events.32.d
+	picture = FEAST_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		any_owned_province = {
+			religion = new_jewish
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = new_jewish
+				}
+				save_event_target_as = shtiebel_gone_wild
+			}
+		}
+	}
+
+	option = {
+		name = jewish_events.32.a #Clean up the mess
+		add_adm_power = -25
+		add_dip_power = -25
+		add_mil_power = -25
+	}
+	option = {
+		name = jewish_events.32.b #What a great night
+		event_target:shtiebel_gone_wild = {
+			if = {
+				limit = {
+					base_manpower = 2
+				}
+				add_base_manpower = -1
+			}
+			else = {
+				add_prestige = -25
+			}
+		}
+	}
+}
+
+country_event = { #Kashrut Complications **PULSE**
+	id = jewish_events.33
+	title = jewish_events.33.t
+	desc = jewish_events.33.d
+	picture = ADVISOR_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		has_advisor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.33.a #Ask them to leave
+		remove_advisor = random
+	}
+	option = {
+		name = jewish_events.33.b #It was just a mistake
+		add_prestige = -15
+	}
+}
+
+country_event = { #Popular Synagogue **PULSE**
+	id = jewish_events.34
+	title = jewish_events.34.t
+	desc = jewish_events.34.d
+	picture = GREAT_BUILDING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		any_owned_province = {
+			OR = {
+				has_building = temple
+				has_building = cathedral
+			}
+			religion = new_jewish
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					OR = {
+						has_building = temple
+						has_building = cathedral
+					}
+					religion = new_jewish
+				}
+				save_event_target_as = popular_synagogue_province
+			}
+		}
+	}
+
+	option = {
+		name = jewish_events.34.a #An improved administration!
+		add_base_tax = 1
+	}
+	option = {
+		name = jewish_events.34.b #An improved workforce!
+		add_base_production = 1
+	}
+	option = {
+		name = jewish_events.34.c #An improved citizenry!
+		add_base_manpower = 1
+	}
+}
+
+country_event = { #Mamzer **PULSE**
+	id = jewish_events.35
+	title = jewish_events.35.t
+	desc = jewish_events.35.d
+	picture = NEW_HEIR_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		has_consort = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.35.a #I Accept the Child
+		define_heir = {
+			age = 1
+			change_adm = 2
+			change_dip = 2
+			change_mil = 2
+			max_random_adm = 5
+			max_random_adm = 5
+			max_random_adm = 5
+			claim = 0
+		}
+	}
+	option = {
+		name = jewish_events.35.b #I need a divorce
+		remove_consort = yes
+	}
+}
+
+
+country_event = { #Milhemet Reshut **PULSE**
+	id = jewish_events.36
+	title = jewish_events.36.t
+	desc = jewish_events.36.d
+	picture = BATTLE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		at_war_with_religious_enemy = yes
+		NOT = {
+			has_country_modifier = milhemet_reshut_jewish
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.36.a #We need a wartime administration
+		add_mil_power = 100
+	}
+	option = {
+		name = jewish_events.36.b #We need a trained army
+		add_army_tradition = 25
+	}
+	option = {
+		name = jewish_events.36.c #We need a professional army
+		add_army_professionalism = 0.05
+	}
+	option = {
+		name = jewish_events.36.e #We need strict discipline
+		add_country_modifier = {
+			name = "milhemet_reshut_jewish"
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Tzedakah **PULSE**
+	id = jewish_events.37
+	title = jewish_events.37.t
+	desc = jewish_events.37.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		at_war_with_religious_enemy = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.37.a #Spread the wealth
+		add_years_of_income = -1
+		add_adm_power = 50
+		add_prestige = 15
+	}
+	option = {
+		name = jewish_events.37.b #We need the money
+		add_prestige = -5
+	}
+}
+
+country_event = { #The Golem of [ranjewprov] **PULSE**
+	id = jewish_events.38
+	title = jewish_events.38.t
+	desc = jewish_events.38.d
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		at_war_with_religious_enemy = yes
+		any_owned_province = {
+			has_siege = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_siege = yes
+				}
+				save_event_target_as = goldem_siege_resisting_jewish
+			}
+		}
+	}
+
+	option = {
+		name = jewish_events.38.a #Spread the wealth
+		event_target:save_event_target_as = {
+			add_province_modifier = {
+				name = "golem_defense_jewish"
+				duration = 730
+			}
+		}
+	}
+}
+
+country_event = { #The Great Mockery **PULSE**
+	id = jewish_events.39
+	title = jewish_events.39.t
+	desc = jewish_events.39.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		current_age = age_of_reformation
+		NOT = {
+			has_country_modifier = the_great_mockery_jewish
+		}	
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.39.a #Spread the wealth
+		add_prestige = -15
+		add_country_modifier = {
+			name = "the_great_mockery_jewish"
+			duration = 9125
+		}
+	}
+}
+
+country_event = { #Hitbodedut **PULSE**
+	id = jewish_events.40
+	title = jewish_events.40.t
+	desc = jewish_events.40.d
+	picture = PRAYING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = new_jewish
+		OR = {
+			NOT = {
+				adm = 3
+				dip = 3
+				mil = 3
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = jewish_events.40.a #Reflect on God
+		trigger = {
+			NOT = {
+				adm = 3
+			}
+		}
+		change_adm = 1
+	}
+	option = {
+		name = jewish_events.40.b #Reflect on Nature
+		trigger = {
+			NOT = {
+				dip = 3
+			}
+		}
+		change_dip = 1
+	}
+	option = {
+		name = jewish_events.40.c #Reflect on Man
+		trigger = {
+			NOT = {
+				mil = 3
+			}
+		}
+		change_mil = 1
+	}
+}

@@ -1,0 +1,19 @@
+#146 - Athens
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X49
+controller = X49
+add_core = X49
+culture = carolinian
+religion = evangelical
+capital = "Athens"
+trade_goods = naval_supplies #mountian trees and stuff
+hre = no
+base_tax = 5
+base_production = 3
+base_manpower = 3
+is_city = yes
+fort_15th = yes

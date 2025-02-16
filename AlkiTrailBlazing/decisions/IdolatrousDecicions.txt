@@ -1,0 +1,46 @@
+country_decisions = {
+
+	enforce_universal_tolerance_idol = {
+		potential = {
+			religion = idolatrous
+			NOT = {
+				has_country_modifier = enforced_universal_tolerance_idol
+			}
+		}
+		allow = {
+			adm = 4
+		}
+		effect = {
+			add_country_modifier = {
+				name = "enforced_universal_tolerance_idol"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	
+	codify_oral_traditions_idol = {
+		potential = {
+			religion = idolatrous
+			NOT = {
+				has_country_modifier = codified_oral_traditions_idol
+			}
+		}
+		allow = {
+			is_religion_reformed = yes
+		}
+		effect = {
+			add_country_modifier = {
+				name = "codified_oral_traditions_idol"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	
+}
+

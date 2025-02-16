@@ -1,0 +1,30 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = franciscan
+religion = partisan
+technology_group = western
+capital = 1064	 #Oakland
+religious_school = progressive_party
+set_country_flag = progressive_caucus
+
+1433.1.30 = {
+	monarch = {
+		name = "Lewis 'The Younger'"
+		dynasty = "Francisco"
+		birth_date = 1411.10.6
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+	queen = {
+		name = "Jessie"            
+		dynasty = "Francisco"        
+		birth_date = 1413.5.31         
+		death_date = 1500.1.1
+		adm = 3                 
+		dip = 4                
+		mil = 4                
+		female = yes                
+	}
+}

@@ -1,0 +1,93 @@
+country_decisions = {
+
+	found_local_luz_academy = {
+		potential = {
+			religion = la_luz
+			capital_scope = {
+				NOT = {
+					has_country_modifier = local_luzian_academy_laluz
+				}
+			}
+		}
+		allow = {
+			years_of_income = 3
+		}
+		effect = {
+			add_years_of_income = -3
+			capital_scope = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+				add_province_modifier = {
+					name = "local_luzian_academy_laluz"
+					duration = -1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	enact_university_initiative = {
+		potential = {
+			ai = no #The AI would probably just kill itself with this 
+			religion = la_liz
+			adm_tech = 17
+			OR = {
+				any_owned_province = {
+					NOT = {
+						has_building = university
+					}
+					has_building = temple
+				}
+				any_owned_province = {
+					NOT = {
+						has_building = university
+					}
+					has_building = cathedral
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				has_country_modifier = university_initiative_laluz
+			}
+			years_of_income = 1
+		}
+		effect = {
+			add_years_of_income = -1
+			add_country_modifier = {
+				name = "university_initiative_laluz"
+				duration = 3650
+			}
+			custom_tooltip = turns_temples_and_cathedrals_into_universities.tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_building = cathedral
+						NOT = {
+							has_building = university
+						}
+					}
+					add_building = university
+					remove_building = cathedral
+				}
+				every_owned_province = {
+					limit = {
+						has_building = temple
+						NOT = {
+							has_building = university
+						}
+					}
+					add_building = university
+					remove_building = temple
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
+

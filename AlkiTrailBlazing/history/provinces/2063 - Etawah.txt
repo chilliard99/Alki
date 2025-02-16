@@ -1,0 +1,19 @@
+#2063 - Etawah
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y42
+controller = Y42
+add_core = Y42
+culture = seattlain
+religion = partisan
+capital = "Seattle"
+trade_goods = paper #Extremely Developed Province
+hre = yes
+base_tax = 8
+base_production = 8
+base_manpower = 7
+is_city = yes
+center_of_trade = 1
+fort_15th = yes

@@ -1,0 +1,1169 @@
+###########################HELENS MISSIONS###########################
+helens_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = U56
+	}
+	has_country_shield = yes
+	
+	cultivate_subjects_helens = {
+		icon = king_subject_gor
+		required_missions = { secure_presidential_support_helens }
+		position = 2
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = have_two_subjects_part_of_the_uoc
+					all_subject_country = {
+						is_part_of_hre = yes
+					}
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			tooltip = {
+				add_dip_power = 50
+				add_country_modifier = {
+					name = "gor_union_subjugation_helens"
+					duration = 5475
+				}
+			}
+			custom_tooltip = if_both_subjs_have_dev_over_ten
+			tooltip = {
+				add_dip_power = 100
+				add_country_modifier = {
+					name = "gor_union_subjugation_better_helens"
+					duration = 7300
+				}	
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						calc_true_if = {
+							all_subject_country = {
+								is_part_of_hre = yes
+								total_development = 10
+							}
+							amount = 2
+						}
+					}
+					add_country_modifier = {
+						name = "gor_union_subjugation_better_helens"
+						duration = 5475
+					}
+					add_dip_power = 50
+				}
+				else { 
+					add_country_modifier = {
+						name = "gor_union_subjugation_helens"
+						duration = 7300
+					}
+					add_dip_power = 100
+				}
+			}
+		}
+	}
+	
+	columbian_supremacy_helens = {
+		icon = columbia_river_gor
+		required_missions = { cultivate_subjects_helens }
+		position = 3
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = more_development_than_any_elector
+				NOT = {
+					OR = {
+						any_elector = {
+							total_development = ROOT
+							NOT = { tag = ROOT }
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_mil_power = 100
+			add_army_tradition = 15
+			create_general = { tradition = 75 }
+			define_advisor = {
+				type = commandant
+				skill = 2
+				cost_multiplier = 0.75
+			}
+		}
+	}
+	
+	red_meance_helens = {
+		icon = evil_marx_gor
+		required_missions = { }
+		position = 5
+		provinces_to_highlight = {
+			province_id = 2063
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			army_size_percentage = 0.9
+			W06 = { 
+				OR = {
+					owns_core_province = 2063
+					custom_trigger_tooltip = {
+						tooltip = alaska_owns_no_provinces_in_washington
+						washington_region = {
+							type = all
+							NOT = { owned_by = W06 }
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = { id = helens_events.5 }
+		}
+	}
+	
+	challenge_alaskan_hegemony_helens = {
+		icon = union_scrape_gor
+		required_missions = { red_meance_helens }
+		position = 6
+		trigger = {
+			OR = {
+				war_with = W06
+				has_won_war_against = {
+					who = W06
+					max_years_since = 100
+				}
+			}
+		}
+		effect = {
+			define_advisor = {
+				type = commandant
+				skill = 3
+				cost_multiplier = 0.25
+			}
+			add_country_modifier = {
+				name = "gor_washingtonian_liberators_helens"
+				duration = 3650
+			}
+		}
+	}
+	
+	send_them_packing_helens = {
+		icon = surrender_flag_gor
+		required_missions = { challenge_alaskan_hegemony_helens sabotage_union_resolve_helens }
+		position = 7
+		provinces_to_highlight = {
+			region = washington_region
+			owned_by = W06
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = alaska_owns_no_provinces_in_washington_two
+				washington_region = {
+					type = all
+					NOT = { owned_by = W06 }
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_defender_of_washington_helens"
+				duration = 7300
+			}
+			custom_tooltip = all_alaskan_provs_get
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_retunring_home_helens"
+					duration = 7300
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_core = W06
+					}
+					add_province_modifier = {
+						name = "gor_retunring_home_helens"
+						duration = 7300
+					}
+				}
+			}
+		}
+	}
+	
+	tough_red_stains_helens = {
+		icon = red_praying_gor
+		required_missions = { send_them_packing_helens }
+		position = 8
+		provinces_to_highlight = {
+			region = washington_region
+			OR = {
+				is_core = W06
+				religion = collectivist
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = no_collectivist_provinces_in_washington
+				washington_region = {
+					type = all
+					NOT = { religion = collectivist }
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = alaska_owns_no_cores_in_the_region
+				washington_region = {
+					type = all
+					NOT = { is_core = W06 }
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_bane_of_communists_helens"
+				duration = -1
+			}
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 25
+			}
+			if = {
+				limit = {
+					NOT = {
+						stability = 3
+					}
+				}
+				add_stability = 1
+			}
+			else = {
+				add_adm_power = 100
+			}
+		}
+	}
+}
+
+helens_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = U56
+	}
+	has_country_shield = yes
+	
+	secure_presidential_support_helens = {
+		icon = talking_to_prez_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			emperor = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+		}
+		effect = {
+			add_prestige = 10
+			add_dip_power = 25
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_presidential_support_helens"
+					duration = 5475
+				}
+			}
+			custom_tooltip = if_we_complete_while_allied_to_prez
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_presidential_support_strong_helens"
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						emperor = {
+							alliance_with = ROOT
+						}
+					}
+					add_country_modifier = {
+						name = "gor_presidential_support_strong_helens"
+						duration = 5475
+					}
+				}
+				else {
+					add_country_modifier = {
+						name = "gor_presidential_support_helens"
+						duration = 5475
+					}
+				}
+			}
+		}
+	}
+	
+	participate_in_union_commerce_helens = {
+		icon = leaning_merchant_gor
+		required_missions = { secure_presidential_support_helens }
+		position = 2
+		trigger = {
+			treasury = 500
+			num_of_centers_of_trade = 2
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = have_two_allies_in_the_uoc
+					all_ally = {
+						is_part_of_hre = yes
+					}
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			add_treasury = 250
+			add_country_modifier = {
+				name = "gor_union_commerce_helens"
+				duration = 7300
+			}
+			custom_tooltip = two_random_allies_will_get
+			tooltip = {
+				add_treasury = 250
+				add_country_modifier = {
+					name = "gor_union_commerce_helens"
+					duration = 7300
+				}
+			}
+			hidden_effect = {
+				random_ally = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					country_event = { id = helens_events.1 }
+					set_country_flag = first_nat_for_helens_miss
+				}
+				random_ally = {
+					limit = {
+						is_part_of_hre = yes
+						NOT = { has_country_flag = first_nat_for_helens_miss }
+					}
+					country_event = { id = helens_events.1 }
+				}
+			}
+		}
+	}
+	
+	the_big_league_helens = {
+		icon = prez_sitting_gor
+		required_missions = { columbian_supremacy_helens challenging_the_incumbent_helens }
+		position = 4
+		trigger = {
+			diplomatic_reputation = 7
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = have_five_nations_support_you_for_prez
+					all_elector = {
+						preferred_emperor = ROOT
+					}
+				}
+				amount = 5
+			}
+		}
+		effect = {
+			add_dip_power = 50
+			add_country_modifier = {
+				name = "gor_presedential_preparations_helens"
+				duration = 18250
+			}
+			custom_tooltip = if_we_are_the_president
+			tooltip = {
+				add_imperial_influence = 20
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						is_emperor = yes
+					}
+					add_imperial_influence = 20
+				}
+			}
+		}
+	}
+	
+	sabotage_union_resolve_helens = {
+		icon = collectivist_subjugation_gor
+		required_missions = { red_meance_helens }
+		position = 6
+		trigger = {
+			has_spy_network_in = {
+				who = W06
+				value = 50
+			}
+		}
+		effect = {
+			add_army_tradition = 10
+			define_advisor = {
+				type = spymaster
+				skill = 3
+				cost_multiplier = 0.5
+			}
+			add_country_modifier = {
+				name = "gor_offensive_foresight_helens"
+				duration = 3650
+			}
+		}
+	}
+
+}
+
+helens_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = U56
+	}
+	has_country_shield = yes
+	
+	
+	build_electoral_appeal_helens = {
+		icon = elector_voting_gor
+		required_missions = { secure_presidential_support_helens }
+		position = 2
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = have_two_nations_support_you_for_prez
+					all_elector = {
+						preferred_emperor = ROOT
+					}
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			country_event = { id = helens_events.2 }
+		}
+	}
+	
+	challenging_the_incumbent_helens = {
+		icon = horseback_knight_gor
+		required_missions = { build_electoral_appeal_helens }
+		position = 2
+		trigger = {
+			NOT = {
+				emperor = {
+					army_size = ROOT
+				}
+			}
+			NOT = {
+				emperor = {
+					navy_size = ROOT
+				}
+			}
+			NOT = {
+				emperor = {
+					monthly_income = ROOT
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					dip = 6
+				}
+				add_dip_power = 200
+			}
+			else = {
+				change_dip = 1
+			}
+			if = {
+				limit = {
+					NOT = {
+						stability = 3
+					}
+				}
+				add_stability = 1
+			}
+			else = {
+				add_adm_power = 100
+			}
+			custom_tooltip = if_we_are_not_the_prez_they_get
+			tooltip = {
+				emperor = {
+					if = {
+						limit = {
+							dip = 1
+						}
+						change_dip = -1
+					}
+					else = {
+						add_dip_power = -200
+					}
+					if = {
+						limit = {
+							stability = -2
+						}
+						add_stability = -1
+					}
+					else = {
+						add_adm_power = -150
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = { is_emperor = yes }
+					}
+					emperor = {
+						country_event = { id = helens_events.4 }
+					}
+				}
+			}
+		}
+	}
+	
+	challenging_the_olympians_helens = {
+		icon = knight_in_evergreen_forest_gor
+		required_missions = { river_of_the_west_helens }
+		position = 5
+		provinces_to_highlight = {
+			area = olympic_penninsula_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = own_three_provs_in_olympic_penin
+					all_owned_province = {
+						area = olympic_penninsula_area
+					}
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			add_mil_power = 50
+			custom_tooltip = if_we_partisan_helens
+			tooltip = {
+				if = {
+					limit = {
+						piety = 0 
+					}
+					add_piety = 0.05
+				}
+				else = {
+					add_piety = -0.05
+				}
+			}
+			custom_tooltip = all_provs_in_olympic_penin
+			tooltip = {
+				change_religion = partisan
+				remove_core = W06
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						religion = partisan
+					}
+					if = {
+						limit = {
+							piety = 0 
+						}
+						add_piety = 0.05
+					}
+					else = {
+						add_piety = -0.05
+					}
+					every_owned_province = {
+						limit = {
+							area = olympic_penninsula_area
+						}
+						change_religion = partisan
+						remove_core = W06
+					}
+				}
+			}
+		}
+	}
+	
+	found_cartel_workshops_helens = {
+		icon = workshop_gor
+		required_missions = { }
+		position = 7
+		trigger = {
+			workshop = 5
+			marketplace = 5
+			OR = {
+				has_idea_group = trade_ideas
+				has_idea_group = economic_ideas
+				estate_influence = {
+					estate = estate_burghers
+					influence = 60
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = five_random_provs_with_workshops_gain
+			tooltip = {
+				add_base_production = 2
+			}
+			custom_tooltip = if_they_are_along_the_columbia_river
+			tooltip = {
+				add_base_production = 3
+			}
+			hidden_effect = {
+				set_variable = {
+					which = rand_workshops_to_give_dev
+					value = 5
+				}
+				while = {
+					limit = {
+						check_variable = {
+							which = rand_workshops_to_give_dev
+							value = 1
+						}
+					}
+					random_owned_province = {
+						limit = {
+							has_building = workshop
+							NOT = { has_province_flag = already_selected_for_rand_work }
+						}
+						if = {
+							limit = {
+								OR = {
+									province_id = 2046
+									province_id = 2057 
+									province_id = 1208 
+									province_id = 1197 
+									province_id = 2068
+									province_id = 1218 
+									province_id = 2069 
+									province_id = 1970
+									province_id = 4500
+									province_id = 1972
+									province_id = 2039
+									province_id = 2038
+									province_id = 2037
+									province_id = 4501
+									province_id = 2036
+									province_id = 4504 
+									province_id = 2056
+									province_id = 2035
+								}
+							}
+							add_base_production = 3
+						}
+						else = {
+							add_base_production = 2
+						}
+					}
+					subtract_variable = {
+						which = rand_workshops_to_give_dev
+						value = 1
+					}
+				}	
+			}
+		}
+	}
+	
+	cascadian_flow_helens = {
+		icon = merchant_with_gold_gor
+		required_missions = { found_cartel_workshops_helens }
+		position = 8
+		trigger = {
+			2063 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			add_years_of_income = 5
+			add_mercantilism = 10
+			add_country_modifier = {
+				name = "gor_satisfied_traders_helens"
+				duration = 9125
+			}
+		}
+	}
+}
+
+helens_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = U56
+	}
+	has_country_shield = yes
+	
+	the_yakama_problem_helens = {
+		icon = yakama_knight_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			num_of_generals = 1
+			army_size = Y97
+		}
+		effect = {
+			add_manpower = 5
+			middle_columbia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	marching_on_the_orchards_helens = {
+		icon = burning_orchard_gor
+		required_missions = { the_yakama_problem_helens }
+		position = 2
+		provinces_to_highlight = {
+			area = middle_columbia_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			middle_columbia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = for_every_wine_prov_in_wash
+			tooltip = {
+				add_treasury = 50
+			}
+			willapa_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = if_yakama_does_not_exist
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_yakaman_dedication_helens"
+					duration = 3650
+				}
+			}
+			hidden_effect = {
+				while = {
+					limit = {
+						any_owned_province = {
+							trade_goods = wine
+							NOT = { has_province_flag = already_given_development }
+						}
+					}
+					add_treasury = 50
+					random_owned_province = {
+						limit = {
+							trade_goods = wine
+							NOT = { has_province_flag = already_given_development }
+						}
+						set_province_flag = already_given_development
+					}
+				} 
+				every_owned_province = {
+					clr_province_flag = already_given_development
+				}
+				if = {
+					limit = {
+						NOT = { exists = Y97 }
+					}
+					add_country_modifier = {
+						name = "gor_yakaman_dedication_helens"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	
+	river_of_the_west_helens = {
+		icon = knight_by_river_gor
+		required_missions = { marching_on_the_orchards_helens }
+		position = 4
+		provinces_to_highlight = {
+			area = willapa_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			willapa_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = every_owned_prov_along_columbia_gets
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_columbian_excellency_helens"
+					duration = 3650
+				}
+				add_base_production = 1
+			}
+			olympic_penninsula_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			low_puget_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			benton_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							province_id = 2046
+							province_id = 2057 
+							province_id = 1208 
+							province_id = 1197 
+							province_id = 2068
+							province_id = 1218 
+							province_id = 2069 
+							province_id = 1970
+							province_id = 4500
+							province_id = 1972
+							province_id = 2039
+							province_id = 2038
+							province_id = 2037
+							province_id = 4501
+							province_id = 2036
+							province_id = 4504 
+							province_id = 2056
+							province_id = 2035
+						}
+					}
+					add_province_modifier = {
+						name = "gor_columbian_excellency_helens"
+						duration = 3650
+					}
+					add_base_production = 1
+				}
+			}
+		}
+	}
+	
+	northen_opportunities_helens = {
+		icon = seattle_gor
+		required_missions = { river_of_the_west_helens }
+		position = 5
+		provinces_to_highlight = {
+			area = low_puget_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			2062 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2063 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			OR = {
+				2048 = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				2484 = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			2063 = {
+				add_unit_construction = {
+					type = galley
+					amount = 10
+					speed = 0.1
+					cost = 0
+				}
+			}
+			add_navy_tradition = 20
+			define_advisor = {
+				type = naval_reformer
+				skill = 3
+				cost_multiplier = 0.5
+			}
+			high_puget_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	edge_of_arborea_helens = {
+		icon = cascadian_coastal_wall_gor
+		required_missions = { northen_opportunities_helens }
+		position = 6
+		provinces_to_highlight = {
+			area = high_puget_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			high_puget_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mil_power = 100
+			washington_cascades_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			colville_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = for_each_vassal_in_washington_region
+			tooltip = {
+				add_dip_power = 100
+			}
+			hidden_effect = {
+				while = {
+					limit = {
+						any_subject_country = {
+							NOT = { has_country_flag = not_checked_for_helens_thing }
+						}
+					}
+					add_dip_power = 100
+					random_subject_country = {
+						limit = {
+							NOT = { has_country_flag = not_checked_for_helens_thing }
+						}
+						set_country_flag = not_checked_for_helens_thing
+					}
+				}
+				every_subject_country = {
+					clr_country_flag = not_checked_for_helens_thing
+				}
+			}
+		}
+	}
+	
+	establish_river_fleet_helens = {
+		icon = river_ship_gor
+		required_missions = { found_cartel_workshops_helens }
+		position = 8
+		trigger = {
+			num_of_light_ship = 25
+			num_of_heavy_ship = 10
+			navy_size = 50
+			advisor = trader
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_columbia_river_fleet_helens"
+				duration = -1
+			}
+			add_mercantilism = 10
+		}
+	}
+}
+
+helens_missions_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = U56
+	}
+	has_country_shield = yes
+	
+	
+	ol_tahoma_helens = {
+		icon = tahoma_gor
+		required_missions = { marching_on_the_orchards_helens }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 2073
+		}
+		trigger = {
+			has_great_project = {
+				type = great_tahoma
+				tier = 2
+			}
+		}
+		effect = {
+			2073 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+				add_country_modifier = {
+					name = "gor_unearthing_ruins_helens"
+					duration = 1825
+				}
+			}
+		}
+	}
+	
+	follow_the_bank_helens = {
+		icon = snake_noble_gor
+		required_missions = { river_of_the_west_helens }
+		position = 5
+		provinces_to_highlight = {
+			area = benton_area
+		}
+		trigger = {
+			4501 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			custom_trigger_tooltip = {
+				tooltip = echo_owns_no_provinces_in_the_washington_region
+				washington_region = {
+					type = all
+					NOT = { owned_by = Y38 }
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = for_every_wine_prov_in_wash
+			tooltip = {
+				add_treasury = 100
+			}
+			inland_empire_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hidden_effect = {
+				while = {
+					limit = {
+						any_owned_province = {
+							trade_goods = wine
+							NOT = { has_province_flag = already_given_development }
+						}
+					}
+					add_treasury = 100
+					random_owned_province = {
+						limit = {
+							trade_goods = wine
+							NOT = { has_province_flag = already_given_development }
+						}
+						set_province_flag = already_given_development
+					}
+				} 
+				every_owned_province = {
+					clr_province_flag = already_given_development
+				}
+			}
+		}
+	}
+	
+	lincolnite_farms_helens = {
+		icon = peasant_farming_gor
+		required_missions = { follow_the_bank_helens }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4516
+				AND = {
+					region = washington_region
+					trade_goods = grain
+				}
+			}
+			
+		}
+		trigger = {
+			grain = 6
+			4516 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			4516 = {
+				add_base_manpower = 2
+			}
+			add_country_modifier = {
+				name = "gor_lincoln_foodstuffs_helens"
+				duration = -1
+			}
+			custom_tooltip = every_province_of_lincolnite_culture_gains
+			tooltip = {
+				add_base_manpower = 1
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						culture = lincolnite
+					}
+					add_base_manpower = 1
+				}
+			}
+		}
+	}
+	
+	washingtonian_gold_helens = {
+		icon = mine_gor
+		required_missions = { lincolnite_farms_helens edge_of_arborea_helens }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4512 
+				province_id = 4513
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			4512 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4513 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			4512 = {
+				add_base_production = 3
+			}
+			add_inflation = -2
+			add_country_modifier = {
+				name = "gor_responsible_mining_helens"
+				duration = 9125
+			}
+			washington_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+}

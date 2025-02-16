@@ -1,0 +1,18 @@
+#874 - Salish
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+add_core = W06
+owner = W06
+controller = W06
+add_core = U63
+is_city = yes
+culture = seattlain
+religion = partisan
+capital = "Port Angeles"
+trade_goods = naval_supplies #more logging
+hre = yes
+base_tax = 3 
+base_production = 3
+base_manpower = 2

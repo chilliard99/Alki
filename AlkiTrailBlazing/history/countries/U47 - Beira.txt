@@ -1,0 +1,45 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = portugers
+religion = partisan
+technology_group = western
+capital = 4278	 #Coimbra
+religious_school = traditionalist_party
+set_country_flag = conservative_caucus
+
+1433.1.30 = {
+	monarch = {
+		name = "Denis"
+		dynasty = "Nunes"
+		culture = sacramentan #Former general, thats why the flag is a hybrid
+		birth_date = 1416.7.26
+		adm = 0
+		dip = 1
+		mil = 6
+	}
+	queen = {
+		name = "Cindazunda"            
+		dynasty = "Nunes"        
+		birth_date = 1418.11.11         
+		death_date = 1500.1.1
+		adm = 2                 
+		dip = 3                
+		mil = 3                
+		female = yes                
+	}
+}
+
+1439.6.12 = {
+	heir = {
+		name = "Pedro"
+		monarch_name = "Pedro"
+		dynasty = "Nunes"
+		birth_date = 1439.6.12
+		death_date = 1500.1.1
+		claim = 25
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+}

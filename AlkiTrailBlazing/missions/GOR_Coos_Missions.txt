@@ -1,0 +1,645 @@
+###########################COOS MISSIONS###########################
+coos_missions_slot_one = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y91
+	}
+	has_country_shield = yes
+	
+	nurturing_the_economy_coos = {
+		icon = stock_market_gor
+		required_missions = { invite_foreign_investors_coos }
+		position = 2
+		trigger = {
+			treasurer = 2
+			OR = {
+				has_idea_group = trade_ideas
+				has_idea_group = economic_ideas
+			}
+		}
+		effect = {
+			country_event = { id = coos_events.1 }
+		}
+	}
+}
+
+coos_missions_slot_two = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y91
+	}
+	has_country_shield = yes
+	
+	invite_foreign_investors_coos = {
+		icon = merchant_board_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = have_two_allies_with_greater_dev_than_you
+					all_ally = {
+						total_development = ROOT
+					}
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			add_years_of_income = 2
+			capital_scope = {
+				add_base_tax = 2
+			}
+			add_country_modifier = {
+				name = "gor_board_expansion_coos"
+				duration = 3650
+			}
+		}
+	}
+	
+	gospel_of_greed_coos = {
+		icon = eagle_dollar_gor
+		required_missions = { invite_foreign_investors_coos }
+		position = 2
+		trigger = {
+			OR = {
+				temple = 5
+				cathedral = 5
+			}
+			NOT = { piety = -0.5 }
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_spreading_the_founders_prosperity_coos"
+				duration = 5475
+			}
+			custom_tooltip = the_first_time_we_build_a_temple_or_cath_get_this
+			tooltip = {
+				add_province_modifier = {
+					name = "gor_gospel_of_greed_coos"
+					duration = 5475
+				}
+			}
+			set_country_flag = get_gospel_of_greed_coos
+		}
+	}
+	
+	open_investment_coos = {
+		icon = gold_gor
+		required_missions = { gospel_of_greed_coos nurturing_the_economy_coos }
+		position = 3
+		trigger = {
+			OR = {
+				full_idea_group = economic_ideas
+				full_idea_group = trade_ideas
+			}
+			OR = {
+				workshop = 5
+				counting_house = 5
+			}
+			OR = {
+				marketplace = 5
+				stock_exchange = 5
+				trade_depot = 5
+			}
+		}
+		effect = {
+			add_dip_power = 50
+			custom_tooltip = occasionally_get_prov_events_which_build_latest_marketplace_building
+			set_country_flag = get_cool_occasional_marketplace_event_coos
+		}
+	}
+	
+	victory_of_the_market_coos = {
+		icon = merchant_with_gold_gor
+		required_missions = { open_investment_coos }
+		position = 4
+		trigger = {
+			OR = {
+				2063 = {
+					is_strongest_trade_power = ROOT
+				}
+				1856 = {
+					is_strongest_trade_power = ROOT
+				}
+			}
+			monthly_income = 20
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provinces_with_over_fifteen_development_coos
+					all_owned_province = {
+						development = 15
+					}
+				}
+				amount = 5
+			}
+		}
+		effect = {
+			add_years_of_income = 5
+			define_advisor = {
+				type = trader
+				skill = 3
+				cost_multiplier = 0.5
+			}
+			custom_tooltip = if_we_are_strongest_in_cascadia_get_coos
+			tooltip = {
+				add_country_modifier = {
+					name = "gor_victory_of_the_market_coos"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						2063 = {
+							is_strongest_trade_power = ROOT
+						}
+					}
+					add_country_modifier = {
+						name = "gor_victory_of_the_market_coos"
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+coos_missions_slot_three = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y91
+	}
+	has_country_shield = yes
+	
+	tillamook_patrol_coos = {
+		icon = large_fleet_gor
+		required_missions = { invite_foreign_investors_coos }
+		position = 2
+		trigger = {
+			navy_size = 15
+			1856 = { 
+				trade_share = {
+					country = ROOT
+					share = 15
+				}
+			}
+		}
+		effect = {
+			create_admiral = { tradition = 50 }
+			868 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 3650
+					power = 10
+					key = professional_commerce_coos
+				}
+			}
+		}
+	}
+	
+	sellsword_army_coos = {
+		icon = mercenary_knight_gor
+		required_missions = { tillamook_patrol_coos }
+		position = 3
+		trigger = {
+			num_of_mercenaries = 15
+			current_income_balance = 5
+		}
+		effect = {
+			add_country_modifier = {
+				name = "gor_long_term_contracts_coos"
+				duration = -1
+			}
+		}
+	}
+	
+	cashcadians_coos = {
+		icon = cascadian_army_gor
+		required_missions = { golden_river_coos }
+		position = 5
+		provinces_to_highlight = {
+			area = oregonian_cascades_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			oregonian_cascades_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_years_of_income = 1
+			define_advisor = {
+				type = treasurer
+				skill = 3
+				cost_multiplier = 0.75
+			}
+			1970 = {
+				add_province_modifier = {
+					name = "gor_springtime_earnings_coos"
+					duration = 9125
+				}
+			}
+		}
+	}
+}
+
+
+coos_missions_slot_four = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y91
+	}
+	has_country_shield = yes
+
+	fromage_finances_coos = {
+		icon = cheese_gor
+		required_missions = { corporate_expansion_coos }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1190
+				province_id = 1197
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			1190 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1197 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			custom_tooltip = every_livestock_province_we_owns_gains_coos
+			tooltip = {
+				add_base_tax = 1
+				add_province_modifier = {
+					name = "gor_cheesy_investments_coos"
+					duration = 5475
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = livestock
+					}
+					add_base_tax = 1
+					add_province_modifier = {
+						name = "gor_cheesy_investments_coos"
+						duration = 5475
+					}
+				}
+			}
+		}
+	}
+	
+	golden_river_coos = {
+		icon = willamette_gor
+		required_missions = { vinyard_ventures_coos fromage_finances_coos }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				region = oregon_region
+				province_id = 1218
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			1218 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = provs_owned_in_oregon_coos
+					oregon_region = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				amount = 10
+			}
+		}
+		effect = {
+			remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+			morrow_crook_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			bend_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			oregonian_cascades_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = all_restorations_now_grant_the_following 
+			tooltip = {
+				add_dip_power = 50
+				add_mercantilism = 3
+			}
+		}
+	}
+	
+	bending_the_banks_coos = {
+		icon = river_ship_gor
+		required_missions = { golden_river_coos }
+		position = 5
+		provinces_to_highlight = {
+			province_id = 1974
+			NOT = { has_building = workshop }
+			NOT = {	has_building = counting_house }
+			NOT = {	has_building = marketplace } 
+			NOT = {	has_building = stock_exchange }
+			NOT = {	has_building = trade_depot }
+		}
+		trigger = {
+			1974 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+					has_building = marketplace
+					has_building = stock_exchange
+					has_building = trade_depot
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					dip = 6
+				}
+				add_dip_power = 150
+			}
+			else = {
+				change_dip = 1
+			}
+			custom_tooltip = every_prov_in_bend_area_gains
+			tooltip = {
+				add_base_production = 1
+			}
+			hidden_effect = {
+				bend_area = {
+					add_base_production = 1
+				}
+			}
+		}
+	}
+}
+
+coos_missions_slot_five = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = Y91
+	}
+	has_country_shield = yes
+	
+	the_executives_claws_coos = {
+		icon = crab_with_sword_gor
+		required_missions = { }
+		position = 1
+		trigger = {
+			4491 = {
+				development = 10
+			}
+			army_size_percentage = 0.9
+		}
+		effect = {
+			create_general = { tradition = 25 }
+			josephine_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tillamook_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_willamette_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	corporate_expansion_coos = {
+		icon = exploding_castle_gor
+		required_missions = { the_executives_claws_coos }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = josephine_area
+				area = tillamook_area
+				area = lower_willamette_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			num_of_cities = 5
+			grown_by_development = 20
+		}
+		effect = {
+			tooltip = {
+				add_mil_power = 25
+				add_country_modifier = {
+					name = "gor_exceeding_projections_coos"
+					duration = 3650
+				}
+			}
+			custom_tooltip = if_we_own_all_provs_in_josephine_gain
+			tooltip  {
+				add_mil_power = 50
+				add_country_modifier = {
+					name = "gor_exceeding_projections_coos"
+					duration = 7300
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						josephine_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+					add_mil_power = 50
+					add_country_modifier = {
+						name = "gor_exceeding_projections_coos"
+						duration = 7300
+					}
+				}
+				else = {
+					add_mil_power = 25
+					add_country_modifier = {
+						name = "gor_exceeding_projections_coos"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	
+	vinyard_ventures_coos = {
+		icon = wine_gor
+		required_missions = { corporate_expansion_coos }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				region = oregon_region
+				area = josephine_area
+			}
+			trade_goods = wine
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			wine = 3
+		}
+		effect = {
+			upper_willamette_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			oregonian_cascades_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = gain_gold_for_each_wine_province_we_own1_coos
+			tooltip = {
+				add_years_of_income = 0.5
+			}
+			hidden_effect = {
+				while = {
+					limit = {
+						any_owned_province = {
+							trade_goods = wine
+							NOT = { has_province_flag = already_give_money_bonus_coos }
+						}
+					}
+					add_years_of_income = 0.5
+					random_owned_province = {
+						limit = {
+							trade_goods = wine
+							NOT = { has_province_flag = already_give_money_bonus_coos }
+						}
+						set_province_flag = already_give_money_bonus_coos
+					}
+				} 
+				every_owned_province = {
+					clr_province_flag = already_give_money_bonus_coos
+				}
+			}
+		}
+	}
+	
+	crooked_capital_coos = {
+		icon = morrow_crook_gor
+		required_missions = { golden_river_coos }
+		position = 5
+		provinces_to_highlight = {
+			area = morrow_crook_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			morrow_crook_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			tooltip = {
+				add_dip_power = 50
+				2038 = {
+					add_base_tax = 1
+				}
+				2040 = {
+					add_base_tax = 1
+				}
+			}
+			custom_tooltip = if_we_have_finished_econ_or_trade_ideas_coos
+			tooltip = {
+				add_dip_power = 100
+				2038 = {
+					add_base_tax = 2
+				}
+				2040 = {
+					add_base_tax = 2
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						OR = {
+							full_idea_group = economic_ideas
+							full_idea_group = trade_ideas
+						}
+					}
+					add_dip_power = 100
+					2038 = {
+						add_base_tax = 2
+						add_base_production = 2
+						add_base_manpower = 2
+					}
+					2040 = {
+						add_base_tax = 2
+						add_base_production = 2
+						add_base_manpower = 2
+					}
+				}
+				else = {
+					add_dip_power = 50
+					2038 = {
+						add_base_tax = 1
+						add_base_production = 1
+						add_base_manpower = 1
+					}
+					2040 = {
+						add_base_tax = 1
+						add_base_production = 1
+						add_base_manpower = 1
+					}
+				}
+			}
+		}
+	}
+}

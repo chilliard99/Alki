@@ -1,0 +1,16 @@
+#4345 - Saidabad
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neofilipino
+religion = espiritismo
+capital = "Saidabad"
+trade_goods = dyes #indego
+hre = no
+fort_15th = yes
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes
+center_of_trade = 1

@@ -1,0 +1,21 @@
+bookmark = {
+	name = "THEBITTERKING"
+	desc = "THEBITTERKING_DESC"
+	date = 1444.11.11
+	
+	center = 2670
+	default = no
+	
+	country = X91
+	country = X84
+	country = X75
+	country = X67
+	country = Y01
+	country = X49
+	country = X92
+	country = X65
+	
+	easy_country = X91
+	easy_country = X75
+	easy_country = X84
+}

@@ -1,0 +1,20 @@
+#Österbotten, down to Vasa.
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X09
+controller = X09
+add_core = X09
+culture = orlandan
+religion = zahran
+hre = no
+base_tax = 7
+base_production = 7
+trade_goods = ivory #Animal Kingdom
+base_manpower = 5
+capital = "Korsholm"
+is_city = yes
+discovered_by = eastern
+fort_15th = yes
+center_of_trade = 1

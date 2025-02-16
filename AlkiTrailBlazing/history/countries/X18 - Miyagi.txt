@@ -1,0 +1,33 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = chinese
+religion = neoshinto
+primary_culture = sendai
+capital = 113 #Miyagi
+
+
+1411.8.1 = {
+	monarch = {
+		name = "Makoto"
+		dynasty = "Miyagi"
+		birth_date = 1411.8.1
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+}
+
+1444.1.3 = {
+	heir = {
+		name = "Nango"
+		monarch_name = "Miyagi"
+		dynasty = "Miyagi"
+		birth_date = 1444.1.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 1
+		mil = 0
+	}
+}

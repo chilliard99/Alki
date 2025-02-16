@@ -1,0 +1,314 @@
+# A region can only belong to one super region.
+
+new_europe_superregion = {
+	europa_occident_region
+	intermarium_region
+}
+
+new_africa_superregion = {
+	africa_occident_region
+	golden_coast_region
+	abyssinia_region
+}
+
+new_asia_superregion = {
+	mashriq_region
+	iran_region
+	great_dravida_region
+	india_region
+	huanan_region
+	the_middle_kingdom_region
+}
+
+japanese_superregion = {
+	florida_region
+	seto_region
+	nippon_area
+	tohoku_hokkaido
+}
+
+east_coast_superregion = {
+	antebella_region
+	new_cannan_region
+	lawrencia_region
+}
+
+canada_superregion = {
+	quebec_region
+	manitoba_region
+	ontario_region
+}
+
+great_lakes_superregion = {
+	lakes_interior_region
+	greater_ozarks_region
+	three_cities_region
+}
+
+great_plains_superregion = {
+	idaho_region
+	italia_region
+	roosevelt_region
+	dakota_region
+}
+
+california_superregion = {
+	washington_region
+	sunkissed_region
+	nevada_region
+	utah_region
+	oregon_region
+	jefferson_region
+}
+
+ursalia_superregion = {
+	kiikiwaahk_region
+	arborea_region
+	nunavut_region
+	alaska_region
+}
+
+spanish_africa_superregion = {
+	baja_region
+	gadsden_region
+	texas_region
+	el_norte_region
+}
+
+mexico_mayor_superregion = {
+	empresia_region
+	bajio_region
+	anahuac_region
+	new_yucatan_region
+}
+
+mexico_menor_superregion = {
+	isthmo_region
+	west_caribbean_region
+	east_caribbean_region
+}
+
+east_pacific_superregion = {
+	west_coast_region
+	south_pacific_region
+}
+
+west_atlantic_superregion = {
+	caribbean_region
+	malaysia_region
+	middle_seas_region
+	west_atlantic_region
+}
+
+east_atlantic_superregion = {
+	yoroppa_sea_region
+	pablonian_coast_region
+}
+
+endean_ocean_superregion = {
+	western_endean_ocean
+	lower_endean_ocean
+	eastern_endean_ocean
+	outer_endean_ocean
+}
+
+colombia_superregion = {
+	amazona_region
+	philippine_region
+	new_colombia_region
+	new_guyana_region
+}
+
+malay_superregion = {
+	andes_region
+	nusantara_region
+	new_brazil_region
+	patagonia_region
+}
+
+australia_superregion = {
+	victoria_region
+	new_oceania_region
+}
+
+################################################3
+
+india_superregion = {
+	bengal_region
+	hindusthan_region
+	west_india_region
+	deccan_region
+	coromandel_region
+}
+
+east_indies_superregion = {
+	burma_region
+	malaya_region
+	moluccas_region	
+	indonesia_region	
+	indo_china_region
+}
+
+oceania_superregion = {
+	oceanea_region
+	australia_region
+}
+
+china_superregion = {
+	north_china_region
+	xinan_region
+	south_china_region
+}
+
+europe_superregion = { #Western Europe
+	intermarium_region
+	europa_occident
+	france_region
+	iberia_region
+	italy_region
+	british_isles_region
+	south_german_region
+	north_german_region
+	scandinavia_region
+	low_countries_region
+}
+
+eastern_europe_superregion = {
+	restrict_charter		# harder to get TC here.
+
+	poland_region
+	baltic_region
+	russia_region
+	ruthenia_region
+	carpathia_region
+	balkan_region
+	crimea_region
+	ural_region
+}
+
+tartary_superregion = {
+	east_siberia_region
+	west_siberia_region
+	mongolia_region
+	central_asia_region
+	tibet_region
+}
+
+far_east_superregion = {
+	korea_region
+	japan_region
+	manchuria_region
+}
+
+africa_superregion = {
+	niger_region
+	guinea_region
+	sahel_region
+	horn_of_africa_region
+	maghreb_region
+}
+
+southern_africa_superregion = {
+	east_africa_region
+	kongo_region
+	south_africa_region
+	central_africa_region
+}
+
+south_america_superregion = { # amazonia
+	brazil_region
+	colombia_region
+}
+
+andes_superregion = {
+	peru_region
+	upper_peru_region
+	la_plata_region
+}
+
+north_america_superregion = {
+	hudson_bay_region
+	cascadia_region
+	great_plains_region
+	mississippi_region
+	southeast_america_region
+	northeast_america_region
+	great_lakes_region
+	canada_region
+}
+
+central_america_superregion = {
+	central_america_region
+	mexico_region
+	carribeans_region
+	rio_grande_region
+	california_region
+}
+
+near_east_superregion = {
+
+	restrict_charter		# harder to get TC here.
+
+	anatolia_region
+	mashriq_region
+	arabia_region
+	egypt_region
+}
+
+persia_superregion = {
+
+	restrict_charter		# harder to get TC here.
+
+	khorasan_region
+	persia_region
+	caucasia_region
+}
+
+new_world_superregion = {
+}
+
+# Sea super regions are used by AI to plan naval bases (it wants at least one fleet in each it has non-home presence if possible).
+
+west_american_sea_superregion = {
+	north_east_pacific_region
+	south_east_pacific_region
+	pacific_south_america_region
+}
+
+east_american_sea_superregion = {
+	atlantic_south_america_region
+	caribbean_sea_region
+	american_east_coast_region
+	transposian_sea_region
+}
+
+north_european_sea_superregion = {
+	north_atlantic_region
+	baltic_sea_region
+}
+
+south_european_sea_superregion = {
+	mediterrenean_region
+}
+
+west_african_sea_superregion = {
+	west_african_sea_region
+	south_atlantic_region
+}
+
+east_african_sea_superregion = {
+	west_indian_ocean_region
+	arabian_sea_region 
+}
+
+indian_pacific_sea_superregion = {
+	east_indian_ocean_region
+	south_indian_ocean_region
+	south_china_sea_region
+	south_west_pacific_region
+}
+
+north_pacific_sea_superregion = {
+	east_china_sea_region
+	north_west_pacific_region
+}

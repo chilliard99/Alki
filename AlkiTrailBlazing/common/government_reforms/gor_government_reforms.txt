@@ -1,0 +1,1404 @@
+#####################################################################
+#DEMOCRATIC REPUBLIC REFORMS				    					#
+#####################################################################
+
+#####TIER 1#####
+democratic_republic_reform = {
+	icon = "democratic_republic_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			religion = collectivist
+			tag = U58
+			tag = U75
+			tag = U81
+			tag = U82
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 25
+	lock_level_when_selected = yes
+	modifiers = {
+		production_efficiency = 0.1
+		land_forcelimit_modifier = 0.1
+		global_manpower_modifier = 0.1
+		governing_capacity_modifier = -0.25
+		max_absolutism = -15
+	}
+	
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		cannot_become_dictatorship = yes
+	}
+	duration = 4
+
+	government_abilities = {
+		democratic_republic_mechanic
+	}
+}
+
+grand_democratic_republic_reform = {
+	icon = "democratic_republic_gor"
+	allow_normal_conversion = yes
+	potential = {
+		has_country_flag = get_grand_democratic_republic_reform
+		OR = {
+			religion = collectivist
+			tag = U58
+			tag = U75
+			tag = U81
+			tag = U82
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 25
+	lock_level_when_selected = yes
+	modifiers = {
+		production_efficiency = 0.25
+		land_forcelimit_modifier = 0.25
+		global_manpower_modifier = 0.25
+		governing_capacity_modifier = 0.25
+		max_absolutism = 15
+	}
+	
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		cannot_become_dictatorship = yes
+	}
+	duration = 4
+
+	government_abilities = {
+		democratic_republic_mechanic
+	}
+}
+
+#####TIER 2#####
+
+
+demrep_dictatorship_reform = {
+	icon = "collectivist_dictator_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		global_unrest = 2
+		max_absolutism = 25
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_unionism_reform = {
+	icon = "union_meeting_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		trade_efficiency = 0.05
+		republican_tradition = 0.3
+		max_absolutism = -5
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_party_politics_reform = {
+	icon = "party_politics_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		candidate_random_bonus = 1
+		burghers_loyalty_modifier = 0.1
+		burghers_influence_modifier = 0.1
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_marxist_devotion_reform = {
+	icon = "marx_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	trigger = {
+		religion = collectivist
+	}
+	modifiers = {
+		institution_spread_from_true_faith = 0.1
+		yearly_patriarch_authority = 0.001
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_representative_pragmatism_reform = {
+	icon = "collectivist_merchant_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		global_tax_modifier = 0.1
+		build_cost = -0.01
+		nobles_influence_modifier = 0.1
+		nobles_loyalty_modifier = 0.1
+		global_unrest = 1
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_anarcho_feudalism_reform = {
+	icon = "anarcho_fued_gor"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_global_flag = disabled_wild_wasteland }
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		cavalry_power = 0.1
+		cavalry_cost = -0.1
+	}
+	effect = {
+		custom_tooltip = this_is_available_to_us_due_to_wild_wasteland_reform
+		custom_tooltip = will_rename_bourgouise_to_nobility
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+#####TIER 3#####
+
+demreap_noble_council_reform = {
+	icon = "noble_council_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+		NOT = { has_global_flag = disabled_wild_wasteland }
+	}
+	trigger = {
+		has_reform = demrep_anarcho_feudalism_reform
+	}
+	modifiers = {
+		nobles_influence_modifier = 0.1
+		nobles_loyalty_modifier = 0.1
+	}
+	effect = {
+		custom_tooltip = this_is_available_to_us_due_to_wild_wasteland_reform
+		custom_tooltip = unlocks_new_estate_interactions_demrep_nob_con
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demreap_forever_post_reform = {
+	icon = "old_fella_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	trigger = {
+		OR = {
+			has_reform = demrep_marxist_devotion_reform
+			has_reform = demrep_party_politics_reform
+			has_reform = demrep_dictatorship_reform
+		}
+	}
+	modifiers = {
+		global_unrest = -1
+	}
+	has_term_election = no
+	custom_attributes = {
+		election_on_death = yes
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demreap_dynamic_elections_reform = {
+	icon = "ballot_box_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		candidate_random_bonus = 1
+		autonomy_change_time = -0.15
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demreap_representative_community_reform = {
+	icon = "who_me_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		reelection_cost = -0.2
+		diplomatic_upkeep = 1
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+#####TIER 4#####
+
+demreap_solidarity_forever_reform = {
+	icon = "red_hammer_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	trigger = {
+		religion = collectivist
+	}
+	modifiers = {
+		tolerance_heretic = -1
+		tolerance_heathen = -1
+		production_efficiency = 0.1
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demreap_freedom_of_religion_reform = {
+	icon = "freedom_of_religion_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		technology_cost = -0.025
+		tolerance_heathen = 2
+		tolerance_heathen = 2
+		global_missionary_strength = -0.03
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demreap_abolish_idols_reform = {
+	icon = "church_factory_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		monthly_piety_accelerator = -0.001
+		yearly_patriarch_authority = -0.0005
+	}
+	effect = {
+		custom_tooltip = explain_what_will_happen_to_churches
+		tooltip = {
+			add_province_modifier = {
+				name = "gor_abolition_of_churches_rep"
+				duration = -1
+			}
+		}
+		custom_tooltip = explain_what_will_happen_to_cathedrals
+		tooltip = {
+			add_province_modifier = {
+				name = "gor_abolition_of_churches_rep"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_building = temple
+				}
+				add_province_modifier = {
+					name = "gor_abolition_of_churches_rep"
+					duration = -1
+				}
+			}
+			every_owned_province = {
+				limit = {
+					has_building = cathedral
+				}
+				add_province_modifier = {
+					name = "gor_abolition_of_churches_rep"
+					duration = -1
+				}
+			}
+		}
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demreap_constitutional_socialism_reform = {
+	icon = "rose_on_paper_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	trigger = {
+		religion_group = constitutionalist_group
+	}
+	modifiers = {
+		global_missionary_strength = 0.01
+		monthly_piety_accelerator = 0.002
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demreap_acended_rulers_reform = {
+	icon = "red_queen_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	trigger = {
+		NOT = { has_reform = demrep_unionism_reform }
+		NOT = { has_reform = demrep_representative_pragmatism_reform }
+	}
+	modifiers = {
+		tolerance_own = 1
+		missionary_strength = 0.01
+		republican_tradition = 0.25
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+#####TIER 5#####
+
+demrep_state_military_reform = {
+	icon = "raised_knight_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		army_tradition = 0.5
+	 	army_tradition_from_battle = 0.5
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_outsourced_might_reform = {
+	icon = "crimson_grit_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		mercenary_cost = -0.5
+		mercenary_discipline = 0.025
+	}
+	ai = {
+		factor = 1.5
+	}
+	custom_attributes = {
+		mercs_do_not_cost_army_professionalism = yes
+	}
+}
+
+demrep_scorthed_earth_reform = {
+	icon = "burning_vinyard_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		defensiveness = 0.15
+	 	hostile_attrition = 1
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_overwhelming_odds_reform = {
+	icon = "huge_army_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		land_forcelimit_modifier = 0.1
+		global_manpower_modifier = 0.1
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_red_skies_reform = {
+	icon = "red_skies_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		artillery_cost = -0.1
+		artillery_power = 0.1
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_the_peoples_levy_reform = {
+	icon = "peasant_army_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+		NOT = { has_global_flag = disabled_wild_wasteland }
+	}
+	trigger = {
+		has_reform = demrep_anarcho_feudalism_reform
+	}
+	modifiers = {
+		manpower_recovery_speed = 0.1
+	}
+	effect = {
+		custom_tooltip = this_is_available_to_us_due_to_wild_wasteland_reform
+		custom_tooltip = unlock_new_estate_privledge_levy_gor
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_the_lords_united_reform = {
+	icon = "fat_nobles_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+		NOT = { has_global_flag = disabled_wild_wasteland }
+	}
+	trigger = {
+		has_reform = demrep_anarcho_feudalism_reform
+	}
+	modifiers = {
+		army_tradition_decay = -0.01
+	}
+	effect = {
+		custom_tooltip = this_is_available_to_us_due_to_wild_wasteland_reform
+		custom_tooltip = unlock_new_estate_privledge_united_lords_gor
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+#####TIER 6#####
+
+demrep_commune_organization_reform = {
+	icon = "picketing_peasants_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	trigger = {
+		religion = collectivist
+	}
+	modifiers = {
+		manpower_in_true_faith_provinces = 0.15
+		culture_conversion_cost = -0.15
+		global_missionary_strength = 0.02
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_union_management_reform = {
+	icon = "worker_fist_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	trigger = {
+		has_reform = demrep_unionism_reform
+	}
+	modifiers = {
+		global_trade_goods_size_modifier = 0.15
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_federalism_reform = {
+	icon = "federalism_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	trigger = {
+		has_reform = demrep_representative_pragmatism_reform
+	}
+	modifiers = {
+		governing_capacity = 300
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_estate_territories_reform = {
+	icon = "border_fort_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+		NOT = { has_global_flag = disabled_wild_wasteland }
+	}
+	trigger = {
+		has_reform = demrep_anarcho_feudalism_reform
+	}
+	modifiers = {
+		development_cost_modifier = -0.1
+	}
+	effect = {
+		custom_tooltip = this_is_available_to_us_due_to_wild_wasteland_reform
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_republican_union_reform = {
+	icon = "senators_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		core_creation = -0.1
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_countryside_doctrine_reform = {
+	icon = "grey_countryside_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		global_prosperity_growth = 0.5
+		build_cost = -0.1
+		build_time = -0.1
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+#####TIER 7#####
+
+demrep_intelligence_checks_reform = {
+	icon = "test_taker_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		advisor_cost = -0.1
+	}
+	effect = {
+		custom_tooltip = hiring_an_adivor_grants_repub_trad
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_politburo_reform = {
+	icon = "politburo_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		max_absolutism = 15
+		num_accepted_cultures = 1
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_popular_assembly_reform = {
+	icon = "popular_assembly_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		min_autonomy_in_territories = 0.05
+		global_unrest = -2
+		republican_tradition = 0.25
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_supreme_congress_reform = {
+	icon = "congressional_debate_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	trigger = {
+		NOT = { has_reform = demrep_dictatorship_reform }
+		NOT = { has_reform = demrep_anarcho_feudalism_reform }
+	}
+	has_parliament = yes
+	effect = {
+		custom_attributes = {
+			disables_estate_nobles = yes
+			blocked_call_diet = yes
+		}
+	}
+	modifiers = {
+		
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+#####TIER 8#####
+
+demrep_favor_market_solutions_reform = {
+	icon = "market_chart_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	trigger = {
+		has_reform = demrep_representative_pragmatism_reform
+	}
+	modifiers = {
+		global_own_trade_power = 0.25
+		global_tax_modifier = 0.1
+		nobles_loyalty_modifier = 0.05
+		nobles_influence_modifier = 0.05
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_command_economics_reform = {
+	icon = "command_economy_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		global_trade_goods_size = 0.05
+	}
+	effect = {
+		custom_tooltip = enables_five_year_plans_for_burghers
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_from_each_reform = {
+	icon = "hand_of_coins_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		global_tax_modifier = 0.1
+		war_taxes_cost_modifier = -1
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_nobility_of_labor_reform = {
+	icon = "happy_worker_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		production_efficiency = 0.15
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_easing_reform = {
+	icon = "lotta_money_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		global_tax_modifier = 1
+		inflation_reduction = -2
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+#####TIER 9#####
+
+demrep_power_to_the_people_reform = {
+	icon = "stinky_peasants_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	trigger = {
+		NOT = { has_reform = demrep_anarcho_feudalism_reform }
+		NOT = { has_reform = demrep_dictatorship_reform }
+	}
+	modifiers = {
+		max_absolutism = -25
+		all_power_cost = -0.05
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_the_gifted_few_reform = {
+	icon = "lecuturing_noble_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		max_absolutism = 30
+		yearly_absolutism = 2
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_meritocratic_consolidation_reform = {
+	icon = "bearded_beuracrat_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		max_absolutism = 10
+		technology_cost = -0.05
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_eqaulity_of_inheritance_reform = {
+	icon = "nobles_on_horse_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+		NOT = { has_global_flag = disabled_wild_wasteland }
+	}
+	trigger = {
+		has_reform = demrep_anarcho_feudalism_reform
+	}
+	modifiers = {
+		max_absolutism = 35
+		all_power_cost = -0.025
+	}
+	effect = {
+		custom_tooltip = this_is_available_to_us_due_to_wild_wasteland_reform
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_new_blood_reform = {
+	icon = "merchants_at_table_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		election_cycle = -2
+		republican_tradition = 0.25
+		candidate_random_bonus = 3
+		max_absolutism = -10
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+#####TIER 10#####
+
+demrep_guidance_principles_reform = {
+	icon = "full_congress_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		free_adm_policy = 1
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_solidarity_principles_reform = {
+	icon = "collectivist_prayer_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		free_dip_policy = 1
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+
+demrep_international_principles_reform = {
+	icon = "horse_in_the_forest_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		free_mil_policy = 1
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_utopia_principle_reform = {
+	icon = "utopia_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	trigger = {
+		religion = collectivist
+	}
+	modifiers = {
+		yearly_patriarch_authority = 0.1
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_lavish_principles_reform = {
+	icon = "pompous_dude_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+		NOT = { has_global_flag = disabled_wild_wasteland }
+	}
+	trigger = {
+		has_reform = demrep_anarcho_feudalism_reform
+	}
+	modifiers = {
+		prestige_decay = -0.01
+		stability_cost_modifier = -0.1
+		max_absolutism = 15
+	}
+	effect = {
+		custom_tooltip = this_is_available_to_us_due_to_wild_wasteland_reform
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+#####TIER 11#####
+
+demrep_absolute_democracy_reform = {
+	icon = "women_voting_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	trigger = {
+		NOT = { has_reform = demrep_anarcho_feudalism_reform }
+		NOT = { has_reform = demrep_dictatorship_reform }
+	}
+	modifiers = {
+		land_morale = 0.1
+		naval_morale = 0.1
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_party_selection_reform = {
+	icon = "green_speech_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		candidate_random_bonus = 1
+		global_unrest = -1
+		idea_cost = -0.1
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_chosen_successor_reform = {
+	icon = "talking_to_president_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	trigger = {
+		OR = {
+			has_reform = demrep_anarcho_feudalism_reform
+			has_reform = demrep_dictatorship_reform
+		}
+	}
+	modifiers = {
+		monarch_admin_power = 1
+		republican_tradition = -0.25
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_congressional_representation_reform = {
+	icon = "congressional_representation_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	trigger = {
+		has_parliament = yes
+	}
+	modifiers = {
+		can_revoke_parliament_seats = yes 
+		parliament_backing_chance = 0.25
+		num_of_parliament_issues = 1
+	}
+	custom_attributes = {
+		halved_parliament_bribes = yes
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+#####TIER 12#####
+
+demrep_meritotocratic_promotions_reform = {
+	icon = "premodern_senator_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		technology_cost = -0.1
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_political_games_reform = {
+	icon = "premodern_rally_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		administrative_efficiency = 0.05
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_labor_lottery_reform = {
+	icon = "lottery_machine_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		candidate_random_bonus = 1
+		advisor_cost = -0.15
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+#####TIER 13#####
+demrep_auth_anarcho_fued_reform = {
+	icon = "red_king_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+		NOT = { has_global_flag = disabled_wild_wasteland }
+		has_reform = demrep_chosen_successor_reform
+	}
+	trigger = {
+		has_reform = demrep_anarcho_feudalism_reform
+		has_reform = demrep_chosen_successor_reform
+	}
+	queen = yes
+	royal_marriage = yes
+	has_term_election = no
+	custom_attributes = {
+		election_on_death = yes
+	}
+	has_term_election = no
+	modifiers = {
+		republican_tradition = -0.3
+		max_absolutism = 25
+	}
+	effect = {
+		custom_tooltip = this_is_available_to_us_due_to_wild_wasteland_reform
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_an_absolute_state_reform = {
+	icon = "dictator_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	trigger = {
+		has_reform = demrep_dictatorship_reform
+	}
+	modifiers = {
+		max_absolutism = 30
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_decentralized_rule_reform = {
+	icon = "popular_congress_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		expand_administration_cost = -1
+		republican_tradition = 0.25
+		governing_capacity = 100
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_responsible_guidance_reform = {
+	icon = "writing_constitution_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	modifiers = {
+		max_absolutism = 10
+		free_policy = 1
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+demrep_workers_of_the_world_reform = {
+	icon = "workers_shaking_hands_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = { has_reform = democratic_republic_reform has_reform = grand_democratic_republic_reform }
+	}
+	trigger = {
+		religion = collectivist
+	}
+	modifiers = {
+		republican_tradition = 0.3
+		production_efficiency = 0.15
+	}
+	ai = {
+		factor = 1.5
+	}
+}
+
+#####################################################################
+#TRUEHEIR CONFEDERACY REFORMS				    					#
+#####################################################################
+
+trueheir_confederacy_reform = {
+	icon = "trueheir_chief_gor"
+	allow_normal_conversion = yes
+	potential = {
+		culture_group = western_true_heir
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 25
+	lock_level_when_selected = yes
+	modifiers = {
+		global_manpower_modifier = 0.1
+		global_unrest = -1
+		diplomatic_reputation = 1
+		max_absolutism = -10
+	}
+
+	government_abilities = {
+		gor_trueheir_confederacy
+	}
+}
+
+#####################################################################
+#BARONY REFORMS		                 		    					#
+#####################################################################
+
+barony_reform = {
+	icon = "baron_gor"
+	allow_normal_conversion = yes
+	potential = {
+		has_country_flag = allowed_to_be_barony
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 25
+	lock_level_when_selected = yes
+	modifiers = {
+		max_absolutism = 10
+		legitimacy = -2
+	}
+	effect = {
+		custom_tooltip = we_can_unlock_bribe_county_dip_action
+	}
+	government_abilities = {
+		barony_mechanic
+	}
+}
+
+#####################################################################
+#CASCADIAN REFORMS		              		    					#
+#####################################################################
+
+cascadian_republic_reform = {
+	icon = "cascadian_republic_gor"
+	allow_normal_conversion = yes
+	potential = {
+		tag = U80
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 25
+	modifiers = {
+		max_absolutism = 20
+		governing_capacity = 350
+		global_tax_modifier = 0.15
+	}
+}
+
+#####################################################################
+#REV OREGONIAN REFORMS	             		    					#
+#####################################################################
+
+revolutionary_oregonian_republic_reform = { 
+	icon = "rev_org_repub_gor"
+	allow_normal_conversion = no
+	potential = {
+		OR = {
+			tag = U87
+			tag = U86
+		}
+	}
+	trigger = {
+		primary_culture = oregonite
+		NOT = { has_country_modifier = gor_oregonian_freedom_fighters_genorg }
+	}
+	lock_level_when_selected = yes
+	valid_for_nation_designer = yes
+	has_term_election = no
+	nation_designer_cost = 25
+	custom_attributes = {
+		election_on_death = yes
+	}
+	modifiers = {
+		discipline = 0.05
+		yearly_corruption  = 0.1
+		global_unrest = -2
+		diplomatic_reputation = -2
+	}
+	government_abilities = {
+		rev_org_repub_mechanic
+	}
+}
+
+#####################################################################
+#CORPERATION REFORMS		              		        			#
+#####################################################################
+
+coorperate_republic_reform = {
+	icon = "corporate_executive_gor"
+	allow_normal_conversion = yes
+	potential = {
+		culture_group = sunkissed
+	}
+	trigger = {
+		religious_school = {
+			group = constitutionalist_group
+			school = freedonian_party
+		}
+	}
+	effect = {
+		custom_tooltip = grants_four_two_two_rulers_instead_of_four_one_one
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 25
+	modifiers = {
+		global_tax_modifier = -0.1
+		election_cycle = 6
+		trade_efficiency = 0.1
+		burghers_loyalty_modifier = 0.05
+	}
+}
+
+#####################################################################
+#HOLY CONSERVATORY REFORMS		              		      			#
+#####################################################################
+
+holy_conservatory_reform = {
+	icon = "holy_conservatory_gor"
+	allow_normal_conversion = yes
+	potential = {
+		religious_school = {
+			group = constitutionalist_group
+			school = naturalist_party
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 25
+	lock_level_when_selected = yes
+	modifiers = {
+		development_cost = 0.1
+		land_morale = 0.1
+		diplomatic_reputation = -2
+	}
+	custom_attributes = {
+		raze_province = yes
+	}
+	government_abilities = {
+		naturalist_mechanic
+	}
+}
+
+#####################################################################
+#REPUBLIC OF OREGON REFORMS		              		      			#
+#####################################################################
+
+oregonian_republic_reform = {
+	icon = "normal_oregon_repub_gor"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			tag = U87
+			tag = U86
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 25
+	has_parliament = yes
+	modifiers = {
+		global_unrest = -2
+		diplomatic_reputation = 2
+		max_absolutism = -15
+	}
+	government_abilities = {
+		republic_of_oregon_mechanic
+	}
+}
+
+#####################################################################
+#THREE STAR KINGDOM REFORMS		              		      			#
+#####################################################################
+
+three_star_kingdom_reform = {
+	icon = "three_star_kingdom_gor"
+	allow_normal_conversion = yes
+	potential = {
+		tag = U84
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 25
+	modifiers = {
+		num_accepted_cultures = 2
+		max_absolutism = 10
+	}
+	government_abilities = {
+		three_star_kingdom_mechanic
+	}
+	custom_attributes = {
+		has_ruler_election = yes
+	}
+}
+
+#####################################################################
+#REDWOOD REFORMS		              		      		         	#
+#####################################################################
+
+redwood_order_reform = {
+	icon = "three_star_kingdom_gor"
+	allow_normal_conversion = yes
+	potential = {
+		tag = Y80
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 25
+	modifiers = {
+		diplomatic_reputation = 1
+		warscore_cost_vs_other_religion = -0.15
+	}
+}

@@ -1,0 +1,16 @@
+#68 - Memmingen
+discovered_by = chinese
+owner = X35
+controller = X35
+add_core = X35
+culture = shikokuan
+religion = neoshinto
+hre = no
+base_tax = 3
+base_production = 3
+trade_goods = dyes #Indigo
+base_manpower = 3
+capital = "Memmingen" 
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman

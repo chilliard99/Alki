@@ -1,0 +1,33 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = chinese
+religion = zahran
+primary_culture = miamian
+capital = 2536	# Miami
+
+
+1392.1.1 = {
+	monarch = {
+		name = "Miguel II"
+		dynasty = "Palma"
+		birth_date = 1401.2.3
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+}
+
+1392.1.1 = {
+	heir = {
+		name = "Miguel"
+		monarch_name = "Miguel III"
+		dynasty = "Palma"
+		birth_date = 1433.8.23
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

@@ -1,0 +1,111 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 241 50 58 }
+
+revolutionary_colors = { 5 8 5 }
+
+historical_idea_groups = {
+	defensive_ideas
+	religious_ideas
+	trade_ideas
+	economic_ideas
+	plutocracy_ideas
+	diplomatic_ideas
+	offensive_ideas
+	spy_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_longbow
+	gaelic_mercenary
+	gaelic_free_shooter
+	irish_charge
+	anglofrench_line
+	british_redcoat
+	british_hussar
+	british_square
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Robert #0" = 25
+	"Andre #0" = 25
+	"Bryce #0" = 25
+	"Harry #0" = 20
+	"Penn #0" = 20
+	"Teller #0" = 15
+	"David #0" = 15
+	"Criss #0" = 10
+	"Carlos #0" = 10
+	"Nellis #0" = 10
+	"Hoover #0" = 5
+	"Siegel #0" = 5
+ 
+	"Liam #0" = 0
+	"Oliver #0" = 0
+	"Benjamin #0" = 0
+	"James #0" = 0
+	"Noah #0" = 0
+	"William #0" = 0
+	"Henry #0" = 0
+	"Edward #0" = 0
+	"Ethan #0" = 0
+	"Eluah #0" = 0
+	"Alexander #0" = 0
+	"Samuel #0" = 0
+	"Mason #0" = 0
+	"Owen #0" = 0
+	"Daniel #0" = 0
+	"Wyatt #0" = 0
+	"Logan #0" = 0
+	"Lucas #0" = 0
+	"Jackson #0" = 0
+
+	"Susan #0" = -1
+	"Mirage #0" = -1	
+	"Betty #0" = -1
+	"Carol #0" = -1
+}
+
+leader_names = { 
+	Liam Oliver Benjamin James Noah William Henry Ethan Eluah Alexander Samuel Mason Owen Daniel Wyatt Logan Lucas Jackson David
+	Lincoln Michael Jacob Matthew Isaac Jack Luke Gabriel Caleb Carter Levi Hudson Hunter Sebastian Grayson Aiden Andrew Joseph 
+	Jayden Theodore Julian Jaxon John Asher Mateo Charles Isaiah
+}
+
+ship_names = {
+	"Ace in the Hole" Act "All-In" Backdoor Bankroll Bet Blind
+	Stack Blaze Ante Call Burn Check Draw Flop Fold Nuts Muck 
+	Klicker Overcard Card Holdem Turn River Bellagio Mirage Caesar
+	"Cirque du Soleil" Strat Aztec Ahern Allure Bonanza Shop
+	Festival Sahara Sky Circus Turnberry Encore Trump Wynn Venetian
+	Palazzo Casino Royale Hurrah's Forum Linque Flamingo Cromwell
+	Westin Bally's Paris Hollywood Harmon Elara Cosmopolitan
+	Topgold Chateau Signature Excalibur Luxor Oyo Delano Mandalay 
+	Marina Dunes Castaways Hacienda Klondike Thunderbird Silverbird
+	Jackpot Crapshoot Poker Gimmick Dealer Deuce Dime Deposit
+	
+	Francisco Cruz Celestia Jose Oak Costa Lewis
+	Galactica "Golden Gate" Vallejo Solano Lodi
+	Stanford Salinas Monterey Moro Atascadero Wasco
+	Bakersfield Porterville Seqouia Vegas Inyo Faro 
+	Guadiana Sonoma Mendocino Bragg Eureka Redwood Crecent Curry
+	Coos Lane Newport Tillamook Clatsop Wahkiakum Grays Clallam 
+	Olympus Olympia Tacoma Seattle Everett Bellingham Kitsap
+	
+}
+
+army_names = {
+	"The Full House" "Green Army" "Army of Vegas" 
+}
+
+fleet_names = {
+	"High Roller" "Green Squadron" 
+}

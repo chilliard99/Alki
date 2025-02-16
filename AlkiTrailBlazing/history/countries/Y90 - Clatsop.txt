@@ -1,0 +1,56 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = oregonite
+religion = partisan
+technology_group = western
+capital = 1197	 #Clatsop
+religious_school = progressive_party
+
+1433.1.30 = {
+	add_country_modifier = {
+		name = "gor_oregonian_freedom_fighters_genorg"
+		duration = -1
+	}
+	monarch = {
+		name = "Elmer" #Fist of the Pomo
+		dynasty = "Quitiquit"
+		culture = pomo
+		birth_date = 1399.8.22
+		add_ruler_personality = martial_educator_personality
+		add_ruler_personality = inspiring_leader_personality
+		adm = 3
+		dip = 3
+		mil = 6
+		leader = {
+			name = "Elmer Quitiquit"     
+			type = general      
+			fire = 4       
+			shock = 5      
+			manuever = 4  
+			siege = 3      
+		}
+		
+	}
+	queen = {
+		name = "Elisa"            
+		dynasty = "Astor" #Prominent family in the Oregonian Republic
+		birth_date = 1404.5.17         
+		death_date = 1500.1.1
+		adm = 2                 
+		dip = 1
+		mil = 1                
+		female = yes                
+	}
+	heir = {
+		name = "Coboway" #Can become either Oregonian or Pomo 
+		monarch_name = "Coboway"
+		dynasty = "Quitiquit"
+		birth_date = 1421.3.23
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 0
+		mil = 1
+	}
+}

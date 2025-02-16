@@ -1,0 +1,33 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = ensenadan
+religion = partisan
+technology_group = western
+capital = 2391 	 #Lazaro
+religious_school = traditionalist_party
+set_country_flag = conservative_caucus
+
+1395.6.26 = {
+	monarch = {
+		name = "Fernando"
+		dynasty = "Lazaro"
+		birth_date = 1395.6.26
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1421.1.11 = {
+	heir = {
+		name = "Fernando"
+		monarch_name = "Fernando II"
+		dynasty = "Lazaro"
+		birth_date = 1421.1.11
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}

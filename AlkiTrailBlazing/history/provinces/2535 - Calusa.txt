@@ -1,0 +1,18 @@
+# No previous file for Calusa
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+add_core = X05
+owner = X05
+controller = X05
+culture = calusan
+religion = zahran
+capital = "Calusa"
+trade_goods = sugar #sugar cane plant (reference: https://apps.fas.usda.gov/newgainapi/api/report/downloadreportbyfilename?filename=Sugar%20Annual_Cairo_Egypt_4-15-2019.pdf) 
+is_city = yes
+hre = no
+base_tax = 6
+base_production = 6
+base_manpower = 5
+discovered_by = eastern

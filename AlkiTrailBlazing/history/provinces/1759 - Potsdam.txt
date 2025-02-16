@@ -1,0 +1,19 @@
+#1759 - Potsdam
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y83		
+controller = Y83
+add_core = Y83
+culture = joaquin
+religion = partisan
+hre = yes
+base_tax = 5
+base_production = 5
+trade_goods = grain #joaquin agriculture
+base_manpower = 5
+capital = "Merced"
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

@@ -1,0 +1,44 @@
+government = republic
+add_government_reform = oligarchy_reform
+government_rank = 1
+primary_culture = silveritte
+religion = partisan
+technology_group = western
+capital = 1075	 #Molossia
+religious_school = traditionalist_party
+set_country_flag = conservative_caucus
+
+1401.3.10 = {
+	monarch = {
+		name = "Kevin IV"
+		dynasty = "Norton"
+		birth_date = 1384.9.3
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+	queen = {
+		name = "Adrianne"            
+		dynasty = "Norton"        
+		birth_date = 1385.9.10         
+		death_date = 1500.1.1
+		adm = 2                 
+		dip = 4                
+		mil = 4                
+		female = yes                
+	}
+}
+
+1407.6.14 = {
+	heir = {
+		name = "Kevin"
+		monarch_name = "Kevin V"
+		dynasty = "Norton"
+		birth_date = 1428.4.15
+		death_date = 1500.1.1
+		claim = 95
+		adm = 5
+		dip = 4
+		mil = 4
+	}
+}

@@ -1,0 +1,18 @@
+# No previous file for Querecho
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = chinese
+owner = W49
+controller = W49
+add_core = W49
+culture = libio
+religion = catholico
+capital = "Querecho"
+trade_goods = fish #waco fishery extension
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes 

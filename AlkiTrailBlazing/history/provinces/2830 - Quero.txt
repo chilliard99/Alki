@@ -1,0 +1,17 @@
+#1189 - Shangwe
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = U47
+controller = U47
+add_core = U47
+culture = portugers
+religion = partisan
+capital = "Castelo Branco"
+is_city = yes
+base_manpower = 2
+trade_goods = wine #Base eu4 map
+hre = yes
+base_tax = 2
+base_production = 1

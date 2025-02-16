@@ -1,0 +1,17 @@
+#2036 - Baglana
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y38
+controller = Y38
+add_core = Y38
+culture = snake
+religion = partisan
+capital = "Walla Walla"
+trade_goods = wine #walla walla wine
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 3
+is_city = yes

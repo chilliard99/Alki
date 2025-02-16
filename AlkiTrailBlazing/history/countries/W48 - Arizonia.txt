@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+primary_culture = arazonian
+religion = catholico
+technology_group = muslim
+capital = 2419	 #Phoenix
+
+
+1399.5.12 = {
+	monarch = {
+		name = "Ferhat"
+		dynasty = "Algier"
+		birth_date = 1398.5.11
+		adm = 4
+		dip = 3
+		mil = 4
+	}
+}
+1429.5.16 = {
+	heir = {
+		name = "Hayreddin"
+		monarch_name = "Hayreddin IV"
+		dynasty = "Algier"
+		birth_date = 1439.12.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 5
+		dip = 4
+		mil = 4
+	}
+}

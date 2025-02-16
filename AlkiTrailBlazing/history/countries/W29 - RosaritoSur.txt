@@ -1,0 +1,33 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = ensenadan
+religion = partisan
+technology_group = western
+capital = 2397	 #Rosarito
+religious_school = progressive_party
+set_country_flag = conservative_caucus
+
+1401.2.2 = {
+	monarch = {
+		name = "Jorge"
+		dynasty = "Rosarito"
+		birth_date = 1401.2.2
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1443.11.27 = {
+	heir = {
+		name = "Luis"
+		monarch_name = "Luis"
+		dynasty = "Rosarito"
+		birth_date = 1443.11.27
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 1
+		mil = 1
+	}
+}

@@ -1,0 +1,16 @@
+#2403 - Martaban
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W17
+controller = W17
+add_core = W17
+culture = mulegean
+religion = partisan
+capital = "Moulmein"
+trade_goods = fish #more lobster
+hre = yes
+base_tax = 3
+base_production = 3
+base_manpower = 4
+is_city = yes

@@ -1,0 +1,117 @@
+country_decisions = {
+
+	
+	peacetime_cuban_counter = {
+		major = yes
+		potential = {
+			ai = no
+			NOT = {
+				has_country_flag = no_more_complicated_shit
+			}
+			OR = {
+				tag = V05
+				tag = U34
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 100
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = no_more_bonuses.tt
+					always = no
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 80
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = pax_cubana.tt
+					always = no
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 60
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = prosperous_peace.tt
+					always = no
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 40
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = budding_complacency.tt
+					always = no
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 20
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = the_long_peace.tt
+					always = no
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 10
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = productive_peace.tt
+					always = no
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = peacetimeCubaCounter
+						value = 5
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = normalcy_restored.tt
+					always = no
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = recovered_peoples.tt
+					always = no
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = years_of_peace_tooltip.tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+}

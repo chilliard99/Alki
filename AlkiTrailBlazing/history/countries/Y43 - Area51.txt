@@ -1,0 +1,19 @@
+government = republic
+add_government_reform = free_city
+government_rank = 1
+primary_culture = gambler
+religion = partisan
+technology_group = western
+capital = 1136 #Area51
+religious_school = progressive_party
+set_country_flag = conservative_caucus
+
+1413.5.25 = {
+	monarch = {
+		name = "Bob"
+		birth_date = 1413.5.25
+		adm = 2
+		dip = 2
+		mil = 4
+	}
+}

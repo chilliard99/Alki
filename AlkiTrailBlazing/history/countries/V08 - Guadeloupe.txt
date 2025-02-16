@@ -1,0 +1,35 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = leeward
+religion = espiritismo 
+technology_group = ottoman
+capital = 496	#Guadelupe
+unlock_cult = rastafari_denom
+unlock_cult = hijos_de_dios_denom
+unlock_cult = cemi_denom
+set_country_flag = has_a_cult_unlocked
+
+1400.4.25 = {
+	monarch = {
+		name = "Pierre III"
+		dynasty = "Gwada"
+		birth_date = 1400.4.25
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1417.3.17 = {
+	heir = {
+		name = "Charles"
+		monarch_name = "Charles"
+		dynasty = "Gwada"
+		birth_date = 1417.3.17
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 1
+		mil = 3
+	}
+}

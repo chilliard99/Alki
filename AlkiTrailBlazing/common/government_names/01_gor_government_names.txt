@@ -1,0 +1,294 @@
+# For specific government types
+# Will pick the first valid one it finds in list
+
+holy_conservatory_reform = {
+	rank = {
+		1 = CONSERVATORY
+		2 = HOLY_CONSERVATORY
+		3 = ECOREGION
+	}
+	
+	ruler_male = {
+		1 = SENATOR_CONS
+		2 = CLIMATIST
+		3 = GRAND_CLIMATIST
+	}
+	
+	ruler_female  ={
+		1 = SENATOR_CONS
+		2 = CLIMATIST
+		3 = GRAND_CLIMATIST
+	}
+	
+	heir_male = {
+		1 = SENATOR_ELECT
+		2 = CLIMATIST_ELECT
+		3 = CLIMATIST_ELECT
+	}
+
+	heir_female = {
+		1 = SENATOR_ELECT
+		2 = CLIMATIST_ELECT
+		3 = CLIMATIST_ELECT
+	}
+	
+	trigger = {
+		has_reform = holy_conservatory_reform
+	}
+}
+
+coorperate_republic_reform = {
+	rank = {
+		1 = LIMITED_CORPORATION
+		2 = CORPORATION
+		3 = MEGACORPORATION
+	}
+	
+	ruler_male = {
+		1 = EXECUTIVE
+		2 = CHIEF_EXECUTIVE
+		3 = CHIEF_EXECUTIVE_OFFICER
+	}
+	
+	ruler_female  ={
+		1 = EXECUTIVE
+		2 = CHIEF_EXECUTIVE
+		3 = CHIEF_EXECUTIVE_OFFICER
+	}
+	
+	heir_male = {
+		1 = FAVORED_CARDINAL
+		2 = FAVORED_CARDINAL
+		3 = FAVORED_CARDINAL
+	}
+
+	heir_female = {
+		1 = FAVORED_CARDINAL
+		2 = FAVORED_CARDINAL
+		3 = FAVORED_CARDINAL
+	}
+	
+	trigger = {
+		has_reform = coorperate_republic_reform
+	}
+}
+
+
+cascadian_republic_reform = {
+	rank = {
+		1 = CASCADIAN_REPUBLIC
+		2 = CASCADIAN_REPUBLIC
+		3 = CASCADIAN_REPUBLIC
+	}
+	
+	ruler_male = {
+		1 = PRESIDENT_CAS
+		2 = PRESIDENT_CAS
+		3 = PRESIDENT_CAS
+	}
+	
+	ruler_female  ={
+		1 = PRESIDENT_CAS
+		2 = PRESIDENT_CAS
+		3 = PRESIDENT_CAS
+	}
+	
+	heir_male = {
+		1 = FAVORED_CARDINAL
+		2 = FAVORED_CARDINAL
+		3 = FAVORED_CARDINAL
+	}
+
+	heir_female = {
+		1 = FAVORED_CARDINAL
+		2 = FAVORED_CARDINAL
+		3 = FAVORED_CARDINAL
+	}
+	
+	trigger = {
+		has_reform = cascadian_republic_reform
+	}
+}
+
+democratic_republic_reform = {
+	rank = {
+		1 = DEMOCRATIC_REPUBLIC
+		2 = DEMOCRATIC_REPUBLIC
+		3 = GREAT_DEMOCRATIC_REPUBLIC
+	}
+	
+	ruler_male = {
+		1 = SECRETARY
+		2 = SECRETARY
+		3 = GENERAL_SECRETARY
+	}
+	
+	ruler_female  ={
+		1 = SECRETARY
+		2 = SECRETARY
+		3 = GENERAL_SECRETARY
+	}
+	
+	heir_male = {
+		1 = PRINCE
+		2 = PRINCE
+		3 = PRINCE
+	}
+
+	heir_female = {
+		1 = PRINCESS
+		2 = PRINCESS
+		3 = PRINCESS
+	}
+	
+	trigger = {
+		OR = {
+			has_reform = democratic_republic_reform
+			has_reform = grand_democratic_republic_reform
+		}
+	}
+}
+
+trueheir_confederacy_reform = {
+	rank = {
+		1 = CONFEDERACY
+		2 = CONFEDERACY
+		3 = GRAND_CONFEDERACY
+	}
+	
+	ruler_male = {
+		1 = CHAIRMAN
+		2 = CHAIRMAN
+		3 = SENIOR_CHAIRMAN
+	}
+	
+	ruler_female  ={
+		1 = CHAIRMAN
+		2 = CHAIRMAN
+		3 = SENIOR_CHAIRMAN
+	}
+	
+	heir_male = {
+		1 = DESIGNATED_SUCCESSOR
+		2 = DESIGNATED_SUCCESSOR
+		3 = DESIGNATED_SUCCESSOR
+	}
+
+	heir_female = {
+		1 = DESIGNATED_SUCCESSOR
+		2 = DESIGNATED_SUCCESSOR
+		3 = DESIGNATED_SUCCESSOR
+	}
+	
+	trigger = {
+		has_reform = trueheir_confederacy_reform
+	}
+}
+
+trueheir_confederacy_reform = {
+	rank = {
+		1 = CONFEDERACY
+		2 = CONFEDERACY
+		3 = GRAND_CONFEDERACY
+	}
+	
+	ruler_male = {
+		1 = CHAIRMAN
+		2 = CHAIRMAN
+		3 = SENIOR_CHAIRMAN
+	}
+	
+	ruler_female  ={
+		1 = CHAIRMAN
+		2 = CHAIRMAN
+		3 = SENIOR_CHAIRMAN
+	}
+	
+	heir_male = {
+		1 = DESIGNATED_SUCCESSOR
+		2 = DESIGNATED_SUCCESSOR
+		3 = DESIGNATED_SUCCESSOR
+	}
+
+	heir_female = {
+		1 = DESIGNATED_SUCCESSOR
+		2 = DESIGNATED_SUCCESSOR
+		3 = DESIGNATED_SUCCESSOR
+	}
+	
+	trigger = {
+		has_reform = trueheir_confederacy_reform
+	}
+}
+
+revolutionary_oregonian_republic_reform = {
+	rank = {
+		1 = REPUBLIC_ORG
+		2 = GRAND_REPUBLIC_ORG
+		3 = NORTHWEST_REPUBLIC_ORG
+	}
+	
+	ruler_male = {
+		1 = DICTATOR_ORG
+		2 = DICTATOR_ORG
+		3 = DICTATOR_ORG
+	}
+	
+	ruler_female  ={
+		1 = DICTATOR_ORG
+		2 = DICTATOR_ORG
+		3 = DICTATOR_ORG
+	}
+	
+	heir_male = {
+		1 = DESIGNATED_SUCCESSOR
+		2 = DESIGNATED_SUCCESSOR
+		3 = DESIGNATED_SUCCESSOR
+	}
+
+	heir_female = {
+		1 = DESIGNATED_SUCCESSOR
+		2 = DESIGNATED_SUCCESSOR
+		3 = DESIGNATED_SUCCESSOR
+	}
+	
+	trigger = {
+		has_reform = revolutionary_oregonian_republic_reform
+	}
+}
+
+oregonian_republic_reform = {
+	rank = {
+		1 = REPUBLIC_ORG
+		2 = GRAND_REPUBLIC_ORG
+		3 = NORTHWEST_REPUBLIC_ORG
+	}
+	
+	ruler_male = {
+		1 = PRESIDENT_ORG
+		2 = PRESIDENT_ORG
+		3 = PRESIDENT_ORG
+	}
+	
+	ruler_female  ={
+		1 = PRESIDENT_ORG
+		2 = PRESIDENT_ORG
+		3 = PRESIDENT_ORG
+	}
+	
+	heir_male = {
+		1 = DESIGNATED_SUCCESSOR
+		2 = DESIGNATED_SUCCESSOR
+		3 = DESIGNATED_SUCCESSOR
+	}
+
+	heir_female = {
+		1 = DESIGNATED_SUCCESSOR
+		2 = DESIGNATED_SUCCESSOR
+		3 = DESIGNATED_SUCCESSOR
+	}
+	
+	trigger = {
+		has_reform = oregonian_republic_reform
+	}
+}

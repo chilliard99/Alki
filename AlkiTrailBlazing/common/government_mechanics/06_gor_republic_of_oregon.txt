@@ -1,0 +1,56 @@
+republic_of_oregon_mechanic = {
+	
+	interactions = {
+		rely_on_libertys_wisdom_repub_oregon = {
+			icon = GFX_rely_upon_libertys_wisdom_button
+			trigger = {
+			}
+			effect = {
+				add_country_modifier = {
+					name = "gor_libertys_wisdom_sonsorg"
+					duration = 3650
+				}
+			}
+			cooldown_years = 10
+			cooldown_token = iqta_mechanic
+			cooldown_desc = REPUBLICAN_FOCUS_OREGON
+			ai_chance = {
+				factor = 33
+			}
+		}
+		embrace_the_markets_guidance_repub_oregon = {
+			icon = GFX_the_markets_guidance_button
+			trigger = { 
+			}
+			effect = { 
+				add_country_modifier = {
+					name = "gor_markets_guidance_sonsorg"
+					duration = 3650
+				}
+			}
+			cooldown_years = 10
+			cooldown_token = iqta_mechanic
+			cooldown_desc = REPUBLICAN_FOCUS_OREGON
+			ai_chance = {
+				factor = 33
+			}
+		}
+		listen_to_noble_connections_repub_oregon = {
+			icon = GFX_listen_to_noble_connections_button
+			trigger = {
+			}
+			effect = { 
+				add_country_modifier = {
+					name = "gor_noble_connections_sonsorg"
+					duration = 3650
+				}
+			}
+			cooldown_years = 10
+			cooldown_token = iqta_mechanic
+			cooldown_desc = REPUBLICAN_FOCUS_OREGON
+			ai_chance = {
+				factor = 33
+			}
+		}
+	}
+}

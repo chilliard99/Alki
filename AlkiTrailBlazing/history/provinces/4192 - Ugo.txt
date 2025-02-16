@@ -1,0 +1,15 @@
+#4192 - Ugo
+discovered_by = chinese
+owner = X16
+controller = X16
+add_core = X16
+culture = niigatan
+religion = neoshinto
+capital = "Akita"
+trade_goods = grain #big farmin region
+hre = no
+base_tax = 6
+base_manpower = 5
+base_production = 5
+is_city = yes
+discovered_by = eastern

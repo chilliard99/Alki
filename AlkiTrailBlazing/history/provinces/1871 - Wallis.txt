@@ -1,0 +1,19 @@
+#1871 - Wallis
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y57
+controller = Y57
+add_core = Y57
+culture = silveritte
+religion = partisan
+capital = "Reno"
+trade_goods = paper #using wood from sierras, they make nice paper
+hre = yes
+base_tax = 5
+base_production = 4
+base_manpower = 4
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

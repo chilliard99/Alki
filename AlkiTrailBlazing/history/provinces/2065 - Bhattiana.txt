@@ -1,0 +1,18 @@
+#2065 - Bhattiana
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+add_core = W06
+owner = W06
+controller = W06
+add_core = U62
+culture = couverite
+religion = collectivist
+capital = "Oak Harbor"
+trade_goods = grain #just small scale farming
+hre = yes
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes

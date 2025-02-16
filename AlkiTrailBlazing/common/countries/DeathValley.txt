@@ -1,0 +1,108 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 11 93 163 }
+
+revolutionary_colors = { 15 0 15 }
+
+historical_idea_groups = {
+	defensive_ideas
+	religious_ideas
+	trade_ideas
+	economic_ideas
+	plutocracy_ideas
+	diplomatic_ideas
+	offensive_ideas
+	spy_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_longbow
+	gaelic_mercenary
+	gaelic_free_shooter
+	irish_charge
+	anglofrench_line
+	british_redcoat
+	british_hussar
+	british_square
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Toby #1" = 25
+	"Jay #0" = 25
+	"Paul #0" = 25
+	"Ron #0" = 20
+	"Pete #0" = 20
+	"George #0" = 15
+	"Jack #0" = 15
+	"John #0" = 10
+	"Arthur #0" = 10
+	"Hugh #0" = 10
+	"Everis #0" = 5
+	"Sylvester #0" = 5
+ 
+	"Liam #0" = 0
+	"Oliver #0" = 0
+	"Benjamin #0" = 0
+	"James #0" = 0
+	"Noah #0" = 0
+	"William #0" = 0
+	"Henry #0" = 0
+	"Edward #0" = 0
+	"Ethan #0" = 0
+	"Eluah #0" = 0
+	"Alexander #0" = 0
+	"Samuel #0" = 0
+	"Mason #0" = 0
+	"Owen #0" = 0
+	"Daniel #0" = 0
+	"Wyatt #0" = 0
+	"Logan #0" = 0
+	"Lucas #0" = 0
+	"Jackson #0" = 0
+
+	"Nancy #0" = -1
+	"Christine #0" = -1	
+	"Rita #0" = -1
+	"Gloria #0" = -1
+}
+
+leader_names = { 
+	Liam Oliver Benjamin James Noah William Henry Ethan Eluah Alexander Samuel Mason Owen Daniel Wyatt Logan Lucas Jackson David
+	Lincoln Michael Jacob Matthew Isaac Jack Luke Gabriel Caleb Carter Levi Hudson Hunter Sebastian Grayson Aiden Andrew Joseph 
+	Jayden Theodore Julian Jaxon John Asher Mateo Charles Isaiah
+}
+
+ship_names = {
+	Camp Cottonwood Diaz Dingleberry Granite Inconsolable Loch Mills "Pee Wee" 
+	Robinson Rock Sabrina Weir Wishbone Inyo Manzanar Argus Coso Darwin Funeral
+	"Golden Trout" Ibex Inyo Muir Malpais Manly Nopah Owens Pahrump Piper Sacatar
+	Saddle Sierra Sylvania Bighorn Pupfish Creosote Bishop Cartago Dixon Furnace
+	Homewood Keeler Mesa Olancha Pearson Round Tecopa Trone Wilkerson Alabama 
+	Chicago Coso Junction Dunmovin Haiwee Laws Panamint Sandy Stewart Piute 
+	Timbisha Koso Pinyon Mesquite Saratoga Nevares Bennett Arcane Borax Borate 
+	Talc Leadfield Scotty Adobe Strip Tatooine 
+	
+	Francisco Cruz Celestia Jose Oak Costa Lewis
+	Galactica "Golden Gate" Vallejo Solano Lodi
+	Stanford Salinas Monterey Moro Atascadero Wasco
+	Bakersfield Porterville Seqouia Vegas Inyo Faro 
+	Guadiana Sonoma Mendocino Bragg Eureka Redwood Crecent Curry
+	Coos Lane Newport Tillamook Clatsop Wahkiakum Grays Clallam 
+	Olympus Olympia Tacoma Seattle Everett Bellingham Kitsap 
+}
+
+army_names = {
+	"Californian Crusaders" "Army of Death" 
+}
+
+fleet_names = {
+	"Black Squadron"
+}

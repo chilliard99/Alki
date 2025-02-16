@@ -1,0 +1,13 @@
+#1167 - Luanda
+discovered_by = mesoamerican
+culture = cabonian
+religion = shamanist 
+capital = "Luanda"
+trade_goods = cotton #its on the flag, come on!
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+owner = Z27
+controller = Z27
+add_core = Z27

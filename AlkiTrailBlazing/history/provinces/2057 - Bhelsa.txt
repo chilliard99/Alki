@@ -1,0 +1,18 @@
+#2057 - Bhelsa
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = U56
+controller = U56
+add_core = U56
+add_core = U61
+culture = columbian_washingtonian
+religion = partisan
+capital = "Longview"
+trade_goods = naval_supplies #Logging
+hre = yes
+base_tax = 3
+base_production = 3
+base_manpower = 3
+is_city = yes

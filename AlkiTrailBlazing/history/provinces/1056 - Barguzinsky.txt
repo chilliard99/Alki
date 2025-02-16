@@ -1,0 +1,17 @@
+#1056 - Barguzinsky
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y50
+controller = Y50
+add_core = Y50
+culture = hulapalucian
+religion = partisan
+capital = "Barguzin"
+trade_goods = wool #ranchers
+hre = no
+base_tax = 3 
+base_production = 3
+base_manpower = 3
+is_city = yes

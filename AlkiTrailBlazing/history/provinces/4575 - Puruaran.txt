@@ -1,0 +1,15 @@
+# No previous file for Puruaran
+discovered_by = ottoman
+discovered_by = muslim
+culture = coliman
+owner = W78
+controller = W78
+add_core = W78
+is_city = yes
+religion = catholico
+capital = "Puruaran"
+trade_goods = iron #amazin
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1

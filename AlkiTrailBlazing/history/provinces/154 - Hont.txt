@@ -1,0 +1,14 @@
+#154 - Hont (Hont + Bars + Ersekujvar)
+discovered_by = north_american
+owner = Z04
+controller = Z04 
+add_core = Z04
+culture = balkanmen
+religion = paganry
+capital = "Hont"
+trade_goods = gold #Schemnitz / Banská Štiavnica
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 2
+is_city = no

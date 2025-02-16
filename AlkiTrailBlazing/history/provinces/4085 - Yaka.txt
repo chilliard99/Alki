@@ -1,0 +1,15 @@
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W92
+controller = W92
+add_core = W92
+culture = garifunan
+religion = catholico
+capital = "Yaka"
+trade_goods = coffee #important coffee place (banana tycoons are scarry)
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

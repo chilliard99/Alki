@@ -1,0 +1,16 @@
+# 2193 - Govi
+discovered_by = eastern
+discovered_by = western
+owner = Y98
+controller = Y98
+add_core = Y98
+culture = old_metis
+religion = theanite
+capital = "Govi"
+trade_goods = grain #agriculture is important
+hre = no
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes
+fort_15th = yes

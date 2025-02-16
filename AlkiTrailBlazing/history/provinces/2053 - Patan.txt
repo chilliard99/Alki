@@ -1,0 +1,21 @@
+#2053 - Patan
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = U55
+controller = U55
+add_core = U55
+add_core = U61
+culture = columbian_washingtonian
+religion = partisan
+capital = "Chehalis"
+trade_goods = grain #Farming Towns
+latent_trade_goods = {
+	coal #centralia coal mine
+}
+hre = yes
+base_tax = 3
+base_production = 2
+base_manpower = 2
+is_city = yes

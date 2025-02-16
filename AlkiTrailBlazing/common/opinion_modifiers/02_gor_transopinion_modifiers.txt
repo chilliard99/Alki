@@ -1,0 +1,38 @@
+gor_olympian_networking = {
+	opinion = 10
+	yearly_decay = 1
+}
+
+gor_presidential_campaign_helens = {
+	opinion = 20
+	yearly_decay = 0.25
+}
+
+conquest_of_washington_emperor_skagit = {
+	opinion = 50
+	yearly_decay = 1
+}
+
+conquest_of_washington_elector_skagit = {
+	opinion = 25
+	yearly_decay = 1
+}
+
+bribed_elector_baron_gor = {
+	opinion = 15
+	yearly_decay = 1
+}
+
+benevolent_overlord_washington_gor = {
+	opinion = 100
+	yearly_decay = 0.25
+}
+
+removed_electorate_gor = {
+	opinion = -200
+	yearly_decay = 0.25
+}
+
+nation_of_radicals_gor = {
+	opinion = -100
+}

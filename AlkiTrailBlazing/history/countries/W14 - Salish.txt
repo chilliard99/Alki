@@ -1,0 +1,33 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = couverite
+religion = collectivist
+technology_group = western
+capital = 2238	 #Vancouver
+
+
+1406.12.25 = {
+	monarch = {
+		name = "Victoria"
+		dynasty = "Garabaldi"
+		birth_date = 1406.12.25
+		adm = 5
+		dip = 5
+		mil = 5
+		female = yes	
+	}
+}
+1425.11.27 = {
+	heir = {
+		name = "Copp"
+		monarch_name = "Copp"
+		dynasty = "Garabaldi"
+		birth_date = 1425.11.27
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}

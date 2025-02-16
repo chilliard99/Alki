@@ -1,0 +1,18 @@
+#872 - Kalapuya
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y32
+controller = Y32
+add_core = Y32
+culture = snake
+religion = partisan
+capital = "Twin Falls" 
+trade_goods = grain #Alternatively sugar from sugar beets
+hre = yesno
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes
+fort_15th = yes

@@ -1,0 +1,15 @@
+# No previous file for Heiltsuk
+discovered_by = western
+discovered_by = eastern
+owner = W14
+controller = W14
+add_core = W14
+culture = couverite
+religion = collectivist
+capital = "Heiltsuk"
+trade_goods = fish #coastal fishin
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes

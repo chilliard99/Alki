@@ -1,0 +1,17 @@
+#1764 - Burgas
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y73
+controller = Y73
+add_core = Y73
+culture = joaquin
+religion = partisan
+capital = "Madera"
+trade_goods = naval_supplies #logging
+hre = yes
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes

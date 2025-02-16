@@ -1,0 +1,17 @@
+#1067 - Narym
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y77
+controller = Y77
+add_core = Y77
+culture = franciscan
+religion = partisan
+capital = "Concord"
+trade_goods = wine #Winehaven
+hre = yes
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

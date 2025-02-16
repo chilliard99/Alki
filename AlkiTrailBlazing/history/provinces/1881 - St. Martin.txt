@@ -1,0 +1,17 @@
+#1881 - St. Martin
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y35
+controller = Y35
+add_core = Y35
+culture = beaverheads
+religion = sacramental
+capital = "St. Martin"
+trade_goods = livestock #wyoming ranchers
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 3
+is_city = yes

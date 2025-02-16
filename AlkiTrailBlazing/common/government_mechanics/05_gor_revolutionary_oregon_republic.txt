@@ -1,0 +1,105 @@
+rev_org_repub_mechanic = {
+	available = {
+		has_dlc = "Domination"
+	}
+
+	powers = {
+		revolutionary_vigor = {
+			max = 100
+			base_monthly_growth = -0.1
+			default = 75
+			scaled_modifier = {
+				modifier = {
+					land_morale = 0.15
+					core_creation = -0.1
+					corruption = -0.1
+					global_unrest = 2
+				}
+			}
+			on_min_reached = {
+				if = {
+					limit = {
+						mission_completed = wartime_goverannce_sonsorg
+					}
+					custom_tooltip = nothing_happens_now_that_we_have_completed_wartimegov
+				}
+				else = {
+					custom_tooltip = we_lose_all_of_our_provs_to_oregonian_nations_sonsorg
+					hidden_effect = {
+						every_owned_province = {
+							if = {
+								limit = {
+									area = tillamook_area
+								}
+								add_core = Y90
+								cede_province = Y90
+							}
+							else_if = {
+								limit = {
+									OR = {
+										area = oregonian_cascades_area
+										area = morrow_crook_area
+										area = bend_area
+									}
+								}
+								add_core = U51
+								cede_province = U51
+							}
+							else_if = {
+								limit = {
+									OR = {
+										region = oregon_region
+										NOT = { hre_size = 1 }
+									}
+								}
+								add_core = Y96
+								cede_province = Y96
+							}
+							else = {
+								add_core = emperor
+								cede_province = emperor
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+				
+	interactions = {
+		promote_revolutionary_vigor = {
+			gui = hessian_rev_org_repub_gov_mech
+			cost_type = revolutionary_vigor
+			center = no
+			trigger = {
+				NOT = {
+					has_government_power = {
+						mechanic_type = rev_org_repub_mechanic
+						power_type = revolutionary_vigor
+						value = 100
+					}
+				}
+				years_of_income = 0.1
+			}
+			effect = {
+				mil_power_cost = 50
+				add_government_power = {
+					mechanic_type = rev_org_repub_mechanic
+					power_type = revolutionary_vigor
+					value = 5
+				}
+			}
+			ai_chance = {
+				factor = 100
+				modifier = {
+					factor = 0
+					has_government_power = {
+						mechanic_type = rev_org_repub_mechanic
+						power_type = revolutionary_vigor
+						value = 50
+					}
+				}
+			}
+		}
+	}
+}

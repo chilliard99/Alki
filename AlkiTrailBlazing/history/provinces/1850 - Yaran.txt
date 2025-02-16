@@ -1,0 +1,19 @@
+#1850 - Yaran
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y69
+controller = Y69
+add_core = Y69
+culture = redwood
+religion = partisan
+capital = "Eureka"
+trade_goods = naval_supplies #lumber entreport
+hre = yes
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

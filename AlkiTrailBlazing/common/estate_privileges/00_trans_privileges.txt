@@ -1,0 +1,756 @@
+####DEMO REP PRIVLEDGES######
+anarchfed_create_new_titles = {
+	icon = privilege_empty_throne
+	loyalty = -0.1
+	is_valid = {
+		has_reform = demreap_noble_council_reform
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {
+		global_tax_modifier = 0.1
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+anarchfed_manorial_expansion = {
+	icon = privilege_grant_autonomy
+	influence = 0.2
+	is_valid = {
+		has_reform = demreap_noble_council_reform
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	on_granted = {
+		custom_tooltip = will_unlock_grant_lordship_decision
+		tooltip = {
+			add_province_modifier = {
+				name = "gor_new_manor_rep"
+				duration = 3650
+			}
+		}
+		set_country_flag = willa_get_manorial_expansion
+	}
+	on_revoked = { 
+		clr_country_flag = willa_get_manorial_expansion
+		
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+anarchfed_people_levy = {
+	icon = privilege_military_power
+	influence = 0.1
+	is_valid = {
+		has_reform = demrep_the_peoples_levy_reform
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	on_granted = {
+		custom_tooltip = will_unlock_ability_to_raise_levy
+		set_country_flag = willa_get_levy_decision
+	}
+	on_revoked = { 
+		clr_country_flag = willa_get_levy_decision
+		
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+anarchfed_lords_united = {
+	icon = privilege_promote_purbias
+	influence = 0.1
+	is_valid = {
+		has_reform = demrep_the_lords_united_reform
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {
+		army_tradition = 1
+		cavalry_power = 0.1
+	}
+	on_granted = {
+		add_army_tradition = 10
+		create_general = { tradition = 100 }
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+demrep_five_year_plans = {
+	icon = privilege_comission_merchant_ships_for_war
+	influence = 0.1
+	is_valid = {
+		has_reform = demrep_the_lords_united_reform
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	on_granted = {
+		custom_tooltip = allows_you_to_start_five_year_plans
+		tooltip = {
+			add_country_modifier = {
+				name = "gor_five_year_plan_development_rep"
+				duration = 1825
+			}
+			add_country_modifier = {
+				name = "gor_five_year_plan_land_maint_rep"
+				duration = 1825
+			}
+			add_country_modifier = {
+				name = "gor_five_year_plan_ship_stuff_rep"
+				duration = 1825
+			}
+		}
+		set_country_flag = can_make_five_year_plans_rep
+	}
+	on_revoked = { 
+		clr_country_flag = can_make_five_year_plans_rep
+		
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+####YAKAMA PRIVLEDGES######
+
+trueheir_tmiinwa_assembly = {
+	icon = privilege_royal_authority
+	influence = 0.1
+	max_absolutism = -10
+	land_share = 5
+	is_valid = {
+		mission_completed = rally_the_tribes_yakama
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {
+		trueheir_band_unity_gain_modifier  = 0.15
+	}
+	on_granted = {
+		add_government_power = {
+			mechanic_type = gor_trueheir_confederacy
+			power_type = trueheir_band_unity
+			value = 5
+		}
+	}
+	on_revoked = {
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+trueheir_wisdom_of_elders = {
+	icon = privilege_recruit_minister
+	influence = 0.05
+	is_valid = {
+		mission_completed = yakima_innovation_yakama
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {
+		innovativeness_gain = 0.5
+	 	technology_cost = -0.05
+	}
+	on_granted = {
+	}
+	on_revoked = {
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+####WASHINGTON PRIVLEDGES######
+
+washington_market_reform = {
+	icon = privilege_comission_merchant_ships_for_war
+	influence = 0.05
+	land_share = 10
+	is_valid = {
+		mission_completed = invisible_hand_washington
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {
+		trade_efficiency = 0.1
+	}
+	on_granted = {
+		custom_tooltip = get_invisible_hands_events_occassionally_washington
+		tooltip = {
+			change_government_reform_progress = 25
+		}
+	}
+	on_revoked = {
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+
+####ASTORIAN PRIVLEDGES######
+
+unpasturized_investments_reform = {
+	icon = privilege_monopoly_of_goods_livestock
+	influence = 0.05
+	land_share = 5
+	is_valid = {
+		has_country_modifier = gor_cheesemakers_cooperative_astoria
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {
+		trade_efficiency = 0.1
+	}
+	on_granted = {
+		custom_tooltip = get_money_from_livestock_decision_astoria
+		tooltip = {
+			add_years_of_owned_provinces_production_income = {
+				years = 5
+				trigger = {
+					trade_goods = livestock
+				}
+				custom_tooltip = get_monay_from_livestock_decision
+			}
+		}
+		set_country_flag = can_get_decision_for_livestock_monay
+	}
+	on_revoked = {
+		clr_country_flag = can_get_decision_for_livestock_monay
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+independent_farmlands_reform = {
+	icon = privilege_make_generous_donation
+	influence = 0.1
+	max_absolutism = -5
+	land_share = 10
+	is_valid = {
+		has_country_modifier = gor_cheesemakers_cooperative_astoria
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {
+		global_unrest = -2
+		development_cost = -0.1
+	}
+	on_granted = {
+	}
+	on_revoked = {
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+the_cheese_tax_reform = {
+	icon = privilege_make_generous_donation
+	influence = 0.1
+	land_share = 10
+	is_valid = {
+		has_country_modifier = gor_cheeselords_appeased_astoria
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {
+		global_tax_modifier = 0.15
+	}
+	on_granted = {
+	}
+	on_revoked = {
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+playcate_cheesemongers_reform = {
+	icon = privilege_monopoly_of_goods_livestock
+	influence = 0.05
+	land_share = 5
+	is_valid = {
+		has_country_modifier = gor_cheeselords_appeased_astoria
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {
+		trade_efficiency = 0.1
+	}
+	on_granted = {
+		custom_tooltip = explain_dev_boost_from_cheeselord_decision
+		set_country_flag = can_get_decision_to_boost_livestock_dev
+	}
+	on_revoked = {
+		clr_country_flag = can_get_decision_to_boost_livestock_dev
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+####WILLAMETTE PRIVLEDGES######
+
+heir_to_the_republic_reform = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+	land_share = 10
+	max_absolutism = -10
+	is_valid = {
+		has_country_flag = integrating_the_sons_of_oregon
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {
+		diplomatic_reputation = 1
+		diplomatic_upkeep = 1
+	}
+	on_granted = {
+		remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+		custom_tooltip = give_warning_of_soft_coup_event
+	}
+	on_revoked = {
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+popular_message_reform = {
+	icon = estate_burghers_commercial_board_of_advice
+	influence = 0.1
+	land_share = 10
+	max_absolutism = -10
+	is_valid = {
+		has_country_flag = integrating_the_sons_of_oregon
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {
+		monthly_piety_accelerator = 0.001
+		burghers_loyalty_modifier = 0.05
+	}
+	on_granted = {
+		remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+		custom_tooltip = give_warning_of_soft_coup_event
+	}
+	on_revoked = {
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+rebel_soldiers_reform = {
+	icon = privilege_give_money
+	influence = 0.1
+	land_share = 10
+	max_absolutism = -10
+	is_valid = {
+		has_country_flag = integrating_the_sons_of_oregon
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {
+		army_tradition = 0.25
+		fire_damage = 0.05
+		land_morale = 0.05
+	}
+	on_granted = {
+		remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+		custom_tooltip = give_warning_of_soft_coup_event
+	}
+	on_revoked = {
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+regal_oversight_reform = {
+	icon = privilege_ducats
+	influence = 0.1
+	land_share = 10
+	max_absolutism = -10
+	is_valid = {
+		has_country_flag = integrating_the_sons_of_oregon
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {
+		stability_cost_modifier = -0.05
+		yearly_corruption = -0.025
+	}
+	on_granted = {
+		remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+		custom_tooltip = give_warning_of_soft_coup_event
+	}
+	on_revoked = {
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+####PORTLAND PRIVLEDGES######
+
+manufactoring_and_its_consequences_privledge = {
+	icon = privilege_give_money
+	land_share = 10
+	is_valid = {
+		mission_completed = laws_of_nature_portland
+	}
+	can_select = {
+	}
+	penalties = {
+		development_cost = 0.25
+	}
+	benefits = {
+		administrative_efficiency = 0.05
+	}
+	on_granted = {
+	}
+	on_revoked = {
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+overthrow_industry_privledge = {
+	icon = privilege_make_generous_donation
+	land_share = 10
+	is_valid = {
+		mission_completed = laws_of_nature_portland
+	}
+	can_select = {
+	}
+	penalties = {
+		development_cost = 0.25
+	}
+	benefits = {
+		discipline = 0.05
+	}
+	on_granted = {
+	}
+	on_revoked = {
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+natural_advancements_privledge = {
+	icon = privilege_recruit_minister
+	land_share = 20
+	is_valid = {
+		mission_completed = laws_of_nature_portland
+	}
+	can_select = {
+	}
+	penalties = {
+		development_cost = 0.25
+	}
+	benefits = {
+		technology_cost = 0.1
+	}
+	on_granted = {
+	}
+	on_revoked = {
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+####MORROW-CROOK PRIVLEDGES######
+
+noble_liberation_privledge = {
+	icon = privilege_recruit_minister
+	land_share = 5
+	is_valid = {
+		mission_completed = a_rich_mans_land_morrow_crook
+	}
+	can_select = {
+	}
+	penalties = {
+		burghers_loyalty_modifier = -0.05
+	}
+	benefits = {
+		nobles_loyalty_modifier = 0.05
+	}
+	on_granted = {
+		custom_tooltip = unlock_the_noble_investment_event_morrow_crook
+		set_country_flag = get_noble_investment_morrow_crook
+	}
+	on_revoked = {
+		clr_country_flag = get_noble_investment_morrow_crook
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+####REPUBLIC OF OREGON PRIVLEDGES######
+
+commercially_incorruptable_privledge = {
+	icon = privilege_give_money
+	land_share = 10
+	is_valid = {
+		mission_completed = the_laws_guidance_repuborg
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {
+		max_absolutism = 10
+		yearly_corruption = -0.05
+	}
+	on_granted = {
+	}
+	on_revoked = {
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+authority_from_above_privledge = {
+	icon = privilege_recruit_minister
+	land_share = 10
+	is_valid = {
+		mission_completed = the_laws_guidance_repuborg
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {
+		max_absolutism = 10
+		global_missionary_strength = 0.01
+		tolerance_own = 1
+	}
+	on_granted = {
+	}
+	on_revoked = {
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+####OREGON PRIVLEDGES######
+
+accredited_wineries_privledge = {
+	icon = privilege_give_money
+	land_share = 10
+	influence = 0.1
+	max_absolutism = -5
+	is_valid = {
+		has_country_flag = unlock_da_cool_privledges_fo_oregon_flag
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	on_granted = {
+		custom_tooltip = unlocks_da_new_estate_decision_fo_our_nation
+		set_country_flag = can_enact_demand_winery_tribute_oregon
+		tooltip = {
+			add_years_of_owned_provinces_production_income = {
+				years = 10
+				trigger = {
+					trade_goods = wine
+				}
+				custom_tooltip = monay_from_wine_oregon
+			}
+		}
+	}
+	on_revoked = {
+		clr_country_flag = can_enact_demand_winery_tribute_oregon
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+subsidize_vinters_privledge = {
+	icon = privilege_give_money
+	land_share = 5
+	influence = 0.05
+	max_absolutism = -5
+	is_valid = {
+		has_country_flag = unlock_da_cool_privledges_fo_oregon_flag
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {	
+		global_tax_modifier = -0.1
+		global_trade_goods_size_modifier = 0.15
+	}
+	on_granted = {
+	}
+	on_revoked = {
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+fermentation_micromanagement_privledge = {
+	icon = privilege_give_money
+	land_share = 10
+	influence = 0.1
+	max_absolutism = -10
+	is_valid = {
+		has_country_flag = unlock_da_cool_privledges_fo_oregon_flag
+		mission_completed = purple_estates_oregon
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {	
+	}
+	on_granted = {
+		custom_trigger_tooltip = unlocks_the_pressure_vinters_descision_oregon
+		set_country_flag = can_enact_pressure_vinters_oregon
+		tooltip = {
+			if = {
+				limit = {
+					mission_completed = winelords_oregon
+				}
+				add_province_modifier = {
+					name = "gor_pressured_vinters_two_oregon"
+					duration = 1825
+				}
+			}
+			else = {
+				add_province_modifier = {
+					name = "gor_pressured_vinters_oregon"
+					duration = 1825
+				}
+			}
+		}
+	}
+	on_revoked = {
+		clr_country_flag = can_enact_pressure_vinters_oregon
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+####HIGHDESERT PRIVLEDGES######
+
+forever_service_contracts_privledge = {
+	icon = privilege_military_power
+	land_share = 10
+	influence = 0.1
+	is_valid = {
+		has_country_modifier = gor_service_titles_highdesert
+		mission_completed = placate_the_new_money_highdesert
+	}
+	can_select = {
+	}
+	penalties = {
+	}
+	benefits = {	
+	}
+	on_granted = {
+		custom_trigger_tooltip = unlocks_the_recall_veterans_highdesert_tt
+		tooltip = {
+			create_general = { tradition = 100 }
+			add_country_modifier = {
+				name = "gor_a_nation_at_war_highdesert"
+				duration = 1825
+			}
+		}
+		set_country_flag = unlocks_the_recall_veterans_highdesert
+	}
+	on_revoked = {
+		clr_country_flag = unlocks_the_recall_veterans_highdesert
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}

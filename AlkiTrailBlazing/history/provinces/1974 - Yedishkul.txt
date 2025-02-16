@@ -1,0 +1,19 @@
+#1974 - Yedishkul
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = U51
+controller = U51
+add_core = U51
+culture = oregonite
+religion = partisan
+hre = yes
+base_tax = 3
+base_production = 3
+center_of_trade = 1
+trade_goods = naval_supplies #Logging
+base_manpower = 3
+capital = "Bend"
+is_city = yes
+fort_15th = yes

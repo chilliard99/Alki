@@ -1,0 +1,1093 @@
+namespace = helens_events
+####################TACOMAN EVENTS##########################
+country_event = { #Intercounty Commerce
+	id = helens_events.1
+	title = helens_events.1.t
+	desc = helens_events.1.d
+	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = U56
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.1.a #Wonderful!
+		add_treasury = 250
+		add_country_modifier = {
+			name = "gor_union_commerce_helens"
+			duration = 7300
+		}
+	}
+	
+	after = {
+		clr_country_flag = first_nat_for_helens_miss
+	}
+}
+
+country_event = { #A Presidential Campaign?
+	id = helens_events.2
+	title = helens_events.2.t
+	desc = helens_events.2.d
+	picture = BURGHER_ESTATE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U56
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.2.a #Sounds like a plan!
+		custom_tooltip = will_get_campaign_events_while_not_president
+		add_country_modifier = {
+			name = "gor_presidential_campaign_helens"
+			duration = 5475
+		}
+		custom_tooltip = every_elector_gets_twenyfif_opinion
+		hidden_effect = {
+			every_elector = {
+				add_opinion = {
+					who = ROOT
+					modifier = gor_presidential_campaign_helens
+				}
+			}
+			set_country_flag = helens_get_campaign_events
+		}
+	}
+	
+	option = {
+		name = helens_events.2.b #A foolhearty affair.
+		add_dip_power = 50
+		define_advisor = {
+			type = statesman
+			skill = 2
+			cost_multiplier = 0.75
+		}
+	}
+}
+
+country_event = { #Campaign Season
+	id = helens_events.3
+	title = helens_events.3.t
+	desc = helens_events.3.d
+	picture = BURGHER_ESTATE_eventPicture
+	
+	trigger = {
+		has_country_flag = helens_get_campaign_events
+		tag = U56
+		NOT = { is_emperor = yes }
+		is_part_of_hre = yes
+	}
+	
+	mean_time_to_happen = {
+		years = 25
+	}
+	
+	option = {
+		name = helens_events.3.a #Back on the road.
+		add_country_modifier = {
+			name = "gor_presidential_campaign_helens"
+			duration = 5475
+		}
+		custom_tooltip = every_elector_gets_twenyfif_opinion
+		hidden_effect = {
+			every_elector = {
+				add_opinion = {
+					who = ROOT
+					modifier = gor_presidential_campaign_helens
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Hellenic Defeat
+	id = helens_events.4
+	title = helens_events.4.t
+	desc = helens_events.4.d
+	picture = BURGHER_ESTATE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.4.a #Horror!
+		if = {
+			limit = {
+				dip = 1
+			}
+			change_dip = -1
+		}
+		else = {
+			add_dip_power = -200
+		}
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -150
+		}
+	}
+}
+
+country_event = { #Renegotiating The Treaty of Seattle
+	id = helens_events.5
+	title = helens_events.5.t
+	desc = helens_events.5.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U56
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.5.a #Ask the President
+		trigger = {
+			NOT = { is_emperor = yes }
+		}
+		custom_tooltip = we_could_end_up_going_to_with_alaska
+		emperor = {
+			country_event = { 
+				id = helens_events.6
+				days = 5
+			}
+		}
+		
+	}
+	option = {
+		name = helens_events.5.b #Go it on our own
+		custom_tooltip = we_could_end_up_going_to_with_alaska
+		country_event = { 
+			id = helens_events.19
+			days = 1
+		}
+	}
+	option = {
+		name = helens_events.5.c #Let it be
+		add_prestige = 15
+	}
+}
+
+country_event = { #A Request from Hellens
+	id = helens_events.6
+	title = helens_events.6.t
+	desc = helens_events.6.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.6.a #It is time
+		custom_tooltip = we_could_end_up_going_to_with_alaska
+		country_event = { 
+			id = helens_events.8
+			days = 3
+		}
+		FROM = {
+			country_event = { 
+				id = helens_events.7
+				days = 5
+			}
+		}
+		ai_chance = { 
+			factor = 90
+			modifier = {
+				factor = 0
+				unrest = 10
+			}
+			modifier = {
+				factor = 0
+				NOT = { stability = 0 }
+			}
+		}
+	}
+	option = {
+		name = helens_events.6.b #Not now, not ever
+		add_prestige = -15
+		add_imperial_influence = -10
+		FROM = {
+			country_event = { 
+				id = helens_events.18
+				days = 5
+			}
+		}
+		ai_chance = { 
+			factor = 10
+
+		}
+	}
+}
+
+country_event = { #President Taking Over Talks
+	id = helens_events.7
+	title = helens_events.7.t
+	desc = helens_events.7.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U56
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.7.a #We hope for the best
+		custom_tooltip = should_negotiations_break_down_we_will_join_war_with_emperor
+	}
+}
+
+country_event = { #Strategy for Approaching Alaska
+	id = helens_events.8
+	title = helens_events.8.t
+	desc = helens_events.8.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.8.a #Demand a release of princes
+		custom_tooltip = alaska_release_text_nego
+		set_global_flag = union_alaska_release
+		W06 = {
+			country_event = { 
+				id = helens_events.9
+				days = 5
+			}
+		}
+	}
+	option = {
+		name = helens_events.8.b #Demand they give us the territory
+		custom_tooltip = alaska_annex_text_nego
+		set_global_flag = union_alaska_prez
+		W06 = {
+			country_event = { 
+				id = helens_events.10
+				days = 5
+			}
+		}
+	}
+	option = {
+		name = helens_events.8.c #Demand they give the territory to Helens
+		custom_tooltip = alaska_annex_text_helens
+		set_global_flag = union_alaska_helens
+		W06 = {
+			country_event = { 
+				id = helens_events.11
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { #Notice from The President
+	id = helens_events.9
+	title = helens_events.9.t
+	desc = helens_events.9.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W06
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.9.a #Accept
+		custom_tooltip = we_will_release_all_territories_in_wash
+		emperor = {
+			country_event = { 
+				id = helens_events.14
+				days = 5
+			}
+		}
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					capital_scope = {
+						region = washington_region
+					}
+				}
+				grant_independence = yes
+			}
+			release = U62
+			release = U63
+			release = U65
+			release = U60
+			every_owned_province = {
+				limit = {
+					region = washington_region
+				}
+				cede_province = U56
+				add_core = U56
+			}
+			U62 = {
+				change_religion = partisan
+			}
+			U63 = {
+				change_religion = partisan
+			}
+			U65 = {
+				change_religion = partisan
+			}
+			U60 = {
+				change_religion = partisan
+			}
+		}
+		ai_chance = { 
+			factor = 75 	
+		}
+	}
+	option = {
+		name = helens_events.9.b #Deny
+		custom_tooltip = we_will_get_declared_on_by_napa
+		emperor = {
+			country_event = { 
+				id = helens_events.12
+				days = 5
+			}
+		}
+		ai_chance = { 
+			factor = 25
+			modifier = {
+				factor = 0
+				NOT = { army_size = FROM }
+			}
+		}
+	}
+}
+
+country_event = { #Notice from The President
+	id = helens_events.10
+	title = helens_events.10.t
+	desc = helens_events.10.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W06
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.10.a #Accept
+		custom_tooltip = we_will_transfer_every_thing_to_prez
+		emperor = {
+			country_event = { 
+				id = helens_events.14
+				days = 5
+			}
+		}
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					region = washington_region
+				}
+				ROOT = {
+					inherit = PREV
+				}
+			}
+			every_owned_province = {
+				limit = {
+					region = washington_region
+				}
+				cede_province = FROM
+				add_core = FROM
+			}
+		}
+		ai_chance = { 
+			factor = 25
+		}
+	}
+	option = {
+		name = helens_events.10.b #Deny
+		custom_tooltip = we_will_get_declared_on_by_napa
+		emperor = {
+			country_event = { 
+				id = helens_events.12
+				days = 5
+			}
+		}
+		ai_chance = { 
+			factor = 75
+			modifier = {
+				factor = 0
+				NOT = { army_size = FROM }
+			}
+		}
+	}
+}
+
+country_event = { #Notice from The President
+	id = helens_events.11
+	title = helens_events.11.t
+	desc = helens_events.11.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W06
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.11.a #Accept
+		custom_tooltip = we_will_transfer_every_thing_to_helens
+		emperor = {
+			country_event = { 
+				id = helens_events.14
+				days = 5
+			}
+		}
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					capital_scope = {
+						region = washington_region
+					}
+				}
+				ROOT = {
+					inherit = PREV
+				}
+			}
+			every_owned_province = {
+				limit = {
+					region = washington_region
+				}
+				cede_province = U56
+				add_core = U56
+			}
+		}
+		ai_chance = { 
+			factor = 50
+		}
+	}
+	option = {
+		name = helens_events.11.b #Deny
+		custom_tooltip = we_will_get_declared_on_by_napa
+		emperor = {
+			country_event = { 
+				id = helens_events.12
+				days = 5
+			}
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = { army_size = FROM }
+			}
+		}
+	}
+}
+
+country_event = { #Advances Rejected
+	id = helens_events.12
+	title = helens_events.12.t
+	desc = helens_events.12.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.12.a #Well... to war!
+		declare_war = W06
+		U56 = {
+			country_event = { 
+				id = helens_events.13
+				days = 1
+			}
+		}
+	}
+	
+	after = {
+		clr_global_flag = union_alaska_release
+		clr_global_flag = union_alaska_prez
+		clr_global_flag = union_alaska_helens
+	}
+}
+
+country_event = { #Advances Rejected
+	id = helens_events.13
+	title = helens_events.13.t
+	desc = helens_events.13.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U56
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.13.a #Well... to war!
+		join_all_offensive_wars_of = FROM
+	}
+	
+}
+
+country_event = { #Cool Heads Prevail
+	id = helens_events.14
+	title = helens_events.14.t
+	desc = helens_events.14.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.14.a #Wonderous!
+		add_imperial_influence = 10
+		if = {
+			limit = {
+				has_global_flag = union_alaska_release
+			}
+			U56 = {
+				country_event = { 
+					id = helens_events.15
+					days = 5
+				}
+			}
+			
+		}
+		else_if = {
+			limit = {
+				has_global_flag = union_alaska_prez
+			}
+			U56 = {
+				country_event = { 
+					id = helens_events.16
+					days = 5
+				}
+			}
+		}
+		else = {
+			U56 = {
+				country_event = { 
+					id = helens_events.17
+					days = 5
+				}
+			}
+		}
+	}
+	
+	after = {
+		clr_global_flag = union_alaska_release
+		clr_global_flag = union_alaska_prez
+		clr_global_flag = union_alaska_helens
+	}
+}
+
+country_event = { #Washingtonian Indpendence
+	id = helens_events.15
+	title = helens_events.15.t
+	desc = helens_events.15.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U56
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.15.a #Freedom for Washington!
+		add_prestige = 10
+	}
+}
+
+country_event = { #Presidental Betrayl
+	id = helens_events.16
+	title = helens_events.16.t
+	desc = helens_events.16.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U56
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.16.a #How could they do this to us?!
+		add_prestige = -10
+	}
+}
+
+country_event = { #Our Washington
+	id = helens_events.17
+	title = helens_events.17.t
+	desc = helens_events.17.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U56
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.17.a #Victory at last.
+		if = {
+			limit = {
+				adm = 6
+			}
+			add_adm_power = 300
+		}
+		else {
+			change_adm = 1
+		}
+	}
+}
+
+country_event = { #Presidential Rejection
+	id = helens_events.18
+	title = helens_events.18.t
+	desc = helens_events.18.d
+	picture = BURGHER_ESTATE_UPSET_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U56
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.18.a #Go ahead alone
+		country_event = { 
+			id = helens_events.19
+			days = 5
+		}
+	}
+	option = {
+		name = helens_events.18.b #Not our job.
+		add_prestige = -5
+		add_legitimacy = -5
+	}
+}
+
+country_event = { #Strategy for Approaching Alaska
+	id = helens_events.19
+	title = helens_events.19.t
+	desc = helens_events.19.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U56
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.19.a #Demand a release of princes
+		custom_tooltip = alaska_release_text_nego
+		set_global_flag = union_alaska_release
+		W06 = {
+			country_event = { 
+				id = helens_events.20
+				days = 5
+			}
+		}
+	}
+	option = {
+		name = helens_events.19.b #Demand they give us the territory
+		custom_tooltip = alaska_annex_text_nego
+		set_global_flag = union_alaska_helens
+		W06 = {
+			country_event = { 
+				id = helens_events.21
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { #Notice from A Lowly Count
+	id = helens_events.20
+	title = helens_events.20.t
+	desc = helens_events.20.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W06
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.20.a #Accept
+		custom_tooltip = we_will_transfer_every_thing_to_helens
+		FROM = {
+			country_event = { 
+				id = helens_events.23
+				days = 5
+			}
+		}
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					capital_scope = {
+						region = washington_region
+					}					
+				}
+				ROOT = {
+					inherit = PREV
+				}
+			}
+			every_owned_province = {
+				limit = {
+					region = washington_region
+				}
+				cede_province = U56
+				add_core = U56
+			}
+		}
+		ai_chance = { 
+			factor = 25
+		}
+	}
+	option = {
+		name = helens_events.20.b #Deny
+		custom_tooltip = we_will_get_declared_on_by_helens
+		FROM = {
+			country_event = { 
+				id = helens_events.22
+				days = 5
+			}
+		}
+		ai_chance = { 
+			factor = 75
+			modifier = {
+				factor = 0
+				NOT = { army_size = FROM }
+			}
+		}
+	}
+}
+
+country_event = { #Notice from A Lowly Count
+	id = helens_events.21
+	title = helens_events.21.t
+	desc = helens_events.21.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W06
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.21.a #Accept
+		custom_tooltip = we_will_release_all_territories_in_wash
+		FROM = {
+			country_event = { 
+				id = helens_events.23
+				days = 5
+			}
+		}
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					capital_scope = {
+						region = washington_region
+					}
+				}
+				grant_independence = yes
+			}
+			release = U62
+			release = U63
+			release = U65
+			release = U60
+			every_owned_province = {
+				limit = {
+					region = washington_region
+				}
+				cede_province = U56
+				add_core = U56
+			}
+			U62 = {
+				change_religion = partisan
+			}
+			U63 = {
+				change_religion = partisan
+			}
+			U65 = {
+				change_religion = partisan
+			}
+			U60 = {
+				change_religion = partisan
+			}
+		}
+		ai_chance = { 
+			factor = 50 	
+		}
+	}
+	option = {
+		name = helens_events.21.b #Deny
+		custom_tooltip = we_will_get_declared_on_by_helens
+		FROM = {
+			country_event = { 
+				id = helens_events.22
+				days = 5
+			}
+		}
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = { army_size = FROM }
+			}
+		}
+	}
+}
+
+country_event = { #Advances Rejected
+	id = helens_events.22
+	title = helens_events.22.t
+	desc = helens_events.22.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U56
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.22.a #Well... to war!
+		declare_war = W06
+		emperor = {
+			country_event = { 
+				id = helens_events.24
+				days = 1
+			}
+		}
+	}
+	
+	after = {
+		clr_global_flag = union_alaska_release
+		clr_global_flag = union_alaska_prez
+		clr_global_flag = union_alaska_helens
+	}
+}
+
+country_event = { #Alaskan Victory
+	id = helens_events.23
+	title = helens_events.23.t
+	desc = helens_events.23.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U56
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.23.a #Victory, at last!
+		add_prestige = 10
+		if = {
+			limit = {
+				has_global_flag = union_alaska_release
+			}
+			emperor = {
+				country_event = { 
+					id = helens_events.25
+					days = 1
+				}
+			}
+		}
+		else = { 
+			emperor = {
+				country_event = { 
+					id = helens_events.26
+					days = 1
+				}
+			}
+		}
+	}
+	
+	after = {
+		clr_global_flag = union_alaska_release
+		clr_global_flag = union_alaska_prez
+		clr_global_flag = union_alaska_helens
+	}
+}
+
+country_event = { #A Mess up North
+	id = helens_events.24
+	title = helens_events.24.t
+	desc = helens_events.24.d
+	picture = BATTLE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.24.a #Well, we wish them the best of luck
+		add_imperial_influence = 5
+	}
+}
+
+country_event = { #Treaty of Seattle Resolved
+	id = helens_events.25
+	title = helens_events.25.t
+	desc = helens_events.25.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.25.a #One les problem
+		add_imperial_influence = 15
+	}
+}
+
+country_event = { #Hellenic Power Play
+	id = helens_events.26
+	title = helens_events.26.t
+	desc = helens_events.26.d
+	picture = CONQUEST_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = helens_events.26.a #Good for them
+		add_imperial_influence = 10
+	}
+}

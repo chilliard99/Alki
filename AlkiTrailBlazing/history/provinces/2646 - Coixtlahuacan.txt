@@ -1,0 +1,16 @@
+# No previous file for Coixtlahuacan
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W85
+controller = W85
+add_core = W85
+culture = oaxacan
+is_city = yes
+religion = catholico
+capital = "Coixtlahuacan"
+trade_goods = cotton #thats what it says
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1

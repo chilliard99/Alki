@@ -1,0 +1,18 @@
+#151 - Constantinople
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X50
+controller = X50
+add_core = X50
+culture = outer_banksian
+religion = evangelical
+capital = "Constantinople"
+trade_goods = cotton #cotton belt
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 4
+is_city = yes

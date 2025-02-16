@@ -1,0 +1,18 @@
+#2056 - Rewa Kantha
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y39
+controller = Y39
+add_core = Y39
+add_core = U71
+culture = flathead
+religion = theanite
+capital = "Pullman"
+trade_goods = grain #barley, wheat, peas
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 2
+is_city = yes

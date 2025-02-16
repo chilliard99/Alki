@@ -1,0 +1,17 @@
+#1140 - Abomey
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = U45
+controller = U45
+add_core = U45
+is_city = yes
+culture = gambler
+religion = partisan
+capital = "Setúbal"
+trade_goods = salt #Thats what they made back in the day, of course it was sea salt but now its espanish salt
+hre = yes
+base_tax = 4
+base_production = 4
+base_manpower = 4 

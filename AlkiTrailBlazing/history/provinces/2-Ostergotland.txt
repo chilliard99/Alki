@@ -1,0 +1,17 @@
+#Östergötland, contains Norrköping, Linköping etc.
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+culture = miamian
+religion = zahran
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = sugar #the eaa
+base_manpower = 1
+is_city = yes 
+add_core = X06
+owner = X06
+controller = X06
+discovered_by = eastern

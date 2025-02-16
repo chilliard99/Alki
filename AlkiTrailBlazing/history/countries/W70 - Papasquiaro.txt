@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = durangan
+religion = catholico
+technology_group = muslim
+capital = 4648	#Santiago Papasquiaro
+
+1444.1.1 = { set_country_flag = a_super_cool_company }
+1418.2.12 = {
+	monarch = {
+		name = "Carlos III"
+		dynasty = "Revueltas"
+		birth_date = 1418.2.12
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}
+1436.3.23 = {
+	heir = {
+		name = "Fermin"
+		monarch_name = "Fermin"
+		dynasty = "Revueltas"
+		birth_date = 1436.3.23
+		death_date = 1483.8.30
+		claim = 95
+		adm = 5
+		dip = 5
+		mil = 1
+	}
+}

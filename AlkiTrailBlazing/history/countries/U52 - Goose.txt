@@ -1,0 +1,41 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = shastan
+religion = partisan
+technology_group = western
+capital = 4493	 #Lakeview
+religious_school = progressive_party
+set_country_flag = conservative_caucus
+
+1439.6.13 = {
+	monarch = {
+		name = "Stephen"
+		dynasty = "Crook"
+		birth_date = 1413.9.23
+		adm = 2
+		dip = 6
+		mil = 2
+	}
+	queen = {
+		name = "Liz"            
+		dynasty = "Crook"        
+		birth_date = 1418.4.28         
+		death_date = 1500.1.1
+		adm = 3                 
+		dip = 3                
+		mil = 3
+		female = yes                
+	}
+	heir = {
+		name = "Warner"
+		monarch_name = "Warner"
+		dynasty = "Crook"
+		birth_date = 1438.1.26
+		death_date = 1500.1.1
+		claim = 25
+		adm = 3
+		dip = 4
+		mil = 4
+	}
+}
