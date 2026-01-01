@@ -1,0 +1,743 @@
+# default options are 0-based
+# In console, can use imperial_incident [key] to immediately begin an incident
+
+incident_burgundian_succ_emp = {
+    event = incidents_bur_inheritance.2
+	default_option = 0
+	
+	can_stop = {
+		NOT = {
+		}
+	}
+
+	0 = {
+		factor = 1
+	}
+	
+	1 = {
+		factor = 1
+	}
+	
+	2 = {
+		factor = 1
+	}
+}
+
+incident_burgundian_succ_strong_ally = {
+	event = incidents_bur_inheritance.3
+	default_option = 0
+	
+	can_stop = {
+		NOT = {
+		}
+	}
+	
+	0 = {
+		factor = 1
+	}
+	
+	1 = {
+		factor = 1
+	}
+	
+	2 = {
+		factor = 1
+	}
+}
+
+incident_burgundian_succ_alone = {
+	event = incidents_bur_inheritance.4
+	default_option = 0
+	
+	can_stop = {
+		NOT = {
+		}
+	}
+	
+	0 = {
+		factor = 1
+	}
+	
+	1 = {
+		factor = 1
+	}
+	
+	2 = {
+		factor = 1
+	}
+}
+
+incident_burgundy_wants_to_join = {
+	event = incidents_bur_join_empire.2
+	default_option = 1
+	
+	can_stop = {
+		OR = {
+			NOT = {
+			}
+			always = no
+		}
+	}
+	
+	0 = { # burgundy joins
+		factor = 1
+		modifier = {
+			factor = 100
+			OR = {
+				
+			}
+		}
+	}
+	
+	1 = { # burgundy denied
+		factor = 1
+		modifier = {
+			factor = 100
+			
+		}
+		modifier = {
+			factor = 100
+			always = no
+		}
+	}
+}
+
+incident_teutonic_order_wants_to_join = {
+    event = flavor_teu.43
+	default_option = 2
+	
+	can_stop = {
+		OR = {
+			NOT = {
+			}
+			always = no
+		}
+	}
+	
+	0 = { # Allow them to get into the Empire without issue
+		factor = 1
+		modifier = {
+			factor = 2
+			always = no
+		}
+		
+		modifier = {
+			factor = 0
+			always = no
+		}
+		
+		modifier = {
+			factor = 2
+			always = no
+		}
+		modifier = {
+			factor = 3
+			always = no
+		}
+		modifier = {
+			factor = 3
+			always = no
+		}
+		modifier = {
+			factor = 3
+			always = no
+		}
+		
+		modifier = {
+			factor = 0
+			always = no
+		}
+	}
+	
+	1 = { # Allow them into the Empire under heavy restrictions
+		factor = 5
+		
+		modifier = {
+			factor = 0.5
+			always = no
+		}
+		
+	}
+	
+	2 = { # Deny them completely
+		factor = 1
+		modifier = {
+			factor = 2
+			OR = {
+				always = no
+			}
+		}
+		
+		modifier = {
+			factor = 2
+			always = no
+		}
+		
+		modifier = {
+			factor = 10
+			always = no
+		}
+	}
+}
+
+incident_king_in_prussia = {
+    event = king_in_prussia.2
+	default_option = 1
+	
+	can_stop = {
+		OR = {
+			NOT = {
+			}
+			always = no
+		}
+	}
+	
+	0 = { # grant
+		factor = 1
+		modifier = {
+			factor = 100
+			OR = {
+				always = no
+			}
+		}
+	}
+	
+	1 = { # compromise
+		factor = 1
+		modifier = {
+			factor = 100
+			always = no
+		}
+	}
+	
+	2 = { # deny
+		factor = 1
+		modifier = {
+			factor = 100
+			OR = {
+				always = no
+			}
+		}
+	}
+}
+
+incident_pu_subject_joins_empire = {
+	event = incident_generic.2
+	default_option = 0
+	
+	can_stop = {
+		OR = {
+			NOT = {
+				any_country = {
+					has_country_flag = current_pu_incident_target_flag
+				}
+			}
+			any_country = {
+				has_country_flag = current_pu_incident_target_flag
+				OR = {
+					is_subject = no
+					overlord = {
+						is_part_of_hre = no
+					}
+				}
+			}
+		}
+	}
+	
+	0 = { # join
+		factor = 1
+		modifier = {
+			factor = 1000
+			any_subject_country = {
+				has_country_flag = current_pu_incident_target_flag
+			}
+		}
+	}
+	
+	1 = { # denied
+		factor = 1
+	}
+}
+
+incident_great_peasants_war = {
+	event = great_peasant_war.3
+	default_option = 0
+	
+	can_stop = {
+		always = no
+	}
+	
+	0 = { # crush peasants
+		factor = 1
+		modifier = {
+			factor = 10
+			estate_influence = {
+				estate = estate_nobles
+				influence = 60
+			}
+		}
+	}
+	
+	1 = { # concessions
+		factor = 1
+		modifier = {
+			factor = 1000
+			has_government_attribute = is_peasants_republic
+		}
+		modifier = {
+			factor = 10
+			NOT = {
+				estate_influence = {
+					estate = estate_nobles
+					influence = 40
+				}
+			}
+		}
+		modifier = {
+			factor = 10
+			religion = reformed
+		}
+	}
+}
+
+incident_hansa = {
+	event = hansa_incident.2
+	default_option = 0
+	
+	can_stop = {
+		OR = {
+			NOT = {  }
+			always = no
+		}
+	}
+	
+	0 = { # do nothing
+		factor = 1
+		modifier = {
+			factor = 100
+			OR = {
+				always = no
+			}
+		}
+	}
+	
+	1 = { # make free cities join
+		factor = 1
+		modifier = {
+			factor = 100
+			OR = {
+				always = no
+			}
+		}
+	}
+	
+	2 = { # embargo
+		factor = 1
+		modifier = {
+			factor = 100
+			always = no
+		}
+	}
+}
+
+incident_pope = {
+	event = incident_pope.2
+	default_option = 0
+	
+	can_stop = {
+		OR = {
+			NOT = {
+				exists = PAP
+			}
+			PAP = { is_subject = yes }
+		}
+	}
+	
+	0 = { # pope joins
+		factor = 1
+		modifier = {
+			factor = 100
+			OR = {
+				ai_attitude = {
+					who = PAP
+					attitude = attitude_friendly
+				}
+				ai_attitude = {
+					who = PAP
+					attitude = attitude_loyal
+				}
+				ai_attitude = {
+					who = PAP
+					attitude = attitude_allied
+				}
+			}
+		}
+	}
+	
+	1 = { # denied
+		factor = 1
+		modifier = {
+			factor = 100
+			OR = {
+				ai_attitude = {
+					who = PAP
+					attitude = attitude_rivalry
+				}
+				ai_attitude = {
+					who = PAP
+					attitude = attitude_hostile
+				}
+				ai_attitude = {
+					who = PAP
+					attitude = attitude_threatened
+				}
+				ai_attitude = {
+					who = PAP
+					attitude = attitude_outraged
+				}
+				ai_attitude = {
+					who = PAP
+					attitude = attitude_disloyal
+				}
+				ai_attitude = {
+					who = PAP
+					attitude = attitude_rebellious
+				}
+			}
+		}
+		modifier = {
+			factor = 50
+			OR = {
+				is_excommunicated = yes
+				NOT = { religion = catholic }
+			}
+		}
+	}
+}
+
+incident_holstein = {
+	event = holstein.1
+	default_option = 0
+	
+	can_stop = {
+		OR = {
+			1775 = {
+				owner = {
+					is_part_of_hre = yes
+				}
+			}
+		}
+	}
+	
+	0 = {
+		factor = 1
+		modifier = {
+			factor = 100
+			1775 = {
+				owner = {
+					OR = {
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_rivalry
+						}
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_hostile
+						}
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_threatened
+						}
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_outraged
+						}
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_disloyal
+						}
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_rebellious
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	1 = {
+		factor = 1
+		modifier = {
+			factor = 100
+			1775 = {
+				owner = {
+					OR = {
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_friendly
+						}
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_loyal
+						}
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_allied
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+incident_shadow_kingdom = {
+	event = shadow_kingdom.2
+	default_option = 0
+	
+	can_stop = {
+		always = no
+	}
+	
+	0 = { # give up
+		factor = 2
+		modifier = {
+			factor = 5
+			capital_scope = {
+				region = italy_region
+			}
+		}
+	}
+	
+	1 = { # rein in
+		factor = 1
+	}
+}
+
+incident_switzerland = {
+	event = incident_switzerland.2
+	default_option = 0
+	
+	can_stop = {
+		OR = {
+			NOT = {  }
+			always = no
+			
+		}
+	}
+	
+	0 = { # swi leaves peacefully
+		factor = 2
+		modifier = {
+			factor = 100
+			always = no
+		}
+	}
+	
+	1 = { # emperor attacks
+		factor = 1
+		modifier = {
+			factor = 100
+			always = no
+		}
+	}
+}
+
+incident_dutch_revolt = {
+	event = dutch_revolt.2
+	default_option = 1
+	
+	can_stop = {
+		OR = {
+			NOT = {
+			}
+			emperor = {
+				
+			}
+		}
+	}
+	
+	0 = { # back NED
+		factor = 1
+		modifier = {
+			factor = 100
+			always = no
+		}
+	}
+	1 = { # nonintervention
+		factor = 1
+		modifier = {
+			factor = 100
+		}
+	}
+	2 = { # back overlord
+		factor = 1
+		modifier = {
+			factor = 100
+			always = no
+		}
+	}
+}
+
+incident_hungary_mission = {
+	event = new_flavour_hun.201
+	default_option = 0
+	
+	can_stop = {
+		NOT = {
+			any_country = {
+				has_country_flag = hungary_flag_incident
+			}
+		}
+	}
+	
+	0 = { # hungary joins
+		factor = 1
+		modifier = {
+			factor = 100
+			always = no
+		}
+	}
+	
+	1 = { # denied
+		factor = 1
+		modifier = {
+			factor = 100
+			always = no
+		}
+	}
+}
+
+incident_reformer_dissension = {
+	event = reformer_dissension.1
+	default_option = 1
+	
+	can_stop = {
+		always = no
+	}
+	
+	0 = { # stay protestant
+		factor = 1
+		modifier = {
+			factor = 50
+			religion = protestant
+		}
+	}
+	
+	1 = { # religion treaty
+		factor = 1
+		modifier = {
+			factor = 50
+			OR = {
+				religion = catholic
+				has_idea_group = humanist_ideas
+			}
+		}
+	}
+	
+	2 = { # change hre religion to reformed
+		factor = 1
+		modifier = {
+			factor = 100
+			religion = reformed
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				religion = reformed
+			}
+		}
+	}
+}
+
+incident_hussite_protest = {
+	event = hussite_protest.1
+	default_option = 1
+	
+	can_stop = {
+		always = no
+	}
+	
+	0 = { # stay protestant
+		factor = 1
+		modifier = {
+			factor = 50
+			religion = protestant
+		}
+	}
+	
+	1 = { # religion treaty
+		factor = 1
+		modifier = {
+			factor = 50
+			OR = {
+				religion = catholic
+				religion = reformed
+				has_idea_group = humanist_ideas
+			}
+		}
+	}
+	
+	2 = { # change hre religion to hussite
+		factor = 1
+		modifier = {
+			factor = 100
+			religion = hussite
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				religion = hussite
+			}
+		}
+	}
+}
+
+incident_universal_empire = {
+	event = universal_empire.1
+	default_option = 1
+	
+	can_stop = {
+		always = no
+	}
+
+	0 = { # Split Habsburg Realm up
+		factor = 1
+		modifier = {
+			factor = 100
+			is_subject_of = REB
+		}
+		modifier = {
+			factor = 15
+			alliance_with = REB
+		}
+		modifier = {
+			factor = 10
+		}
+		modifier = {
+			factor = 3
+			religion = REB
+		}
+	}
+	
+	1 = { # Keep Habsburg Realm United
+		factor = 2
+		modifier = {
+			factor = 1000
+			OR = {
+				is_rival = REB
+				is_enemy = REB
+			}
+		}
+		modifier = {
+			factor = 50
+			NOT = {
+			}
+		}
+		modifier = {
+			factor = 20
+			is_elector = yes
+		}
+	}
+}

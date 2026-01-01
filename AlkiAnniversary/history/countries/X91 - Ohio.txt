@@ -1,0 +1,33 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+primary_culture = buckeye
+religion = islam
+technology_group = eastern
+historical_friend = W58
+capital = 948	#Columbus
+
+1423.11.11 = {
+	monarch = {
+		name = "Usman II"
+		dynasty = "Ibrahim"
+		birth_date = 1423.11.11
+		adm = 4
+		dip = 4
+		mil = 6
+	}
+	set_ruler_flag = usman_the_second
+}
+1442.2.3 = {
+	heir = {
+		name = "Hamza"
+		monarch_name = "Hamza"
+		dynasty = "Ibrahim"
+		birth_date = 1442.2.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 5
+		mil = 6
+	}
+}

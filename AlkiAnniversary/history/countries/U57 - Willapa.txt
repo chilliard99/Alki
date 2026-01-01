@@ -1,0 +1,20 @@
+government = republic
+add_government_reform = free_city
+government_rank = 1
+primary_culture = columbian_washingtonian
+religion = partisan
+technology_group = western
+capital = 2046	 #Wahkiakum
+religious_school = progressive_party
+set_country_flag = conservative_caucus
+
+1433.1.30 = {
+	monarch = {
+		name = "Raymond"
+		dynasty = "Wells"
+		birth_date = 1398.10.15
+		adm = 1
+		dip = 4
+		mil = 1
+	}
+}

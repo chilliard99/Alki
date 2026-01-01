@@ -1,0 +1,15 @@
+#126 - Malta
+discovered_by = chinese
+owner = X16
+controller = X16
+add_core = X16
+culture = neoainu 
+religion = neoshinto 
+hre = no 
+base_tax = 1
+base_production = 1
+trade_goods = gold #Konomai
+base_manpower = 1
+capital = "Mdina" 
+is_city = yes
+discovered_by = eastern

@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = durangan
+religion = catholico
+technology_group = muslim
+capital = 2749	#Santiaguillo
+
+1444.1.1 = { set_country_flag = a_super_cool_company }
+1396.8.4 = {
+	monarch = {
+		name = "Jorge XI"
+		dynasty = "Ebrard"
+		birth_date = 1396.8.4
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1419.3.3 = {
+	heir = {
+		name = "Santiaguillo III"
+		monarch_name = "Santiaguillo III"
+		dynasty = "Ebrard"
+		birth_date = 1419.3.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 1
+		mil = 4
+	}
+}

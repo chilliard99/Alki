@@ -1,0 +1,8 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+primary_culture = carolinian
+religion = evangelical
+technology_group = eastern
+capital = 143	# Charlotte
+

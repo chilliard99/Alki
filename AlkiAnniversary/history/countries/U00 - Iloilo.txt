@@ -1,0 +1,35 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = neofilipino
+religion = espiritismo  
+technology_group = indian 
+capital = 4362	#Iloilo
+unlock_cult = candomble_denom
+unlock_cult = anitism_denom
+unlock_cult = umbanda_denom
+set_country_flag = has_a_cult_unlocked
+ 
+1398.9.15 = {
+	monarch = {
+		name = "Miguel II"
+		dynasty = "Panay"
+		birth_date = 1398.9.15
+		adm = 5
+		dip = 4
+		mil = 5
+	}
+}
+1419.5.11 = {
+	heir = {
+		name = "Felipe"
+		monarch_name = "Felipe"
+		dynasty = "Panay"
+		birth_date = 1419.5.11
+		death_date = 1483.8.30
+		claim = 95
+		adm = 5
+		dip = 5
+		mil = 5
+	}
+}

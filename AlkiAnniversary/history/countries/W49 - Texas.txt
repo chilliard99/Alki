@@ -1,0 +1,56 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 3
+primary_culture = houstonite
+religion = catholico
+technology_group = muslim
+capital = 2685	 #Houston
+
+
+1423.5.15 = {
+	monarch = {
+		name = "Antonio"
+		dynasty = "Galveston"
+		birth_date = 1423.5.15
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
+1444.11.11 = {
+	every_owned_province = { 
+		add_province_modifier = {
+			name = "poor_bureaucracy"
+			duration = -1
+		}
+	}
+	add_country_modifier = {
+		name = "disorganized_tradeI"
+		duration = -1
+	}
+	add_country_modifier = {
+		name = "ineffective_economy"
+		duration = -1
+	}
+	add_country_modifier = {
+		name = "disloyal_forcesI"
+		duration = -1
+	}
+	add_country_modifier = {
+		name = "tenuous_reputationI"
+		duration = -1
+	}
+	add_country_modifier = {
+		name = "total_corruption"
+		duration = -1
+	}
+	add_country_modifier = {
+		name = "creatively_bankruptI"
+		duration = -1
+	}
+	every_owned_province = { 
+		kill_units = {
+			who = owner
+		}
+	}
+}

@@ -1,0 +1,15 @@
+#855 - Huichol
+discovered_by = ottoman
+discovered_by = muslim
+owner = W69 
+controller = W69
+add_core = W69
+culture = durangan
+religion = catholico
+capital = "Huichol" 
+trade_goods = livestock #cows i guess 
+hre = no 
+base_tax = 2
+base_production = 1
+base_manpower = 2
+is_city = yes

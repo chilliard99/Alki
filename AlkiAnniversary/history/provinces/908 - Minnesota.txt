@@ -1,0 +1,18 @@
+#908 - Minnesota
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y04
+controller = Y04
+add_core = Y04
+culture = sotan
+religion = dynastic
+capital = "Dakota"
+trade_goods = iron #Cuyuna Ranges
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 2
+is_city = yes
+discovered_by = western

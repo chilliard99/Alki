@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = panucoan
+religion = catholico
+technology_group = muslim
+capital = 2791	#Tampico
+
+1444.1.1 = { set_country_flag = a_super_cool_company }
+1421.4.19 = {
+	monarch = {
+		name = "Jesus III"
+		dynasty = "Rockefeller"
+		birth_date = 1421.4.19
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1442.1.7 = {
+	heir = {
+		name = "Antonio"
+		monarch_name = "Antonio IV"
+		dynasty = "Rockefeller"
+		birth_date = 1442.1.7
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 1
+		mil = 0
+	}
+}

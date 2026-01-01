@@ -1,0 +1,14 @@
+#818 - Canelos
+discovered_by = indian
+owner = V97
+controller = V97
+add_core = V97
+culture = ecuadorian
+religion = catholico
+capital = "Canelos"
+trade_goods = cocoa #large cocoa production in this province
+hre = no
+base_tax = 2 
+base_production = 1
+base_manpower = 1
+is_city = yes

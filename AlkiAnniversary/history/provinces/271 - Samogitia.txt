@@ -1,0 +1,19 @@
+#271 - Samogitia
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+owner = X67
+controller = X67
+add_core = X67
+culture = hudsonian
+religion = dynastic
+capital = "Varniai"
+trade_goods = iron #labrador trough
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes
+add_core = X81
+fort_15th = yes
+center_of_trade = 1

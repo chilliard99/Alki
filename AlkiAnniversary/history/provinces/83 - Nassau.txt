@@ -1,0 +1,14 @@
+owner = X16
+controller = X16
+add_core = X16
+capital = "Wiesbaden"
+trade_goods = gems #jadeite mine
+hre = no
+culture = niigatan
+religion = neoshinto
+base_tax = 3 
+base_production = 3
+base_manpower = 3
+is_city = yes
+discovered_by = chinese
+discovered_by = eastern

@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = vannian
+religion = dynastic
+technology_group = eastern
+capital = 960	# Syracuse
+
+1409.6.22 = {
+	monarch = {
+		name = "Olivia"
+		dynasty = "Smith"
+		birth_date = 1409.6.22
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+}
+1432.2.3 = {
+	heir = {
+		name = "Oliver"
+		monarch_name = "Oliver III" 
+		dynasty = "Smith"
+		birth_date = 1432.2.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}

@@ -1,0 +1,15 @@
+#113 - Ferrara
+discovered_by = chinese
+owner = X18
+controller = X18
+add_core = X18
+culture = sendai 
+religion = neoshinto 
+hre = no 
+base_tax = 4
+base_production = 4 
+trade_goods = grain #rice farms 
+base_manpower = 3
+capital = "Ferrara" 
+is_city = yes
+discovered_by = eastern

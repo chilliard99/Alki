@@ -1,0 +1,15 @@
+# 2192 - Korla
+discovered_by = eastern
+discovered_by = western
+owner = W01
+controller = W01
+add_core = W01
+culture = niitsitapi
+religion = theanite
+capital = "Korla"
+trade_goods = livestock #idk bruh
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 2
+is_city = yes

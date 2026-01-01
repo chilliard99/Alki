@@ -1,0 +1,14 @@
+# 2271 - Azawagh
+discovered_by = mesoamerican
+is_city = no
+culture = neogur
+religion = shamanist 
+capital = "Menaka"
+trade_goods = unknown
+hre = no
+base_tax = 1 
+base_production = 1
+native_size = 5
+native_ferocity = 2
+native_hostileness = 1
+base_manpower = 1

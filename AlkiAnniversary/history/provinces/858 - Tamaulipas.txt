@@ -1,0 +1,15 @@
+#858 - Tamaulipas
+discovered_by = ottoman
+discovered_by = muslim
+owner = W59
+controller = W59
+add_core = W59
+culture = tamper
+is_city = yes
+religion = catholico
+capital = "Tamaulipas"
+trade_goods = paper #amazin more developed land
+hre = no
+base_tax = 5
+base_production = 3
+base_manpower = 5

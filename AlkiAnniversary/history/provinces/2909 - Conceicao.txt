@@ -1,0 +1,14 @@
+# - Conceicao
+discovered_by = indian
+owner = U01
+controller = U01
+add_core = U01
+culture = neofilipino
+religion = espiritismo
+capital = "Conceicao"
+trade_goods = grain #bananas
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 2
+is_city = yes

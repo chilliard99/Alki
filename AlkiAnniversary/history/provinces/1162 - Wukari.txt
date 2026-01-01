@@ -1,0 +1,17 @@
+#1162 - Wukari
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = U49
+controller = U49
+add_core = U49
+culture = stanislaus
+religion = partisan
+capital = "Truckee" #part of nevada county, but don't get all technical on me
+trade_goods = gold #more gold in the motherload
+hre = yes
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

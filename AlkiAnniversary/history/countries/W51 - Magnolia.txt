@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = sippian
+religion = catholico
+technology_group = muslim
+capital = 2530	 #Biloxi
+
+
+1416.12.12 = {
+	monarch = {
+		name = "Clark"
+		dynasty = "Mississippi"
+		birth_date = 1416.12.12
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1441.10.12 = {
+	heir = {
+		name = "Delbert"
+		monarch_name = "Delbert II"
+		dynasty = "Mississippi"
+		birth_date = 1441.10.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 3
+		mil = 3
+	}
+}

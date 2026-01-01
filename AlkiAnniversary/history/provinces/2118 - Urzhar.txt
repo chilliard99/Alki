@@ -1,0 +1,15 @@
+# 2118 - Urzhar
+discovered_by = eastern
+discovered_by = western
+add_core = Y31
+owner = Y31
+controller = Y31
+culture = niitsitapi
+religion = theanite
+capital = "Urzhar"
+trade_goods = fur #no fucking idea where this is
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

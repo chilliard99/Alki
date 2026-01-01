@@ -1,0 +1,20 @@
+#956 - Lenape
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+
+owner = X63
+controller = X63
+add_core = X63
+is_city = yes
+culture = vannian
+religion = dynastic
+capital = "Lenape"
+trade_goods = iron #In the hills
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 3
+center_of_trade = 1

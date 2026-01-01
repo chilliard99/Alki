@@ -1,0 +1,15 @@
+#2336 - Aflaj
+discovered_by = western
+discovered_by = eastern 
+owner = W09
+controller = W09
+add_core = W09
+culture = northern_salishan
+religion = collectivist
+capital = "Aflaj"
+trade_goods = gold #atlin gold mining 
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

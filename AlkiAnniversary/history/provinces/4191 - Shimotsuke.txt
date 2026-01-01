@@ -1,0 +1,15 @@
+#4191 - Shimotsuke
+discovered_by = chinese
+owner = X31
+controller = X31
+add_core = X31
+culture = sendai
+religion = neoshinto
+capital = "Utsunomiya"
+trade_goods = copper #Ashio Copper Mine
+hre = no
+base_tax = 2
+base_manpower = 2
+base_production = 2
+is_city = yes
+discovered_by = eastern

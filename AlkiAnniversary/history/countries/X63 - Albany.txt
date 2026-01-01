@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = vannian
+religion = dynastic
+technology_group = eastern
+capital = 188	# Albany
+
+1395.4.15 = {
+	monarch = {
+		name = "Connor"
+		dynasty = "Snyder"
+		birth_date = 1395.4.15
+		adm = 3
+		dip = 3
+		mil = 1
+	}
+}
+1433.1.22 = {
+	heir = {
+		name = "Jayden"
+		monarch_name = "Jayden III"
+		dynasty = "Snyder"
+		birth_date = 1433.1.22
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}

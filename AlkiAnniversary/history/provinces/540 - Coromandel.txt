@@ -1,0 +1,14 @@
+#540 - Coromandel 
+discovered_by = south_american
+culture = neodravidian
+religion = idolatrous
+capital = "Kuddaluru"
+trade_goods = unknown
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 3
+native_size = 2
+native_ferocity = 8
+native_hostileness = 4
+center_of_trade = 1

@@ -1,0 +1,22 @@
+country_decisions = {
+
+	exploit_mandate = {
+		major = yes
+		potential = {
+			has_country_flag = fixing_shit_dumbass_cody
+		}
+		allow = {
+			imperial_mandate = 50
+		}
+		effect = {
+			add_mandate = -50
+			add_adm_power = 150
+			add_dip_power = 150
+			add_mil_power = 150
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		ai_importance = 0
+	}
+}

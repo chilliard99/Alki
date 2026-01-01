@@ -1,0 +1,21 @@
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y97
+controller = Y97
+add_core = Y97
+culture = yakama
+add_permanent_province_modifier = {
+	name = "gor_true_heir_protections"
+	duration = -1
+}
+religion = partisan
+capital = "Yakima"
+trade_goods = wine #Yakima Ava
+hre = yes
+base_tax = 5
+base_production = 4
+base_manpower = 4
+is_city = yes
+center_of_trade = 1

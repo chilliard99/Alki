@@ -1,0 +1,19 @@
+# No previous file for Chehalis
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y41
+controller = Y41
+add_core = Y41
+add_core = U72
+culture = colville
+religion = theanite
+capital = "Ellensburg"
+trade_goods = livestock #Nice grazing lands
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes 
+fort_15th = yes

@@ -1,0 +1,14 @@
+#670 - Ganzhou
+discovered_by = andean
+culture = neotang
+religion = idolatrous
+capital = "Ganzhou"
+trade_goods = unknown
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 2
+is_city = no
+native_size = 60
+native_ferocity = 1
+native_hostileness = 5

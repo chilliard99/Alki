@@ -1,0 +1,17 @@
+#1965 - Buzuluk
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y40
+controller = Y40 
+add_core = Y40
+culture = blackfeet
+religion = theanite
+capital = "Buzuluk"
+trade_goods = naval_supplies #Forests
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 2
+is_city = yes

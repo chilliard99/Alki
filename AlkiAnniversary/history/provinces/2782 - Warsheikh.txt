@@ -1,0 +1,15 @@
+#2782 - Warsheikh
+discovered_by = ottoman
+discovered_by = muslim
+owner = W55
+controller = W55
+add_core = W55
+culture = bushlander
+religion = catholico
+capital = "Warsheikh"
+is_city = yes
+base_manpower = 5
+trade_goods = grain #more rio grande stuff
+hre = no
+base_tax = 4
+base_production = 5

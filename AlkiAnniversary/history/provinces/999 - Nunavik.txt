@@ -1,0 +1,17 @@
+#999 - Nunavik
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+owner = X67
+controller = X67
+add_core = X67
+culture = hudsonian
+religion = dynastic
+capital = "Nunavik"
+trade_goods = fur #Quebec Fish Trade
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = X81

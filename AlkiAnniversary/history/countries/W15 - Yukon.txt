@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = yukonite
+religion = collectivist
+technology_group = western
+capital = 2328	 #Whitehorse
+
+
+1398.4.14 = {
+	monarch = {
+		name = "Eyak III"
+		dynasty = "Whitehorse"
+		birth_date = 1398.4.14
+		adm = 5
+		dip = 3
+		mil = 3		
+	}
+}
+1421.9.19 = {
+	heir = {
+		name = "Nelchina II"
+		monarch_name = "Nelchina II"
+		dynasty = "Whitehorse"
+		birth_date = 1421.9.19
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}

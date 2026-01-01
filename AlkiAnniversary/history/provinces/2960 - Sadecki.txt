@@ -1,0 +1,15 @@
+#262 - Sadecki
+discovered_by = ottoman
+discovered_by = muslim
+owner = W79
+controller = W79
+add_core = W79
+culture = nayar
+religion = catholico
+capital = "Nowy Sacz"
+hre = no
+base_tax = 6
+base_production = 5
+trade_goods = fish #fisheries
+base_manpower = 5
+is_city = yes

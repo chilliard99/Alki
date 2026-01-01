@@ -1,0 +1,16 @@
+#4172 - Jawf
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V53
+controller = V53
+add_core = V53
+culture = antioqueno
+religion = catholico
+capital = "Karah"
+trade_goods = cocoa #Good cocoa stuff
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

@@ -1,0 +1,17 @@
+#Cherdyn
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y40
+controller = Y40
+add_core = Y40
+capital = "Cherdyn"
+culture = flathead
+religion = theanite
+trade_goods = naval_supplies #Timber
+hre = no
+base_tax = 3 
+base_production = 2
+base_manpower = 2
+is_city = yes

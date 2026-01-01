@@ -1,0 +1,16 @@
+#835 - Panama 
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V02
+controller = V02
+add_core = V02
+culture = panameno
+religion = catholico
+capital = "Panama"
+trade_goods = fish #GOOD FISHIn
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

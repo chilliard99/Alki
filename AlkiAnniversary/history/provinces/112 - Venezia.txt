@@ -1,0 +1,16 @@
+#112 - Venezia
+discovered_by = chinese
+owner = X20
+controller = X20
+add_core = X20
+culture = sendai 
+religion = neoshinto 
+hre = no 
+base_tax = 7
+base_production = 7
+trade_goods = tropical_wood #city of trees
+base_manpower = 6
+capital = "Venezia" 
+is_city = yes	
+discovered_by = eastern
+center_of_trade = 1

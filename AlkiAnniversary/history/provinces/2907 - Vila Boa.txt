@@ -1,0 +1,14 @@
+# - Vila Boa
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neobrazilian
+religion = espiritismo
+capital = "Vila Boa"
+trade_goods = spices #important spices?
+hre = no
+base_tax = 5
+base_production = 4
+base_manpower = 4
+is_city = yes

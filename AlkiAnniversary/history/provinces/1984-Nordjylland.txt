@@ -1,0 +1,14 @@
+#Nordjylland incl. Aalborg, Hjorring, Thisted, and Viborg
+discovered_by = north_american
+owner = Z09
+controller = Z09
+add_core = Z09
+culture = daneslander
+religion = paganry
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = fish
+base_manpower = 1
+capital = "Aalborg"
+is_city = no

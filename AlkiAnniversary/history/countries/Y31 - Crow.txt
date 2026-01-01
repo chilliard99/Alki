@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = crow
+religion = theanite
+technology_group = western
+capital = 653	 #Crow
+
+1406.11.13 = {
+	monarch = {
+		name = "Tatanka"
+		dynasty = "Wichahpi"
+		birth_date = 1406.11.13
+		adm = 5
+		dip = 4
+		mil = 4
+	}
+}
+1425.6.24 = {
+	heir = {
+		name = "Makhpia"
+		monarch_name = "Makhpia"
+		dynasty = "Wichahpi"
+		birth_date = 1425.6.24
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 5
+		mil = 5
+	}
+}

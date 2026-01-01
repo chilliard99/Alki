@@ -1,0 +1,18 @@
+#327 - Adana
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = muslim
+discovered_by = ottoman
+owner = X85
+controller = X85
+add_core = X85
+culture = north_mitter
+religion = islam
+capital = "Adana"
+trade_goods = grain #Michigan Winter Wheat
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 2
+is_city = yes
+discovered_by = western

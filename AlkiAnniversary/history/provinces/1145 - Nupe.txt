@@ -1,0 +1,17 @@
+#1145 - Nupe
+discovered_by = mesoamerican
+is_city = no
+culture = neoyoruban  
+religion = shamanist  
+capital = "Nupe"
+trade_goods = unknown 
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+owner = Z21
+controller = Z21
+add_core = Z21
+native_size = 5
+native_ferocity = 2
+native_hostileness = 1

@@ -1,0 +1,22 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = haitian
+religion = espiritismo 
+technology_group = ottoman
+capital = 488	#Tiburon
+unlock_cult = vodou_denom
+unlock_cult = divisiones_denom
+unlock_cult = orishan_denom
+set_country_flag = has_a_cult_unlocked
+
+1429.4.15 = {
+	monarch = {
+		name = "Alexander"
+		dynasty = "Aux Cayes"
+		birth_date = 1429.4.15
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}

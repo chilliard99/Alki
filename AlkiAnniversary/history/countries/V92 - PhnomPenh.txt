@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = newkhmer
+religion = yanantin  
+technology_group = indian 
+capital = 4299	#Phnom Penh
+
+1408.2.22 = {
+	monarch = {
+		name = "Ang IV"
+		dynasty = "Norodom"
+		birth_date = 1408.2.22
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}
+1426.3.13 = {
+	heir = {
+		name = "Si Votha II"
+		monarch_name = "Si Votha II"
+		dynasty = "Norodom"
+		birth_date = 1426.3.13
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}

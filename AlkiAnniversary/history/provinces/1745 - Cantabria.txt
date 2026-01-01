@@ -1,0 +1,17 @@
+#1745 - Cantabria
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y76		
+controller = Y76
+add_core = Y76
+culture = sacramentan
+religion = partisan
+hre = yes
+base_tax = 4
+base_production = 4
+trade_goods = grain #They grow a lot of nuts here, walnuts and almonds.
+base_manpower = 3
+capital = "Fairfield" 
+is_city = yes

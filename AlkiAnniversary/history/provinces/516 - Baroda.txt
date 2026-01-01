@@ -1,0 +1,17 @@
+#516 - Baroda (Baroda)
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W54
+controller = W54
+add_core = W54
+culture = marroqui
+religion = catholico
+capital = "Baroda"
+trade_goods = fish #important fishing fleet
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 4
+is_city = yes

@@ -1,0 +1,541 @@
+namespace = skagit_events
+####################Skagit EVENTS##########################
+country_event = { #Come to the East!
+	id = skagit_events.1
+	title = skagit_events.1.t
+	desc = skagit_events.1.d
+	picture = COLONIZATION_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U59
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					num_of_cities = 2
+				}
+			}
+			random_owned_province = {
+				limit = {
+					NOT = {
+						is_capital = yes
+					}	
+				}
+				save_event_target_as = second_dev_spot_skagit
+			}
+		}
+	}
+	
+	option = {
+		name = skagit_events.1.a #Give out homesteds.
+		add_adm_power = -50
+		capital_scope = {
+			add_base_tax = 1
+			add_base_manpower = 1
+		}
+		event_target:second_dev_spot_skagit = {
+			add_base_tax = 1
+			add_base_manpower = 1
+		}
+		tooltip = {
+			2063 = {
+				add_base_manpower = -2
+			}
+		}
+		country_event = { 
+			id = skagit_events.2
+			days = 1825
+		}
+		hidden_effect = {
+			2063 = {
+				if = {
+					limit = {
+						owner = {
+							NOT = { tag = ROOT }
+						}
+					}
+					owner = {
+						country_event = { id = skagit_events.3 }
+					}
+				}
+				else = {
+					add_base_manpower = -2
+				}
+			}
+		}
+	}
+	option = {
+		name = skagit_events.1.b #Let them come on their own.
+		capital_scope = {
+			add_base_manpower = 1
+		}
+		event_target:second_dev_spot_skagit = {
+			add_base_manpower = 1
+		}
+		tooltip = {
+			2063 = {
+				add_base_manpower = -2
+			}
+		}
+		country_event = { 
+			id = skagit_events.2
+			days = 1825
+		}
+		hidden_effect = {
+			2063 = {
+				if = {
+					limit = {
+						owner = {
+							NOT = { tag = ROOT }
+						}
+					}
+					owner = {
+						country_event = { id = skagit_events.3 }
+					}
+				}
+				else = {
+					add_base_manpower = -2
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Coming in heavy numbers
+	id = skagit_events.2
+	title = skagit_events.2.t
+	desc = skagit_events.2.d
+	picture = COLONIZATION_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U59
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					num_of_cities = 2
+				}
+			}
+			random_owned_province = {
+				limit = {
+					NOT = {
+						is_capital = yes
+					}	
+				}
+				save_event_target_as = second_dev_spot_skagit
+			}
+		}
+	}
+	
+	option = {
+		name = skagit_events.2.a #Wonderful!
+		capital_scope = {
+			add_base_manpower = 3
+		}
+		tooltip = {
+			2062 = {
+				add_base_manpower = -1
+			}
+			2068 = {
+				add_base_manpower = -1
+			}
+			2052 = {
+				add_base_manpower = -1
+			}
+		}
+		custom_tooltip = something_about_how_lincolnite_might_spawn
+		set_country_flag = will_get_lincolnite_spawn
+		hidden_effect = {
+			2062 = {
+				if = {
+					limit = {
+						owner = {
+							NOT = { tag = ROOT }
+						}
+					}
+					owner = {
+						set_country_flag = tacoma_version_skagit
+						country_event = { id = skagit_events.3 }
+					}
+				}
+				else = {
+					add_base_manpower = -1
+				}
+			}
+			2068 = {
+				if = {
+					limit = {
+						owner = {
+							NOT = { tag = ROOT }
+						}
+					}
+					owner = {
+						set_country_flag = vancouver_version_skagit
+						country_event = { id = skagit_events.3 }
+					}
+				}
+				else = {
+					add_base_manpower = -1
+				}
+			}
+			2052 = {
+				if = {
+					limit = {
+						owner = {
+							NOT = { tag = ROOT }
+						}
+					}
+					owner = {
+						set_country_flag = olympia_version_skagit
+						country_event = { id = skagit_events.3 }
+					}
+				}
+				else = {
+					add_base_manpower = -1
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Eastern Migration
+	id = skagit_events.3
+	title = skagit_events.3.t
+	desc = skagit_events.3.d
+	picture = COLONIZATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = skagit_events.3.a #Theres nothing out there!
+		if = {
+			limit = {
+				has_country_flag = tacoma_version_skagit
+			}
+			2062 = {
+				add_base_manpower = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = vancouver_version_skagit
+			}
+			2068 = {
+				add_base_manpower = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = olympia_version_skagit
+			}
+			2052 = {
+				add_base_manpower = -1
+			}
+		}
+		else = {
+			2063 = {
+				add_base_manpower = -2
+			}
+		}
+	}
+	
+	after = {
+		clr_country_flag = tacoma_version_skagit
+		clr_country_flag = vancouver_version_skagit
+		clr_country_flag = olympia_version_skagit
+	}
+}
+
+country_event = { #Washingtonian Conquest
+	id = skagit_events.4
+	title = skagit_events.4.t
+	desc = skagit_events.4.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = skagit_events.4.a #Wonderful!
+		add_imperial_influence = 10
+	}
+	
+}
+
+country_event = { #Tulip Bubble
+	id = skagit_events.5
+	title = skagit_events.5.t
+	desc = skagit_events.5.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = U59
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = skagit_events.5.a #Wait a bit
+		custom_tooltip = money_or_the_bubble_bursts
+		random_list = {
+			90 = {
+				country_event = { 
+					id = skagit_events.6
+					days = 365
+				}
+			}
+			10 = {
+				country_event = { 
+					id = skagit_events.10
+					days = 365
+				}
+			}
+		}
+	}
+	option = {
+		name = skagit_events.5.b #Cash out now
+		add_years_of_income = 1
+	}
+}
+
+country_event = { #Tulip Bubble
+	id = skagit_events.6
+	title = skagit_events.6.t
+	desc = skagit_events.6.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = U59
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = skagit_events.6.a #Wait a bit
+		custom_tooltip = money_or_the_bubble_bursts
+		random_list = {
+			75 = {
+				country_event = { 
+					id = skagit_events.7
+					days = 365
+				}
+			}
+			25 = {
+				country_event = { 
+					id = skagit_events.10
+					days = 365
+				}
+			}
+		}
+	}
+	option = {
+		name = skagit_events.6.b #Cash out now
+		add_years_of_income = 3
+	}
+}
+
+country_event = { #Tulip Bubble
+	id = skagit_events.7
+	title = skagit_events.7.t
+	desc = skagit_events.7.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = U59
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = skagit_events.7.a #Wait a bit
+		custom_tooltip = money_or_the_bubble_bursts
+		random_list = {
+			50 = {
+				country_event = { 
+					id = skagit_events.8
+					days = 365
+				}
+			}
+			50 = {
+				country_event = { 
+					id = skagit_events.10
+					days = 365
+				}
+			}
+		}
+	}
+	option = {
+		name = skagit_events.7.b #Cash out now
+		add_years_of_income = 7
+	}
+}
+
+country_event = { #Tulip Bubble
+	id = skagit_events.8
+	title = skagit_events.8.t
+	desc = skagit_events.8.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = U59
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = skagit_events.8.a #Wait a bit
+		custom_tooltip = money_or_the_bubble_bursts
+		add_ruler_personality = greedy_personality
+		random_list = {
+			25 = {
+				country_event = { 
+					id = skagit_events.9
+					days = 365
+				}
+			}
+			75 = {
+				country_event = { 
+					id = skagit_events.10
+					days = 365
+				}
+			}
+		}
+	}
+	option = {
+		name = skagit_events.8.b #Cash out now
+		add_years_of_income = 10
+	}
+}
+
+country_event = { #Tulip Bubble
+	id = skagit_events.9
+	title = skagit_events.9.t
+	desc = skagit_events.9.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = U59
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = skagit_events.9.a #I got hot hands!
+		custom_tooltip = money_or_the_bubble_bursts
+		add_ruler_personality = greedy_personality
+		random_list = {
+			1 = {
+				country_event = { 
+					id = skagit_events.11
+					days = 365
+				}
+			}
+			99 = {
+				country_event = { 
+					id = skagit_events.10
+					days = 365
+				}
+			}
+		}
+	}
+	option = {
+		name = skagit_events.9.b #Cash out now
+		add_years_of_income = 15
+	}
+}
+
+country_event = { #The Bubble Bursts
+	id = skagit_events.10
+	title = skagit_events.10.t
+	desc = skagit_events.10.d
+	picture = BANKRUPTCY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = U59
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = skagit_events.10.a #Shucks
+		add_years_of_income = 0.5
+	}
+}
+
+country_event = { #Jackpot!
+	id = skagit_events.11
+	title = skagit_events.11.t
+	desc = skagit_events.11.d
+	picture = ECONOMICALLY_TALLANTED_RULER_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = U59
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = skagit_events.11.a #Told Ya
+		add_years_of_income = 50
+		if = {
+			limit = {
+				dip = 6
+			}
+			add_dip_power = 150
+		}
+		else {
+			change_dip = 1
+		}
+	}
+}

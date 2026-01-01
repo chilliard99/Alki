@@ -1,0 +1,17 @@
+#1046 - Butalsk
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y60
+controller = Y60
+add_core = Y60
+culture = gambler
+religion = partisan
+capital = "Ust-Maya"
+trade_goods = fish #havasu fishing
+hre = yes
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

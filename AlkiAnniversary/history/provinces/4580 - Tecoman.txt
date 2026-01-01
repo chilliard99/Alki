@@ -1,0 +1,15 @@
+# No previous file for Tecoman
+discovered_by = ottoman
+discovered_by = muslim
+owner = W77
+controller = W77
+add_core = W77
+is_city = yes
+culture = coliman
+religion = catholico
+capital = "Tecoman"
+trade_goods = grain #lemons
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2

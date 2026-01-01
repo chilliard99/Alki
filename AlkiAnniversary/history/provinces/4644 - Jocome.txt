@@ -1,0 +1,17 @@
+# No previous file for Jocome
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W53
+controller = W53
+add_core = W53
+culture = huahuan
+religion = catholico 
+capital = "Jocome" 
+trade_goods = grain #fruit 
+hre = no 
+base_tax = 3
+base_production = 5
+base_manpower = 5
+is_city = yes

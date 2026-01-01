@@ -1,0 +1,15 @@
+owner = W14
+controller = W14
+add_core = W14
+is_city = yes
+culture = couverite 
+religion = collectivist
+capital = "Walata"
+trade_goods = grain #pemberton seed potatoes
+hre = no
+base_tax = 2
+base_production = 2
+is_city = yes
+base_manpower = 3
+discovered_by = western
+discovered_by = eastern

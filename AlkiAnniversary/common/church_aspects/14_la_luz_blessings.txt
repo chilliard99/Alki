@@ -1,0 +1,68 @@
+blessing_inqisicion_isthmo = {
+	is_blessing = yes
+
+	modifier = {
+		land_morale = 0.1
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}
+
+blessing_nuevo_despertar = {
+	is_blessing = yes
+
+	modifier = {
+	 	global_heretic_missionary_strength = 0.03
+	}
+
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+blessing_racionalismo = {
+	is_blessing = yes
+
+	modifier = {
+	 	technology_cost = -0.1
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 2
+			any_neighbor_country = {
+				tech_difference = 3
+			}
+		}
+	}
+}
+
+blessing_solo_por_gracia = {
+	is_blessing = yes
+
+	modifier = {
+	 	global_unrest = -2
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}
+
+blessing_reypapismo = {
+	is_blessing = yes
+
+	modifier = {
+	 	max_absolutism = 10
+		yearly_absolutism = 0.5
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 2
+			NOT = {
+				absolutism = 20
+			}
+		}
+	}
+}

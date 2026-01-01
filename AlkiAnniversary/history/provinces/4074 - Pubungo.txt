@@ -1,0 +1,16 @@
+#Pubungo
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W93
+controller = W93
+add_core = W93
+culture = rivieran
+religion = catholico
+capital = "Pubungo"
+trade_goods = dyes #dye stick
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

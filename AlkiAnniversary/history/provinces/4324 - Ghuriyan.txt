@@ -1,0 +1,14 @@
+#4324 - Ghuriyan
+discovered_by = indian
+owner = V94
+controller = V94
+add_core = V94
+culture = newthai
+religion = yanantin
+capital = "Ghuriyan"
+trade_goods = cocoa #they grow it here
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

@@ -1,0 +1,18 @@
+#1028 - Musashi
+discovered_by = chinese
+owner = X22
+controller = X22
+add_core = X22
+culture = high_nippon
+religion = neoshinto
+capital = "Kawagoe"
+trade_goods = fish #Big fishing area
+hre = no
+base_tax = 10
+base_production = 10
+base_manpower = 6
+is_city = yes
+discovered_by = eastern
+fort_15th = yes
+center_of_trade = 2
+add_province_triggered_modifier = shrine_of_kameido_tenjin

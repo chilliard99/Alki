@@ -1,0 +1,16 @@
+government_rank = 1
+government = native
+primary_culture = neohindi
+religion = idolatrous
+technology_group = south_american
+capital = 529	#Thana
+
+1444.11.11 = {
+	monarch = {
+		name = "Steppe Council"
+		adm = 1
+		dip = 1
+		mil = 1
+		regent = yes
+	}
+}

@@ -1,0 +1,8 @@
+government = republic
+add_government_reform = democratic_republic_reform
+government_rank = 1
+primary_culture = seattlain
+religion = partisan
+technology_group = western
+capital = 2062	 #Tacoma
+religious_school = progressive_party

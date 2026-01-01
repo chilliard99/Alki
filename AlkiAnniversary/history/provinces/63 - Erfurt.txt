@@ -1,0 +1,16 @@
+#63 - Erfurt
+discovered_by = chinese
+owner = X35
+controller = X35
+add_core = X35
+culture = shikokuan
+religion = neoshinto
+capital = "Erfurt"
+trade_goods = chinaware #Tobe
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 3
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman

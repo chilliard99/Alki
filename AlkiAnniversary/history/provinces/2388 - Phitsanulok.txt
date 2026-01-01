@@ -1,0 +1,16 @@
+#2388 - Phitsanulok
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W32 
+controller = W32
+add_core = W32
+culture = rosaritan
+religion = partisan
+capital = "Phitsanulok"
+trade_goods = cotton #Cotton center in the past, cotton center alki (came up with the name two days ago 6/25/2021, has been almost a year since I started :) )
+hre = yes
+base_tax = 5
+base_production = 6
+base_manpower = 6
+is_city = yes

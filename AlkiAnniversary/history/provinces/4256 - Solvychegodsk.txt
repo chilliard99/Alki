@@ -1,0 +1,16 @@
+#4256 - Solvychegodsk
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V72 
+controller = V72 
+add_core = V72
+culture = orinoquia
+religion = catholico
+hre = no
+base_tax = 3
+base_production = 3
+trade_goods = grain # 
+base_manpower = 2
+capital = "Solvychegodsk"
+is_city = yes

@@ -1,0 +1,18 @@
+#385 - Mecca
+discovered_by = south_american
+culture = arabian
+religion = idolatrous
+capital = "Makkah"
+trade_goods = livestock #camels?
+hre = no
+base_tax = 4 
+base_production = 3
+base_manpower = 3
+is_city = no
+native_size = 80
+native_ferocity = 4
+native_hostileness = 9 
+owner = Z46
+controller = Z46
+add_core = Z46
+center_of_trade = 1

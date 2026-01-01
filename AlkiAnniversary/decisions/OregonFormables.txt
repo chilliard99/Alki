@@ -1,0 +1,416 @@
+country_decisions = {
+	morrow_crook_nation = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			OR = {
+				tag = U53
+				tag = U54 
+			}
+			NOT = { tag = U85 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2038 #Morrow
+				province_id = 2040 #Crook
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = U85 }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			owns_core_province = 2038	# Morrow
+			owns_core_province = 2040	# Crook
+		}
+		effect = {
+			change_tag = U85
+			morrow_crook_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = U85
+			}
+			add_prestige = 15
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	restore_republic_of_oregon_nation = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			tag = U86
+			NOT = { tag = U87 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1199 #Eugene
+				province_id = 1197 #Clatsop
+				province_id = 1218 #Portland
+				province_id = 1223 #Salem
+				province_id = 1974 #Bend
+				province_id = 2040 #Crook
+				province_id = 2038 #Morrow
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = U87 }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			owns_core_province = 1199 #Eugene
+			owns_core_province = 1197 #Clatsop
+			owns_core_province = 1218 #Portland
+			owns_core_province = 1223 #Salem
+			owns_core_province = 1974 #Bend
+			owns_core_province = 2040 #Crook
+			owns_core_province = 2038 #Morrow
+		}
+		effect = {
+			change_tag = U87
+			add_prestige = 25
+			set_capital = 1218
+			swap_non_generic_missions = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			if = {
+				limit = {
+					stability = 3
+				}
+				add_adm_power = 150
+			}
+			else = [
+				add_stability = 1
+			}
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	unite_northwest_republic_nation = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			tag = U87
+			NOT = { tag = U88 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2063 #Seattle
+				province_id = 2068 #Clark
+				province_id = 4516 #Spokane
+				province_id = 2477 #Medford
+				region = oregon_region
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = U88 }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			oregon_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			owns_core_province = 2063 #Seattle
+			owns_core_province = 2068 #Clark
+			owns_core_province = 4516 #Spokane
+			owns_core_province = 2477 #Medford
+		}
+		effect = {
+			change_tag = U88
+			add_prestige = 25
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			if = {
+				limit = {
+					adm = 6
+				}
+				add_adm_power = 150
+			}
+			else = [
+				change_adm = 1
+			}
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	
+	unite_oregon_nation = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			primary_culture = oregonite
+			NOT = { tag = U86 }
+			NOT = { tag = U87 }
+			NOT = { tag = U88 }
+			NOT = { tag = W44 }
+			NOT = { tag = U84 }
+			NOT = { tag = Y92 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1199 #Eugene
+				province_id = 1197 #Clatsop
+				province_id = 1218 #Portland
+				province_id = 1223 #Salem
+				province_id = 1974 #Bend
+				province_id = 2040 #Crook
+				province_id = 2038 #Morrow
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = W44 }
+			NOT = { exists = U86 }
+			NOT = { has_country_modifier = gor_oregonian_freedom_fighters_genorg }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			if = {
+				limit = {
+					NOT = { mission_completed = unionized_oregon_willamette }
+				}
+				adm_tech = 10
+			}
+			if = {
+				limit = {
+					mission_completed = just_do_it_willamette
+				}
+				1199 = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				1197 = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				1218 = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				1223 = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				1974 = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				2040 = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				2038 = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			else = {
+				owns_core_province = 1199 #Eugene
+				owns_core_province = 1197 #Clatsop
+				owns_core_province = 1218 #Portland
+				owns_core_province = 1223 #Salem
+				owns_core_province = 1974 #Bend
+				owns_core_province = 2040 #Crook
+				owns_core_province = 2038 #Morrow
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					mission_completed = just_do_it_willamette
+				}
+				custom_tooltip = instantly_integrate_all_subjects_unda_seven_cities_that_org_oregon
+				hidden_effect = {
+					every_subject_country = {
+						limit = {
+							NOT = { num_of_cities = 7 }
+							primary_culture = oregonite
+						}
+						ROOT = {
+							inherit = PREV 
+						}
+					}
+				}
+			} 
+			change_tag = W44
+			add_prestige = 15
+			swap_non_generic_missions = yes
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	form_deschutes_nation = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			OR = {
+				tag = U52
+				tag = U51
+			}
+			NOT = { tag = U84 }
+			OR = {
+				primary_culture = oregonite
+				primary_culture = shastan
+				primary_culture = highoregonean
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1974 #Bend
+				province_id = 1972 #The Dalles
+				province_id = 4493 #Lakeview
+				province_id = 2027 #Deschutes
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = U84 }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			owns_core_province = 1974 #Bend
+			owns_core_province = 1972 #The Dalles
+			owns_core_province = 4493 #Lakeview
+			owns_core_province = 2027 #Deschutes
+		}
+		effect = {
+			change_tag = U84
+			add_prestige = 15
+			if = {
+				limit = {
+					NOT = { government = monarchy }
+				}
+				change_government = monarchy
+			}
+			add_government_reform = three_star_kingdom_reform
+			swap_non_generic_missions = yes
+			if = {
+				limit = {
+					primary_culture = oregonite
+				}
+				add_accepted_culture = highoregonean
+				add_accepted_culture = shastan
+			}
+			else_if = {
+				limit = {
+					primary_culture = shastan
+				}
+				add_accepted_culture = oregonite
+				add_accepted_culture = highoregonean
+			}
+			else = {
+				add_accepted_culture = oregonite
+				add_accepted_culture = shastan
+			}
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	form_highdesert_nation = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			primary_culture = highoregonean
+			NOT = { tag = U90 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1983 #Burns
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = U90 }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			owns_core_province = 1983 #Bend
+			num_of_cities = 4
+		}
+		effect = {
+			change_tag = U90
+			add_prestige = 15
+			swap_non_generic_missions = yes
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+}

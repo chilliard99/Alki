@@ -1,0 +1,16 @@
+#828 - Cartagena
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V70
+controller = V70
+add_core = V70
+culture = cariben
+religion = catholico
+capital = "Cartagena"
+trade_goods = grain #MORE GRAIN
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

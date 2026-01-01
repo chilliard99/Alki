@@ -1,0 +1,14 @@
+#4393 - Arbil
+discovered_by = indian
+owner = V89
+controller = V89
+add_core = V89
+culture = newvietnamese
+religion = yanantin
+capital = "Arbil"
+trade_goods = dyes #flowers :)
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 2
+is_city = yes

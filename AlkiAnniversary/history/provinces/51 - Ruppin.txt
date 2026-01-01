@@ -1,0 +1,17 @@
+#51 - Ruppin
+discovered_by = chinese
+owner = X37
+controller = X37
+add_core = X37
+culture = kyushuan_g
+religion = neoshinto
+hre = no
+base_tax = 7
+base_production = 7
+trade_goods = cloth #Ogura Ori
+base_manpower = 6
+capital = "Neuruppin"
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman
+fort_15th = yes

@@ -1,0 +1,15 @@
+# No previous file for Secwepemc
+discovered_by = western
+discovered_by = eastern
+owner = W07
+controller = W07
+add_core = W07
+culture = inner_salishan
+religion = theanite
+capital = "Secwepemc"
+trade_goods = gold #cariboo gold rush
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes

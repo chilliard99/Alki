@@ -1,0 +1,18 @@
+# 181 Rethel
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X63
+controller = X63
+add_core = X63
+capital = "Rethel"
+is_city = yes
+culture = metropolitan
+religion = dynastic
+hre = no
+base_tax = 6
+base_production = 5
+trade_goods = paper #east coast paper industry
+base_manpower = 5 

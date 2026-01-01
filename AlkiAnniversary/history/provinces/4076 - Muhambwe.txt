@@ -1,0 +1,16 @@
+#4076 - Muhambwe
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W93
+controller = W93
+add_core = W93
+culture = baymen
+religion = catholico
+trade_goods = sugar #orange walk sugar cane growth
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+capital = "Muhambwe"

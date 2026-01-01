@@ -1,0 +1,15 @@
+# Narbonne - Principal cities: Narbonne
+discovered_by = ottoman
+discovered_by = muslim
+owner = W70
+controller = W70
+add_core = W70
+capital = "Narbonne"
+is_city = yes
+culture = durangan
+religion = catholico
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = livestock #ranching i guess
+base_manpower = 1

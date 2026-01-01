@@ -1,0 +1,17 @@
+#727 - Aigun
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y60
+controller = Y60
+add_core = Y60
+culture = gambler
+religion = partisan
+capital = "Beja"
+trade_goods = grain #Breadbasket of Portugal
+hre = yes
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

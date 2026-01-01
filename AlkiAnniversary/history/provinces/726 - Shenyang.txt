@@ -1,0 +1,17 @@
+#726 - Liaodong
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y60
+controller = Y60
+add_core = Y60
+culture = gambler
+religion = partisan
+capital = "Indian Springs"
+trade_goods = wine #Pahrump Wineries, even though Pahrump is definently underwater technically
+hre = yes
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

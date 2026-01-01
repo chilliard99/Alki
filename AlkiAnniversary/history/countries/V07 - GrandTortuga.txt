@@ -1,0 +1,22 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = haitian
+religion = espiritismo 
+technology_group = ottoman
+capital = 4206	#Tortuga
+unlock_cult = vodou_denom
+unlock_cult = divisiones_denom
+unlock_cult = orishan_denom
+set_country_flag = has_a_cult_unlocked
+
+1426.3.12 = {
+	monarch = {
+		name = "Elias"
+		dynasty = "Buccaneer"
+		birth_date = 1426.3.12
+		adm = 4
+		dip = 5
+		mil = 6
+	}
+}

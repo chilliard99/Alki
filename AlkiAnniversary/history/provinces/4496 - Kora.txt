@@ -1,0 +1,17 @@
+#872 - Kalapuya
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y32
+controller = Y32
+add_core = Y32
+culture = snake
+religion = partisan
+capital = "Elko" 
+trade_goods = gold #Capital of the Goldbelt, Goldstrike MIne
+hre = yes 
+base_tax = 3
+base_production = 3 
+base_manpower = 3
+is_city = yes

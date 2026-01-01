@@ -1,0 +1,17 @@
+#2791 - Ankober
+discovered_by = ottoman
+discovered_by = muslim
+owner = W74
+controller = W74
+add_core = W74
+culture = panucoan 
+religion = catholico
+capital = "Ankober"
+is_city = yes
+base_manpower = 6
+center_of_trade = 2
+trade_goods = paper #costal paper manufacturoies
+hre = no
+fort_15th = yes
+base_tax = 7
+base_production = 7

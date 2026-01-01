@@ -1,0 +1,19 @@
+#983 - Epekwitk
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+owner = X67	
+controller = X67
+add_core = X67
+culture = scotian_maratimer
+religion = dynastic
+capital = "Epekwitk"
+trade_goods = grain #Winter Wheat
+hre = no
+base_tax = 5
+base_production = 6
+base_manpower = 6
+is_city = yes
+add_core = X77
+fort_15th = yes
+center_of_trade = 1

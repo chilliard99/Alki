@@ -1,0 +1,17 @@
+#1157 - Borno
+discovered_by = mesoamerican
+culture = chadic 
+religion = shamanist
+capital = "Gatiga"
+is_city = no
+base_manpower = 1
+trade_goods = grain #subsitance?
+hre = no
+base_tax = 1
+base_production = 1
+owner = Z19
+controller = Z19
+add_core = Z19
+native_size = 5
+native_ferocity = 2
+native_hostileness = 1

@@ -1,0 +1,22 @@
+#2067 - Gorwar
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+latent_trade_goods = {
+	coal #Large Coal Field Here
+}
+add_core = W06
+owner = W06
+controller = W06
+add_core = U60
+culture = couverite
+religion = collectivist
+capital = "Bellingham"
+trade_goods = naval_supplies #LUMBER
+hre = yes
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes
+fort_15th = yes

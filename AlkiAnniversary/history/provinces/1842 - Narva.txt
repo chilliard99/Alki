@@ -1,0 +1,17 @@
+#Narva
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y70
+controller = Y70
+add_core = Y70
+culture = new_imperial
+religion = partisan
+hre = yes
+base_tax = 3
+base_production = 3
+trade_goods = livestock #Tulare livestock
+base_manpower = 3
+capital = "Tulare"
+is_city = yes

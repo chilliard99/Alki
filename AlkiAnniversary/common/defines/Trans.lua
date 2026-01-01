@@ -1,0 +1,37 @@
+
+NDefines.NEconomy.GOLD_MINE_SIZE = 30
+
+NDefines.NFrontend.CAMERA_LOOKAT_X = 1250.0
+NDefines.NFrontend.CAMERA_LOOKAT_Z = 1519.0
+NDefines.NFrontend.CAMERA_LOOKAT_SETTINGS_X = 1250.0
+NDefines.NFrontend.CAMERA_LOOKAT_SETTINGS_Z = 1519.0
+
+NDefines.NFrontend.CAMERA_START_X = 1250.0
+NDefines.NFrontend.CAMERA_START_Y = 800
+NDefines.NFrontend.CAMERA_START_Z = 1400.0
+
+NDefines.NFrontend.CAMERA_END_X = 1250.0
+NDefines.NFrontend.CAMERA_END_Y = 900.0
+NDefines.NFrontend.CAMERA_END_Z = 1400.0
+
+NDefines.NFrontend.FRONTEND_POS_X = 1250.0
+NDefines.NFrontend.FRONTEND_POS_Y = 900.0
+NDefines.NFrontend.FRONTEND_POS_Z = 1500.0
+NDefines.NFrontend.FRONTEND_LOOK_X = 1250.0
+NDefines.NFrontend.FRONTEND_LOOK_Z = 1519.0
+NDefines.NFrontend.SETTINGS_POS_X = 1250.0
+NDefines.NFrontend.SETTINGS_POS_Y = 551.0
+NDefines.NFrontend.SETTINGS_POS_Z = 978.0
+NDefines.NFrontend.SETTINGS_LOOK_X = 2998.0
+NDefines.NFrontend.SETTINGS_LOOK_Z = 1364.0
+NDefines.NFrontend.MP_OPTIONS_POS_X = 1250.0
+NDefines.NFrontend.MP_OPTIONS_POS_Y = 922.0
+NDefines.NFrontend.MP_OPTIONS_POS_Z = 1048.0
+NDefines.NFrontend.MP_OPTIONS_LOOK_X = 1250.0
+NDefines.NFrontend.MP_OPTIONS_LOOK_Z = 1159.0
+
+NDefines.NDiplomacy.CELESTIAL_EMPIRE_MANDATE_PER_HUNDRED_TRIBUTARY_DEV = 0.1
+
+NDefines.NReligion.REFORM_DESIRE_PER_YEAR = 0.000						
+
+NDefines.NGame.MAX_RANDOM_NEW_WORLD = "1443.1.1"

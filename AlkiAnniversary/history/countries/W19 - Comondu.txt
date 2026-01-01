@@ -1,0 +1,33 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = comundian
+religion = partisan
+technology_group = western
+capital = 2406	 #Comondu
+religious_school = progressive_party
+set_country_flag = baja_independence_caucus
+
+1416.4.14 = {
+	monarch = {
+		name = "Pablo"
+		dynasty = "Juanico"
+		birth_date = 1416.4.14
+		adm = 2
+		dip = 4
+		mil = 3
+	}
+}
+1432.1.14 = {
+	heir = {
+		name = "Guillermo"
+		monarch_name = "Guillermo II"
+		dynasty = "Juanico"
+		birth_date = 1432.1.14
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 5
+		mil = 5
+	}
+}

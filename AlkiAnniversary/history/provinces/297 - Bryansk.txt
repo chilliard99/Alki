@@ -1,0 +1,19 @@
+#297 - Bryansk
+discovered_by = eastern
+discovered_by = chinese
+owner = X67
+controller = X67  
+add_core = X67
+culture = north_ontarian
+religion = islam 
+hre = no
+base_tax = 8
+base_production = 8
+trade_goods = copper #sudbury copper
+base_manpower = 7
+capital = "Bryansk"
+is_city = yes
+add_core = X71
+fort_15th = yes
+discovered_by = western
+center_of_trade = 1

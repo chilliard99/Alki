@@ -1,0 +1,17 @@
+#733 - Hwangju
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y32
+controller = Y32
+add_core = Y32
+culture = zionist
+religion = sacramental
+capital = "Hwangju"
+trade_goods = naval_supplies #big forest
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

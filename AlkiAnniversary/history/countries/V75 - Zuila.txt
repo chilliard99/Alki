@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = zuilian
+religion = catholico 
+technology_group = indian
+capital = 830	#Maracaibo
+
+1408.12.25 = {
+	monarch = {
+		name = "Alonso V"
+		dynasty = "Maracaibo"
+		birth_date = 1408.12.25
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+1424.5.3 = {
+	heir = {
+		name = "Rafael"
+		monarch_name = "Rafael"
+		dynasty = "Maracaibo"
+		birth_date = 1424.5.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 1
+		mil = 0
+	}
+}

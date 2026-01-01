@@ -1,0 +1,47 @@
+namespace = empresian_events
+
+country_event = { #New CEO 
+	id = empresian_events.1
+	title = empresian_events.1.t
+	desc = empresian_events.1.d
+	picture = WESTERNISATION_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		tag = W73
+	}
+	
+	
+	option = {
+		name = empresian_events.1.a 
+		custom_tooltip = empresian_warning.tt
+	}
+}
+
+country_event = { #End of Empresia
+	id = empresian_events.2
+	title = empresian_events.2.t
+	desc = empresian_events.2.d
+	picture = OVEREXTENSION_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		is_year = 1500
+		any_subject_country = {
+			is_subject_of_type = empresa
+		}
+	}
+	
+	
+	option = {
+		name = empresian_events.2.a 
+		custom_tooltip = empresian_ending_tt
+		hidden_effect = {
+			every_subject_country = {
+				limit { is_subject_of_type = empresa }
+				grant_independence = yes
+			}
+		}
+	}
+}
+

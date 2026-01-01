@@ -1,0 +1,15 @@
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V03
+controller = V03
+add_core = V03
+culture = salvi
+religion = catholico 
+capital = "Hemba"
+trade_goods = coffee #amazin
+hre = no
+base_tax = 5
+base_production = 4
+base_manpower = 4
+is_city = yes

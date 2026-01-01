@@ -1,0 +1,15 @@
+# No previous file for Xecora
+discovered_by = ottoman
+discovered_by = muslim
+owner = W65
+controller = W65
+add_core = W65
+culture = durangan
+religion = catholico
+capital = "Xecora" 
+trade_goods = naval_supplies #great stuff 
+hre = no 
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes

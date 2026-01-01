@@ -1,0 +1,17 @@
+#995 - Atiamekw
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+owner = X67
+controller = X67
+add_core = X67
+culture = neoquebecois
+religion = dynastic
+capital = "Tadoussac"
+trade_goods = paper #major pulp and paper industry
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 3
+is_city = yes	
+add_core = X82

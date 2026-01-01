@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+primary_culture = viomichanikos
+religion = islam
+technology_group = eastern
+capital = 351	#St Louis
+
+1399.12.15 = {
+	monarch = {
+		name = "Manolis"
+		dynasty = "Konstantinou"
+		birth_date = 1399.12.15
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1422.5.25 = {
+	heir = {
+		name = "Katerina"
+		monarch_name = "Katerina II"
+		dynasty = "Konstantinou"
+		birth_date = 1422.5.25
+		death_date = 1483.8.30
+		claim = 95
+		adm = 5
+		dip = 5
+		mil = 4
+		female = yes
+	}
+}

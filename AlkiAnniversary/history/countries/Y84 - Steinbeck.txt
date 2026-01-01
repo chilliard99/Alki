@@ -1,0 +1,20 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+primary_culture = bigsur
+religion = partisan
+technology_group = western
+capital = 1767	 #Monterey
+religious_school = progressive_party
+set_country_flag = bay_caucus
+
+1433.1.30 = {
+	monarch = {
+		name = "Rodeo"
+		dynasty = "Steinbeck"
+		birth_date = 1419.3.13
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}

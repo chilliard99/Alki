@@ -1,0 +1,18 @@
+#2040 - Sadiya
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = U53
+controller = U53
+add_core = U53
+culture = oregonite
+religion = partisan
+capital = "Prineville"
+trade_goods = grain #hay, grain, potatoes, seed
+hre = yes
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes
+fort_15th = yes

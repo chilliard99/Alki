@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+primary_culture = englander
+religion = dynastic
+technology_group = eastern
+capital = 214	#Augusta
+
+1444.11.11 = {
+	monarch = {
+		name = "Temporary Diplomatic Council"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

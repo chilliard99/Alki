@@ -1,0 +1,19 @@
+#361 - Cairo
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = X93
+controller = X93
+add_core = X93
+culture = hellaldan
+religion = islam
+capital = "Al Qahira"
+trade_goods = livestock #Tyson Chickens
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 6
+is_city = yes
+fort_15th = yes
+discovered_by = western

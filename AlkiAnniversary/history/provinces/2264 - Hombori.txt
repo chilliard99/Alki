@@ -1,0 +1,15 @@
+# 2264 - Hombori
+discovered_by = western
+discovered_by = eastern
+owner = W12
+controller = W12
+add_core = W12
+is_city = yes
+culture = inner_salishan
+religion = collectivist
+capital = "Amanvi"
+trade_goods = wine #Okanagan Valley Wine
+hre = no
+base_tax = 4
+base_production = 5
+base_manpower = 5

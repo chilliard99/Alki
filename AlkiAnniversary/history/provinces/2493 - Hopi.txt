@@ -1,0 +1,17 @@
+# No previous file for Hopi
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W48
+controller = W48
+add_core = W48
+culture = argelino
+religion = catholico
+capital = "Hopi"
+trade_goods = naval_supplies #forests?
+hre = no
+base_tax = 1 
+base_production = 3
+base_manpower = 2
+is_city = yes

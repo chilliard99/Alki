@@ -1,0 +1,17 @@
+#522 - Delhi
+discovered_by = south_american
+culture = neohindi
+religion = idolatrous
+capital = "Delhi"
+trade_goods = grain #rice
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 4
+native_size = 2
+native_ferocity = 8
+native_hostileness = 4
+add_core = Z81
+owner = Z81
+controller = Z81
+center_of_trade = 1

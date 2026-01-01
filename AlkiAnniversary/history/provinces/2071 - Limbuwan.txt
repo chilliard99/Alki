@@ -1,0 +1,18 @@
+#2071 - Limbuwan
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = U56
+controller = U56
+add_core = U56
+add_core = U66
+culture = seattlain
+religion = partisan
+capital = "Puyallup"
+trade_goods = wool #sheep farmers
+hre = yes
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes

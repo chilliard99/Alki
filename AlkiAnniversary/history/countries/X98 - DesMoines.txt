@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = royal_iowan
+religion = islam
+technology_group = eastern
+capital = 464	#Des Moines
+
+1402.4.15 = {
+	monarch = {
+		name = "Liam"
+		dynasty = "Des Moines"
+		birth_date = 1402.4.15
+		adm = 5
+		dip = 3
+		mil = 3
+	}
+}
+1429.1.1 = {
+	heir = {
+		name = "Christopher"
+		monarch_name = "Christopher XI"
+		dynasty = "Des Moines"
+		birth_date = 1429.1.1
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 2
+		mil = 2
+	}
+}

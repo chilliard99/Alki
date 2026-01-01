@@ -1,0 +1,16 @@
+#2389 - Phra Bang
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W20
+controller = W20
+add_core = W20
+culture = ensenadan
+religion = partisan
+capital = "Phra Bang"
+trade_goods = wine #Guadalupe vinyards
+hre = yes
+base_tax = 7
+base_production = 6
+base_manpower = 6
+is_city = yes

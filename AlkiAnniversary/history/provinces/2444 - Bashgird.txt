@@ -1,0 +1,17 @@
+#2444 - Bashgird
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W49
+controller = W49
+add_core = W49
+culture = aliengenas
+religion = catholico
+capital = "Bashgird"
+trade_goods = livestock #dairy industry
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 2
+is_city = yes

@@ -1,0 +1,14 @@
+#4306 - Lakia
+discovered_by = indian
+owner = V82
+controller = V82
+add_core = V82
+culture = newkhmer
+religion = yanantin
+capital = "Kumukh"
+trade_goods = grain #more rice
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

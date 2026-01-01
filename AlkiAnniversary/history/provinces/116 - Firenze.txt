@@ -1,0 +1,15 @@
+#116 - Firenze
+discovered_by = chinese
+owner = X16
+controller = X16
+add_core = X16
+culture = niigatan
+religion = neoshinto
+hre = no
+base_tax = 5
+base_production = 5
+trade_goods = grain #big farmin region
+base_manpower = 3
+capital = "Firenze"
+is_city = yes
+discovered_by = eastern

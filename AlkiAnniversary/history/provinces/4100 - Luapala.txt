@@ -1,0 +1,15 @@
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W91
+controller = W91
+add_core = W91
+culture = salvi
+religion = catholico
+capital = "Kazembe Luapula"
+trade_goods = grain #tona grain
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

@@ -1,0 +1,16 @@
+#2385 - Nongbua Lamphu
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W18
+controller = W18
+add_core = W18
+culture = coloradan
+religion = partisan
+capital = "Nongbua Lamphu"
+trade_goods = fish #bay fishin
+hre = yes
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes

@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = ecuadorian
+religion = yanantin  
+technology_group = indian 
+capital = 816	#Apartado
+
+1428.2.13 = {
+	monarch = {
+		name = "Phillip"
+		dynasty = "Zaruma"
+		birth_date = 1428.2.13
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}

@@ -1,0 +1,16 @@
+# No previous file for Uluas
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W97
+controller = W97
+add_core = W97
+culture = catracho
+religion = catholico
+capital = "Uluas"
+trade_goods = tropical_wood #MORE MAHOGENY
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

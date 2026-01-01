@@ -1,0 +1,14 @@
+#4421 - Seringapatam
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neopapuan
+religion = espiritismo
+capital = "Seringapatam"
+trade_goods = fish #Maybe kanye was right
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

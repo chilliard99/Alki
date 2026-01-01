@@ -1,0 +1,16 @@
+# - Tarragona
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W85
+controller = W85
+add_core = W85
+culture = jarocho
+religion = catholico
+hre = no
+base_tax = 7
+base_production = 7
+trade_goods = glass #more glass?!?! I HAVE NO IDEA WHAT TO PUT HERE 
+base_manpower = 6
+capital = "Taragona" 
+is_city = yes

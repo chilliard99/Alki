@@ -1,0 +1,17 @@
+#2405 - Khara Narin Ula
+discovered_by = ottoman
+discovered_by = muslim
+owner = W75
+controller = W75
+add_core = W75 
+culture = durangan
+religion = catholico
+capital = "Khara Narin Ula"
+center_of_trade = 2
+trade_goods = paper #Empresian developed city
+hre = no
+fort_15th = yes
+base_tax = 5
+base_production = 5
+base_manpower = 6
+is_city = yes

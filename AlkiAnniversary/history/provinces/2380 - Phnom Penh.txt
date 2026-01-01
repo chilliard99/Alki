@@ -1,0 +1,15 @@
+#2380 - Phnom Penh
+discovered_by = W11
+discovered_by = X67
+owner = W11
+controller = W11
+add_core = W11
+culture = baydwellers
+religion = inua
+capital = "Phnom Penh"
+trade_goods = fish #whaling
+hre = no
+base_tax = 1
+base_production = 2
+base_manpower = 2
+is_city = yes

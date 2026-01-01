@@ -1,0 +1,20 @@
+government = republic
+add_government_reform = oligarchy_reform
+government_rank = 1
+primary_culture = gambler
+religion = partisan
+technology_group = western
+capital = 1058	 #Las Vegas
+religious_school = progressive_party
+set_country_flag = unaligned_caucus
+
+1371.5.12 = {
+	monarch = {
+		name = "Robert IV"
+		dynasty = "House"
+		birth_date = 1371.5.12
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}

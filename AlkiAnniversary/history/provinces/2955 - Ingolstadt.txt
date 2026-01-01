@@ -1,0 +1,14 @@
+# - Ingolstadt + Neuburg
+discovered_by = north_american
+owner = Z02
+controller = Z02
+add_core = Z02
+culture = neogermanic
+religion = paganry
+base_tax = 1
+base_production = 1
+trade_goods = wine 
+base_manpower = 1
+capital	= "Ingolstadt" 
+is_city = no
+hre = no

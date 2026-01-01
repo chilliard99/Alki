@@ -1,0 +1,15 @@
+#127 - Sardinia
+discovered_by = chinese
+owner = X16
+controller = X16
+add_core = X16
+culture = neoainu 
+religion = neoshinto 
+hre = no 
+base_tax = 3
+base_production = 3
+trade_goods = fish #Basically all fish from here
+base_manpower = 2
+capital = "Sassari" 
+is_city = yes 
+discovered_by = eastern

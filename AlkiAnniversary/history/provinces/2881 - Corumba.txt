@@ -1,0 +1,15 @@
+# - Corumba
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neobornean
+religion = espiritismo
+capital = "Corumba"
+trade_goods = spices #pepper
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes
+center_of_trade = 1

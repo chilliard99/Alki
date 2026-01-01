@@ -1,0 +1,16 @@
+government_rank = 1
+government = native
+primary_culture = neomande
+religion = shamanist
+technology_group = mesoamerican
+capital = 2242	#Karou
+
+1444.11.11 = {
+	monarch = {
+		name = "Presidential Interregnum"
+		adm = 1
+		dip = 1
+		mil = 1
+		regent = yes
+	}
+}

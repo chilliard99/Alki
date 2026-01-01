@@ -1,0 +1,17 @@
+# No previous file for Biram
+discovered_by = mesoamerican
+culture = chadic 
+religion = shamanist
+capital = "Biram"
+trade_goods = cotton #i think?
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = no
+owner = Z19
+controller = Z19
+add_core = Z19
+native_size = 5
+native_ferocity = 2
+native_hostileness = 1

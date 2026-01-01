@@ -1,0 +1,14 @@
+#4366 - Pembrokeshire+Camartenshire+Cardiganshire
+discovered_by = indian
+owner = U02
+controller = U02
+add_core = U02
+culture = neofilipino
+religion = espiritismo
+hre = no
+base_tax = 2
+base_production = 3
+trade_goods = grain #mostly farmers
+base_manpower = 3
+capital = "Carmarthen"
+is_city = yes

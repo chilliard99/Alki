@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = niitsitapi
+religion = theanite
+technology_group = western
+capital = 2187	 #Blood
+
+
+1426.12.26 = {
+	monarch = {
+		name = "Miko-Ew"
+		dynasty = "Siksikaitsitapi"
+		birth_date = 1426.12.26
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1443.2.1 = {
+	heir = {
+		name = "Piik-siik-sii-naa"
+		monarch_name = "Piik-siik-sii-naa"
+		dynasty = "Siksikaitsitapi"
+		birth_date = 1443.2.1
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 4
+		mil = 4
+	}
+}

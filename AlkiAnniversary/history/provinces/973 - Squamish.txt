@@ -1,0 +1,15 @@
+#973 - Squamish
+discovered_by = western
+discovered_by = eastern
+owner = W10
+controller = W10
+add_core = W10
+culture = couverite
+religion = collectivist
+capital = "Squamish"
+trade_goods = grain #i guess
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 3
+is_city = yes

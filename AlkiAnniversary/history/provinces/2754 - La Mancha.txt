@@ -1,0 +1,15 @@
+#2754 - La Mancha
+discovered_by = ottoman
+discovered_by = muslim
+owner = W66
+controller = W66
+add_core = W66
+culture = durangan
+religion = catholico
+hre = no
+base_tax = 3 
+base_production = 3
+trade_goods = wool #idk
+base_manpower = 3
+capital = "Ciudad Real" 
+is_city = yes

@@ -1,0 +1,19 @@
+#1143 - Borgu
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = U46 
+controller = U46
+add_core = U46
+is_city = yes
+culture = portugers 
+religion = partisan
+capital = "Lisboa"
+hre = yes
+base_tax = 6
+base_production = 6
+base_manpower = 5
+trade_goods = cloth #development center of espanish
+fort_15th = yes
+center_of_trade = 2

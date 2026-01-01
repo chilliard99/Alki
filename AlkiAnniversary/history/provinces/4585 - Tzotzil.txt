@@ -1,0 +1,16 @@
+# No previous file for Tzotzil
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W95
+controller = W95
+add_core = W95
+culture = zapatistan
+is_city = yes
+religion = catholico
+capital = "Tzotzil"
+trade_goods = gems #jade
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 4 

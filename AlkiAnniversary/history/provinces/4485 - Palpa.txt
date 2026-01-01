@@ -1,0 +1,17 @@
+# No previous file for Ohlone
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y32 
+controller = Y32
+add_core = Y32
+culture = portugers
+religion = partisan
+capital = "Viana do Castelo" 
+trade_goods = cotton #spanish cotton
+hre = yes 
+base_tax = 3
+base_production = 3
+base_manpower = 3
+is_city = yes

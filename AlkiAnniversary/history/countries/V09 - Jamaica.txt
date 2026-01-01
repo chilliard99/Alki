@@ -1,0 +1,36 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = jamaican
+religion = espiritismo 
+technology_group = ottoman
+capital = 4152	#Kingston
+unlock_cult = rastafari_denom
+unlock_cult = hijos_de_dios_denom
+unlock_cult = cemi_denom
+set_country_flag = has_a_cult_unlocked
+
+1406.5.13 = {
+	monarch = {
+		name = "Marcus"
+		dynasty = "Rasta"
+		birth_date = 1406.5.13
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
+1425.2.13 = {
+	heir = {
+		name = "Portia II"
+		monarch_name = "Portia II"
+		dynasty = "Rasta"
+		birth_date = 1425.2.13
+		death_date = 1483.8.30
+		claim = 95
+		adm = 5
+		dip = 5
+		mil = 4
+		female = yes
+	}
+}

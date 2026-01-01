@@ -1,0 +1,20 @@
+# No previous file for Lipiyanes
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = chinese
+owner = W49
+controller = W49
+add_core = W49
+culture = tunecino
+religion = catholico
+capital = "Lipiyanes"
+trade_goods = cloth #texan cloths
+center_of_trade = 1
+hre = no
+fort_15th = yes
+base_tax = 5
+base_production = 5
+base_manpower = 5
+is_city = yes

@@ -1,0 +1,15 @@
+# No previous file for Tzapotzingo
+discovered_by = ottoman
+discovered_by = muslim
+owner = W79
+controller = W79
+add_core = W79
+culture = nayar
+religion = catholico
+is_city = yes
+capital = "Tzapotzingo"
+trade_goods = wool #ranchas
+hre = no
+base_tax = 3
+base_production = 4
+base_manpower = 3

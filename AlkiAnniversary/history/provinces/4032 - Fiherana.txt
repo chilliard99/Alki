@@ -1,0 +1,16 @@
+#4032 - Fiherana
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W85
+controller = W85
+add_core = W85
+culture = oaxacan
+religion = catholico
+capital = "Fiherana"
+trade_goods = grain #revolucion verde later
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

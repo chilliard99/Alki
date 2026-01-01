@@ -1,0 +1,16 @@
+#4249 - Zubtsov
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V47
+controller = V47   
+add_core = V47
+culture = zuilian
+religion = catholico
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = tropical_wood #good shit  
+base_manpower = 1
+capital = "Zubtsov"
+is_city = yes

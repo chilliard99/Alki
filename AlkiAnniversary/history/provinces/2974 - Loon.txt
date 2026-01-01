@@ -1,0 +1,15 @@
+#2974 Loon
+discovered_by = ottoman
+discovered_by = muslim
+owner = W78
+controller = W78
+add_core = W78
+is_city = yes
+capital = "Loon"
+culture = tapatio
+religion = catholico
+hre = no
+base_tax = 3
+base_production = 3
+trade_goods = grain #avacados
+base_manpower = 4

@@ -1,0 +1,17 @@
+#Cherkasy
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y35
+controller = Y35 
+add_core = Y35
+culture = boisan
+religion = theanite
+hre = no
+base_tax = 1
+base_production = 2
+trade_goods = copper #copper basin
+base_manpower = 2
+capital = "Cherkasy"
+is_city = yes

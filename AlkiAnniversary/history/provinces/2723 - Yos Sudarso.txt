@@ -1,0 +1,15 @@
+#2723 - Yos Sudarso
+discovered_by = ottoman
+discovered_by = muslim
+owner = W65
+controller = W65
+add_core = W65
+culture = durangan
+religion = catholico
+capital = "Yos Sudarso"
+trade_goods = naval_supplies #timber
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 3
+is_city = yes

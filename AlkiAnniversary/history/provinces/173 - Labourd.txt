@@ -1,0 +1,19 @@
+# 173 Labourd - Principal cities: Bayonne (can't change file name)
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X58
+controller = X58
+add_core = X58
+capital = "Bayonne"
+is_city = yes
+culture = columbian
+religion = dynastic
+hre = no
+base_tax = 7
+base_production = 7
+trade_goods = paper #East Coast Paper Industry
+base_manpower = 4
+fort_15th = yes

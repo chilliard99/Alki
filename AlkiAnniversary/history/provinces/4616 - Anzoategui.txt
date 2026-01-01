@@ -1,0 +1,16 @@
+# No previous file for Anzoategui
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V55
+controller = V55
+add_core = V55
+culture = caraqueno
+religion = espiritismo
+capital = "Anzoategui"
+trade_goods = fish #just more fish i guess
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

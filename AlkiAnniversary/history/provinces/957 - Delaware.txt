@@ -1,0 +1,18 @@
+#957 - Delaware
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X59
+controller = X59
+add_core = X59
+culture = columbian
+religion = dynastic
+capital = "Delaware"
+trade_goods = fish #Chesapeak fishin
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 3
+is_city = yes

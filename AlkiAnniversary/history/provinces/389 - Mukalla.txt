@@ -1,0 +1,21 @@
+#389 - Mukalla
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+add_core = X95
+owner = X95
+controller = X95
+culture = royal_iowan
+religion = islam
+capital = "Al Mukalla"
+trade_goods = silk #three citian silk
+hre = no
+base_tax = 8
+base_production = 9
+base_manpower = 9
+is_city = yes
+fort_15th = yes
+center_of_trade = 2
+add_province_triggered_modifier = birthplace_of_islam

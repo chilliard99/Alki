@@ -1,0 +1,17 @@
+#1054 - Ilimsk
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y34
+controller = Y34
+add_core = Y34
+culture = navajan
+religion = partisan
+capital = "Mukhtuya"
+trade_goods = gems #Turqouis Gems
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes	

@@ -1,0 +1,145 @@
+country_decisions = {
+
+	
+	outlaw_traditionalist_hadith = {
+		potential = {
+			religion_group = islam_group
+			NOT = {
+				has_country_modifier = outlawed_traditionalist_hadith_islam
+			}
+			adm_tech = 7
+		}
+		allow = {
+			adm_tech = 10
+			mil = 5
+		}
+		effect = {
+			add_country_modifier = {
+				name = "outlawed_traditionalist_hadith_islam"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	enforce_tolerance = {
+		potential = {
+			religion_group = islam_group
+			NOT = {
+				has_country_modifier = enforced_tolerance_islam
+			}
+			any_owned_province = {
+				NOT = {
+					religion_group = islam_group
+				}	
+			}
+		}
+		allow = {
+			adm = 3
+		}
+		effect = {
+			add_country_modifier = {
+				name = "enforced_tolerance_islam"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	fund_religious_scholarship = {
+		potential = {
+			religion_group = islam_group
+			NOT = {
+				has_country_modifier = religious_scholarship_islam
+			}
+			adm_tech = 10
+		}
+		allow = {
+			adm_tech = 12
+		}
+		effect = {
+			add_country_modifier = {
+				name = "religious_scholarship_islam"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	adopt_allamah_title = {
+		potential = {
+			religion_group = islam_group
+			NOT = {
+				has_country_modifier = allamah_islam
+			}
+		}
+		allow = {
+			adm = 4
+			dip = 4
+			mil = 4
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "allamah_islam"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	enforce_islamic_heritage = {
+		potential = {
+			religion_group = islam_group
+			NOT = {
+				has_country_modifier = enforced_islamic_heritage
+			}
+		}
+		allow = {
+			legitimacy_equivalent = 95
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "enforced_islamic_heritage"
+				duration = -1
+			}
+			add_legitimacy = -20
+			add_horde_unity = -20
+			add_devotion = -20
+			add_meritocracy = -20
+			add_republican_tradition = -10
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	promote_public_education = {
+		potential = {
+			religion_group = islam_group
+			NOT = {
+				has_country_modifier = promoted_public_education_islam
+			}
+			dip_tech = 10
+		}
+		allow = {
+			dip = 4
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = "promoted_public_education_islam"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

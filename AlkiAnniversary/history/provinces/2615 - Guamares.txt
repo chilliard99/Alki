@@ -1,0 +1,15 @@
+# No previous file for Guamares
+discovered_by = ottoman
+discovered_by = muslim
+owner = W80
+controller = W80
+add_core = W80
+culture = teocuitlatl
+religion = catholico
+is_city = yes
+capital = "Pechichitane"
+trade_goods = wool #rebozos
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 3

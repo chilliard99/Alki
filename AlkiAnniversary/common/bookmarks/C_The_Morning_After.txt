@@ -1,0 +1,19 @@
+bookmark = {
+	name = "THEMORNINGAFTER"
+	desc = "THEMORNINGAFTER_DESC"
+	date = 1444.11.11
+	
+	center = 2495
+	default = no
+	
+	country = W48
+	country = W55
+	country = W56
+	country = W51
+	country = W50
+	country = W49
+	country = W17
+	
+	easy_country = W48
+	easy_country = W55
+}

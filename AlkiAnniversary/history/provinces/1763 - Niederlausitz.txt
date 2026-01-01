@@ -1,0 +1,14 @@
+#1763 - Niederlausitz
+discovered_by = north_american
+owner = Z05
+controller = Z05
+add_core = Z05
+capital = "Cottbus"
+culture = neogermanic
+religion = paganry
+trade_goods = livestock
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = no

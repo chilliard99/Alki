@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = saulteaux
+religion = theanite
+technology_group = western
+capital = 2128	 #Yorktown
+
+
+1406.3.12 = {
+	monarch = {
+		name = "Nahkawiyiniw"
+		dynasty = "Yorkton"
+		birth_date = 1406.3.12
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
+1424.3.3 = {
+	heir = {
+		name = "Bungee"
+		monarch_name = "Bungee"
+		dynasty = "Yorkton"
+		birth_date = 1424.3.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

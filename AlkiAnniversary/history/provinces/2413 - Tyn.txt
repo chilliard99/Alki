@@ -1,0 +1,16 @@
+#2413 - Tyn
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W16
+controller = W16
+add_core = W16
+culture = comundian
+religion = partisan
+hre = yes
+base_tax = 3
+base_production = 3
+trade_goods = fish #who woulda guessed? 
+base_manpower = 2
+capital = "Tyn"
+is_city = yes

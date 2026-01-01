@@ -1,0 +1,14 @@
+#4327 - Jask
+discovered_by = indian
+owner = V95
+controller = V95
+add_core = V95
+culture = incan
+religion = yanantin
+capital = "Jask"
+trade_goods = fish #mostly fish
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

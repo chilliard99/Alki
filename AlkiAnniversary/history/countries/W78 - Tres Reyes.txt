@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = michoacan
+religion = catholico
+technology_group = muslim
+capital = 4574	#Morelia
+
+1409.3.16 = {
+	monarch = {
+		name = "Antonio II"
+		dynasty = "Valladolid"
+		birth_date = 1409.3.16
+		adm = 3
+		dip = 4
+		mil = 4
+	}
+}
+1436.3.22 = {
+	heir = {
+		name = "Martin XI"
+		monarch_name = "Martin XI"
+		dynasty = "Valladolid"
+		birth_date = 1436.3.22
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 0
+		mil = 4
+	}
+}

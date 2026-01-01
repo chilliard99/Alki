@@ -1,0 +1,14 @@
+#4395 - Yamethin
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neobrazilian
+religion = espiritismo
+capital = "Yamethin"
+trade_goods = spices #spices on tual
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

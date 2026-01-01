@@ -1,0 +1,15 @@
+#1839 - Suruga
+discovered_by = chinese
+owner = X25
+controller = X25
+add_core = X25
+culture = high_nippon
+religion = neoshinto
+capital = "Sunpu"
+trade_goods = tea #Sencha
+hre = no
+base_tax = 6
+base_production = 6
+base_manpower = 3
+is_city = yes
+discovered_by = eastern

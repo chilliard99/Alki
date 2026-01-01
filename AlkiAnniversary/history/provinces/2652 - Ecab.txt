@@ -1,0 +1,16 @@
+# No previous file for Ecab
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W90
+controller = W90
+add_core = W90
+culture = rivieran
+is_city = yes
+religion = catholico
+capital = "Ecab"
+trade_goods = fish #riviera fisheries
+hre = no
+base_tax = 3 
+base_production = 3
+base_manpower = 2

@@ -1,0 +1,18 @@
+# No previous file for Chehalis
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y41
+controller = Y41
+add_core = Y41
+culture = colville
+religion = theanite
+capital = "Nespelem"
+trade_goods = copper #Some zinc/lead mines around here (like old dominion)
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 3
+is_city = yes 
+fort_15th = yes

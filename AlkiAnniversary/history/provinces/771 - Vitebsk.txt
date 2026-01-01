@@ -1,0 +1,17 @@
+#771 - Vitebsk
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y32
+controller = Y32
+add_core = Y32
+culture = unitah
+religion = sacramental
+hre = no
+base_tax = 4
+base_production = 3
+trade_goods = wine #Colorado Wine Country 
+base_manpower = 3
+capital = "Vitebsk"
+is_city = yes	 

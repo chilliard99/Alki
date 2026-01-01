@@ -1,0 +1,18 @@
+#882 - Mescalero
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W49
+controller = W49
+add_core = W49
+is_city = yes
+culture = bereber
+religion = catholico
+capital = "Mescalero" 
+trade_goods = grain #rich soil (due to potash, but I like to think its because of the nearby flesh pit ( ͡° ͜ʖ ͡°) )
+hre = no 
+base_tax = 2
+base_production = 2
+base_manpower = 3
+is_city = yes

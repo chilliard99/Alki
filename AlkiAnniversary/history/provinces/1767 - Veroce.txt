@@ -1,0 +1,18 @@
+#1767 - Veroce
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y84
+controller = Y84
+add_core = Y84
+culture = bigsur
+religion = partisan
+capital = "Monterrey"
+trade_goods = fish #just what it makes
+hre = yes
+base_tax = 5
+base_production = 4
+base_manpower = 4
+is_city = yes
+fort_15th = yes

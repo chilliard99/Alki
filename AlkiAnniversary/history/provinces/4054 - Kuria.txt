@@ -1,0 +1,15 @@
+#4054 - Kikuyu
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W85
+controller = W85
+add_core = W85
+culture = chiapan
+religion = catholico
+trade_goods = cocoa #FUCK IT MORE COCOA 
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+capital = "Kuria"

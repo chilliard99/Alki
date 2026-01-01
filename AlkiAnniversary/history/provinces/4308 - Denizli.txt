@@ -1,0 +1,14 @@
+#4308 - Denizli
+discovered_by = indian
+owner = V79
+controller = V79
+add_core = V79
+culture = newvietnamese
+religion = yanantin
+capital = "Denizli"
+trade_goods = dyes #more flowers
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes

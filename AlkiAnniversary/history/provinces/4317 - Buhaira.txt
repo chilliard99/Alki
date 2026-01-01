@@ -1,0 +1,14 @@
+#4317 - Buhaira
+discovered_by = indian
+owner = V93
+controller = V93
+add_core = V93
+culture = ecuadorian
+religion = catholico
+capital = "Damanhur"
+trade_goods = livestock #important center of cattle
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

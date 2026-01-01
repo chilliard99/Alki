@@ -1,0 +1,41 @@
+three_star_kingdom_mechanic = {
+	
+	powers = {
+		factional_power = {
+			gui = three_star_kingdom_gov_mech
+			max = 100	#Nationalist direction
+			min = -100	#Preservist direction
+			base_monthly_growth = 0
+			scaled_modifier = {
+				trigger = {
+					has_government_power = { 
+						mechanic_type = three_star_kingdom_mechanic
+						power_type = factional_power
+						value = 0
+					}
+				}
+				modifier = {
+					stability_cost_modifier = 0.2
+					core_creation = -0.15
+					years_of_nationalism = -5
+				}
+			}
+			reverse_scaled_modifier = {
+				trigger = {
+					NOT = {
+						has_government_power = { 
+							mechanic_type = three_star_kingdom_mechanic
+							power_type = factional_power
+							value = 0
+						}
+					}
+				}
+				modifier = {
+					culture_conversion_cost = 0.2
+					global_unrest = -2
+					ae_impact = -0.15
+				}
+			}
+		}
+	}
+}

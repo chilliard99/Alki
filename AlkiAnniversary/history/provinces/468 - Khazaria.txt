@@ -1,0 +1,20 @@
+#468 - Khazaria
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y03
+controller = Y03
+add_core = Y03 
+culture = sotan
+religion = dynastic
+capital = "Cherny Yar"
+trade_goods = silk #three citian
+hre = no
+base_tax = 7
+base_production = 7
+base_manpower = 8
+is_city = yes
+fort_15th = yes
+discovered_by = western
+center_of_trade = 1

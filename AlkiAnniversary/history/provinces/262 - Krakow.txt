@@ -1,0 +1,15 @@
+#262 - Krakow
+discovered_by = north_american
+culture = neopolelander
+religion = paganry
+capital = "Kraków"
+hre = no
+base_tax = 2
+base_production = 2
+trade_goods = fur
+base_manpower = 2
+is_city = no
+owner = Z17
+controller = Z17 
+add_core = Z17
+center_of_trade = 1

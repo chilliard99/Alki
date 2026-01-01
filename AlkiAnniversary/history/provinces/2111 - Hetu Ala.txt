@@ -1,0 +1,15 @@
+# 2111 - Hetu Ala
+discovered_by = eastern
+discovered_by = western
+owner = Y22
+controller = Y22
+add_core = Y22
+culture = assiniboine
+religion = theanite
+capital = "Hetu Ala"
+trade_goods = livestock #i guess not much info on this part 
+hre = no
+base_tax = 1
+base_production = 2
+base_manpower = 2
+is_city = yes

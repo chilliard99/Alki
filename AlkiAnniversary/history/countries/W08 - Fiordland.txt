@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = haidan
+religion = collectivist
+technology_group = western
+capital = 2249	 #Fiordland
+
+
+1410.3.11 = {
+	monarch = {
+		name = "Kitlope"
+		dynasty = "Rupert"
+		birth_date = 1410.3.11
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1429.11.27 = {
+	heir = {
+		name = "Kitlope II"
+		monarch_name = "Kitlope II"
+		dynasty = "Rupert"
+		birth_date = 1429.11.27
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 4
+		mil = 3
+	}
+}

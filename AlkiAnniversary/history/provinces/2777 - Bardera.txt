@@ -1,0 +1,15 @@
+#2777 - Bardera
+discovered_by = ottoman
+discovered_by = muslim
+owner = W73
+controller = W73
+add_core = W73
+culture = tamper
+religion = catholico
+capital = "Baardheere"
+trade_goods = grain #apples, grapefruits, tangerines, and more!
+is_city = yes
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 3

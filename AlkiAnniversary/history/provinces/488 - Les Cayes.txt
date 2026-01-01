@@ -1,0 +1,16 @@
+#488 - Les Cayes
+discovered_by = ottoman
+discovered_by = muslim
+owner = V16
+controller = V16
+add_core = V16
+culture = haitian
+religion = espiritismo
+capital = "Les Cayes"
+trade_goods = grain #vegetables
+hre = no
+fort_15th = yes
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

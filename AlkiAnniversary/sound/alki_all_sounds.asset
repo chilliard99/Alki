@@ -1,0 +1,246 @@
+############### ALKI ADDITIONS
+
+sound = {
+	name = religion_collectivist
+	file = "religion_collectivist.wav"
+}
+
+sound = {
+	name = start_convert_collectivist
+	file = "religion_collectivist.wav"
+}
+
+sound = {
+	name = religion_sacramental
+	file = "religion_sacramental.wav"
+}
+
+sound = {
+	name = start_convert_sacramental
+	file = "religion_sacramental.wav"
+}
+
+sound = {
+	name = religion_dynastic
+	file = "religion_dynastic.wav"
+}
+
+sound = {
+	name = start_convert_dynastic
+	file = "religion_dynastic.wav"
+}
+
+sound = {
+	name = religion_theanite
+	file = "religion_theanite.wav"
+}
+
+sound = {
+	name = start_convert_theanite
+	file = "religion_theanite.wav"
+}
+
+sound = {
+	name = religion_partisan
+	file = "religion_partisan.wav"
+}
+
+sound = {
+	name = start_convert_partisan
+	file = "religion_partisan.wav"
+}
+
+sound = {
+	name = religion_despotic
+	file = "religion_despotic.wav"
+}
+
+sound = {
+	name = start_convert_despotic
+	file = "religion_despotic.wav"
+}
+
+sound = {
+	name = religion_anarchist
+	file = "religion_anarchist.wav"
+}
+
+sound = {
+	name = start_convert_anarchist
+	file = "religion_anarchist.wav"
+}
+
+sound = {
+	name = religion_zahran
+	file = "religion_zahran.wav"
+}
+
+sound = {
+	name = start_convert_zahran
+	file = "religion_zahran.wav"
+}
+
+sound = {
+	name = religion_islam
+	file = "religion_islam.wav"
+}
+
+sound = {
+	name = start_convert_islam
+	file = "religion_islam.wav"
+}
+
+sound = {
+	name = religion_new_jewish
+	file = "religion_new_jewish.wav"
+}
+
+sound = {
+	name = start_convert_new_jewish
+	file = "religion_new_jewish.wav"
+}
+
+sound = {
+	name = religion_neoshinto
+	file = "religion_neoshinto.wav"
+}
+
+sound = {
+	name = start_convert_neoshinto
+	file = "religion_neoshinto.wav"
+}
+
+sound = {
+	name = religion_catholico
+	file = "religion_catholico.wav"
+}
+
+sound = {
+	name = start_convert_catholico
+	file = "religion_catholico.wav"
+}
+
+sound = {
+	name = religion_evangelical
+	file = "religion_evangelical.wav"
+}
+
+sound = {
+	name = start_convert_evangelical
+	file = "religion_evangelical.wav"
+}
+
+sound = {
+	name = religion_vacandist
+	file = "religion_vacandist.wav"
+}
+
+
+sound = {
+	name = start_convert_vacandist
+	file = "religion_vacandist.wav"
+}
+
+sound = {
+	name = religion_cruzite
+	file = "religion_cruzite.wav"
+}
+
+sound = {
+	name = start_convert_cruzite
+	file = "religion_cruzite.wav"
+}
+
+sound = {
+	name = religion_vulgar
+	file = "religion_vulgar.wav"
+}
+
+sound = {
+	name = start_convert_vulgar
+	file = "religion_vulgar.wav"
+}
+
+sound = {
+	name = religion_sagrado
+	file = "religion_sagrado.wav"
+}
+
+sound = {
+	name = start_convert_sagrado
+	file = "religion_sagrado.wav"
+}
+
+sound = {
+	name = religion_la_luz
+	file = "religion_la_luz.wav"
+}
+
+sound = {
+	name = start_convert_la_luz
+	file = "religion_la_luz.wav"
+}
+
+sound = {
+	name = religion_espiritismo
+	file = "religion_espiritismo.wav"
+}
+
+
+sound = {
+	name = start_convert_espiritismo
+	file = "religion_espiritismo.wav"
+}
+
+sound = {
+	name = religion_yanantin
+	file = "religion_yannatin.wav"
+}
+
+sound = {
+	name = start_convert_yanantin
+	file = "religion_yannatin.wav"
+}
+
+sound = {
+	name = religion_paganry
+	file = "religion_paganry.wav"
+}
+
+sound = {
+	name = start_convert_paganry
+	file = "religion_paganry.wav"
+}
+
+sound = {
+	name = religion_idolatrous
+	file = "religion_idolatry.wav"
+}
+
+sound = {
+	name = start_convert_idolatrous
+	file = "religion_idolatry.wav"
+}
+
+sound = {
+	name = religion_shamanist
+	file = "religion_shamanist.wav"
+}
+
+
+sound = {
+	name = start_convert_shamanist
+	file = "religion_shamanist.wav"
+}
+
+
+sound = {
+	name = religion_penitent
+	file = "religion_penitent.wav"
+}
+
+
+sound = {
+	name = start_convert_penitent
+	file = "religion_penitent.wav"
+}

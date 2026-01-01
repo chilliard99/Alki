@@ -1,0 +1,20 @@
+#351 - Biskra
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = X92
+controller = X92
+add_core = X92 
+culture = viomichanikos
+religion = islam
+capital = "Biskra"
+trade_goods = silk #three citian silk
+hre = no
+base_tax = 9
+base_production = 8
+base_manpower = 8
+is_city = yes
+fort_15th = yes
+discovered_by = western
+center_of_trade = 2

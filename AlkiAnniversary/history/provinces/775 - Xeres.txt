@@ -1,0 +1,15 @@
+#775 - Asuncion
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neobrazilian
+religion = espiritismo
+capital = "Asunción"
+trade_goods = fish #more fish?
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes
+center_of_trade = 1

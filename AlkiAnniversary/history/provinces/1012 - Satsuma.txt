@@ -1,0 +1,16 @@
+#1012 - Satsuma
+discovered_by = chinese
+owner = X39
+controller = X39
+add_core = X39
+culture = kyushuan_g
+religion = neoshinto
+capital = "Kagoshima"
+trade_goods = tea #Kagoshima tea 
+hre = no
+base_tax = 7
+base_production = 7
+base_manpower = 6
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman

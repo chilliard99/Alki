@@ -1,0 +1,14 @@
+#267 - Plsen
+discovered_by = north_american
+owner = Z03
+controller = Z03
+add_core = Z03
+capital = "Plzen"
+culture = neogermanic
+religion = paganry
+trade_goods = naval_supplies
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = no

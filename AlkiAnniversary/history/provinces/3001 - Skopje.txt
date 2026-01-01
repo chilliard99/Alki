@@ -1,0 +1,16 @@
+# - Skopje
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W85
+controller = W85
+add_core = W85
+culture = chilango
+religion = catholico
+capital = "Skopje"
+trade_goods = grain #farmin beans and corn
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 5
+is_city = yes

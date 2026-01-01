@@ -1,0 +1,20 @@
+#2685 - Gayo
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = chinese
+owner = W49
+controller = W49
+add_core = W49
+culture = houstonite
+religion = catholico
+capital = "Gayo"
+trade_goods = paper #the center of the world's paper production
+hre = no
+fort_15th = yes
+base_tax = 9
+base_production = 9
+base_manpower = 9
+is_city = yes
+center_of_trade = 1

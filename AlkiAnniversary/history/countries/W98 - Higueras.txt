@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = catracho
+religion = catholico 
+technology_group = muslim
+capital = 2637	#San Pedro Sula
+
+1419.6.12 = {
+	monarch = {
+		name = "Paz"
+		dynasty = "Anchuria"
+		birth_date = 1419.6.12
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}
+1443.2.15 = {
+	heir = {
+		name = "Melgar"
+		monarch_name = "Melgar IV"
+		dynasty = "Anchuria"
+		birth_date = 1443.2.15
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 1
+		mil = 1
+	}
+}

@@ -1,0 +1,14 @@
+#4405 - Katha
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neobrazilian
+religion = espiritismo
+capital = "Katha"
+trade_goods = fish #cause fuck you bitch fuck you kill yourself I want out its been 2 years and the mod still isnt out holy shit
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2	
+is_city = yes

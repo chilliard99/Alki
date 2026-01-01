@@ -1,0 +1,18 @@
+# No previous file for Wabash
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = muslim
+discovered_by = ottoman
+owner = X91
+controller = X91
+add_core = X91
+is_city = yes
+culture = buckeye
+religion = islam
+capital = "Wabash"
+trade_goods = sugar #Sugar Beets
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 3
+discovered_by = western

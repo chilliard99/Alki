@@ -1,0 +1,16 @@
+# 2627 - Cihuatlan
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W87
+controller = W87
+add_core = W87
+culture = costeno
+is_city = yes
+religion = catholico
+capital = "Cihuatlan"
+trade_goods = fish #fish shit
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1

@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+primary_culture = north_mitter
+religion = islam
+technology_group = eastern
+capital = 319	#Traverse City
+
+1387.12.27 = {
+	monarch = {
+		name = "Jaxon"
+		dynasty = "Lafayette"
+		birth_date = 1387.12.27
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1433.12.25 = {
+	heir = {
+		name = "Dominic "
+		monarch_name = "Dominic III"
+		dynasty = "Lafayette"
+		birth_date = 1433.12.25
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+}

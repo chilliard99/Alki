@@ -1,0 +1,17 @@
+#875 - Canyon
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W48
+controller = W48
+add_core = W48
+is_city = yes
+culture = arazonian 
+religion = catholico
+capital = "Canyon" 
+trade_goods = fish #island fisheries 
+hre = no 
+base_tax = 4
+base_production = 3
+base_manpower = 3

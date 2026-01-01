@@ -1,0 +1,18 @@
+#363 - Diamientia
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = X93
+controller = X93
+add_core = X93
+culture = hellaldan
+religion = islam
+capital = "Dumyat"
+trade_goods = wine #Missouri Rhineland
+hre = no
+base_tax = 4 
+base_production = 4
+base_manpower = 3
+is_city = yes
+discovered_by = western

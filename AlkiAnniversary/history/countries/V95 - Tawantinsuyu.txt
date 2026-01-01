@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = incan
+religion = yanantin  
+technology_group = indian 
+capital = 808	#Cuzco
+
+1424.1.12 = {
+	monarch = {
+		name = "Tupac IV"
+		dynasty = "Inca"
+		birth_date = 1424.1.12
+		adm = 5
+		dip = 5
+		mil = 3
+	}
+}
+1443.6.12 = {
+	heir = {
+		name = "Manco"
+		monarch_name = "Manco"
+		dynasty = "Inca"
+		birth_date = 1443.6.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 3
+		mil = 4
+	}
+}

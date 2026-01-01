@@ -1,0 +1,35 @@
+bribe_county = {
+	category = influence
+	#alert_index = 5
+	alert_tooltip = decrease_autonomous_vassal_tt
+	require_acceptance = no 
+	is_visible = {
+		has_reform = barony_reform
+		FROM = {
+			is_part_of_hre = yes
+		}
+	}
+	is_allowed = {
+		years_of_income = 1
+	}
+	on_accept = {
+		add_years_of_income = -1
+		FROM = {
+			tooltip = {
+				add_years_of_income = 1
+				add_opinion = {
+					who = ROOT
+					modifier = bribed_elector_baron_gor
+				}
+			}
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = { id = puget_events.3 }
+			}
+		}
+	}
+	ai_will_do = {
+		always = no
+	}
+}

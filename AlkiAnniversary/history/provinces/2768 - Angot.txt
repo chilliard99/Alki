@@ -1,0 +1,15 @@
+#2768 - Ashenge
+discovered_by = ottoman
+discovered_by = muslim
+owner = W55
+controller = W55
+add_core = W55
+culture = antonian
+religion = catholico
+capital = "Manadeley"
+is_city = yes
+base_manpower = 3
+trade_goods = wool
+hre = no
+base_tax = 3
+base_production = 3

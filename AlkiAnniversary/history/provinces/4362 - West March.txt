@@ -1,0 +1,15 @@
+#4362 - West March (Dumfriesshire+Kircudbrightshire)
+discovered_by = indian
+owner = U00
+controller = U00
+add_core = U00
+culture = neofilipino
+religion = espiritismo
+hre = no
+base_tax = 3
+base_production = 3
+trade_goods = sugar #used to be sugar during spanish days
+base_manpower = 3
+capital = "Dumfries"
+is_city = yes
+center_of_trade = 1

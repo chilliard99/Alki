@@ -1,0 +1,16 @@
+#4147 - Rostov (includes Uglich)
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = chinese
+owner = V05
+controller = V05
+add_core = U29
+culture = bahamian
+religion = espiritismo
+hre = no
+base_tax = 3
+base_production = 3
+trade_goods = cotton #more cotton plantations  
+base_manpower = 2
+capital = "Rostov"
+is_city = yes

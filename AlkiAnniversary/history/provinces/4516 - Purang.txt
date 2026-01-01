@@ -1,0 +1,20 @@
+#2064 - Shekhawati
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y40
+controller = Y40
+add_core = Y40
+add_core = U74
+culture = flathead
+religion = theanite
+capital = "Spokane"
+trade_goods = copper #The whole area is huge for mining, so all nonferrous metals here
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 5
+is_city = yes
+center_of_trade = 1
+fort_15th = yes

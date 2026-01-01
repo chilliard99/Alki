@@ -1,0 +1,15 @@
+# No previous file for Marien
+discovered_by = ottoman
+discovered_by = muslim
+owner = V04
+controller = V04
+add_core = V04
+culture = haitian
+religion = espiritismo
+capital = "Marien"
+trade_goods = livestock #primarily exported beef 
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

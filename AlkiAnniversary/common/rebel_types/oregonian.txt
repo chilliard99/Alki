@@ -1,0 +1,208 @@
+######################################################################
+# Oregonian rebels. 
+######################################################################
+oregonian_rebels = {
+
+	color = { 50 85 210 }
+
+	area = nation 					# Stays within the nation
+	government = republic			
+	defection = none				# Does not defect
+	independence = none				# Does not strive for independence
+	unit_transfer = yes
+	gfx_type = culture_province	
+	will_relocate = yes	
+	
+	resilient = no
+	reinforcing = yes
+	general = yes
+	smart = yes
+	
+	artillery = 0.1
+	infantry = 0.6
+	cavalry = 0.3
+	
+	morale = 1.1
+	
+	# Possible handle actions
+	handle_action_negotiate = no
+	handle_action_stability = yes
+	handle_action_build_core = yes
+	handle_action_send_missionary = yes		
+	
+	# The rebel type with the highest modifier for this province gets picked
+	spawn_chance = {
+		factor = 1
+		modifier = {
+			factor = 0
+			owner = {
+				NOT = { has_country_modifier = gor_oregonian_freedom_fighters_genorg }
+			}
+		}			
+		modifier = {
+			factor = 0
+			has_global_flag = disabled_sons_of_oregon
+		}
+		modifier = {
+			factor = 0
+			NOT = { culture = oregonite }
+		}
+		modifier = {
+			factor = 5
+			has_province_modifier = gor_redwood_destruction_oregongen
+		}
+		modifier = {
+			factor = 10
+			has_global_flag = oregonian_rebellion_started
+		}
+		modifier = {
+			factor = 10
+			has_province_modifier = gor_inspired_to_rebellion_genorg
+		}
+		modifier = {
+			factor = 5
+			owner = {
+				NOT = { stability = 3 }
+			}
+		}
+		modifier = {
+			factor = 10
+			NOT = { is_year = 1500 }
+		}		
+		modifier = {
+			factor = 0.5
+			is_year = 1500
+		}
+		modifier = {
+			factor = 0.5
+			is_year = 1550
+		}
+	}
+ 
+ 	# This is checked for EACH province in the Area of Operations
+	movement_evaluation = {
+		factor = 1
+		modifier = {
+			factor = 0.1
+			units_in_province = 1
+		}
+		modifier = {
+			factor = 0.001
+			controlled_by = REB
+		}
+		modifier = {
+			factor = 10
+			is_capital = yes
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 2
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 4
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 6
+		}
+		modifier = {
+			factor = 0.25
+			NOT = { culture = oregonite }
+		}
+	}
+ 
+ 	# Province Scope
+ 	siege_won_trigger = {
+		NOT = { has_province_modifier = gor_inspired_to_rebellion_genorg }
+ 	}
+	siege_won_effect = {
+		add_province_modifier = {
+			name = "gor_inspired_to_rebellion_genorg"
+			duration = 3650
+		}
+	}
+	
+	# Country scope
+	can_negotiate_trigger = {
+		always = no
+	}
+	
+	# Country scope
+	can_enforce_trigger = {
+		always = yes
+	}
+	
+	# Localisation for their demands
+	demands_description = "oregonian_rebel_demands"
+	
+	# Country Scope	
+	demands_enforced_effect = {
+		custom_tooltip = remove_isnpired_to_rebellion_from_all
+		hidden_effect = {
+			every_owned_province = {
+				remove_province_modifier = gor_inspired_to_rebellion_genorg
+			}
+		}
+		if = {
+			limit = {
+				any_known_country = {
+					OR = {
+						tag = U86
+						tag = U87
+					}
+				}
+			}
+			random_known_country = {
+				limit = {
+					OR = {
+						tag = U86
+						tag = U87
+					}
+				}
+				switch_tag = THIS
+				inherit = ROOT
+			}
+		}
+		else = {
+			remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+			if = {
+				limit = {
+					NOT = { government = republic }
+				}
+				change_government = republic
+			}
+			change_tag = U86
+			add_government_reform = revolutionary_oregonian_republic_reform
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			swap_non_generic_missions = yes
+			if = {
+				limit = {
+					NOT = { has_global_flag = oregonian_incident_happened }
+					is_part_of_hre = yes
+				}
+				set_global_flag = oregonian_incident_happened
+				emperor = {
+					country_event = { id = oregonianmisc_events.1 }
+				}
+			}
+			custom_tooltip = every_nation_in_the_union_of_cali_gains_neg_two_hundo_wit_us
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					add_opinion = {
+						who = ROOT
+						modifier = nation_of_radicals_gor
+					}
+				}
+			}
+		}
+	}
+}

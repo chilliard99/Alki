@@ -1,0 +1,18 @@
+#1860 - Norfolk
+#Includes Suffolk
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y80
+controller = Y80
+add_core = Y80
+culture = shastan
+religion = partisan
+hre = yes
+base_tax = 1
+base_production = 1
+trade_goods = livestock #About a 1/4th of the county is devoted to farming, with most of it being ranges. I LOVE READING AGRICULTURAL REPORTS
+base_manpower = 1
+capital = "Dorris"
+is_city = yes

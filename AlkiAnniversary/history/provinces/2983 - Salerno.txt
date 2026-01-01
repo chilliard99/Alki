@@ -1,0 +1,16 @@
+# - Salerno
+discovered_by = ottoman
+discovered_by = muslim
+owner = W84
+controller = W84
+add_core = W84
+culture = panucoan 
+religion = catholico 
+hre = no 
+center_of_trade = 1
+base_tax = 5
+base_production = 5
+trade_goods = sugar #amazin 
+base_manpower = 4
+capital = "Salerno" 
+is_city = yes	# Estimated

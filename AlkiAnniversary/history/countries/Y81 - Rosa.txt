@@ -1,0 +1,32 @@
+government = republic
+add_government_reform = free_city
+government_rank = 1
+primary_culture = vinyard
+religion = partisan
+technology_group = western
+capital = 1851	 #Roseville
+religious_school = freedonian_party
+
+1406.5.21 = {
+	monarch = {
+		name = "Grider"
+		dynasty = "Rosa"
+		birth_date = 1406.5.21
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
+1426.4.15 = {
+	heir = {
+		name = "Louis"
+		monarch_name = "Louis III"
+		dynasty = "Rosa"
+		birth_date = 1426.4.15
+		death_date = 1483.8.30
+		claim = 95
+		adm = 0
+		dip = 1
+		mil = 2
+	}
+}

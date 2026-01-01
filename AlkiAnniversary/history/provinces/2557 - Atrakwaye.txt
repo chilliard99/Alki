@@ -1,0 +1,18 @@
+# No previous file for Atrakwaye
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+add_core = X60
+owner = X60
+controller = X60
+culture = vannian
+religion = dynastic
+capital = "Atrakwaye"
+trade_goods = naval_supplies #big forest
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 3
+is_city = yes

@@ -1,0 +1,20 @@
+#474 - Yaik
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y04
+controller = Y04
+add_core = Y04
+culture = yooper
+religion = dynastic
+capital = "Yaik"
+trade_goods = fish #fishin town
+hre = no
+base_tax = 7
+base_production = 6
+base_manpower = 6
+is_city = yes
+fort_15th = yes
+discovered_by = western
+center_of_trade = 1

@@ -1,0 +1,15 @@
+#130 - Istria
+discovered_by = chinese
+owner = X16
+controller = X16
+add_core = X16
+culture = neoainu
+religion = neoshinto
+capital = "Pula"
+trade_goods = fish #kuril fisheries,  if the russians want it its gotta endure
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+discovered_by = eastern

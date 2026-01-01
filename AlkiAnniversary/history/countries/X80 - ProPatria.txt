@@ -1,0 +1,7 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+primary_culture = englander
+religion = dynastic
+technology_group = eastern
+capital = 209	#Patria

@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = chinese
+religion = neoshinto
+primary_culture = high_nippon
+capital = 1843 #Saitama
+
+
+1406.12.4 = {
+	monarch = {
+		name = "Shotoku"
+		dynasty = "Chiba"
+		birth_date = 1406.12.4
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}
+1433.2.3 = {
+	heir = {
+		name = "Yoshida"
+		monarch_name = "Yoshida III"
+		dynasty = "Chiba"
+		birth_date = 1433.2.3
+		death_date = 1483.8.30
+		claim = 76
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}

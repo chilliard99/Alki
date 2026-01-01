@@ -1,0 +1,14 @@
+#264 - Breslau (Breslau+Brieg+Öls+Wartenberg+Wohlau/Steinau)
+discovered_by = north_american
+culture = neopolelander
+religion = paganry
+capital = "Breslau"
+trade_goods = unknown
+hre = no
+base_tax = 1
+base_production = 1
+is_city = no 
+base_manpower = 1
+native_size = 2
+native_ferocity = 8
+native_hostileness = 4

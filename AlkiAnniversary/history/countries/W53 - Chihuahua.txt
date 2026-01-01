@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = huahuan
+religion = catholico
+technology_group = muslim
+capital = 2714	 #Chihuahua
+
+
+1409.11.11 = {
+	monarch = {
+		name = "Abraham"
+		dynasty = "de Chihuahua"
+		birth_date = 1409.11.11
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}
+1439.12.12 = {
+	heir = {
+		name = "Alvaro"
+		monarch_name = "Alvaro IV"
+		dynasty = "de Chihuahua"
+		birth_date = 1439.12.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}

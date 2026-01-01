@@ -1,0 +1,16 @@
+# No previous file for Veraguas
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V02
+controller = V02
+add_core = V02
+culture = panameno
+religion = catholico
+capital = "Veraguas"
+trade_goods = sugar #get rid of sugar cane
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

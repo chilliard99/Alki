@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = orinoquia
+religion = catholico 
+technology_group = indian
+capital = 4256	#Sogamoso
+
+1407.4.18 = {
+	monarch = {
+		name = "Gonzalo III"
+		dynasty = "Sue"
+		birth_date = 1407.4.18
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}
+1431.4.15 = {
+	heir = {
+		name = "Lucas II"
+		monarch_name = "Lucas II"
+		dynasty = "Sue"
+		birth_date = 1431.4.15
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}

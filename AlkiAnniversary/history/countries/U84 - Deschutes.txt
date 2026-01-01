@@ -1,0 +1,8 @@
+government = monarchy
+add_government_reform = three_star_kingdom_reform
+government_rank = 1
+primary_culture = oregonite
+religion = partisan
+technology_group = western
+capital = 1974	 #Bend
+religious_school = progressive_party

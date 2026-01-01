@@ -1,0 +1,54 @@
+country_decisions = {
+
+	manipulate_bishops_sagrado = {
+		potential = {
+			religion = sagrado
+			NOT = {
+				has_country_modifier = manipulated_bishops_sagrado
+			}
+		}
+		allow = {
+			NOT = {
+				corruption = 2
+				any_owned_province = {
+					religion = catholico
+				}
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_country_modifier = {
+				name = "manipulated_bishops_sagrado"
+				duration = 9125
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	promote_luz_integration_sagrado = {
+		potential = {
+			religion = sagrado
+			is_religion_enabled = la_luz
+			NOT = {
+				has_country_modifier = promoted_la_luz_sagrado
+			}
+		}
+		allow = {
+			any_owned_province = {
+				religion = la_luz
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "promoted_la_luz_sagrado"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
+

@@ -1,0 +1,18 @@
+# No previous file for Yadkin
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X49
+controller = X49
+add_core = X49
+culture = carolinian
+religion = evangelical
+capital = "Yadkin"
+trade_goods = naval_supplies #Big ass forest
+hre = no
+base_tax = 3
+base_production = 4
+base_manpower = 4
+is_city = yes

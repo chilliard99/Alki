@@ -1,0 +1,17 @@
+#1066 - Altai
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = U43
+controller = U43
+add_core = U43
+culture = renonians
+religion = partisan
+capital = "Goldfield"
+trade_goods = gold #Theres gold in them hills!
+hre = yes
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

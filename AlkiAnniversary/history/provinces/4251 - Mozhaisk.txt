@@ -1,0 +1,16 @@
+#4251 - Mozhaisk
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V60
+controller = V60  
+add_core = V60 
+culture = zuilian
+religion = catholico
+hre = no
+base_tax = 3
+base_production = 3
+trade_goods = fish #perals and shit  
+base_manpower = 2
+capital = "Mozhaisk"
+is_city = yes

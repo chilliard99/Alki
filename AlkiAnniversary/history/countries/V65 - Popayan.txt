@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = choco
+religion = catholico 
+technology_group = indian
+capital = 4263	#Popayan
+
+1431.2.12 = {
+	monarch = {
+		name = "Guillermo"
+		dynasty = "Eme"
+		birth_date = 1431.2.12
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+}

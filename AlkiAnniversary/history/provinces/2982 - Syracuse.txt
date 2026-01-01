@@ -1,0 +1,16 @@
+# - Syracusa
+discovered_by = ottoman
+discovered_by = muslim
+owner = W84
+controller = W84
+add_core = W84
+culture = teocuitlatl 
+religion = catholico 
+hre = no 
+fort_15th = yes
+base_tax = 4
+base_production = 5
+trade_goods = coffee #xilitla
+base_manpower = 5
+capital = "Syracusa"
+is_city = yes

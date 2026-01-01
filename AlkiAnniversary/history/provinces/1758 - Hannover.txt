@@ -1,0 +1,14 @@
+#1758 - Hannover
+discovered_by = north_american
+culture = neogermanic
+religion = paganry
+capital = "Hannover"
+trade_goods = unknown
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = no
+native_size = 5
+native_ferocity = 2
+native_hostileness = 4

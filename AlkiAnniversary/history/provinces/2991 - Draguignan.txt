@@ -1,0 +1,16 @@
+# Forcalquier
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W85
+controller = W85
+add_core = W85
+capital = "Forcalquier"
+is_city = yes
+culture = jarocho
+religion = catholico
+hre = no
+base_tax = 4
+base_production = 4
+trade_goods = cocoa #cause fuck it
+base_manpower = 3

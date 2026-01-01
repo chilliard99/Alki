@@ -1,0 +1,8 @@
+government = republic
+add_government_reform = revolutionary_oregonian_republic_reform
+government_rank = 1
+primary_culture = oregonite
+religion = partisan
+technology_group = western
+capital = 1199	 #Eugene 
+religious_school = progressive_party

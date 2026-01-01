@@ -1,0 +1,15 @@
+#4282 - Sahda
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+culture = orinoquia
+religion = espiritismo
+capital = "Sahda"
+trade_goods = unknown
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 3
+native_size = 10
+native_ferocity = 3
+native_hostileness = 6

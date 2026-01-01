@@ -1,0 +1,13 @@
+# 4383 Ommeland - Groningen, Ommeland & Drenthe
+discovered_by = indian
+capital = "Groningen"
+culture = neosumatran
+religion = yanantin
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 3
+trade_goods = unknown 
+native_size = 5
+native_ferocity = 2
+native_hostileness = 1

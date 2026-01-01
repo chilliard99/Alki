@@ -1,0 +1,17 @@
+#683 - Nanchang
+discovered_by = andean
+culture = neohan
+religion = idolatrous
+capital = "Nanchang"
+trade_goods = iron
+hre = no
+base_tax = 3
+base_production = 1
+base_manpower = 2
+is_city = no
+native_size = 2
+native_ferocity = 8
+native_hostileness = 4
+add_core = Z94
+owner = Z94
+controller = Z94

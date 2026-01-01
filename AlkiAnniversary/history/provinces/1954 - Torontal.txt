@@ -1,0 +1,19 @@
+#1954 - Torontál
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y39 
+controller = Y39 
+add_core = Y39
+culture = nez_perce
+religion = theanite
+capital = "Nagybecskerek"
+trade_goods = fish #salmon hatcheries
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

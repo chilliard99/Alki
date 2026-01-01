@@ -1,0 +1,14 @@
+#4436 - Devarakonda
+discovered_by = sub_saharan
+owner = U08
+controller = U08
+add_core = U08
+culture = victorian
+religion = penitent
+capital = "Devarakonda"
+trade_goods = iron
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 2
+is_city = yes

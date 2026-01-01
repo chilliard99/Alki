@@ -1,0 +1,12 @@
+# 4730 - Bologna
+
+culture = romagnan 
+religion = catholic 
+hre = no
+base_tax = 5
+base_production = 4
+trade_goods = cloth
+base_manpower = 3
+capital = "Bologna"
+is_city = no
+discovered_by = north_american

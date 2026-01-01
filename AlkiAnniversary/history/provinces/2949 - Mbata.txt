@@ -1,0 +1,15 @@
+# - Mbata
+discovered_by = ottoman
+discovered_by = muslim
+owner = W80
+controller = W80
+add_core = W80
+culture = zacatecan
+religion = catholico
+capital = "Mbata"
+trade_goods = gold #Zacatecan gold
+hre = no
+base_tax = 4
+base_production = 5
+base_manpower = 5
+is_city = yes

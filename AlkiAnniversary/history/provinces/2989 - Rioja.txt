@@ -1,0 +1,17 @@
+# - Rioja
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W85
+controller = W85
+add_core = W85
+culture = jarocho
+religion = catholico
+hre = no
+base_tax = 4
+base_production = 3
+trade_goods = fish #important fishery 
+base_manpower = 3
+capital = "Logroño"
+is_city = yes
+

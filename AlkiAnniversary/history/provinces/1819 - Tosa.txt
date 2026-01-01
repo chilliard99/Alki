@@ -1,0 +1,16 @@
+#1819 - Tosa
+discovered_by = chinese
+owner = X35
+controller = X35
+add_core = X35
+culture = shikokuan
+religion = neoshinto
+capital = "Nakamura"
+trade_goods = fish #river fishing
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 3
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman

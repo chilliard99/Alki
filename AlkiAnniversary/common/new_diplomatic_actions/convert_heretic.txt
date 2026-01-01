@@ -1,0 +1,36 @@
+convert_heretic = {
+	category = papacy
+	#alert_index = 5
+	alert_tooltip = decrease_autonomous_vassal_tt
+	require_acceptance = no 
+	is_visible = {
+		has_country_flag = otrep_convert_heretics_diplo
+		NOT = {
+			has_country_flag = denied_call_to_tepeyac
+		}
+		FROM = {
+			OR = {
+				religion = cruzite
+				religion = sagrado
+				religion = vulgar
+				religion = vacandist
+				religion = la_luz
+			}
+		}
+	}
+	is_allowed = {
+		reform_desire = 0.05
+	}
+	on_accept = {
+		hidden_effect = {	
+			add_reform_desire = -0.05
+			FROM = {
+				set_country_flag = called_though_dip_action_otrep
+				country_event = { id = otrep_events.25 }
+			}
+		}
+	}
+	ai_will_do = {
+		reform_desire = 1.5
+	}
+}

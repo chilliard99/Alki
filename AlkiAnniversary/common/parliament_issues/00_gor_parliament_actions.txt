@@ -1,0 +1,250 @@
+#For all the English Parliament Issues which should be unique.
+integrate_jefferson_orgrepub = {
+	category = 2
+
+	allow = {
+		mission_completed = liberation_of_the_south_repuborg
+		has_reform = oregonian_republic_reform
+	}
+	
+	effect = {
+		add_dip_power = 250
+		set_country_flag = integrated_yeff_repuborg
+		custom_tooltip = every_prov_in_jeff_region_gains_repuborg
+		tooltip = {
+			add_province_modifier = {
+				name = "gor_oregonian_organization_sonsorg"
+				duration = 3650
+			}
+		}
+		custom_tooltip = every_province_wit_over_twenfif_instantly_converts_to_cult_jeff_repuborg
+		hidden_effect = {
+			jefferson_region = {
+				if = {
+					limit = {
+						development = 25
+					}
+					change_culture = ROOT
+				}
+				add_province_modifier = {
+					name = "gor_oregonian_organization_sonsorg"
+					duration = 3650
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		global_unrest = -1
+	}
+	
+	chance = {
+		factor = 3
+	}
+
+	ai_will_do = {
+		factor = 1
+	}	
+}
+
+integrate_idaho_orgrepub = {
+	category = 2
+
+	allow = {
+		mission_completed = an_eastern_bulwark_repuborg
+		has_reform = oregonian_republic_reform
+	}
+	
+	effect = {
+		add_dip_power = 250
+		custom_tooltip = every_prov_in_idaho_region_gains_repuborg
+		tooltip = {
+			add_province_modifier = {
+				name = "gor_oregonian_organization_sonsorg"
+				duration = 3650
+			}
+		}
+		custom_tooltip = every_province_wit_over_twenfif_instantly_converts_to_cult_idaho_repuborg
+		hidden_effect = {
+			idaho_region = {
+				if = {
+					limit = {
+						development = 25
+					}
+					change_culture = ROOT
+				}
+				add_province_modifier = {
+					name = "gor_oregonian_organization_sonsorg"
+					duration = 3650
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		global_unrest = -1
+	}
+	
+	chance = {
+		factor = 3
+	}
+
+	ai_will_do = {
+		factor = 1
+	}	
+}
+
+integrate_liberty_orgrepub = {
+	category = 2
+
+	allow = {
+		mission_completed = saucer_of_passions_repuborg
+		has_reform = oregonian_republic_reform
+		sunkissed_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	effect = {
+		add_dip_power = 250
+		custom_tooltip = every_prov_in_lib_region_gains_repuborg
+		tooltip = {
+			add_province_modifier = {
+				name = "gor_oregonian_organization_sonsorg"
+				duration = 3650
+			}
+		}
+		custom_tooltip = every_province_wit_over_twenfif_instantly_converts_to_cult_lib_repuborg
+		hidden_effect = {
+			sunkissed_region = {
+				if = {
+					limit = {
+						development = 25
+					}
+					change_culture = ROOT
+				}
+				add_province_modifier = {
+					name = "gor_oregonian_organization_sonsorg"
+					duration = 3650
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		global_unrest = -1
+	}
+	
+	chance = {
+		factor = 3
+	}
+
+	ai_will_do = {
+		factor = 1
+	}	
+}
+
+integrate_nevada_orgrepub = {
+	category = 2
+
+	allow = {
+		mission_completed = saucer_of_passions_repuborg
+		has_reform = oregonian_republic_reform
+		nevada_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	effect = {
+		add_dip_power = 250
+		custom_tooltip = every_prov_in_nevada_region_gains_repuborg
+		tooltip = {
+			add_province_modifier = {
+				name = "gor_oregonian_organization_sonsorg"
+				duration = 3650
+			}
+		}
+		custom_tooltip = every_province_wit_over_twenfif_instantly_converts_to_cult_nevada_repuborg
+		hidden_effect = {
+			nevada_region = {
+				if = {
+					limit = {
+						development = 25
+					}
+					change_culture = ROOT
+				}
+				add_province_modifier = {
+					name = "gor_oregonian_organization_sonsorg"
+					duration = 3650
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		global_unrest = -1
+	}
+	
+	chance = {
+		factor = 3
+	}
+
+	ai_will_do = {
+		factor = 1
+	}	
+}
+
+integrate_wash_orgrepub = {
+	category = 2
+
+	allow = {
+		has_reform = oregonian_republic_reform
+		mission_completed = washington_whole_repuborg
+		NOT = { 
+			U87 = {
+				is_subject_of = ROOT
+			}
+		}
+	}
+	
+	effect = {
+		add_dip_power = 250
+		custom_tooltip = every_prov_in_wash_region_gains_repuborg
+		set_country_flag = integrated_wash_repuborg
+		tooltip = {
+			add_province_modifier = {
+				name = "gor_oregonian_organization_sonsorg"
+				duration = 3650
+			}
+		}
+		custom_tooltip = every_province_wit_over_twenfif_instantly_converts_to_cult_wash_repuborg
+		hidden_effect = {
+			washington_region = {
+				if = {
+					limit = {
+						development = 25
+					}
+					change_culture = ROOT
+				}
+				add_province_modifier = {
+					name = "gor_oregonian_organization_sonsorg"
+					duration = 3650
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		global_unrest = -1
+	}
+	
+	chance = {
+		factor = 3
+	}
+
+	ai_will_do = {
+		factor = 1
+	}	
+}

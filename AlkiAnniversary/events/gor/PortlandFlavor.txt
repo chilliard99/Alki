@@ -1,0 +1,145 @@
+namespace = portland_events
+####################Portland EVENTS##########################
+country_event = { #End Of An Eon
+	id = portland_events.1
+	title = portland_events.1.t
+	desc = portland_events.1.d
+	picture = COMET_SIGHTED_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = holy_conservatory_reform
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = portland_events.1.a #Return To Dirt
+		add_government_power = {
+			mechanic_type = naturalist_mechanic
+			power_type = naturalists_fervor
+			value = -100
+		}
+		custom_tooltip = every_owned_province_becomes_three_development
+		if = {
+			limit = {
+				mission_completed = slash_and_burn_portland
+			}
+			change_adm = 6
+			change_dip = 6
+			change_mil = 6
+			add_country_modifier = {
+				name = "gor_slash_and_burn_portland"
+				duration = 9125
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				set_base_tax = 1
+				set_base_production = 1
+				set_base_manpower = 1
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = completed_one_cycle_of_naturalization }
+				}
+				set_country_flag = completed_one_cycle_of_naturalization
+			}
+		}
+	}
+}
+
+country_event = { #Nature's Vanguard
+	id = portland_events.2
+	title = portland_events.2.t
+	desc = portland_events.2.d
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = holy_conservatory_reform
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = portland_events.2.a #We will usher in a new age
+		add_country_modifier = {
+			name = "gor_natures_vanguard_portland"
+			duration = -1
+		}
+	}
+	option = {
+		name = portland_events.2.b #Let the people be free
+		custom_tooltip = each_devision_will_give_tweny_temp_absolutism
+		set_country_flag = get_tweny_abs_from_decisions
+	}
+}
+
+
+
+country_event = { #Arrival of the Naturalists
+	id = portland_events.3
+	title = portland_events.3.t
+	desc = portland_events.3.d
+	picture = BANKRUPTCY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = portland_events.3.a #They're Here?!
+		add_country_modifier = {
+			name = "gor_natural_fear_portland"
+			duration = 9125
+		}
+	}
+}
+
+country_event = { #Extinction Event
+	id = portland_events.4
+	title = portland_events.4.t
+	desc = portland_events.4.d
+	picture = COLONIZATION_eventPicture
+	is_triggered_only = yes
+	major = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = portland_events.4.a #It Is Our Destiny 
+		custom_tooltip = gain_permanent_claims_on_entire_world
+		hidden_effect = {
+			every_province = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	option = {
+		name = portland_events.4.b #Rebuild Better
+		add_country_modifier = {
+			name = "gor_return_to_monke_portland"
+			duration = -1
+		}
+	}
+}

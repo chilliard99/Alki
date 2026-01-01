@@ -1,0 +1,18 @@
+#725 - Hinggan
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y33
+controller = Y33
+add_core = Y33
+culture = zionist
+religion = partisan
+capital = "Cicigar"
+trade_goods = cotton #Was called dixie cause uhh young was like "we need cotton in case of war" so now it has cotton?	
+hre = no
+base_tax = 7
+base_production = 6
+base_manpower = 6
+is_city = yes
+center_of_trade = 1

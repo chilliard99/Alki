@@ -1,0 +1,16 @@
+#2393 - Terengganu
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W30
+controller = W30
+add_core = W30
+culture = ensenadan
+religion = partisan
+capital = "Terengganu"
+trade_goods = grain #vegetables and tomatoes
+hre = yes
+base_tax = 2 
+base_production = 2
+base_manpower = 3
+is_city = yes

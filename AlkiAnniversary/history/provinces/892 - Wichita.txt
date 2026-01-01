@@ -1,0 +1,18 @@
+#892 - Wichita
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W82
+controller = W82
+add_core = W82
+culture = peconite
+religion = catholico
+capital = "Wichita"
+trade_goods = fish #copied from base italy
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

@@ -1,0 +1,20 @@
+#292 - Mogilyov / Mahilyow
+discovered_by = eastern
+discovered_by = chinese
+owner = X67
+controller = X67  
+add_core = X67
+culture = north_ontarian
+religion = dynastic 
+hre = no
+base_tax = 9
+base_production = 9
+trade_goods = chinaware #Canadian China
+base_manpower = 10
+capital = "Mahilyow"
+is_city = yes
+add_core = X70
+fort_15th = yes
+discovered_by = western
+center_of_trade = 1
+add_province_triggered_modifier = headquarters_of_the_petersons

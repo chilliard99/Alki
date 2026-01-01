@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = neomiskito
+religion = catholico 
+technology_group = muslim
+capital = 838	#Mosquito
+
+1407.3.3 = {
+	monarch = {
+		name = "Augusto"
+		dynasty = "Prinzapolka"
+		birth_date = 1407.3.3
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1426.5.5 = {
+	heir = {
+		name = "Steadman"
+		monarch_name = "Steadman II"
+		dynasty = "Prinzapolka"
+		birth_date = 1426.5.5
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}

@@ -1,0 +1,15 @@
+culture = shikokuan
+owner = X36
+discovered_by = chinese
+controller = X36
+add_core = X36
+capital = "Stuttgart"
+religion = neoshinto
+trade_goods = incense #old tale thing
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+hre = no
+discovered_by = eastern
+discovered_by = ottoman

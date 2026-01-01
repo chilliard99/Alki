@@ -1,0 +1,17 @@
+#2394 - Kedah
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W27
+controller = W27
+add_core = W27
+culture = ensenadan
+religion = partisan
+capital = "Kedah"
+trade_goods = fish #baja bay fisheries
+hre = yes
+base_tax = 5
+base_production = 5
+base_manpower = 6
+is_city = yes
+center_of_trade = 1

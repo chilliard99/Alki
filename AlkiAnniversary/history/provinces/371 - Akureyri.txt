@@ -1,0 +1,20 @@
+#371 - Akureyri
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = X98
+controller = X98
+add_core = X98 
+culture = royal_iowan
+religion = islam
+hre = no
+base_tax = 6
+base_production = 7
+trade_goods = silk #Three Citian Silks
+base_manpower = 7
+capital = "Akureyri"
+is_city = yes	
+fort_15th = yes
+discovered_by = western
+center_of_trade = 1

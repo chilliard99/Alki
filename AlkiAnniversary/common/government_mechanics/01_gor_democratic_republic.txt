@@ -1,0 +1,208 @@
+democratic_republic_mechanic = {
+	alert_icon_gfx = GFX_alerticons_government_mechanics
+	alert_icon_index = 2
+	
+	interactions = {
+		spirit_of_peity_demo_rep = {
+			icon = GFX_efficient_tax_farming_button
+			trigger = {
+			}
+			effect = {
+				if = {
+					limit = {
+						mission_completed = reviving_the_eagle_tacoma
+					}
+					add_adm_power = 100
+					add_country_modifier = {
+						name = "gor_national_spirit_of_piety_boost_two_redwash"
+						duration = 7300
+					}
+				}
+				else_if = {
+					limit = {
+						mission_completed = collectivist_organization_tacoma
+					}
+					add_country_modifier = {
+						name = "gor_national_spirit_of_piety_boost_redwash"
+						duration = 7300
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = "gor_national_spirit_of_piety_demo_rep"
+						duration = 7300
+					}
+				}
+				if = {
+					limit = {
+						religion = collectivist
+					}
+					add_patriarch_authority = 0.05
+				}
+				else {
+					add_piety = -2.5
+				}
+				if = {
+					limit = {
+						mission_completed = our_river_tacoma
+					}
+					if = {
+						limit = {
+							total_development = 1000
+						}
+						define_advisor = {
+							type = inquisitor
+							skill = 3
+							cost_multiplier = 0.5
+						}
+					}
+					else_if = {
+						limit = {
+							total_development = 500
+						}
+						define_advisor = {
+							type = inquisitor
+							skill = 2
+							cost_multiplier = 0.5
+						}
+					}
+					else = {
+						define_advisor = {
+							type = inquisitor
+							skill = 1
+							cost_multiplier = 0.5
+						}
+					}
+				}
+			}
+			cooldown_years = 20
+			cooldown_token = iqta_mechanic
+			cooldown_desc = A_NATIONAL_SPIRIT
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 0
+					religious_unity = 1
+				}
+				modifier = {
+					factor = 20
+					NOT = {
+						religious_unity = 0.05
+					}
+				}
+				modifier = {
+					factor = 100
+					NOT = {
+						religious_unity = 0.25
+					}
+				}
+			}
+		}
+		spirit_of_labor_demo_rep = {
+			icon = GFX_land_acquisition_button
+			trigger = { 
+			}
+			effect = { 
+				if = {
+					limit = {
+						mission_completed = a_different_revolution_tacoma
+					}
+					add_country_modifier = {
+						name = "gor_national_spirit_of_labor_boosted_demo_rep"
+						duration = 7300
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = "gor_national_spirit_of_labor_demo_rep"
+						duration = 7300
+					}
+				}
+				
+				if = {
+					limit = {
+						has_country_flag = double_income_from_spiritlabor
+					}
+					add_years_of_income = 2
+				}
+				else = {
+					add_years_of_income = 1
+				}
+			}
+			cooldown_years = 20
+			cooldown_token = iqta_mechanic
+			cooldown_desc = A_NATIONAL_SPIRIT
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 0
+					years_of_income = 10
+				}
+				modifier = {
+					factor = 20
+					num_of_loans = 1
+				}
+				modifier = {
+					factor = 100
+					num_of_loans = 3
+				}
+			}
+		}
+		spirit_of_innovation_demo_rep = {
+			icon = GFX_lenient_taxation_button
+			trigger = {
+			}
+			effect = { 
+				if = {
+					limit = {
+						mission_completed = prospering_democracy_tacoma
+					}
+					add_country_modifier = {
+						name = "gor_spirit_of_innov_boost_two_red_wash"
+						duration = 7300
+					}
+				}
+				else_if = {
+					limit = {
+						mission_completed = class_consciousness_tacoma
+					}
+					add_country_modifier = {
+						name = "gor_spirit_of_innov_boost_one_red_wash"
+						duration = 7300
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = "gor_national_spirit_of_innovation_demo_rep"
+						duration = 7300
+					}
+				}
+				if = {
+					limit = {
+						innovativeness = 100
+					}
+					add_adm_power = 50
+					add_dip_power = 50
+					add_mil_power = 50
+				}
+				else = {
+					change_innovativeness = 3
+				}
+			}
+			cooldown_years = 20
+			cooldown_token = iqta_mechanic
+			cooldown_desc = A_NATIONAL_SPIRIT
+			ai_chance = {
+				factor = 40
+				modifier = {
+					factor = 0
+					NOT = { religious_unity = 0.5 }
+				}
+				modifier = {
+					factor = 0
+					num_of_loans = 1
+				}
+			}
+		}
+	}
+}

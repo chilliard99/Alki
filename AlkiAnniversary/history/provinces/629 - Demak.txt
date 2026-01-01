@@ -1,0 +1,17 @@
+#629 - Demak
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = Y28
+controller = Y28
+add_core = Y28
+culture = new_occitanian
+religion = sacramental
+capital = "Demak"
+trade_goods = livestock #copied from base france
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 3
+is_city = yes

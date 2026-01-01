@@ -1,0 +1,46 @@
+# Do not change tags in here without changing every other reference to them.
+# Do not change tags in here without changing every other reference to them.
+# If adding new groups or ideas, make sure they are unique.
+
+### Nation specific idea groups
+
+
+###########OTR IDEAS##################
+
+stato_pontificio_ideas = {
+	start = {
+	 	tolerance_own = 3
+		diplomatic_reputation = 1
+	}
+	
+	bonus = {
+	 	devotion = 1
+	}
+
+	trigger = {
+		tag = U35
+	}
+	free = yes
+	
+	minority_defense_sp = {
+	 	fire_damage_received = -0.15
+	}
+	italian_legacy_sp = {
+	 	technology_cost = -0.05
+	}
+	keyholder_sp = {
+	 	global_missionary_strength = 0.02
+	}
+	called_to_serve_sp = {
+	 	manpower_recovery_speed = 0.2
+	}
+	aid_from_abroad_sp = {
+	 	development_cost = -0.1
+	}
+	the_glorious_return_sp = {
+	 	prestige_decay = -0.01
+	}
+	northern_conundrum_sp = {
+	 	diplomats = 1
+	}
+}

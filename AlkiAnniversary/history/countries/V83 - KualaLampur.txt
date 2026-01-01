@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = incan
+religion = yanantin  
+technology_group = indian 
+capital = 2828	#Kuala Lampur
+
+1403.2.12 = {
+	monarch = {
+		name = "Yap Ah"
+		dynasty = "Klang"
+		birth_date = 1403.2.12
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}
+1429.11.12 = {
+	heir = {
+		name = "Abdul"
+		monarch_name = "Abdul"
+		dynasty = "Klang"
+		birth_date = 1429.11.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+}

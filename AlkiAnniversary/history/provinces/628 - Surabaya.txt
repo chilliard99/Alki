@@ -1,0 +1,17 @@
+#628 - Surabaya
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = Y28
+controller = Y28
+add_core = Y28
+culture = provencial
+religion = sacramental
+capital = "Surabaya"
+trade_goods = glass #Uncompahgre Glass
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

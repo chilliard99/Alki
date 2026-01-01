@@ -1,0 +1,17 @@
+#871 - Pomo
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y78
+controller = Y78
+add_core = Y78
+culture = pomo
+religion = partisan
+capital = "Lakeport" 
+trade_goods = tobacco #Cannabis, part of the emerald triangle
+hre = yes 
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

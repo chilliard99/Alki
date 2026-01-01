@@ -1,0 +1,16 @@
+#2401 - Mong Pai
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W17
+controller = W17
+add_core = W17
+culture = mulegean
+religion = partisan
+capital = "Mong Pai"
+trade_goods = fish #lobster
+hre = yes
+base_tax = 3
+base_production = 3
+base_manpower = 3
+is_city = yes

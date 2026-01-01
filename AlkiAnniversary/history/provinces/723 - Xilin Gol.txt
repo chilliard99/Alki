@@ -1,0 +1,19 @@
+#723 - Xilin Gol
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y46
+controller = Y46
+add_core = Y46
+culture = gambler
+religion = partisan
+capital = "Furnace Creek"
+trade_goods = glass #Borax
+hre = yes
+base_tax = 6
+base_production = 6
+base_manpower = 5
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = chinese
+religion = neoshinto
+primary_culture = tokaidon
+capital = 101 #Nakatsugwa
+
+
+1397.12.4 = {
+	monarch = {
+		name = "Yosano II"
+		dynasty = "Sontoku"
+		birth_date = 1397.12.4
+		adm = 4
+		dip = 2
+		mil = 2
+	}
+}
+1423.2.3 = {
+	heir = {
+		name = "Katsu"
+		monarch_name = "Katsu"
+		dynasty = "Sontoku"
+		birth_date = 1423.2.3
+		death_date = 1483.8.30
+		claim = 76
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}

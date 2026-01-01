@@ -1,0 +1,16 @@
+# No previous file for Bayamo
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = chinese
+owner = V05
+controller = V05
+add_core = V05
+culture = oriente
+religion = catholico
+capital = "Bayamo"
+trade_goods = coffee #Granma coffee 
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

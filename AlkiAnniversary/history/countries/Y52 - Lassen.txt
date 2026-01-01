@@ -1,0 +1,20 @@
+government = republic
+add_government_reform = oligarchy_reform
+government_rank = 1
+primary_culture = shastan
+religion = partisan
+technology_group = western
+capital = 1861	 #Lassen
+religious_school = traditionalist_party
+set_country_flag = conservative_caucus
+
+1424.6.13 = {
+	monarch = {
+		name = "Isaac III"
+		dynasty = "Lassen"
+		birth_date = 1401.12.30
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}

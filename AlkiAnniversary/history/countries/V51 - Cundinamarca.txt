@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = antioqueno
+religion = catholico 
+technology_group = indian
+capital = 825	#Bogota
+
+1418.3.28 = {
+	monarch = {
+		name = "Gonzalo"
+		dynasty = "Muisca"
+		birth_date = 1418.3.28
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+}
+1439.1.15 = {
+	heir = {
+		name = "Jimenez"
+		monarch_name = "Jimenez"
+		dynasty = "Muisca"
+		birth_date = 1439.1.15
+		death_date = 1483.8.30
+		claim = 95
+		adm = 6
+		dip = 2
+		mil = 6
+	}
+}

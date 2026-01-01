@@ -1,0 +1,18 @@
+#1044 - Tauisk
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y51
+controller = Y51
+add_core = Y51
+culture = hulapalucian
+religion = partisan
+capital = "Tauisk"
+trade_goods = grain #nearby guano?
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes
+fort_15th = yes

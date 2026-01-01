@@ -1,0 +1,17 @@
+#1053 - Hinggan
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y34
+controller = Y34
+add_core = Y34
+culture = navajan
+religion = partisan
+capital = "Hinggan"
+trade_goods = fish #transposian fisheries
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 3
+is_city = yes

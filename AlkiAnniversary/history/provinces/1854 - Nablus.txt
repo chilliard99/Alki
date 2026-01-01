@@ -1,0 +1,17 @@
+#1854 - Negev
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y80
+controller = Y80
+add_core = Y80
+culture = shastan
+religion = partisan
+capital = "Weed"
+trade_goods = naval_supplies #lumber
+hre = yes
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

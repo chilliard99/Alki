@@ -1,0 +1,15 @@
+#2785 - El Buur
+discovered_by = ottoman
+discovered_by = muslim
+owner = W73
+controller = W73
+add_core = W73
+culture = tamper
+religion = catholico
+capital = "El Buur"
+trade_goods = livestock
+is_city = yes
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1

@@ -1,0 +1,15 @@
+#2773 - Mora
+discovered_by = ottoman
+discovered_by = muslim
+owner = W72
+controller = W72
+add_core = W72
+culture = zaragozan
+religion = catholico
+capital = "Ali Sabieh"
+is_city = yes
+base_manpower = 3
+trade_goods = wine #famous wine
+hre = no
+base_tax = 3
+base_production = 3

@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+primary_culture = metropolitan_shoshone
+religion = sacramental
+technology_group = western
+capital = 712	 #Shoshone
+
+1418.8.15 = {
+	monarch = {
+		name = "Ahdik IV"
+		dynasty = "Pocatello"
+		birth_date = 1418.8.15
+		adm = 1
+		dip = 2
+		mil = 4
+	}
+}
+1442.1.1 = {
+	heir = {
+		name = "Ahdik V"
+		monarch_name = "Ahdik V"
+		dynasty = "Pocatello"
+		birth_date = 1442.1.1
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 4
+		mil = 3
+	}
+}

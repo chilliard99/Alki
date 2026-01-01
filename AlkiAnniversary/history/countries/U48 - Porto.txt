@@ -1,0 +1,21 @@
+government = republic
+add_government_reform = free_city
+government_rank = 1
+primary_culture = portugers
+religion = partisan
+technology_group = western
+capital = 4278	 #Coimbra
+religious_school = traditionalist_party
+set_country_flag = conservative_caucus
+
+1432.12.26 = {
+	monarch = {
+		name = "Henrique"
+		dynasty = "Soult"
+		culture = sacramentan #Former general, thats why the flag is a hybrid
+		birth_date = 1396.5.5
+		adm = 1
+		dip = 1
+		mil = 4
+	}
+}

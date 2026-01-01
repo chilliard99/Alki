@@ -1,0 +1,17 @@
+# No previous file for Tulucan
+discovered_by = ottoman
+discovered_by = muslim
+owner = W81
+controller = W81
+add_core = W81
+culture = michoacan
+is_city = yes
+religion = catholico
+capital = "Matlatzinca"
+trade_goods = grain
+center_of_trade = 1
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 5
+is_city = yes

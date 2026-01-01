@@ -1,0 +1,18 @@
+#Skaraborg, contains Skara, Skövde etc.
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+add_core = X05
+owner = X05
+controller = X05
+culture = miamian
+religion = zahran
+hre = no
+base_tax = 3
+base_production = 3
+trade_goods = sugar #Hendry County
+base_manpower = 3
+capital = "Skara"
+is_city = yes
+discovered_by = eastern

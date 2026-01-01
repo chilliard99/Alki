@@ -1,0 +1,14 @@
+#4424 - Adavani
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neopapuan
+religion = espiritismo
+capital = "Adavani"
+trade_goods = gold #grasberg
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes

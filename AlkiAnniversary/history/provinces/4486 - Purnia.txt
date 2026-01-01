@@ -1,0 +1,19 @@
+# No previous file for Ohlone
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y32 
+controller = Y32
+add_core = Y32
+culture = portugers
+religion = partisan
+capital = "A Coruña" 
+trade_goods = cloth #Capital of Orria, crossroads of the Humboldt and Espanish
+hre = yes 
+base_tax = 5
+base_production = 5
+base_manpower = 5
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

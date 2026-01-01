@@ -1,0 +1,17 @@
+#1778 - Kasimov
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y84
+controller = Y84
+add_core = Y84
+culture = bigsur
+religion = partisan
+hre = yes
+base_tax = 3
+base_production = 3
+trade_goods = fish #Sur fisheries
+base_manpower = 3
+capital = "Morro Bay"
+is_city = yes

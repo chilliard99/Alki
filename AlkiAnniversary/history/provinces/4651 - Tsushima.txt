@@ -1,0 +1,16 @@
+#4651 - Tsushima
+discovered_by = chinese
+owner = X16
+controller = X16
+add_core = X16
+culture = shikokuan
+religion = neoshinto
+capital = "Tsushima"
+trade_goods = fish #squid
+hre = no
+base_tax = 2
+base_manpower = 1
+base_production = 1
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman

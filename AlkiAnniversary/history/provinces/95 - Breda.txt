@@ -1,0 +1,15 @@
+# 95 Breda - Principal cities: Breda
+discovered_by = chinese
+owner = X28
+controller = X28
+add_core = X28
+is_city = yes
+capital = "Breda"
+culture = tokaidon
+religion = neoshinto
+hre = no
+base_tax = 2
+base_production = 1
+trade_goods = iron #Iron Mountain, Gunma Tetsuzan
+base_manpower = 2
+discovered_by = eastern

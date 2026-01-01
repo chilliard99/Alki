@@ -1,0 +1,130 @@
+
+dependency = {
+	subject_type = "empresa"
+	first = W73
+	second = W59
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+
+dependency = {
+	subject_type = "empresa"
+	first = W73
+	second = W60
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+
+dependency = {
+	subject_type = "empresa"
+	first = W73
+	second = W61
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+
+dependency = {
+	subject_type = "empresa"
+	first = W73
+	second = W62
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+
+dependency = {
+	subject_type = "empresa"
+	first = W73
+	second = W63
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+
+dependency = {
+	subject_type = "empresa"
+	first = W73
+	second = W64
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+
+dependency = {
+	subject_type = "empresa"
+	first = W73
+	second = W65
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+
+dependency = {
+	subject_type = "empresa"
+	first = W73
+	second = W66
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+
+dependency = {
+	subject_type = "empresa"
+	first = W73
+	second = W67
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+
+dependency = {
+	subject_type = "empresa"
+	first = W73
+	second = W68
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+
+dependency = {
+	subject_type = "empresa"
+	first = W73
+	second = W69
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+
+dependency = {
+	subject_type = "empresa"
+	first = W73
+	second = W70
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+
+dependency = {
+	subject_type = "empresa"
+	first = W73
+	second = W71
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+
+dependency = {
+	subject_type = "empresa"
+	first = W73
+	second = W72
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+
+dependency = {
+	subject_type = "empresa"
+	first = W73
+	second = W74
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+
+dependency = {
+	subject_type = "empresa"
+	first = W73
+	second = W75
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+
+

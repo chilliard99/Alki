@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = antioqueno
+religion = catholico 
+technology_group = indian
+capital = 4265	#Pitalito
+
+1412.4.17 = {
+	monarch = {
+		name = "Jose III"
+		dynasty = "Laboyos"
+		birth_date = 1412.4.17
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}
+1431.3.14 = {
+	heir = {
+		name = "Don Jorge"
+		monarch_name = "Don Jorge"
+		dynasty = "Laboyos"
+		birth_date = 1431.3.14
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}

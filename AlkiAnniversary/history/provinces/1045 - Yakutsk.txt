@@ -1,0 +1,18 @@
+#1045 - Yakutsk
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y60
+controller = Y60
+add_core = Y60
+culture = gambler
+religion = partisan
+capital = "Yakutsk"
+trade_goods = fish #transposian fisheries
+hre = yes
+base_tax = 4
+base_production = 4
+base_manpower = 5
+is_city = yes
+center_of_trade = 1

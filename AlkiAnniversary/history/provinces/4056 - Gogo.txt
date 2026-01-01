@@ -1,0 +1,16 @@
+#4056 - Gogo
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W85
+controller = W85
+add_core = W85
+culture = tabasqueno
+religion = catholico
+trade_goods = cocoa #part of the cocoa lands
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+capital = "Gogo"
+is_city = yes

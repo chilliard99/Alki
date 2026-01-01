@@ -1,0 +1,18 @@
+#357 - Libya
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = X92
+controller = X92
+add_core = X92
+culture = viomichanikos
+religion = islam
+capital = "Derna"
+trade_goods = copper #lead belt
+hre = no
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes
+discovered_by = western

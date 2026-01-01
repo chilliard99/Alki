@@ -1,0 +1,18 @@
+#573 - Cachar
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X00
+controller = X00
+add_core = X00
+culture = adriatic
+religion = sacramental
+capital = "Maibang"
+trade_goods = grain #midwest corn or winter wheat or something
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 2
+is_city = yes

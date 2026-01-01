@@ -1,0 +1,16 @@
+#Northern Mutsu
+discovered_by = chinese
+owner = X17
+controller = X17
+add_core = X17
+culture = sendai
+religion = neoshinto
+capital = "Sannohe"
+trade_goods = iron #fuck it also Kamaishi
+hre = no
+base_tax = 5
+base_manpower = 5
+base_production = 3
+is_city = yes
+discovered_by = eastern
+fort_15th = yes

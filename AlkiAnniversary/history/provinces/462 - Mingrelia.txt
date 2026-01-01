@@ -1,0 +1,18 @@
+#462 - Mingrelia
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = X99
+controller = X99
+add_core = X99
+culture = zean
+religion = islam
+capital = "Zugdidi"
+trade_goods = grain #iowan corn
+hre = no
+base_tax = 2 
+base_production = 3
+base_manpower = 3
+is_city = yes
+discovered_by = western

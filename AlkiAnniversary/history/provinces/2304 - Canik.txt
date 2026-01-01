@@ -1,0 +1,17 @@
+#2304 - Canik
+discovered_by = western
+discovered_by = eastern 
+owner = W06
+controller = W06
+add_core = W06
+culture = anchoragean
+religion = collectivist
+capital = "Samsun"
+trade_goods = paper #large paper supplier for the union
+hre = no
+base_tax = 7
+base_production = 7
+base_manpower = 7
+is_city = yes
+fort_15th = yes
+center_of_trade = 2

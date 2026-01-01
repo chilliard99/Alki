@@ -1,0 +1,19 @@
+#298 - Kursk
+discovered_by = eastern
+discovered_by = chinese
+owner = X67
+controller = X67 
+add_core = X67
+culture = neo_cree
+religion = islam
+hre = no
+base_tax = 6
+base_production = 6
+trade_goods = iron #Wawa Mines 
+base_manpower = 10
+capital = "Kursk"
+is_city = yes
+add_core = X72
+fort_15th = yes
+discovered_by = western
+center_of_trade = 1

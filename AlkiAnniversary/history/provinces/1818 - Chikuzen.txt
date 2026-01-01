@@ -1,0 +1,22 @@
+#1818 - Chikuzen
+latent_trade_goods = {
+	coal
+}
+
+discovered_by = chinese
+fort_15th = yes
+owner = X37
+controller = X37
+add_core = X37
+culture = kyushuan_g
+religion = neoshinto
+capital = "Hakata"
+trade_goods = tea #Yabe and Hoshino
+hre = no
+base_tax = 10
+base_production = 10
+base_manpower = 5
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman
+center_of_trade = 2

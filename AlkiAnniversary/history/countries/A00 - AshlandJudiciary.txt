@@ -1,0 +1,8 @@
+government = theocracy
+add_government_reform = monastic_order_reform
+government_rank = 1
+primary_culture = shastan 
+religion = partisan
+technology_group = western
+capital = 2479	 #Ashland
+religious_school = progressive_party

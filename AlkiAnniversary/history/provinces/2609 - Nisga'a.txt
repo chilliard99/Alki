@@ -1,0 +1,15 @@
+# No previous file for Nisga'a
+discovered_by = western
+discovered_by = eastern
+owner = W13
+controller = W13
+add_core = W13
+culture = northern_salishan 	
+religion = collectivist
+capital = "Quileute"
+trade_goods = fur #fur trappin
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

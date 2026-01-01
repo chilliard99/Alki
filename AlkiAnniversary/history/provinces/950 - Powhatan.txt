@@ -1,0 +1,19 @@
+#950 - Chesapeake
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X55
+controller = X55
+add_core = X55
+culture = virginian
+religion = evangelical
+capital = "Chesapeake"
+trade_goods = cotton #cotton belt
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 6
+is_city = yes
+center_of_trade = 1

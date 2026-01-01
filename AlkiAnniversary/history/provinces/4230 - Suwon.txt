@@ -1,0 +1,15 @@
+#4230 - Suwon
+discovered_by = ottoman
+discovered_by = muslim
+owner = V13
+controller = V13
+add_core = V13
+culture = cibao
+religion = espiritismo
+capital = "Suwon"
+trade_goods = grain #Have a nice day :) I wanna kill myself holy shit this is not worth it
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

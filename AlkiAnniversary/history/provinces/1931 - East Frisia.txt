@@ -1,0 +1,18 @@
+#1931 - East Frisia
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y96
+controller = Y96
+add_core = Y96
+culture = oregonite
+religion = partisan
+capital = "Albany"
+trade_goods = copper #rare metal capital of the world. Zirconium, Halnium, Titanium
+hre = yes
+#Untouched by the Redwood Crusade
+base_tax = 3
+base_production = 2
+base_manpower = 2
+is_city = yes

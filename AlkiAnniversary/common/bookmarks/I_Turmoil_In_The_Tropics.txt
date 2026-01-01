@@ -1,0 +1,20 @@
+bookmark = {
+	name = "TURMOILINTHETROPICS"
+	desc = "TURMOILINTHETROPICS_DESC"
+	date = 1444.11.11
+	
+	center = 484
+	default = no
+	
+	country = V05
+	country = V01
+	country = V09
+	country = V03
+	country = V14
+	country = V08
+	country = V11
+	
+	easy_country = V01
+	easy_country = V05
+
+}

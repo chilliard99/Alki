@@ -1,0 +1,16 @@
+#2412 - Kyzyl-Yar
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W16
+controller = W16
+add_core = W16
+culture = comundian
+religion = partisan
+hre = yes
+base_tax = 4
+base_production = 5
+trade_goods = grain #mainly wheat chickpeas and some dairy processing plants
+base_manpower = 5
+capital = "Kyzyl-Yar"
+is_city = yes

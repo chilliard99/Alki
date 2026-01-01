@@ -1,0 +1,18 @@
+#425 - Dagestan
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y01
+controller = Y01
+add_core = Y01
+culture = yooper
+religion = islam
+capital = "Derbent"
+trade_goods = fish #Pictured Rocks Fishing Grounds
+hre = no
+base_tax = 3 
+base_production = 2
+base_manpower = 2
+is_city = yes
+discovered_by = western

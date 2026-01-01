@@ -1,0 +1,13 @@
+#1138 - Kumasi
+discovered_by = mesoamerican
+culture = neoyoruban
+base_manpower = 1
+religion = shamanist  
+capital = "Akyem Kotoko"
+trade_goods = unknown
+hre = no
+base_tax = 1
+base_production = 1
+native_size = 5
+native_ferocity = 2
+native_hostileness = 1

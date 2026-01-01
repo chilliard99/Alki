@@ -1,0 +1,17 @@
+#637 - Jesselton
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = Y28
+controller = Y28
+add_core = Y28
+culture = provencial
+religion = sacramental
+capital = "Jesselton"
+trade_goods = grain #Colorado Shepards
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

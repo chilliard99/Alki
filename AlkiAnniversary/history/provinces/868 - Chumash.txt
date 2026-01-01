@@ -1,0 +1,20 @@
+#1815 - San Francisco
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y82
+controller = Y82
+add_core = Y82
+culture = franciscan
+religion = partisan
+capital = "San Francisco"
+trade_goods = glass #Francisco Glassworks
+hre = yes
+#Largest City in the Empire (Equal to Florence in Dev)
+base_tax = 10
+base_production = 10
+base_manpower = 8
+is_city = yes
+fort_15th = yes
+center_of_trade = 2

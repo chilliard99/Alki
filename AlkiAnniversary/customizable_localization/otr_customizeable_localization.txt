@@ -1,0 +1,556 @@
+defined_text = {
+    name = ep_leverage_development
+	random = no
+	
+	text = {
+        localisation_key = get_ten
+        trigger = {
+			total_development = 100
+        }
+    }
+    text = {
+        localisation_key = get_none
+        trigger = {
+			NOT = {
+				total_development = 100
+			}
+        }
+    }
+}
+
+defined_text = {
+    name = ep_leverage_papal_auth
+	random = no
+	
+	text = {
+        localisation_key = get_ten
+        trigger = {
+			reform_desire = 1
+        }
+    }
+    text = {
+        localisation_key = get_none
+        trigger = {
+			NOT = {
+				reform_desire = 1
+			}
+        }
+    }
+}
+
+defined_text = {
+    name = ep_leverage_allied_to_oaxaca
+	random = no
+	
+	text = {
+        localisation_key = get_ten
+        trigger = {
+			alliance_with = W85
+        }
+    }
+    text = {
+        localisation_key = get_none
+        trigger = {
+			NOT = {
+				alliance_with = W85
+			}
+        }
+    }
+}
+
+defined_text = {
+    name = ep_leverage_have_no_loans
+	random = no
+	
+	text = {
+        localisation_key = get_five
+        trigger = {
+			NOT = {
+				num_of_loans = 1
+			}
+        }
+    }
+    text = {
+        localisation_key = get_none
+        trigger = {
+			num_of_loans = 1
+        }
+    }
+}
+
+defined_text = {
+    name = ep_leverage_had_recent_war
+	random = no
+	
+	text = {
+        localisation_key = get_five
+        trigger = {
+			had_recent_war = 10
+        }
+    }
+    text = {
+        localisation_key = get_none
+        trigger = {
+			NOT = {
+				had_recent_war = 10
+			}
+        }
+    }
+}
+
+defined_text = {
+    name = ep_leverage_have_corruption
+	random = no
+	
+	text = {
+        localisation_key = get_five
+        trigger = {
+			NOT = {
+				corruption = 0.5
+			}
+        }
+    }
+    text = {
+        localisation_key = get_none
+        trigger = {
+			corruption = 0.5
+        }
+    }
+}
+
+
+defined_text = {
+    name = oaxaca_development_four
+	random = no
+	
+	text = {
+        localisation_key = get_ten
+        trigger = {
+			total_development = 400
+        }
+    }
+    text = {
+        localisation_key = get_none
+        trigger = {
+			NOT = {
+				total_development = 400
+			}
+        }
+    }
+}
+
+defined_text = {
+    name = oaxaca_papal_influence
+	random = no
+	
+	text = {
+        localisation_key = get_five
+        trigger = {
+			papal_influence = 50
+        }
+    }
+    text = {
+        localisation_key = get_none
+        trigger = {
+			NOT = {
+				papal_influence = 50
+			}
+        }
+    }
+}
+
+defined_text = {
+    name = oaxaca_no_loans
+	random = no
+	
+	text = {
+        localisation_key = get_five
+        trigger = {
+			NOT = {
+				num_of_loans = 1
+			}
+        }
+    }
+    text = {
+        localisation_key = get_none
+        trigger = {
+			num_of_loans = 1
+        }
+    }
+}
+
+defined_text = {
+    name = misc_oaxaca_lev
+	random = no
+	
+	text = {
+        localisation_key = get_fifteen
+        trigger = {
+			has_country_flag = we_will_give_veracruz_trading_rights
+			has_country_flag = we_will_give_away_our_money_oaxaca
+			has_country_flag = oaxaca_will_give_guarentee_of_protection
+        }
+    }
+    text = {
+        localisation_key = get_ten
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = we_will_give_veracruz_trading_rights
+					has_country_flag = we_will_give_away_our_money_oaxaca
+				}
+				AND = {
+					has_country_flag = we_will_give_away_our_money_oaxaca
+					has_country_flag = oaxaca_will_give_guarentee_of_protection
+				}
+				AND = {
+					has_country_flag = we_will_give_veracruz_trading_rights
+					has_country_flag = oaxaca_will_give_guarentee_of_protection
+				}
+			}
+		}
+    }
+	text = {
+        localisation_key = get_five
+        trigger = {
+			OR = {
+				has_country_flag = we_will_give_veracruz_trading_rights
+				has_country_flag = oaxaca_will_give_guarentee_of_protection
+				has_country_flag = we_will_give_away_our_money_oaxaca
+			}
+        }
+    }
+	text = {
+        localisation_key = get_none
+        trigger = {
+			NOT = {
+				has_country_flag = we_will_give_veracruz_trading_rights
+				has_country_flag = oaxaca_will_give_guarentee_of_protection
+				has_country_flag = we_will_give_away_our_money_oaxaca
+			}
+        }
+    }
+}
+
+defined_text = {
+    name = see_current_papal_offer
+	random = no
+	
+	text = {
+        localisation_key = cuatla_compromise_explained
+        trigger = {
+			has_country_flag = negotiating_for_cuatla_compromise
+        }
+    }
+	
+	text = {
+        localisation_key = total_independence_explained
+        trigger = {
+			has_country_flag = negotiating_for_total_independence
+        }
+    }
+	
+	text = {
+        localisation_key = guadalupe_explained
+        trigger = {
+			has_country_flag = negotiating_for_guadalupe_agreement
+        }
+    }
+	
+	text = {
+        localisation_key = mcs_explained
+        trigger = {
+			has_country_flag = negotiating_for_mcs
+        }
+    }
+	
+	text = {
+        localisation_key = tepeyac_alone_explained
+        trigger = {
+			has_country_flag = literally_will_next_exist_anymore_bruh
+        }
+    }
+	
+}
+
+defined_text = {
+    name = get_one_down_offer_init
+	random = no
+	
+	text = {
+        localisation_key = total_independence_explained_with_cost
+        trigger = {
+			has_country_flag = negotiating_for_cuatla_compromise
+        }
+    }
+	
+	text = {
+        localisation_key = guadalupe_explained_with_cost
+        trigger = {
+			has_country_flag = negotiating_for_total_independence
+        }
+    }
+	
+	text = {
+        localisation_key = mcs_explained_with_cost
+        trigger = {
+			has_country_flag = negotiating_for_guadalupe_agreement
+        }
+    }
+	
+	text = {
+        localisation_key = tepeyac_alone_explained_with_cost
+        trigger = {
+			has_country_flag = negotiating_for_mcs
+        }
+    }
+	
+}
+
+defined_text = {
+    name = get_one_down_offer_final
+	random = no
+	
+	text = {
+        localisation_key = total_independence_explained
+        trigger = {
+			has_country_flag = negotiating_for_cuatla_compromise
+        }
+    }
+	
+	text = {
+        localisation_key = guadalupe_explained
+        trigger = {
+			has_country_flag = negotiating_for_total_independence
+        }
+    }
+	
+	text = {
+        localisation_key = mcs_explained
+        trigger = {
+			has_country_flag = negotiating_for_guadalupe_agreement
+        }
+    }
+	
+	text = {
+        localisation_key = tepeyac_alone_explained
+        trigger = {
+			has_country_flag = negotiating_for_mcs
+        }
+    }
+	
+}
+
+defined_text = {
+    name = refused_one_up_init
+	random = no
+	
+	text = {
+        localisation_key = total_independence_explained_refused
+        trigger = {
+			has_country_flag = negotiating_for_cuatla_compromise
+        }
+    }
+	
+	text = {
+        localisation_key = guadalupe_explained_refused
+        trigger = {
+			has_country_flag = negotiating_for_total_independence
+        }
+    }
+	
+	text = {
+        localisation_key = mcs_explained_refused
+        trigger = {
+			has_country_flag = negotiating_for_guadalupe_agreement
+        }
+    }
+	
+	text = {
+        localisation_key = tepeyac_alone_explained_refused
+        trigger = {
+			has_country_flag = negotiating_for_mcs
+        }
+    }
+	
+}
+
+defined_text = {
+    name = current_offer_from_oaxaca_hn
+	random = no
+	
+	text = {
+        localisation_key = total_independence_explained_refused
+        trigger = {
+			has_country_flag = responded_to_cuatla_compromise
+        }
+    }
+	
+	text = {
+        localisation_key = guadalupe_explained_refused
+        trigger = {
+			has_country_flag = responded_to_total_independence
+        }
+    }
+	
+	text = {
+        localisation_key = mcs_explained_refused
+        trigger = {
+			has_country_flag = responded_to_guadalupe_agreement
+        }
+    }
+	
+	text = {
+        localisation_key = tepeyac_alone_explained_refused
+        trigger = {
+			has_country_flag = responded_to_mexico_city_state
+        }
+    }
+	
+}
+
+defined_text = {
+    name = additional_leverage_for_ep_hn
+	random = no
+	
+	text = {
+        localisation_key = get_five
+        trigger = {
+			has_country_flag = will_give_papal_blessing_for_oaxaca
+        }
+    }
+	
+	text = {
+        localisation_key = get_none
+        trigger = {
+			NOT = {
+				has_country_flag = will_give_papal_blessing_for_oaxaca
+			}
+        }
+    }
+}
+
+defined_text = {
+    name = negotiate_up_as_ep_hn
+	random = no
+	
+	text = {
+        localisation_key = cuatla_compromise_explained
+        trigger = {
+			has_country_flag = responded_to_cuatla_compromise
+        }
+    }
+	
+	text = {
+        localisation_key = total_independence_explained_refused
+        trigger = {
+			has_country_flag = responded_to_total_independence
+        }
+    }
+	
+	text = {
+        localisation_key = guadalupe_explained_refused
+        trigger = {
+			has_country_flag = responded_to_guadalupe_agreement
+        }
+    }
+	
+	text = {
+        localisation_key = mcs_explained_refused
+        trigger = {
+			has_country_flag = responded_to_mexico_city_state
+        }
+    }
+}
+
+defined_text = {
+    name = they_have_added_additional_conditions
+	random = no
+	
+	text = {
+        localisation_key = will_get_added_extra_begin_text
+        trigger = {
+			OR = {
+				has_country_flag = oaxaca_will_give_guarentee_of_protection
+				has_country_flag = we_will_give_away_our_money_oaxaca
+				has_country_flag = we_will_give_veracruz_trading_rights
+				has_country_flag = will_give_papal_blessing_for_oaxaca
+			}
+        }
+    }
+	
+}
+
+defined_text = {
+    name = extras_from_oaxxaca_one
+	random = no
+	
+	text = {
+        localisation_key = will_get_truce_bonus_ep
+        trigger = {
+			has_country_flag = oaxaca_will_give_guarentee_of_protection
+        }
+    }
+	
+}
+
+defined_text = {
+    name = extras_from_oaxxaca_two
+	random = no
+	
+	text = {
+        localisation_key = will_get_money_bonus_ep
+        trigger = {
+			has_country_flag = we_will_give_away_our_money_oaxaca
+        }
+    }
+	
+}
+
+defined_text = {
+    name = extras_from_oaxxaca_three
+	random = no
+	
+	text = {
+        localisation_key = will_get_veracruz_bonus_ep
+        trigger = {
+			has_country_flag = we_will_give_veracruz_trading_rights
+        }
+    }
+	
+}
+
+defined_text = {
+    name = extras_from_ep_one
+	random = no
+	
+	text = {
+        localisation_key = show_oaxaca_what_we_getting_jammie
+        trigger = {
+			has_country_flag = will_give_papal_blessing_for_oaxaca
+        }
+    }
+	
+}
+
+defined_text = {
+    name = have_you_got_kalender
+	random = no
+	
+	text = {
+        localisation_key = established_kalender
+        trigger = {
+			has_country_modifier = formalized_kalender_pag
+        }
+    }
+	
+	text = {
+        localisation_key = established_kalender
+        trigger = {
+			NOT = {
+				has_country_modifier = formalized_kalender_pag
+			}
+        }
+    }
+	
+}

@@ -1,0 +1,17 @@
+#1968 - Kulob
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y94
+controller = Y94 
+add_core = Y94
+culture = oregonite
+religion = partisan
+capital = "Oakridge"
+trade_goods = naval_supplies #more lumber
+hre = yes
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

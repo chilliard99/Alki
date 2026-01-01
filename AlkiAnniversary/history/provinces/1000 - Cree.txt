@@ -1,0 +1,18 @@
+#1000 - Cree
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+owner = X67
+controller = X67
+add_core = X67
+culture = hudsonian
+religion = dynastic
+capital = "Cree"
+trade_goods = fur #Quebec Fur Trade
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 5
+is_city = yes
+add_core = X81
+fort_15th = yes

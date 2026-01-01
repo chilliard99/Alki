@@ -1,0 +1,925 @@
+##################################################################
+### Terrain Categories
+###
+### Terrain types: plains, mountains, hills, desert, artic, forest, jungle, marsh, pti
+### Types are used by the game to apply certain bonuses/maluses on movement/combat etc.
+###
+### Sound types: plains, forest, desert, sea, jungle, mountains
+
+categories =  {
+	pti = {
+		type = pti
+	}
+
+	ocean = {
+		color = { 255 255 255 }
+
+		sound_type = sea
+		is_water = yes
+
+		movement_cost = 1.0
+	}
+
+	inland_ocean = {
+		color = { 0 0 200 }
+
+		sound_type = sea
+		is_water = yes
+		inland_sea = yes
+
+		movement_cost = 1.0
+		terrain_override = {		
+			1271 1926 1266 1267 1321 1268 1279 1259 1257 1256 1255 1274 1322 1660 1659 1661 1662 1663 1300 1296
+		}
+	}	
+
+	glacier = {
+		color = { 235 235 235 }
+
+		sound_type = desert
+
+		defence = 1
+		movement_cost = 1.25
+		supply_limit = 2		
+		local_development_cost = 0.5
+		nation_designer_cost_multiplier = 0.75		
+		
+		terrain_override = {		
+			 2129 
+			
+			
+			
+			#Lawrencia
+			1105 231 232 230 1104 
+			
+			#Quebec 
+			2574 271 998 258 256 255 254 
+			
+			#Nunavut
+			2382 2383 2384 
+		}
+	}
+
+	farmlands = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.05
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			#Japan
+			1021 82 1020 105 88 1030 1028 1843 
+			#Antebella 
+			166 169 2549 167
+			#New Canaan
+			172 173 176 178 181 2639 965 186 184 185 
+			#Quebec
+			240 235 994 241 208
+			#Ontario
+			276 277 987 279 2670 290 291 989 292 297 298 308
+			#Great Lakes
+			332 944 333 328 337 
+			#Hellas
+			351 371 
+			#Three Cities
+			464 459 460 461 389 392 915 
+			#Dakota
+			554
+			#Italy
+			605 2508 607 616 
+			#Utah 
+			706 
+			#Liberty
+			868 870 869 1769 1841 1823 4499 1817 1764 1759 1757 1753 1072 1747 1746 1745 
+			#Oregon
+			1218 1223 
+			#Washington
+			2062 2063 2064
+			#Gadsden
+			2437 4632 1812 2495 
+			#Anahuac
+			2987 4598 2647 2988 
+			#Western Caribbean
+			4163 484 4165 4166 4167 4168 4623 485 2655 486 4205 4204 2654
+			#Brazil
+			763 2894 764 
+		}		
+	}
+	
+	forest = {
+		color = { 18 74 9 }
+
+		type = forest
+		sound_type = forest
+		
+		movement_cost = 1.25
+		defence = 1
+		supply_limit = 4
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9
+		
+		terrain_override = { 
+			#Japan
+			4187 84 1026 109 111 112 113 
+			#New Canaan
+			204 964 961 205 206 960 959 201 203 958 954 200 2557 955 2556 2559
+			#Lawrencia
+			981 229 980 2573 228 227
+			#Quebec
+			263 261 274 999 1000 259 1002 2581 992 2580 238 993 243 2579 2577 244 245 2576 996 273 997 251 2575 253 995 990
+			#Ontario
+			991 299 2588 300 2590 2589 302 304 2591 307 311 309 2593 312 313 1007 303 1003 315 1004 316 2592 317
+			#Great Lakes
+			318 320 319 321 945 
+			#Three Cities
+			2517 474 908 910 442 470 452 468 447 
+			#Manitoba
+			2101 2105 2077 1009 2076 2074 2102 2106 2107 1006 1005 2594 2103 2104 2108 
+			#Kiikiwaahk
+			2603 2210 2209 2601 2600 2199 2201 2207 2203 2599 2205 2595 1813 2160 2154 2166 2161 2135 2134 2133 2132 2597 2131 2596
+			#Arborea
+			972 973 2235 2236 2237 2245 2260 2263 2264 2268 2270 2273 2276 2282 2604 2606 2607 2609 
+			#Alaska
+			2447 976 977 978 2291 2293 2295 2296 2297 2298 2299 2302 2303 2304 2312 2314 2315 2317 2327 2328 2337 2338 2339 2340 2341 2343 2612 2613
+			#Nunavut
+			2344 2345 2346 2347 2348 2349 2351 2352 2353 2354 2355 2356 2357 2358 2359 2360 2361 2362 2363 2364 2365 2366 2367 2368 2369 2370 2371 2373 2374 2375 2376 2377 2378 
+			#Niflheim
+			466 286 2411 467 4116 289 301 4115 293 295 1752 275 272 270 38 310 36 33
+		}                                      
+	}
+	
+	hills = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			#Japan
+			4180 41 69 68 1820 70 81 4185 80 1830 1018 75 4183 1832 99 96 4188 1029 92 95 4191 115 1025 114 116 4192 126 128 1852 
+			#Antebella
+			949 
+			#New Canaan
+			2558 190 194 2023 956 2553 170 207 2555 947
+			#Lawrencia
+			222 2563 2562 2012 210 213 2565 212 214 215 217 2567 220 2572 2571 
+			#Great Lakes
+			344 2524 345 338 339 2525 948 951
+			#Hellas
+			359 2515 358 360 361 362 899 363 372 370 369 
+			#Three Cities
+			912 454 418 420 2518 425 911
+			#Dakota
+			537 535 528
+			#Italy
+			901 606 609 612 617 619 890 620 621 
+			#Liberty
+			1755 1773 1780 1776 1777 1774 1767 1778 1826 1827 1815 1760 2021 1247 1742 1233 
+			#Jefferson
+			871 1121 1846 1850 1855 1856 2479 2477 1985 1971 4490
+			#Nevada
+			1136 
+			#Oregon
+			1974 1973 1202 1204 
+			#Washington
+			2067 2071 4513 4514 4512 4510
+			#Gadsden
+			2419 2418 
+			#El Norte
+			2712 2716 4646 2717 
+			#Empresia
+			2721 855 2720 
+			#Bajio
+			2957 2958 854 2952 2954 4640 2621 2972 4573 2974 4574 2971 2982 2962 2657 4580 2973
+			#Anahuac
+			4021 2627 4022 2648 849 4028 4030 4032 844 4581 4027 4571 2998 4570 2997 2996 4572
+			#Yucatan
+			4051 2638 4090 841 4091 2653 4089
+			#Isthmo
+			4100 4101 839 2640 4093 4092 4109 837 4108 4106 4107 2660 4105
+			#East Caribbean
+			488 4215 4214 4207 489 4217 4222 4216 2658
+			#Colombia
+			2818 2817 4263 4271 4607 4603 4253 
+			#Guyana
+			4609 
+			#Yoroppa
+			239 242 4366 247 246 249 248 250 198 199 4391 202 192 74 1872 133 1770 134 2967 17
+			#North Endea
+			2058 525 2059 740 550 4460 
+			#South Endea
+			527 545 529 530 2030 531 533 4412 4414 4420 4422 541 2033 532 1948 542 4442
+			#China
+			2163 1840 670 1833 2153 2152 669 1829 2158
+			#Zhongguo
+			2173 2174 686 2147 2146 681 2171 2694
+		}
+	}
+
+	
+	woods = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			#Japan
+			45 48 4182 53 1014 4181 42 67 66 4186 63 1819 78 4184 1835 101 102 103 90 4189 1027 
+			#Antebella
+			937 147 150 144 157 160 938 151 152 2547 
+			#New Canaan
+			187 966 968 2561 967 188 963 196 
+			#Lawrencia
+			970 211 2013 971 216 2566 218 2570 219 985 209 2584 2583 2582 986 221
+			#Ontario
+			288 988 2585 294 296 1001 298 305 2015 306 
+			#Great Lakes
+			322 323 327 2521 324 2552 
+			#Three Cities
+			904 440 407 913 409 412 453 914 406 
+			#Idaho
+			1961 2487
+			#Manitoba
+			2085 2089 2086 2083 2081 2080 2078
+			#Arborea
+			2240 2238 
+			#Texas
+			2687 2688 2665 2669 2693 2692 2014 
+			#Empresia
+			2740 2741 2742 2745 859 
+			#Yoroppa
+			1 9 4113 27 
+			#Niflheim
+			43 2963 264 1939 262 1859 40 257 260 269 278 2961 281 268 1756 280 1943 283 284 
+
+		}
+	}
+	
+	mountain = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			#Japan
+			121 4131 120 119 
+			#Antebella
+			936 146 145 163 164
+			#New Canaan
+			2011 171 197
+			#Lawrencia
+			969 2564 
+			#Dakota
+			538 
+			#Roosevelt
+			637 634 633 630 632 638 639 
+			#Idaho
+			1878 1881 1880 1879 2020 1925 1941 1930 1944 1942 2489 1949 1963 1964 1957 1965 
+			#Utah
+			675 677 668 1037 1038 1039 701 1040 678
+			#Liberty
+			1766 1761 1754 1751 1749 
+			#Jefferson
+			1111 1153 1853 1851 1854 1857 1860 1861 2480 4489 1865 1866 1862
+			#Nevada
+			1070 1073 1069 1061 1060 1059 1140 1152
+			#Oregon
+			2031 2482 2481 2032 2035 2036 1968 1936 1969 1970 
+			#Washington
+			873 2073 2485 4502 4506 4508 1162 1161 1170
+			#Kiikiwaahk
+			2187 2189 2602 2198 2192 2018 2197 
+			#Arborea
+			2262 2266 2267 2003 2278 2265 2261 2605 2248 2610 974 2259 975 2257 2255 2253 2249 
+			#Alaska
+			2335 2336 2330 2326 2321 2320 2319 2318 2316 
+			#Baja
+			4639
+			#Gadsden
+			2109 2211 2281 2283 2420 
+			#Empresia
+			2725 2746 2724 4648 2723 4647 2751 2722 2747 2749
+			#Bajio
+			2958 2959 2617 2948 4645 2800 2950 2949 4643 2979 857 2978 2977 2976 2980 2615 2981 4641 
+			#Anahuac
+			4582 
+			#Colombia
+			4265 4264 825 832 824 4258 827 4256 4254 4602 4250 4249 4601 4248 829 4173 4247 
+			#Guyana
+			4274 2813 4611 
+			#Andes
+			820 4317 4318 817 4320 2824 
+			#Patagonia
+			792 791 2843 2845 2862 2877 787 2872 784 785 2873 2871 2874 783
+			#Cabonia
+			4783 1180 
+			#Yoroppa
+			4720 165 4712 110 1768 1863 132 76 65 1868 20 
+			#Niflheim
+			139 1831 137 1765 148 158 463 2208
+			#Fayettia
+			422 330 2204 423 419 2202 421 424 416 2206 2307 2306 4295 331 2305 329 4291 413
+			#Iranistan
+			4342 4329 430 2218 2234 429 433 2222 2213 2216 428 414 2215 2212 417 4341 2214 576
+			577 448 2225 449 451 2227 2226
+			#North Endea
+			507 4511 2075 508 2070 557
+			#China
+			2396 2155 738 
+			#Zhongguo
+			4212 679 4213 680 2169 4211 689 2180 4198 2181 2179 694 2178 693 2177 697 2743 732 734 
+		}
+	}
+
+	impassable_mountains = {
+		color = { 128 128 128 }
+
+		sound_type = desert
+
+		movement_cost = 8.0
+		defence = 6
+		local_development_cost = 10		
+	}
+
+	grasslands = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			#Japan
+			37 1012 51 1818 72 1017 73 1825 79 1019 4359 85 4360 89 1839 91 4190 1023 106 1837 104 83 1024 108 123 122 1847 124 
+			#Florida
+			18 19 4626 2534 26 24 927 35 25 
+			#Antebella
+			143 933 142 2544 2545 950 155 952 2550 
+			#New Canaan
+			953 174 175 957 2554 180 962 2560 2010 
+			#Lawrencia
+			224 984 2569 223 2568
+			#Ontario
+			2587 282 2586 285 287 2671 297 
+			#Great Lakes
+			2522 325 326 943 946 336 334 335 
+			#Hellas
+			357 354 355 356 353
+			#Three Cities
+			2016 473 472 471 905 465 462 438 469 2512 443 441 
+			#Dakota 
+			559 571 565 570 518 906 476 477 475 191 515 511 2511
+			#Italy
+			598 608 618 2672 898 891 622 623
+			#Libety
+			1828 1834 1842 1848 1225 1231 1273  
+			#Nevada
+			716 723 727 724 726 1058 1143 4637 4481 4483 4485 4486 4487 4488
+			#Oregon
+			872 2038 2039 1972 2037 1199 1931 718 720 1190 1197 1208
+			#Washington
+			874 1981 2046 2052 2053 2057 2068 4501 4504 4505 2056 4517 4516 4515 4509 
+			#Manitoba
+			55 56 58 1008 59 57 2092 2096 2089 2097 1010 2098 1011 
+			#Texas
+			2466 2467 2666 2473 2475 883 2474 2683 2680 2681 884 2682 2677 2675 2500 4627 888 2685 2684 2686 
+			#Bajio
+			2965 2964 4579 4642
+			#Anahuac
+			2990 2631 2991 
+			#Yucatan
+			4056 4055 4057 4058 2623 4061 2650 4062 2651 4067 2633 2652 4070 4068 4069
+			#Western Caribbean
+			4169 4171 4175 2656 
+			#Eastern Caribbean
+			4618 4209 4619 4208 2659 4229 4230 490 4218 4219 4223 4620 4621 4221 4220
+			#Colombia
+			4604 4262 4260 4266 4608 4255 4251 4252 2806 
+			#Guyana
+			830 4273 4610 2807 2808 4277 4615 4616 741
+			#Andes
+			4319 819 816 2821 814 2944 811 810 4330 4327 808 4331 2829 805 
+			#Nuastra
+			4373 4374 4376 4381 4380 4385 4386 4387 4392 
+			#Brazil
+			775 776 2897 768 4397 2859 2887 
+			#Patagonia
+			778 2849 2848 2852 772 2851 2850 773
+			#Coyemia
+			1112 1115 2244 2243 2246 1132 2247 1129 1128 1130 1133 2271 2269 2272 1148 2274 2275 2279 2277 1157
+			1158 2288 2932 774 1219
+			#Cabonia
+			1177 4781 4784 
+			#Ethiopia
+			2801 2802 1221 1222 1226 2798 1220 1228 1234 2323 1229 2324 1232 
+			#Yoroppa
+			233 4371 237 236 4367 4375 4121 376 4378 374 168 177 4389 4697 195 179 183 182 193 189 94 93 1743 87 1744 97 98 
+			100 2975 86 1762 1758 4743 52 62 61 60 1763 50 46 2993 2969 49 4143 3 6 
+			#Niflheim
+			131 140 153 4239 141 4125 156 4127 4176 161 2750 149 159 
+			#North Endea
+			2093 526 4461 510 2060 2061 522 524 2094 555 556 2055 2047 558 563 561
+			#South Endea
+			517 552 2084 543 4419 4418 539
+			#China
+			581 2399 584 585 586 2156 2157 667 665 2159 
+		}
+	}
+
+	jungle = {
+		color = { 98 163 18 }
+
+		type = jungle
+		sound_type = jungle
+
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+		
+		terrain_override = {
+			#Bajio
+			2956 4578 2960 4576 2965 4580 851 2983 2642
+			#Anahuac
+			2641 2986 848 4583 2630 2988 2989 4584 2649 4039 
+			#Yucatan
+			4043 4053 4059 4586 4054 4585 4060 2635 4088 4587 4089 2636 4594 4086 4085 4589 4077 4081 843 4076 842
+			4084 4083 4082 4075 4074 4072 4588 2634 4590 845 4063 4065 4064 2651 4067 4066 4591 2633 846
+			#Isthmo
+			4098 2637 4593 4097 4099 2662 4096 4095 4094 840 838 4102 4103 4104 4592 2661 4110 4111 2663 4112
+			4114 4119 4117 4597 4118 836 4120 4122 4595 4123 4126 4124 2664 4129 4128 835
+			#Western Caribbean
+			4160 4162 4624 4246 4200 4201 4202 4203
+			#Colombia
+			2819 2984 4257 4596 826 4259 2985 4599 4087 828 4600 4605 4267 822 4270 2816  
+			#Guyana
+			4612 831 2811 4617 742 4282 4284 2804 743 2931 744 2937 745 746
+			#Andes
+			4316 2820 4323 818 815 4326 821 4325 2945 2943 2823 4324 804 2828 4332 807
+			#Amazona
+			1802 2889 2930 2933 2934 2936 4288 4289 4293 4294 4296 4297 4298 4299 4300 4301 4302 4303 4304 4305 4306 
+			4307 4308 4309 4310 4311 4312 4313 4314 4315
+			#Phillippines
+			2935 747 2938 2890 2929 4343 4340 4344 4349 4339 4351 
+			#Nuastra
+			2839 793 2841 4393 4384 4383 4382 4379 4377 2840 801 2941 2838 2882 2834 800 2902 2888 2904 2903 2835
+			2881 2883 
+			#Brazil
+			2899 761 4409 4411 4421 4417 4424 4425 4416 4415 4413 4427 4426 762 4429 4428 4430 4431 
+			#Coyemia
+			1118 2242 1119 2251 1126 1138 2258 1139 1141 2290 1147 2294 1151 1163 1164 1165 4078 1166 4079 
+			#Cabonia
+			1181 789 1182 1183 1184 4024 4025 4026 
+			#North Endea
+			546 551 4469 560 553 2049 2043 4476 2044 564 567 2091 566 562 
+			#South Endea
+			544 2034 569 4423 4437 4439 2050 547 4448 4410 536 2026 540 2100 2099 572
+			#China
+			568 579 2402 589 601 602 588 587 660 614 611 615 610 613 663 664 2164 2372 2162 666 2400 582
+			2041  
+		}
+	}	
+	
+	marsh = {
+		color = { 13 189 130 }
+
+		type = marsh
+		sound_type = forest
+
+		movement_cost = 1.3
+		defence = 1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+
+		terrain_override = {
+			#Japan 
+			125 1031 127 
+			#Florida
+			2 10 2535 926 7 
+			#Great Lakes
+			2520 342 939 934 
+			#Texas
+			2690 2691 2516 2695 2696 893 2529 921 2530
+			#Western Caribbean
+			4622 4164 
+			#Guyana
+			4613 4281 834 4275 4614 2803 
+		}
+	}
+	
+	desert = {
+		color = { 242 242 111 }
+
+		type = desert
+		sound_type = desert
+
+		movement_cost = 1.05
+		supply_limit = 4
+		local_development_cost = 0.50
+		nation_designer_cost_multiplier = 0.8
+		
+		terrain_override = {
+			#Utah
+			717 718 719 722 711 721 737 733 708 720 716 723
+			#Jefferson
+			1966 1869 1867
+			#Nevada
+			1074 1076
+			#Oregon
+			2483 
+			#Baja
+			2389 2390 2391 2393 2393 2392 
+			#Gadsden
+			1750 2417 2423 2422 4633 2424 879 877 2426 2427 2429 2430 2431 2492 2432 2428 2438 2439 2440 2444 2442 882 2443 
+			#El Norte
+			516 2697 4577 2616 2698 2699 2700 4649 2706 2704 2705 4650 2711 2710 2707 2708 4644 2713 2714 2709 863 2715 864 2718 2719 2618 
+			#Empresia
+			2752 2753 2755 860 2754 2763 2764 2759 4606 861 2774
+			#Patagonia
+			2844 2847 2867 
+			#Cabonia
+			1176 4782 2856 
+			#Ethiopia
+			4052 2767 2775
+			#Iranistan
+			2220 432 4334 436 4336 427 446 435 2224 449 2225 2229 434 2232  
+			#North Endea
+			503 2088 513 2066 512
+			#Zhongguo
+			2184 2182 699 698
+			#Victoria
+			2736 4449 4452 4453 4458 4451 4450 4457 4455 4467 4477 4474 2727 1084 2726 2728 2729 
+		}
+	}
+	
+	coastal_desert = {
+		color = { 255 211 110 }
+
+		type = desert
+		sound_type = desert
+
+		movement_cost = 1.0
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.9		
+		supply_limit = 4
+
+		terrain_override = {
+			#Baja
+			2401 2403 2404 2405 2406 2408 865 2409 2412 2410 2413 2415 2414 2416 866
+			#Gadsden
+			4631 2496 2448
+			#Texas
+			2454 2451 2449 2450 
+			#Patagonia
+			782
+			#Ethiopia
+			2024 1206 2788 2786 2789 2790 1209 2793 1212 1215 2765
+			#Iranistan
+			2219 431 2233 575 2231 
+		}	
+	}
+	
+	coastline = {
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		
+		terrain_override = {
+			#Japan 
+			4651 39 118 4193 107 129 1032 130
+			#Florida
+			2536 5 11 14 8 4 16 21 22 4625
+			#Lawrencia
+			983 226 234 2578 982 225 
+			#Quebec
+			314
+			#Hellas
+			349 2528 350 
+			#Italy
+			892 578 625 2625 594 593 
+			#Liberty
+			2478 
+			#Washington
+			2048 2065
+			#Roosevelt
+			636 635 2507 
+			#Utah
+			875
+			#Arborea
+			2022 2230 2228 
+			#Alaska
+			2332 2333 2325 2322 2286 979 2285 2284 2300 2301 2611 
+			#Nunavut
+			2379 2380 2381 
+			#El Norte
+			2701
+			#Yucatan
+			4073 
+			#Western Caribbean
+			4158 4174 4157 487 4154 4152 4151 4148 483 4147 482 4150 4144 4145 4141 4130
+			#Eastern Caribbean
+			4210 4206 4231 4232 492 4238 4240 493 4241 4242 4243 496 495 494 4244 497 498 499 500 4245 501 
+			#Guyana
+			491 4285 4287
+			#Andes
+			4335 4337 4338 2002 
+			#Phillippines
+			4345 4350 4353 4352 4354 4356 4355 4361 4362 4368 2910 4369 1803 4370 4365 4363 4361 4362 2909 
+			4372 2905 758 2908 2911
+			#Nuastra
+			2946 2940 4388 4390 796 803 
+			#Brazil
+			2858 2855 4394 4395 2896 4404 4399 4398 2895 4396 4406 4407 2891 2892 2891 4408 4405 765 2920 2906 2907
+			#Patagonia
+			1095 2025 2836
+			#Cabonia
+			1186 1192 788 1195 4049 1198 1196 4020
+			#Ethiopia
+			1201 1200 1203 2796 1099
+			#Yoroppa
+			4364 1979 12
+			#South Endea
+			1103 1102 1100 1101 1248 
+			#Oceania
+			1015 1084 1106 1107 1108 1109 1235 1236 1237 1238 1239 1240 1241 1242 1243 1244 1246 1986 1987 1988 1989 
+			1990 1991 1992 1993 1994 1995 1996 1997 2726 2727 2728 2729 2732 2737 2738 2739
+		}
+	}	
+	
+	drylands = {
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+
+		terrain_override = {
+			#Great Lakes
+			940 346 343 2523 341 935 348 2526
+			#Utah
+			726 724 725 727 1043 1044 1045 1048 1046 1047 2490 1055 1056 1054 1053 1051 
+			#Jefferson
+			1873 1869 1871 
+			#Nevada
+			1075 1065 1077 1080 1081 1082 1083 1110 1122 1127 1079 1078 1068 1066 1063
+			#Oregon
+			4495 4496 2027 1983 2040 2042 
+			#Baja
+			2387 2386 2385 2407 2476 2388 867 2395 2394 2397 2620 2398 
+			#Gadsden
+			2434 2433 881 2446 2445 4630 
+			#Texas
+			2460 2461 2462 2459 4628 2464 2463 2498
+			#El Norte
+			2702 2703 862 
+			#Empresia
+			2758 2761 2773 2619 2778 2776 2777 2614 2785 2778 2787 2794 858 2797 2791 2668 2783 2782 2781 2779 2667 2770 2769 2771 2768
+			#Patagonia
+			2868 786 2863 2865 2861 2846 2842
+			#Cabonia
+			1172 1174 1173 
+			#Fayettia
+			2313 2308 377 1849 4292 2309 411 415 2310 410 2311 4290 408 378 382 405 364 379 383 4268 365 4269 384 2329 385 
+			2331 386 391 4279 390 4280 4283 402 401 2342 400 403 399 404 395 394 
+			#North Endea
+			2072 4503 504 4456 514 2079 506
+			#South Endea
+			4454 2054 2051 
+			#Victoria
+			4468 1091 4470 4471 1092 4473 4478 4472 1093 1094 4479 2733 2732 2731 2730
+			
+			#If I remove this the game crashes. Why? Fuck me thats why.
+			790 
+			
+			
+			
+			
+		}
+	}
+
+	highlands = {
+		color = { 176 129 21 }
+
+		type = hills
+		sound_type = mountains
+		
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9	
+
+		terrain_override = {
+			#Great Lakes
+			941 347 2548 340 2551 
+			#Italy
+			889 626 624 
+			#Roosevelt
+			642 650 649 643 2506 644 640 641
+			#Idaho
+			1877 1875 1940 1933 1934 1936 1935 1937 1938 2019 1882 1901 1945 1946 1947 1951 1952 1956 1955 1954 2488 1962 2608 1953
+			#Utah
+			712 713 714 710 715 704 705 709 702 707 767 771 798 799 1041 1042 1033 1022 1057 1036 739 737 1016 731 1034 1035 730 728 729 1049 1052 1050 
+			#Jefferson
+			4494 4638 4493 1864 1967 
+			#Nevada
+			1189 1171 2830 4278 4482 4459 4480 4484 
+			#Washington
+			2069 2486 4500 
+			#Gadsden
+			876 4634 2435 2436 2421 2493 2494  
+			#Bajio
+			2966 2971 2972 2622 2624 2623 2626
+			#Anahuac
+			2629 847 2646 3001 3002 2628 2999 3000 2644 853 2994 2995 2992 852
+			#Colombia
+			4266 4261 823 
+			#Cabonia
+			1792 1185 2951 1188 
+			#Ethiopia
+			1207 2756 2757 2762 2772 1224 1227 2766 
+			#Yoroppa
+			252 2458 2472 2689 23 
+			#Niflheim
+			1772 4236 154 1318 162
+			#China
+			2165 661 2167 2748 662 674 2168 
+			#Zhongguo
+			2183 2170 4199 673
+		}
+	}
+
+	savannah = {
+		color = { 248 199 23  }
+
+		sound_type = plains
+
+		supply_limit = 6
+		movement_cost = 1.00
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.95	
+		
+		terrain_override = {
+			#Florida
+			34 928 29 32 28 30 2533 31 923 
+			#Antebella
+			2543 138 2546 
+			#Hellas
+			352 373 375 380 352 900 917 902 381 916 2519 387 388 
+			#Three Cities
+			2513 457 426 455 458 456 393 396 397 398 439 
+			#Colombia
+			4272 2814 2815 2812
+			#Guyana
+			2810 2809 2939 2805 
+			#Coyemia
+			1113 2239 1114 1117 1116 1120 1123 1124 1134 2250 1125 2252 1135 1137 2254 1142 2256 2292 1144 1146 2289 1145 1249 
+			1154 1150 1148 2279 1157 2287 1160 4080 1168 1167 2241
+			#Cabonia
+			1194 4031 1193 4029 4023 1187 1191 4038 4034 4048 4040 4047 4046 4050 4037 4045 4044 4041 4042
+			4036 4035 
+			#Victoria
+			4444 1086 4443 4446 2735 1087 4434 4435 4436 4462 2734 4465 4464 1089 4463 4440 4441 4438 1088 4445 4447 4466 
+		}		 
+	}
+	
+	steppe = {
+		color = { 147 200 83  }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.20
+		nation_designer_cost_multiplier = 0.9	
+		supply_limit = 6
+		
+		terrain_override = {
+			#Oregon 
+			1978 1982 2028 4498 4497
+			#Dakota
+			520 521 523 548 2505 2007 909 2510 479 505 509 2502 502 478 573 549 2504 2008 2503
+			#Italy
+			591 592 590 580 574 903 595 597 596 2009 599 604 600 603
+			#Roosevelt
+			628 627 629 631 646 1809 648 645 647 655 656 2004 659 657 654 2006 653 652 2501 658 651
+			#Idaho
+			1958 1959 1960
+			#Manitoba
+			2095 2090 
+			#Kiikiwaahk
+			2110 2111 2115 2114 2005 2126 2123 2116 2128 2130 2125 2124 2122 2118 2117 2598 2119 2120 2185 2190 2121 2186 2188 2191 2195 2196 2193 2017
+			#Texas
+			2465 2497 2456 4629 2457 2673 2453 2455 2452 855 2676 2674
+			#Patagonia
+			2869 2876 781 2875 780 2870 779 2866 2860 
+			#Cabonia
+			1175 2880 1179 833
+			#Ethiopia
+			2780 1205 2784 2795 
+		}	
+	}	
+}
+	
+##################################################################
+### Graphical terrain
+###		type	=	refers to the terrain defined above, "terrain category"'s 
+### 	color 	= 	index in bitmap color table (see terrain.bmp)
+###
+
+terrain = {
+	grasslands			= { type = grasslands		color = { 	0	 } }
+	hills				= { type = hills			color = { 	1	 } }
+	desert_mountain		= { type = mountain			color = { 	2	 } }
+	desert				= { type = desert			color = { 	3	 } }
+
+	plains				= { type = grasslands		color = { 	4	 } }
+	terrain_5			= { type = grasslands		color = { 	5	 } }
+	mountain			= { type = mountain			color = { 	6	 } }
+	desert_mountain_low	= { type = desert			color = { 	7	 } }
+
+	terrain_8			= { type = hills			color = { 	8	 } }
+	marsh				= { type = marsh			color = { 	9	 } }
+	terrain_10			= { type = farmlands		color = { 	10	 } }
+	terrain_11			= { type = farmlands		color = { 	11	 } }
+
+	forest_12			= { type = forest			color = { 	12	 } }
+	forest_13			= { type = forest			color = { 	13	 } }
+	forest_14			= { type = forest			color = { 	14	 } }
+	ocean				= { type = ocean			color = { 	15	 } }
+
+	snow				= { type = mountain 		color = { 	16	 } } # (SPECIAL CASE) Used to identify permanent snow
+	inland_ocean_17 	= { type = inland_ocean		color = {	17	 } }
+
+	coastal_desert_18	= { type = coastal_desert	color = { 	19	 } }
+	coastline			= { type = coastline		color = { 	35	 } }
+	
+	savannah			= { type = savannah 		color = {	20	 } }
+	drylands			= { type = drylands			color = {	22	 } }
+	highlands			= { type = highlands		color = {	23	 } }
+	dry_highlands		= { type = highlands		color = {	24	 } }
+	
+	woods				= { type = woods			color = { 	255	 } }
+	jungle				= { type = jungle			color = { 	254	 } }
+	
+	terrain_21			= { type = farmlands		color = { 	21	 } }	
+}
+
+##################################################################
+### Tree terrain
+###		terrain	=	refers to the terrain tag defined above
+### 	color 	= 	index in bitmap color table (see tree.bmp)
+###
+
+tree = {
+	forest				= { terrain = forest 			color = { 	3 4 6 7 19 20	} }
+	woods				= { terrain = woods 			color = { 	2 5 8 18	} }
+	jungle				= { terrain = jungle 			color = { 	13 14 15	} }
+	palms				= { terrain = desert 			color = { 	12	} }
+	savana				= { terrain = grasslands 		color = { 	27 28 29 30	} }
+}

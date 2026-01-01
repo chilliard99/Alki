@@ -1,0 +1,17 @@
+#730 - Girin
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y33
+controller = Y33
+add_core = Y33
+culture = zionist
+religion = partisan
+capital = "Girin"
+trade_goods = wool #when in doubt put sheep
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

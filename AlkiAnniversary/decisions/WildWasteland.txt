@@ -1,0 +1,22 @@
+country_decisions = {
+	
+	disable_wild_wasteland = {
+		major = yes
+		potential = {
+			ai = no
+			NOT = { is_year = 1445 }
+			NOT = { has_global_flag = disabled_wild_wasteland }
+		}
+		allow = {
+			NOT = { is_year = 1445 }
+		}
+		effect = {
+			custom_tooltip = explain_what_disabling_wildwasteland_does
+			set_global_flag = disabled_wild_wasteland
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+}

@@ -1,0 +1,15 @@
+#4465 - Ranthambore
+discovered_by = sub_saharan
+owner = U10
+controller = U10
+add_core = U10
+culture = victorian
+religion = penitent
+capital = "Ranthambore"
+trade_goods = dyes
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 5
+is_city = yes
+center_of_trade = 1

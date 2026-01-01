@@ -1,0 +1,16 @@
+government_rank = 1
+government = native
+primary_culture = neosomalian
+religion = shamanist
+technology_group = mesoamerican
+capital = 1215	#Tajura
+
+1444.11.11 = {
+	monarch = {
+		name = "Ethiopian Council"
+		adm = 1
+		dip = 1
+		mil = 1
+		regent = yes
+	}
+}

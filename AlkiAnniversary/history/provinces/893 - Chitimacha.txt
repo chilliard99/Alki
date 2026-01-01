@@ -1,0 +1,20 @@
+#893 - Chitimacha
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = chinese
+owner = W52
+controller = W52
+add_core = W52
+culture = orlenean
+religion = catholico
+capital = "Chitimacha"
+trade_goods = glass #new orleans glass
+hre = no
+fort_15th = yes
+base_tax = 5
+base_production = 6
+base_manpower = 6
+is_city = yes
+center_of_trade = 2

@@ -1,0 +1,65 @@
+country_decisions = {
+
+	return_to_catholicism = { #This is just for da player, cuz the AI shouldn't convert cuz then it looks really bad. But they get bonuses for conversion anyways. 
+		major = yes
+		potential = {
+			ai = no
+			OR = {
+				religion = vacandist
+				religion = cruzite
+				religion = sagrado
+				religion = la_luz
+				religion = vulgar
+			}
+			any_country = {
+				religion = catholico
+			}
+		}
+		allow = {
+			NOT = {
+				has_country_modifier = conversion_zeal
+			}
+			stability = 3
+		}
+		effect = {
+			if = {
+				limit = {
+					any_country = {
+						religion = catholico
+						NOT = {
+							reform_desire = 0.25
+						}
+					}
+				}
+				add_stability = -3
+			}
+			else_if = {
+				limit = {
+					any_country = {
+						religion = catholico
+						NOT = {
+							reform_desire = 0.5
+						}
+					}
+				}
+				add_stability = -2
+			}
+			else = {
+				add_stability = -1
+			}
+			change_religion = catholico
+			capital_scope = {
+				change_religion = catholico
+			}
+			add_reform_desire = 0.01
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}	
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
+

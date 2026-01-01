@@ -1,0 +1,70 @@
+# Order here is the priority for taking them, if trigger is true.
+
+V17 = {
+	NOT = { 
+		exists = X91 
+	}
+}
+
+X91 = {
+	NOT = { 
+		exists = V17 
+	}
+}
+
+X22 = {
+	NOT = { 
+		exists = X41 
+		is_year = 1700
+	}
+}
+
+X41 = {
+	NOT = { 
+		exists = X22 
+	}
+}
+
+X44 = {
+	NOT = { 
+		OR = {
+			exists = X41 
+			exists = X22
+		}
+	}
+}
+
+W85 = {
+	NOT = { 
+		exists = V27 
+		is_year = 1700
+	}
+}
+
+V27 = {
+	NOT = { 
+		exists = W85 
+		is_year = 1700
+	}
+}
+
+V05 = {
+	always = yes
+}
+
+X67 = {
+	always = yes
+}
+
+X84 = {
+	NOT = { 
+		exists = W58 
+		is_year = 1700
+	}
+}
+
+W58 = {
+	NOT = { 
+		exists = X84 
+	}
+}

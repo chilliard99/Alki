@@ -1,0 +1,16 @@
+government_rank = 1
+government = native
+primary_culture = shona
+religion = shamanism
+technology_group = mesoamerican
+capital = 4046	#Lala
+
+1444.11.11 = {
+	monarch = {
+		name = "The Council"
+		adm = 1
+		dip = 1
+		mil = 1
+		regent = yes
+	}
+}

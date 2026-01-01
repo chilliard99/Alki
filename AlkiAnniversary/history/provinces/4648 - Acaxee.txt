@@ -1,0 +1,15 @@
+# No previous file for Acaxee
+discovered_by = ottoman
+discovered_by = muslim
+owner = W70
+controller = W70
+add_core = W70
+culture = durangan
+religion = catholico 
+capital = "Acaxee" 
+trade_goods = livestock #cattle i guess 
+hre = no 
+base_tax = 3
+base_production = 3
+base_manpower = 4
+is_city = yes

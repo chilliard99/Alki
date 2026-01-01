@@ -1,0 +1,15 @@
+# No previous file for Huichol
+discovered_by = ottoman
+discovered_by = muslim
+owner = W81
+controller = W81
+add_core = W81
+culture = tapatio
+religion = catholico
+capital = "Huichol"
+trade_goods = wine #tequila 
+hre = no
+base_tax = 3
+base_production = 4
+base_manpower = 4
+is_city = yes

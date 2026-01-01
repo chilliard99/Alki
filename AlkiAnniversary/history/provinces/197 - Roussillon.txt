@@ -1,0 +1,18 @@
+# 197 Roussillon - Principal cities: Perpignan
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+add_core = X60
+owner = X60
+controller = X60
+capital = "Perpignan"
+is_city = yes
+culture = vannian
+religion = dynastic
+hre = no
+base_tax = 2
+base_production = 1
+trade_goods = naval_supplies #forests
+base_manpower = 1

@@ -1,0 +1,20 @@
+# - Saoura
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = chinese
+owner = W55
+controller = W55
+add_core = W55
+culture = bereber
+religion = catholico
+capital = "Oulad Mhedi"
+trade_goods = cloth #
+center_of_trade = 2
+hre = no
+fort_15th = yes
+base_tax = 6
+base_production = 6
+base_manpower = 6
+is_city = yes

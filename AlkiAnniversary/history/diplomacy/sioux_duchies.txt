@@ -1,0 +1,18 @@
+vassal = {
+	first = Y19
+	second = Y20
+	start_date = 1443.1.1
+	end_date = 1525.1.1
+}
+vassal = {
+	first = Y19
+	second = Y21
+	start_date = 1443.1.1
+	end_date = 1525.1.1
+}
+vassal = {
+	first = Y19
+	second = Y18
+	start_date = 1443.1.1
+	end_date = 1525.1.1
+}

@@ -1,0 +1,424 @@
+namespace = washington_events
+####################WASHINGTON EVENTS##########################
+country_event = { #A Nation For The Weary
+	id = washington_events.1
+	title = washington_events.1.t
+	desc = washington_events.1.d
+	picture = STREET_SPEECH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U78
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = washington_events.1.a #Boast of Our Success
+		custom_tooltip = when_globetrade_can_get_cascadia_event
+		add_prestige = 50
+	}
+	option = {
+		name = washington_events.1.b #Release Some Tension
+		custom_tooltip = when_globetrade_can_get_cascadia_event
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 300
+		}
+		else_if = {
+			limit = {
+				stability = 2
+			}
+			add_stability = 1
+			add_adm_power = 150
+		}
+		else = {
+			add_stability = 2
+		}
+	}
+	option = {
+		name = washington_events.1.c #Reflect Inward
+		custom_tooltip = when_globetrade_can_get_cascadia_event
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+	}
+	
+	after = {
+		set_country_flag = can_get_cascadian_revolution_good
+		
+	}
+}
+
+country_event = { #Cascadian Promise
+	id = washington_events.2
+	title = washington_events.2.t
+	desc = washington_events.2.d
+	picture = REFORM_eventPicture
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		is_institution_enabled = global_trade
+		has_country_flag = can_get_cascadian_revolution_good	
+	}
+	
+	mean_time_to_happen = {
+		years = 10
+	}
+	
+	option = {
+		name = washington_events.2.a #We Are Cascadians!
+		change_primary_culture = central_cascadian
+		set_ruler_culture = central_cascadian
+		custom_tooltip = every_province_with_more_than_ten_dev_and_is_californian_alaskan
+		tooltip = {
+			change_culture = central_cascadian
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					development = 10
+					OR = {
+						culture_group = sunkissed
+						culture_group = alaskan
+					}
+				}
+				change_culture = central_cascadian
+			}
+			set_global_flag = cascadian_culture_enabled
+		}
+	}
+	option = {
+		name = washington_events.2.b #That is not us.
+		if = {
+			limit = {
+				stability = 3
+			}
+			add_adm_power = 150
+		}
+		else = {
+			add_stability = 1
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+province_event = { #Cascadian Culture Spreads
+	id = washington_events.3
+	title = washington_events.3.t
+	desc = washington_events.3.d
+	picture = REFORM_eventPicture
+	
+	trigger = {
+		has_global_flag = cascadian_culture_enabled
+		owner = {
+			primary_culture = central_cascadian
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 50
+		modifier = {
+			factor = 0.5
+			OR = {
+				culture_group = sunkissed
+				culture_group = alaskan
+			}
+		}
+		modifier = {
+			factor = 0.5
+			development = 10
+		}
+		modifier = {
+			factor = 0.25
+			development = 20
+		}
+	}
+	
+	option = {
+		name = washington_events.3.a #Wonderful
+		change_culture = central_cascadian
+	}
+}
+
+country_event = { #Dachian Development
+	id = washington_events.4
+	title = washington_events.4.t
+	desc = washington_events.4.d
+	picture = COLONIZATION_eventPicture
+	
+	trigger = {
+		mission_completed = strong_colonial_presence_washington
+		U79 = {
+			is_colonial_nation_of = ROOT
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 10
+	}
+	
+	immediate = {
+		hidden_effect = {
+			U79 = {
+				random_owned_province = {
+					save_event_target_as = place_for_dachian_dev
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = washington_events.4.a #Good for them!
+		event_target:place_for_dachian_dev = {
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+		hidden_effect = {
+			U79 = {
+				country_event = { id = washington_events.5 }
+			}
+		}
+	}
+}
+
+country_event = { #Colonial Developments
+	id = washington_events.5
+	title = washington_events.5.t
+	desc = washington_events.5.d
+	picture = COLONIZATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = U79
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = washington_events.5.a #Wonderful!
+		tooltip = {
+			event_target:place_for_dachian_dev = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+		}	
+	}
+}
+
+country_event = { #The Invisible Hand
+	id = washington_events.6
+	title = washington_events.6.t
+	desc = washington_events.6.d
+	picture = BURGHER_ESTATE_eventPicture
+	
+	trigger = {
+		has_estate_privilege = washington_market_reform
+	}
+	
+	mean_time_to_happen = {
+		years = 25
+	}
+	
+	option = {
+		name = washington_events.6.a #Let them be.
+		change_government_reform_progress = 25
+	}
+}
+
+country_event = { #Light of the West
+	id = washington_events.7
+	title = washington_events.7.t
+	desc = washington_events.7.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = washington_events.7.a #We carry the torch of liberty!
+		add_country_modifier = {
+			name = "gor_torch_of_liberty_washington"
+			duration = -1
+		}
+	}
+	option = {
+		name = washington_events.7.b #The burden is too heavy
+		add_country_modifier = {
+			name = "gor_reserved_democracy_washington"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Oregonian Integration
+	id = washington_events.8
+	title = washington_events.8.t
+	desc = washington_events.8.d
+	picture = DIPLOMACY_SIGNING_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = washington_events.8.a #They are our brothers!
+		custom_tooltip = if_we_are_monarchy_puget
+		tooltip = {
+			add_country_modifier = {
+				name = "gor_monarchy_oregonian_integration_washington"
+				duration = -1
+			}
+		}
+		custom_tooltip = if_we_are_republic_puget
+		tooltip = {
+			add_country_modifier = {
+				name = "gor_republican_oregonian_integration_washington"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					government = monarchy
+				}
+				add_country_modifier = {
+					name = "gor_monarchy_oregonian_integration_washington"
+					duration = -1
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = "gor_republican_oregonian_integration_washington"
+					duration = -1
+				}
+			}
+		}
+	}
+	option = {
+		name = washington_events.8.b #Washington should be our focus.
+		add_country_modifier = {
+			name = "gor_homeland_focus_washington"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Join or Die
+	id = washington_events.9
+	title = washington_events.9.t
+	desc = washington_events.9.d
+	picture = DIPLOMAT_INTERROGATION_eventPicture
+	is_triggered_only = yes
+	major = yes
+	
+	trigger = {
+		OR = {
+			tag = U78
+			tag = U80
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = washington_events.9.a #Offer them a way out
+		custom_tooltip = every_nation_in_nevada_can_join_us_as_vassal_or_integrate
+		hidden_effect = {
+			every_country = {
+				limit = {
+					capital_scope = {
+						region = nevada_region
+					}
+				}
+				country_event = { id = washington_events.10 }
+			}
+		}
+	}
+}
+
+country_event = { #Join or Die
+	id = washington_events.10
+	title = washington_events.10.t
+	desc = washington_events.10.d
+	picture = DIPLOMAT_INTERROGATION_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = washington_events.10.a #Offer them a way out
+		if = {
+			limit = {
+				total_development = 50
+			}
+			FROM = {
+				vassalize = ROOT
+			}
+		}
+		else = {
+			FROM = {
+				inherit = ROOT
+			}
+		}
+		ai_chance = {
+			factor = 99
+			modifier = {
+				factor = 0
+				total_development = 100
+			}
+		}
+	}
+	option = {
+		name = washington_events.10.b #We will never surrender!
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -100
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}

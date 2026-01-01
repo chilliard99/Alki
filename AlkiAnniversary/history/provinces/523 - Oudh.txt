@@ -1,0 +1,18 @@
+#523 - Oudh
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = Y19
+controller = Y19
+add_core = Y19
+culture = plainwalker_sioux
+religion = sacramental
+capital = "Lucknow"
+trade_goods = grain #wheat
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

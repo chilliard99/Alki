@@ -1,0 +1,19 @@
+#1111 - Arguin
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y78
+controller = Y78
+add_core = Y78
+culture = pomo
+religion = partisan
+capital = "Ukiah"
+trade_goods = wine #Used to make pears, known for the wine
+hre = yes
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

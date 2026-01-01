@@ -1,0 +1,16 @@
+#970 - Pennacook
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+add_core = X74
+owner = X74
+controller = X74
+culture = englander
+religion = dynastic
+capital = "Merrimack"
+trade_goods = fur #New England Furs
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

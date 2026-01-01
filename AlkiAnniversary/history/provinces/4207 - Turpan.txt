@@ -1,0 +1,15 @@
+#X2 - Turpan
+discovered_by = ottoman
+discovered_by = muslim
+owner = V04
+controller = V04
+add_core = V04
+culture = haitian
+religion = espiritismo
+capital = "Balikul"
+trade_goods = sugar #apparently there were sugar cane plantations here
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

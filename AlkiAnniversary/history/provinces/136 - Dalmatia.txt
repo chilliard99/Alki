@@ -1,0 +1,18 @@
+#136 - Split
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X48
+controller = X48
+add_core = X48
+culture = atlantian
+religion = evangelical
+capital = "Split"
+trade_goods = wine #Cypriot Wine
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 4
+is_city = yes

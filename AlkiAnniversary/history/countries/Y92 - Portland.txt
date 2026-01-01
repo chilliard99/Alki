@@ -1,0 +1,23 @@
+government = theocracy
+add_government_reform = holy_conservatory_reform
+government_rank = 1
+primary_culture = oregonite
+religion = partisan
+technology_group = western
+capital = 1218	 #Portland
+religious_school = naturalist_party
+
+1433.1.30 = {
+	add_country_modifier = {
+		name = "gor_oregonian_freedom_fighters_genorg"
+		duration = -1
+	}
+	monarch = {
+		name = "Baker"
+		dynasty = "Overton"
+		birth_date = 1409.12.25
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}

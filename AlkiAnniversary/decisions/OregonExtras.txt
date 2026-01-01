@@ -1,0 +1,681 @@
+country_decisions = {
+	
+	rebuild_clatsop_oregon_extra = {
+		potential = {
+			owns_core_province = 1197
+			1197 = { has_province_modifier = gor_redwood_destruction_oregongen }
+			NOT = { has_reform = holy_conservatory_reform }
+		}
+		provinces_to_highlight = {
+			province_id = 1197
+		}
+		allow = {
+			if = {
+				limit = {
+					has_idea_group = economic_ideas
+				}
+				treasury = 250
+				1197 = {
+					NOT = { unrest = 1 }
+					devastation = 0
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = if_we_have_economic_ideas_this_is_half_price_twofif
+				}
+				treasury = 500
+				1197 = {
+					NOT = { unrest = 1 }
+					devastation = 0
+				}
+			}
+			
+		}
+		effect = {
+			if = {
+				limit = {
+					has_idea_group = economic_ideas
+				}
+				add_treasury = -250
+			}
+			else = {
+				add_treasury = -500
+			}
+			1197 = {	
+				add_base_tax = 2
+				add_base_production = 1
+				add_base_manpower = 1
+				remove_province_modifier = gor_redwood_destruction_oregongen
+			}
+			if = {
+				limit = {
+					mission_completed = golden_river_coos
+				}
+				add_dip_power = 50
+				add_mercantilism = 3
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	rebuild_yamhill_oregon_extra = {
+		potential = {
+			owns_core_province = 1204
+			1204 = { has_province_modifier = gor_redwood_destruction_oregongen }
+			NOT = { has_reform = holy_conservatory_reform }
+		}
+		provinces_to_highlight = {
+			province_id = 1204
+		}
+		allow = {
+			if = {
+				limit = {
+					has_idea_group = economic_ideas
+				}
+				treasury = 250
+				1204 = {
+					NOT = { unrest = 1 }
+					devastation = 0
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = if_we_have_economic_ideas_this_is_half_price_twofif
+				}
+				treasury = 500
+				1204 = {
+					NOT = { unrest = 1 }
+					devastation = 0
+				}
+			}
+			
+		}
+		effect = {
+			if = {
+				limit = {
+					has_idea_group = economic_ideas
+				}
+				add_treasury = -250
+			}
+			else = {
+				add_treasury = -500
+			}
+			1204 = {	
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 1
+				remove_province_modifier = gor_redwood_destruction_oregongen
+			}
+			if = {
+				limit = {
+					mission_completed = golden_river_coos
+				}
+				add_dip_power = 50
+				add_mercantilism = 3
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	finish_eugene_restoration_oregon_extra = {
+		potential = {
+			owns_core_province = 1199
+			1199 = { has_province_modifier = gor_redwood_destruction_oregongen }
+			NOT = { has_reform = holy_conservatory_reform }
+		}
+		provinces_to_highlight = {
+			province_id = 1199
+		}
+		allow = {
+			if = {
+				limit = {
+					has_idea_group = economic_ideas
+				}
+				treasury = 100
+				1199 = {
+					NOT = { unrest = 1 }
+					devastation = 0
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = if_we_have_economic_ideas_this_is_half_price_twofif
+				}
+				NOT = { unrest = 0 }
+				treasury = 200
+				1199 = {
+					NOT = { unrest = 1 }
+					devastation = 0
+				}
+			}
+			
+		}
+		effect = {
+			if = {
+				limit = {
+					has_idea_group = economic_ideas
+				}
+				add_treasury = -100
+			}
+			else = {
+				add_treasury = -200
+			}
+			1199 = {	
+				add_base_tax = 1
+				add_base_production = 1
+				remove_province_modifier = gor_redwood_destruction_oregongen
+			}
+			if = {
+				limit = {
+					mission_completed = golden_river_coos
+				}
+				add_dip_power = 50
+				add_mercantilism = 3
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	rebuild_sthelens_oregon_extra = {
+		potential = {
+			owns_core_province = 1208
+			1208 = { has_province_modifier = gor_redwood_destruction_oregongen }
+			NOT = { has_reform = holy_conservatory_reform }
+		}
+		provinces_to_highlight = {
+			province_id = 1208
+		}
+		allow = {
+			if = {
+				limit = {
+					has_idea_group = economic_ideas
+				}
+				treasury = 250
+				1208 = {
+					NOT = { unrest = 1 }
+					devastation = 0
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = if_we_have_economic_ideas_this_is_half_price_twofif
+				}
+				treasury = 500
+				1208 = {
+					NOT = { unrest = 1 }
+					devastation = 0
+				}
+			}
+			
+		}
+		effect = {
+			if = {
+				limit = {
+					has_idea_group = economic_ideas
+				}
+				add_treasury = -250
+			}
+			else = {
+				add_treasury = -500
+			}
+			1208 = {	
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+				remove_province_modifier = gor_redwood_destruction_oregongen
+			}
+			if = {
+				limit = {
+					mission_completed = golden_river_coos
+				}
+				add_dip_power = 50
+				add_mercantilism = 3
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	rebuild_portland_oregon_extra = {
+		potential = {
+			owns_core_province = 1218
+			1218 = { has_province_modifier = gor_redwood_destruction_oregongen }
+			NOT = { has_reform = holy_conservatory_reform }
+		}
+		provinces_to_highlight = {
+			province_id = 1218
+		}
+		allow = {
+			if = {
+				limit = {
+					has_idea_group = economic_ideas
+					has_country_flag = half_cost_restore_portland
+				}
+				treasury = 250
+				1218 = {
+					NOT = { unrest = 1 }
+					devastation = 0
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea_group = economic_ideas
+					NOT = { has_country_flag = half_cost_restore_portland }
+				}
+				treasury = 500
+				1218 = {
+					NOT = { unrest = 1 }
+					devastation = 0
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = half_cost_restore_portland
+				}
+				custom_trigger_tooltip = {
+					tooltip = if_we_have_economic_ideas_this_is_half_price_twofif
+				}
+				treasury = 500
+				1218 = {
+					NOT = { unrest = 1 }
+					devastation = 0
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = if_we_have_economic_ideas_this_is_half_price_twofif
+				}
+				treasury = 1000
+				1218 = {
+					NOT = { unrest = 1 }
+					devastation = 0
+				}
+			}
+			
+		}
+		effect = {
+			if = {
+				limit = {
+					has_idea_group = economic_ideas
+					has_country_flag = half_cost_restore_portland
+				}
+				add_treasury = -250
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_idea_group = economic_ideas
+						has_country_flag = half_cost_restore_portland
+					}
+				}
+				add_treasury = -500
+			}
+			else = {
+				add_treasury = -1000
+			}
+			1218 = {	
+				add_base_tax = 5
+				add_base_production = 5
+				add_base_manpower = 5
+				remove_province_modifier = gor_redwood_destruction_oregongen
+			}
+			if = {
+				limit = {
+					mission_completed = golden_river_coos
+				}
+				add_dip_power = 50
+				add_mercantilism = 3
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	rebuild_salem_oregon_extra = {
+		potential = {
+			owns_core_province = 1223
+			1223 = { has_province_modifier = gor_redwood_destruction_oregongen }
+			NOT = { has_reform = holy_conservatory_reform }
+		}
+		provinces_to_highlight = {
+			province_id = 1223
+		}
+		allow = {
+			if = {
+				limit = {
+					has_idea_group = economic_ideas
+				}
+				treasury = 250
+				1223 = {
+					NOT = { unrest = 1 }
+					devastation = 0
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = if_we_have_economic_ideas_this_is_half_price_twofif
+				}
+				treasury = 500
+				1223 = {
+					NOT = { unrest = 1 }
+					devastation = 0
+				}
+			}
+			
+		}
+		effect = {
+			if = {
+				limit = {
+					has_idea_group = economic_ideas
+				}
+				add_treasury = -250
+			}
+			else = {
+				add_treasury = -500
+			}
+			1223 = {	
+				add_base_tax = 3
+				add_base_production = 3
+				add_base_manpower = 3
+				remove_province_modifier = gor_redwood_destruction_oregongen
+			}
+			if = {
+				limit = {
+					mission_completed = golden_river_coos
+				}
+				add_dip_power = 50
+				add_mercantilism = 3
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 400 #
+	}
+	
+	naturalize_cities_portland = {
+		potential = {
+			mission_completed = conservation_efforts_portland
+		}
+		allow = {
+			if = {
+				limit = {
+					has_country_flag = get_tweny_abs_from_decisions
+				}
+				NOT = { has_country_modifier = gor_conservative_vigor_upgrade_portland }
+			}
+			else = {
+				NOT = { has_country_modifier = gor_conservative_vigor_portland }
+			}
+		}
+		effect = {
+			custom_tooltip = every_provinces_loses_one_dev_of_a_random_category
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			if = {
+				limit = {
+					has_country_flag = get_tweny_abs_from_decisions
+				}
+				add_country_modifier = {
+					name = "gor_conservative_vigor_upgrade_portland"
+					duration = 3650
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = "gor_conservative_vigor_portland"
+					duration = 3650
+				}
+			}
+			if = {
+				limit = {
+					mission_completed = luddite_core_portland
+				}
+				add_years_of_income = 5
+				custom_tooltip = remove_all_buildings_from_the_province
+			}
+			hidden_effect = {
+				every_owned_province = {
+					if = {
+						limit = {
+							base_tax = 2
+							base_production = 2
+							base_manpower = 2
+						}
+						random_list = {
+							33 = {
+								add_base_tax = -1
+							}
+							33 = {
+								add_base_production = -1
+							}
+							33 = {
+								add_base_manpower = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							base_tax = 2
+						}
+						add_base_tax = -1
+					}
+					else_if = {
+						limit = {
+							base_production = 2
+						}
+						add_base_production = -1
+					}
+					else_if = {
+						limit = {
+							base_manpower = 2
+						}
+						add_base_manpower = -1
+					}
+					remove_all_buildings = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		ai_importance = 0 #
+	}
+	
+	wartime_naturalization_portland = {
+		potential = {
+			mission_completed = preemptive_destruction_portland
+		}
+		allow = {
+			if = {
+				limit = {
+					has_country_flag = get_tweny_abs_from_decisions
+				}
+				NOT = { has_country_modifier = gor_uncivilized_warfare_upgraded_portland }
+			}
+			else = {
+				NOT = { has_country_modifier = gor_uncivilized_warfare_portland }
+			}
+		}
+		effect = {
+			custom_tooltip = every_province_we_own_but_dont_occupy_we_gain_a_core_on_plus_rid_dev
+			custom_tooltip = every_neighbor_country_gains_twenyfif_aggressive_expansion
+			if = {
+				limit = {
+					has_country_flag = get_tweny_abs_from_decisions
+				}
+				add_country_modifier = {
+					name = "gor_uncivilized_warfare_upgraded_portland"
+					duration = 3650
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = "gor_uncivilized_warfare_portland"
+					duration = 3650
+				}
+			}
+			hidden_effect = {
+				every_known_country = {
+					add_aggressive_expansion = {
+						who = ROOT
+						value = 25
+						apply_calc = yes
+					}
+				}
+				every_owned_province = {
+					limit = {
+						NOT = { is_core = ROOT } 
+					}
+					if = {
+						limit = {
+							base_tax = 2
+							base_production = 2
+							base_manpower = 2
+						}
+						random_list = {
+							33 = {
+								add_base_tax = -1
+							}
+							33 = {
+								add_base_production = -1
+							}
+							33 = {
+								add_base_manpower = -1
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							base_tax = 2
+						}
+						add_base_tax = -1
+					}
+					else_if = {
+						limit = {
+							base_production = 2
+						}
+						add_base_production = -1
+					}
+					else_if = {
+						limit = {
+							base_manpower = 2
+						}
+						add_base_manpower = -1
+					}
+					add_core = ROOT
+					if = {
+						limit = {
+							ROOT = { mission_completed = threatening_presence_portland }
+						}
+						add_province_modifier = {
+							name = "gor_disorganized_resistance_portland"
+							duration = 3650
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		ai_importance = 0 #
+	}
+	
+	salem_snuff_out_sons_of_oregon_portland = {
+		major = yes
+		potential = {
+			has_country_modifier = gor_oregonian_freedom_fighters_genorg
+			tag = U50
+		}
+		allow = {
+			stability = 2
+			crown_land_share = 50
+		}
+		effect = {
+			add_stability = -5
+			remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		ai_importance = 0 #
+	}
+	
+	the_noble_volunteers_sonsorg_dec = {
+		potential = {
+			mission_completed = the_noble_volunteers_sonsorg
+			tag = U86
+		}
+		allow = {
+			dip_power = 50
+			NOT = { has_country_modifier = gor_foreign_revolutionaries_sonsorg }
+		}
+		effect = {
+			add_yearly_manpower = 1
+			add_years_of_income = 1
+			add_dip_power = -50
+			add_government_power = {
+				mechanic_type = rev_org_repub_mechanic
+				power_type = revolutionary_vigor
+				value = -5
+			}
+			add_country_modifier = {
+				name = "gor_foreign_revolutionaries_sonsorg"
+				duration = 912
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		ai_importance = 0 #
+	}
+	
+	
+	integrate_washington_sonsorg = {
+		potential = {
+			U87 = {
+				is_subject_of = ROOT
+			}
+		}
+		provinces_to_highlight = {
+			region = washington_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		allow = {
+			NOT = { num_of_cities = 40 }
+			washington_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			inherit = U87
+			if = {
+				limit = {
+					has_reform = oregonian_republic_reform
+				}
+				custom_tooltip = if_we_completed_the_mission_washington_whole_we_unlock_was_parliament_dec
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		ai_importance = 0 #
+	}
+}

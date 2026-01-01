@@ -1,0 +1,19 @@
+#1202 - Mombasa
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y96
+controller = Y96
+add_core = Y96
+culture = oregonite
+religion = partisan
+capital = "Corvallis"
+is_city = yes
+#Left Untouched by the Redwood Crusade
+base_manpower = 3
+trade_goods = wine #Willamette Vinyards
+hre = yes
+base_tax = 3
+base_production = 3
+add_core = U92

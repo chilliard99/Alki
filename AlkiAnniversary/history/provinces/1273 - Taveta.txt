@@ -1,0 +1,17 @@
+#1273 - Taveta
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y76
+controller = Y76
+add_core = Y76
+culture = franciscan
+religion = partisan
+capital = "Vallejo"
+trade_goods = dyes #Cinnabar from Hastings and St.John's (No one tell them that it will give them mercury poisening)
+hre = yes
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

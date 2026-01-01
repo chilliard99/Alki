@@ -1,0 +1,17 @@
+# No previous file for Sikumiut
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+owner = X67
+controller = X67
+add_core = X67
+culture = labourdan_maratimer
+religion = dynastic
+capital = "Sikumiut"
+trade_goods = fish #Nunatsiavut Fisheries
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = X83

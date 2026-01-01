@@ -1,0 +1,18 @@
+bookmark = {
+	name = "THEGREATPLAINS"
+	desc = "THEGREATPLAINS_DESC"
+	date = 1444.11.11
+	
+	center = 653
+	default = no
+	
+	country = Y19
+	country = Y31
+	country = Y25
+	country = Y28
+	country = Y35
+	country = Y40
+	country = Y22
+	
+	easy_country = Y19
+}

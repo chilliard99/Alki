@@ -1,0 +1,14 @@
+#1090 - Eora
+discovered_by = sub_saharan
+owner = U10
+controller = U10
+add_core = U10
+culture = victorian
+religion = penitent
+capital = "Eora"
+trade_goods = unknown
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 2
+is_city = yes

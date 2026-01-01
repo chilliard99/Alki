@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = chinese
+religion = neoshinto
+primary_culture = sendai
+capital = 4131 #Iwate
+
+
+1421.5.18 = {
+	monarch = {
+		name = "Shinzo"
+		dynasty = "Kakizaki"
+		birth_date = 1421.5.18
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+}

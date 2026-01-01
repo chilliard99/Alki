@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = western_southron
+religion = sacramental
+technology_group = western
+capital = 643	 #Bighorn
+
+1409.8.15 = {
+	monarch = {
+		name = "Mason"
+		dynasty = "Nelson"
+		birth_date = 1409.8.15
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1431.3.3 = {
+	heir = {
+		name = "Owen"
+		monarch_name = "Owen"
+		dynasty = "Nelson"
+		birth_date = 1431.3.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 0
+		dip = 1
+		mil = 1
+	}
+}

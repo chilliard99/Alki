@@ -1,0 +1,15 @@
+# - Camana
+discovered_by = indian
+owner = V83
+controller = V83
+add_core = V83
+culture = incan
+religion = yanantin
+capital = "Camana"
+trade_goods = grain #mostly farming different fruits/vegetables
+hre = no
+fort_15th = yes
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

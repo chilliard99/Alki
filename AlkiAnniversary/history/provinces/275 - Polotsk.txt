@@ -1,0 +1,14 @@
+#275 - Polotsk
+discovered_by = north_american
+culture = neolithuanian
+religion = paganry 
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = unknown
+base_manpower = 1
+capital = "Polotsk"
+is_city = no 
+native_size = 2
+native_ferocity = 8
+native_hostileness = 4

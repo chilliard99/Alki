@@ -1,0 +1,15 @@
+#2787 - Hamasien
+discovered_by = ottoman
+discovered_by = muslim
+owner = W61
+controller = W61
+add_core = W61
+culture = tamper 
+religion = catholico
+capital = "Debarwa"
+is_city = yes
+base_manpower = 2
+trade_goods = livestock
+hre = no
+base_tax = 3
+base_production = 3

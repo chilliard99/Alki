@@ -1,0 +1,17 @@
+#2195 - Agyghe
+discovered_by = eastern
+discovered_by = western
+owner = W03
+controller = W03
+add_core = W03
+culture = neochipewyan
+religion = theanite
+capital = "Sochi"
+trade_goods = cloth #idk bruh some cloths
+hre = no
+base_tax = 6
+base_production = 6
+base_manpower = 6
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

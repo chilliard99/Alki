@@ -1,0 +1,18 @@
+#827 - Antioquía
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V61
+controller = V61
+add_core = V61
+culture = antioqueno
+religion = catholico
+capital = "Antioquía"
+trade_goods = grain #more grains i guess
+hre = no
+fort_15th = yes
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes
+center_of_trade = 1

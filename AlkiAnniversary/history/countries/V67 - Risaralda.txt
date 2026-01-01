@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = antioqueno
+religion = catholico 
+technology_group = indian
+capital = 4259	#Pereira
+
+1403.7.15 = {
+	monarch = {
+		name = "Ricardo III"
+		dynasty = "Dosquebradas"
+		birth_date = 1403.7.15
+		adm = 1
+		dip = 0
+		mil = 1
+	}
+}
+1424.1.3 = {
+	heir = {
+		name = "Francisco"
+		monarch_name = "Francisco"
+		dynasty = "Dosquebradas"
+		birth_date = 1424.1.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}

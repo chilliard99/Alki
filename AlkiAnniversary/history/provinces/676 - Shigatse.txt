@@ -1,0 +1,17 @@
+#676 - U-Tsang
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y35
+controller = Y35
+add_core = Y35
+culture = metropolitan_shoshone
+religion = sacramental
+capital = "Shigatse"
+trade_goods = wine #wind river blend
+hre = no
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes

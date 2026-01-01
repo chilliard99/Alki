@@ -1,0 +1,16 @@
+#485 - Moron
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = chinese
+owner = V05
+controller = V05
+add_core = V05
+culture = camaguey
+religion = catholico
+capital = "Moron"
+trade_goods = sugar #unironically all sugar
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

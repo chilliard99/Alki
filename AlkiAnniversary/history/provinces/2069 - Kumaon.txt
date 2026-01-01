@@ -1,0 +1,17 @@
+#2069 - Kumaon
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = U56
+controller = U56
+add_core = U56
+culture = columbian_washingtonian
+religion = partisan
+capital = "Carson"
+trade_goods = livestock #Mainly used for grazing
+hre = yes
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes

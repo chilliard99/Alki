@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = northern_salishan
+religion = collectivist
+technology_group = western
+capital = 2270	 #Prince George
+
+
+1422.5.12 = {
+	monarch = {
+		name = "Barker IV"
+		dynasty = "Gwillim"
+		birth_date = 1422.5.12
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1444.5.5 = {
+	heir = {
+		name = "Jasper"
+		monarch_name = "Jasper"
+		dynasty = "Gwillim"
+		birth_date = 1444.5.5
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}

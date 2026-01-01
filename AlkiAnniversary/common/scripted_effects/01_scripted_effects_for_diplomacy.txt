@@ -1,0 +1,73 @@
+#Country scopes unless otherwise stated
+
+add_mutual_opinion_modifier_effect = {
+	add_opinion = {
+		who = $target$
+		modifier = $modifier$
+	}
+	reverse_add_opinion = {
+		who = $target$
+		modifier = $modifier$
+	}
+}
+
+eyalet_effect = {
+	override_country_name = $tag$
+	set_country_flag = has_eyalet_country_name
+	set_country_flag = has_eyalet_color
+	set_country_flag = has_overriden_name_flag
+	set_country_flag = has_overriden_color_flag
+	
+	set_country_flag = is_$tag$_flag
+}
+
+eyalet_name_effect = {
+	set_country_flag = has_eyalet_country_name
+	set_country_flag = has_overriden_name_flag
+	override_country_name = $tag$
+}
+
+eyalet_dynamic_name_change_effect = {
+	
+}
+
+convert_special_subject_to_vassal = {
+	if = {
+		limit = {
+			$subject$ = { is_subject_of = $overlord$ }
+			OR = {
+				AND = {
+					$overlord$ = { NOT = { has_government_attribute = has_eyalets } }
+					$subject$ = {
+						OR = {
+							is_subject_of_type = eyalet
+							is_subject_of_type = core_eyalet
+						}
+					}
+				}
+				AND = {
+					$overlord$ = { NOT = { has_government_attribute = enables_pronoias } }
+					$subject$ = {
+						OR = {
+							is_subject_of_type = pronoia_subject_type
+							is_subject_of_type = hereditary_pronoia_subject_type
+						}
+					}
+				}
+				AND = {
+					$overlord$ = { NOT = { has_government_mechanic = persian_influence_mechanic } }
+					$subject$ = {
+						is_subject_of_type = cultural_sphere_of_influence_subject
+					}
+				}
+			}
+		}
+		$overlord$ = {
+			create_subject = {
+				subject_type = vassal
+				subject = $subject$
+				keep_liberty_desire = yes
+			}
+		}
+	}
+}

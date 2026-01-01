@@ -1,0 +1,14 @@
+#2734 - Yuin
+discovered_by = sub_saharan
+owner = U05
+controller = U05
+add_core = U05
+culture = victorian
+religion = penitent
+capital = "Yuin"
+hre = no
+trade_goods = wool
+base_manpower = 3
+base_tax = 3 
+base_production = 2
+is_city = yes

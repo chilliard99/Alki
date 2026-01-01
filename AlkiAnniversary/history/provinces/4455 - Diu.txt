@@ -1,0 +1,14 @@
+#455 - Diu
+discovered_by = sub_saharan
+owner = U09
+controller = U09
+add_core = U09
+culture = victorian
+religion = penitent
+capital = "Diu"
+trade_goods = sugar
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

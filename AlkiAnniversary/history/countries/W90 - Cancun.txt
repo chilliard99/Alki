@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = rivieran
+religion = catholico
+technology_group = muslim
+capital = 4068	#Cancun
+
+1414.3.3 = {
+	monarch = {
+		name = "Benito II"
+		dynasty = "de Quintana Roo"
+		birth_date = 1414.3.3
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1435.2.1 = {
+	heir = {
+		name = "Rey"
+		monarch_name = "Rey III"
+		dynasty = "de Quintana Roo"
+		birth_date = 1435.2.1
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}

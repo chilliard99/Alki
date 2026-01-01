@@ -1,0 +1,16 @@
+# No previous file for Aroostook
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+add_core = X75
+owner = X75
+controller = X75
+culture = englander
+religion = dynastic
+capital = "Aroostook"
+trade_goods = naval_supplies #woods
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

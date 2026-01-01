@@ -1,0 +1,18 @@
+#419 - Yerevan
+discovered_by = south_american
+culture = neocaucasian
+religion = idolatrous
+capital = "Yerevan"
+trade_goods = copper #more than this shit
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = no
+native_size = 80
+native_ferocity = 4
+native_hostileness = 9 
+owner = Z50
+controller = Z50
+add_core = Z50
+center_of_trade = 1

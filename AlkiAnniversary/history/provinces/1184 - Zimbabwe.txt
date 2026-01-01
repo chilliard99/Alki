@@ -1,0 +1,17 @@
+#1184 - Zimbabwe
+discovered_by = mesoamerican
+culture = neoswahili
+religion = shamanist 
+capital = "Zimbabwe"
+is_city = no
+base_manpower = 3
+trade_goods = gold #platinum
+hre = no
+base_tax = 3
+base_production = 3
+owner = Z31
+controller = Z31
+add_core = Z31
+native_size = 40
+native_ferocity = 4
+native_hostileness = 9

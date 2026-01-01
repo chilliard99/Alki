@@ -1,0 +1,15 @@
+#1029 - Kai
+discovered_by = chinese
+owner = X24
+controller = X24
+add_core = X24
+culture = tokaidon
+religion = neoshinto
+capital = "Kofu"
+trade_goods = wine #Koshu Valley
+hre = no
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes
+discovered_by = eastern

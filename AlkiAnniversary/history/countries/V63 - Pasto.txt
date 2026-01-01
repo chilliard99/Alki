@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = choco
+religion = catholico 
+technology_group = indian
+capital = 2818	#Pasto
+
+1408.2.13 = {
+	monarch = {
+		name = "Lorenzo III"
+		dynasty = "Galeras"
+		birth_date = 1408.2.13
+		adm = 2
+		dip = 6
+		mil = 3
+	}
+}
+1426.3.1 = {
+	heir = {
+		name = "Juan"
+		monarch_name = "Juan"
+		dynasty = "Galeras"
+		birth_date = 1426.3.1
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 0
+	}
+}

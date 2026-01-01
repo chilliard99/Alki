@@ -1,0 +1,16 @@
+# No previous file for Teloloapan
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W86
+controller = W86
+add_core = W86
+culture = chilango
+is_city = yes
+religion = catholico
+capital = "Teloloapan"
+trade_goods = gold #silver
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3

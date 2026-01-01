@@ -1,0 +1,17 @@
+#863 - Suma
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W55
+controller = W55
+add_core = W55
+culture = peconite
+religion = catholico
+capital = "Suma"
+trade_goods = livestock #large cattle ranch
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

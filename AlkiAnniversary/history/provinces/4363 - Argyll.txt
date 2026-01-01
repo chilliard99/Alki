@@ -1,0 +1,14 @@
+#4363 - Argyll
+discovered_by = indian
+owner = V99
+controller = V99
+add_core = V99
+culture = neofilipino
+religion = espiritismo
+hre = no
+base_tax = 3
+base_production = 3
+trade_goods = sugar #amazin
+base_manpower = 2
+capital = "Loch Awe"
+is_city = yes

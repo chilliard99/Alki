@@ -1,0 +1,21 @@
+#163 - Crete
+latent_trade_goods = {
+	coal #South Apalachian Mines
+}
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X52
+controller = X52
+add_core = X52
+culture = piedmontian
+religion = evangelical
+capital = "Heraklion"
+trade_goods = salt #Saltville (Yes thats the name I know its stupid but it was like the confederacy's main saltworks thanks wikipedia)
+hre = no
+base_tax = 5 
+base_production = 5
+base_manpower = 3
+is_city = yes

@@ -1,0 +1,14 @@
+#1771 - Erz
+discovered_by = north_american
+owner = Z03
+controller = Z03
+add_core = Z03
+capital = "Litomerice"
+culture = neogermanic
+religion = paganry
+trade_goods = grain #idk 
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 2
+is_city = no

@@ -1,0 +1,17 @@
+#635 - West Timor
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = Y28
+controller = Y28
+add_core = Y28
+culture = provencial
+religion = sacramental
+capital = "Lifau"
+trade_goods = dyes #rawlins red 
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

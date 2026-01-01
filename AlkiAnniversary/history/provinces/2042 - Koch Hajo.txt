@@ -1,0 +1,17 @@
+#2042 - Koch Hajo
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = U53
+controller = U53
+add_core = U53
+culture = oregonite
+religion = partisan
+capital = "Fossil"
+trade_goods = grain #Nothing much here
+hre = yes
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

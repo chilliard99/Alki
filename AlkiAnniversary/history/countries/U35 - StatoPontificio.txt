@@ -1,0 +1,7 @@
+government = theocracy 
+add_government_reform = latin_papacy_reform
+government_rank = 2
+primary_culture = romano
+religion = vulgar
+technology_group = muslim
+capital = 2437 #Cibola

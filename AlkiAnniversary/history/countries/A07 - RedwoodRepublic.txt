@@ -1,0 +1,8 @@
+government = republic
+add_government_reform = oregonian_republic_reform
+government_rank = 1
+primary_culture = redwood 
+religion = partisan
+technology_group = western
+capital = 1856	 #Crescent City
+religious_school = progressive_party

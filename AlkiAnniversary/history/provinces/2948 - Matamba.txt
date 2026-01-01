@@ -1,0 +1,15 @@
+# - Matamba
+discovered_by = ottoman
+discovered_by = muslim
+owner = W80
+controller = W80
+add_core = W80
+culture = zacatecan
+religion = catholico
+capital = "Matamba"
+trade_goods = grain #valparaiso 
+hre = no
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes

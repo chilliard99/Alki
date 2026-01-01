@@ -1,0 +1,18 @@
+#Jämtland+Härjedalen
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+add_core = X05
+owner = X05
+controller = X05
+culture = calusan
+religion = zahran
+hre = no
+base_tax = 4
+base_production = 4
+trade_goods = fish #its basically a swamp right?
+base_manpower = 4
+capital = "Frösön"
+is_city = yes
+discovered_by = eastern

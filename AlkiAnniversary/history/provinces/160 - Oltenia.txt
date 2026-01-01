@@ -1,0 +1,18 @@
+#160 - Oltenia
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X53
+controller = X53 
+add_core = X53
+culture = virginian
+religion = evangelical
+capital = "Craiova"
+trade_goods = tobacco #tobacco place
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 5
+is_city = yes

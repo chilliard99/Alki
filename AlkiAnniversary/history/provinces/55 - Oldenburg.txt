@@ -1,0 +1,15 @@
+#55 - Oldenburg
+discovered_by = eastern
+discovered_by = western
+owner = Y05
+controller = Y05
+add_core = Y05
+culture = winnipegger
+religion = dynastic
+capital = "Oldenburg"
+trade_goods = dyes #Sunflowers
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes

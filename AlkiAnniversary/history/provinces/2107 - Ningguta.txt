@@ -1,0 +1,16 @@
+owner = W11
+controller = W11
+add_core = W11
+culture = baydwellers
+religion = dynastic
+capital = "Ningguta"
+trade_goods = livestock #polar bears
+hre = no
+base_tax = 3 
+base_production = 2
+base_manpower = 2
+is_city = yes
+discovered_by = eastern
+discovered_by = western
+fort_15th = yes
+center_of_trade = 1

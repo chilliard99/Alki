@@ -1,0 +1,14 @@
+#153 - Pest (Pest + Pilis + Esztergom + Kalocsa + most of Kiskunság + Parts of Nógrád )
+discovered_by = north_american
+culture = balkanmen
+religion = paganry
+capital = "Buda"
+trade_goods = unknown
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = no
+native_size = 2
+native_ferocity = 8
+native_hostileness = 4

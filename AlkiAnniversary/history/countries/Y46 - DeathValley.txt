@@ -1,0 +1,20 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+primary_culture = gambler
+religion = partisan
+technology_group = western
+capital = 723	 #Death Valley
+religious_school = traditionalist_party
+set_country_flag = bay_caucus
+
+1428.3.14 = {
+	monarch = {
+		name = "Toby"
+		dynasty = "of the Valley"
+		birth_date = 1428.3.14
+		adm = 3
+		dip = 4
+		mil = 6
+	}
+}

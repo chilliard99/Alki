@@ -1,0 +1,17 @@
+#226 - Gibraltar
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+owner = X67	
+controller = X67
+add_core = X67
+culture = scotian_maratimer
+religion = dynastic
+hre = no
+base_tax = 5
+base_production = 4
+trade_goods = grain #Winter Wheat
+base_manpower = 4
+capital = "Gibraltar" 
+is_city = yes
+add_core = X77

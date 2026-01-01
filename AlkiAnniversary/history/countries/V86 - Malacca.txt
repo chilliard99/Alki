@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = incan
+religion = yanantin  
+technology_group = indian 
+capital = 804	#Malacca
+
+1412.5.18 = {
+	monarch = {
+		name = "Alfonso II"
+		dynasty = "Malay"
+		birth_date = 1412.5.18
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1431.9.17 = {
+	heir = {
+		name = "Tunku"
+		monarch_name = "Tunku"
+		dynasty = "Malay"
+		birth_date = 1431.9.17
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 2
+		mil = 2
+	}
+}

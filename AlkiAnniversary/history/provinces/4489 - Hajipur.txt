@@ -1,0 +1,17 @@
+#2027 - Arcot
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = U52
+controller = U52
+add_core = U52
+culture = oregonite
+religion = partisan
+capital = "Chemult"
+trade_goods = livestock #there is literally nothing here, so its gonna be ranchers
+hre = yes
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

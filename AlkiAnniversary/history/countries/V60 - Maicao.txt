@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = zuilian
+religion = catholico 
+technology_group = indian
+capital = 4251	#Maicao
+
+1427.2.1 = {
+	monarch = {
+		name = "Eduardo"
+		dynasty = "Wayuu"
+		birth_date = 1427.2.1
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}

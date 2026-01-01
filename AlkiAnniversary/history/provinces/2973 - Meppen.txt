@@ -1,0 +1,16 @@
+# Meppen
+discovered_by = ottoman
+discovered_by = muslim
+owner = W77
+controller = W77
+add_core = W77
+culture = coliman
+religion = catholico
+trade_goods = grain #most land devoted to agriculture
+capital = "Meppen"
+base_tax = 3
+base_production = 2
+base_manpower = 2
+is_city = yes
+hre = no
+

@@ -1,0 +1,19 @@
+#Tavastland, incl. Tavastehus.
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X14
+controller = X14
+add_core = X14
+culture = west_nilean
+religion = zahran
+hre = no
+base_tax = 5
+base_production = 5
+trade_goods = cotton #plantation :(
+base_manpower = 5
+capital = "Tavastehus"
+is_city = yes
+discovered_by = eastern
+fort_15th = yes

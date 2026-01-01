@@ -1,0 +1,15 @@
+#Paderborn
+discovered_by = ottoman
+discovered_by = muslim
+owner = W81
+controller = W81
+add_core = W81
+culture = michoacan
+religion = catholico
+trade_goods = cloth
+capital = "Paderborn"
+base_tax = 4
+base_production = 4
+base_manpower = 4
+hre = no
+is_city = yes 

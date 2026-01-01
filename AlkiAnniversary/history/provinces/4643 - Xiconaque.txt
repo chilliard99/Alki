@@ -1,0 +1,15 @@
+# No previous file for Xiconaque
+discovered_by = ottoman
+discovered_by = muslim
+owner = W80
+controller = W80
+add_core = W80
+culture = potosian
+religion = catholico
+is_city = yes
+capital = "Xiconaque"
+trade_goods = livestock #bullfighting bulls
+hre = no
+base_tax = 1
+base_production = 2
+base_manpower = 2

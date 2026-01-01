@@ -1,0 +1,18 @@
+vassal = {
+	first = W56
+	second = W53
+	start_date = 1443.1.1
+	end_date = 1525.1.1
+}
+vassal = {
+	first = W56
+	second = W57
+	start_date = 1443.1.1
+	end_date = 1525.1.1
+}
+vassal = {
+	first = W56
+	second = W54
+	start_date = 1443.1.1
+	end_date = 1525.1.1
+}

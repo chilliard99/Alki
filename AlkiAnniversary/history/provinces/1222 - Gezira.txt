@@ -1,0 +1,14 @@
+#1222 - Gezira
+discovered_by = mesoamerican
+culture = neoethiopian
+religion = shamanist
+capital = "Wad Madani"
+base_manpower = 2
+base_tax = 1 
+base_production = 1
+is_city = no
+trade_goods = unknown
+hre = no
+native_size = 80
+native_ferocity = 4
+native_hostileness = 9 

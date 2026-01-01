@@ -1,0 +1,15 @@
+#121 - Napoli
+discovered_by = chinese
+owner = X17
+controller = X17
+add_core = X17
+culture = sendai 
+religion = neoshinto 
+hre = no 
+base_tax = 5
+base_production = 4
+trade_goods = iron #Kamaishi 
+base_manpower = 4
+capital = "Napoli" 
+is_city = yes
+discovered_by = eastern

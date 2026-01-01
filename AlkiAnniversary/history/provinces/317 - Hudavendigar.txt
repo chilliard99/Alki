@@ -1,0 +1,17 @@
+#317 - Bursa
+discovered_by = eastern
+discovered_by = chinese
+owner = X67
+controller = X67
+add_core = X67
+culture = neo_cree
+religion = dynastic
+capital = "Bursa"
+trade_goods = fur #Grandbay Furs
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+add_core = X73
+discovered_by = western

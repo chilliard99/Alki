@@ -1,0 +1,16 @@
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y97
+controller = Y97
+add_core = Y97
+culture = colville
+religion = partisan
+capital = "Goldendale"
+trade_goods = wine #More wine from Yakima
+hre = yes
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes

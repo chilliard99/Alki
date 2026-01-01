@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = industrial_heartlander
+religion = islam
+technology_group = eastern
+capital = 328	#Ann Arbor
+
+1419.9.18 = {
+	monarch = {
+		name = "Abigail"
+		dynasty = "Brown"
+		birth_date = 1419.9.18
+		adm = 2
+		dip = 3
+		mil = 3
+		female = yes
+	}
+}

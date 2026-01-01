@@ -1,0 +1,15 @@
+#4449 - Jammu
+discovered_by = sub_saharan
+owner = U03
+controller = U03
+add_core = U03
+culture = victorian
+religion = penitent
+capital = "Jammu"
+trade_goods = wool
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes
+center_of_trade = 1

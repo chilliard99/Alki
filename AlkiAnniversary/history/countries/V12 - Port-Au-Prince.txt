@@ -1,0 +1,35 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = haitian
+religion = espiritismo 
+technology_group = ottoman
+capital = 4618	#Port-Au-Prince
+unlock_cult = vodou_denom
+unlock_cult = divisiones_denom
+unlock_cult = orishan_denom
+set_country_flag = has_a_cult_unlocked
+
+1426.3.11 = {
+	monarch = {
+		name = "Etienne"
+		dynasty = "Gonave"
+		birth_date = 1426.3.11
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1443.2.13 = {
+	heir = {
+		name = "Henri"
+		monarch_name = "Henri II"
+		dynasty = "Gonave"
+		birth_date = 1443.2.13
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}

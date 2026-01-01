@@ -1,0 +1,15 @@
+#2966 - Glogau 
+discovered_by = ottoman
+discovered_by = muslim
+owner = W81
+controller = W81
+add_core = W81
+culture = tapatio
+religion = catholico
+capital = "Glogau"
+trade_goods = wool #idk
+hre = no
+base_tax = 4
+base_production = 4
+is_city = yes
+base_manpower = 4

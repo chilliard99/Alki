@@ -1,0 +1,40 @@
+dependency = {
+	subject_type = "southern_city"
+	first = X22
+	second = X21
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+
+dependency = {
+	subject_type = "southern_city"
+	first = X22
+	second = X24
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+
+dependency = {
+	subject_type = "southern_city"
+	first = X22
+	second = X23
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+
+dependency = {
+	subject_type = "southern_city"
+	first = X22
+	second = X25
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+
+dependency = {
+	subject_type = "southern_city"
+	first = X22
+	second = X26
+	start_date = 1444.1.1
+	end_date = 1600.1.1
+}
+

@@ -1,0 +1,17 @@
+#2439 - Zasjiversk
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W55
+controller = W55
+add_core = W55
+culture = bereber
+religion = catholico
+capital = "Zasjiversk"
+trade_goods = grain #pistachios
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 2
+is_city = yes

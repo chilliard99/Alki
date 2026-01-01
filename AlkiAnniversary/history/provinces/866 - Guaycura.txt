@@ -1,0 +1,16 @@
+#866 - Guaycura
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W22
+controller = W22
+add_core = W22
+capital = "La Paz"
+culture = pazian
+religion = partisan
+is_city = yes
+trade_goods = grain #fruits (dragonfruit) (i realize now i mixed this flag up with *probably* puerto paradisio, but i took a break between designing the flags and putting down the countries)
+hre = yes 
+base_tax = 6
+base_production = 6
+base_manpower = 6

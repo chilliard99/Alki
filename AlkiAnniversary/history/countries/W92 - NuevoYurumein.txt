@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = garifunan
+religion = catholico
+technology_group = muslim
+capital = 4085	#Puerto Barrios
+
+1403.4.14 = {
+	monarch = {
+		name = "Camillo II"
+		dynasty = "Satuye"
+		birth_date = 1403.4.14
+		adm = 2
+		dip = 1
+		mil = 1
+	}
+}
+1433.2.2 = {
+	heir = {
+		name = "Anthony III"
+		monarch_name = "Anthony III"
+		dynasty = "Satuye"
+		birth_date = 1433.2.2
+		death_date = 1483.8.30
+		claim = 95
+		adm = 5
+		dip = 3
+		mil = 3
+	}
+}

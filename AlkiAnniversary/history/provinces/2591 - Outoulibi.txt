@@ -1,0 +1,17 @@
+# No previous file for Outoulibi
+discovered_by = eastern
+discovered_by = chinese
+owner = X67
+controller = X67
+add_core = X67
+culture = neo_cree
+religion = dynastic
+capital = "Outoulibi"
+trade_goods = fur #Canadian Fur Trade
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 3
+is_city = yes
+add_core = X73
+discovered_by = western

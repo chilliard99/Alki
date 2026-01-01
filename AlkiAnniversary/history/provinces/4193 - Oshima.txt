@@ -1,0 +1,16 @@
+#4193 - Oshima
+discovered_by = chinese
+owner = X16
+controller = X16
+add_core = X16
+culture = hokkaidan
+religion = neoshinto
+capital = "Katsuyama"
+trade_goods = fish #duh
+hre = no
+base_tax = 6
+base_production = 6
+base_manpower = 6
+is_city = yes
+discovered_by = eastern
+fort_15th = yes

@@ -1,0 +1,14 @@
+#4316 - Mansura
+discovered_by = indian
+owner = V87
+controller = V87
+add_core = V87
+culture = ecuadorian
+religion = catholico
+capital = "Mansura"
+trade_goods = fish #mostly tuna
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 2
+is_city = yes

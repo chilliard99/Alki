@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = chinese
+religion = zahran
+primary_culture = west_nilean
+capital = 29 #Tallahassee
+
+
+1398.12.4 = {
+	monarch = {
+		name = "Eslam"
+		dynasty = "Hassan"
+		birth_date = 1398.12.4
+		adm = 4
+		dip = 4
+		mil = 3
+	}
+}

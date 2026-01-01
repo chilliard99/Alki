@@ -1,0 +1,17 @@
+#1973 - Urgench
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = U51
+controller = U51
+add_core = U51
+culture = oregonite
+religion = partisan
+capital = "Madras"
+trade_goods = sugar #Imperial source of sugar beets
+hre = yes
+base_tax = 3
+base_production = 2
+base_manpower = 2
+is_city = yes

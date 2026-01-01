@@ -1,0 +1,17 @@
+#Torzhok
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y31
+controller = Y31 
+add_core = Y31
+culture = crow
+religion = theanite
+hre = no
+base_tax = 3
+base_production = 3
+trade_goods = grain #Winter Wheat
+base_manpower = 2
+capital = "Torzhok"
+is_city = yes

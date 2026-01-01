@@ -1,0 +1,17 @@
+#2708 - Sampit
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W57
+controller = W57
+add_core = W57
+culture = bereber
+religion = catholico
+capital = "Sampit"
+trade_goods = cotton #production in ciudad juarez
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 1
+is_city = yes

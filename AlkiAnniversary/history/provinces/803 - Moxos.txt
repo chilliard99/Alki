@@ -1,0 +1,14 @@
+#803 - Moxos
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neosumatran
+religion = espiritismo
+capital = "Moxos"
+trade_goods = copper #more tin
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

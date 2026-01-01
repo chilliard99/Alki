@@ -1,0 +1,18 @@
+#719 - Sayin Noyan
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y32
+controller = Y32
+add_core = Y32
+culture = galacian
+religion = partisan
+capital = "Uliastai"
+trade_goods = wool #utah herders
+hre = no
+base_tax = 3 
+base_production = 3
+base_manpower = 3
+is_city = yes
+fort_15th = yes

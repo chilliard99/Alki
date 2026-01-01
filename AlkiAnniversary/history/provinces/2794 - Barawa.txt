@@ -1,0 +1,15 @@
+#2794 - Barawa
+discovered_by = ottoman
+discovered_by = muslim
+owner = W61
+controller = W61
+add_core = W61
+culture = tamper
+religion = catholico
+capital = "Barawa"
+trade_goods = grain #idk apparently something called ixtle
+is_city = yes
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 3

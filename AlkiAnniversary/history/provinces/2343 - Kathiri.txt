@@ -1,0 +1,14 @@
+#2343 - Kathiri
+discovered_by = western
+discovered_by = eastern 
+culture = yukonite
+religion = inua
+capital = "Say'un"
+trade_goods = unknown
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+native_size = 5
+native_ferocity = 1
+native_hostileness = 2

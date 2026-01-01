@@ -1,0 +1,15 @@
+#2746 - Vidin
+discovered_by = ottoman
+discovered_by = muslim
+owner = W71
+controller = W71
+add_core = W71
+culture = durangan
+religion = catholico
+capital = "Vidin"
+trade_goods = wool
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 3 
+is_city = yes

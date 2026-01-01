@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = chinese
+religion = neoshinto
+primary_culture = high_nippon
+capital = 4190 #Chiba
+
+
+1396.12.4 = {
+	monarch = {
+		name = "Takashi XI"
+		dynasty = "Chiba"
+		birth_date = 1396.12.4
+		adm = 4
+		dip = 3
+		mil = 4
+	}
+}
+1425.2.3 = {
+	heir = {
+		name = "Takashi"
+		monarch_name = "Takashi XII"
+		dynasty = "Chiba"
+		birth_date = 1425.2.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 0
+		dip = 1
+		mil = 0
+	}
+}

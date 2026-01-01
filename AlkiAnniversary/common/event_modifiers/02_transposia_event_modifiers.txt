@@ -1,0 +1,48 @@
+the_wake_of_fredrick = {
+	imperial_mandate = -0.25
+	global_unrest = 5
+	stability_cost_modifier = 1
+} 
+
+cree_slaughtered = {
+	land_morale = -0.05
+	global_unrest = 1
+	global_tax_modifier = -0.05
+	stability_cost_modifier = 0.5
+	land_forcelimit_modifier = -0.1
+}
+
+overstepping_imperial_bounds = {
+	diplomatic_reputation = -3
+	imperial_authority = -0.9
+} 
+
+famine_of_1447 = {
+ 	global_manpower_modifier = -0.25
+ 	land_attrition = 0.10
+} 
+
+repaying_hudsonian_company = {
+ 	global_tax_income = -10
+} 
+
+hudsonian_bay_collapse = {
+ 	range = -0.25
+}
+
+maratime_union_freedom = {
+  	land_morale = 0.15
+	land_forcelimit_modifier = 0.25
+	global_manpower_modifier = 0.25
+	global_tax_modifier = 0.2
+	liberty_desire = -100
+}
+
+anishaabe_loyalty = {
+  	land_morale = 0.15
+	land_forcelimit_modifier = 0.25
+	global_manpower_modifier = 0.25
+	global_tax_modifier = 0.2
+	liberty_desire = -100
+}
+

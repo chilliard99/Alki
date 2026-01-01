@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = joaquin
+religion = partisan
+technology_group = western
+capital = 1774	 #Merced
+religious_school = progressive_party
+
+1423.3.13 = {
+	monarch = {
+		name = "Barry"
+		dynasty = "Reagan"
+		birth_date = 1423.3.13
+		adm = 2
+		dip = 0
+		mil = 2
+	}
+}
+1439.2.28 = {
+	heir = {
+		name = "Abraham"
+		monarch_name = "Abraham III"
+		dynasty = "Reagan"
+		birth_date = 1439.2.28
+		death_date = 1483.8.30
+		claim = 95
+		adm = 0
+		dip = 1
+		mil = 3
+	}
+}

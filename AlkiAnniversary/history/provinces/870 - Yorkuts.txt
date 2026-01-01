@@ -1,0 +1,17 @@
+#870 - Yorkuts	
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y82
+controller = Y82
+add_core = Y82
+culture = franciscan
+religion = partisan
+capital = "Santa Cruz" 
+trade_goods = grain #Lots of small farms 
+hre = yes 
+base_tax = 6
+base_production = 6
+base_manpower = 5
+is_city = yes 

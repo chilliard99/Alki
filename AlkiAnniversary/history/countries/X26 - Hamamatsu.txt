@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = chinese
+religion = neoshinto
+primary_culture = high_nippon
+capital = 89 #Hamamatsu
+
+
+1426.12.4 = {
+	monarch = {
+		name = "Misora"
+		dynasty = "Chiba"
+		birth_date = 1426.12.4
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}

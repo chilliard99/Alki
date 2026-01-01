@@ -1,0 +1,17 @@
+# 88 Artois - Principal cities: Arras, Saint-Omer & Lille
+discovered_by = chinese
+owner = X30
+controller = X30
+add_core = X30
+capital = "Arras"
+is_city = yes
+culture = wajin
+religion = neoshinto
+hre = no
+base_tax = 9
+base_production = 9
+trade_goods = dyes #yuzen
+base_manpower = 4
+discovered_by = eastern
+fort_15th = yes
+center_of_trade = 1

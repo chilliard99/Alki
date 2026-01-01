@@ -1,0 +1,16 @@
+#2406 - Ingil
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = W19
+controller = W19
+add_core = W19
+culture = comundian
+religion = partisan
+hre = yes
+base_tax = 5
+base_production = 3
+trade_goods = fish #more rich fishing 
+base_manpower = 3
+capital = "Kyzy-Kermen"
+is_city = yes

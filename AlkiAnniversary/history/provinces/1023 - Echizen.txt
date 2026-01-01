@@ -1,0 +1,15 @@
+#1023 - Echizen
+discovered_by = chinese
+owner = X28
+controller = X28
+add_core = X28
+culture = hokurikuan
+religion = neoshinto
+capital = "Takefu"
+trade_goods = glass #fukui
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+discovered_by = eastern

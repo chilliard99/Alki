@@ -1,0 +1,15 @@
+#2722 - Daru
+discovered_by = ottoman
+discovered_by = muslim
+owner = W68
+controller = W68
+add_core = W68
+culture = durangan
+religion = catholico
+capital = "Daru"
+trade_goods = wool #ranchers
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

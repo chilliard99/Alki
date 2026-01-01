@@ -1,0 +1,15 @@
+#124 - Messina
+discovered_by = chinese
+owner = X16
+controller = X16
+add_core = X16
+culture = neoainu 
+religion = neoshinto 
+hre = no 
+base_tax = 3
+base_production = 4
+trade_goods = paper #thats just what they do there
+base_manpower = 4
+capital = "Messina"
+is_city = yes 
+discovered_by = eastern

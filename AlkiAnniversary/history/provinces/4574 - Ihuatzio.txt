@@ -1,0 +1,15 @@
+# No previous file for Ihuatzio
+discovered_by = ottoman
+discovered_by = muslim
+culture = michoacan
+owner = W78
+controller = W78
+add_core = W78
+is_city = yes
+religion = catholico
+capital = "Ihuatzio"
+trade_goods = wool #more ranchers
+hre = no
+base_tax = 3 
+base_production = 3
+base_manpower = 3

@@ -1,0 +1,14 @@
+#807 - Abancay
+discovered_by = indian
+owner = V95
+controller = V95
+add_core = V95
+culture = incan
+religion = yanantin
+capital = "Abancay"
+trade_goods = copper #tin
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

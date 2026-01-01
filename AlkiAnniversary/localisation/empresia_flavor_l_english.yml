@@ -1,0 +1,25 @@
+﻿l_english:
+ empresa_title: "Empresa"
+ empresa_is_our: "$NAME|Y$ is our Empresa"
+ empresa_title_plural: "Empresas"
+ purchase_war_rites_title: "§TPurchase War Rights§!"
+ purchase_war_rites_tooltip: "Listen kid, down here in Empresia the market says one thing: no war. Too much potential damages, and it really scares the shareholders. When anyone in your position wants to go to war, it costs them. First, you’ll need to pay your subsidiaries to join the war: that’ll cost a lot. Then, you’ll need to pay some insurance fees in case some rich stakeholder’s house gets burned down by an angry Texan. If you’re good with draining money into some conflict instead of buying up companies: go for it.\n"
+ purchase_war_rites_desc: "Hey kid, you sure about this whole war rights thing? It’ll cost a pretty penny. It won’t even give you a casus belli, but it will allow you to declare war on this nation."
+ annex_empresa_title: "§TBuy Out Empresa§!"
+ annex_empresa_tooltip: "Well kid, this is our bread and butter. After that masterful deal you crafted, all of these pretty companies are waiting for you to throw money at them. More money means more purchases. More purchases means more land. More land means more money. You get the cycle. If you decide to go this way, we’ll instantly purchase off this company’s territorial holdings and gain their staff.\n"
+ annex_empresa_desc: "Hey kid, you sure about this annexation thing? There's no making another company. Least not in the same way. It’ll cost a pretty penny, but it’ll let us annex this company."
+ empresian_events.1.t: "60 Years"
+ empresian_events.1.d: "Through a few handshakes and filled pockets, we have squirmed our way to the top of the Empresian pecking order. As the Oaxacan state rises in the south and the Texan empire begins its collapse, the shareholders of Durango, Sinaloa, and Coahuila have flocked to our state to protect them. In exchange, all of Empresia is now under our wing. The boys over in accounting tell us that we only will have about 60 years to envelop all of these subsidiaries into one central firm. Lets all pray to the market that high profits will get us the necessary funds to purchase them."
+ empresian_events.2.t: "Cashed Out"
+ empresian_events.2.d: "Well it's been a good run, after 60 years the litter firms have finally decided that they’ve had enough of it. All of them simultaneously called upon the emergency exit clause in their contract. Legal says we can press them on it, but it’ll do little. For now, they’ve managed to slip out of our hands. However, in 60 years we’ve grown our strength. Divided and insignificant, these little companies will prove easy prey for our superior firm. Let the market decide our strength, the invisible hand will guide us forward!"
+ empresian_events.1.a: "Time is Money"
+ empresian_events.2.a: "Investments Pay Off"  
+ empresian_warning.tt: "§YPemexia§! rules over an unorthodox §Yvassal horde§!. In order to annex a vassal, Pemexia must buy out their company through the §TInfluence Actions§! on the §TDiplomacy Tab§!. In order to declare war on another nation, Pemexia must first purchase war rights against them through the §Influence Actions§! on the §TDiplomacy Tab§!. §RAny empresa not annexed by 1500 will be released§!. Once Pemexia has no more Empresas, they will gain the ability to declare war without war rights."
+ empresian_ending_tt: "§RWe will lose all of our Empresas.§!"
+ colombian_siberian_frontier_tt: "Replace Insitution Spread: §G+10.0%§! country tradition with May Establish Siberian Frontiers: §GYES§!"
+ CORPERATE_PREVENTION: "The Shareholders prevent any wars that are not sanctioned through war rights."
+ 
+ 
+ 
+ 
+ 

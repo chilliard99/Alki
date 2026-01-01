@@ -1,0 +1,16 @@
+#211 - Pirineo
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+add_core = X75
+owner = X75
+controller = X75
+culture = englander
+religion = dynastic
+hre = no
+base_tax = 3 
+base_production = 4
+trade_goods = fish #Casco Bay
+base_manpower = 4
+capital = "Huesca" 
+is_city = yes

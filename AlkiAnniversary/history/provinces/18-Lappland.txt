@@ -1,0 +1,17 @@
+#Ume, Åsele, Piteå Lappmarks
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X08
+controller = X08
+add_core = X08
+capital = "Arvidsjaur"
+culture = orlandan
+religion = zahran
+hre = no
+base_tax = 3
+base_production = 3
+trade_goods = ivory #Ringling Sanctuary
+base_manpower = 3
+discovered_by = eastern

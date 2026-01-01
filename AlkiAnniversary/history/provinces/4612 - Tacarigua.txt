@@ -1,0 +1,16 @@
+# No previous file for Tacarigua
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V45
+controller = V45
+add_core = V45
+culture = caraqueno
+religion = espiritismo
+capital = "Tacarigua"
+trade_goods = grain #idk
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

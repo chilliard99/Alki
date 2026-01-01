@@ -1,0 +1,98 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 59 35 19 }
+
+revolutionary_colors = { 15 0 15 }
+
+historical_idea_groups = {
+	defensive_ideas
+	religious_ideas
+	trade_ideas
+	economic_ideas
+	plutocracy_ideas
+	diplomatic_ideas
+	offensive_ideas
+	spy_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_longbow
+	gaelic_mercenary
+	gaelic_free_shooter
+	irish_charge
+	anglofrench_line
+	british_redcoat
+	british_hussar
+	british_square
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Josh #1" = 25
+	"Greg #0" = 25
+	"Robert #0" = 25
+	"Wes #0" = 20
+	"Denny #0" = 20
+	"Al #0" = 15
+	"Sam #0" = 15
+	"Lowell #0" = 10
+	"Walter #0" = 10
+	"Nicholas #0" = 10
+	"Malcom #0" = 5
+	"Russell #0" = 5
+ 
+	"Liam #0" = 0
+	"Oliver #0" = 0
+	"Benjamin #0" = 0
+	"James #0" = 0
+	"Noah #0" = 0
+	"William #0" = 0
+	"Henry #0" = 0
+	"Edward #0" = 0
+	"Ethan #0" = 0
+	"Eluah #0" = 0
+	"Alexander #0" = 0
+	"Samuel #0" = 0
+	"Mason #0" = 0
+	"Owen #0" = 0
+	"Daniel #0" = 0
+	"Wyatt #0" = 0
+	"Logan #0" = 0
+	"Lucas #0" = 0
+	"Jackson #0" = 0
+
+	"Mary #0" = -1
+	"Carol #0" = -1	
+	"Joyce #0" = -1
+	"Sharon #0" = -1
+}
+
+leader_names = { 
+	Coos Duck Overton Leslie Umpqua Putnam Astor Crook Heppner Addy Bates Burrell Cleary Dutton Ellsbury Franzen Green Groening Herbert Hoover 
+	McGowan Morse Palahniuk Reed Wilkens Walton Drexler Petrovic Sabonis Pippen Lillard Shoaway Cabrillo Thompson McLoughlin Kotek Brown Kitzhaber
+	Kulongoski Roberts Goldschmidt Atiyeh Straub McCall Hatfield Holmes Smith Patterson mcKay Hall Snell Sprague Maretin Meier Hood Willamette
+	Malheur Harney Douglas 
+}
+
+ship_names = {
+	Boardman Heppner Ione Irrigon Lexington "Castle Rock" Cecil
+	Clarke Eightmile Ella Gooseberry Lena Morgan "Pine City" Ruggs
+	Valby Gillam Wheeler Grant Umatilla Benton Klickitat Arlington Condon
+	Lonerock 
+	
+	Francisco Cruz Celestia Jose Oak Costa Lewis
+	Galactica "Golden Gate" Vallejo Solano Lodi
+	Stanford Salinas Monterey Moro Atascadero Wasco
+	Bakersfield Porterville Seqouia Vegas Inyo Faro 
+	Guadiana Sonoma Mendocino Bragg Eureka Redwood Crecent Curry
+	Coos Lane Newport Tillamook Clatsop Wahkiakum Grays Clallam 
+	Olympus Olympia Tacoma Seattle Everett Bellingham Kitsap 
+	
+}

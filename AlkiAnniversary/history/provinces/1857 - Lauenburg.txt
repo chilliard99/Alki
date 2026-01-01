@@ -1,0 +1,17 @@
+#1857 - Lauenburg
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y80
+controller = Y80
+add_core = Y80
+culture = shastan
+religion = partisan
+capital = "Yreka"
+trade_goods = gold #nuggets mostly, but its just nice to have gold
+hre = yes
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes

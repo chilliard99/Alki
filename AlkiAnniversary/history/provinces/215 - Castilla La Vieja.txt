@@ -1,0 +1,16 @@
+#215 - Valladolid
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+add_core = X75
+owner = X75
+controller = X75
+culture = englander
+religion = dynastic
+hre = no
+base_tax = 1
+base_production = 2
+trade_goods = naval_supplies #big forest 
+base_manpower = 2
+capital = "Valladolid"
+is_city = yes

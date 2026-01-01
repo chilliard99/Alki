@@ -1,0 +1,16 @@
+# No previous file for Talamanca
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W99
+controller = W99
+add_core = W99
+culture = ticos
+religion = catholico
+capital = "Talamanca"
+trade_goods = cocoa #MORE COCOA
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

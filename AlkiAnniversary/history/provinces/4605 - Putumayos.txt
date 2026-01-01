@@ -1,0 +1,16 @@
+# No previous file for Putumayos
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V54
+controller = V54
+add_core = V54
+culture = antioqueno
+religion = catholico
+capital = "Putumayos"
+trade_goods = grain #bananas
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

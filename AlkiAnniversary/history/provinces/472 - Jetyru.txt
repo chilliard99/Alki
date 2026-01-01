@@ -1,0 +1,18 @@
+#472 - Zhetyru
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y05
+controller = Y05
+add_core = Y05
+culture = sotan
+religion = dynastic
+capital = "Zhetyru"
+trade_goods = sugar #sugarbeets
+hre = no
+base_tax = 5
+base_production = 3
+base_manpower = 3
+is_city = yes
+discovered_by = western

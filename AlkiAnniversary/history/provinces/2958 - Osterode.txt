@@ -1,0 +1,15 @@
+#2958 - Osterode
+discovered_by = ottoman
+discovered_by = muslim
+owner = W79
+controller = W79
+add_core = W79
+capital = "Osterode"
+culture = nayar
+religion = catholico
+trade_goods = naval_supplies #its a volcano
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes

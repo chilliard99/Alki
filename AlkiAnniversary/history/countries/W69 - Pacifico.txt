@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = durangan
+religion = catholico
+technology_group = muslim
+capital = 2720	#Mazatlan
+
+1444.1.1 = { set_country_flag = a_super_cool_company }
+1386.3.23 = {
+	monarch = {
+		name = "Rafael III"
+		dynasty = "Mazatlan"
+		birth_date = 1386.3.23
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1410.12.15 = {
+	heir = {
+		name = "Zapote"
+		monarch_name = "Zapote II"
+		dynasty = "Mazatlan"
+		birth_date = 1410.12.15
+		death_date = 1483.8.30
+		claim = 95
+		adm = 5
+		dip = 4
+		mil = 5
+	}
+}

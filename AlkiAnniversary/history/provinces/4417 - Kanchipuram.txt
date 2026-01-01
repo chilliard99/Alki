@@ -1,0 +1,14 @@
+#4417 - Kanchipuram
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neopapuan
+religion = espiritismo
+capital = "Kanchipuram"
+trade_goods = fish #WE ARE DONE
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes

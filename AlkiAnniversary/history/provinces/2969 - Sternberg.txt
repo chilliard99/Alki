@@ -1,0 +1,14 @@
+# - Sternberg
+discovered_by = north_american
+owner = Z06
+controller = Z06
+add_core = Z06
+culture = neogermanic
+religion = paganry
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = grain
+base_manpower = 1
+capital = "Frankfurt an der Oder"
+is_city = no

@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = sotan
+religion = dynastic
+technology_group = eastern
+capital = 443	#Med City
+
+1425.3.19 = {
+	monarch = {
+		name = "Walt IV"
+		dynasty = "Schultz"
+		birth_date = 1425.3.19
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}
+1444.1.1 = {
+	heir = {
+		name = "Walt"
+		monarch_name = "Walt III"
+		dynasty = "Schultz"
+		birth_date = 1444.1.1
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}

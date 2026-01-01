@@ -1,0 +1,18 @@
+# No previous file for Shasta
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y80
+controller = Y80
+add_core = Y80
+culture = shastan
+religion = partisan
+capital = "Klamath Falls"
+trade_goods = naval_supplies #lumber, lumber, more lumber
+hre = yes
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes
+center_of_trade = 1

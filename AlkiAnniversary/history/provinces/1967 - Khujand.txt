@@ -1,0 +1,17 @@
+#1967 - Khujand
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y44
+controller = Y44
+add_core = Y44
+culture = humboldter
+religion = partisan
+capital = "Denio"
+trade_goods = wool #sheep grazing
+hre = yes
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

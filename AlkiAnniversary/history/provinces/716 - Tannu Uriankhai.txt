@@ -1,0 +1,17 @@
+#716 - Tannu Tuva
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y46
+controller = Y46
+add_core = Y46
+culture = gambler
+religion = partisan
+capital = "Lone Pine"
+trade_goods = fish #they be fishin on this coast here
+hre = yes
+base_tax = 3
+base_production = 2
+base_manpower = 2
+is_city = yes

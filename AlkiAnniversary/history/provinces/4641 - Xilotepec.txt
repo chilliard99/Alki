@@ -1,0 +1,15 @@
+# No previous file for Xilotepec
+discovered_by = ottoman
+discovered_by = muslim
+owner = W84
+controller = W84
+add_core = W84
+is_city = yes
+culture = teocuitlatl
+religion = catholico
+capital = "Xilotepec"
+trade_goods = livestock #more cattle 
+hre = no
+base_tax = 1 
+base_production = 2
+base_manpower = 2 

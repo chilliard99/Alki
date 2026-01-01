@@ -1,0 +1,16 @@
+# 75 Elsass - Principal cities: Strasbourg
+discovered_by = chinese
+owner = X33
+controller = X33
+add_core = X33
+capital = "Straﬂburg"
+is_city = yes
+culture = chugokan
+religion = neoshinto
+hre = no
+base_tax = 5
+base_production = 5
+trade_goods = naval_supplies #big port?
+base_manpower = 4
+discovered_by = eastern
+discovered_by = ottoman

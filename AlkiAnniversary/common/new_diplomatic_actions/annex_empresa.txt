@@ -1,0 +1,54 @@
+
+
+annex_empresa = {
+	category = influence
+	#alert_index = 5
+	alert_tooltip = decrease_autonomous_vassal_tt
+	require_acceptance = no # Whether the recipient gets an option to decline
+	is_visible = {
+		any_subject_country = {
+			is_subject_of_type = empresa
+		}
+		FROM = {
+			is_subject_of_type = empresa
+		}
+	}
+	is_allowed = {
+		if = {
+			limit = {
+				monthly_income = 84
+			}
+			years_of_income = 2
+		}
+		if = {
+			limit = {
+				NOT = {
+					monthly_income = 84
+				}
+			}
+			treasury = 1000
+		}
+	}
+	on_accept = {
+		hidden_effect = {	# Just to be sure that flags are removed, before event triggers
+			inherit = FROM
+			if = {
+				limit = {
+					monthly_income = 42
+				}
+				add_years_of_income = -2
+			}
+			if = {
+				limit = {
+					NOT = {
+						monthly_income = 42
+					}
+				}
+				add_treasury = -1000
+			}
+		}
+	}
+	ai_will_do = {
+		has_any_disaster = no
+	}
+}

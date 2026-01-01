@@ -1,0 +1,15 @@
+#52 - Altmark
+discovered_by = ottoman
+discovered_by = muslim
+owner = W79
+controller = W79
+add_core = W79
+culture = coliman
+religion = catholico
+hre = no
+base_tax = 4
+base_production = 4
+trade_goods = livestock #idk
+base_manpower = 4
+capital = "Stendal"
+is_city = yes

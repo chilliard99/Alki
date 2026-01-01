@@ -1,0 +1,17 @@
+# No previous file for Kichesipi
+discovered_by = eastern
+discovered_by = chinese
+owner = X67
+controller = X67  
+add_core = X67
+culture = north_ontarian
+religion = dynastic
+capital = "Kichesipi"
+trade_goods = naval_supplies #lumber
+hre = no
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes
+add_core = X70
+discovered_by = western

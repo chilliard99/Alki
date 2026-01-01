@@ -1,0 +1,18 @@
+#Viborgs län, incl. Viborg, Villmansstrand, and Kivinäbb.
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X12
+controller = X12
+add_core = X12
+culture = west_nilean
+religion = zahran
+hre = no
+base_tax = 4
+base_production = 3
+trade_goods = naval_supplies #shipbuilding stuff
+base_manpower = 3
+capital = "Viborg"
+is_city = yes
+discovered_by = eastern

@@ -1,0 +1,17 @@
+#2711 - Bulungan
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W56
+controller = W56
+add_core = W56
+culture = huahuan
+religion = catholico
+capital = "Bulungan"
+trade_goods = naval_supplies #timber, madera meaning wood in spanish
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

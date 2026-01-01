@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = baydwellers
+religion = dynastic
+technology_group = western
+capital = 2107	 #Churchill
+
+
+1412.5.12 = {
+	monarch = {
+		name = "Baffin II"
+		dynasty = "Churchill"
+		birth_date = 1412.5.12
+		adm = 4
+		dip = 4
+		mil = 3
+	}
+}
+1429.5.16 = {
+	heir = {
+		name = "Gillam"
+		monarch_name = "Gillam III"
+		dynasty = "Churchill"
+		birth_date = 1429.5.16
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 5
+		mil = 3
+	}
+}

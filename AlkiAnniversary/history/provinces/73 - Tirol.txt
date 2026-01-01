@@ -1,0 +1,16 @@
+#73 - Tirol
+discovered_by = chinese
+owner = X34
+controller = X34
+add_core = X34
+culture = chugokan
+religion = neoshinto
+base_tax = 6
+base_production = 5
+trade_goods = fish #Oysters
+base_manpower = 5
+capital = "Innsbruck" 
+is_city = yes
+hre = no
+discovered_by = eastern
+discovered_by = ottoman

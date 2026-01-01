@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = etrokan
+religion = sacramental
+technology_group = western
+capital = 627	 #Register Cliffs
+
+1421.8.15 = {
+	monarch = {
+		name = "Theodore"
+		dynasty = "Carlson"
+		birth_date = 1421.8.15
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
+1443.3.3 = {
+	heir = {
+		name = "Leo"
+		monarch_name = "Leo"
+		dynasty = "Carlson"
+		birth_date = 1443.3.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 2
+		mil = 1
+	}
+}

@@ -1,0 +1,15 @@
+#2742 - North Hamgyeong
+discovered_by = ottoman
+discovered_by = muslim
+owner = W64
+controller = W64
+add_core = W64
+culture = durangan
+religion = catholico
+capital = "Yukjin"
+trade_goods = grain #more grains and cereals
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 3
+is_city = yes

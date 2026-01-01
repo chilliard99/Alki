@@ -1,0 +1,14 @@
+# - Ipora
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neobrazilian
+religion = espiritismo
+capital = "Ipora"
+trade_goods = grain #soybeans?
+hre = no
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes

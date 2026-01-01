@@ -1,0 +1,15 @@
+# - Ofaie
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neobrazilian
+religion = espiritismo
+capital = "Tres Lagoas"
+trade_goods = copper #extensive copper mines
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes
+

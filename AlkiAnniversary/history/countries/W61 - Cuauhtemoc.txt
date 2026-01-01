@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = tamper
+religion = catholico
+technology_group = muslim
+capital = 2794	#Balcon de Montezuma
+
+1444.1.1 = { set_country_flag = a_super_cool_company }
+1432.12.25 = {
+	monarch = {
+		name = "Sierra IV"
+		dynasty = "Chiue"
+		birth_date = 1432.12.25
+		adm = 2
+		dip = 1
+		mil = 2
+		female = yes
+	}
+}

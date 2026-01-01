@@ -1,0 +1,16 @@
+#847 - Mixtec
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W85
+controller = W85
+add_core = W85
+culture = oaxacan 
+religion = catholico
+capital = "Totopec" 
+trade_goods = livestock #idk
+hre = no 
+base_tax = 2
+base_production = 1
+base_manpower = 1 
+is_city = yes

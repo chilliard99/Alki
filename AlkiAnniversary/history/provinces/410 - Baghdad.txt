@@ -1,0 +1,14 @@
+#410 - Iraq-i-Arab
+discovered_by = south_american
+culture = arabian
+religion = idolatrous
+capital = "Baghdad"
+trade_goods = unknown
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 1
+is_city = no
+native_size = 80
+native_ferocity = 4
+native_hostileness = 9 

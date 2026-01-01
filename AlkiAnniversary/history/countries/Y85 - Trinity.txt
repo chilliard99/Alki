@@ -1,0 +1,44 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = redwood
+religion = partisan
+technology_group = western
+capital = 1851	 #Trinity
+religious_school = progressive_party
+set_country_flag = bay_caucus
+
+1433.1.30 = {
+	monarch = {
+		name = "Pierson"
+		dynasty = "Trinity"
+		birth_date = 1365.5.13
+		adm = 6
+		dip = 6
+		mil = 2
+	}
+	queen = {
+		name = "Elise"            
+		dynasty = "Trinity"        
+		birth_date = 1405.5.21
+		death_date = 1500.1.1
+		adm = 2                 
+		dip = 1
+		mil = 2                
+		female = yes                
+	}
+}
+1441.7.10 = {
+	heir = {
+		name = "Ruth"
+		monarch_name = "Ruth"
+		dynasty = "Trinity"
+		female = yes
+		birth_date = 1441.7.10
+		death_date = 1483.8.30
+		claim = 95
+		adm = 5
+		dip = 5
+		mil = 1
+	}
+}

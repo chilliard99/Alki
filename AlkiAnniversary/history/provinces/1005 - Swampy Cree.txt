@@ -1,0 +1,15 @@
+#1005 - Swampy Cree
+discovered_by = eastern
+discovered_by = western
+owner = W11
+controller = W11
+add_core = W11
+culture = baydwellers
+religion = dynastic
+capital = "Swampy Cree"
+trade_goods = fur #lotta furs
+hre = no
+base_tax = 1 
+base_production = 2
+base_manpower = 1
+is_city = yes

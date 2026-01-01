@@ -1,0 +1,17 @@
+#72 - Breisgau
+discovered_by = chinese
+owner = X34
+controller = X34
+add_core = X34
+culture = chugokan
+religion = neoshinto
+base_tax = 4 
+base_production = 4
+trade_goods = fish #pufferfish
+base_manpower = 6
+capital = "Freiburg" 
+is_city = yes
+hre = no
+discovered_by = eastern
+discovered_by = ottoman
+fort_15th = yes

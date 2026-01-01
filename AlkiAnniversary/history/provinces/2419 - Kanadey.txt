@@ -1,0 +1,19 @@
+#2419 - Kanadey
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W48
+controller = W48
+add_core = W48
+culture = arazonian
+religion = catholico
+hre = no
+fort_15th = yes
+base_tax = 8
+base_production = 7
+trade_goods = cloth #arizonian cloths 
+center_of_trade = 1
+base_manpower = 7
+capital = "Kanadey"
+is_city = yes

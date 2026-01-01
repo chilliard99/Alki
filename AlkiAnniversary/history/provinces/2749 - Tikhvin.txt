@@ -1,0 +1,15 @@
+# 2749 - Tikhvin
+discovered_by = ottoman
+discovered_by = muslim
+owner = W68
+controller = W68
+add_core = W68
+culture = durangan
+religion = catholico
+hre = no
+base_tax = 2
+base_production = 2
+trade_goods = wool #lotta cool stuff
+base_manpower = 2
+capital = "Tikhvin"
+is_city = yes

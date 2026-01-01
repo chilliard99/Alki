@@ -1,0 +1,17 @@
+#276 - Minsk
+discovered_by = eastern
+discovered_by = chinese
+owner = X67
+controller = X67
+add_core = X67
+culture = cosmopolitan_canadian
+religion = dynastic
+hre = no
+base_tax = 6
+base_production = 6
+trade_goods = tobacco #Canadian Tobacco Belt 
+base_manpower = 6
+capital = "Minsk"
+is_city = yes
+add_core = X68
+discovered_by = western

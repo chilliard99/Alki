@@ -1,0 +1,95 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 251 42 0 }
+
+revolutionary_colors = { 7  15  7 }
+
+historical_idea_groups = {
+	defensive_ideas
+	religious_ideas
+	trade_ideas
+	economic_ideas
+	plutocracy_ideas
+	diplomatic_ideas
+	offensive_ideas
+	spy_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_longbow
+	gaelic_mercenary
+	gaelic_free_shooter
+	irish_charge
+	anglofrench_line
+	british_redcoat
+	british_hussar
+	british_square
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Stepehn #1" = 25
+	"Klay #1" = 25
+	"Draymond #2" = 25
+	"Barry #0" = 20
+	"Jamaal #0" = 20
+	"Neil #0" = 15
+	"Tom #0" = 15
+	"Paul #0" = 10
+	"Tim #0" = 10
+	"Mitch #0" = 10
+	"Chris #0" = 5
+	"Kevin #0" = 5
+ 
+	"Liam #0" = 0
+	"Oliver #0" = 0
+	"Benjamin #0" = 0
+	"James #0" = 0
+	"Noah #0" = 0
+	"William #0" = 0
+	"Henry #0" = 0
+	"Edward #0" = 0
+	"Ethan #0" = 0
+	"Eluah #0" = 0
+	"Alexander #0" = 0
+	"Samuel #0" = 0
+	"Mason #0" = 0
+	"Owen #0" = 0
+	"Daniel #0" = 0
+	"Wyatt #0" = 0
+	"Logan #0" = 0
+	"Lucas #0" = 0
+	"Jackson #0" = 0
+
+	"Susan #1" = -1
+	"Mary #1" = -1	
+	"Ada #0" = -1
+	"Grace #0" = -1
+}
+
+leader_names = { 
+	Liam Oliver Benjamin James Noah William Henry Ethan Eluah Alexander Samuel Mason Owen Daniel Wyatt Logan Lucas Jackson David
+	Lincoln Michael Jacob Matthew Isaac Jack Luke Gabriel Caleb Carter Levi Hudson Hunter Sebastian Grayson Aiden Andrew Joseph 
+	Jayden Theodore Julian Jaxon John Asher Mateo Charles Isaiah
+}
+
+ship_names = {
+	Runteeehmsea Headlands Muir Stinson Eyes Tamalpais Dipsea Quentin
+	Vallejo Miwok Pablo Farallones Angel China Olompali Taylor Tomales Estero
+	Duxbury Lucasartisa Illem Telltale 
+	
+	Francisco Cruz Celestia Jose Oak Costa Lewis
+	Galactica "Golden Gate" Vallejo Solano Lodi
+	Stanford Salinas Monterey Moro Atascadero Wasco
+	Bakersfield Porterville Seqouia Vegas Inyo Faro 
+	Guadiana Sonoma Mendocino Bragg Eureka Redwood Crecent Curry
+	Coos Lane Newport Tillamook Clatsop Wahkiakum Grays Clallam 
+	Olympus Olympia Tacoma Seattle Everett Bellingham Kitsap
+}

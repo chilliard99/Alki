@@ -1,0 +1,15 @@
+# No previous file for Cutzamala
+discovered_by = ottoman
+discovered_by = muslim
+owner = W78
+controller = W78
+add_core = W78
+is_city = yes
+religion = catholico
+culture = michoacan
+capital = "Cutzamala"
+trade_goods = wool #butterflies?
+hre = no
+base_tax = 3 
+base_production = 3
+base_manpower = 3

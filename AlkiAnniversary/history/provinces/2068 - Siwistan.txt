@@ -1,0 +1,18 @@
+#2068 - Siwistan
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = U56
+controller = U56
+add_core = U56
+culture = columbian_washingtonian
+religion = partisan
+capital = "Vancouver"
+trade_goods = paper #Developed Center of Columbia River
+hre = yes
+base_tax = 4
+base_production = 4
+base_manpower = 4
+is_city = yes
+fort_15th = yes

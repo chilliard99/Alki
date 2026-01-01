@@ -1,0 +1,16 @@
+# No previous file for Sokoki
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+add_core = X74
+owner = X74
+controller = X74
+culture = englander
+religion = dynastic
+capital = "Sokoki"
+trade_goods = naval_supplies #forests
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 3
+is_city = yes

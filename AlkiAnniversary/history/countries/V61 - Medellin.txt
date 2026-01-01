@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = antioqueno
+religion = catholico 
+technology_group = indian
+capital = 827	#Medellin
+
+1417.4.12 = {
+	monarch = {
+		name = "Jorge"
+		dynasty = "Aburra"
+		birth_date = 1417.4.12
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1441.3.13 = {
+	heir = {
+		name = "Jorge"
+		monarch_name = "Jorge II"
+		dynasty = "Aburra"
+		birth_date = 1441.3.13
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 4
+		mil = 3
+	}
+}

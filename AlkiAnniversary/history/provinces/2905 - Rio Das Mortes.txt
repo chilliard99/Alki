@@ -1,0 +1,14 @@
+# - Rio Das Mortes
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neofilipino
+religion = espiritismo
+capital = "Araes"
+trade_goods = fish #sardine capital
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

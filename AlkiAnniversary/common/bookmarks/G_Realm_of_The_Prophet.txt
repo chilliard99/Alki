@@ -1,0 +1,19 @@
+bookmark = {
+	name = "REALMOFTHEPROPHET"
+	desc = "REALMOFTHEPROPHET_DESC"
+	date = 1444.11.11
+	
+	center = 706
+	default = no
+	
+	country = Y32
+	country = Y70
+	country = Y76
+	country = Y80
+	country = Y76
+	country = Y42
+	country = Y34
+	
+	easy_country = Y32
+	easy_country = Y70
+}

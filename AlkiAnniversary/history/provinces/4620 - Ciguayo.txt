@@ -1,0 +1,15 @@
+# No previous file for Ciguayo
+discovered_by = ottoman
+discovered_by = muslim
+owner = V15
+controller = V15
+add_core = V15
+culture = cibao
+religion = espiritismo
+capital = "Ciguayo"
+trade_goods = cocoa #i guess 
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes

@@ -1,0 +1,29 @@
+country_decisions = {
+
+	promote_sola_ecclesia = {
+		potential = {
+			religion = vacandist
+			NOT = {
+				has_country_modifier = promoted_solo_ecclesia_vaca
+			}
+		}
+		allow = {
+			OR = {
+				has_church_aspect = state_churches_vaca
+				has_church_aspect = local_conclavism_vaca
+			}
+			adm = 5
+		}
+		effect = {
+			add_country_modifier = {
+				name = "promoted_solo_ecclesia_vaca"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}
+

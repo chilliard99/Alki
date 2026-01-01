@@ -1,0 +1,16 @@
+#4181 - Higo
+discovered_by = chinese
+owner = X38
+controller = X38
+add_core = X38
+culture = kyushuan_g
+religion = neoshinto
+capital = "Kumamoto"
+trade_goods = fish #oysters
+hre = no
+base_tax = 6
+base_manpower = 6
+base_production = 7
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman

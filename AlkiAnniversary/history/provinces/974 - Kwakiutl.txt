@@ -1,0 +1,15 @@
+#974 - Kwakiutl
+discovered_by = western
+discovered_by = eastern
+owner = W08
+controller = W08
+add_core = W08
+culture = haidan
+religion = collectivist
+capital = "Kwakiutl"
+trade_goods = fish #nothin here
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

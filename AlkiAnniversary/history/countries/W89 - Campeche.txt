@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = campechan
+religion = catholico
+technology_group = muslim
+capital = 4063	#Campeche
+
+1411.1.1 = {
+	monarch = {
+		name = "Himno IV"
+		dynasty = "Ahkinpech"
+		birth_date = 1411.1.1
+		adm = 2
+		dip = 1
+		mil = 3
+	}
+}
+1429.3.13 = {
+	heir = {
+		name = "Jeronimo"
+		monarch_name = "Jeronimo"
+		dynasty = "Ahkinpech"
+		birth_date = 1429.3.13
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}

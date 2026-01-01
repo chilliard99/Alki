@@ -1,0 +1,16 @@
+#4203 - Ju Ud
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = chinese
+owner = V05
+controller = V05
+add_core = V05
+culture = oriente
+religion = catholico
+capital = "Ulanhad"
+trade_goods = copper #nickel
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

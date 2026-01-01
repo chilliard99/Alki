@@ -1,0 +1,17 @@
+#636 - Brunei
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = Y28
+controller = Y28
+add_core = Y28
+culture = provencial
+religion = sacramental
+capital = "Brunei"
+trade_goods = wool #Colorado sheepers
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 4
+is_city = yes

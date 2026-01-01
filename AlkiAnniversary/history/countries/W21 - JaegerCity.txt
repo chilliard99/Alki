@@ -1,0 +1,33 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = rosaritan
+religion = partisan
+technology_group = western
+capital = 2387	 #Yuma
+religious_school = traditionalist_party
+set_country_flag = conservative_caucus
+
+1413.12.25 = {
+	monarch = {
+		name = "Esteban"
+		dynasty = "Yuma"
+		birth_date = 1413.12.25
+		adm = 6
+		dip = 1
+		mil = 2
+	}
+}
+1433.4.12 = {
+	heir = {
+		name = "Santiago"
+		monarch_name = "Santiago"
+		dynasty = "Yuma"
+		birth_date = 1433.4.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}

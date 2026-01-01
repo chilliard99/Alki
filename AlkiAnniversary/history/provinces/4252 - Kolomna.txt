@@ -1,0 +1,16 @@
+#4252 - Kolomna
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V56 
+controller = V56 
+add_core = V56
+culture = cariben
+religion = catholico
+hre = no
+base_tax = 3
+base_production = 3
+trade_goods = salt  
+base_manpower = 2
+capital = "Kolomna"
+is_city = yes

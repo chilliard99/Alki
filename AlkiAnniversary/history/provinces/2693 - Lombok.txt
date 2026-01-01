@@ -1,0 +1,18 @@
+#2693 - Lombok
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = chinese
+owner = W51
+controller = W51
+add_core = W51
+culture = cajun
+religion = islam
+capital = "Lombok"
+trade_goods = naval_supplies #another forest
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 2
+is_city = yes

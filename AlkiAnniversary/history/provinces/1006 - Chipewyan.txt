@@ -1,0 +1,15 @@
+#1006 - neochipewyan
+discovered_by = eastern
+discovered_by = western
+owner = W11
+controller = W11
+add_core = W11
+culture = baydwellers
+religion = dynastic
+capital = "Chipewyan"
+trade_goods = fish #national fisheries
+hre = no
+base_tax = 1 
+base_production = 2
+base_manpower = 1
+is_city = yes

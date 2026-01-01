@@ -1,0 +1,17 @@
+#739 - Kashgar
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y32
+controller = Y32
+add_core = Y32
+culture = salt_lake
+religion = sacramental
+capital = "Kashgar"
+trade_goods = salt #Redmond Salt Mines
+hre = no
+base_tax = 6
+base_production = 5
+base_manpower = 5
+is_city = yes

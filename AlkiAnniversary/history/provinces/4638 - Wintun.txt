@@ -1,0 +1,17 @@
+# No previous file for Wintun
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = U52
+controller = U52
+add_core = U52
+culture = highoregonean
+religion = partisan
+capital = "Summer Lake"
+trade_goods = livestock #just more ranchers, not much going on here
+hre = yes
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

@@ -1,0 +1,16 @@
+#524 - Central Doab
+discovered_by = south_american
+culture = neohindi
+religion = idolatrous
+capital = "Mathura"
+trade_goods = sugar #western uttar pradesh
+hre = no
+base_tax = 3
+base_production = 4
+base_manpower = 3
+native_size = 2
+native_ferocity = 8
+native_hostileness = 4
+add_core = Z83
+owner = Z83
+controller = Z83

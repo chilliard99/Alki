@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = ecuadorian
+religion = catholico  
+technology_group = indian 
+capital = 819	#Guayaquil
+
+1406.3.28 = {
+	monarch = {
+		name = "Jose"
+		dynasty = "Huancavilca"
+		birth_date = 1406.3.28
+		adm = 3
+		dip = 1
+		mil = 1
+	}
+}
+1424.6.9 = {
+	heir = {
+		name = "Guillermo II"
+		monarch_name = "Guillermo II"
+		dynasty = "Huancavilca"
+		birth_date = 1424.6.9
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}

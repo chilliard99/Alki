@@ -1,0 +1,16 @@
+#4129 - Ust-Vym
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V02
+controller = V02
+add_core = V02
+culture = panameno 
+religion = catholico
+hre = no
+base_tax = 5
+base_production = 5
+trade_goods = fish #GOOD FISHIN
+base_manpower = 4
+capital = "Ust-Vym"
+is_city = yes

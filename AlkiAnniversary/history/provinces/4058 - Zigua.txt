@@ -1,0 +1,16 @@
+#4058 - Zigua
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W85
+controller = W85
+add_core = W85
+culture = tabasqueno
+religion = catholico
+trade_goods = tropical_wood #some nice tropical woods
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+capital = "Zigua"
+is_city = yes

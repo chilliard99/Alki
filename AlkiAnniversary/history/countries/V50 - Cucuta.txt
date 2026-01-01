@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = zuilian
+religion = catholico 
+technology_group = indian
+capital = 4602	#Cucuta
+
+1412.2.11 = {
+	monarch = {
+		name = "Hernan II"
+		dynasty = "Santander"
+		birth_date = 1412.2.11
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}
+1433.4.15 = {
+	heir = {
+		name = "Francisco"
+		monarch_name = "Francisco IV"
+		dynasty = "Santander"
+		birth_date = 1433.4.15
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 1
+		mil = 1
+	}
+}

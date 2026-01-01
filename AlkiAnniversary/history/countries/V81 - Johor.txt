@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = incan
+religion = yanantin  
+technology_group = indian 
+capital = 805	#Johor
+
+1415.3.12 = {
+	monarch = {
+		name = "Mahmud III"
+		dynasty = "Bahru"
+		birth_date = 1415.3.12
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}

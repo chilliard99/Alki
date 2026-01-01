@@ -1,0 +1,15 @@
+#544 - Ahmednagar
+discovered_by = sub_saharan
+owner = U11
+controller = U11
+add_core = U11
+culture = victorian
+religion = penitent
+capital = "Junir"
+trade_goods = cotton
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes
+center_of_trade = 1

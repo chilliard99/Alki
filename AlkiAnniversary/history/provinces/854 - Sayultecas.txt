@@ -1,0 +1,15 @@
+#854 - Sayultecas
+discovered_by = ottoman
+discovered_by = muslim
+owner = W79
+controller = W79
+add_core = W79
+culture = nayar
+is_city = yes 
+religion = catholico
+capital = "Sayultecas" 
+trade_goods = wool #idk bruh
+hre = no 
+base_tax = 3
+base_production = 2 
+base_manpower = 2

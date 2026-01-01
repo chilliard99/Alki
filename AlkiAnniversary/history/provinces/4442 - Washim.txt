@@ -1,0 +1,16 @@
+#4442 - Washim
+discovered_by = south_american
+culture = neohindi
+religion = idolatrous
+capital = "Washim"
+trade_goods = grain #rice?
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+native_ferocity = 4
+native_hostileness = 9 
+native_size = 5
+add_core = Z75
+owner = Z75
+controller = Z75

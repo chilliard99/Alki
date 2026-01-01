@@ -1,0 +1,16 @@
+# No previous file for Kuna
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V48 
+controller = V48 
+add_core = V48
+culture = choco
+religion = catholico
+capital = "Kuna"
+trade_goods = gold #mined illegally 
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

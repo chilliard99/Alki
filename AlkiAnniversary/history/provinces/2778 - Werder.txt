@@ -1,0 +1,15 @@
+#2778 - Werder
+discovered_by = ottoman
+discovered_by = muslim
+owner = W73
+controller = W73
+add_core = W73
+culture = tamper
+religion = catholico
+capital = "Wardheer"
+trade_goods = wool #ranching
+is_city = yes
+hre = no
+base_tax = 3
+base_production = 4
+base_manpower = 3

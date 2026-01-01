@@ -1,0 +1,17 @@
+government_rank = 1
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = neogermanic
+religion = paganry
+technology_group = north_american
+capital = 134	# Wein
+
+1444.11.11 = {
+	monarch = {
+		name = "European Council"
+		adm = 1
+		dip = 1
+		mil = 1
+		regent = yes
+	}
+}

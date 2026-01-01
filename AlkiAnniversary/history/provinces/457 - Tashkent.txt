@@ -1,0 +1,18 @@
+#457 - Tashkent
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = ottoman
+discovered_by = muslim
+owner = X96
+controller = X96
+add_core = X96
+culture = royal_iowan
+religion = islam
+capital = "Tashkent"
+trade_goods = wool #technically a mill town, but whatever
+hre = no
+base_tax = 3 
+base_production = 3
+base_manpower = 3
+is_city = yes
+discovered_by = western

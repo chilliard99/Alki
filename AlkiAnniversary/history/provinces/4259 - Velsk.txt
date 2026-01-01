@@ -1,0 +1,16 @@
+#4259 - Velsk
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V67
+controller = V67
+add_core = V67
+culture = antioqueno 
+religion = catholico
+hre = no
+base_tax = 3
+base_production = 3
+trade_goods = coffee #coffee growing axis 
+base_manpower = 2
+capital = "Velsk"
+is_city = yes

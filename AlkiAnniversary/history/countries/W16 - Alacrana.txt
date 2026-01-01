@@ -1,0 +1,33 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = comundian
+religion = partisan
+technology_group = western
+capital = 2412	 #Ciudad Consitucion
+religious_school = progressive_party
+set_country_flag = baja_independence_caucus
+
+1401.6.16 = {
+	monarch = {
+		name = "Rafael"
+		dynasty = "de El Crucero"
+		birth_date = 1401.6.16
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1433.12.12 = {
+	heir = {
+		name = "Arturo"
+		monarch_name = "Arturo IV"
+		dynasty = "de El Crucero"
+		birth_date = 1433.12.12
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}

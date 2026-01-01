@@ -1,0 +1,15 @@
+#64 - Straubing
+discovered_by = ottoman
+discovered_by = muslim
+owner = W79
+controller = W79
+add_core = W79
+culture = nayar
+religion = catholico
+base_tax = 2
+base_production = 2
+trade_goods = fish #shrimp
+base_manpower = 1
+capital	= "Straubing" 
+is_city = yes
+hre = no

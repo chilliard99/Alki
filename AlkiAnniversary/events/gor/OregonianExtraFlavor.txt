@@ -1,0 +1,647 @@
+namespace = oregonianmisc_events
+####################OREGON INCIDENTS EVENTS##########################
+country_event = { #Sons of Oregon
+	id = oregonianmisc_events.1
+	title = oregonianmisc_events.1.t
+	desc = oregonianmisc_events.1.d
+	picture = REVOLUTION_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = [
+			U86 = {
+				capital_scope = {
+					save_event_target_as = place_where_the_cap_of_sons_of_org_is
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = oregonianmisc_events.1.a #They must delt with at once!
+		custom_tooltip = we_get_the_contain_sons_of_oregon_cb_hehe_and_if_we_do_not_reign_them_in_we_may_lose_oregon
+		goto = event_target:place_where_the_cap_of_sons_of_org_is
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -150
+		}
+		country_event = { 
+			id = oregonianmisc_events.8 
+			days = 30
+		}
+	}
+}
+
+# OREGON INDEPENDENCE DUMMY INCIDENT
+country_event = {
+	id = oregonianmisc_events.2
+	title = oregonianmisc_events.2.t
+	desc = oregonianmisc_events.2.d
+	picture = HRE_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_known_country = {
+				limit = {
+					has_reform = revolutionary_oregonian_republic_reform
+				}
+			}
+			save_event_target_as = oregon_who_is_revolting
+		}
+	}
+	
+	option = { #Give Up The Whole Region
+		name = oregonianmisc_events.2.a
+		custom_tooltip = every_province_in_the_oregon_region_is_kicked_out
+		set_global_flag = oregon_result_num_one
+		emperor = {
+			add_country_modifier = {
+				name = "gor_free_of_oregon_sonsorg"
+				duration = -1
+			}
+		}
+		
+		hidden_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						capital_scope =  { region = oregon_region }
+						primary_culture = oregonite
+					}
+					is_part_of_hre = yes
+				}
+				country_event = { id = oregonianmisc_events.3 }
+			}
+			every_province = {
+				limit = {
+					region = oregon_region
+				}
+				set_in_empire = no
+			}
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0.5
+				religious_school = {
+					group = constitutionalist_group
+					school = progressive_party
+				}
+			}
+			modifier = {
+				factor = 2
+				religious_school = {
+					group = constitutionalist_group
+					school = traditionalist_party
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = { religion = partisan }
+			}
+		}
+	}
+	
+	option = { #Self Determination for Oregon
+		name = oregonianmisc_events.2.b
+		custom_tooltip = every_country_in_oregon_get_option_to_leave
+		set_global_flag = oregon_result_num_two
+		hidden_effect = {
+			every_country = {
+				limit = {
+					primary_culture = oregonite
+					is_part_of_hre = yes
+				}
+				country_event = { id = oregonianmisc_events.4 }
+			}
+			if = {
+				limit = {
+					culture_group = western_true_heir
+				}
+				country_event = { id = oregonianmisc_events.6 }
+			}
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0
+				religious_school = {
+					group = constitutionalist_group
+					school = traditionalist_party
+				}
+			}
+			modifier = {
+				factor = 0.5
+				NOT = { religion = anarchist }
+			}
+		}
+	}
+}
+
+country_event = { #Union Rejection
+	id = oregonianmisc_events.3
+	title = oregonianmisc_events.3.t
+	desc = oregonianmisc_events.3.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		primary_culture = oregonite
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_in_empire = no
+		}
+	}
+	
+	option = {
+		name = oregonianmisc_events.3.a #We Didn't Need Them Anyways
+		tooltip = {
+			set_in_empire = no
+		}
+	}
+}
+
+country_event = { #Our Own Way
+	id = oregonianmisc_events.4
+	title = oregonianmisc_events.4.t
+	desc = oregonianmisc_events.4.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = oregonianmisc_events.4.a #Stay in the Union.
+		add_prestige = 10
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0
+				NOT = { has_country_modifier = gor_oregonian_freedom_fighters_genorg }
+			}
+		}
+	}
+	option = {
+		name = oregonianmisc_events.4.a #Leave.
+		remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+		set_in_empire = no
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+country_event = { #Sons of Oregon Crushed (prez)
+	id = oregonianmisc_events.5
+	title = oregonianmisc_events.5.t
+	desc = oregonianmisc_events.5.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = oregonianmisc_events.5.a #We are finally free
+		add_prestige = 5
+		custom_tooltip = remove_all_sons_of_oregon_events
+	}
+}
+
+country_event = { #Our Own Way (Trueheir)
+	id = oregonianmisc_events.6
+	title = oregonianmisc_events.6.t
+	desc = oregonianmisc_events.6.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = oregonianmisc_events.6.a #Stay in the Union.
+		add_prestige = 10
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0
+				NOT = { has_country_modifier = gor_oregonian_freedom_fighters_genorg }
+			}
+		}
+	}
+	option = {
+		name = oregonianmisc_events.6.a #Leave.
+		remove_country_modifier = gor_oregonian_freedom_fighters_genorg
+		set_in_empire = no
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+country_event = { #Sons of Oregon Crushed (willamette)
+	id = oregonianmisc_events.7
+	title = oregonianmisc_events.7.t
+	desc = oregonianmisc_events.7.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = oregonianmisc_events.7.a #We are finally free
+		custom_tooltip = remove_all_sons_of_oregon_events
+	}
+}
+
+country_event = { #An Oregonian Embargo
+	id = oregonianmisc_events.8
+	title = oregonianmisc_events.8.t
+	desc = oregonianmisc_events.8.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		exists = U86
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = oregonianmisc_events.8.a #Perfect
+		tooltip = {
+			2063 = {
+				add_trade_modifier = {
+					who = U86
+					duration = -1
+					power = -100
+					key = union_embargo_sonsorg
+				}
+			}
+			4516 = {
+				add_trade_modifier = {
+					who = U86
+					duration = -1
+					power = -100
+					key = union_embargo_sonsorg
+				}
+			}
+			1856 = {
+				add_trade_modifier = {
+					who = U86
+					duration = -1
+					power = -100
+					key = union_embargo_sonsorg
+				}
+			}
+		}
+		hidden_effect = {
+			U86 = {
+				country_event = { 
+					id = oregonianmisc_events.9 
+					days = 30
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Cut Off
+	id = oregonianmisc_events.9
+	title = oregonianmisc_events.9.t
+	desc = oregonianmisc_events.9.d
+	picture = BANKRUPTCY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = U86
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			2063 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = -1
+					power = -100
+					key = union_embargo_sonsorg
+				}
+			}
+			4516 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = -1
+					power = -100
+					key = union_embargo_sonsorg
+				}
+			}
+			1856 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = -1
+					power = -100
+					key = union_embargo_sonsorg
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = oregonianmisc_events.9.a #They can do that?
+		tooltip = {
+			2063 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = -1
+					power = -100
+					key = union_embargo_sonsorg
+				}
+			}
+			4516 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = -1
+					power = -100
+					key = union_embargo_sonsorg
+				}
+			}
+			1856 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = -1
+					power = -100
+					key = union_embargo_sonsorg
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Sons of Oregon Uprising
+	id = oregonianmisc_events.10
+	title = oregonianmisc_events.10.t
+	desc = oregonianmisc_events.10.d
+	picture = REVOLUTION_eventPicture
+
+	trigger = {
+		has_global_flag = get_sons_of_oregon_uprisings_bad
+		has_country_modifier = gor_oregonian_freedom_fighters_genorg
+		any_owned_province = {
+			likely_rebels = oregonian_rebels
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 5
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					likely_rebels = oregonian_rebels
+				}
+				save_event_target_as = place_where_rebels_gonna_spawn_for_bad
+				spawn_rebels = {
+					type = oregonian_rebels
+					size = 2
+				}
+			}
+		}	
+	}
+	
+	option = {
+		name = oregonianmisc_events.10.a #Stop them!
+		goto = event_target:place_where_rebels_gonna_spawn_for_bad
+		tooltip = {
+			event_target:place_where_rebels_gonna_spawn_for_bad = {
+				spawn_rebels = {
+					type = oregonian_rebels
+					size = 2
+				}
+			}	
+		}
+	}
+}
+
+country_event = { #The Two Union Problem
+	id = oregonianmisc_events.11
+	title = oregonianmisc_events.11.t
+	desc = oregonianmisc_events.11.d
+	picture = HRE_eventPicture
+	fire_only_once = yes
+	major = yes
+
+	trigger = {
+		has_global_flag = too_much_trolling_oregon
+		is_emperor = yes
+		NOT = { primary_culture = columbian_washingtonian }
+		NOT = { primary_culture = seattlain }
+		NOT = { primary_culture = lincolnite }
+		NOT = { culture_group = central_cascadian }
+		oregon_region = {
+			type = all
+			NOT = { is_part_of_hre = yes }
+		}
+		washington_region = {
+			is_part_of_hre = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 25
+	}
+	
+	option = {
+		name = oregonianmisc_events.11.a #Washington Is Not Yet Lost!
+		set_imperial_incident = incident_two_union_problem
+	}
+}
+
+# TWO UNION PROBLEM DUMMY INCIDENT
+country_event = {
+	id = oregonianmisc_events.12
+	title = oregonianmisc_events.12.t
+	desc = oregonianmisc_events.12.d
+	picture = HRE_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { #Reign Them In
+		name = oregonianmisc_events.12.a
+		custom_tooltip = explain_staying_in_empire_what_it_does
+		set_country_flag = trying_to_reign_in_washington_gor
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 2
+				religious_school = {
+					group = constitutionalist_group
+					school = progressive_party
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = { religion = partisan }
+			}
+		}
+	}
+	
+	option = { #Let It Go
+		name = oregonianmisc_events.12.b
+		custom_tooltip = every_nation_in_washington_will_leave_the_union
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					capital_scope = {
+						region = washington_region
+					}
+					is_part_of_hre = yes
+				}
+				country_event = { id = oregonianmisc_events.13 }
+			}
+			washington_region = {
+				limit = {
+					is_part_of_hre = yes
+				}
+				set_in_empire = no
+			}
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0
+				religious_school = {
+					group = constitutionalist_group
+					school = traditionalist_party
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Farewell California
+	id = oregonianmisc_events.13
+	title = oregonianmisc_events.13.t
+	desc = oregonianmisc_events.13.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	
+
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_in_empire = no
+	}
+	
+	option = {
+		name = oregonianmisc_events.13.a #We Are Better Alone
+		tooltip = {
+			set_in_empire = no
+		}
+	}
+}
+
+country_event = { #Washington Says Goodbye
+	id = oregonianmisc_events.14
+	title = oregonianmisc_events.14.t
+	desc = oregonianmisc_events.14.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = oregonianmisc_events.14.a #We're sad to see them go.
+		add_imperial_influence = -25
+		custom_tooltip = every_nation_in_washington_will_leave_the_union
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					capital_scope = {
+						region = washington_region
+					}
+					is_part_of_hre = yes
+				}
+				country_event = { id = oregonianmisc_events.13 }
+			}
+			washington_region = {
+				limit = {
+					is_part_of_hre = yes
+				}
+				set_in_empire = no
+			}
+		}
+	}
+}
+
+

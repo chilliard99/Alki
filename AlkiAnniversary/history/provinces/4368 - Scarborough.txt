@@ -1,0 +1,14 @@
+#4368 - Yorkshire - North Riding
+discovered_by = indian
+owner = U02
+controller = U02
+add_core = U02
+culture = neofilipino
+religion = espiritismo
+hre = no
+base_tax = 2
+base_production = 2
+trade_goods = iron #its what wikipedia says
+base_manpower = 1
+capital = "Scarborough"
+is_city = yes

@@ -1,0 +1,15 @@
+#104 - Milano
+discovered_by = chinese
+owner = X28
+controller = X28
+add_core = X28
+culture = hokurikuan
+religion = neoshinto
+hre = no
+base_tax = 3
+base_production = 3
+trade_goods = fish #fishing industry, maybe also paper 
+base_manpower = 2
+capital = "Milano"
+is_city = yes	
+discovered_by = eastern

@@ -1,0 +1,1240 @@
+namespace = reporg_events
+####################REPUBLIC OF OREGON EVENTS##########################
+country_event = { #Free Elections
+	id = reporg_events.1
+	title = reporg_events.1.t
+	desc = reporg_events.1.d
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = reporg_events.1.a #I Give Up My Crown.
+		set_country_flag = reformed_into_org_repub
+		swap_non_generic_missions = yes
+		add_government_reform = oregonian_republic_reform
+	}
+	option = {
+		name = reporg_events.1.b #What If We Didn't.
+		set_country_flag = stayed_as_rev_repub_org
+		swap_non_generic_missions = yes
+		add_government_power = {
+			mechanic_type = rev_org_repub_mechanic
+			power_type = revolutionary_vigor
+			value = -25
+		}
+		capital_scope = {
+			create_revolt = 10
+		}
+	}
+}
+
+country_event = { #Revolutionaries On The Border
+	id = reporg_events.2
+	title = reporg_events.2.t
+	desc = reporg_events.2.d
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = reporg_events.2.a #Horror!
+		add_country_modifier = {
+			name = "gor_republican_spillover_sonsorg"
+			duration = 3650
+		}
+	}
+}
+
+
+
+country_event = { #The Pacific Giant
+	id = reporg_events.3
+	title = reporg_events.3.t
+	desc = reporg_events.3.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = reporg_events.3.a #The World Is Our Market!
+		custom_tooltip = replace_the_pacific_giant_with_repuborg
+		add_country_modifier = {
+			name = "gor_the_pacific_giant_wide_sonsorg"
+			duration = -1
+		}
+	}
+	option = {
+		name = reporg_events.3.b #Stay In The Cascades
+		custom_tooltip = replace_the_pacific_giant_with_repuborg
+		add_country_modifier = {
+			name = "gor_the_pacific_giant_dom_sonsorg"
+			duration = -1
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			remove_country_modifier = gor_the_pacific_giant_sonsorg
+		}
+	}
+}
+
+country_event = { #Seeds of Discontent
+	id = reporg_events.4
+	title = reporg_events.4.t
+	desc = reporg_events.4.d
+	picture = SPY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = reporg_events.4.a #Sow Party Distrust
+		custom_tooltip = if_the_prez_is_progressive_they_get_repuborg
+		tooltip = {
+			add_ruler_modifier = {
+				name = "gor_conservative_gridlock_sonsorg"
+				duration = -1
+			}
+		}
+		custom_tooltip = if_otherwise_the_prez_repuborg
+		tooltip = {
+			add_ruler_modifier = {
+				name = "gor_progressive_gridlock_sonsorg"
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			emperor = {
+				country_event = { id = reporg_events.5 }
+			}
+		}
+	}
+	option = {
+		name = reporg_events.4.b #No, but hire who came up with that.
+		define_advisor = {
+			type = spymaster
+			skill = 3
+			cost_multiplier = 0.75
+		}
+	}
+}
+
+country_event = { #Congressional Gridlock
+	id = reporg_events.5
+	title = reporg_events.5.t
+	desc = reporg_events.5.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = reporg_events.5.a #Tell me something new.
+		if = {
+			limit = {
+				religious_school = {
+					group = constitutionalist_group
+					school = progressive_party
+				}
+			}
+			add_ruler_modifier = {
+				name = "gor_conservative_gridlock_sonsorg"
+				duration = -1
+			}
+		}
+		else = {
+			add_ruler_modifier = {
+				name = "gor_progressive_gridlock_sonsorg"
+				duration = -1
+			}
+		}
+	}
+}
+
+
+country_event = { #Where Our Future Lies
+	id = reporg_events.6
+	title = reporg_events.6.t
+	desc = reporg_events.6.d
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = reporg_events.6.a #It lies with the Oregons!
+		custom_tooltip = unlocks_the_ability_to_form_pacifica
+		add_country_modifier = {
+			name = "gor_northwest_pride_sonsorg"
+			duration = -1
+		}
+	}
+	option = {
+		name = reporg_events.6.b #It lies with the Californians!
+		add_country_modifier = {
+			name = "gor_a_united_california_sonsorg"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #The Utahn Promise
+	id = reporg_events.7
+	title = reporg_events.7.t
+	desc = reporg_events.7.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = reporg_events.7.a #Hand It Over
+		custom_tooltip = we_will_hand_over_all_of_northorria_highdesert_southsnake_and_highdesert
+		Y32 = {
+			country_event = { id = reporg_events.9 }
+		}
+		hidden_effect = {
+			highdesert_area = {
+				limit = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				add_core = Y32
+				cede_province = Y32
+			}
+			south_snake_area = {
+				limit = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				add_core = Y32
+				cede_province = Y32
+			}
+			north_orria_area = {
+				limit = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				add_core = Y32
+				cede_province = Y32
+			}
+		}
+	}
+	option = {
+		name = reporg_events.7.b #It is our land.
+		remove_historical_friend = Y32
+		add_historical_rival = Y32
+		remove_country_modifier = gor_utahn_support_sonsorg
+		Y32 = {
+			country_event = { id = reporg_events.8 }
+		}
+	}
+}
+
+country_event = { #A Damn Fine Deal
+	id = reporg_events.8
+	title = reporg_events.8.t
+	desc = reporg_events.8.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = reporg_events.8.a #Our Thanks To The Oregonians!
+		add_prestige = 15
+	}
+}
+
+country_event = { #Oregonian Betrayl
+	id = reporg_events.9
+	title = reporg_events.9.t
+	desc = reporg_events.9.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = reporg_events.8.a #Shouldn't ever trust a Californian.
+		remove_historical_friend = FROM
+		add_historical_rival = FROM
+	}
+}
+
+country_event = { #Stayed Hands
+	id = reporg_events.10
+	title = reporg_events.10.t
+	desc = reporg_events.10.d
+	picture = MILITARY_CAMP_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = reporg_events.10.a #Raze It, Raze It To the Foundations
+		add_adm_power = 250
+		add_dip_power = 250
+		add_mil_power = 250
+		add_country_modifier = {
+			name = "gor_redwood_revenge_sonsorg"
+			duration = -1
+		}
+		custom_tooltip = every_prov_wit_redwood_cult_in_jeff_we_own_goes_to_three_dev
+		tooltip = {
+			set_base_tax = 1
+			set_base_production = 1
+			set_base_manpower = 1
+		}
+		hidden_effect = {
+			jefferson_region = {
+				limit = {
+					culture = redwood
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				set_base_tax = 1
+				set_base_production = 1
+				set_base_manpower = 1
+			}
+		}
+	}
+	option = {
+		name = reporg_events.10.b #We Are Better Then Them
+		add_country_modifier = {
+			name = "gor_extrodinary_mercy_sonsorg"
+			duration = -1
+		}
+	}
+}
+
+country_event = { #Oregon Lost
+	id = reporg_events.11
+	title = reporg_events.11.t
+	desc = reporg_events.11.d
+	picture = HRE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = reporg_events.11.a #We'll See About That
+		set_imperial_incident = incident_oregonian_independence
+		set_global_flag = oregonian_incident_happened
+	}
+}
+
+
+country_event = { #A Sister Republic
+	id = reporg_events.12
+	title = reporg_events.12.t
+	desc = reporg_events.12.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = reporg_events.12.a #Freedom for the Washingtonians
+		custom_tooltip = we_will_release_all_our_provs_as_republic_of_washington_and_get_cores_on_our_claims
+		tooltip = {
+			U87 = {
+				add_country_modifier = {
+					name = "gor_republican_washington_sonsorg"
+					duration = -1
+				}
+			}
+			vassalize = U87
+		}
+		hidden_effect = {
+			washington_region = {
+				limit = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				add_core = U87
+				cede_province = U87
+			}
+			washington_region = {
+				limit = {
+					is_permanent_claim = ROOT
+				}
+				remove_claim = ROOT
+				add_core = U87
+			}
+			U87 = {
+				add_country_modifier = {
+					name = "gor_republican_washington_sonsorg"
+					duration = -1
+				}
+			}
+			vassalize = U87
+		}
+	}
+	option = {
+		name = reporg_events.12.b #It is our land!
+		if = {
+			limit = {
+				adm = 6
+			}
+			add_adm_power = 100
+		}
+		else = {
+			change_adm = 1
+		}
+	}
+}
+
+
+
+
+country_event = { #The Alaskan Promise
+	id = reporg_events.13
+	title = reporg_events.13.t
+	desc = reporg_events.13.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = reporg_events.13.a #Hand It Over
+		custom_tooltip = we_will_hand_over_all_of_highpuget_lowpuget_repuborg
+		W06 = {
+			country_event = { id = reporg_events.14 }
+		}
+		hidden_effect = {
+			low_puget_area = {
+				limit = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				add_core = W06
+				cede_province = W06
+			}
+			high_puget_area = {
+				limit = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				add_core = W06
+				cede_province = W06
+			}
+		}
+	}
+	option = {
+		name = reporg_events.13.b #It is our land.
+		remove_historical_friend = W06
+		add_historical_rival = W06
+		remove_country_modifier = gor_alaskan_support_sonsorg
+		W06 = {
+			country_event = { id = reporg_events.8 }
+		}
+	}
+}
+
+country_event = { #A Damn Fine Deal
+	id = reporg_events.14
+	title = reporg_events.14.t
+	desc = reporg_events.14.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = reporg_events.14.a #Our Thanks To The Oregonians!
+		add_prestige = 15
+	}
+}
+
+country_event = { #Oregonian Betrayl
+	id = reporg_events.15
+	title = reporg_events.15.t
+	desc = reporg_events.15.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = reporg_events.15.a #Shouldn't ever trust a Californian.
+		remove_historical_friend = FROM
+		add_historical_rival = FROM
+	}
+}
+
+
+# Election!
+country_event = {
+	id = reporg_events.16
+	title = "EVTNAME700"
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	desc = {
+		trigger = {
+			NOT = { has_ruler_flag = leader_has_been_pushed_out }
+			NOT = { has_country_flag = caretaker_revolutionary_government }
+		}
+		desc = EVTDESC700
+	}
+	
+	desc = {
+		trigger = { has_ruler_flag = leader_has_been_pushed_out }
+		desc = elections.700.d
+	}
+	desc = {
+		trigger = { has_country_flag = caretaker_revolutionary_government }
+		desc = elections.700.caretaker
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			has_reform = revolutionary_oregonian_republic_reform
+			has_reform = oregonian_republic_reform
+		}
+	}
+
+	after = {
+		clr_country_flag = caretaker_revolutionary_government
+	}
+
+	option = {
+		name = "EVTOPTA700"	# Current ruler stays
+		trigger = {
+			has_regency = no
+			NOT = { has_ruler_flag = leader_has_been_pushed_out }
+		}
+		ai_chance = { 
+			factor = 60
+			modifier = {
+				factor = 0
+				NOT = { republican_tradition = 25 }
+			}	
+			modifier = {
+				factor = 0.5
+				NOT = { republican_tradition = 50 }
+			}				
+			modifier = {
+				factor = 0.5
+				NOT = { republican_tradition = 75 }
+			}	
+			modifier = {
+				factor = 2.0
+				republican_tradition = 90
+			}		
+		}
+		custom_tooltip = remains_ruler
+		change_adm = 1
+		change_dip = 1
+		change_mil = 1
+		add_scaled_republican_tradition = -10
+		if = {
+			limit = {
+				mission_completed = persue_spirit_of_liberty_repuborg
+				has_reform = oregonian_republic_reform
+			}
+			add_piety = -0.2
+		}
+		if = {
+			limit = {
+				mission_completed = persue_spirit_of_liberty_repuborg
+				has_reform = revolutionary_oregonian_republic_reform
+			}
+			add_piety = 0.2
+		}
+		random_list = {
+			10 = {
+				add_adm_power = 50
+			}
+			10 = {
+				add_dip_power = 50
+			}
+			10 = {
+				add_mil_power = 50
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB700"	# An administrator type
+		ai_chance = { factor = 20 }
+		if = {
+			limit = { republic_with_female_rulers_trigger = yes }
+			define_ruler = {
+				mil = 1
+				adm = 4
+				dip = 1
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else_if = {
+			limit = {
+				has_reform = revolutionary_oregonian_republic_reform
+				mission_completed = the_peoples_shield_repuborg
+			}
+			define_ruler = {
+				change_adm = 2
+				change_dip = 2
+				change_mil = 2
+				random_gender = yes			
+			}
+		}
+		else_if = {
+			limit = {
+				has_reform = revolutionary_oregonian_republic_reform
+			}
+			define_ruler = {
+				change_adm = 2
+				random_gender = yes			
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = 1
+				adm = 4
+				dip = 1					
+			}
+		}
+		if = {
+			limit = {
+				mission_completed = persue_spirit_of_liberty_repuborg
+				has_reform = oregonian_republic_reform
+			}
+			add_piety = -0.2
+		}
+		if = {
+			limit = {
+				mission_completed = persue_spirit_of_liberty_repuborg
+				has_reform = revolutionary_oregonian_republic_reform
+			}
+			add_piety = 0.2
+		}
+	}
+	option = {
+		name = "EVTOPTC700"	# A diplomat
+		ai_chance = { factor = 20 }
+		if = {
+			limit = { republic_with_female_rulers_trigger = yes }
+			define_ruler = {
+				dip = 4
+				adm = 1
+				mil = 1					
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else_if = {
+			limit = {
+				has_reform = revolutionary_oregonian_republic_reform
+				mission_completed = the_peoples_shield_repuborg
+			}
+			define_ruler = {
+				change_adm = 2
+				change_dip = 2
+				change_mil = 2
+				random_gender = yes			
+			}
+		}
+		else_if = {
+			limit = {
+				has_reform = revolutionary_oregonian_republic_reform
+			}
+			define_ruler = {
+				change_dip = 2
+				random_gender = yes			
+			}
+		}
+		else = {
+			define_ruler = {
+				dip = 4
+				adm = 1
+				mil = 1					
+			}
+		}
+		if = {
+			limit = {
+				mission_completed = persue_spirit_of_liberty_repuborg
+				has_reform = oregonian_republic_reform
+			}
+			add_piety = -0.2
+		}
+		if = {
+			limit = {
+				mission_completed = persue_spirit_of_liberty_repuborg
+				has_reform = revolutionary_oregonian_republic_reform
+			}
+			add_piety = 0.2
+		}	
+	}
+	option = {
+		name = "EVTOPTD700"	# A military man
+		ai_chance = { factor = 20 }
+		if = {
+			limit = { republic_with_female_rulers_trigger = yes }
+			define_ruler = {
+				mil = 4
+				adm = 1
+				dip = 1					
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else_if = {
+			limit = {
+				has_reform = revolutionary_oregonian_republic_reform
+				mission_completed = the_peoples_shield_repuborg
+			}
+			define_ruler = {
+				change_adm = 2
+				change_dip = 2
+				change_mil = 2
+				random_gender = yes			
+			}
+		}
+		else_if = {
+			limit = {
+				has_reform = revolutionary_oregonian_republic_reform
+			}
+			define_ruler = {
+				change_mil = 2
+				random_gender = yes			
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = 4
+				adm = 1
+				dip = 1					
+			}
+		}
+		if = {
+			limit = {
+				mission_completed = persue_spirit_of_liberty_repuborg
+				has_reform = oregonian_republic_reform
+			}
+			add_piety = -0.2
+		}
+		if = {
+			limit = {
+				mission_completed = persue_spirit_of_liberty_repuborg
+				has_reform = revolutionary_oregonian_republic_reform
+			}
+			add_piety = 0.2
+		}
+	}
+
+	option = { # Nepotism choice, re-electing within dynasty
+		name = "EVTOPTE700"
+		trigger = {
+			has_government_attribute = enables_nepotism
+		}
+		ai_chance = { factor = 10 }
+		if = {
+			limit = {
+				has_country_flag = strengthened_signoria_flag
+			}
+			custom_tooltip = strengthened_signoria_election_tt
+			clr_country_flag = strengthened_signoria_flag
+		}
+		else_if = {
+			limit = {
+				has_reform = coorperate_republic_reform
+			}
+			add_scaled_republican_tradition = -10
+		}
+		else = {
+			add_scaled_republican_tradition = -4
+		}
+		if = {
+			limit = { 
+				republic_with_female_rulers_trigger = yes
+				NOT = { has_reform = signoria_reform }
+			}
+			define_ruler = {
+				change_mil = -2
+				change_adm = -2
+				change_dip = -2
+				min_age = 30
+				max_age = 50
+				name = "lastname"
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else_if = {
+			limit = { 
+				republic_with_female_rulers_trigger = yes
+				has_reform = signoria_reform
+			}
+			define_ruler = {
+				min_age = 30
+				max_age = 50
+				name = "lastname"
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else_if = {
+			limit = { has_reform = signoria_reform }
+			define_ruler = {
+				min_age = 30
+				max_age = 50
+				name = "lastname"
+			}
+		}
+		else = {
+			define_ruler = {
+				change_mil = -2
+				change_adm = -2
+				change_dip = -2
+				min_age = 30
+				max_age = 50
+				name = "lastname"
+			}
+		}
+		if = {
+			limit = { 
+				has_faction = mr_aristocrats 
+			}
+			add_faction_influence = {
+				faction = mr_aristocrats
+				influence = 10
+			}				
+		}
+	}
+}
+
+# Election!
+country_event = {
+	id = reporg_events.17
+	title = "EVTNAME700"
+	desc = "EVTDESC701"
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			has_reform = revolutionary_oregonian_republic_reform
+			has_reform = oregonian_republic_reform
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB700"	# An administrator type
+		ai_chance = { factor = 20 }
+		if = {
+			limit = { republic_with_female_rulers_trigger = yes }
+			define_ruler = {
+				mil = 1
+				adm = 4
+				dip = 1
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else_if = {
+			limit = {
+				has_reform = revolutionary_oregonian_republic_reform
+				mission_completed = the_peoples_shield_repuborg
+			}
+			define_ruler = {
+				change_adm = 2
+				change_dip = 2
+				change_mil = 2
+				random_gender = yes			
+			}
+		}
+		else_if = {
+			limit = {
+				has_reform = revolutionary_oregonian_republic_reform
+			}
+			define_ruler = {
+				change_adm = 2
+				random_gender = yes			
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = 1
+				adm = 4
+				dip = 1					
+			}
+		}
+		if = {
+			limit = {
+				mission_completed = persue_spirit_of_liberty_repuborg
+				has_reform = oregonian_republic_reform
+			}
+			add_piety = -0.2
+		}
+		if = {
+			limit = {
+				mission_completed = persue_spirit_of_liberty_repuborg
+				has_reform = revolutionary_oregonian_republic_reform
+			}
+			add_piety = 0.2
+		}
+	}
+	option = {
+		name = "EVTOPTC700"	# A diplomat
+		ai_chance = { factor = 20 }
+		if = {
+			limit = { republic_with_female_rulers_trigger = yes }
+			define_ruler = {
+				dip = 4
+				adm = 1
+				mil = 1					
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else_if = {
+			limit = {
+				has_reform = revolutionary_oregonian_republic_reform
+				mission_completed = the_peoples_shield_repuborg
+			}
+			define_ruler = {
+				change_adm = 2
+				change_dip = 2
+				change_mil = 2
+				random_gender = yes			
+			}
+		}
+		else_if = {
+			limit = {
+				has_reform = revolutionary_oregonian_republic_reform
+			}
+			define_ruler = {
+				change_dip = 2
+				random_gender = yes			
+			}
+		}
+		else = {
+			define_ruler = {
+				dip = 4
+				adm = 1
+				mil = 1					
+			}
+		}
+		if = {
+			limit = {
+				mission_completed = persue_spirit_of_liberty_repuborg
+				has_reform = oregonian_republic_reform
+			}
+			add_piety = -0.2
+		}
+		if = {
+			limit = {
+				mission_completed = persue_spirit_of_liberty_repuborg
+				has_reform = revolutionary_oregonian_republic_reform
+			}
+			add_piety = 0.2
+		}	
+	}
+	option = {
+		name = "EVTOPTD700"	# A military man
+		ai_chance = { factor = 20 }
+		if = {
+			limit = { republic_with_female_rulers_trigger = yes }
+			define_ruler = {
+				mil = 4
+				adm = 1
+				dip = 1					
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else_if = {
+			limit = {
+				has_reform = revolutionary_oregonian_republic_reform
+				mission_completed = the_peoples_shield_repuborg
+			}
+			define_ruler = {
+				change_adm = 2
+				change_dip = 2
+				change_mil = 2
+				random_gender = yes			
+			}
+		}
+		else_if = {
+			limit = {
+				has_reform = revolutionary_oregonian_republic_reform
+			}
+			define_ruler = {
+				change_mil = 2
+				random_gender = yes			
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = 4
+				adm = 1
+				dip = 1					
+			}
+		}
+		if = {
+			limit = {
+				mission_completed = persue_spirit_of_liberty_repuborg
+				has_reform = oregonian_republic_reform
+			}
+			add_piety = -0.2
+		}
+		if = {
+			limit = {
+				mission_completed = persue_spirit_of_liberty_repuborg
+				has_reform = revolutionary_oregonian_republic_reform
+			}
+			add_piety = 0.2
+		}
+	}
+	option = { # Nepotism choice, re-electing within dynasty
+		name = "EVTOPTE700"
+		trigger = {
+			has_government_attribute = enables_nepotism
+		}
+		ai_chance = { factor = 10 }
+		if = {
+			limit = {
+				has_country_flag = strengthened_signoria_flag
+			}
+			custom_tooltip = strengthened_signoria_election_tt
+			clr_country_flag = strengthened_signoria_flag
+		}
+		else = {
+			add_scaled_republican_tradition = -4
+		}
+		if = {
+			limit = { 
+				republic_with_female_rulers_trigger = yes
+				NOT = { has_reform = signoria_reform }
+			}
+			define_ruler = {
+				change_mil = -2
+				change_adm = -2
+				change_dip = -2
+				min_age = 30
+				max_age = 50
+				name = "lastname"
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else_if = {
+			limit = { 
+				republic_with_female_rulers_trigger = yes
+				has_reform = signoria_reform
+			}
+			define_ruler = {
+				min_age = 30
+				max_age = 50
+				name = "lastname"
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else_if = {
+			limit = { 
+				has_reform = signoria_reform
+			}
+			define_ruler = {
+				min_age = 30
+				max_age = 50
+				name = "lastname"
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else = {
+			define_ruler = {
+				change_mil = -2
+				change_adm = -2
+				change_dip = -2
+				min_age = 30
+				max_age = 50
+				name = "lastname"
+			}
+		}
+		if = {
+			limit = { 
+				has_faction = mr_aristocrats 
+			}
+			add_faction_influence = {
+				faction = mr_aristocrats
+				influence = 10
+			}				
+		}
+	}
+}
+
+country_event = { #New Beliefs
+	id = reporg_events.18
+	title = reporg_events.18.t
+	desc = reporg_events.18.d
+	picture = POPE_PREACHING_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = reporg_events.18.a #The Founder Is In All Of Us
+		trigger = {
+			is_religion_enabled = anarchist
+		}
+		change_religion = anarchist
+		custom_tooltip = every_prov_over_fifteen_dev_becomes_anarchist
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					development = 15
+				}	
+				change_religion = anarchist
+			}
+		}
+	}
+	option = {
+		name = reporg_events.18.b #The Son of Samson Will Rise
+		trigger = {
+			is_religion_enabled = despotic
+		}
+		change_religion = despotic
+		custom_tooltip = every_prov_over_fifteen_dev_becomes_despotic
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					development = 15
+				}	
+				change_religion = despotic
+			}
+		}
+	}
+	option = {
+		name = reporg_events.18.c #We Are No Heretic! 
+		if = {
+			limit = {
+				is_religion_enabled = anarchist
+			}
+			custom_tooltip = every_prov_over_fifteen_dev_becomes_anarchist
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						development = 15
+					}	
+					change_religion = anarchist
+				}
+			}
+		}
+		else = {
+			custom_tooltip = every_prov_over_fifteen_dev_becomes_despotic
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						development = 15
+					}	
+					change_religion = despotic
+				}
+			}
+		}
+	}
+}

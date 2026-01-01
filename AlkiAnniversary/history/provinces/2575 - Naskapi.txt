@@ -1,0 +1,18 @@
+# No previous file for Naskapi
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+owner = X67
+controller = X67
+add_core = X67
+culture = labourdan_maratimer
+religion = dynastic
+capital = "Naskapi"
+trade_goods = naval_supplies #Large Forest
+hre = no
+base_tax = 4
+base_production = 3
+base_manpower = 3
+is_city = yes
+add_core = X83
+center_of_trade = 1

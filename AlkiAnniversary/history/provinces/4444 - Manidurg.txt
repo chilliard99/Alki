@@ -1,0 +1,15 @@
+#4444 - Manidurg
+discovered_by = sub_saharan
+owner = U03
+controller = U03
+add_core = U03
+culture = victorian
+religion = penitent
+capital = "Manidurg"
+trade_goods = wool
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes
+center_of_trade = 1

@@ -1,0 +1,17 @@
+#1952 - Máramaros
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y39
+controller = Y39 
+add_core = Y39
+culture = blackfeet
+religion = theanite
+capital = "Huszt"
+trade_goods = copper #Silver Bow Mines
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 3
+is_city = yes

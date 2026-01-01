@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = choco
+religion = catholico 
+technology_group = indian
+capital = 823	#Cali
+
+1399.4.15 = {
+	monarch = {
+		name = "Sebastian"
+		dynasty = "de Cali"
+		birth_date = 1399.4.15
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}
+1416.3.14 = {
+	heir = {
+		name = "Jorge II"
+		monarch_name = "Jorge II"
+		dynasty = "de Cali"
+		birth_date = 1416.3.14
+		death_date = 1483.8.30
+		claim = 95
+		adm = 0
+		dip = 3
+		mil = 3
+	}
+}

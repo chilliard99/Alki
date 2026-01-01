@@ -1,0 +1,15 @@
+#2317 - Minya
+discovered_by = western
+discovered_by = eastern 
+owner = W15
+controller = W15
+add_core = W15
+culture = yukonite
+religion = collectivist
+capital = "Al Minya"
+trade_goods = fish #fishin salmon
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 2
+is_city = yes

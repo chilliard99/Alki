@@ -1,0 +1,15 @@
+# No previous file for Kala
+discovered_by = western
+discovered_by = eastern
+owner = W12
+controller = W12
+add_core = W12
+is_city = yes
+culture = inner_salishan 
+religion = theanite
+capital = "Isaq"
+trade_goods = grain #just some grain
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2

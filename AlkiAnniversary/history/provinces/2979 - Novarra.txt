@@ -1,0 +1,17 @@
+# 2979 - Novara
+discovered_by = ottoman
+discovered_by = muslim
+owner = W80
+controller = W80
+add_core = W80
+culture = potosian
+religion = catholico
+hre = no
+fort_15th = yes
+base_tax = 5
+base_production = 6
+center_of_trade = 1
+trade_goods = gold #i mean its in the name
+base_manpower = 6
+capital = "Novara"
+is_city = yes	

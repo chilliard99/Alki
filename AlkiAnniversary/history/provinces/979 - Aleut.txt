@@ -1,0 +1,15 @@
+#979 - Aleut
+discovered_by = western
+discovered_by = eastern 
+owner = W06
+controller = W06
+add_core = W06
+culture = western_workers
+religion = collectivist
+capital = "Aleut"
+trade_goods = fish #king crab fishin
+hre = no
+base_tax = 1 
+base_production = 2
+base_manpower = 2
+is_city = yes

@@ -1,0 +1,16 @@
+#4185 - Tango
+discovered_by = chinese
+owner = X29
+controller = X29
+add_core = X29
+culture = chugokan
+religion = neoshinto
+capital = "Miyazu"
+trade_goods = naval_supplies #Huge port 
+hre = no
+base_tax = 1
+base_manpower = 2
+base_production = 2
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman

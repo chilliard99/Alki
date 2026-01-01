@@ -1,0 +1,105 @@
+country_decisions = {
+
+	establish_kalender_pag = {
+		potential = {
+			religion = paganry
+			is_religion_reformed = no
+			NOT = {
+				has_country_modifier = formalized_kalender_pag
+			}
+		}
+		allow = {
+			OR = {
+				adm = 3
+				dip = 3
+				mil = 3
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "formalized_kalender_pag"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	
+	reform_kalender_pag = {
+		potential = {
+			religion = paganry
+			is_religion_reformed = yes
+			has_country_modifier = formalized_kalender_pag
+			NOT = {
+				has_country_modifier = reformed_kalender_pag
+			}
+		}
+		allow = {
+			adm_tech = 10
+		}
+		effect = {
+			remove_country_modifier = formalized_kalender_pag
+			add_country_modifier = {
+				name = "reformed_kalender_pag"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	
+	reform_society_pag = {
+		potential = {
+			is_native_tribe = yes
+			is_migratory_tribe = yes
+		}
+		allow = {
+			num_federation_advancements = 8
+			any_neighbor_country = {
+				has_reform = tribal_kingdom
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					adm = 6
+				}
+				add_adm_power = 500
+			}
+			else = {
+				change_adm = 1
+			}
+			if = {
+				limit = {
+					dip = 6
+				}
+				add_dip_power = 500
+			}
+			else = {
+				change_dip = 1
+			}
+			if = {
+				limit = {
+					mil = 6
+				}
+				add_mil_power = 500
+			}
+			else = {
+				change_mil = 1
+			}
+			capital_scope = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			add_government_reform = tribal_kingdom
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	
+}
+

@@ -1,0 +1,17 @@
+#1837 - Etchu
+discovered_by = chinese
+owner = X28
+controller = X28
+add_core = X28
+culture = hokurikuan
+religion = neoshinto
+capital = "Kanazawa"
+trade_goods = fish #Maybe gold later if you finish a mission cause of the togi mine. But right now fish, maybe chinaware too cause of soft rock in Suzu.
+hre = no
+base_tax = 7
+base_production = 5
+base_manpower = 5
+is_city = yes
+discovered_by = eastern
+fort_15th = yes
+center_of_trade = 1

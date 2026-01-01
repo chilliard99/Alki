@@ -1,0 +1,19 @@
+#718 - Govi Altay
+discovered_by = eastern
+discovered_by = western
+discovered_by = ottoman
+discovered_by = muslim
+owner = Y91
+controller = Y91
+add_core = Y91
+culture = oregonite
+religion = partisan
+capital = "Coos Bay"
+trade_goods = grain #cranberries, maybe also livestock for dairy
+hre = yes
+#Minor damage from the Redwood Crusade
+base_tax = 3 
+base_production = 3
+base_manpower = 2
+is_city = yes
+center_of_trade = 1

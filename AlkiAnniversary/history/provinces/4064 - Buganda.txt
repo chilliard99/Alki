@@ -1,0 +1,16 @@
+#Buganda
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W89
+controller = W89
+add_core = W89
+culture = campechan
+religion = catholico
+capital = "Kitala" 
+trade_goods = fish #important fisheries nearby in progresso
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

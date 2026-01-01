@@ -1,0 +1,14 @@
+#4319 - Isna
+discovered_by = indian
+owner = V80
+controller = V80
+add_core = V80
+culture = ecuadorian
+religion = catholico
+capital = "Isna"
+trade_goods = fish #important fishing province
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes

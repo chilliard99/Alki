@@ -1,0 +1,13 @@
+#539 - Pulicat
+discovered_by = south_american
+culture = neodravidian
+religion = idolatrous
+capital = "Pulicat"
+trade_goods = unknown
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 2
+native_size = 2
+native_ferocity = 8
+native_hostileness = 4

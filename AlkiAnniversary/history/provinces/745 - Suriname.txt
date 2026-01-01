@@ -1,0 +1,17 @@
+#745 - Paramaribo
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+culture = guyanese
+religion = espiritismo
+capital = "Paramaribo"
+trade_goods = unknown
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 3
+native_size = 10
+native_ferocity = 1
+native_hostileness = 3
+center_of_trade = 1
+

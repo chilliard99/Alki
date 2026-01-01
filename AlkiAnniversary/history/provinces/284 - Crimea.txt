@@ -1,0 +1,15 @@
+#284 - Crimea
+discovered_by = north_american
+culture = neoruthenian
+religion = paganry
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = fish
+base_manpower = 1
+capital = "Qirq-Yer"
+is_city = no
+owner = Z16
+controller = Z16 
+add_core = Z16
+center_of_trade = 1

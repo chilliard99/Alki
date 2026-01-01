@@ -1,0 +1,16 @@
+# - Merida
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = V58
+controller = V58
+add_core = V58
+culture = zuilian
+religion = catholico
+capital = "Merida"
+trade_goods = sugar #sugar cane hacienda type shit
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = yooper
+religion = dynastic
+technology_group = eastern
+capital = 474	#Duluth
+
+1398.5.22 = {
+	monarch = {
+		name = "Wyatt"
+		dynasty = "Olson"
+		birth_date = 1398.5.22
+		adm = 4
+		dip = 2
+		mil = 2
+	}
+}
+1429.2.3 = {
+	heir = {
+		name = "Mia"
+		monarch_name = "Mia"
+		dynasty = "Olson"
+		birth_date = 1429.2.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 3
+		female = yes
+	}
+}

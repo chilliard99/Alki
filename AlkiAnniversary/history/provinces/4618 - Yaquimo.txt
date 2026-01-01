@@ -1,0 +1,17 @@
+# No previous file for Yaquimo
+discovered_by = ottoman
+discovered_by = muslim
+owner = V12
+controller = V12
+add_core = V12
+culture = haitian
+religion = espiritismo
+capital = "Yaquimo"
+trade_goods = cloth #developed center
+hre = no
+fort_15th = yes
+base_tax = 7
+base_production = 7
+base_manpower = 6
+is_city = yes
+center_of_trade = 1

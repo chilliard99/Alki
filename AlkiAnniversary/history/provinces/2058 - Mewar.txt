@@ -1,0 +1,16 @@
+#2058 - Mewar (Kotharia/Udaipur)
+discovered_by = south_american
+culture = neohindi
+religion = idolatrous
+capital = "Kotharia"
+trade_goods = copper #rajastan mines
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+native_size = 2
+native_ferocity = 8
+native_hostileness = 4
+add_core = Z79
+owner = Z79
+controller = Z79

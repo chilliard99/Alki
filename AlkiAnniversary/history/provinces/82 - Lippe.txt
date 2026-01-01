@@ -1,0 +1,17 @@
+#Lippe
+discovered_by = chinese
+
+owner = X29
+controller = X29
+add_core = X29
+culture = wajin
+religion = neoshinto
+trade_goods = tea #Tea culture
+capital = "Arnsberg"
+base_tax = 3 
+base_production = 3
+base_manpower = 4
+hre = no
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman

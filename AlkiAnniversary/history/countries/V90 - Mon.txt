@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = newthai
+religion = yanantin  
+technology_group = indian 
+capital = 4325	#Mawlamyine
+
+1399.6.29 = {
+	monarch = {
+		name = "Bun Si"
+		dynasty = "Tanintharyi"
+		birth_date = 1399.6.29
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1416.2.14 = {
+	heir = {
+		name = "Ekathotsarot"
+		monarch_name = "Ekathotsarot"
+		dynasty = "Tanintharyi"
+		birth_date = 1416.2.14
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}

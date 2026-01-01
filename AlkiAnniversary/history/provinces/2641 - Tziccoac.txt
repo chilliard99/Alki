@@ -1,0 +1,17 @@
+# No previous file for Tziccoac
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W84
+controller = W84
+add_core = W84
+is_city = yes
+culture = panucoan
+religion = catholico
+capital = "Tziccoac"
+trade_goods = fish #crabs and shrimp
+hre = no
+base_tax = 1 
+base_production = 2
+base_manpower = 2
+is_city = yes

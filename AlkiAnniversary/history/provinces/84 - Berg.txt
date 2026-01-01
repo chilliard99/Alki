@@ -1,0 +1,14 @@
+# 84 - Berg
+discovered_by = chinese
+owner = X30
+controller = X30
+add_core = X30
+culture = wajin
+religion = neoshinto
+trade_goods = fish #i guess
+capital = "Düsseldorf"
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes
+hre = no

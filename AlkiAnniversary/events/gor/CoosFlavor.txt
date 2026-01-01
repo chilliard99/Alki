@@ -1,0 +1,89 @@
+namespace = coos_events
+####################COOS EVENTS##########################
+country_event = { #Exactly How Free?
+	id = coos_events.1
+	title = coos_events.1.t
+	desc = coos_events.1.d
+	picture = BURGHER_ESTATE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = Y91
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = coos_events.1.a #Our coffers are getting a little light
+		add_years_of_income = 3
+		add_country_modifier = {
+			name = "gor_controlled_market_coos"
+			duration = -1
+		}
+	}
+	option = {
+		name = coos_events.1.b #Freer the market and whatnot
+		add_country_modifier = {
+			name = "gor_unburdned_market_coos"
+			duration = -1
+		}
+	}
+	option = {
+		name = coos_events.1.c #No man shall take another's profit
+		add_country_modifier = {
+			name = "gor_wild_market_coos"
+			duration = -1
+		}
+	}
+}
+
+province_event = { #[Root.GetName] Capitalist Investments 
+	id = coos_events.2
+	title = coos_events.2.t
+	desc = coos_events.2.d
+	picture = CITY_VIEW_eventPicture
+	
+	trigger = {
+		owner = {
+			has_country_flag = get_cool_occasional_marketplace_event_coos
+		}
+		NOT = { has_building = marketplace }
+		NOT = { has_building = stock_exchange }
+		NOT = { has_building = trade_depot }
+		OR = {
+			can_build = marketplace
+			can_build = stock_exchange
+			can_build = trade_depot
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 50
+	}
+	
+	option = {
+		name = coos_events.2.a #We Are Eternally Greatful
+		if = {
+			limit = {
+				owner = {
+					dip_tech = 22
+				}
+			}
+			add_building = stock_exchange
+		}
+		else_if = {
+			limit = {
+				owner = {
+					dip_tech = 17
+				}
+			}
+			add_building = trade_depot
+		}
+		else = {
+			add_building = marketplace
+		}
+	}
+}

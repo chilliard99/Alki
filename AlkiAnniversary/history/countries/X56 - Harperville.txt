@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = columbian
+religion = dynastic
+technology_group = eastern
+capital = 171	# Morgantown
+
+1411.1.15 = {
+	monarch = {
+		name = "Jimmy II"
+		dynasty = "Madison"
+		birth_date = 1411.1.15
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}
+1437.12.16 = {
+	heir = {
+		name = "Alexander"
+		monarch_name = "Alexander IV"
+		dynasty = "Madison"
+		birth_date = 1437.12.16
+		death_date = 1483.8.30
+		claim = 95
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}

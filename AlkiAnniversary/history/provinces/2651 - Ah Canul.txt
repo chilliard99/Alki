@@ -1,0 +1,18 @@
+# No previous file for Ah Canul
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W89
+controller = W89
+add_core = W89
+culture = campechan
+is_city = yes
+religion = catholico
+capital = "Ah Canul"
+trade_goods = naval_supplies #important center of henequen
+center_of_trade = 1
+hre = no
+fort_15th = yes
+base_tax = 8
+base_production = 8
+base_manpower = 7

@@ -1,0 +1,14 @@
+#1770 - Ostmarch
+discovered_by = north_american
+owner = Z01
+controller = Z01
+add_core = Z01
+culture = neogermanic
+religion = paganry
+base_tax = 1
+base_production = 1
+trade_goods = wine 
+base_manpower = 1
+capital = "Krems" 
+is_city = no
+hre = no

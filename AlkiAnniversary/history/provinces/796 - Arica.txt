@@ -1,0 +1,14 @@
+#796 - Arica
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = incan
+religion = yanantin
+capital = "Arica"
+trade_goods = fish #good fishin
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+is_city = yes

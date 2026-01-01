@@ -1,0 +1,46 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = stanislaus
+religion = partisan
+technology_group = western
+capital = 1761	 #Yosemite
+religious_school = naturalist_party
+set_country_flag = conservative_caucus
+
+1413.5.10 = {
+	monarch = {
+		name = "Theodore II"
+		dynasty = "Muir"
+		birth_date = 1413.5.10
+		adm = 4
+		dip = 4
+		mil = 3
+	}
+}
+1438.6.12 = {
+	queen = {
+		name = "Rosalie"            
+		dynasty = "Muir"        
+		birth_date = 1421.9.14         
+		death_date = 1500.1.1
+		adm = 3                 
+		dip = 4                
+		mil = 4                
+		female = yes                
+	}
+}
+
+1442.3.4 = {
+	heir = {
+		name = "Galen"
+		monarch_name = "Galen"
+		dynasty = "Muir"
+		birth_date = 1442.3.4
+		death_date = 1483.8.30
+		claim = 95
+		adm = 0
+		dip = 1
+		mil = 0
+	}
+}

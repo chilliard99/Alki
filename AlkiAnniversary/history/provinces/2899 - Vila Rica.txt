@@ -1,0 +1,14 @@
+# - Vila Rica
+discovered_by = indian
+owner = V98
+controller = V98
+add_core = V98
+culture = neopapuan
+religion = espiritismo
+capital = "Vila Rica"
+trade_goods = fish #Cause fuck you I hate you
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes

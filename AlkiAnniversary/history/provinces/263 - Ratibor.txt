@@ -1,0 +1,17 @@
+#263 - Upper Silesia
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+owner = X67
+controller = X67
+add_core = X67
+culture = hudsonian
+religion = dynastic
+hre = no
+base_tax = 1
+base_production = 1
+capital = "Ratibor"
+is_city = yes
+trade_goods = gems #Renard Mine
+base_manpower = 2
+add_core = X81

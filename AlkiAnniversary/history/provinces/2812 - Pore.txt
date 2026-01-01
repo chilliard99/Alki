@@ -1,0 +1,15 @@
+# - Pore
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+culture = orinoquia
+religion = espiritismo
+capital = "Pore"
+trade_goods = unknown
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+native_size = 15
+native_ferocity = 1
+native_hostileness = 5

@@ -1,0 +1,20 @@
+#930 - Yamasee
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = X48
+controller = X48
+add_core = X48
+culture = atlantian
+religion = evangelical
+capital = "Yamasee"
+trade_goods = glass #georgian glassworks 
+hre = no
+base_tax = 5
+base_production = 6
+base_manpower = 6
+is_city = yes
+fort_15th = yes
+center_of_trade = 1

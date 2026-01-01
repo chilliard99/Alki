@@ -1,0 +1,16 @@
+#1141 - Whydah
+discovered_by = mesoamerican
+culture = neoyoruban
+religion = shamanist  
+capital = "Whydah"
+trade_goods = coffee #cause of the phosphate
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+owner = Z20
+controller = Z20
+add_core = Z20
+native_size = 5
+native_ferocity = 2
+native_hostileness = 1

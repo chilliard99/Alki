@@ -1,0 +1,15 @@
+#976 - Tlingit
+discovered_by = western
+discovered_by = eastern 
+owner = W13
+controller = W13
+add_core = W13
+culture = northern_salishan
+religion = collectivist
+capital = "Tlingit"
+trade_goods = livestock #Mostly a transportation hub for ranchers
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

@@ -1,0 +1,16 @@
+#2302 - Içel
+discovered_by = western
+discovered_by = eastern 
+owner = W06
+controller = W06
+add_core = W06
+culture = western_workers
+religion = collectivist
+capital = "Ermenek"
+trade_goods = fish #more salmon
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 1
+is_city = yes
+fort_15th = yes

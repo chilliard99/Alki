@@ -1,0 +1,15 @@
+#2779 - Afder
+discovered_by = ottoman
+discovered_by = muslim
+owner = W55
+controller = W55
+add_core = W55
+culture = bushlander
+religion = catholico
+capital = "Afder"
+trade_goods = grain #rio grande farming
+hre = no
+base_tax = 3
+base_production = 4
+base_manpower = 4
+is_city = yes

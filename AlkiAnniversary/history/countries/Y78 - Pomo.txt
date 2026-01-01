@@ -1,0 +1,42 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = pomo
+religion = partisan
+technology_group = western
+capital = 1111	 #Ukiah
+religious_school = progressive_party
+set_country_flag = unaligned_caucus
+
+1434.3.12 = { #End of duhkʰú·muʔ <- fight, but not as in war. it was a sucession crisis, read the lore nerd.
+	monarch = {
+		name = "Irenia II"
+		dynasty = "Quitiquit"
+		birth_date = 1398.8.23
+		female = yes
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+	queen = {
+		name = "Dudi"            
+		dynasty = "Quitiquit"        
+		birth_date = 1395.6.14
+		death_date = 1500.1.1
+		adm = 0                 
+		dip = 1                
+		mil = 1                                
+	}
+	heir = {
+		name = "Annie"
+		monarch_name = "Annie"
+		dynasty = "Quitiquit"
+		female = yes
+		birth_date = 1424.11.7
+		death_date = 1483.8.30
+		claim = 95
+		adm = 5
+		dip = 5
+		mil = 5
+	}
+}

@@ -1,0 +1,16 @@
+#845 - Campeche
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W89
+controller = W89
+add_core = W89
+culture = yucateco 
+religion = catholico
+capital = "Campeche" 
+trade_goods = naval_supplies #cause i guess 
+hre = no 
+base_tax = 2
+base_production = 1
+base_manpower = 1 
+is_city = yes

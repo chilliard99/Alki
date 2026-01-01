@@ -1,0 +1,20 @@
+#2470 - Haha
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = chinese
+owner = W55
+controller = W55
+add_core = W55
+culture = bushlander
+religion = catholico
+capital = "Mogador"
+trade_goods = paper #paper mill on the river
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes
+
+

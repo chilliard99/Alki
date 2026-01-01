@@ -1,0 +1,14 @@
+# 182 Valois - Principal cities: Compiègne + Soissons
+discovered_by = north_american
+capital = "Soissons"
+is_city = no
+culture = gallic
+religion = paganry
+hre = no
+base_tax = 2
+base_production = 3
+trade_goods = unknown
+base_manpower = 3
+native_size = 5
+native_ferocity = 2
+native_hostileness = 4

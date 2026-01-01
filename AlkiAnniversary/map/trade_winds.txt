@@ -1,0 +1,31 @@
+# province id = rotation in degrees, 0 is pointing right, then ccw)
+# can be reloaded ingame by cmd: reloadtradewinds
+
+# Japanese Winds
+1312 = -10
+1572 = -10
+1582 = -10
+1580 = 25
+1567 = -15
+1566 = 30
+1277 = 50
+1291 = 25
+#Cuban Winds
+1576 = 330
+1577 = 330
+1584 = 30
+#Pablonian Counterwinds
+1574 = 155
+1575 = 160
+1583 = 165
+#Canadian Winds
+1495 = 340
+1565 = 0
+1564 = 15
+1479 = 0
+#Canadian Iceland Winds
+1493 = 15
+1482 = 0
+1924 = 0
+1610 = 0
+

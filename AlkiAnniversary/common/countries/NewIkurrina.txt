@@ -1,0 +1,104 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 218 18 26 }
+
+revolutionary_colors = { 16 8 16 }
+
+historical_idea_groups = {
+	defensive_ideas
+	religious_ideas
+	trade_ideas
+	economic_ideas
+	plutocracy_ideas
+	diplomatic_ideas
+	offensive_ideas
+	spy_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_longbow
+	gaelic_mercenary
+	gaelic_free_shooter
+	irish_charge
+	anglofrench_line
+	british_redcoat
+	british_hussar
+	british_square
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Héctor #1" = 25
+	"Paul #0" = 25
+	"Dominique #0" = 25
+	"Rafael #0" = 20
+	"Andy #0" = 20
+	"Jose #0" = 15
+	"Ryan #0" = 15
+	"Robert #0" = 10
+	"Shayne #0" = 10
+	"Galen #0" = 10
+	"Pete #0" = 5
+	"Earl #0" = 5
+ 
+	"Enrique #0" = 0
+	"Carlos #0" = 0
+	"Francisco #0" = 0
+	"Juan #0" = 0
+	"Luis #0" = 0
+	"Gastón #0" = 0
+	"Pedro #0" = 0
+	"Buenaventura #0" = 0
+	"Francisco #0" = 0
+	"Godofredo #0" = 0
+	"Jaime #0" = 0
+	"Lanzarote #0" = 0
+	"Martín #0" = 0
+	"Sancho #0" = 0
+	"García #0" = 0
+	"Teobaldo #0" = 0
+	"Alfonso #0" = 0
+	"Agustín #0" = 0
+	"Alejandro #0" = 0
+
+	"Florence #1" = -1
+	"Mary #0" = -1	
+	"Cassidy #0" = -1
+	"Sarah #0" = -1
+}
+
+leader_names = { 
+	Liam Oliver Benjamin James Noah William Henry Ethan Eluah Alexander Samuel Mason Owen Daniel Wyatt Logan Lucas Jackson David
+	Lincoln Michael Jacob Matthew Isaac Jack Luke Gabriel Caleb Carter Levi Hudson Hunter Sebastian Grayson Aiden Andrew Joseph 
+	Jayden Theodore Julian Jaxon John Asher Mateo Charles Isaiah
+}
+
+ship_names = {
+	Winnemucca Whitworth Alley Angle Ashurst Beckler Young Nixon Pease Tallman Bautista 
+	Bannock Paiute Shoshone Cassidy Butch Brothel Basque Zazpiak Araba Bizkaia Gipuzkoa
+	Lapurdi Nafarroa Zuberoa Nafarroa 
+	
+	Francisco Cruz Celestia Jose Oak Costa Lewis
+	Galactica "Golden Gate" Vallejo Solano Lodi
+	Stanford Salinas Monterey Moro Atascadero Wasco
+	Bakersfield Porterville Seqouia Vegas Inyo Faro 
+	Guadiana Sonoma Mendocino Bragg Eureka Redwood Crecent Curry
+	Coos Lane Newport Tillamook Clatsop Wahkiakum Grays Clallam 
+	Olympus Olympia Tacoma Seattle Everett Bellingham Kitsap
+	
+}
+
+army_names = {
+	"Zilarrezko Armada" 
+}
+
+fleet_names = {
+	"Zilarrezko Eskuadra"
+}

@@ -1,0 +1,19 @@
+#943 - Miami
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = muslim
+discovered_by = ottoman
+owner = X89
+controller = X89 
+add_core = X89
+culture = industrial_heartlander
+religion = islam
+capital = "Miami"
+trade_goods = grain #Kankakee River
+hre = no
+base_tax = 6
+base_production = 5
+base_manpower = 5
+is_city = yes
+fort_15th = yes
+discovered_by = western

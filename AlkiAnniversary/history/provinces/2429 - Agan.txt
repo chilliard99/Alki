@@ -1,0 +1,17 @@
+#2429 - Agan
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = W57
+controller = W57 
+add_core = W57
+culture = argelino
+religion = catholico
+capital = "Variegansk"
+trade_goods = copper #known for copper mining (chino and tyrone mines)
+hre = no
+base_tax = 5
+base_production = 3
+base_manpower = 3
+is_city = yes

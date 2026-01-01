@@ -1,0 +1,17 @@
+#291 - Kharkov
+discovered_by = eastern
+discovered_by = chinese
+discovered_by = western
+owner = X67
+controller = X67
+add_core = X67
+culture = cosmopolitan_canadian
+religion = dynastic
+hre = no
+base_tax = 5
+base_production = 5
+trade_goods = wool #Canadian Wools 
+base_manpower = 7
+capital = "Belgorod"
+is_city = yes
+add_core = X69

@@ -1,0 +1,15 @@
+#975 - Tsimshian
+discovered_by = western
+discovered_by = eastern
+owner = W08
+controller = W08
+add_core = W08
+culture = haidan
+religion = collectivist
+capital = "Tsimshian"
+trade_goods = fish #commercial fishing
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes

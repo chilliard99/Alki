@@ -1,0 +1,98 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 243 102 57 }
+
+revolutionary_colors = { 6 15 6 }
+
+historical_idea_groups = {
+	defensive_ideas
+	religious_ideas
+	trade_ideas
+	economic_ideas
+	plutocracy_ideas
+	diplomatic_ideas
+	offensive_ideas
+	spy_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_longbow
+	gaelic_mercenary
+	gaelic_free_shooter
+	irish_charge
+	anglofrench_line
+	british_redcoat
+	british_hussar
+	british_square
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Joe #0" = 25
+	"Alfred #1" = 25
+	"Raymond #0" = 25
+	"Wilson #0" = 20
+	"Lincoln #0" = 20
+	"Ray #0" = 15
+	"Johnny #0" = 15
+	"Terry #0" = 10
+	"Roy #0" = 10
+	"Floyd #0" = 10
+	"Ernel #0" = 5
+	"Christopher #0" = 5
+ 
+	"Liam #0" = 0
+	"Oliver #0" = 0
+	"Benjamin #0" = 0
+	"James #0" = 0
+	"Noah #0" = 0
+	"William #0" = 0
+	"Henry #0" = 0
+	"Edward #0" = 0
+	"Ethan #0" = 0
+	"Eluah #0" = 0
+	"Alexander #0" = 0
+	"Samuel #0" = 0
+	"Mason #0" = 0
+	"Owen #0" = 0
+	"Daniel #0" = 0
+	"Wyatt #0" = 0
+	"Logan #0" = 0
+	"Lucas #0" = 0
+	"Jackson #0" = 0
+
+	"Delvis #0" = -1
+	"Gail #0" = -1	
+	"Theresa #0" = -1
+	"Nancy #0" = -1
+}
+
+leader_names = { 
+	Tinainu Tygh Wyam Tukspush "John Day" Deschutes Dalles "Warm Spring" Tygh Celilo Moody Sohappy Suppah Wewa Tsumpti Jackson 
+	Heath McConvile Moses Wasco "Dog River" Walachin "Tah Symph" "Ash-ha-chat" "Che-wot-nleth" "Sha-qually" "Penop-teyot" 
+	"Elosh-kish-kie" "Kc-chac"
+}
+
+ship_names = {
+	Culver Madras Metolius Sherman "Rooked River" "Warm Springs" 
+	Ashwood Kilts Gateway Geneva Grandview Grizzly "Horse Heaven" 
+	Opal Willowdale Tenino Deschutes Tugh Wyam Dalles "Dock-Spus"
+	Wasco Dalles "Dog River" "Ki-gal-twal-la" Paiute Numu Mono
+	Sahaptin Bonneville Cascades Celilo "Kah-Nee-Ta" 
+	
+	Francisco Cruz Celestia Jose Oak Costa Lewis
+	Galactica "Golden Gate" Vallejo Solano Lodi
+	Stanford Salinas Monterey Moro Atascadero Wasco
+	Bakersfield Porterville Seqouia Vegas Inyo Faro 
+	Guadiana Sonoma Mendocino Bragg Eureka Redwood Crecent Curry
+	Coos Lane Newport Tillamook Clatsop Wahkiakum Grays Clallam 
+	Olympus Olympia Tacoma Seattle Everett Bellingham Kitsap
+	
+}

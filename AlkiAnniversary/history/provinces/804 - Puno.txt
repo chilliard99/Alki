@@ -1,0 +1,16 @@
+#804 - Puno
+discovered_by = indian
+owner = V86
+controller = V86
+add_core = V86
+culture = incan
+religion = yanantin
+capital = "Hatuncolla"
+trade_goods = copper #more tin
+is_city = yes
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+
+

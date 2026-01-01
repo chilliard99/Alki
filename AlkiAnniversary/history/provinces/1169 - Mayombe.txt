@@ -1,0 +1,17 @@
+#1169 - Anziku
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y76
+controller = Y76
+add_core = Y76
+culture = sacramentan
+religion = partisan 
+capital = "Chico"
+trade_goods = grain #more rice and almonds
+hre = yes
+base_tax = 5 #has 100k people i mean damn
+base_production = 4
+base_manpower = 4 
+is_city = yes

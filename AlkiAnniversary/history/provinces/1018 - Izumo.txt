@@ -1,0 +1,16 @@
+#1018 - Izumo
+discovered_by = chinese
+owner = X33
+controller = X33
+add_core = X33
+culture = chugokan
+religion = neoshinto
+capital = "Matsue"
+trade_goods = grain #rice
+hre = no
+base_tax = 3 
+base_production = 3
+base_manpower = 2
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman

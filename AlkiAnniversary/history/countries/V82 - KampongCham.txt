@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = newkhmer
+religion = yanantin  
+technology_group = indian 
+capital = 4301	#Siem Reap
+
+1408.1.31 = {
+	monarch = {
+		name = "Ang Eng"
+		dynasty = "Worawongsathirat"
+		birth_date = 1408.1.31
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}
+1431.3.31 = {
+	heir = {
+		name = "Damkhat Sukonthor"
+		monarch_name = "Damkhat Sukonthor"
+		dynasty = "Worawongsathirat"
+		birth_date = 1431.3.31
+		death_date = 1483.8.30
+		claim = 95
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+}

@@ -1,0 +1,17 @@
+government_rank = 1
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = chadic
+religion = shamanist
+technology_group = mesoamerican
+capital = 1157	# Borno
+
+1444.11.11 = {
+	monarch = {
+		name = "Hausa Council"
+		adm = 1
+		dip = 1
+		mil = 1
+		regent = yes
+	}
+}

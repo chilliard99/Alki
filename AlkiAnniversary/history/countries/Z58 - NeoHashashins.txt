@@ -1,0 +1,16 @@
+government_rank = 1
+government = native
+primary_culture = neoafghani
+religion = idolatrous
+technology_group = south_american
+capital = 2214	#Golestan
+
+1444.11.11 = {
+	monarch = {
+		name = "The Hashashin Order"
+		adm = 4
+		dip = 4
+		mil = 4
+		regent = yes
+	}
+}

@@ -1,0 +1,534 @@
+namespace = yakama_events
+####################Yakama EVENTS##########################
+country_event = { #Friends in from [Root.GetName]
+	id = yakama_events.1
+	title = yakama_events.1.t
+	desc = yakama_events.1.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		culture_group = western_true_heir
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = yakama_events.1.a #Wonderful!
+		add_country_modifier = {
+			name = "gor_true_heir_alliance_yakama"
+			duration = 5475
+		}
+		if = {
+			limit = {
+				capital_scope = {
+					culture_group = western_true_heir
+				}
+			}
+			capital_scope = {
+				add_permanent_province_modifier = {
+					name = "gor_cemented_identity_yakama"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+country_event = { #The Origination Army
+	id = yakama_events.2
+	title = yakama_events.2.t
+	desc = yakama_events.2.d
+	picture = LAND_MILITARY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = Y97
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = yakama_events.2.a #We must stick together
+		add_treasury = -1000
+		add_dip_power = -250
+		custom_tooltip = explain_origination_army
+		hidden_effect = {
+			set_global_flag = origination_army_enabled
+			every_known_country = {
+				limit = {
+					culture_group = western_true_heir
+				}
+				country_event = { id = yakama_events.3 }
+			}
+		}
+	}
+	option = {
+		name = yakama_events.2.b #They should stand strong alone.
+		add_prestige = 15
+	}
+}
+
+country_event = { #The Origination Army
+	id = yakama_events.3
+	title = yakama_events.3.t
+	desc = yakama_events.3.d
+	picture = LAND_MILITARY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		culture_group = western_true_heir
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = yakama_events.3.a #Our Thanks to Yakama
+		custom_tooltip = explain_origination_army
+		
+	}
+}
+
+country_event = { #Yakaman Vintage
+	id = yakama_events.4
+	title = yakama_events.4.t
+	desc = yakama_events.4.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		culture_group = western_true_heir
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = yakama_events.4.a #Store it for later
+		custom_tooltip = get_vintage_event_which_will_give_more_monay
+		if = {
+			limit = {
+				mission_completed = smarter_not_harder_yakama
+			}
+			country_event = { 
+				id = yakama_events.5
+				days = 3650
+			}
+		}
+		else = {
+			country_event = { 
+				id = yakama_events.5
+				days = 7300
+			}
+		}
+		set_country_flag = currently_saving_vintage
+		
+	}
+	option = {
+		name = yakama_events.4.b #Sell what we have now
+		if = {
+			limit = {
+				mission_completed = perfect_production_yakama
+			}
+			add_years_of_owned_provinces_production_income = {
+				years = 20
+				trigger = {
+					trade_goods = wine
+				}
+				custom_tooltip = income_from_wine_yaka
+			}
+		}
+		else = {
+			add_years_of_owned_provinces_production_income = {
+				years = 10
+				trigger = {
+					trade_goods = wine
+				}
+				custom_tooltip = income_from_wine_yaka
+			}
+		}
+		clr_country_flag = currently_saving_vintage
+	}
+}
+
+country_event = { #Yakaman Vintage (Second)
+	id = yakama_events.5
+	title = yakama_events.5.t
+	desc = yakama_events.5.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		culture_group = western_true_heir
+		has_country_flag = currently_saving_vintage
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = yakama_events.5.a #Store it for even later
+		custom_tooltip = get_vintage_event_which_will_give_more_monay
+		if = {
+			limit = {
+				mission_completed = smarter_not_harder_yakama
+			}
+			country_event = { 
+				id = yakama_events.6
+				days = 3650
+			}
+		}
+		else = {
+			country_event = { 
+				id = yakama_events.6
+				days = 7300
+			}
+		}
+	}
+	option = {
+		name = yakama_events.5.a #Sell what we have now
+		if = {
+			limit = {
+				mission_completed = perfect_production_yakama
+			}
+			add_years_of_owned_provinces_production_income = {
+				years = 50
+				trigger = {
+					trade_goods = wine
+				}
+				custom_tooltip = income_from_wine_yaka
+			}
+		}
+		else = {
+			add_years_of_owned_provinces_production_income = {
+				years = 25
+				trigger = {
+					trade_goods = wine
+				}
+				custom_tooltip = income_from_wine_yaka
+			}
+		}
+		clr_country_flag = currently_saving_vintage
+	}
+}
+
+country_event = { #Yakaman Vintage (Final)
+	id = yakama_events.6
+	title = yakama_events.6.t
+	desc = yakama_events.6.d
+	picture = ECONOMY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		culture_group = western_true_heir
+		has_country_flag = currently_saving_vintage
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = yakama_events.5.a #Time to cash in!
+		if = {
+			limit = {
+				mission_completed = perfect_production_yakama
+			}
+			add_years_of_owned_provinces_production_income = {
+				years = 100
+				trigger = {
+					trade_goods = wine
+				}
+				custom_tooltip = income_from_wine_yaka
+			}
+		}
+		else = {
+			add_years_of_owned_provinces_production_income = {
+				years = 100
+				trigger = {
+					trade_goods = wine
+				}
+				custom_tooltip = income_from_wine_yaka
+			}
+		}
+		
+		clr_country_flag = currently_saving_vintage
+	}
+}
+
+country_event = { #[place_where_niniish_scholars_come_from.Culture.GetName] Scholars Travel to Niniish University
+	id = yakama_events.7
+	title = yakama_events.7.t
+	desc = yakama_events.7.d
+	picture = UNIVERSITY_eventPicture
+	
+	trigger = {
+		mission_completed = niniish_university_yakama
+		any_known_country = {
+			culture_group = western_true_heir
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 25
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_known_country = {
+				limit = {
+					culture_group = western_true_heir
+				}
+				save_event_target_as = place_where_niniish_scholars_come_from
+			}
+			random_list = {
+				25 = {
+					set_country_flag = get_artist_yakama
+				}
+				25 = {
+					set_country_flag = get_philosopher_yakama
+				}
+				25 = {
+					set_country_flag = get_natural_scientist_yakama
+				}
+				25 = {
+					set_country_flag = get_military_engineer_yakama
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = yakama_events.7.a #We welcome them with open arms
+		if = {
+			limit = {
+				has_country_flag = get_artist_yakama
+			}
+			if = {
+				limit = {
+					total_development = 1000
+				}
+				define_advisor = {
+					type = artist
+					skill = 5
+					cost_multiplier = 0.25
+				}
+			}
+			else_if = {
+				limit = {
+					total_development = 500
+				}
+				define_advisor = {
+					type = artist
+					skill = 4
+					cost_multiplier = 0.25
+				}
+			}
+			else = {
+				define_advisor = {
+					type = artist
+					skill = 3
+					cost_multiplier = 0.25
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = get_philosopher_yakama
+			}
+			if = {
+				limit = {
+					total_development = 1000
+				}
+				define_advisor = {
+					type = philosopher
+					skill = 5
+					cost_multiplier = 0.25
+				}
+			}
+			else_if = {
+				limit = {
+					total_development = 500
+				}
+				define_advisor = {
+					type = philosopher
+					skill = 4
+					cost_multiplier = 0.25
+				}
+			}
+			else = {
+				define_advisor = {
+					type = philosopher
+					skill = 3
+					cost_multiplier = 0.25
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = get_natural_scientist_yakama
+			}
+			if = {
+				limit = {
+					total_development = 1000
+				}
+				define_advisor = {
+					type = natural_scientist
+					skill = 5
+					cost_multiplier = 0.25
+				}
+			}
+			else_if = {
+				limit = {
+					total_development = 500
+				}
+				define_advisor = {
+					type = natural_scientist
+					skill = 4
+					cost_multiplier = 0.25
+				}
+			}
+			else = {
+				define_advisor = {
+					type = natural_scientist
+					skill = 3
+					cost_multiplier = 0.25
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					total_development = 1000
+				}
+				define_advisor = {
+					type = fortification_expert
+					skill = 5
+					cost_multiplier = 0.25
+				}
+			}
+			else_if = {
+				limit = {
+					total_development = 500
+				}
+				define_advisor = {
+					type = fortification_expert
+					skill = 4
+					cost_multiplier = 0.25
+				}
+			}
+			else = {
+				define_advisor = {
+					type = fortification_expert
+					skill = 3
+					cost_multiplier = 0.25
+				}
+			}
+		}
+	}
+	
+	after = {
+		clr_country_flag = get_artist_yakama
+		clr_country_flag = get_philosopher_yakama
+		clr_country_flag = get_natural_scientist_yakama
+		clr_country_flag = get_military_engineer_yakama
+	}
+}
+
+country_event = { #Defeat by the Yakamans
+	id = yakama_events.8
+	title = yakama_events.8.t
+	desc = yakama_events.8.d
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = Y38
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = yakama_events.8.a #We will recover.
+		if = {
+			limit = {
+				stability = -2
+			}
+			add_stability = -1
+		}
+		else = {
+			add_adm_power = -150
+		}
+	}
+}
+
+country_event = { #So Close, Yet so Far
+	id = yakama_events.9
+	title = yakama_events.9.t
+	desc = yakama_events.9.d
+	picture = STREET_SPEECH_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		culture_group = western_true_heir
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = yakama_events.9.a #Allow them to join us
+		1933 = {
+			change_culture = ROOT
+		}
+		1879 = {
+			change_culture = ROOT
+		}
+		1956 = {
+			change_culture = ROOT
+		}
+		1954 = {
+			change_culture = ROOT
+		}
+		custom_tooltip = every_plainswalker_province_gets
+		tooltip = {
+			add_province_modifier = {
+				name = "gor_correcting_mistakes_yakama"
+				duration = 36500
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					culture_group = western_plainwalkers_group
+				}
+				add_province_modifier = {
+					name = "gor_correcting_mistakes_yakama"
+					duration = 36500
+				}
+			}
+		}
+	}
+	option = {
+		name = yakama_events.9.b #Accept their mockery
+		add_country_modifier = {
+			name = "gor_forgiving_the_plainwalkers_yakama"
+			duration = -1
+		}
+	}
+}

@@ -1,0 +1,14 @@
+#1032 - Kurils
+discovered_by = chinese
+owner = X16
+controller = X16
+add_core = X16
+culture = neoainu
+religion = neoshinto
+capital = "Kuril"
+trade_goods = fish #kuril fisheries,  if the russians want it its gotta endure
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+discovered_by = eastern

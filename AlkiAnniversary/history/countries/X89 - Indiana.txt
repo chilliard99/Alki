@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = industrial_heartlander
+religion = islam
+technology_group = eastern
+capital = 943	#South Bend
+
+1411.9.12 = {
+	monarch = {
+		name = "Nolan"
+		dynasty = "Buttigieg"
+		birth_date = 1411.9.12
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1433.3.3 = {
+	heir = {
+		name = "Grayson"
+		monarch_name = "Grayson"
+		dynasty = "Buttigieg"
+		birth_date = 1433.3.3
+		death_date = 1483.8.30
+		claim = 95
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}

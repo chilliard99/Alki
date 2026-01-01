@@ -1,0 +1,17 @@
+#1233 - Kargah
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+owner = Y67
+controller = Y67 
+add_core = Y67
+culture = franciscan
+religion = partisan
+capital = "Healdsburg"
+is_city = yes
+base_manpower = 4
+trade_goods = wine #Part of the Wine Country
+hre = yes
+base_tax = 3
+base_production = 3

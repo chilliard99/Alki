@@ -1,0 +1,37 @@
+	### Transposian Mission Icons ###
+
+spriteTypes = {
+	spriteType = {
+		name = "blueparty_gfxfile"
+		texturefile = "gfx//interface//blueparty_gfxfile.dds"
+	}
+	spriteType = {
+		name = "redparty_gfxfile"
+		texturefile = "gfx//interface//redparty_gfxfile.dds"
+	}
+	spriteType = {
+		name = "yellowparty_gfxfile"
+		texturefile = "gfx//interface//yellowparty_gfxfile.dds"
+	}
+	spriteType = {
+		name = "greenparty_gfxfile"
+		texturefile = "gfx//interface//greenparty_gfxfile.dds"
+	}
+	
+	spriteType = {
+		name = "actionistparty_gfxfile"
+		texturefile = "gfx//interface//actionistparty_gfxfile.dds"
+	}
+	spriteType = {
+		name = "constitutionalistparty_gfxfile"
+		texturefile = "gfx//interface//constitutionalistparty_gfxfile.dds"
+	}
+	spriteType = {
+		name = "goldencratparty_gfxfile"
+		texturefile = "gfx//interface//goldencratparty_gfxfile.dds"
+	}
+	spriteType = {
+		name = "protectionerparty_gfxfile"
+		texturefile = "gfx//interface//protectionerparty_gfxfile.dds"
+	}
+}	

@@ -1,0 +1,19 @@
+bookmark = {
+	name = "EASTERNISLES"
+	desc = "EASTERNISLES_DESC"
+	date = 1444.11.11
+	
+	center = 1028
+	default = no
+	
+	country = X22
+	country = X16
+	country = X12
+	country = X11
+	country = X07
+	country = X37
+	country = X34
+	
+	easy_country = X22
+	easy_country = X16
+}

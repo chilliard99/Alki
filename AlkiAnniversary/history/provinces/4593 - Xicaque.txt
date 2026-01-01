@@ -1,0 +1,16 @@
+# No previous file for Xicaque
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W98
+controller = W98
+add_core = W98
+culture = catracho
+religion = catholico
+capital = "Xicaque"
+trade_goods = cocoa #stuff
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes

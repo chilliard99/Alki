@@ -1,0 +1,16 @@
+# No previous file for Tehuantepec
+discovered_by = ottoman
+discovered_by = muslim
+discovered_by = indian
+owner = W85
+controller = W85
+add_core = W85
+culture = oaxacan
+is_city = yes
+religion = catholico
+capital = "Tehuantepec"
+trade_goods = tropical_wood #apparently
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 3

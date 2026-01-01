@@ -1,0 +1,47 @@
+country_decisions = {
+
+	adopt_title_of_grand_shaman_sham = {
+		potential = {
+			religion = shamanist
+			NOT = {
+				has_country_modifier = grand_shaman_sham
+			}
+		}
+		allow = {
+			is_religion_reformed = yes
+		}
+		effect = {
+			add_country_modifier = {
+				name = "grand_shaman_sham"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	
+	review_ancestor_wisdom_sham = {
+		potential = {
+			religion = shamanist
+			NOT = {
+				has_country_modifier = reviewed_ancestor_wisdom_sham
+			}
+		}
+		allow = {
+			stability = 2
+			is_religion_reformed = yes
+		}
+		effect = {
+			add_country_modifier = {
+				name = "reviewed_ancestor_wisdom_sham"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1 
+		}
+	}
+	
+}
+

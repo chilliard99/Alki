@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = potosian
+religion = catholico
+technology_group = muslim
+capital = 2979	#San Luis de Potosi
+
+1416.3.16 = {
+	monarch = {
+		name = "Luis III"
+		dynasty = "Patria"
+		birth_date = 1416.3.16
+		adm = 1
+		dip = 1
+		mil = 3
+	}
+}
+1437.3.24 = {
+	heir = {
+		name = "Xavier II"
+		monarch_name = "Xavier II"
+		dynasty = "Patria"
+		birth_date = 1437.3.24
+		death_date = 1483.8.30
+		claim = 95
+		adm = 1
+		dip = 0
+		mil = 0
+	}
+}
